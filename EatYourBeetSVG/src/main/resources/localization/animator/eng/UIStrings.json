@@ -1,0 +1,278 @@
+
+{
+	"animator:Series":
+	{
+		"TEXT":
+		[
+			"[Shapeshifter]",
+			"Elsword",
+			"Kantai Collection",
+			"Hitsugi no Chaika",
+			"Konosuba",
+			"Katanagatari",
+			"Owari no Seraph",
+			"Overlord",
+			"No Game No Life",
+			"GATE",
+			"Fate",
+			"Goblin Slayer",
+			"Fullmetal Alchemist",
+			"Hataraku Maou-sama",
+			"Grimoire of Zero",
+			"Steins;Gate",
+			"Tensei shitara Slime",
+			"Re:Zero",
+			"Madoka Magica",
+			"Charlotte",
+			"Accel World",
+			"Noragami",
+			"One Punch Man",
+			"Pandora Hearts",
+			"Zero no Tsukaima",
+			"Gabriel DropOut",
+			"Death Note",
+			"Kamisama no Memochou",
+			"Code Geass",
+			"Youjo Senki",
+			"Bleach",
+			"Jojo's Bizzarre Adventures",
+			"Tate no Yuusha",
+			"Symphogear",
+			"Call Of Cthulhu",
+			"Chuunibyou demo Koi ga Shitai!",
+			"FLCL",
+			"Kill la Kill",
+			"Touhou Project",
+			"Welcome to the N.H.K.",
+			"Tales of Berseria",
+			"Rewrite",
+			"Date-a-Live",
+			"Angel Beats",
+			"Rozen Maiden",
+		 "Log Horizon",
+		 "Vocaloid",
+		 "Atelier",
+		 "Cardcaptor Sakura",
+		 "Guilty Crown",
+		 "Gakkou Gurashi!",
+			"Genshin Impact",
+			"Durarara",
+			"Cowboy Bebop",
+			"Ghost in the Shell",
+			"Tengen Toppa Gurren-Lagann",
+			"Mobile Suit Gundam",
+			"Neon Genesis Evangelion",
+			"Lupin the Third",
+			"Dr. Stone",
+			"Berserk"
+		],
+		"EXTRA_TEXT":
+		[
+			"Series"
+		]
+	},
+
+	"animator:Actions":
+	{
+		"TEXT":
+		[
+			"Gain {0} {1}",
+			"Apply {0} {1}",
+			"Apply {0} {1} NL to ALL enemies",
+			"Cycle {0} card(s)",
+			"Draw {0} card(s)",
+			"Discard {0} card(s)",
+			"Exhaust {0} card(s)",
+			
+			"Gain {0} Orb Slot(s)",		
+			"Channel {0} random Orb(s)",
+			"Channel {0} {1}",
+			
+			"Motivate {0}",
+			"Upgrade all cards NL in your hand",
+			"Gain !M! Intangible. NL Lose this Power",
+			"Remove all of NL your debuffs",
+			"Play the top card NL of your draw pile",
+			"Stun the enemy",
+			"Enter {0}",
+			"Boost {0}",
+			"Scry {0}",
+			"Next turn: Gain {0} [Block]",
+			"Next turn: Draw {0} card(s)",
+			"Next turn: Gain {0} [E]",
+			"Enter any stance",
+			"Pay {0} [E]",
+			"Lose {0} [HP]",
+			"Lose {0} [MHP]",
+			"Recover {0} [HP]"
+		]
+	},
+
+	"animator:Trophies":
+	{
+		"TEXT":
+		[
+			"Bronze",
+			"Silver",
+			"Gold",
+			"Choose this starting deck and complete act 3.",
+			"Complete act 3 with at least #yhalf of the cards in your deck being from this series.",
+			"Complete act 3 with at least #b8 #ydifferent cards from this series in your deck.",
+			"Complete act 3 with at least #b7 #ydifferent card series in your deck. (Colorless cards will not count)",
+			"Complete act 3 with at least #b10 #ydifferent card series in your deck. (Colorless cards will not count)",
+			"Complete act 3 with at least #b20 cards in your deck, and without any duplicate.",
+			"Complete act 3 with at least #b30 cards in your deck, and without any duplicate.",
+			"This Trophy will be revealed once it is obtained. #yHint: Collect all 3 keys.",
+			"Defeat The Unnamed. NL Whenever you obtain this trophy, permanently increase the chance to find #pUltra #pRare cards, higher ascension increases this bonus by a larger amount. NL NL #yThe #yUnnamed #yReign is now available to all characters.",
+			"Platinum"
+		]
+	},
+
+	"animator:Rewards":
+	{
+		"TEXT":
+		[
+			"Only contains Cards with this synergy. WARNING: once you click on this, the other 2 Card rewards will disappear.",
+			"Bonus Relic",
+			"Cursed Relic",
+			"Reroll",
+			"+{0} Max HP",
+			"+{0} Gold",
+			"Common Upgrade",
+			"#pRight-Click to preview."
+		]
+	},
+
+	"animator:SeriesSelection":
+	{
+		"TEXT":
+		[
+			"Contains {0} cards.",
+			"Cards from this series NL may have a random NL {Bonus} upon pickup.",
+			"Selecting this series will NL not unlock trophies for NL the current run.",
+			"Select a total of at least #b{0} cards to proceed. Obtain an additional starting #yRelic if you select at least #b{1} #ySeries.",
+			"Pickup Bonus",
+			"Obtain a bonus for each #ydifferent card you obtain (up to 6). NL The bonus will improve as you obtain more cards.",
+			"#pRight-Click a series to view cards from its pool.",
+			"Meant for #yCasual gameplay. NL Gives the player a custom chance to dodge while at low health. NL #yDisables trophies and certain rewards (but you can still gain Ascension levels)."
+		]
+	},
+	
+	"animator:SeriesSelectionButtons":
+	{
+		"TEXT":
+		[
+			"Show Beta Series.",
+			"Deselect All",
+			"Random ({0} cards)",
+			"Random ({0} series)",
+			"Select All",
+			"Show card pool",
+			"Proceed",
+			"Enable Plot Armor"
+		]
+	},
+
+	"animator:CharacterSelect":
+	{
+		"TEXT":
+		[
+			"Starting Cards: ",
+			"###############",
+			"Unlocks at Level {0} (You are Level {1})",
+			"Invalid Loadout (Please Edit)",
+			"Unlocks at Ascension {0}",
+			"Starting Deck Editor",
+			"#pLeft-Click to open the editor. NL #pRight-Click to change preset.",
+			"Obtain #yBronze #yTrophy at ascension #b{0} to unlock"
+		]
+	},
+	
+	"animator:Misc":
+	{
+		"TEXT":
+		[
+			"Discord", 
+			"The Animator Discord link.",
+			"Steam", 
+			"The Animator Steam page.",
+			"Not enough cards of this type.",
+			"Dynamic Portraits",
+			"Dynamic cards portraits.",
+			"'CTRL' to cycle",
+			"Have you found a missing or incorrect translation? If you'd like to help, you can join the mod Discord and write your translation in the Localization channel.",
+			"Display Beta Series",
+			"Translation",
+			"Highlight Synergies.",
+			"Simplify Card UI",
+			"Certain rewards are disabled for one or more of these reasons: NL NL - Non-Animator class or cards NL - Custom or Endless mode NL - Non-Official mod version NL - Used console commands NL - Edited save file",
+			"The console is disabled while in this act.",
+			"To prevent infinite healing, some cards will give you [THP] instead of [HP] when played more than 1 time (This is disabled in Endless mode).",
+			"(Max #b{0} stacks)",
+			"(Above #b{0} stacks, gain [Block] instead)",
+			"(Max #b{0} [Block])",
+			"Max Copies",
+			"If you have reached or surpassed the maximum number of copies, this card will stop appearing in card rewards and shops.",
+			"Mulligan",
+			"At the start of combat, before playing any card, you may #pRight-Click a card to shuffle it into your draw pile and draw #b1 card. Take #b1 [DD] on the first use and #b2 [DD] on the second use.",
+		  	"I cannot Seal this card.",
+			"Use Right-Click instead of Left-Click for clickable powers."
+		]
+	},
+	
+	"animator:SpecialActions":
+	{
+		"TEXT":
+		[
+			"Downgrade. Gain #b{0} [Gold].",
+			"Reset card #yUpgrades in exchange for #yGold. You can only #yDowngrade #b1 card per floor.",
+			
+			"Improve. Lose #b{0} [Gold].",
+			"Transform this card into an #yImproved #yBasic card of your choice. You can only perform this action at #yRest #ySites.",
+			
+			"Transform. Receive [Grief Seed].",
+			"Transform. Lose #b{0} [HP].",
+			"Transform. Lose #b{0} Max [HP].",
+			"Transform this card into {0}. NL You can only perform this action at #yRest #ySites, and if you don't already have {0}.",
+			"If you have {0}, transform this card into {1}. NL You can only perform this action at #yRest #ySites, and if you don't already have {1}.",
+			"Remove {0} and {1} to transform this card into {2}. NL You can only perform this action at #yRest #ySites, and if you don't already have {2}.",
+			
+			"Obtain card. Gain #b{0} [Vulnerable].",
+			"Obtain {0} and start your next combat with #b{1} [Vulnerable]. NL You can only perform this action at #yRest #ySites, and if you don't already have {0}.",
+			
+			"Obtain Curse. Heal #b{0} [HP].",
+			"If you have at least #b{0} Curses, Obtain {1}. NL You can only perform this action at #yRest #ySites, and if you don't already have {1}."
+		]
+	},
+	
+	"animator:Affinities":
+	{
+		"TEXT":
+		[
+			"Pay #b{0} of this [A_Gen] to gain #b1 {1}. NL You can also spend this [A_Gen] to activate certain card effects.",
+			"You may #pRight-Click a card to #ySeal it and reshuffle it. Gain #b1 use each turn. Store up to #b3 uses.",
+			"While Locked, your #yAffinity points will not be spent to activate certain cards effect. NL NL Besides pressing this button, you can also alternate between #yLOCK and #yUSE with #pSHIFT. NL NL #pRight-Click to change #pSHIFT mode. Current Mode: #y",
+			"HOLD",
+			"TOGGLE",
+		  	"Spend #b{0} {1} to gain #b1 {2}, then increase this cost by #b1."
+		]
+	},
+	
+	"animator:Tutorial":
+	{
+		"TEXT":
+		[
+			"#pClick #pto #pcycle #p({0}/{1}). NL ",
+			
+			"Cards can have a combination of the following #yAffinity ( [A_Gen] ) NL colors: [A_Red], [A_Green], [A_Blue], [A_Light], [A_Dark]. NL NL Card #yAffinities are further distinguished in #yLV1 [A_Gen] (normal border) and #yLV2 [A_Gen] (animated border). NL NL Some #yLV1 [A_Gen] can be upgraded to #yLV2 (different border).",
+			
+			"Once per turn, you may #yRight-Click on a card to #ySeal it. #ySealing a card #yReshuffles it, removes its #yAffinities, and adds 1 point per level of each of its #yAffinities to its corresponding #yAffinity counter NL NL For example, #ySealing a card with #yLV1 [A_Red] and #yLV2 [A_Green] will give #b1 [A_Red] point and #b2 [A_Green] points.",
+			
+			"This panel shows the counter for each #yAffinity. NL NL The bottom-most counter ( [A_Seal] ) shows how many #ySeals you can perform this turn. NL NL Some card effects consume #yAffinity points.",
+			
+			"Some cards will scale with the powers shown on the right of this panel (called [A_Gen] #yPowers^). NL NL For example, an #yAttack with #bx3 [Force] scaling will deal #b3 additional damage every point of [Force]. NL NL Similarly, a #ySkill with #bx3 [Force] scaling will grant #b1 additional #yBlock for every point of [Force].",
+			
+			"While playing this character, most of the effects that deal damage during your turn or make you lose [HP] will let you survive with #b1 [HP]. NL NL Some common powers and mechanics have also been limited while not in endless mode (this is reflected on their tooltips)."
+		]
+	}
+}

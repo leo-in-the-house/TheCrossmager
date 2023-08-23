@@ -1,0 +1,138 @@
+
+{
+	"Force":
+	{
+		"DESCRIPTION": "Reduced by #b1 each turn. Upon reaching NL #b3, #b6, #b9, and #b12 [F], gain #yStrength and increase minimum [F] to that number.",
+		"NAMES": ["force"],
+		"PROPER_NAME": "Force"
+	},
+	"Agility":
+	{
+		"DESCRIPTION": "Reduced by #b1 each turn. Upon reaching NL #b3, #b6, #b9, and #b12 [A], gain #yDexterity and increase minimum [A] to that number.",
+		"NAMES": ["agility"],
+		"PROPER_NAME": "Agility"
+	},
+	"Blessing":
+	{
+		"DESCRIPTION": "Reduced by #b1 each turn. Upon reaching NL #b3, #b6, #b9, and #b12 [B], gain #yVitality and increase minimum [B] to that number.",
+		"NAMES": ["blessing"],
+		"PROPER_NAME": "Blessing"
+	},
+	"Intellect":
+	{
+		"DESCRIPTION": "Reduced by #b1 each turn. Upon reaching NL #b3, #b6, #b9, and #b12 [I], gain #yFocus and increase minimum [I] to that number.",
+		"NAMES": ["intellect"],
+		"PROPER_NAME": "Intellect"
+	},
+	"Corruption":
+	{
+		"DESCRIPTION": "Reduced by #b1 each turn. Upon reaching NL #b3, #b6, #b9 and #b12 [C], gain #yInvocation and increase minimum [C] to that number.",
+		"NAMES": ["corruption"],
+		"PROPER_NAME": "Corruption"
+	},
+
+	"Agility Stance":
+	{
+		"DESCRIPTION": "<LOAD FROM STANCE>",
+		"NAMES": ["[a] stance", "agility stance"],
+		"PROPER_NAME": "Agility Stance"
+	},
+	"Force Stance":
+	{
+		"DESCRIPTION": "<LOAD FROM STANCE>",
+		"NAMES": ["[f] stance", "force stance"],
+		"PROPER_NAME": "Force Stance"
+	},
+	"Intellect Stance":
+	{
+		"DESCRIPTION": "<LOAD FROM STANCE>",
+		"NAMES": ["[i] stance", "intellect stance"],
+		"PROPER_NAME": "Intellect Stance"
+	},
+	"Corruption Stance":
+	{
+		"DESCRIPTION": "<LOAD FROM STANCE>",
+		"NAMES": ["[c] stance", "demon stance"],
+		"PROPER_NAME": "Demon Stance"
+	},
+
+	"Agility Scaling":
+	{
+		"DESCRIPTION": "",
+		"NAMES": ["[a] scaling"],
+		"PROPER_NAME": "[A] Scaling"
+	},
+	"Force Scaling":
+	{
+		"DESCRIPTION": "",
+		"NAMES": ["[f] scaling"],
+		"PROPER_NAME": "[F] Scaling"
+	},
+	"Intellect Scaling":
+	{
+		"DESCRIPTION": "",
+		"NAMES": ["[i] scaling"],
+		"PROPER_NAME": "[I] Scaling"
+	},
+	"Blessing Scaling":
+	{
+		"DESCRIPTION": "",
+		"NAMES": ["[b] scaling"],
+		"PROPER_NAME": "[B] Scaling"
+	},
+	"Corruption Scaling":
+	{
+		"DESCRIPTION": "",
+		"NAMES": ["[c] scaling"],
+		"PROPER_NAME": "[C] Scaling"
+	},
+
+	"Aura":
+	{
+		"DESCRIPTION": "Auras effects are automatically activated when a condition is met. These cards are not added to your draw pile at the start of battle.",
+		"NAMES": ["aura", "auras"],
+		"PROPER_NAME": "Aura"
+	},
+	"Boost":
+	{
+		"DESCRIPTION": "Gain the specified power, it does not decrease at the start of next turn.",
+		"NAMES": [""],
+		"PROPER_NAME": "Boost"
+	},
+	"Enchanted Armor":
+	{
+		"DESCRIPTION": "Take less damage from Attacks. NL Example: NL #b10 -> #g10%, #b25 -> #g20%, NL #b50 -> #g33%, #b100 -> #g50%",
+		"NAMES": [""],
+		"PROPER_NAME": "Enchanted Armor"
+	},
+	"Martial Artist":
+	{
+		"DESCRIPTION": "#ySynergizes with other #yMartial #yArtists.",
+		"NAMES": ["martial artist"],
+		"PROPER_NAME": "Martial Artist"
+	},
+	"Shapeshifter":
+	{
+		"DESCRIPTION": "#ySynergizes with any card.",
+		"NAMES": ["shapeshifter", "shapeshift"],
+		"PROPER_NAME": "Shapeshifter"
+	},
+	"Spellcaster":
+	{
+		"DESCRIPTION": "#ySynergizes with other #ySpellcasters.",
+		"NAMES": ["spellcaster"],
+		"PROPER_NAME": "Spellcaster"
+	},
+	"Synergy":
+	{
+		"DESCRIPTION": "A card #ySynergizes if the previous card played this turn was of the same series.",
+		"NAMES": ["synergy", "synergies", "synergize", "synergizes", "synergized", "synergic"],
+		"PROPER_NAME": "Synergy"
+	},
+	"Teamwork":
+	{
+		"DESCRIPTION": "Your #yTeamwork value is equal to the amount of cards in your hand that can #ySynergize with at least #b1 other card. #yShapeshifters only count as #b+1.",
+		"NAMES": ["teamwork"],
+		"PROPER_NAME": "Teamwork"
+	}
+}

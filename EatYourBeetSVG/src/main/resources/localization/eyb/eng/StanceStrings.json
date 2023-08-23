@@ -1,0 +1,35 @@
+
+{
+	"eyb:ForceStance":
+	{
+		"NAME": "Force Stance",
+		"DESCRIPTION": 
+		[
+			"#g+{0} [Strength]. Whenever you play an #yAttack (including one played to enter this stance), take [DD] equal to its cost, and gain twice that much [Vigor]."
+		]
+	},
+	"eyb:AgilityStance":
+	{
+		"NAME": "Agility Stance",
+		"DESCRIPTION": 
+		[
+			"#g+{0} [Dexterity]. Retain #b{1} [Block] each turn."
+		]
+	},
+	"eyb:IntellectStance":
+	{
+		"NAME": "Intellect Stance",
+		"DESCRIPTION": 
+		[
+			"#g+{0} [Focus]. At the start of each turn, trigger your first orb."
+		]
+	},
+	"eyb:CorruptionStance":
+	{
+		"NAME": "Demon Stance",
+		"DESCRIPTION": 
+		[
+			"#g+{0} [Strength], #g+{0} [Dexterity], #g+{0} [Focus]. NL Upon exiting: Gain #b{1} [E]."
+		]
+	}
+}

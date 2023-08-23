@@ -1,0 +1,56 @@
+package eatyourbeets.cards.animator.series.TenseiSlime;
+
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import eatyourbeets.cards.base.AnimatorCard;
+import eatyourbeets.cards.base.CardUseInfo;
+import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.cards.base.attributes.AbstractAttribute;
+import eatyourbeets.powers.animator.GazelDwargonPower;
+import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
+
+public class GazelDwargon extends AnimatorCard
+{
+    public static final EYBCardData DATA = Register(GazelDwargon.class)
+            .SetPower(X_COST, CardRarity.UNCOMMON)
+            .SetSeriesFromClassPackage();
+
+    public GazelDwargon()
+    {
+        super(DATA);
+
+        Initialize(0, 0, 4);
+        SetUpgrade(0, 1, 0);
+
+        SetAffinity_Red(1);
+    }
+
+    @Override
+    public AbstractAttribute GetBlockInfo()
+    {
+        final AbstractAttribute result = super.GetBlockInfo();
+        if (upgraded)
+        {
+            result.mainText.SetText("X+" + result.mainText.text);
+        }
+
+        return result;
+    }
+
+    @Override
+    public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
+    {
+        final int stacks = GameUtilities.UseXCostEnergy(this);
+        if (stacks > 0)
+        {
+            GameActions.Bottom.GainPlatedArmor(stacks);
+            GameActions.Bottom.StackPower(new GazelDwargonPower(p, stacks * magicNumber));
+        }
+
+        if (upgraded)
+        {
+            GameActions.Bottom.GainBlock(stacks + block);
+        }
+    }
+}

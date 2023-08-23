@@ -1,0 +1,139 @@
+
+{
+	"Affinity":
+	{
+		"DESCRIPTION": "#yAffinity can be of any color NL between [A_Red], [A_Green], [A_Blue], [A_Light], [A_Dark]. NL [A_Gen] refers either to generic #yAffinity, or your current best #yAffinity.",
+		"NAMES": ["affinity", "affinities"],
+		"PROPER_NAME": "Affinity"
+	},
+	"Affinity Seal":
+	{
+		"DESCRIPTION": "#ySealing a card transfers all its [A_Gen] to your [A_Gen] pool. Once per turn, #pRight-Click a card to manually #ySeal and reshuffle it.",
+		"NAMES": ["seal", "seals", "sealing", "sealed", "unseal", "unsealed"],
+		"PROPER_NAME": "Sealed Affinity"
+	},
+	"Affinity Power":
+	{
+		"DESCRIPTION": "[A_Red] -> [F], [A_Green] -> [A], [A_Blue] -> [I], NL [A_Light] -> [B], [A_Dark] -> [C]",
+		"NAMES": ["[a_gen] power", "[a_gen] powers", "affinity power", "affinity powers"],
+		"PROPER_NAME": "Affinity Power"
+	},
+	"Affinity Token":
+	{
+		"DESCRIPTION": "Card which increases your #yAffinity for the rest of combat.",
+		"NAMES": ["[a_gen] token", "[a_gen] tokens", "affinity token", "affinity tokens"],
+		"PROPER_NAME": "Affinity Token"
+	},
+	"Multicolor":
+	{
+		"DESCRIPTION": "Counts as an #yAffinity of each color.",
+		"NAMES": ["multicolor"],
+		"PROPER_NAME": "Multicolor"
+	},
+	
+	"Force":
+	{
+		"DESCRIPTION": "When you gain [Force], also gain [Strength].",
+		"NAMES": ["force"],
+		"PROPER_NAME": "Force"
+	},
+	"Agility":
+	{
+		"DESCRIPTION": "When you gain [Agility], also gain [Dexterity].",
+		"NAMES": ["agility"],
+		"PROPER_NAME": "Agility"
+	},
+	"Blessing":
+	{
+		"DESCRIPTION": "When you gain [Blessing], also gain [Vitality].",
+		"NAMES": ["blessing"],
+		"PROPER_NAME": "Blessing"
+	},
+	"Intellect":
+	{
+		"DESCRIPTION": "When you gain [Intellect], also gain [Focus].",
+		"NAMES": ["intellect"],
+		"PROPER_NAME": "Intellect"
+	},
+	"Corruption":
+	{
+		"DESCRIPTION": "When you gain [Corruption], also gain [Invocation].",
+		"NAMES": ["corruption"],
+		"PROPER_NAME": "Corruption"
+	},
+	
+	"Agility Stance":
+	{
+		"DESCRIPTION": "<LOAD FROM STANCE>",
+		"NAMES": ["[agility] stance", "agility stance"],
+		"PROPER_NAME": "Agility Stance"
+	},
+	"Force Stance":
+	{
+		"DESCRIPTION": "<LOAD FROM STANCE>",
+		"NAMES": ["[force] stance", "force stance"],
+		"PROPER_NAME": "Force Stance"
+	},
+	"Intellect Stance":
+	{
+		"DESCRIPTION": "<LOAD FROM STANCE>",
+		"NAMES": ["[intellect] stance", "intellect stance"],
+		"PROPER_NAME": "Intellect Stance"
+	},
+	"Corruption Stance":
+	{
+		"DESCRIPTION": "<LOAD FROM STANCE>",
+		"NAMES": ["[corruption] stance", "demon stance"],
+		"PROPER_NAME": "Demon Stance"
+	},
+	
+	"Green Scaling":
+	{
+		"DESCRIPTION": "",
+		"NAMES": ["[a_green] scaling"],
+		"PROPER_NAME": "[A_Green] Scaling"
+	},
+	"Red Scaling":
+	{
+		"DESCRIPTION": "",
+		"NAMES": ["[a_red] scaling"],
+		"PROPER_NAME": "[A_Red] Scaling"
+	},
+	"Blue Scaling":
+	{
+		"DESCRIPTION": "",
+		"NAMES": ["[a_blue] scaling"],
+		"PROPER_NAME": "[A_Blue] Scaling"
+	},
+	"Light Scaling":
+	{
+		"DESCRIPTION": "",
+		"NAMES": ["[a_light] scaling"],
+		"PROPER_NAME": "[A_Light] Scaling"
+	},
+	"Dark Scaling":
+	{
+		"DESCRIPTION": "",
+		"NAMES": ["[a_dark] scaling"],
+		"PROPER_NAME": "[A_Dark] Scaling"
+	},
+	"Multicolor Scaling":
+	{
+		"DESCRIPTION": "",
+		"NAMES": ["[a_star] scaling"],
+		"PROPER_NAME": "[A_Star] Scaling"
+	},
+	
+	"Boost":
+	{
+		"DESCRIPTION": "Gain the specified [A_Gen], and reduce the cost of upgrading its [A_Gen] power by #b1 until end of turn (does not stack).",
+		"NAMES": ["boost"],
+		"PROPER_NAME": "Boost"
+	},
+	"Enchanted Armor":
+	{
+		"DESCRIPTION": "For every point of [Enchanted Armor], take #b10% less #yAttack damage (max #b50%^) and convert #b1 [Block] to [THP] at the start of each turn.",
+		"NAMES": ["enchanted armor", "ench. armor"],
+		"PROPER_NAME": "Enchanted Armor"
+	}
+}

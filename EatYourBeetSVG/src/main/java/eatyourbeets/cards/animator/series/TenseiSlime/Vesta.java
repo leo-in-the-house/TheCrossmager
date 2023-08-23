@@ -1,0 +1,104 @@
+package eatyourbeets.cards.animator.series.TenseiSlime;
+
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
+import eatyourbeets.cards.animator.special.Vesta_Elixir;
+import eatyourbeets.cards.base.*;
+import eatyourbeets.cards.effects.VestaElixirEffects.VestaElixirEffect;
+import eatyourbeets.cards.effects.VestaElixirEffects.VestaElixirEffect_CompleteFaster;
+import eatyourbeets.cards.effects.VestaElixirEffects.VestaElixirEffects;
+import eatyourbeets.powers.AnimatorPower;
+import eatyourbeets.utilities.GameActions;
+
+import java.util.ArrayList;
+
+public class Vesta extends AnimatorCard
+{
+    public static final EYBCardData DATA = Register(Vesta.class)
+            .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None)
+            .SetSeries(CardSeries.TenseiSlime)
+            .PostInitialize(data -> data.AddPreview(new Vesta_Elixir(), false));
+
+    public Vesta()
+    {
+        super(DATA);
+
+        Initialize(0, 0, 2, 3);
+        SetUpgrade(0, 0, 1, 0);
+
+        SetAffinity_Blue(1);
+
+        SetAffinityRequirement(Affinity.Star, 1);
+        SetExhaust(true);
+    }
+
+    @Override
+    public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
+    {
+        GameActions.Bottom.GainAffinity(Affinity.Blue, magicNumber, false);
+        GameActions.Bottom.GainInspiration(magicNumber);
+
+        //TODO: This could all be done in VestaPower
+        VestaElixirEffects.BeginCreateElixir((Vesta) this.makeStatEquivalentCopy(), CheckSpecialCondition(true));
+    }
+
+    public void ResearchElixir(Vesta_Elixir elixir)
+    {
+        int timer = secondaryValue;
+        final ArrayList<VestaElixirEffect> effects = new ArrayList<>();
+        for (VestaElixirEffect effect : elixir.effects)
+        {
+            if (effect instanceof VestaElixirEffect_CompleteFaster)
+            {
+                timer -= 1;
+            }
+            else
+            {
+                effects.add(effect);
+            }
+        }
+
+        elixir.ApplyEffects(effects);
+        GameActions.Bottom.StackPower(new VestaPower(player, elixir, timer));
+    }
+
+    public static class VestaPower extends AnimatorPower
+    {
+        private static int counter = 0;
+        private final Vesta_Elixir elixir;
+
+        public VestaPower(AbstractCreature owner, Vesta_Elixir elixir, int amount)
+        {
+            super(owner, Vesta.DATA);
+
+            this.ID += (counter += 1);
+            this.elixir = elixir;
+
+            Initialize(amount, PowerType.BUFF, true);
+        }
+
+        @Override
+        public void atStartOfTurnPostDraw()
+        {
+            super.atStartOfTurnPostDraw();
+
+            ReducePower(1);
+        }
+
+        @Override
+        public void onRemove()
+        {
+            super.onRemove();
+
+            GameActions.Bottom.MakeCardInHand(elixir);
+        }
+
+        @Override
+        public AbstractPower makeCopy()
+        {
+            return new VestaPower(owner, elixir, amount);
+        }
+    }
+}
