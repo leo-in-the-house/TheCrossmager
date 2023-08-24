@@ -36,7 +36,7 @@ public class Magilou_Bienfu extends AnimatorCard
     @Override
     public void triggerWhenDrawn()
     {
-        GameActions.Bottom.GainIntellect(1, true);
+        GameActions.Bottom.GainBlue(1, true);
     }
 
     @Override

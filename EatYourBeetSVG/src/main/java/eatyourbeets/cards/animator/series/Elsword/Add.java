@@ -15,7 +15,7 @@ public class Add extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Add.class)
             .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None)
-            .SetMaxCopies(2)
+            
             .SetSeriesFromClassPackage()
             .ObtainableAsReward((data, deck) -> deck.size() >= (14 + (10 * data.GetTotalCopies(deck))))
             .PostInitialize(data -> data.AddPreviews(OrbCore.GetAllCores(), false));
@@ -38,7 +38,7 @@ public class Add extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
-        GameActions.Bottom.GainCorruption(secondaryValue);
+        GameActions.Bottom.GainDark(secondaryValue);
         GameActions.Bottom.GainEnergyNextTurn(1);
         GameActions.Bottom.GainInspiration(magicNumber);
     }

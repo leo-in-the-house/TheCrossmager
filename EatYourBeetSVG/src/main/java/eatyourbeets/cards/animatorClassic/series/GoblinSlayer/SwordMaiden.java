@@ -40,9 +40,9 @@ public class SwordMaiden extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
-        GameActions.Bottom.GainForce(1, true);
-        GameActions.Bottom.GainAgility(1, true);
-        GameActions.Bottom.GainIntellect(1, true);
+        GameActions.Bottom.GainRed(1, true);
+        GameActions.Bottom.GainGreen(1, true);
+        GameActions.Bottom.GainBlue(1, true);
         GameActions.Bottom.GainTemporaryHP(magicNumber);
         GameActions.Bottom.Callback(() ->
         {

@@ -31,7 +31,7 @@ public class Melzalgald_R extends MelzalgaldAlt
 
         if (CheckSpecialCondition(true))
         {
-            GameActions.Bottom.GainForce(magicNumber);
+            GameActions.Bottom.GainRed(magicNumber);
         }
     }
 }

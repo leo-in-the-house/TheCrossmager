@@ -48,7 +48,7 @@ public class Soujiro extends AnimatorClassicCard
         SetUpgrade(2, 0, 1);
         SetScaling(0,1, 1);
 
-        SetMartialArtist();
+        
 
     }
 

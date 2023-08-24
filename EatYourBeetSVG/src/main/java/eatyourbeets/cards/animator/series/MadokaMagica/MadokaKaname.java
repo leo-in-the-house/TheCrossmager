@@ -15,7 +15,7 @@ public class MadokaKaname extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(MadokaKaname.class)
             .SetSkill(2, CardRarity.RARE, EYBCardTarget.None)
-            .SetMaxCopies(1)
+            
             .SetSeriesFromClassPackage()
             .PostInitialize(data ->
             {

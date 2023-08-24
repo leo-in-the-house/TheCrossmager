@@ -18,7 +18,7 @@ public class Special_VampireBlood extends AnimatorCard
     public static final EYBCardData DATA = Register(Special_VampireBlood.class)
             .SetPower(1, CardRarity.SPECIAL)
             .SetColor(CardColor.COLORLESS)
-            .SetMaxCopies(1);
+            ;
     public static final int RECOVER_AMOUNT = 2;
     public static final int HP_COST = 7;
 
@@ -43,7 +43,7 @@ public class Special_VampireBlood extends AnimatorCard
     {
         GameActions.Bottom.VFX(new OfferingEffect(), 0f);
         GameActions.Bottom.LoseHP(magicNumber, AttackEffects.DARK);
-        GameActions.Bottom.GainCorruption(1, true);
+        GameActions.Bottom.GainDark(1, true);
         GameActions.Bottom.StackPower(new Special_VampireBloodPower(p));
     }
 

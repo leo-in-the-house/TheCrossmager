@@ -11,7 +11,7 @@ public class Verdia extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Verdia.class)
             .SetSkill(3, CardRarity.COMMON)
-            .SetMaxCopies(2)
+            
             .SetSeriesFromClassPackage();
 
     public Verdia()

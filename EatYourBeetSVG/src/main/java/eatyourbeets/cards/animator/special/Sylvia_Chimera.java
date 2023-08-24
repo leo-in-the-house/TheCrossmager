@@ -19,7 +19,7 @@ public class Sylvia_Chimera extends AnimatorCard
     public static final EYBCardData DATA = Register(Sylvia_Chimera.class)
             .SetAttack(2, CardRarity.SPECIAL)
             .SetSeries(Sylvia.DATA.Series)
-            .SetMaxCopies(1);
+            ;
     public static final int SEAL_AMOUNT = 6;
 
     public Sylvia_Chimera()

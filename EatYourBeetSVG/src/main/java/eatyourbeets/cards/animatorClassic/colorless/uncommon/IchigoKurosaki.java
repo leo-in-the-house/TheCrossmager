@@ -22,7 +22,7 @@ public class IchigoKurosaki extends AnimatorClassicCard
         Initialize(0, 0, 0, 5);
 
         SetExhaust(true);
-        SetMartialArtist();
+        
     }
 
     @Override
@@ -42,8 +42,8 @@ public class IchigoKurosaki extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
-        GameActions.Bottom.GainForce(1, true);
-        GameActions.Bottom.GainAgility(1, true);
+        GameActions.Bottom.GainRed(1, true);
+        GameActions.Bottom.GainGreen(1, true);
 
         if (upgraded)
         {

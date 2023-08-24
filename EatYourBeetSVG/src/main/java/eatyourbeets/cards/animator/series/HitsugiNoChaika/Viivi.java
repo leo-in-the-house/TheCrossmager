@@ -65,7 +65,7 @@ public class Viivi extends AnimatorCard
 
         if (info.TryActivateStarter())
         {
-            GameActions.Bottom.GainAgility(1);
+            GameActions.Bottom.GainGreen(1);
             GameActions.Bottom.Draw(1);
         }
     }

@@ -28,7 +28,7 @@ public class SeriousSaitama extends AnimatorClassicCard_UltraRare
         int amount = GameUtilities.UseXCostEnergy(this) + magicNumber;
         if (amount > 0)
         {
-            GameActions.Bottom.GainForce(amount);
+            GameActions.Bottom.GainRed(amount);
         }
 
         for (AbstractMonster enemy : GameUtilities.GetEnemies(true))

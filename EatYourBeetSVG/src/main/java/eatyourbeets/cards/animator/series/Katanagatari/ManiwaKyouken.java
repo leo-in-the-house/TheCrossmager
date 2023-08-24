@@ -11,7 +11,7 @@ public class ManiwaKyouken extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(ManiwaKyouken.class)
             .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None)
-            .SetMaxCopies(1)
+            
             .SetSeries(CardSeries.Katanagatari);
 
     public ManiwaKyouken()

@@ -33,8 +33,8 @@ public class BiyorigoPower extends AnimatorClassicPower
         if (energy > 0)
         {
             EnergyPanel.useEnergy(energy);
-            GameActions.Bottom.GainForce(energy * 2);
-            GameActions.Bottom.GainAgility(energy * 2);
+            GameActions.Bottom.GainRed(energy * 2);
+            GameActions.Bottom.GainGreen(energy * 2);
             flash();
         }
     }

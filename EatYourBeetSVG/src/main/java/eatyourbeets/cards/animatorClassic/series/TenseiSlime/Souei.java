@@ -25,7 +25,7 @@ public class Souei extends AnimatorClassicCard
         SetUpgrade(0, 0, 2);
 
         
-        SetMartialArtist();
+        
     }
 
     @Override

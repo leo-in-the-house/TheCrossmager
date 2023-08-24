@@ -52,8 +52,8 @@ public class Rider extends AnimatorCard
 
         if (CheckSpecialCondition(true))
         {
-            GameActions.Bottom.GainAgility(1, true);
-            GameActions.Bottom.GainIntellect(1, true);
+            GameActions.Bottom.GainGreen(1, true);
+            GameActions.Bottom.GainBlue(1, true);
         }
     }
 

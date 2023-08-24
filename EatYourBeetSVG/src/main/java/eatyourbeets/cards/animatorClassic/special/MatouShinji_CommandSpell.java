@@ -22,7 +22,7 @@ public class MatouShinji_CommandSpell extends AnimatorClassicCard
 
         SetPurge(true);
         this.series = CardSeries.Fate;
-        SetSpellcaster();
+        
     }
 
     @Override

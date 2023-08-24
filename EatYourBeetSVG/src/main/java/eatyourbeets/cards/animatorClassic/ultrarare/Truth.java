@@ -47,9 +47,9 @@ public class Truth extends AnimatorClassicCard_UltraRare
     {
         int amount = 1;
 
-        GameActions.Bottom.GainForce(magicNumber);
-        GameActions.Bottom.GainAgility(magicNumber);
-        GameActions.Bottom.GainIntellect(magicNumber);
+        GameActions.Bottom.GainRed(magicNumber);
+        GameActions.Bottom.GainGreen(magicNumber);
+        GameActions.Bottom.GainBlue(magicNumber);
         GameActions.Bottom.GainEnergy(magicNumber);
 
         int count = 0;

@@ -74,7 +74,7 @@ public class ChaikaTrabant extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
-        GameActions.Bottom.GainIntellect(1);
+        GameActions.Bottom.GainBlue(1);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.FIRE)
         .SetDamageEffect(c -> GameEffects.List.Add(VFX.SmallLaser(player.hb, c.hb, Color.WHITE)).duration * 0.3f);
     }

@@ -18,7 +18,7 @@ public class SilverFang extends AnimatorClassicCard
         SetUpgrade(0, 3, 0);
 
         
-        SetMartialArtist();
+        
     }
 
     @Override

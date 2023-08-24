@@ -28,7 +28,7 @@ public class YuiTsuruno extends AnimatorClassicCard
         SetUpgrade(3, 0);
 
 
-        SetSpellcaster();
+        
     }
 
     @Override

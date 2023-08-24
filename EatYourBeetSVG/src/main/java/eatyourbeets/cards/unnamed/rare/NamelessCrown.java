@@ -16,7 +16,7 @@ import eatyourbeets.utilities.GameActions;
 public class NamelessCrown extends UnnamedCard
 {
     public static final EYBCardData DATA = Register(NamelessCrown.class)
-            .SetMaxCopies(1)
+
             .SetSkill(3, CardRarity.RARE, EYBCardTarget.None);
 
     public NamelessCrown()

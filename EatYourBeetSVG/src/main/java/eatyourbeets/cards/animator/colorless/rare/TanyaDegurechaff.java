@@ -13,7 +13,7 @@ public class TanyaDegurechaff extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(TanyaDegurechaff.class)
             .SetAttack(1, CardRarity.RARE, EYBAttackType.Ranged)
-            .SetMaxCopies(1)
+            
             .SetColor(CardColor.COLORLESS)
             .SetSeries(CardSeries.YoujoSenki)
             .PostInitialize(data -> data.AddPreview(new TanyaDegurechaff_Type95(), false));

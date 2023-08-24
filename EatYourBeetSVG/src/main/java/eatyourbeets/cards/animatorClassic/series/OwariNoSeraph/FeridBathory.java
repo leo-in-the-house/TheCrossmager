@@ -10,7 +10,7 @@ import eatyourbeets.utilities.GameActions;
 
 public class FeridBathory extends AnimatorClassicCard
 {
-    public static final EYBCardData DATA = Register(FeridBathory.class).SetSeriesFromClassPackage().SetPower(2, CardRarity.RARE).SetMaxCopies(2);
+    public static final EYBCardData DATA = Register(FeridBathory.class).SetSeriesFromClassPackage().SetPower(2, CardRarity.RARE);
 
     public FeridBathory()
     {

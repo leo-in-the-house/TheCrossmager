@@ -12,7 +12,7 @@ import eatyourbeets.utilities.GameActions;
 public class BloodBarrier extends UnnamedCard
 {
     public static final EYBCardData DATA = Register(BloodBarrier.class)
-            .SetMaxCopies(2)
+
             .SetPower(0, CardRarity.UNCOMMON);
 
     public BloodBarrier()

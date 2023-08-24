@@ -32,8 +32,8 @@ public class CrowleyEusford extends AnimatorCard
         GameActions.Bottom.DealDamageToRandomEnemy(this, AttackEffects.SLASH_HEAVY)
         .AddCallback(() ->
         {
-            GameActions.Bottom.GainAgility(1, true);
-            GameActions.Bottom.GainForce(1, true);
+            GameActions.Bottom.GainGreen(1, true);
+            GameActions.Bottom.GainRed(1, true);
         });
 
         if (CheckSpecialCondition(true))

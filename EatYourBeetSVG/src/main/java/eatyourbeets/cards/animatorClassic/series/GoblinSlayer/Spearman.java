@@ -41,8 +41,8 @@ public class Spearman extends AnimatorClassicCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_VERTICAL);
-        GameActions.Bottom.GainAgility(magicNumber, true);
-        GameActions.Bottom.GainForce(magicNumber, true);
+        GameActions.Bottom.GainGreen(magicNumber, true);
+        GameActions.Bottom.GainRed(magicNumber, true);
         GameActions.Bottom.MakeCardInDrawPile(new Wound());
 
         if (choices.TryInitialize(this))

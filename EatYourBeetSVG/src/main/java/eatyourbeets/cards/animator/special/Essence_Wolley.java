@@ -13,7 +13,7 @@ public class Essence_Wolley extends AnimatorCard
     public static final EYBCardData DATA = Register(Essence_Wolley.class)
             .SetSkill(0, CardRarity.SPECIAL, EYBCardTarget.None)
             .SetColor(CardColor.COLORLESS)
-            .SetMaxCopies(1);
+            ;
 
     public Essence_Wolley()
     {

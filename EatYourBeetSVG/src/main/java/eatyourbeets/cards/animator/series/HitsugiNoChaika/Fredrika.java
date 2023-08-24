@@ -28,7 +28,7 @@ public class Fredrika extends AnimatorCard implements OnEndOfTurnLastSubscriber
 
     public static final EYBCardData DATA = Register(Fredrika.class)
             .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None)
-            .SetMaxCopies(1)
+            
             .SetSeriesFromClassPackage()
             .PostInitialize(data ->
             {
@@ -167,8 +167,8 @@ public class Fredrika extends AnimatorCard implements OnEndOfTurnLastSubscriber
                     .SetDamageEffect(enemy -> GameEffects.List.Add(VFX.Claw(enemy.hb, Color.WHITE, Color.VIOLET).FlipX(flipVfx ^= true).SetScale(1.4f)).duration);
                 }
 
-                GameActions.Bottom.GainForce(SPECIAL);
-                GameActions.Bottom.GainAgility(SPECIAL);
+                GameActions.Bottom.GainRed(SPECIAL);
+                GameActions.Bottom.GainGreen(SPECIAL);
                 GameActions.Bottom.GainMetallicize(SPECIAL);
                 break;
             }

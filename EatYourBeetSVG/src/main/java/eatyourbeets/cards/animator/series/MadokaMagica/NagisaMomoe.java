@@ -20,7 +20,7 @@ public class NagisaMomoe extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(NagisaMomoe.class)
             .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None)
-            .SetMaxCopies(2)
+            
             .SetSeriesFromClassPackage()
             .PostInitialize(data ->
             {

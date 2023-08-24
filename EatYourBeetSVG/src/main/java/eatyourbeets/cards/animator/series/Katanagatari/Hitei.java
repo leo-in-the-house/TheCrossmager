@@ -16,7 +16,7 @@ public class Hitei extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Hitei.class)
             .SetPower(1, CardRarity.UNCOMMON)
-            .SetMaxCopies(2)
+            
             .SetSeriesFromClassPackage()
             .ObtainableAsReward((data, deck) -> deck.size() > 15);
     public static final int POWER_ACTIVATION_COST = 4;

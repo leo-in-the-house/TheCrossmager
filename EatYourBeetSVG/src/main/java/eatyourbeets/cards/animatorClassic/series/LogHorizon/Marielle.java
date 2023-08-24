@@ -31,7 +31,7 @@ public class Marielle extends AnimatorClassicCard
         SetUpgrade(0, 0, 4);
 
         
-        SetSpellcaster();
+        
     }
 
     @Override

@@ -44,7 +44,7 @@ public class WizardHat extends AnimatorClassicRelic
         super.atBattleStart();
 
         SetEnabled(true);
-        GameActions.Bottom.GainIntellect(INTELLECT_AMOUNT);
+        GameActions.Bottom.GainBlue(INTELLECT_AMOUNT);
     }
 
     @Override

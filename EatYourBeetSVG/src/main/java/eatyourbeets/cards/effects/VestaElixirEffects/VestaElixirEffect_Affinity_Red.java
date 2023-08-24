@@ -21,6 +21,6 @@ public class VestaElixirEffect_Affinity_Red extends VestaElixirEffect
     @Override
     public void EnqueueAction(EYBCard elixir, AbstractPlayer player)
     {
-        GameActions.Bottom.GainForce(amount);
+        GameActions.Bottom.GainRed(amount);
     }
 }

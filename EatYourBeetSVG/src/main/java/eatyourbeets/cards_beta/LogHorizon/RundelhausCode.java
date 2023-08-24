@@ -42,7 +42,7 @@ public class RundelhausCode extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameActions.Bottom.DealDamage(this, m, AttackEffects.LIGHTNING);
-        GameActions.Bottom.GainIntellect(1);
+        GameActions.Bottom.GainBlue(1);
     }
 
     @Override

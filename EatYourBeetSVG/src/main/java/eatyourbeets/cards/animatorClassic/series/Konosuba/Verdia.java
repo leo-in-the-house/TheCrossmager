@@ -9,7 +9,7 @@ import eatyourbeets.utilities.GameActions;
 
 public class Verdia extends AnimatorClassicCard
 {
-    public static final EYBCardData DATA = Register(Verdia.class).SetSeriesFromClassPackage().SetSkill(3, CardRarity.COMMON).SetMaxCopies(3);
+    public static final EYBCardData DATA = Register(Verdia.class).SetSeriesFromClassPackage().SetSkill(3, CardRarity.COMMON);
 
     public Verdia()
     {

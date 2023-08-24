@@ -18,7 +18,7 @@ public class Transcend_Space extends UnnamedCard
 {
     public static final int MAX_AMOUNT = 30;
     public static final EYBCardData DATA = Register(Transcend_Space.class)
-            .SetMaxCopies(1)
+            
             .SetAttack(2, CardRarity.RARE, EYBAttackType.Elemental, EYBCardTarget.ALL);
 
     public Transcend_Space()

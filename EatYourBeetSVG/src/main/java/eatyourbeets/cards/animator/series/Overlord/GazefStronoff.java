@@ -11,7 +11,7 @@ public class GazefStronoff extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(GazefStronoff.class)
             .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None)
-            .SetMaxCopies(2)
+
             .SetSeriesFromClassPackage();
 
     public GazefStronoff()

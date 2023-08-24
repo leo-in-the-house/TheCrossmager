@@ -16,7 +16,7 @@ public class ElricAlphonse_Alt extends AnimatorCard
     public static final EYBCardData DATA = Register(ElricAlphonse_Alt.class)
             .SetPower(2, CardRarity.SPECIAL)
             .SetSeries(ElricAlphonse.DATA.Series)
-            .SetMaxCopies(1);
+            ;
 
     public ElricAlphonse_Alt()
     {

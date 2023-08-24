@@ -59,7 +59,7 @@ public class Gluttony extends AnimatorClassicCard
             .SetOrigin(CardSelection.Top);
 
             GameActions.Bottom.Heal(magicNumber);
-            GameActions.Bottom.GainForce(magicNumber);
+            GameActions.Bottom.GainRed(magicNumber);
         }
     }
 }

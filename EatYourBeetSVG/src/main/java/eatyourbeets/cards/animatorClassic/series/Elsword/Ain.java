@@ -27,7 +27,7 @@ public class Ain extends AnimatorClassicCard
         SetScaling(1, 0, 0);
 
 
-        SetSpellcaster();
+        
     }
 
     @Override
@@ -70,7 +70,7 @@ public class Ain extends AnimatorClassicCard
 
         if (info.IsSynergizing)
         {
-            GameActions.Bottom.GainIntellect(secondaryValue);
+            GameActions.Bottom.GainBlue(secondaryValue);
         }
     }
 }

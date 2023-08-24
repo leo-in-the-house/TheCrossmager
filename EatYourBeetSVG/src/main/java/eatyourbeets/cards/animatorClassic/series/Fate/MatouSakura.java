@@ -25,7 +25,7 @@ public class MatouSakura extends AnimatorClassicCard
         SetEthereal(true);
         SetExhaust(true);
 
-        SetSpellcaster();
+        
     }
 
     @Override

@@ -14,7 +14,7 @@ public class SakuyaIzayoi extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(SakuyaIzayoi.class)
             .SetSkill(X_COST, CardRarity.UNCOMMON, EYBCardTarget.None)
-            .SetMaxCopies(2)
+            
             .SetSeriesFromClassPackage()
             .PostInitialize(data ->
             {
@@ -57,7 +57,7 @@ public class SakuyaIzayoi extends AnimatorCard
 
         if (x > 0)
         {
-            GameActions.Bottom.GainAgility(x);
+            GameActions.Bottom.GainGreen(x);
             GameActions.Bottom.StackPower(new SakuyaIzayoiPower(p, x));
         }
     }

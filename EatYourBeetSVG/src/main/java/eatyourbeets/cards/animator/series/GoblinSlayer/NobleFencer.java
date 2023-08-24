@@ -16,7 +16,7 @@ public class NobleFencer extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(NobleFencer.class)
             .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None)
-            .SetMaxCopies(2)
+            
             .SetSeriesFromClassPackage();
 
     public NobleFencer()

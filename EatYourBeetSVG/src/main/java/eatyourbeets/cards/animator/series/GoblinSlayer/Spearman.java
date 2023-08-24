@@ -42,8 +42,8 @@ public class Spearman extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SPEAR).SetVFXColor(Color.LIGHT_GRAY).SetSoundPitch(0.75f, 0.85f);
-        GameActions.Bottom.GainAgility(1, true);
-        GameActions.Bottom.GainForce(1, true);
+        GameActions.Bottom.GainGreen(1, true);
+        GameActions.Bottom.GainRed(1, true);
         GameActions.Bottom.MakeCardInHand(new Status_Wound());
 
         if (CheckSpecialCondition(true))

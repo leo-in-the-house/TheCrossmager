@@ -24,7 +24,7 @@ public class Kuribayashi extends AnimatorClassicCard
         SetUpgrade(4, 0, 0);
         SetScaling(0, 1, 1);
 
-        SetMartialArtist();
+        
         
     }
 

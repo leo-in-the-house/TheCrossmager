@@ -51,8 +51,8 @@ public class CursedBlade extends AnimatorRelic
         super.ActivateBattleEffect();
 
         GameActions.Bottom.ApplyPower(new CursedBladePower(player, this));
-        GameActions.Bottom.GainAgility(BUFF_AMOUNT, false);
-        GameActions.Bottom.GainForce(BUFF_AMOUNT, false);
+        GameActions.Bottom.GainGreen(BUFF_AMOUNT, false);
+        GameActions.Bottom.GainRed(BUFF_AMOUNT, false);
         flash();
     }
 

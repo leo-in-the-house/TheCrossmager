@@ -17,7 +17,7 @@ public class EirinYagokoro extends AnimatorCard implements OnAddToDeckListener
 {
     public static final EYBCardData DATA = Register(EirinYagokoro.class)
             .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None)
-            .SetMaxCopies(2)
+            
             .SetColor(CardColor.COLORLESS)
             .SetSeries(CardSeries.TouhouProject);
 

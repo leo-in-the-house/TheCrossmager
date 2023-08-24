@@ -29,7 +29,7 @@ public class AcuraTooru extends AnimatorClassicCard
         SetUpgrade(0, 0, 0, 1);
         SetScaling(0, 1, 0);
 
-        SetMartialArtist();
+        
 
     }
 
@@ -45,7 +45,7 @@ public class AcuraTooru extends AnimatorClassicCard
         super.triggerOnManualDiscard();
 
         GameActions.Bottom.GainBlock(magicNumber);
-        GameActions.Bottom.GainAgility(1);
+        GameActions.Bottom.GainGreen(1);
     }
 
     @Override
@@ -58,7 +58,7 @@ public class AcuraTooru extends AnimatorClassicCard
         if (info.IsSynergizing)
         {
             GameActions.Bottom.GainBlock(magicNumber);
-            GameActions.Bottom.GainAgility(1);
+            GameActions.Bottom.GainGreen(1);
         }
     }
 }

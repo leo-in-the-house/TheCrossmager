@@ -11,7 +11,7 @@ public class Shiro extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Shiro.class)
             .SetSkill(1, CardRarity.RARE, EYBCardTarget.None)
-            .SetMaxCopies(1)
+            
             .SetSeriesFromClassPackage();
 
     public Shiro()
@@ -38,7 +38,7 @@ public class Shiro extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
-        GameActions.Bottom.GainIntellect(1, upgraded);
+        GameActions.Bottom.GainBlue(1, upgraded);
         GameActions.Bottom.Motivate(1);
 
         if (CheckSpecialCondition(true))

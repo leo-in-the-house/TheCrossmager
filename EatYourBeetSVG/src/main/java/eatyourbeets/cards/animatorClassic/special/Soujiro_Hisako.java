@@ -18,7 +18,7 @@ public class Soujiro_Hisako extends AnimatorClassicCard
 
         SetEthereal(true);
         SetEvokeOrbCount(1);
-        SetSpellcaster();
+        
         this.series = CardSeries.LogHorizon;
     }
 
@@ -36,7 +36,7 @@ public class Soujiro_Hisako extends AnimatorClassicCard
         {
             if (orbs.size() > 0)
             {
-                GameActions.Bottom.GainIntellect(1, true);
+                GameActions.Bottom.GainBlue(1, true);
             }
         });
     }

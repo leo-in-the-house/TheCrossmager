@@ -18,7 +18,7 @@ public class Ainz extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Ainz.class)
             .SetPower(7, CardRarity.RARE)
-            .SetMaxCopies(1)
+
             .SetSeriesFromClassPackage();
     public static final int CHANNEL_AMOUNT = 3;
     public static final int POWER_ENERGY_COST = 3;

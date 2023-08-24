@@ -14,7 +14,7 @@ import eatyourbeets.utilities.GameActions;
 
 public class Magilou extends AnimatorClassicCard implements OnCardResetSubscriber
 {
-    public static final EYBCardData DATA = Register(Magilou.class).SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None).SetColor(CardColor.COLORLESS).SetMaxCopies(1).SetSeries(CardSeries.TalesOfBerseria);
+    public static final EYBCardData DATA = Register(Magilou.class).SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None).SetColor(CardColor.COLORLESS);
     static
     {
         DATA.AddPreview(new Magilou_Bienfu(), false);
@@ -28,7 +28,7 @@ public class Magilou extends AnimatorClassicCard implements OnCardResetSubscribe
         SetUpgrade(0, 0, 1);
 
         SetExhaust(true);
-        SetSpellcaster();
+        
     }
 
     @Override

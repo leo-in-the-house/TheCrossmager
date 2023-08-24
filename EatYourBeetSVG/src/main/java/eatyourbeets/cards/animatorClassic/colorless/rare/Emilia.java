@@ -24,7 +24,7 @@ public class Emilia extends AnimatorClassicCard implements OnStartOfTurnPostDraw
 
         SetEvokeOrbCount(magicNumber);
         SetExhaust(true);
-        SetSpellcaster();
+        
     }
 
     @Override

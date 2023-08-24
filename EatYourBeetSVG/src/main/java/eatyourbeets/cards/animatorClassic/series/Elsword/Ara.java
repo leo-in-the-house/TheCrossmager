@@ -24,7 +24,7 @@ public class Ara extends AnimatorClassicCard
         SetScaling(0, 1, 0);
 
         
-        SetMartialArtist();
+        
     }
 
     @Override

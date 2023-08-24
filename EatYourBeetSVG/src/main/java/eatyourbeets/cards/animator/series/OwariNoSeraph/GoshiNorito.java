@@ -19,7 +19,7 @@ public class GoshiNorito extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(GoshiNorito.class)
             .SetSkill(2, CardRarity.UNCOMMON, EYBCardTarget.None)
-            .SetMaxCopies(2)
+            
             .SetSeriesFromClassPackage();
 
     public GoshiNorito()

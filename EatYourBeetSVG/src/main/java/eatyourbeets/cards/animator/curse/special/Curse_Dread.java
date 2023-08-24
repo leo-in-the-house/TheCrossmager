@@ -55,7 +55,7 @@ public class Curse_Dread extends AnimatorCard implements OnStartOfTurnPostDrawSu
     {
         if (CombatStats.TryActivateLimited(cardID))
         {
-            GameActions.Bottom.GainCorruption(secondaryValue);
+            GameActions.Bottom.GainDark(secondaryValue);
             GameActions.Bottom.Callback(() -> player.increaseMaxHp(1, true));
         }
     }

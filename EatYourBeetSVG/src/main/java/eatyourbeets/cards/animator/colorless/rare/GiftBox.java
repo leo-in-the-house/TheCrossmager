@@ -20,7 +20,7 @@ public class GiftBox extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(GiftBox.class)
             .SetSkill(1, CardRarity.RARE, EYBCardTarget.None)
-            .SetMaxCopies(-1)
+            
             .SetColor(CardColor.COLORLESS);
 
     public GiftBox()

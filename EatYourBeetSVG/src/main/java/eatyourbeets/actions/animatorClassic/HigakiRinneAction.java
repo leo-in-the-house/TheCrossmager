@@ -155,7 +155,7 @@ public class HigakiRinneAction extends EYBAction
         }
         else if (tryActivate(8)) // 40
         {
-            GameActions.Bottom.GainIntellect(1);
+            GameActions.Bottom.GainBlue(1);
         }
         else if (tryActivate(6)) // 46
         {
@@ -168,11 +168,11 @@ public class HigakiRinneAction extends EYBAction
         }
         else if (tryActivate(6)) // 58
         {
-            GameActions.Bottom.GainAgility(1);
+            GameActions.Bottom.GainGreen(1);
         }
         else if (tryActivate(6)) // 64
         {
-            GameActions.Bottom.GainForce(1);
+            GameActions.Bottom.GainRed(1);
         }
         else if (tryActivate(4)) // 68
         {

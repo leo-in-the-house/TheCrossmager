@@ -50,7 +50,7 @@ public class Demiurge extends AnimatorCard
     {
         GameActions.Bottom.DiscardFromHand(name, 1, false);
         GameActions.Bottom.GainEnergy(1);
-        GameActions.Bottom.GainCorruption(1);
+        GameActions.Bottom.GainDark(1);
         GameActions.Bottom.ModifyAllInstances(uuid)
         .AddCallback(c -> c.misc += magicNumber);
     }

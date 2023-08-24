@@ -13,7 +13,7 @@ public class Rumia extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Rumia.class)
             .SetSkill(1, CardRarity.COMMON, EYBCardTarget.None)
-            .SetMaxCopies(2)
+            
             .SetSeriesFromClassPackage()
             .PostInitialize(data -> data.AddPreview(AffinityToken.GetCard(Affinity.Dark), true));
 

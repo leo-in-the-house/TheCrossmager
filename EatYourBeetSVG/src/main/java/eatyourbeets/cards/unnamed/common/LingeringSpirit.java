@@ -15,7 +15,7 @@ public class LingeringSpirit extends UnnamedCard
     public static final int POWER_COST = 2;
     public static final int HEAL_AMOUNT = 4;
     public static final EYBCardData DATA = Register(LingeringSpirit.class)
-            .SetMaxCopies(1)
+            
             .SetSkill(2, CardRarity.COMMON, EYBCardTarget.None);
 
     public LingeringSpirit()

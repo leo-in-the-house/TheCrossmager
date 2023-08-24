@@ -30,7 +30,7 @@ public class UneriGinkaku extends AnimatorClassicCard
 
         SetEthereal(true);
 
-        SetMartialArtist();
+        
     }
 
     @Override

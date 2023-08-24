@@ -16,7 +16,7 @@ public class Kyubey extends AnimatorCard implements OnAddToDeckListener
 {
     public static final EYBCardData DATA = Register(Kyubey.class)
             .SetSkill(1, CardRarity.RARE, EYBCardTarget.None)
-            .SetMaxCopies(1)
+            
             .SetSeriesFromClassPackage();
 
     public Kyubey()

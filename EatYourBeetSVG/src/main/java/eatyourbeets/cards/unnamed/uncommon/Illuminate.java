@@ -11,7 +11,7 @@ import eatyourbeets.utilities.GameActions;
 public class Illuminate extends UnnamedCard
 {
     public static final EYBCardData DATA = Register(Illuminate.class)
-            .SetMaxCopies(2)
+            
             .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None);
 
     public Illuminate()

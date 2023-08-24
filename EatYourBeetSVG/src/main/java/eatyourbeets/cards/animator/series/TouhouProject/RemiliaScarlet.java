@@ -78,19 +78,19 @@ public class RemiliaScarlet extends AnimatorCard
 
             if (AgilityStance.IsActive())
             {
-                GameActions.Bottom.GainAgility(1, true);
+                GameActions.Bottom.GainGreen(1, true);
             }
             else if (ForceStance.IsActive())
             {
-                GameActions.Bottom.GainForce(1, true);
+                GameActions.Bottom.GainRed(1, true);
             }
             else if (IntellectStance.IsActive())
             {
-                GameActions.Bottom.GainIntellect(1, true);
+                GameActions.Bottom.GainBlue(1, true);
             }
             else if (CorruptionStance.IsActive())
             {
-                GameActions.Bottom.GainCorruption(1, true);
+                GameActions.Bottom.GainDark(1, true);
             }
             else
             {

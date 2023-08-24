@@ -21,7 +21,7 @@ public class Eve extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Eve.class)
             .SetPower(3, CardRarity.RARE)
-            .SetMaxCopies(1)
+            
             .SetSeriesFromClassPackage()
             .PostInitialize(data -> data.AddPreview(AffinityToken.GetCard(Affinity.General), false));
 

@@ -10,7 +10,7 @@ import eatyourbeets.utilities.GameActions;
 
 public class PinaCoLada extends AnimatorClassicCard
 {
-    public static final EYBCardData DATA = Register(PinaCoLada.class).SetSeriesFromClassPackage().SetPower(2, CardRarity.RARE).SetMaxCopies(2);
+    public static final EYBCardData DATA = Register(PinaCoLada.class).SetSeriesFromClassPackage().SetPower(2, CardRarity.RARE);
 
     public PinaCoLada()
     {

@@ -15,7 +15,7 @@ public class AcuraTooru_Dragoon extends AnimatorCard
     public static final EYBCardData DATA = Register(AcuraTooru_Dragoon.class)
             .SetAttack(1, CardRarity.SPECIAL)
             .SetSeries(AcuraTooru.DATA.Series)
-            .SetMaxCopies(1);
+            ;
 
     public AcuraTooru_Dragoon()
     {
@@ -34,7 +34,7 @@ public class AcuraTooru_Dragoon extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_DIAGONAL);
-        GameActions.Bottom.GainAgility(1, true);
+        GameActions.Bottom.GainGreen(1, true);
         GameActions.Bottom.PlayFromPile(name, 1, m, p.drawPile).SetExhaust(true)
         .SetFilter(c -> c.hasTag(CardTags.STRIKE) || c.hasTag(CardTags.STARTER_STRIKE))
         .SetOptions(CardSelection.Top, false);

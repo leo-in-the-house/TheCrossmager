@@ -11,7 +11,7 @@ import eatyourbeets.utilities.GameUtilities;
 public class Dishearten extends UnnamedCard
 {
     public static final EYBCardData DATA = Register(Dishearten.class)
-            .SetMaxCopies(2)
+            
             .SetSkill(2, CardRarity.COMMON);
 
     public Dishearten()

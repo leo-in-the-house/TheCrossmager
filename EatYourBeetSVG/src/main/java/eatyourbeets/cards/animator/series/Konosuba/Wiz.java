@@ -22,7 +22,7 @@ public class Wiz extends AnimatorCard
     public static final int CARD_CHOICE = 5;
     public static final EYBCardData DATA = Register(Wiz.class)
             .SetSkill(1, CardRarity.RARE, EYBCardTarget.None)
-            .SetMaxCopies(1)
+            
             .SetSeriesFromClassPackage()
             .PostInitialize(data -> data.AddPreview(GetClassCard(Apparition.ID, false), false));
 

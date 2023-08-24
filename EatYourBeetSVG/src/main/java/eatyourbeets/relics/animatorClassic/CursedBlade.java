@@ -27,8 +27,8 @@ public class CursedBlade extends AnimatorClassicRelic
     {
         super.atBattleStart();
 
-        GameActions.Bottom.GainForce(BUFF_AMOUNT);
-        GameActions.Bottom.GainAgility(BUFF_AMOUNT);
+        GameActions.Bottom.GainRed(BUFF_AMOUNT);
+        GameActions.Bottom.GainGreen(BUFF_AMOUNT);
         flash();
     }
 

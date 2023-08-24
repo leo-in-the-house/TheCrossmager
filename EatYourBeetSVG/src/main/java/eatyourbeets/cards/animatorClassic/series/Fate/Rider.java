@@ -57,8 +57,8 @@ public class Rider extends AnimatorClassicCard
             }
             if (tagCache.contains(MARTIAL_ARTIST) && tagCache.contains(SPELLCASTER))
             {
-                GameActions.Bottom.GainAgility(1);
-                GameActions.Bottom.GainIntellect(1);
+                GameActions.Bottom.GainGreen(1);
+                GameActions.Bottom.GainBlue(1);
             }
         });
     }

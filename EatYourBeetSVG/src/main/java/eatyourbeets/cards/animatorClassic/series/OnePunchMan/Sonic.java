@@ -29,14 +29,14 @@ public class Sonic extends AnimatorClassicCard
 
         SetExhaust(true);
         
-        SetMartialArtist();
+        
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameActions.Bottom.GainBlur(magicNumber);
-        GameActions.Bottom.GainAgility(secondaryValue);
+        GameActions.Bottom.GainGreen(secondaryValue);
 
         if (info.IsSynergizing)
         {

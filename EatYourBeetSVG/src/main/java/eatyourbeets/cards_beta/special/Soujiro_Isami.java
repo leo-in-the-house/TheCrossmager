@@ -32,7 +32,7 @@ public class Soujiro_Isami extends AnimatorCard
 
         if (info.TryActivateStarter())
         {
-            GameActions.Bottom.GainAgility(1, true);
+            GameActions.Bottom.GainGreen(1, true);
         }
     }
 }

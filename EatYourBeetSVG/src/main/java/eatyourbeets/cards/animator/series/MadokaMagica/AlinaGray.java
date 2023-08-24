@@ -19,7 +19,7 @@ public class AlinaGray extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(AlinaGray.class)
             .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.ALL)
-            .SetMaxCopies(2)
+            
             .SetSeriesFromClassPackage();
 
     public AlinaGray()

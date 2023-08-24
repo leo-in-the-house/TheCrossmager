@@ -22,7 +22,7 @@ public class LeleiLaLalena extends AnimatorClassicCard
 
         SetEvokeOrbCount(1);
 
-        SetSpellcaster();
+        
     }
 
     @Override

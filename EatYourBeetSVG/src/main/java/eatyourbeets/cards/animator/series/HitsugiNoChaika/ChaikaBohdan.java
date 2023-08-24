@@ -43,7 +43,7 @@ public class ChaikaBohdan extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_HORIZONTAL);
-        GameActions.Bottom.GainAgility(1, upgraded);
+        GameActions.Bottom.GainGreen(1, upgraded);
     }
 
     @Override

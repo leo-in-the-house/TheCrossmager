@@ -17,7 +17,7 @@ public class EmirEins extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(EmirEins.class)
             .SetSkill(0, CardRarity.UNCOMMON, EYBCardTarget.None)
-            .SetMaxCopies(2)
+            
             .SetSeriesFromClassPackage()
             .PostInitialize(data -> data.AddPreview(AffinityToken.GetCard(Affinity.General), false));
 

@@ -3,7 +3,6 @@ package eatyourbeets.cards.effects.NanamiEffects;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.animator.series.Katanagatari.Nanami;
 import eatyourbeets.cards.base.EYBCard;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
@@ -21,7 +20,7 @@ public class NanamiEffect_Defend_Buff extends NanamiEffect
             GameUtilities.RemoveDamagePowers();
         }
 
-        GameActions.Bottom.GainForce(GetForce(nanami));
+        GameActions.Bottom.GainRed(GetForce(nanami));
     }
 
     @Override

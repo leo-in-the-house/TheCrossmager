@@ -13,7 +13,7 @@ public class Evileye extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Evileye.class)
             .SetSkill(2, CardRarity.UNCOMMON, EYBCardTarget.None)
-            .SetMaxCopies(2)
+            
             .SetSeriesFromClassPackage();
     public static final int INTELLECT_AMOUNT = 4;
 

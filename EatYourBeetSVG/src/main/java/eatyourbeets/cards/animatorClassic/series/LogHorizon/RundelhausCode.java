@@ -32,14 +32,14 @@ public class RundelhausCode extends AnimatorClassicCard
 
         SetScaling(1, 0, 0);
 
-        SetSpellcaster();
+        
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameActions.Bottom.DealDamage(this, m, AttackEffects.LIGHTNING);
-        GameActions.Bottom.GainIntellect(1);
+        GameActions.Bottom.GainBlue(1);
     }
 
     @Override

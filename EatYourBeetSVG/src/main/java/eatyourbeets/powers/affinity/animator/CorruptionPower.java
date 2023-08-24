@@ -18,6 +18,6 @@ public class CorruptionPower extends AnimatorAffinityPower
     @Override
     public PowerHelper GetThresholdBonusPower()
     {
-        return PowerHelper.Invocation;
+        return PowerHelper.Insanity;
     }
 }

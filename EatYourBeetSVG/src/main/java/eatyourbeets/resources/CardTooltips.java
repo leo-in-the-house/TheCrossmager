@@ -117,6 +117,8 @@ public class CardTooltips
     public EYBCardTooltip Metallicize = FindByID(null, "Metallicize");
     public EYBCardTooltip PlatedArmor = FindByID(null, "Plated Armor");
     public EYBCardTooltip CounterAttack = FindByID(null, "Counter-Attack");
+    public EYBCardTooltip Enlightenment = FindByID(null, "Enlightenment");
+    public EYBCardTooltip Insanity = FindByID(null, "Insanity");
     public EYBCardTooltip Vitality = FindByID(null, "Vitality");
     public EYBCardTooltip Invocation = FindByID(null, "Invocation");
     public EYBCardTooltip Envenom = FindByID(null, "Envenom");

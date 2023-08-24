@@ -20,7 +20,7 @@ public class QuestionMark extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(QuestionMark.class)
             .SetSkill(-2, CardRarity.UNCOMMON, EYBCardTarget.ALL)
-            .SetMaxCopies(0)
+            
             .SetColor(CardColor.COLORLESS);
 
     public AnimatorCard copy = null;

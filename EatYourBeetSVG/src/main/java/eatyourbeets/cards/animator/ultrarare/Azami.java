@@ -14,7 +14,7 @@ public class Azami extends AnimatorCard_UltraRare implements OnEndOfTurnLastSubs
 {
     public static final EYBCardData DATA = Register(Azami.class)
             .SetSkill(1, CardRarity.SPECIAL, EYBCardTarget.ALL)
-            .SetMaxCopies(1)
+            
             .ObtainableAsReward((data, deck) -> AnimatorCard_UltraRare.IsSeen(data.ID) && JUtils.Count(deck.group, GameUtilities::HasDarkAffinity) > deck.size() / 4)
             .SetColor(CardColor.COLORLESS);
     public static final int SHACKLES_AMOUNT = 9;
@@ -55,7 +55,7 @@ public class Azami extends AnimatorCard_UltraRare implements OnEndOfTurnLastSubs
     {
         if (player.exhaustPile.contains(this))
         {
-            GameActions.Bottom.GainCorruption(1, true);
+            GameActions.Bottom.GainDark(1, true);
             GameActions.Bottom.MakeCardInDrawPile(new Status_Dazed()).SetDestination(CardSelection.Top);
         }
     }

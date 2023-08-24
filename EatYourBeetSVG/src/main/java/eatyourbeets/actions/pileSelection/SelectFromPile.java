@@ -226,7 +226,7 @@ public class SelectFromPile extends EYBActionWithCallback<ArrayList<AbstractCard
                     AbstractDungeon.overlayMenu.cancelButton.show(GridCardSelectScreen.TEXT[1]);
                 }
 
-                FIX_STS_LIB();
+                //FIX_STS_LIB();
                 AbstractDungeon.gridSelectScreen.open(mergedGroup, Math.min(mergedGroup.size(), amount), UpdateMessage(), false, false, canPlayerCancel, false);
             }
         }
@@ -288,7 +288,7 @@ public class SelectFromPile extends EYBActionWithCallback<ArrayList<AbstractCard
     private static void FIX_STS_LIB()
     {
         _save_isJustForConfirming.Set(null, false);
-        CenterGridCardSelectScreen.centerGridSelect = false;
+       // CenterGridCardSelectScreen.centerGridSelect = false;
         AbstractDungeon.gridSelectScreen.isJustForConfirming = false;
     }
 }

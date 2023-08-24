@@ -29,7 +29,7 @@ public class Viivi extends AnimatorClassicCard
         SetUpgrade(0, 0, 1);
         SetScaling(0, 1, 0);
 
-        SetMartialArtist();
+        
 
     }
 
@@ -64,7 +64,7 @@ public class Viivi extends AnimatorClassicCard
 
         if (IsStarter())
         {
-            GameActions.Bottom.GainAgility(1);
+            GameActions.Bottom.GainGreen(1);
             GameActions.Bottom.Draw(1);
         }
     }

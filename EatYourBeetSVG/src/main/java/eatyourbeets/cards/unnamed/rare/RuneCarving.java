@@ -18,7 +18,7 @@ import eatyourbeets.utilities.*;
 public class RuneCarving extends UnnamedCard
 {
     public static final EYBCardData DATA = Register(RuneCarving.class)
-            .SetMaxCopies(1)
+            
             .SetSkill(2, CardRarity.RARE, EYBCardTarget.None);
 
     private Random instanceRNG;

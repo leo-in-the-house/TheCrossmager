@@ -18,7 +18,7 @@ public class AcuraShin extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(AcuraShin.class)
             .SetPower(2, CardRarity.RARE)
-            .SetMaxCopies(1)
+            
             .SetSeries(CardSeries.HitsugiNoChaika);
     public static final int ENVENOM_AMOUNT = 1;
 

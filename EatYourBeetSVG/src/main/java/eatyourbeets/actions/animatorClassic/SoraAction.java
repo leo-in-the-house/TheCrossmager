@@ -193,7 +193,7 @@ public class SoraAction extends EYBAction
                 {
                     return effect.GenerateInternal((c, p, m) ->
                     {
-                        GameActions.Bottom.GainIntellect(c.magicNumber);
+                        GameActions.Bottom.GainBlue(c.magicNumber);
                     });
                 }
 
@@ -235,7 +235,7 @@ public class SoraAction extends EYBAction
                 {
                     return effect.GenerateInternal((c, p, m) ->
                     {
-                        GameActions.Bottom.GainAgility(c.magicNumber);
+                        GameActions.Bottom.GainGreen(c.magicNumber);
                     });
                 }
 
@@ -243,7 +243,7 @@ public class SoraAction extends EYBAction
                 {
                     return effect.GenerateInternal((c, p, m) ->
                     {
-                        GameActions.Bottom.GainForce(c.magicNumber);
+                        GameActions.Bottom.GainRed(c.magicNumber);
                     });
                 }
 

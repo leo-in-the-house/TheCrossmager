@@ -48,9 +48,9 @@ public class Garou extends AnimatorCard
     {
         if (p.drawPile.size() >= secondaryValue)
         {
-            GameActions.Bottom.GainForce(1, true);
-            GameActions.Bottom.GainAgility(1, true);
-            GameActions.Bottom.GainCorruption(1, true);
+            GameActions.Bottom.GainRed(1, true);
+            GameActions.Bottom.GainGreen(1, true);
+            GameActions.Bottom.GainDark(1, true);
             GameActions.Bottom.GainTemporaryStats(magicNumber, magicNumber, 0);
             GameActions.Bottom.MoveCards(p.drawPile, p.exhaustPile, 3)
             .ShowEffect(true, true)

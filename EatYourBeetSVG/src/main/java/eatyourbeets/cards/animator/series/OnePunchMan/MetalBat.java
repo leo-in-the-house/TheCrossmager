@@ -35,7 +35,7 @@ public class MetalBat extends AnimatorCard
 
         GameActions.Delayed.Callback(() ->
         {
-            GameActions.Bottom.GainForce(1);
+            GameActions.Bottom.GainRed(1);
             GameActions.Bottom.LoseHP(secondaryValue, AttackEffects.BLUNT_LIGHT).CanKill(false).IgnoreTempHP(true);
             GameActions.Bottom.Flash(this);
         });

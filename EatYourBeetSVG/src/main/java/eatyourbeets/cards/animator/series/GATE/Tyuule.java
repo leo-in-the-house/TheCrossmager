@@ -16,7 +16,7 @@ public class Tyuule extends AnimatorCard implements OnCardResetListener
 {
     public static final EYBCardData DATA = Register(Tyuule.class)
             .SetSkill(1, CardRarity.UNCOMMON)
-            .SetMaxCopies(2)
+            
             .SetSeriesFromClassPackage();
 
     //TODO: Standard way to handle this

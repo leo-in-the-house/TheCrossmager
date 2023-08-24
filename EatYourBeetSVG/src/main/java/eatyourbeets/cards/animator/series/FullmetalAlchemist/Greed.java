@@ -16,7 +16,7 @@ public class Greed extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Greed.class)
             .SetPower(2, CardRarity.RARE)
-            .SetMaxCopies(1)
+            
             .SetSeriesFromClassPackage();
     public static final int BLOCK = 7;
     public static final int TEMP_HP = 6;

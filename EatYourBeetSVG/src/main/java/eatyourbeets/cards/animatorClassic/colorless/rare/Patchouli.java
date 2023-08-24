@@ -42,7 +42,7 @@ public class Patchouli extends AnimatorClassicCard
         SetUpgrade(3, 0, 0, 0);
         SetScaling(2, 0, 0);
 
-        SetSpellcaster();
+        
     }
 
     @Override

@@ -38,7 +38,7 @@ public class GoblinShaman extends AnimatorCard
         if (this.dontTriggerOnUseCard)
         {
             GameActions.Bottom.ApplyFrail(null, p, 1);
-            GameActions.Bottom.GainCorruption(1);
+            GameActions.Bottom.GainDark(1);
         }
     }
 }

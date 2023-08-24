@@ -34,7 +34,7 @@ public class Status_Dazed extends AnimatorCard
         if (CombatStats.TryActivateLimited(cardID))
         {
             GameActions.Delayed.Exhaust(this)
-            .AddCallback(() -> GameActions.Top.GainCorruption(1));
+            .AddCallback(() -> GameActions.Top.GainDark(1));
         }
     }
 

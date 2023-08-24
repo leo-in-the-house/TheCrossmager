@@ -11,7 +11,7 @@ public class Kazuma extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Kazuma.class)
             .SetSkill(1, CardRarity.COMMON, EYBCardTarget.None)
-            .SetMaxCopies(2)
+            
             .SetSeriesFromClassPackage();
 
     public Kazuma()
@@ -38,7 +38,7 @@ public class Kazuma extends AnimatorCard
                if (GameUtilities.IsSealed(c))
                {
                    GameActions.Bottom.GainTemporaryHP(magicNumber);
-                   GameActions.Bottom.GainBlessing(1);
+                   GameActions.Bottom.GainLight(1);
                    return;
                }
            }

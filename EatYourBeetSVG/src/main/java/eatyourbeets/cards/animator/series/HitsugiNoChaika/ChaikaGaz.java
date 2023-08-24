@@ -45,7 +45,7 @@ public class ChaikaGaz extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameActions.Bottom.GainTemporaryHP(TEMP_HP_AMOUNT);
-        GameActions.Bottom.GainCorruption(magicNumber, false);
+        GameActions.Bottom.GainDark(magicNumber, false);
     }
 
     @Override

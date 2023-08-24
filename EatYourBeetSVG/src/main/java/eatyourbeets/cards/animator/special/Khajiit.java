@@ -16,7 +16,7 @@ public class Khajiit extends AnimatorCard
             .SetSkill(1, CardRarity.SPECIAL, EYBCardTarget.None)
             .SetColor(CardColor.COLORLESS)
             .SetSeries(CardSeries.Overlord)
-            .SetMaxCopies(1)
+            
             .PostInitialize(data -> data.AddPreview(new Khajiit_SkeletalDragon(), true));
 
     private static AbstractCard preview;
@@ -74,7 +74,7 @@ public class Khajiit extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameActions.Bottom.GainTemporaryHP(magicNumber);
-        GameActions.Bottom.GainCorruption(1, upgraded);
+        GameActions.Bottom.GainDark(1, upgraded);
         GameActions.Bottom.TriggerOrbPassive(1)
         .SetFilter(c -> Dark.ORB_ID.equals(c.ID))
         .SetSequential(true);

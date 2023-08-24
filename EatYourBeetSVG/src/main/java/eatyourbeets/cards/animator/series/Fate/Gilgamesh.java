@@ -31,7 +31,7 @@ public class Gilgamesh extends AnimatorCard implements OnRelicObtainedSubscriber
 
     public static final EYBCardData DATA = Register(Gilgamesh.class)
             .SetAttack(2, CardRarity.RARE, EYBAttackType.Ranged, EYBCardTarget.ALL)
-            .SetMaxCopies(0)
+            
             .SetSeriesFromClassPackage();
 
     public Gilgamesh()

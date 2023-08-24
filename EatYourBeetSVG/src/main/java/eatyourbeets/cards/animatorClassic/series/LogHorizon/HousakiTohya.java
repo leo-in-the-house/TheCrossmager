@@ -25,7 +25,7 @@ public class HousakiTohya extends AnimatorClassicCard
         SetUpgrade(3, 0, 0, 0);
         SetScaling(0, 1, 1);
 
-        SetMartialArtist();
+        
         
     }
 

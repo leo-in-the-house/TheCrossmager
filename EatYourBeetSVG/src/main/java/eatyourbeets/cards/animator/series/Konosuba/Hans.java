@@ -18,7 +18,7 @@ public class Hans extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Hans.class)
             .SetPower(1, CardRarity.UNCOMMON)
-            .SetMaxCopies(2)
+            
             .SetSeriesFromClassPackage()
             .PostInitialize(data -> data.AddPreview(GetClassCard(Slimed.ID), true));
     public static final int SLIMED_AMOUNT = 3;

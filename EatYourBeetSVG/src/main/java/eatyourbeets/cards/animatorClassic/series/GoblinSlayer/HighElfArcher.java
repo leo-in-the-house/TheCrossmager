@@ -33,7 +33,7 @@ public class HighElfArcher extends AnimatorClassicCard
 
         if (GameUtilities.GetPowerAmount(p, AgilityPower.POWER_ID) <= magicNumber)
         {
-            GameActions.Bottom.GainAgility(1);
+            GameActions.Bottom.GainGreen(1);
         }
 
         if (info.IsSynergizing)

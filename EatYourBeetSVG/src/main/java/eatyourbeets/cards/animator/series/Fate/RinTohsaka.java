@@ -16,7 +16,7 @@ public class RinTohsaka extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(RinTohsaka.class)
             .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None)
-            .SetMaxCopies(2)
+            
             .SetSeriesFromClassPackage()
             .PostInitialize(data -> data.AddPreviews(OrbCore.GetAllCores(), false));
 

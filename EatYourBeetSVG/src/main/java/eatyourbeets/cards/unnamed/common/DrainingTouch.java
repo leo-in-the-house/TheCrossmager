@@ -12,7 +12,7 @@ import eatyourbeets.utilities.GameUtilities;
 public class DrainingTouch extends UnnamedCard
 {
     public static final EYBCardData DATA = Register(DrainingTouch.class)
-            .SetMaxCopies(2)
+            
             .SetAttack(1, CardRarity.COMMON);
 
     public DrainingTouch()

@@ -65,8 +65,7 @@
                         <phase>package</phase>
                         <configuration>
                             <target>
-                                <copy file="target/TheAnimator.jar" tofile="D:\SteamLibrary\steamapps\common\SlayTheSpire\mods\TheAnimator.jar"/>
-                                <copy file="target/TheAnimator.jar" tofile="D:\SteamLibrary\steamapps\common\SlayTheSpire\TheAnimator\content\TheAnimator.jar"/>
+                                <copy file="target/TheAnimator.jar" tofile="H:\Games\Slay the Spire 2021\mods\TheAnimator.jar"/>
                             </target>
                         </configuration>
                         <goals>

@@ -90,8 +90,8 @@ public class Elesis extends AnimatorCard implements CustomSavable<Elesis.Form>
         {
             case Saber:
             {
-                GameActions.Bottom.GainForce(secondaryValue);
-                GameActions.Bottom.GainBlessing(secondaryValue);
+                GameActions.Bottom.GainRed(secondaryValue);
+                GameActions.Bottom.GainLight(secondaryValue);
                 break;
             }
 

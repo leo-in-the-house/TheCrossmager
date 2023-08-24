@@ -24,7 +24,7 @@ public class Hakurou extends AnimatorClassicCard
         SetScaling(0, 1, 1);
 
         
-        SetMartialArtist();
+        
     }
 
     @Override
@@ -44,7 +44,7 @@ public class Hakurou extends AnimatorClassicCard
     {
         super.triggerWhenDrawn();
 
-        GameActions.Bottom.GainAgility(1);
+        GameActions.Bottom.GainGreen(1);
         GameActions.Bottom.Flash(this);
     }
 
@@ -66,7 +66,7 @@ public class Hakurou extends AnimatorClassicCard
 
         if (info.IsSynergizing)
         {
-            GameActions.Bottom.GainAgility(1);
+            GameActions.Bottom.GainGreen(1);
         }
     }
 }

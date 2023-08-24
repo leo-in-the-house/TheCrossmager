@@ -45,9 +45,9 @@ public class Truth extends AnimatorCard_UltraRare
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
-        GameActions.Bottom.GainForce(magicNumber);
-        GameActions.Bottom.GainAgility(magicNumber);
-        GameActions.Bottom.GainIntellect(magicNumber);
+        GameActions.Bottom.GainRed(magicNumber);
+        GameActions.Bottom.GainGreen(magicNumber);
+        GameActions.Bottom.GainBlue(magicNumber);
         GameActions.Bottom.GainEnergy(magicNumber);
 
         if (CheckSpecialCondition(true))

@@ -44,7 +44,7 @@ public class Alexander extends AnimatorClassicCard
 
         if (upgraded)
         {
-            GameActions.Bottom.GainForce(1);
+            GameActions.Bottom.GainRed(1);
         }
         else
         {

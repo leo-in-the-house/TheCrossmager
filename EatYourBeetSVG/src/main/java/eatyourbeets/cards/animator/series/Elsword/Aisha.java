@@ -15,7 +15,7 @@ public class Aisha extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Aisha.class)
             .SetAttack(1, CardRarity.UNCOMMON, EYBAttackType.Elemental)
-            .SetMaxCopies(2)
+            
             .SetSeries(CardSeries.Elsword);
 
     public Aisha()
@@ -60,8 +60,8 @@ public class Aisha extends AnimatorCard
         {
             if (orbs.size() > 0)
             {
-                GameActions.Bottom.GainIntellect(1, true);
-                GameActions.Bottom.GainCorruption(1, true);
+                GameActions.Bottom.GainBlue(1, true);
+                GameActions.Bottom.GainDark(1, true);
             }
         });
     }

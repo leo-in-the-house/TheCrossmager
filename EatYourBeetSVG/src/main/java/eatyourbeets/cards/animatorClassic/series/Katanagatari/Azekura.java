@@ -24,7 +24,7 @@ public class Azekura extends AnimatorClassicCard
         SetUpgrade(0, 0, -1, 0);
 
         
-        SetMartialArtist();
+        
     }
 
     @Override

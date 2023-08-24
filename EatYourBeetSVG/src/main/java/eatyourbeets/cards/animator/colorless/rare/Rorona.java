@@ -23,7 +23,7 @@ public class Rorona extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Rorona.class)
             .SetPower(2, CardRarity.RARE)
-            .SetMaxCopies(1)
+            
             .SetColor(CardColor.COLORLESS)
             .SetSeries(CardSeries.Atelier);
     public static final int MAX_POTIONS_PER_COMBAT = 2;

@@ -14,7 +14,7 @@ import eatyourbeets.utilities.GameUtilities;
 public class Unburden extends UnnamedCard
 {
     public static final EYBCardData DATA = Register(Unburden.class)
-            .SetMaxCopies(2)
+            
             .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None);
 
     public Unburden()

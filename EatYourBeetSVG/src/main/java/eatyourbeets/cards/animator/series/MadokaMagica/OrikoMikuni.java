@@ -11,7 +11,7 @@ public class OrikoMikuni extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(OrikoMikuni.class)
             .SetSkill(0, CardRarity.UNCOMMON, EYBCardTarget.None)
-            .SetMaxCopies(2)
+            
             .SetSeriesFromClassPackage()
             .ObtainableAsReward((data, deck) -> (deck.size() >= 18));
 

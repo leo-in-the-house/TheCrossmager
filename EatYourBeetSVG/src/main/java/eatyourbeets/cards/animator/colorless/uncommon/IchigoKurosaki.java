@@ -32,8 +32,8 @@ public class IchigoKurosaki extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameActions.Bottom.Draw(1);
-        GameActions.Bottom.GainForce(1, upgraded);
-        GameActions.Bottom.GainAgility(1, upgraded);
+        GameActions.Bottom.GainRed(1, upgraded);
+        GameActions.Bottom.GainGreen(1, upgraded);
 
         if (CheckSpecialCondition(true))
         {

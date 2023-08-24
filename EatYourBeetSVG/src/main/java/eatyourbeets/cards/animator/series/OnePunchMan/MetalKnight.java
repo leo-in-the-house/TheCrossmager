@@ -19,7 +19,7 @@ public class MetalKnight extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(MetalKnight.class)
             .SetAttack(3, CardRarity.UNCOMMON, EYBAttackType.Ranged)
-            .SetMaxCopies(2)
+            
             .SetSeriesFromClassPackage();
 
     public MetalKnight()

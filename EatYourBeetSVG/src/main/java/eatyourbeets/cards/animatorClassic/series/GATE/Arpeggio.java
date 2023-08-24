@@ -11,7 +11,7 @@ import eatyourbeets.utilities.GameActions;
 
 public class Arpeggio extends AnimatorClassicCard
 {
-    public static final EYBCardData DATA = Register(Arpeggio.class).SetSeriesFromClassPackage().SetPower(1, CardRarity.UNCOMMON).SetMaxCopies(2);
+    public static final EYBCardData DATA = Register(Arpeggio.class).SetSeriesFromClassPackage().SetPower(1, CardRarity.UNCOMMON);
 
     public Arpeggio()
     {
@@ -21,7 +21,7 @@ public class Arpeggio extends AnimatorClassicCard
         SetUpgrade(0, 0, 1, 0);
 
         
-        SetSpellcaster();
+        
     }
 
     @Override
@@ -32,7 +32,7 @@ public class Arpeggio extends AnimatorClassicCard
             GameActions.Bottom.GainOrbSlots(magicNumber);
         }
 
-        GameActions.Bottom.GainIntellect(secondaryValue, false);
+        GameActions.Bottom.GainBlue(secondaryValue, false);
 
         if (HasSynergy() && CombatStats.TryActivateLimited(cardID))
         {

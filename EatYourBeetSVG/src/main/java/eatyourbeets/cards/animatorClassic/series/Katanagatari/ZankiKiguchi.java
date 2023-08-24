@@ -23,7 +23,7 @@ public class ZankiKiguchi extends AnimatorClassicCard
         SetScaling(0, 1, 1);
 
         
-        SetMartialArtist();
+        
     }
 
     @Override

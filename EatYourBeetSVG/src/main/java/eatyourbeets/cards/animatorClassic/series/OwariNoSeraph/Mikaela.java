@@ -43,7 +43,7 @@ public class Mikaela extends AnimatorClassicCard
         {
             if (cards.size() > 0 && GameUtilities.IsHindrance(cards.get(0)))
             {
-                GameActions.Bottom.GainForce(secondaryValue);
+                GameActions.Bottom.GainRed(secondaryValue);
             }
         });
     }

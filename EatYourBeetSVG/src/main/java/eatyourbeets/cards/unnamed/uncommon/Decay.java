@@ -12,7 +12,7 @@ import eatyourbeets.utilities.GameUtilities;
 public class Decay extends UnnamedCard
 {
     public static final EYBCardData DATA = Register(Decay.class)
-            .SetMaxCopies(2)
+            
             .SetSkill(0, CardRarity.UNCOMMON);
 
     public Decay()

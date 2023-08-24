@@ -23,7 +23,7 @@ public class IrohaTamaki extends AnimatorClassicCard
         SetUpgrade(0, 2, 1);
 
         
-        SetSpellcaster();
+        
     }
 
     @Override

@@ -205,7 +205,7 @@ public class EYBCardData implements OnAddingToCardRewardListener, OnReceiveRewar
         return this;
     }
 
-    public EYBCardData SetMaxCopies(int maxCopies)
+    public EYBCardData
     {
         MaxCopies = maxCopies;
 
@@ -235,10 +235,10 @@ public class EYBCardData implements OnAddingToCardRewardListener, OnReceiveRewar
         {
             switch (rarity)
             {
-                case COMMON: return SetMaxCopies(3);
-                case UNCOMMON: return SetMaxCopies(3);
-                case RARE: return SetMaxCopies(2);
-                default: return SetMaxCopies(0);
+                case COMMON: return;
+                case UNCOMMON: return;
+                case RARE: return;
+                default: return;
             }
         }
 

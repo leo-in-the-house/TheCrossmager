@@ -103,8 +103,8 @@ public class Elesis extends AnimatorClassicCard implements CustomSavable<Elesis.
             {
                 GameActions.Bottom.SpendEnergy(999, true).AddCallback(amount ->
                 {
-                    GameActions.Bottom.GainForce(amount);
-                    GameActions.Bottom.GainAgility(amount);
+                    GameActions.Bottom.GainRed(amount);
+                    GameActions.Bottom.GainGreen(amount);
                 });
                 AddDamageBonus(-bonusDamage);
                 break;

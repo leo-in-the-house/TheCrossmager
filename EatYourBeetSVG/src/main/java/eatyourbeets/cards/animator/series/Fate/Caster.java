@@ -14,7 +14,7 @@ public class Caster extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Caster.class)
             .SetSkill(1, CardRarity.UNCOMMON)
-            .SetMaxCopies(2)
+            
             .SetSeriesFromClassPackage();
 
     public Caster()
@@ -63,7 +63,7 @@ public class Caster extends AnimatorCard
     {
         GameActions.Bottom.ReduceStrength(m, magicNumber, false).SetStrengthGain(true);
         GameActions.Bottom.ApplyFrail(info.IsStarter ? p : null, p, magicNumber);
-        GameActions.Bottom.GainCorruption(magicNumber);
+        GameActions.Bottom.GainDark(magicNumber);
 
         if (TryUseAffinity(Affinity.Dark))
         {

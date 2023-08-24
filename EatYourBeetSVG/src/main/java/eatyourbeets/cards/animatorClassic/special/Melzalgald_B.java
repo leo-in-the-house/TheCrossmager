@@ -24,6 +24,6 @@ public class Melzalgald_B extends MelzalgaldAlt
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_HEAVY);
-        GameActions.Bottom.GainIntellect(magicNumber);
+        GameActions.Bottom.GainBlue(magicNumber);
     }
 }

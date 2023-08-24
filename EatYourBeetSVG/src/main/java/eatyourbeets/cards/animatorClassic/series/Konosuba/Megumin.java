@@ -29,7 +29,7 @@ public class Megumin extends AnimatorClassicCard
         SetExhaust(true);
         SetUnique(true, true);
 
-        SetSpellcaster();
+        
     }
 
     @Override

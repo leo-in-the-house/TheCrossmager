@@ -115,7 +115,7 @@ public class Saitama extends AnimatorCard
             {
                 // Draw !M! Cards. NL Gain !SV! Agility.
                 GameActions.Bottom.Draw(magicNumber);
-                GameActions.Bottom.GainAgility(secondaryValue);
+                GameActions.Bottom.GainGreen(secondaryValue);
 
                 break;
             }
@@ -131,7 +131,7 @@ public class Saitama extends AnimatorCard
             case 3:
             {
                 // Gain !M! Force. Gain !B! Block.
-                GameActions.Bottom.GainForce(magicNumber);
+                GameActions.Bottom.GainRed(magicNumber);
                 GameActions.Bottom.GainBlock(block);
 
                 break;

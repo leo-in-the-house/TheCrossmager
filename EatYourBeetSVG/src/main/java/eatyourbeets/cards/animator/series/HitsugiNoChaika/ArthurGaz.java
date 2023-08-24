@@ -25,7 +25,7 @@ public class ArthurGaz extends AnimatorCard
     public static final ArrayList<ArthurGazEffect> EFFECTS = new ArrayList<>();
     public static final EYBCardData DATA = Register(ArthurGaz.class)
             .SetSkill(1, CardRarity.RARE, EYBCardTarget.None)
-            .SetMaxCopies(1)
+
             .SetSeries(CardSeries.HitsugiNoChaika)
             .PostInitialize(data ->
             {

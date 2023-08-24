@@ -25,7 +25,7 @@ public class Walpurgisnacht extends AnimatorClassicCard_UltraRare
         SetUpgrade(0, 0, 1);
 
         this.series = CardSeries.MadokaMagica;
-        SetSpellcaster();
+        
     }
 
     @Override

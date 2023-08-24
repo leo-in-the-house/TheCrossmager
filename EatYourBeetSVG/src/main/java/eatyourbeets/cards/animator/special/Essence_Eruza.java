@@ -13,7 +13,7 @@ public class Essence_Eruza extends AnimatorCard
     public static final EYBCardData DATA = Register(Essence_Eruza.class)
             .SetSkill(0, CardRarity.SPECIAL, EYBCardTarget.None)
             .SetColor(CardColor.COLORLESS)
-            .SetMaxCopies(1);
+            ;
 
     public Essence_Eruza()
     {

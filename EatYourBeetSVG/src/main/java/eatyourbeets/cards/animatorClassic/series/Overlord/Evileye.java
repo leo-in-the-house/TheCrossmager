@@ -24,7 +24,7 @@ public class Evileye extends AnimatorClassicCard
         SetCostUpgrade(-1);
 
         
-        SetSpellcaster();
+        
     }
 
     @Override
@@ -32,7 +32,7 @@ public class Evileye extends AnimatorClassicCard
     {
         if (HasSynergy() && CombatStats.TryActivateLimited(this.cardID))
         {
-            GameActions.Bottom.GainIntellect(2);
+            GameActions.Bottom.GainBlue(2);
             GameActions.Bottom.GainOrbSlots(1);
         }
 

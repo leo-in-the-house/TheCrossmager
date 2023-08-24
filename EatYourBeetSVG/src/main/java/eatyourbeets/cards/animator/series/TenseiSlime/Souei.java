@@ -20,7 +20,7 @@ public class Souei extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Souei.class)
             .SetSkill(2, CardRarity.UNCOMMON, EYBCardTarget.None)
-            .SetMaxCopies(2)
+            
             .SetSeriesFromClassPackage()
             .ObtainableAsReward((data, deck) -> data.GetTotalCopies(deck) <= 0 || deck.size() >= 24);
     private static final int POISON_AMOUNT = 3;

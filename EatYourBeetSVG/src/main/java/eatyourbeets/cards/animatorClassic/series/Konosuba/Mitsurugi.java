@@ -59,7 +59,7 @@ public class Mitsurugi extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
-        GameActions.Bottom.GainForce(magicNumber, upgraded);
+        GameActions.Bottom.GainRed(magicNumber, upgraded);
 
         if (GameUtilities.IsAttacking(m.intent))
         {

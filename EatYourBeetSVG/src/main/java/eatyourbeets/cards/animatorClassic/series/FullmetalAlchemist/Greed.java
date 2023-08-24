@@ -14,7 +14,7 @@ import eatyourbeets.utilities.GameUtilities;
 
 public class Greed extends AnimatorClassicCard
 {
-    public static final EYBCardData DATA = Register(Greed.class).SetSeriesFromClassPackage().SetPower(2, CardRarity.RARE).SetMaxCopies(1);
+    public static final EYBCardData DATA = Register(Greed.class).SetSeriesFromClassPackage().SetPower(2, CardRarity.RARE);
     public static final int BLOCK = 7;
     public static final int TEMP_HP = 6;
     public static final int MALLEABLE = 5;

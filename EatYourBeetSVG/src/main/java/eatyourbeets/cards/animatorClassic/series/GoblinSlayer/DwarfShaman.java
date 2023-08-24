@@ -26,7 +26,7 @@ public class DwarfShaman extends AnimatorClassicCard
 
         SetEvokeOrbCount(1);
         
-        SetSpellcaster();
+        
     }
 
     @Override

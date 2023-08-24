@@ -30,7 +30,7 @@ public class Caster extends AnimatorClassicCard
 
         SetEthereal(true);
 
-        SetSpellcaster();
+        
     }
 
     @Override
@@ -117,7 +117,7 @@ public class Caster extends AnimatorClassicCard
 
     private void Effect3(AbstractCard card, AbstractPlayer p, AbstractMonster m)
     {
-        GameActions.Bottom.GainForce(1);
-        GameActions.Bottom.GainIntellect(1);
+        GameActions.Bottom.GainRed(1);
+        GameActions.Bottom.GainBlue(1);
     }
 }

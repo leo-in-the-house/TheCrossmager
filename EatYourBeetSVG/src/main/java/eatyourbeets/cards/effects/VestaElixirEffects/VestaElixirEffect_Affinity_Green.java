@@ -21,6 +21,6 @@ public class VestaElixirEffect_Affinity_Green extends VestaElixirEffect
     @Override
     public void EnqueueAction(EYBCard elixir, AbstractPlayer player)
     {
-        GameActions.Bottom.GainAgility(amount);
+        GameActions.Bottom.GainGreen(amount);
     }
 }

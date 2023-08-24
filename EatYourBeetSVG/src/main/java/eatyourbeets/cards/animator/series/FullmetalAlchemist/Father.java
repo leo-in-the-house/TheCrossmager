@@ -17,7 +17,7 @@ public class Father extends AnimatorCard
 
     public static final EYBCardData DATA = Register(Father.class)
             .SetSkill(4, CardRarity.RARE, EYBCardTarget.None)
-            .SetMaxCopies(1)
+            
             .SetSeriesFromClassPackage();
 
     public Father()

@@ -85,6 +85,11 @@
 		"DESCRIPTIONS": ["Take #b{0}% less #yAttack damage."],
 		"NAME": "Enchanted Armor"
 	},
+	"animator:EnlightenmentPower":
+	{
+		"DESCRIPTIONS": ["At the start of each turn, gain #b{0} [E]."],
+		"NAME": "Enlightenment"
+	},
 	"animator:EntouJyuuPower":
 	{
 		"DESCRIPTIONS": ["On your next #b{0} #yAttack(s) this turn, draw #b1 card and apply #b1 #yBurning to ALL enemies."],
@@ -184,6 +189,11 @@
 	{
 		"DESCRIPTIONS": ["Immune to #yBurning. NL Dies upon losing #yFlight."],
 		"NAME": "Horned Bat (R)"
+	},
+	"animator:InsanityPower":
+	{
+		"DESCRIPTIONS": ["At the start of each turn, add #b{0} #yUpgraded, #yMotivated random cards to your draw pile."],
+		"NAME": "Insanity"
 	},
 	"animator:KaijinPower":
 	{

@@ -23,7 +23,7 @@ public class AcuraShin extends AnimatorClassicCard
         SetScaling(0, 1, 0);
         SetCostUpgrade(-1);
 
-        SetMartialArtist();
+        
         
     }
 

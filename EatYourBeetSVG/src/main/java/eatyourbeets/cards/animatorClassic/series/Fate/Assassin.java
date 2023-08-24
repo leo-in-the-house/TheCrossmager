@@ -33,7 +33,7 @@ public class Assassin extends AnimatorClassicCard
         SetScaling(0, 1, 0);
 
         SetRetain(true);
-        SetMartialArtist();
+        
 
     }
 

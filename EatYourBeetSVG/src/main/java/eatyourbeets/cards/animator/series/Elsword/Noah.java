@@ -58,7 +58,7 @@ public class Noah extends AnimatorCard
 
         if (CheckSpecialCondition(true))
         {
-            GameActions.Bottom.GainCorruption(1, true);
+            GameActions.Bottom.GainDark(1, true);
         }
         else
         {

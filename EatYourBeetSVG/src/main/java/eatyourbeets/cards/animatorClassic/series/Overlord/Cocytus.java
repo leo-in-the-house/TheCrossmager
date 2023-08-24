@@ -33,7 +33,7 @@ public class Cocytus extends AnimatorClassicCard
 
         if (GameUtilities.GetPowerAmount(p, ForcePower.POWER_ID) <= magicNumber)
         {
-            GameActions.Bottom.GainForce(1, true);
+            GameActions.Bottom.GainRed(1, true);
         }
 
         if (HasSynergy() && CombatStats.TryActivateSemiLimited(cardID))

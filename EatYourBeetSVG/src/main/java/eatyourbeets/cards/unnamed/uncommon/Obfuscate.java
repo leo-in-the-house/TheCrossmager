@@ -14,7 +14,7 @@ import eatyourbeets.utilities.TargetHelper;
 public class Obfuscate extends UnnamedCard
 {
     public static final EYBCardData DATA = Register(Obfuscate.class)
-            .SetMaxCopies(2)
+            
             .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None);
 
     public Obfuscate()

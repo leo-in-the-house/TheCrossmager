@@ -27,7 +27,7 @@ public class YachiyoNanami extends AnimatorClassicCard
         SetEthereal(true);
 
         
-        SetSpellcaster();
+        
     }
 
     @Override

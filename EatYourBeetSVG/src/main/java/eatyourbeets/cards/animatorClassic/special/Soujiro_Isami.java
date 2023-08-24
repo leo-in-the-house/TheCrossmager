@@ -20,7 +20,7 @@ public class Soujiro_Isami extends AnimatorClassicCard
         Initialize(6, 0, 0);
         SetUpgrade(2, 0, 0);
 
-        SetMartialArtist();
+        
         this.series = CardSeries.LogHorizon;
     }
 
@@ -31,7 +31,7 @@ public class Soujiro_Isami extends AnimatorClassicCard
 
         if (IsStarter())
         {
-            GameActions.Bottom.GainAgility(1, true);
+            GameActions.Bottom.GainGreen(1, true);
         }
     }
 }

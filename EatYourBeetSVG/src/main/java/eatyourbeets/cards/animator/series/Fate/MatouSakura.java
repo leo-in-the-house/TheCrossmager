@@ -13,7 +13,7 @@ public class MatouSakura extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(MatouSakura.class)
             .SetSkill(2, CardRarity.UNCOMMON, EYBCardTarget.None)
-            .SetMaxCopies(2)
+            
             .SetSeriesFromClassPackage();
 
     public MatouSakura()
@@ -50,7 +50,7 @@ public class MatouSakura extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameActions.Bottom.GainBlock(block);
-        GameActions.Bottom.GainCorruption(1, true);
+        GameActions.Bottom.GainDark(1, true);
         GameActions.Bottom.ChannelOrb(new Dark());
 
 //        GameActions.Bottom.Callback(m, (enemy, __) ->

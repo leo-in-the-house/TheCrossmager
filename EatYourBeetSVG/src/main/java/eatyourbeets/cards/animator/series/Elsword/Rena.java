@@ -30,7 +30,7 @@ public class Rena extends AnimatorCard
     {
         super.triggerOnManualDiscard();
 
-        GameActions.Bottom.GainAgility(1);
+        GameActions.Bottom.GainGreen(1);
         GameActions.Bottom.GainBlur(1);
     }
 

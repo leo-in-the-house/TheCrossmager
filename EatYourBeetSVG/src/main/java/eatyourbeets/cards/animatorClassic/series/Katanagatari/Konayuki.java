@@ -29,7 +29,7 @@ public class Konayuki extends AnimatorClassicCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameActions.Bottom.GainBlock(block);
-        GameActions.Bottom.GainForce(magicNumber)
+        GameActions.Bottom.GainRed(magicNumber)
         .AddCallback(force ->
         {
             if (force.amount >= 10 && CombatStats.TryActivateLimited(cardID))

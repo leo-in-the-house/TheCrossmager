@@ -13,7 +13,7 @@ import eatyourbeets.utilities.GameActions;
 public class AdvancedSummon extends UnnamedCard
 {
     public static final EYBCardData DATA = Register(AdvancedSummon.class)
-            .SetMaxCopies(2)
+            
             .SetSkill(2, CardRarity.UNCOMMON, EYBCardTarget.None);
 
     public AdvancedSummon()

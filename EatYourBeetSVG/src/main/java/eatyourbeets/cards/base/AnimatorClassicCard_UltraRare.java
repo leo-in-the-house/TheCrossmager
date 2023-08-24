@@ -23,7 +23,7 @@ public abstract class AnimatorClassicCard_UltraRare extends AnimatorClassicCard
 
     protected static EYBCardData Register(Class<? extends AnimatorClassicCard> type)
     {
-        return AnimatorClassicCard.Register(type).SetMaxCopies(1);
+        return AnimatorClassicCard.Register(type);
     }
 
     public static void MarkAsSeen(String cardID)

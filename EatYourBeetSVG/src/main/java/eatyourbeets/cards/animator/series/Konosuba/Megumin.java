@@ -14,7 +14,7 @@ public class Megumin extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Megumin.class)
             .SetSkill(X_COST, CardRarity.UNCOMMON, EYBCardTarget.None)
-            .SetMaxCopies(1)
+            
             .SetSeriesFromClassPackage()
             .PostInitialize(data ->
             {

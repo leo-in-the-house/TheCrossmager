@@ -45,9 +45,9 @@ public class FeridBathory extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
-        GameActions.Bottom.GainForce(magicNumber);
-        GameActions.Bottom.GainAgility(magicNumber);
-        GameActions.Bottom.GainCorruption(magicNumber);
+        GameActions.Bottom.GainRed(magicNumber);
+        GameActions.Bottom.GainGreen(magicNumber);
+        GameActions.Bottom.GainDark(magicNumber);
     }
 
     @Override

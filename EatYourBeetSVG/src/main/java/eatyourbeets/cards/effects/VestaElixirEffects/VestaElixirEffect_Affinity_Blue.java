@@ -21,6 +21,6 @@ public class VestaElixirEffect_Affinity_Blue extends VestaElixirEffect
     @Override
     public void EnqueueAction(EYBCard elixir, AbstractPlayer player)
     {
-        GameActions.Bottom.GainIntellect(amount);
+        GameActions.Bottom.GainBlue(amount);
     }
 }

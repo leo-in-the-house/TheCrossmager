@@ -31,7 +31,7 @@ public class Wrath extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameActions.Bottom.GainBlock(block);
-        GameActions.Bottom.GainForce(magicNumber);
+        GameActions.Bottom.GainRed(magicNumber);
     }
 
     @Override

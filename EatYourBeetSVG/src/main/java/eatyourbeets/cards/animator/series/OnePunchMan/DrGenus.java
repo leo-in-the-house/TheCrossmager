@@ -18,7 +18,7 @@ public class DrGenus extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(DrGenus.class)
             .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None)
-            .SetMaxCopies(2)
+
             .SetSeriesFromClassPackage()
             .PostInitialize(data ->
             {

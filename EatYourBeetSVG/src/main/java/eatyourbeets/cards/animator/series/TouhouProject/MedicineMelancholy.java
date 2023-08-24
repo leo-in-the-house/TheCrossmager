@@ -21,7 +21,7 @@ public class MedicineMelancholy extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(MedicineMelancholy.class)
             .SetPower(1, CardRarity.UNCOMMON)
-            .SetMaxCopies(1)
+            
             .SetSeriesFromClassPackage();
     public static final int POWER_COST = 2;
 

@@ -40,7 +40,7 @@ public class WizardHat extends AnimatorRelic
         super.ActivateBattleEffect();
 
         GameActions.Bottom.ApplyPower(new WizardHarPower(player, this));
-        GameActions.Bottom.GainIntellect(INTELLECT_AMOUNT, true);
+        GameActions.Bottom.GainBlue(INTELLECT_AMOUNT, true);
         flash();
     }
 

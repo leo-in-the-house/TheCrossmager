@@ -22,7 +22,7 @@ public class KanamiAlt extends AnimatorClassicCard_UltraRare implements Hidden
         SetUpgrade(7, 0, 0);
 
         SetScaling(0, 1, 1);
-        SetMartialArtist();
+        
         this.series = CardSeries.LogHorizon;
     }
 
@@ -64,8 +64,8 @@ public class KanamiAlt extends AnimatorClassicCard_UltraRare implements Hidden
         {
             if (amount > 0)
             {
-                GameActions.Bottom.GainForce(1);
-                GameActions.Bottom.GainAgility(1);
+                GameActions.Bottom.GainRed(1);
+                GameActions.Bottom.GainGreen(1);
                 GameActions.Bottom.GainBlock(amount);
             }
         });

@@ -30,7 +30,7 @@ public class HeavyHalberd extends AnimatorClassicRelic
         int force = JUtils.Count(GameUtilities.GetAllCharacters(true), c -> c.hasPower(VulnerablePower.POWER_ID)) * FORCE_AMOUNT;
         if (force > 0)
         {
-            GameActions.Bottom.GainForce(force);
+            GameActions.Bottom.GainRed(force);
             flash();
         }
     }

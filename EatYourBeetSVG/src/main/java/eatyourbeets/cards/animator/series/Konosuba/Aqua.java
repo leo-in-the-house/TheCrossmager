@@ -15,7 +15,7 @@ public class Aqua extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Aqua.class)
             .SetSkill(0, CardRarity.UNCOMMON, EYBCardTarget.None)
-            .SetMaxCopies(2)
+            
             .SetSeriesFromClassPackage()
             .PostInitialize(data -> data.AddPreview(new Aqua(true), true));
 
@@ -59,7 +59,7 @@ public class Aqua extends AnimatorCard
     {
         if (!transformed)
         {
-            GameActions.Bottom.GainBlessing(1, upgraded);
+            GameActions.Bottom.GainLight(1, upgraded);
             GameActions.Bottom.Heal(magicNumber).Overheal(upgraded);
             GameActions.Bottom.Draw(1);
             GameActions.Bottom.Callback(() -> SetTransformed(true));

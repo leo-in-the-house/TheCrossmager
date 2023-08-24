@@ -535,12 +535,12 @@ public final class GameActions
         return VFX(new CardFlashVfx(card, color.cpy(), superFlash));
     }
 
-    public ApplyAffinityPower GainAgility(int amount)
+    public ApplyAffinityPower GainGreen(int amount)
     {
-        return GainAgility(amount, false);
+        return GainGreen(amount, false);
     }
 
-    public ApplyAffinityPower GainAgility(int amount, boolean retain)
+    public ApplyAffinityPower GainGreen(int amount, boolean retain)
     {
         return GainAffinity(AgilityPower.AFFINITY_TYPE, amount, retain);
     }
@@ -550,12 +550,12 @@ public final class GameActions
         return StackPower(new ArtifactPower(player, amount));
     }
 
-    public ApplyAffinityPower GainBlessing(int amount)
+    public ApplyAffinityPower GainLight(int amount)
     {
-        return GainBlessing(amount, false);
+        return GainLight(amount, false);
     }
 
-    public ApplyAffinityPower GainBlessing(int amount, boolean retain)
+    public ApplyAffinityPower GainLight(int amount, boolean retain)
     {
         return GainAffinity(BlessingPower.AFFINITY_TYPE, amount, retain);
     }
@@ -585,12 +585,12 @@ public final class GameActions
         return StackPower(new AnimatorBlurPower(player, amount));
     }
 
-    public ApplyAffinityPower GainCorruption(int amount)
+    public ApplyAffinityPower GainDark(int amount)
     {
-        return GainCorruption(amount, false);
+        return GainDark(amount, false);
     }
     
-    public ApplyAffinityPower GainCorruption(int amount, boolean retain)
+    public ApplyAffinityPower GainDark(int amount, boolean retain)
     {
         return GainAffinity(CorruptionPower.AFFINITY_TYPE, amount, retain);
     }
@@ -620,12 +620,12 @@ public final class GameActions
         return StackPower(new FocusPower(player, amount));
     }
 
-    public ApplyAffinityPower GainForce(int amount)
+    public ApplyAffinityPower GainRed(int amount)
     {
-        return GainForce(amount, false);
+        return GainRed(amount, false);
     }
 
-    public ApplyAffinityPower GainForce(int amount, boolean retain)
+    public ApplyAffinityPower GainRed(int amount, boolean retain)
     {
         return GainAffinity(ForcePower.AFFINITY_TYPE, amount, retain);
     }
@@ -645,12 +645,12 @@ public final class GameActions
         return StackPower(new AnimatorIntangiblePower(player, amount));
     }
 
-    public ApplyAffinityPower GainIntellect(int amount)
+    public ApplyAffinityPower GainBlue(int amount)
     {
-        return GainIntellect(amount, false);
+        return GainBlue(amount, false);
     }
 
-    public ApplyAffinityPower GainIntellect(int amount, boolean retain)
+    public ApplyAffinityPower GainBlue(int amount, boolean retain)
     {
         return GainAffinity(IntellectPower.AFFINITY_TYPE, amount, retain);
     }
@@ -798,6 +798,11 @@ public final class GameActions
     public ModifyAffinityScaling IncreaseScaling(CardGroup group, int cards, Affinity affinity, int amount)
     {
         return Add(new ModifyAffinityScaling(group, cards, affinity, amount, true));
+    }
+
+    public ModifyAffinityScaling SetScaling(AbstractCard card, Affinity affinity,  int amount)
+    {
+        return Add(new ModifyAffinityScaling(card, affinity, amount, false));
     }
 
     public LoseHP LoseHP(AbstractCreature source, AbstractCreature target, int amount, AbstractGameAction.AttackEffect effect)

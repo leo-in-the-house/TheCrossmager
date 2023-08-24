@@ -25,7 +25,7 @@ public class YunYun extends AnimatorClassicCard
         SetScaling(1, 0, 0);
 
 
-        SetSpellcaster();
+        
     }
 
     @Override

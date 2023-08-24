@@ -47,7 +47,7 @@ public class Berserker extends AnimatorClassicCard
 
         if (ForceStance.IsActive())
         {
-            GameActions.Bottom.GainForce(magicNumber);
+            GameActions.Bottom.GainRed(magicNumber);
         }
         else
         {

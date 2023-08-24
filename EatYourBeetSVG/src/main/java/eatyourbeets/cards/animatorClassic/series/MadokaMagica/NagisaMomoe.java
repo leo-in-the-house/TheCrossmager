@@ -27,7 +27,7 @@ public class NagisaMomoe extends AnimatorClassicCard
 
         SetExhaust(true);
 
-        SetSpellcaster();
+        
     }
 
     @Override

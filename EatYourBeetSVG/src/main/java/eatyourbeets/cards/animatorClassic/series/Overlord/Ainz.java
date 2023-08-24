@@ -255,7 +255,7 @@ public class Ainz extends AnimatorClassicCard
                     {
                         return effect.Generate((c, p, m) ->
                         {
-                            GameActions.Bottom.GainIntellect(c.magicNumber);
+                            GameActions.Bottom.GainBlue(c.magicNumber);
                         });
                     }
 
@@ -271,7 +271,7 @@ public class Ainz extends AnimatorClassicCard
                     {
                         return effect.Generate((c, p, m) ->
                         {
-                            GameActions.Bottom.GainAgility(c.magicNumber);
+                            GameActions.Bottom.GainGreen(c.magicNumber);
                         });
                     }
 
@@ -279,7 +279,7 @@ public class Ainz extends AnimatorClassicCard
                     {
                         return effect.Generate((c, p, m) ->
                         {
-                            GameActions.Bottom.GainForce(c.magicNumber);
+                            GameActions.Bottom.GainRed(c.magicNumber);
                         });
                     }
 

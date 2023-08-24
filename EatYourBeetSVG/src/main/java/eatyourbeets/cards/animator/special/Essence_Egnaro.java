@@ -15,7 +15,7 @@ public class Essence_Egnaro extends AnimatorCard
     public static final EYBCardData DATA = Register(Essence_Egnaro.class)
             .SetSkill(0, CardRarity.SPECIAL, EYBCardTarget.None)
             .SetColor(CardColor.COLORLESS)
-            .SetMaxCopies(1);
+            ;
 
     public Essence_Egnaro()
     {

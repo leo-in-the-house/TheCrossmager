@@ -22,7 +22,7 @@ public class TsurugaMeisai extends AnimatorClassicCard
 
         SetExhaust(true);
 
-        SetMartialArtist();
+        
     }
 
     @Override

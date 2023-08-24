@@ -22,7 +22,7 @@ public class FlandreScarlet extends AnimatorCard
     public static final EYBCardData DATA = Register(FlandreScarlet.class)
             .SetAttack(2, CardRarity.SPECIAL)
             .SetSeries(RemiliaScarlet.DATA.Series)
-            .SetMaxCopies(1);
+            ;
 
     public FlandreScarlet()
     {

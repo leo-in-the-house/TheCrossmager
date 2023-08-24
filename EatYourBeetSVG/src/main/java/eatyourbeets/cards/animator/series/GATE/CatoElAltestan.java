@@ -48,7 +48,7 @@ public class CatoElAltestan extends AnimatorCard
     {
         if (info.TryActivateStarter())
         {
-            GameActions.Bottom.GainIntellect(1, true);
+            GameActions.Bottom.GainBlue(1, true);
         }
 
         GameActions.Bottom.FetchFromPile(name, magicNumber, player.drawPile)

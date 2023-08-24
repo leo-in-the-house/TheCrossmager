@@ -11,7 +11,7 @@ public class Konayuki extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Konayuki.class)
             .SetSkill(1, CardRarity.COMMON, EYBCardTarget.None)
-            .SetMaxCopies(2)
+            
             .SetSeriesFromClassPackage()
             .PostInitialize(data -> data.AddPreview(GetClassCard(Wound.ID), false));
 
@@ -39,7 +39,7 @@ public class Konayuki extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
-        GameActions.Bottom.GainForce(magicNumber);
+        GameActions.Bottom.GainRed(magicNumber);
         GameActions.Bottom.MakeCardInDrawPile(GetCurrentClassCard(Wound.ID, false));
 
         if (CheckSpecialCondition(true))

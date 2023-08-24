@@ -17,7 +17,7 @@ public class Tetora extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Tetora.class)
             .SetPower(0, CardRarity.UNCOMMON)
-            .SetMaxCopies(2)
+            
             .SetSeriesFromClassPackage();
 
     public Tetora()

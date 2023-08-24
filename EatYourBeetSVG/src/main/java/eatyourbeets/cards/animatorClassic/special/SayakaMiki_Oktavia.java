@@ -26,7 +26,7 @@ public class SayakaMiki_Oktavia extends AnimatorClassicCard
         SetScaling(1, 0, 0);
 
         this.series = CardSeries.MadokaMagica;
-        SetSpellcaster();
+        
     }
 
     @Override

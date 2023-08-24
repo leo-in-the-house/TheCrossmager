@@ -53,7 +53,7 @@ public class SuikaIbuki extends AnimatorCard
 
         if (hasPower)
         {
-            GameActions.Bottom.GainForce(secondaryValue, upgraded);
+            GameActions.Bottom.GainRed(secondaryValue, upgraded);
         }
     }
 }

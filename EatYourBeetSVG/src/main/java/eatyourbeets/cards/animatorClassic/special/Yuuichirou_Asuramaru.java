@@ -31,9 +31,9 @@ public class Yuuichirou_Asuramaru extends AnimatorClassicCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameActions.Bottom.StackPower(new DemonFormPower(p, secondaryValue));
-        GameActions.Bottom.GainIntellect(magicNumber);
-        GameActions.Bottom.GainAgility(magicNumber);
-        GameActions.Bottom.GainForce(magicNumber);
+        GameActions.Bottom.GainBlue(magicNumber);
+        GameActions.Bottom.GainGreen(magicNumber);
+        GameActions.Bottom.GainRed(magicNumber);
         GameActions.Bottom.MakeCardInHand(new Wound());
         GameActions.Bottom.MakeCardInHand(new Wound());
     }

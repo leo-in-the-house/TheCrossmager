@@ -54,7 +54,7 @@ public class ElricAlphonse extends AnimatorClassicCard
     {
         if (GameUtilities.GetPowerAmount(p, IntellectPower.POWER_ID) <= magicNumber)
         {
-            GameActions.Bottom.GainIntellect(1, true);
+            GameActions.Bottom.GainBlue(1, true);
         }
     }
 }

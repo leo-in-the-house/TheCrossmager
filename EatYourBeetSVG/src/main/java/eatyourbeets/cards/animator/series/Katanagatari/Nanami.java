@@ -13,7 +13,7 @@ public class Nanami extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Nanami.class)
             .SetSkill(X_COST, CardRarity.UNCOMMON)
-            .SetMaxCopies(2)
+            
             .SetSeriesFromClassPackage();
 
     private TargetEffectPreview effectPreview = new TargetEffectPreview(this::ChangeEffect);

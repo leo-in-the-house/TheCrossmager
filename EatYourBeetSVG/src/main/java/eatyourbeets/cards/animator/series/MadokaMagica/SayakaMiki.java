@@ -18,7 +18,7 @@ public class SayakaMiki extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(SayakaMiki.class)
             .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None)
-            .SetMaxCopies(2)
+            
             .SetSeriesFromClassPackage()
             .PostInitialize(data ->
             {
@@ -58,7 +58,7 @@ public class SayakaMiki extends AnimatorCard
         }
         else
         {
-            GameActions.Bottom.GainBlessing(1, true);
+            GameActions.Bottom.GainLight(1, true);
         }
     }
 

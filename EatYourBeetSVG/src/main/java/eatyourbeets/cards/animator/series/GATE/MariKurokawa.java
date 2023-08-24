@@ -19,7 +19,7 @@ public class MariKurokawa extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(MariKurokawa.class)
             .SetSkill(1, CardRarity.COMMON, EYBCardTarget.None)
-            .SetMaxCopies(2)
+
             .SetSeriesFromClassPackage();
     public static final int DISCARD_AMOUNT = 2;
 

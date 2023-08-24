@@ -27,7 +27,7 @@ public class IchigoKurosaki_Bankai extends AnimatorClassicCard
         SetExhaust(true);
         SetMultiDamage(true);
         this.series = CardSeries.Bleach;
-        SetMartialArtist();
+        
     }
 
     @Override

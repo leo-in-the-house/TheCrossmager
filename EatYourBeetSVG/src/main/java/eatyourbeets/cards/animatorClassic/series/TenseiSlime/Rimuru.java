@@ -14,7 +14,7 @@ import eatyourbeets.utilities.GameActions;
 
 public class Rimuru extends AnimatorClassicCard implements OnAfterCardPlayedSubscriber
 {
-    public static final EYBCardData DATA = Register(Rimuru.class).SetSeriesFromClassPackage().SetSkill(-2, CardRarity.RARE, EYBCardTarget.ALL).SetMaxCopies(2);
+    public static final EYBCardData DATA = Register(Rimuru.class).SetSeriesFromClassPackage().SetSkill(-2, CardRarity.RARE, EYBCardTarget.ALL);
 
     public AbstractCard copy;
 

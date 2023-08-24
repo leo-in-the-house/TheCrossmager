@@ -26,7 +26,7 @@ public class Witch extends AnimatorClassicCard
         SetScaling(1, 0, 0);
 
 
-        SetSpellcaster();
+        
     }
 
     @Override

@@ -14,7 +14,7 @@ public class Millim extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Millim.class)
             .SetAttack(1, CardRarity.COMMON, EYBAttackType.Elemental)
-            .SetMaxCopies(0)
+            
             .SetSeriesFromClassPackage()
             .ModifyRewards((data, rewards) ->
             {

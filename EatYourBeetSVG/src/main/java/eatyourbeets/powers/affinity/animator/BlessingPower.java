@@ -18,6 +18,6 @@ public class BlessingPower extends AnimatorAffinityPower
     @Override
     public PowerHelper GetThresholdBonusPower()
     {
-        return PowerHelper.Vitality;
+        return PowerHelper.Enlightenment;
     }
 }

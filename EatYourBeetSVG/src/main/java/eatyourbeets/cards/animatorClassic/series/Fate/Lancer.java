@@ -25,7 +25,7 @@ public class Lancer extends AnimatorClassicCard
         SetScaling(0, 1, 1);
 
 
-        SetMartialArtist();
+        
     }
 
     @Override

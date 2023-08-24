@@ -36,7 +36,7 @@ public class ElricAlphonse extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameActions.Bottom.GainBlock(block);
-        GameActions.Bottom.GainIntellect(1, false);
+        GameActions.Bottom.GainBlue(1, false);
         GameActions.Bottom.DrawNextTurn(1);
 
         if (info.TryActivateStarter())

@@ -12,7 +12,7 @@ import eatyourbeets.utilities.GameActions;
 public class LivingArmor extends UnnamedCard
 {
     public static final EYBCardData DATA = Register(LivingArmor.class)
-            .SetMaxCopies(2)
+            
             .SetSkill(2, CardRarity.UNCOMMON, EYBCardTarget.Minion);
 
     public LivingArmor()

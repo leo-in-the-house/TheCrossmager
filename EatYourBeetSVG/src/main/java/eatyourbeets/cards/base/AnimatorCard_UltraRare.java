@@ -23,7 +23,7 @@ public abstract class AnimatorCard_UltraRare extends AnimatorCard implements Hid
 
     protected static EYBCardData Register(Class<? extends AnimatorCard> type)
     {
-        return AnimatorCard.Register(type).SetMaxCopies(1);
+        return AnimatorCard.Register(type);
     }
 
     protected AnimatorCard_UltraRare(EYBCardData data)

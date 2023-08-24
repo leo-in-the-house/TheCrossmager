@@ -17,7 +17,7 @@ public class Layla extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Layla.class)
             .SetAttack(2, CardRarity.UNCOMMON, EYBAttackType.Ranged)
-            .SetMaxCopies(2)
+            
             .SetSeriesFromClassPackage();
     public static final int POISON_AMOUNT = 4;
 

@@ -10,7 +10,7 @@ public class ByakurenHijiri extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(ByakurenHijiri.class)
             .SetSkill(0, CardRarity.COMMON, EYBCardTarget.None)
-            .SetMaxCopies(2)
+            
             .SetSeriesFromClassPackage();
 
     public ByakurenHijiri()
@@ -31,9 +31,9 @@ public class ByakurenHijiri extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
-        GameActions.Bottom.GainForce(magicNumber, false);
-        GameActions.Bottom.GainAgility(magicNumber, false);
-        GameActions.Bottom.GainIntellect(magicNumber, false);
+        GameActions.Bottom.GainRed(magicNumber, false);
+        GameActions.Bottom.GainGreen(magicNumber, false);
+        GameActions.Bottom.GainBlue(magicNumber, false);
 
         if (!CheckSpecialCondition(true))
         {

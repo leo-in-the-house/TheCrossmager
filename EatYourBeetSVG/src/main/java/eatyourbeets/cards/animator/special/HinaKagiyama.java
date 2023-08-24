@@ -20,7 +20,7 @@ public class HinaKagiyama extends AnimatorCard
             .SetPower(0, CardRarity.SPECIAL)
             .SetColor(CardColor.COLORLESS)
             .SetSeries(CardSeries.TouhouProject)
-            .SetMaxCopies(1)
+            
             .PostInitialize(data -> data.AddPreview(new Special_Miracle(), false));
 
     public HinaKagiyama()
@@ -100,7 +100,7 @@ public class HinaKagiyama extends AnimatorCard
         {
             if (c.type == AbstractCard.CardType.CURSE)
             {
-                GameActions.Bottom.GainBlessing(amount);
+                GameActions.Bottom.GainLight(amount);
                 flashWithoutSound();
             }
         }

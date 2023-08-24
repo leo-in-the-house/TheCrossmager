@@ -55,7 +55,7 @@ public class Serara extends AnimatorClassicCard
             buffs.clear();
         }
 
-        GameActions.Bottom.GainForce(1);
+        GameActions.Bottom.GainRed(1);
         GameActions.Bottom.SelectFromHand(name, 1, !upgraded)
         .SetOptions(false, false, false)
         .SetMessage(GR.Common.Strings.HandSelection.GenericBuff)

@@ -14,7 +14,7 @@ public class SuzuneAmano extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(SuzuneAmano.class)
             .SetAttack(1, CardRarity.UNCOMMON, EYBAttackType.Elemental)
-            .SetMaxCopies(1)
+            
             .SetSeriesFromClassPackage();
 
     public SuzuneAmano()

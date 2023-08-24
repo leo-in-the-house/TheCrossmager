@@ -31,7 +31,7 @@ public class ChaikaTrabant extends AnimatorClassicCard implements OnStartOfTurnP
 
         tags.add(GR.Enums.CardTags.IGNORE_PEN_NIB);
 
-        SetSpellcaster();
+        
         
     }
 

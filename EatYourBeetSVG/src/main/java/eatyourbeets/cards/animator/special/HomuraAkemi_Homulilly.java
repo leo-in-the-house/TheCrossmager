@@ -35,7 +35,7 @@ public class HomuraAkemi_Homulilly extends AnimatorCard
     public void OnLateUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameActions.Bottom.GainBlock(block);
-        GameActions.Bottom.GainCorruption(secondaryValue);
+        GameActions.Bottom.GainDark(secondaryValue);
         GameActions.Bottom.Cycle(name, secondaryValue);
         GameActions.Bottom.Callback(() ->
         {

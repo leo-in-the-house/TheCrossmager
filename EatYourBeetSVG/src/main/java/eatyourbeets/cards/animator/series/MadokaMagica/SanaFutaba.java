@@ -16,7 +16,7 @@ public class SanaFutaba extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(SanaFutaba.class)
             .SetSkill(0, CardRarity.COMMON, EYBCardTarget.None)
-            .SetMaxCopies(2)
+            
             .SetSeriesFromClassPackage();
     public static final int BLOCK_INCREASE = 1;
 
