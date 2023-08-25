@@ -365,6 +365,8 @@ public class CardTooltips
         LoadFromPower(EnchantedArmor_Classic, new EnchantedArmorPower(FakeCharacter.Instance, 0));
         LoadFromPower(Vitality, new VitalityPower(FakeCharacter.Instance, 0));
         LoadFromPower(Invocation, new InvocationPower(FakeCharacter.Instance, 0));
+        LoadFromPower(Enlightenment, new EnlightenmentPower(FakeCharacter.Instance, 0));
+        LoadFromPower(Insanity, new InsanityPower(FakeCharacter.Instance, 0));
         LoadFromPower(Envenom, new EnvenomPower(FakeCharacter.Instance, 0));
         LoadFromPower(NoxiousFumes, new NoxiousFumesPower(FakeCharacter.Instance, 0));
         LoadFromPower(Vigor, new VigorPower(FakeCharacter.Instance, 0));

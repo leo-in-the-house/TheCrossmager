@@ -183,16 +183,6 @@
 			"DESCRIPTION": "Heal !S! [HP]. Or, if used on ** an enemy: Apply !M! [Poison]. || When Obtained: Also ** obtain a random {Potion}.",
 			"NAME": "Eirin Yagokoro"
 		},
-		"animator:IchigoKurosaki":
-		{
-			"DESCRIPTION": "Gain|Boost [R] [G]. ** <DRW>. || !A! [R]: Add {Ichigo Bankai} ** to your draw pile.",
-			"NAME": "Ichigo Kurosaki"
-		},
-		"animator:IchigoKurosaki_Bankai":
-		{
-			"DESCRIPTION": "This card's damage ** is multiplied by X",
-			"NAME": "Ichigo Bankai"
-		},
 		"animator:Kagari":
 		{
 			"DESCRIPTION": "Apply !M! [Shackles] ** to ALL enemies. || The next time ** you take damage: ** Channel !S! [Earth].",
@@ -465,12 +455,12 @@
 	{
 		"animator:ByakuyaBankai":
 		{
-			"DESCRIPTION": "Choose whether to Attack or Block X times. || When Exhausted: Shuffle this card into your discard pile and upgrade it. ",
+			"DESCRIPTION": "Choose whether to Attack or Block X times.",
 			"NAME": "Byakuya Bankai"
 		},
 		"animator:ByakuyaKuchiki":
 		{
-			"DESCRIPTION": "Choose whether to Attack or Block. || [F] or [A] Stance: Exit your Stance to Exhaust and add {Byakuya Bankai} to your draw pile.",
+			"DESCRIPTION": "Choose whether to Attack or Block. || <FS>: Exhaust and add {Byakuya Bankai} to your draw pile.",
 			"NAME": "Byakuya Kuchiki"
 		},
 		"animator:Defend_Bleach":
@@ -478,63 +468,65 @@
 			"DESCRIPTION": "<LIM>. Discard !M! card(s) to Channel !S! [Fire].",
 			"NAME": "Improved Defend"
 		},
+		"animator:IchigoBankai":
+		{
+			"DESCRIPTION": "When Drawn: Gain !M! [L]. || This card deals +X damage ** for each [L] and [R] you have.",
+			"NAME": "Ichigo Bankai"
+		},
 		"animator:IchigoKurosaki":
 		{
-			"DESCRIPTION": "Gain [F] [A]. || If you reached !S! [F] this combat: Exhaust and add {Ichigo Bankai} to your draw pile.",
+			"DESCRIPTION": "Gain !M! [L]. || <FS>: Exhaust and add ** {Ichigo Bankai} to your draw pile.",
 			"NAME": "Ichigo Kurosaki"
 		},
 		"animator:IkkakuBankai":
 		{
-			"DESCRIPTION": "Discard up to !M! cards.  Attack an extra time for each card discarded this way.",
+			"DESCRIPTION": "",
 			"NAME": "Ikkaku Bankai"
 		},
 		"animator:IkkakuMadarame":
 		{
-			"DESCRIPTION": "If {Zaraki Kenpachi} is active: You may gain [A] this turn. || If you reached !S! [F] or [A] this combat: Exhaust and add {Ikkaku Bankai} to your draw pile.",
-			"EXTENDED_DESCRIPTION": ["You may gain #yAgility this turn. This overrides other effects that prevent #yAgility gain."],
+			"DESCRIPTION": "<FS>: Exhaust and add ** {Ikkaku Bankai} to your draw pile.",
 			"NAME": "Ikkaku Madarame"
 		},
 		"animator:IsshinKurosaki":
 		{
-			"DESCRIPTION": "Choose 1: Channel 1 [Fire] or Gain !S! [F]. || <LIM>. All [Fire] deal !M! additional damage this combat.",
+			"DESCRIPTION": "Channel !M! [Fire]. || <FS>. All [Fire] deal !S! additional damage this combat.",
 			"NAME": "Isshin Kurosaki"
 		},
 		"animator:MayuriKurotsuchi":
 		{
-			"DESCRIPTION": "Apply !M! [Poison].  Apply additional [Poison] for each point of [F] and [A]. || If the target has at least 30 [Poison]: Apply !S! of a random {Common Debuff}.",
-			"EXTENDED_DESCRIPTION": ["Common Debuffs", "#yPoison, #yWeak, #yVulnerable, #yBurning, #yShackles."],
+			"DESCRIPTION": "Apply !M! [Poison].",
 			"NAME": "Mayuri Kurotsuchi"
 		},
 		"animator:OrihimeInoue":
 		{
-			"DESCRIPTION": "Channel !M! [Fire] the next time you are attacked this turn.  || On Synergy: Gain !S! {Counter-Attack}.",
-			"EXTENDED_DESCRIPTION": ["The next #b{0} time you are attacked this turn, Channel #yFire."],
+			"DESCRIPTION": "The next time you are attacked this turn, Enter <FS>.",
+			"EXTENDED_DESCRIPTION": ["The next #b{0} time you are attacked this turn, Enter #yForce #yStance."],
 			"NAME": "Orihime Inoue"
 		},
 		"animator:RenjiAbarai":
 		{
-			"DESCRIPTION": "Not in [A] Stance: Decrease this card's damage by !M! this combat. || Synergy: This card deals Piercing Damage.",
+			"DESCRIPTION": "On Discard: Enter <FS>.",
 			"NAME": "Renji Abarai"
 		},
 		"animator:RukiaBankai":
 		{
-			"DESCRIPTION": "Evoke your rightmost [Frost] !M! times.  Do this X times.",
+			"DESCRIPTION": "Gain !M! [Orb_S]. || Channel X [Frost]. ** Increase their amounts by !S!.",
 			"NAME": "Rukia Bankai"
 		},
 		"animator:RukiaKuchiki":
 		{
-			"DESCRIPTION": "{Starter}: Channel !M! [Frost]. || Synergy: Gain !S! [Block]. If you have no empty Orb Slots, Exhaust this card, add {Rukia Bankai} to your draw pile.",
+			"DESCRIPTION": "Channel [Frost]. ** Increase its amount by !M!. || <FS>: Exhaust and add ** {Rukia Bankai} to your draw pile.",
 			"NAME": "Rukia Kuchiki"
 		},
 		"animator:SajinKomamura":
 		{
-			"DESCRIPTION": "Gain/Boost !M! [F], [A], or [I], depending on your Stance.  Otherwise, enter a random Stance. || <SLM>. Synergy: Gain !S! [Metallicize].",
+			"DESCRIPTION": "This card can only be played ** if you have less than !M!% of your [MHP]. || Enter <FS>.",
 			"NAME": "Sajin Komamura"
 		},
 		"animator:SosukeAizen":
 		{
-			"DESCRIPTION": "Gain {Phasing} X times. || Gain !M! {Counter-Attack}.  {Counter-Attack} is not removed this combat.",
-			"EXTENDED_DESCRIPTION": ["Whenever you take 0 attack damage this turn, deal #b{0} damage to the attacking enemy."],
+			"DESCRIPTION": "<FS>: Gain [~Intangible] X times. || Otherwise, Enter <FS>, ** gain X [Strength], and shuffle this ** card into your draw pile.",
 			"NAME": "Sosuke Aizen"
 		},
 		"animator:Strike_Bleach":
@@ -544,18 +536,18 @@
 		},
 		"animator:UryuuIshida":
 		{
-			"DESCRIPTION": "{Starter}: Transfer !M! [Weak] and !M! [Vulnerable] from you to the enemy. || When Discarded: Gain !S! [Support Damage].",
+			"DESCRIPTION": "Any Stance: Transfer ** all [Weak] and [Vulnerable] from you to ** the enemy.",
 			"NAME": "Uryuu Ishida"
 		},
 		"animator:YasutoraSado":
 		{
-			"DESCRIPTION": "Can only attack an enemy with [Block] or is intending to inflict a Negative Effect. || Cooldown !S!: Exhaust this card to enter <FS> or <AS>.",
+			"DESCRIPTION": "On Exhaust: Enter <FS>.",
 			"NAME": "Yasutora Sado"
 		},
 		"animator:ZarakiKenpachi":
 		{
-			"DESCRIPTION": "Your [F] no longer decreases. You cannot gain [A][I]. || Once per turn, if you break an enemy's [Block]: Gain !M! {Temp. Strength}.",
-			"EXTENDED_DESCRIPTION": ["Your #yForce no longer decreases.  You cannot gain #yAgility nor #yIntellect.  Once per turn, if you break an enemy's #yBlock, gain #b{0} #yTemp. #yStrength."],
+			"DESCRIPTION": "Enter <FS>. || Whenever you gain [Force]: ** You gain an additional !M! [Strength].",
+			"EXTENDED_DESCRIPTION": ["Whenever you gain #yForce, ** You gain an additional #b{0} #yStrength."],
 			"NAME": "Zaraki Kenpachi"
 		}
 	},
@@ -565,7 +557,7 @@
 	{
 		"animator:Curse_Depression":
 		{
-			"DESCRIPTION": "Unplayable. || When drawn: Discard a random non-Hindrance card in your hand.",
+			"DESCRIPTION": "When drawn: Discard a random ** {non-Hindrance} card in your hand.",
 			"NAME": "Depression"
 		},
 		"animator:Defend_DateALive":
@@ -575,12 +567,12 @@
 		},
 		"animator:InverseOrigami":
 		{
-			"DESCRIPTION": "When Drawn: Spend [E] to ** add 1 random {Orb Core} ** to your hand. || Activate your [Support Damage] and {Trigger} ** all your Orbs.",
+			"DESCRIPTION": "If you would gain [Block] when this ** card is your hand, you gain that much ** [Support Damage] instead. || Trigger your [Support Damage].",
 			"NAME": "Inverse Origami"
 		},
 		"animator:InverseTohka":
 		{
-			"DESCRIPTION": "When Drawn: Spend [E] to Enter or Re-Enter <FS>. || Discard any number of 1-Cost cards. Attack an additional time for each card discarded.",
+			"DESCRIPTION": "If you would gain [Block] while this ** card is in your hand, you gain that much ** [D] instead. || Gain [Insanity].",
 			"NAME": "Inverse Tohka"
 		},
 		"animator:KotoriItsuka":

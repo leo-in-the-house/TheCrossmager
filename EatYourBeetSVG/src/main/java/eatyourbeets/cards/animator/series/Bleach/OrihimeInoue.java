@@ -4,12 +4,11 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
+import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
-import eatyourbeets.cards.base.Synergies;
-import eatyourbeets.orbs.animator.Fire;
 import eatyourbeets.powers.AnimatorPower;
-import eatyourbeets.powers.animator.CounterAttackPower;
+import eatyourbeets.stances.ForceStance;
 import eatyourbeets.utilities.GameActions;
 
 public class OrihimeInoue extends AnimatorCard
@@ -20,10 +19,10 @@ public class OrihimeInoue extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 5, 1, 2);
-        SetUpgrade(0, 3, 0);
+        Initialize(0, 8, 0, 0);
+        SetUpgrade(0, 4, 0);
 
-        
+        SetAffinity_Red(1);
     }
 
     @Override
@@ -32,11 +31,6 @@ public class OrihimeInoue extends AnimatorCard
         GameActions.Bottom.GainBlock(block);
 
         GameActions.Bottom.StackPower(new OrihimeInouePower(p, magicNumber));
-
-        if (HasSynergy())
-        {
-            GameActions.Bottom.StackPower(new CounterAttackPower(p, secondaryValue));
-        }
     }
 
     public static class OrihimeInouePower extends AnimatorPower
@@ -78,7 +72,7 @@ public class OrihimeInoue extends AnimatorCard
 
             this.amount--;
 
-            GameActions.Bottom.ChannelOrb(new Fire());
+            GameActions.Bottom.ChangeStance(ForceStance.STANCE_ID);
 
             return damageAmount;
         }

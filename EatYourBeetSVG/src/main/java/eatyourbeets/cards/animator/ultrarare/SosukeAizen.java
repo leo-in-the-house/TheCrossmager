@@ -2,9 +2,9 @@ package eatyourbeets.cards.animator.ultrarare;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.powers.common.CounterAttackPower;
-import eatyourbeets.powers.common.PhasingPower;
+import eatyourbeets.stances.ForceStance;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
@@ -15,14 +15,13 @@ public class SosukeAizen extends AnimatorCard_UltraRare
     {
         super(DATA);
 
-        Initialize(0, 0, 12);
-        SetUpgrade(0,0,6);
-        SetAffinity_Air(1, 0, 0);
-        SetAffinity_Fire(2, 0, 0);
-        SetAffinity_Earth(1, 0, 0);
+        Initialize(0, 0, 0);
+        SetUpgrade(0,0,0);
+
+        SetAffinity_Dark(2, 0, 0);
+        SetAffinity_Red(1, 0, 0);
 
         SetMultiDamage(true);
-        SetExhaust(true);
     }
 
     @Override
@@ -32,10 +31,13 @@ public class SosukeAizen extends AnimatorCard_UltraRare
 
         if (energy > 0)
         {
-            GameActions.Bottom.StackPower(new PhasingPower(p, energy));
+            if (ForceStance.IsActive()) {
+                GameActions.Bottom.StackPower(new IntangiblePlayerPower(player, energy));
+            }
+            else {
+                GameActions.Bottom.GainStrength(energy);
+                GameActions.Last.MoveCard(this, player.drawPile).ShowEffect(true, true);
+            }
         }
-
-        CounterAttackPower.retain = true;
-        GameActions.Bottom.StackPower(new CounterAttackPower(p, magicNumber));
     }
 }

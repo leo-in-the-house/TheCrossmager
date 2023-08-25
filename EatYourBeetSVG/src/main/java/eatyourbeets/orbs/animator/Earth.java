@@ -19,6 +19,7 @@ import eatyourbeets.powers.CombatStats;
 import eatyourbeets.resources.GR;
 import eatyourbeets.ui.TextureCache;
 import eatyourbeets.utilities.*;
+import patches.abstractOrb.AbstractOrbPatches;
 
 import java.util.ArrayList;
 
@@ -137,6 +138,7 @@ public class Earth extends AnimatorOrb implements OnStartOfTurnPostDrawSubscribe
     public void applyFocus()
     {
         this.passiveAmount = Math.max(0, this.basePassiveAmount + GetFocus());
+        AbstractOrbPatches.ApplyAmountChangeToOrb(this);
     }
 
     @Override

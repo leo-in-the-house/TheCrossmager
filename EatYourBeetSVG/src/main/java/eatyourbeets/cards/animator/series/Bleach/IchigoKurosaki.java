@@ -5,12 +5,14 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.special.IchigoBankai;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.powers.common.ForcePower;
+import eatyourbeets.stances.ForceStance;
 import eatyourbeets.utilities.GameActions;
 
 public class IchigoKurosaki extends AnimatorCard
 {
-    public static final EYBCardData DATA = Register(IchigoKurosaki.class).SetAttack(1, CardRarity.UNCOMMON, EYBAttackType.Normal, EYBCardTarget.Random);
+    public static final EYBCardData DATA = Register(IchigoKurosaki.class)
+            .SetAttack(1, CardRarity.RARE, EYBAttackType.Normal, EYBCardTarget.Random)
+            .SetSeriesFromClassPackage();
     static
     {
         DATA.AddPreview(new IchigoBankai(), false);
@@ -20,12 +22,10 @@ public class IchigoKurosaki extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(2, 0, 0, ForcePower.GetThreshold(4));
-        SetUpgrade(3, 0, 0, 0);
+        Initialize(12, 0, 2, 0);
+        SetUpgrade(3, 0, 1, 0);
 
-
-        
-        
+        SetAffinity_Light(1, 0, 1);
     }
 
     @Override
@@ -33,15 +33,12 @@ public class IchigoKurosaki extends AnimatorCard
     {
         GameActions.Bottom.DealDamageToRandomEnemy(this, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL);
 
-        GameActions.Bottom.GainRed(1, false);
-        GameActions.Bottom.GainGreen(1, false);
+        GameActions.Bottom.GainLight(magicNumber);
 
-        GameActions.Bottom.Callback(card -> {
-            if (ForcePower.GetCurrentLevel() > 4)
-            {
-                GameActions.Bottom.MakeCardInDrawPile(new IchigoBankai());
-                GameActions.Last.ModifyAllInstances(uuid).AddCallback(GameActions.Bottom::Exhaust);
-            }
-        });
+        if (ForceStance.IsActive())
+        {
+            GameActions.Bottom.MakeCardInDrawPile(new IchigoBankai());
+            GameActions.Last.ModifyAllInstances(uuid).AddCallback(GameActions.Bottom::Exhaust);
+        }
     }
 }

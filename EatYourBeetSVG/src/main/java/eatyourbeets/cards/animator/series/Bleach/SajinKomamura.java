@@ -2,87 +2,50 @@ package eatyourbeets.cards.animator.series.Bleach;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.stances.NeutralStance;
 import eatyourbeets.cards.base.AnimatorCard;
+import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
-import eatyourbeets.cards.base.Synergies;
-import eatyourbeets.powers.CombatStats;
-import eatyourbeets.stances.AgilityStance;
 import eatyourbeets.stances.ForceStance;
-import eatyourbeets.stances.IntellectStance;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.RandomizedList;
+import eatyourbeets.utilities.GameUtilities;
 
 public class SajinKomamura extends AnimatorCard
 {
-    public static final EYBCardData DATA = Register(SajinKomamura.class).SetSkill(2, CardRarity.UNCOMMON, EYBCardTarget.None);
+    public static final EYBCardData DATA = Register(SajinKomamura.class).SetSkill(0, CardRarity.UNCOMMON, EYBCardTarget.None);
 
     public SajinKomamura()
     {
         super(DATA);
 
-        Initialize(0, 7, 2,1);
-        SetUpgrade(0, 3, 0);
+        Initialize(0, 0, 90,0);
+        SetUpgrade(0, 0, 0);
 
+        SetAffinity_Red(1);
+    }
 
-        
+    @Override
+    public boolean cardPlayable(AbstractMonster m)
+    {
+        if (super.cardPlayable(m))
+        {
+            double current = ((double) GameUtilities.GetHP(player, false, false) / GameUtilities.GetMaxHP(player, false, false));
+            double threshold = (double) magicNumber / 100;
+            return current < threshold;
+        }
 
-        
+        return false;
+    }
+
+    @Override
+    protected void OnUpgrade()
+    {
+        SetRetain(true);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
-        GameActions.Bottom.GainBlock(block);
-
-        if (ForceStance.IsActive())
-        {
-            GameActions.Bottom.GainRed(magicNumber);
-        }
-        else if (AgilityStance.IsActive())
-        {
-            GameActions.Bottom.GainGreen(magicNumber);
-        }
-        else if (IntellectStance.IsActive())
-        {
-            GameActions.Bottom.GainBlue(magicNumber);
-        }
-        else
-        {
-            EnterRandomStanceNotCurrent();
-        }
-
-        if (HasSynergy() && CombatStats.TryActivateSemiLimited(cardID))
-        {
-            GameActions.Bottom.GainMetallicize(secondaryValue);
-        }
-    }
-
-    private void EnterRandomStanceNotCurrent()
-    {
-        RandomizedList<String> stances = new RandomizedList<>();
-
-        if (!player.stance.ID.equals(ForceStance.STANCE_ID))
-        {
-            stances.Add(ForceStance.STANCE_ID);
-        }
-
-        if (!player.stance.ID.equals(AgilityStance.STANCE_ID))
-        {
-            stances.Add(AgilityStance.STANCE_ID);
-        }
-
-        if (!player.stance.ID.equals(IntellectStance.STANCE_ID))
-        {
-            stances.Add(IntellectStance.STANCE_ID);
-        }
-
-        if (!player.stance.ID.equals(NeutralStance.STANCE_ID))
-        {
-            stances.Add(NeutralStance.STANCE_ID);
-        }
-
-        GameActions.Bottom.ChangeStance(stances.Retrieve(rng));
+        GameActions.Bottom.ChangeStance(ForceStance.STANCE_ID);
     }
 }

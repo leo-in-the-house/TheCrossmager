@@ -10,25 +10,26 @@ import com.megacrit.cardcrawl.vfx.combat.ShockWaveEffect;
 import eatyourbeets.cards.animator.colorless.uncommon.IchigoKurosaki;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.effects.AttackEffects;
+import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
-public class IchigoKurosaki_Bankai extends AnimatorCard
+public class IchigoBankai extends AnimatorCard
 {
-    public static final EYBCardData DATA = Register(IchigoKurosaki_Bankai.class)
+    public static final EYBCardData DATA = Register(IchigoBankai.class)
             .SetAttack(X_COST, CardRarity.SPECIAL, EYBAttackType.Ranged, EYBCardTarget.ALL)
             .SetColor(CardColor.COLORLESS)
             .SetSeries(IchigoKurosaki.DATA.Series);
 
-    public IchigoKurosaki_Bankai()
+    public IchigoBankai()
     {
         super(DATA);
 
-        Initialize(9, 0);
-        SetUpgrade(3, 0);
+        Initialize(12, 0, 2);
+        SetUpgrade(3, 0, 1);
 
-        SetAffinity_Green(2, 0, 1);
-        SetAffinity_Red(2, 0, 1);
+        SetAffinity_Light(1);
+        SetAffinity_Red(1);
 
         SetExhaust(true);
     }
@@ -47,7 +48,10 @@ public class IchigoKurosaki_Bankai extends AnimatorCard
             effect += ChemicalX.BOOST;
         }
 
-        return effect * amount;
+        int numLight = CombatStats.Affinities.GetUsableAffinity(Affinity.Light) * effect;
+        int numRed = CombatStats.Affinities.GetUsableAffinity(Affinity.Red) * effect;
+
+        return numLight + numRed + amount;
     }
 
     @Override
@@ -61,5 +65,7 @@ public class IchigoKurosaki_Bankai extends AnimatorCard
             GameActions.Bottom.VFX(new ShockWaveEffect(p.hb.cX, p.hb.cY, Color.LIGHT_GRAY, ShockWaveEffect.ShockWaveType.ADDITIVE), 0.75f);
             GameActions.Bottom.DealDamageToAll(this, AttackEffects.SLASH_HEAVY);
         }
+
+        GameActions.Bottom.GainLight(magicNumber);
     }
 }

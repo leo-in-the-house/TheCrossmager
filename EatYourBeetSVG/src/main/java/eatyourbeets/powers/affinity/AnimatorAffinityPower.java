@@ -65,7 +65,7 @@ public abstract class AnimatorAffinityPower extends AbstractAffinityPower
 
     public float ApplyScaling(float multi)
     {
-        return GetThresholdLevel() * multi;
+        return CombatStats.Affinities.GetUsableAffinity(affinity) * multi;
     }
 
     public float ApplyScaling(EYBCard card, float base)

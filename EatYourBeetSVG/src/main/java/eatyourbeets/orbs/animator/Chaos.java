@@ -18,6 +18,7 @@ import eatyourbeets.utilities.Colors;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.RandomizedList;
+import patches.abstractOrb.AbstractOrbPatches;
 
 import java.util.ArrayList;
 
@@ -122,6 +123,14 @@ public class Chaos extends AnimatorOrb implements OnEndOfTurnLastSubscriber, OnA
         //this.renderText(sb);
         this.hb.render(sb);
     }
+
+
+    @Override
+    public void applyFocus()
+    {
+        AbstractOrbPatches.ApplyAmountChangeToOrb(this);
+    }
+
 
     @Override
     public void playChannelSFX()

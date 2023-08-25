@@ -20,25 +20,15 @@ public class ByakuyaBankai extends AnimatorCard {
     public ByakuyaBankai() {
         super(DATA);
 
-        Initialize(7, 5);
-        SetUpgrade(2, 2);
-        SetAffinity_Fire(1, 0, 0);
-        SetAffinity_Air(2, 0, 0);
+        Initialize(13, 11);
+        SetUpgrade(5, 5);
 
-        SetUnique(true, true);
+        SetAffinity_Red(1);
+        SetAffinity_Blue(1);
+        SetAffinity_Dark(1);
+
         SetExhaust(true);
         SetMultiDamage(true);
-    }
-
-    @Override
-    public void triggerOnExhaust() {
-        super.triggerOnExhaust();
-        GameActions.Bottom.MoveCard(this, player.exhaustPile, player.discardPile)
-                .ShowEffect(false, false);
-        if (this.canUpgrade()) {
-            this.upgrade();
-            this.flash();
-        }
     }
 
     @Override
@@ -63,7 +53,7 @@ public class ByakuyaBankai extends AnimatorCard {
         Execute(choices, m);
     }
 
-    private AnimatorCardBuilder GenerateInternal(AbstractCard.CardType type, ActionT3<AnimatorCard, AbstractPlayer, AbstractMonster> onUseAction) {
+    private AnimatorCardBuilder GenerateInternal(AbstractCard.CardType type, ActionT3<EYBCard, AbstractPlayer, AbstractMonster> onUseAction) {
         AnimatorCardBuilder builder = new AnimatorCardBuilder(ByakuyaBankai.DATA.ID);
         builder.SetText(name, "", "");
         builder.SetProperties(type, GR.Enums.Cards.THE_ANIMATOR, AbstractCard.CardRarity.RARE, CardTarget.ENEMY);

@@ -1,41 +1,40 @@
 package eatyourbeets.cards.animator.special;
 
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class IkkakuBankai extends AnimatorCard
 {
-    public static final EYBCardData DATA = Register(IkkakuBankai.class).SetAttack(2, CardRarity.SPECIAL, EYBAttackType.Normal, EYBCardTarget.ALL).SetSeries(CardSeries.Bleach);
+    public static final EYBCardData DATA = Register(IkkakuBankai.class).SetAttack(2, CardRarity.SPECIAL, EYBAttackType.Piercing, EYBCardTarget.ALL).SetSeries(CardSeries.Bleach);
 
     public IkkakuBankai()
     {
         super(DATA);
 
-        Initialize(1, 0, 4);
-        SetUpgrade(2, 0, 0);
-        SetAffinity_Fire(2, 0, 2);
-        SetAffinity_Air(1, 0, 2);
+        Initialize(12, 0, 0);
+        SetUpgrade(4, 0, 0);
+
+        SetAffinity_Red(2);
         SetExhaust(true);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
-        GameActions.Bottom.DealDamageToAll(this, AttackEffects.SLASH_HORIZONTAL);
+        int stacks = GameUtilities.UseXCostEnergy(this);
 
-        GameActions.Bottom.DiscardFromHand(name, magicNumber, false)
-        .SetOptions(true, true, true)
-        .AddCallback(cards ->
-        {
-            for (AbstractCard card : cards)
-            {
-                GameActions.Top.DealDamageToAll(this, AttackEffects.SLASH_DIAGONAL)
-                        .SetVFX(false, true);
-            }
-        });
+        for (int i=0; i<stacks-1; i++) {
+            GameActions.Bottom.DealDamageToAll(this, AttackEffects.SLASH_HORIZONTAL);
+        }
+
+        if (stacks > 0) {
+            GameActions.Bottom.DealDamageToAll(this, AttackEffects.SLASH_HORIZONTAL)
+                    .SetSoundPitch(0.5f, 0.7f)
+                    .SetDuration(1.5f, false);
+        }
     }
 }

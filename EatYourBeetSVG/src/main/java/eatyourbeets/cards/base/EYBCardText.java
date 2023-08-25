@@ -257,7 +257,7 @@ public class EYBCardText
                 cs.text = "x" + scaling.V1;
             }
 
-            offset_y += RenderScaling(sb, affinity.GetPowerIcon(false), cs, offset_y, Color.BLACK);//affinity.GetAlternateColor());
+            offset_y += RenderScaling(sb, affinity.GetAffinityIcon(), cs, offset_y, Color.BLACK);//affinity.GetAlternateColor());
         }
     }
 

@@ -17,12 +17,12 @@
 	},
 	"eyb:BlessingPower":
 	{
-		"DESCRIPTIONS": ["At the start of each turn, lose #b1 [B].", " At #b{0} [B]: Gain #b{1} #yVitality."],
+		"DESCRIPTIONS": ["At the start of each turn, lose #b1 [B].", " At #b{0} [B]: Gain #b{1} #yEnlightenment."],
 		"NAME": "Blessing"
 	},
 	"eyb:CorruptionPower":
 	{
-		"DESCRIPTIONS": ["At the start of each turn, lose #b1 [C].", " At #b{0} [C]: Gain #b{1} #yInvocation."],
+		"DESCRIPTIONS": ["At the start of each turn, lose #b1 [C].", " At #b{0} [C]: Gain #b{1} #yInsanity."],
 		"NAME": "Corruption"
 	},
 	

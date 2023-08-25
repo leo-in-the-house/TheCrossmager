@@ -3,20 +3,16 @@ package eatyourbeets.cards.animator.series.Bleach;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.animator.beta.special.IkkakuBankai;
+import eatyourbeets.cards.animator.special.IkkakuBankai;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.powers.AnimatorPower;
-import eatyourbeets.powers.common.AgilityPower;
-import eatyourbeets.powers.common.ForcePower;
+import eatyourbeets.stances.ForceStance;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class IkkakuMadarame extends AnimatorCard
 {
-    public static final EYBCardData DATA = Register(IkkakuMadarame.class).SetAttack(2, CardRarity.COMMON, EYBAttackType.Normal, EYBCardTarget.ALL);
+    public static final EYBCardData DATA = Register(IkkakuMadarame.class).SetAttack(2, CardRarity.COMMON, EYBAttackType.Piercing, EYBCardTarget.ALL);
     static
     {
-        DATA.AddPreview(new ZarakiKenpachi(), false);
         DATA.AddPreview(new IkkakuBankai(), false);
     }
 
@@ -24,11 +20,11 @@ public class IkkakuMadarame extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(4, 0, 0, ForcePower.GetThreshold(2));
-        SetUpgrade(3, 0, 0);
+        Initialize(23, 0, 0);
+        SetUpgrade(12, 0, 0);
 
+        SetAffinity_Red(1);
 
-        
     }
 
     @Override
@@ -36,58 +32,10 @@ public class IkkakuMadarame extends AnimatorCard
     {
         GameActions.Bottom.DealDamageToAll(this, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL);
 
-        if (GameUtilities.GetPowerAmount(ZarakiKenpachi.DATA.ID + "Power") > 0)
+        if (ForceStance.IsActive())
         {
-            GameActions.Bottom.StackPower(new IkkakuMadaramePower(player, 1));
-        }
-
-        GameActions.Bottom.Callback(card -> {
-            if (ForcePower.GetCurrentLevel() > 2 || AgilityPower.GetCurrentLevel() > 2 )
-            {
-                GameActions.Bottom.MakeCardInDrawPile(new IkkakuBankai());
-                GameActions.Last.ModifyAllInstances(uuid).AddCallback(GameActions.Bottom::Exhaust);
-            }
-        });
-    }
-
-    public static class IkkakuMadaramePower extends AnimatorPower
-    {
-        public IkkakuMadaramePower(AbstractPlayer owner, int amount)
-        {
-            super(owner, IkkakuMadarame.DATA);
-
-            this.amount = amount;
-
-            updateDescription();
-        }
-
-        @Override
-        public void onInitialApplication()
-        {
-            super.onInitialApplication();
-
-            AgilityPower.StartOverrideDisable();
-        }
-
-        @Override
-        public void onRemove()
-        {
-            super.onRemove();
-
-            AgilityPower.StopOverrideDisable();
-        }
-
-        @Override
-        public void updateDescription()
-        {
-            description = FormatDescription(0, amount);
-        }
-
-        @Override
-        public void atEndOfTurn(boolean isPlayer)
-        {
-            super.atEndOfTurn(isPlayer);
-            RemovePower();
+            GameActions.Bottom.MakeCardInDrawPile(new IkkakuBankai());
+            GameActions.Last.ModifyAllInstances(uuid).AddCallback(GameActions.Bottom::Exhaust);
         }
     }
 }

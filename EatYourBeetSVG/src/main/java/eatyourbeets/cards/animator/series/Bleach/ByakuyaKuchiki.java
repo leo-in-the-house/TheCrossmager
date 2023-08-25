@@ -5,18 +5,17 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.stances.NeutralStance;
-import eatyourbeets.cards.animator.beta.special.ByakuyaBankai;
+import eatyourbeets.cards.animator.special.ByakuyaBankai;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.interfaces.delegates.ActionT3;
 import eatyourbeets.resources.GR;
-import eatyourbeets.stances.AgilityStance;
 import eatyourbeets.stances.ForceStance;
 import eatyourbeets.utilities.GameActions;
 
 public class ByakuyaKuchiki extends AnimatorCard
 {
-    public static final EYBCardData DATA = Register(ByakuyaKuchiki.class).SetAttack(3, CardRarity.RARE, EYBAttackType.Piercing);
+    public static final EYBCardData DATA = Register(ByakuyaKuchiki.class).SetAttack(2, CardRarity.RARE, EYBAttackType.Piercing)
+            .SetSeriesFromClassPackage();
     static
     {
         DATA.AddPreview(new ByakuyaBankai(), false);
@@ -26,10 +25,11 @@ public class ByakuyaKuchiki extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(23, 14, 0);
-        SetUpgrade(3, 3, 0);
+        Initialize(13, 11, 0);
+        SetUpgrade(5, 5, 0);
         
-
+        SetAffinity_Blue(1);
+        SetAffinity_Dark(1);
         
     }
 
@@ -40,9 +40,8 @@ public class ByakuyaKuchiki extends AnimatorCard
             ChooseAction(m);
         });
 
-        if (ForceStance.IsActive() || AgilityStance.IsActive())
+        if (ForceStance.IsActive())
         {
-            GameActions.Bottom.ChangeStance(NeutralStance.STANCE_ID);
             GameActions.Bottom.MakeCardInDrawPile(new ByakuyaBankai());
             GameActions.Last.ModifyAllInstances(uuid).AddCallback(GameActions.Bottom::Exhaust);
         }
@@ -60,7 +59,7 @@ public class ByakuyaKuchiki extends AnimatorCard
         Execute(choices, m);
     }
 
-    private AnimatorCardBuilder GenerateInternal(AbstractCard.CardType type, ActionT3<AnimatorCard, AbstractPlayer, AbstractMonster> onUseAction)
+    private AnimatorCardBuilder GenerateInternal(AbstractCard.CardType type, ActionT3<EYBCard, AbstractPlayer, AbstractMonster> onUseAction)
     {
         AnimatorCardBuilder builder = new AnimatorCardBuilder(ByakuyaKuchiki.DATA.ID);
         builder.SetText(name, "", "");

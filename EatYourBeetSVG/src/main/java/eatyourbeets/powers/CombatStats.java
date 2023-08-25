@@ -137,6 +137,7 @@ public class CombatStats extends EYBPower implements InvisiblePower
     private static boolean canActivateStarter;
     private static int cardsDrawnThisTurn = 0;
     private static int turnCount = 0;
+    private static HashMap<String, Integer> amountIncreasedOnOrbs = new HashMap<>();
 
     //@Formatter: Off
     public static boolean CanActivateLimited(String id) { return !HasActivatedLimited(id); }
@@ -154,7 +155,38 @@ public class CombatStats extends EYBPower implements InvisiblePower
     public static boolean CanActivateSemiLimited(String id, int cap) { return !HasActivatedSemiLimited(id, cap); }
     public static boolean HasActivatedSemiLimited(String id, int cap) { return turnData.containsKey(id) && (int)turnData.get(id) >= cap; }
     public static boolean TryActivateSemiLimited(String id, int cap) { return JUtils.IncrementMapElement(turnData, id) <= cap; }
+    public static HashMap<String, Integer> AmountIncreasedOnOrbs(boolean fromZero)
+    {
+        return amountIncreasedOnOrbs;
+    }
     //@Formatter: On
+
+    public static void AddAmountIncreasedOnOrbs(String orbType, int amount)
+    {
+        if (amountIncreasedOnOrbs.containsKey(orbType))
+        {
+            int currentAmount = amountIncreasedOnOrbs.get(orbType);
+
+            amountIncreasedOnOrbs.put(orbType, currentAmount + amount);
+        }
+        else
+        {
+            amountIncreasedOnOrbs.put(orbType, amount);
+        }
+    }
+
+    public static int GetAmountIncreasedOnOrb(String orbType)
+    {
+        for (String orbID : amountIncreasedOnOrbs.keySet())
+        {
+            if (orbID.equals(orbType))
+            {
+                return amountIncreasedOnOrbs.get(orbID);
+            }
+        }
+
+        return 0;
+    }
 
     protected static <T> GameEvent<T> RegisterEvent(GameEvent<T> event)
     {
@@ -195,6 +227,7 @@ public class CombatStats extends EYBPower implements InvisiblePower
         cardsExhaustedThisTurn.clear();
         synergiesThisCombat.clear();
         synergiesThisTurn.clear();
+        amountIncreasedOnOrbs.clear();
         unplayableCards.clear();
         resetAfterPlay.clear();
         currentPhase = null;

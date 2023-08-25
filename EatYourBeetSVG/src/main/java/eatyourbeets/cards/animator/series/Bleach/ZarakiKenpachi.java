@@ -1,42 +1,52 @@
 package eatyourbeets.cards.animator.series.Bleach;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.LoseStrengthPower;
+import eatyourbeets.cards.base.Affinity;
 import eatyourbeets.cards.base.AnimatorCard;
+import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
-import eatyourbeets.cards.base.Synergies;
-import eatyourbeets.interfaces.subscribers.OnBlockBrokenSubscriber;
-import eatyourbeets.interfaces.subscribers.OnStartOfTurnPostDrawSubscriber;
+import eatyourbeets.interfaces.subscribers.OnAffinityThresholdReachedSubscriber;
 import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.powers.CombatStats;
-import eatyourbeets.powers.common.AgilityPower;
-import eatyourbeets.powers.common.ForcePower;
-import eatyourbeets.powers.common.IntellectPower;
+import eatyourbeets.powers.affinity.AbstractAffinityPower;
+import eatyourbeets.stances.ForceStance;
 import eatyourbeets.utilities.GameActions;
 
 public class ZarakiKenpachi extends AnimatorCard
 {
-    public static final EYBCardData DATA = Register(ZarakiKenpachi.class).SetPower(2, CardRarity.RARE);
+    public static final EYBCardData DATA = Register(ZarakiKenpachi.class).SetPower(3, CardRarity.RARE);
 
     public ZarakiKenpachi()
     {
         super(DATA);
 
-        Initialize(0, 0, 3);
-        SetUpgrade(0, 0, 2);
+        Initialize(0, 9, 2);
+        SetUpgrade(0, 5, 0);
 
-        
+        SetAffinity_Red(2, 0, 0);
+        SetAffinity_Dark(1, 0, 0);
+    }
+
+    @Override
+    protected void OnUpgrade()
+    {
+        super.OnUpgrade();
+
+        SetInnate(true);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameActions.Bottom.GainBlock(block);
+
+        GameActions.Bottom.ChangeStance(ForceStance.STANCE_ID);
+
         GameActions.Bottom.StackPower(new ZarakiKenpachiPower(p, magicNumber));
     }
 
-    public static class ZarakiKenpachiPower extends AnimatorPower implements OnBlockBrokenSubscriber, OnStartOfTurnPostDrawSubscriber
+    public static class ZarakiKenpachiPower extends AnimatorPower implements OnAffinityThresholdReachedSubscriber
     {
         boolean activated;
 
@@ -46,44 +56,17 @@ public class ZarakiKenpachi extends AnimatorCard
 
             this.amount = amount;
 
-            ForcePower.StartAlwaysPreserve();
-            AgilityPower.StartDisable();
-            IntellectPower.StartDisable();
-
-            CombatStats.onBlockBroken.Subscribe(this);
-            CombatStats.onStartOfTurnPostDraw.Subscribe(this);
+            CombatStats.onAffinityThresholdReached.Subscribe(this);
 
             updateDescription();
         }
 
         @Override
-        public void OnStartOfTurnPostDraw()
+        public void OnAffinityThresholdReached(AbstractAffinityPower power, int thresholdLevel)
         {
-            activated = false;
-            updateDescription();
-        }
-
-        @Override
-        public void onRemove()
-        {
-            super.onRemove();
-
-            ForcePower.StopAlwaysPreserve();
-            AgilityPower.StopDisable();
-            IntellectPower.StopDisable();
-
-            CombatStats.onBlockBroken.Unsubscribe(this);
-            CombatStats.onStartOfTurnPostDraw.Unsubscribe(this);
-        }
-
-        @Override
-        public void OnBlockBroken(AbstractCreature creature)
-        {
-            if (!creature.isPlayer && !activated)
+            if (power.affinity == Affinity.Red)
             {
-                activated = true;
                 GameActions.Bottom.GainStrength(amount);
-                GameActions.Bottom.ApplyPower(new LoseStrengthPower(player, amount));
             }
         }
 

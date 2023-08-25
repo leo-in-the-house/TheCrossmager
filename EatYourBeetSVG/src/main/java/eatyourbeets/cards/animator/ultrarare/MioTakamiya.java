@@ -3,7 +3,7 @@ package eatyourbeets.cards.animator.ultrarare;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.animator.beta.series.DateALive.ShidoItsuka;
+import eatyourbeets.cards.animator.series.DateALive.ShidoItsuka;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.powers.AnimatorPower;

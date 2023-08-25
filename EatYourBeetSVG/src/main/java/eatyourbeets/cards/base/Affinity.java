@@ -82,7 +82,7 @@ public enum Affinity implements Comparable<Affinity>
         return (this != Sealed && level > 1 ? BorderFG.Texture() : null);
     }
 
-    public TextureRegion GetPowerIcon()
+    public TextureRegion GetAffinityIcon()
     {
         switch (this)
         {
@@ -189,8 +189,8 @@ public enum Affinity implements Comparable<Affinity>
                 case Red: return GR.Tooltips.Strength;
                 case Green: return GR.Tooltips.Dexterity;
                 case Blue: return GR.Tooltips.Focus;
-                case Light: return GR.Tooltips.Vitality;
-                case Dark: return GR.Tooltips.Invocation;
+                case Light: return GR.Tooltips.Enlightenment;
+                case Dark: return GR.Tooltips.Insanity;
                 case Star: return GR.Tooltips.Affinity_Star;
 
                 default: throw new RuntimeException("Invalid enum value: " + this.name());
