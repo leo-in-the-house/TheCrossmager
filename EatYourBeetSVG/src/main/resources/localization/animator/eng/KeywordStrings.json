@@ -45,7 +45,7 @@
 	},
 	"Blessing":
 	{
-		"DESCRIPTION": "When you gain [Blessing], also gain [Vitality].",
+		"DESCRIPTION": "When you gain [Blessing], also gain [Enlightenment].",
 		"NAMES": ["blessing"],
 		"PROPER_NAME": "Blessing"
 	},
@@ -57,7 +57,7 @@
 	},
 	"Corruption":
 	{
-		"DESCRIPTION": "When you gain [Corruption], also gain [Invocation].",
+		"DESCRIPTION": "When you gain [Corruption], also gain [Insanity].",
 		"NAMES": ["corruption"],
 		"PROPER_NAME": "Corruption"
 	},

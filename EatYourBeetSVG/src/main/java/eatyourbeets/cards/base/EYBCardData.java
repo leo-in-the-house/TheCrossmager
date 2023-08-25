@@ -205,13 +205,6 @@ public class EYBCardData implements OnAddingToCardRewardListener, OnReceiveRewar
         return this;
     }
 
-    public EYBCardData
-    {
-        MaxCopies = maxCopies;
-
-        return this;
-    }
-
     public EYBCardData SetColor(AbstractCard.CardColor color)
     {
         CardColor = color;
@@ -230,17 +223,6 @@ public class EYBCardData implements OnAddingToCardRewardListener, OnReceiveRewar
     {
         CardType = type;
         CardRarity = rarity;
-
-        if (MaxCopies == -1 && type != AbstractCard.CardType.STATUS && type != AbstractCard.CardType.CURSE)
-        {
-            switch (rarity)
-            {
-                case COMMON: return;
-                case UNCOMMON: return;
-                case RARE: return;
-                default: return;
-            }
-        }
 
         return this;
     }

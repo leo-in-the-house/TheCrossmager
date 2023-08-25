@@ -16,7 +16,9 @@ import eatyourbeets.utilities.GameUtilities;
 
 public class UryuuIshida extends AnimatorCard
 {
-    public static final EYBCardData DATA = Register(UryuuIshida.class).SetAttack(1, CardRarity.UNCOMMON, EYBAttackType.Ranged);
+    public static final EYBCardData DATA = Register(UryuuIshida.class)
+            .SetAttack(1, CardRarity.UNCOMMON, EYBAttackType.Ranged)
+            .SetSeriesFromClassPackage();
 
     public UryuuIshida()
     {

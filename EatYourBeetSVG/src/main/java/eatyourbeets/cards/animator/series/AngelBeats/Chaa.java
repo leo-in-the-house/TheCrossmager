@@ -23,7 +23,7 @@ public class Chaa extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 8, 0, 0);
+        Initialize(0, 8, 1, 0);
         SetUpgrade(0, 2, 0, 0);
         SetCostUpgrade(-1);
 
@@ -51,6 +51,8 @@ public class Chaa extends AnimatorCard
         @Override
         public void atStartOfTurnPostDraw()
         {
+            super.atStartOfTurnPostDraw();
+
             GameActions.Bottom.ExhaustFromHand(name, amount, false)
             .SetOptions(false, false, false)
             .AddCallback(cards ->
@@ -84,6 +86,7 @@ public class Chaa extends AnimatorCard
                     GameActions.Bottom.MakeCardInHand(c);
                 }
             });
+            flashWithoutSound();
         }
 
         @Override

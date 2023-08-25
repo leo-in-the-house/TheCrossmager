@@ -46,6 +46,11 @@
 		"DESCRIPTIONS": ["Take #b{0} damage at the end of your turn."],
 		"NAME": "Delayed Damage"
 	},
+	"eyb:EnlightenmentPower":
+	{
+		"DESCRIPTIONS": ["At the start of each turn, gain #b{0} [E]."],
+		"NAME": "Enlightenment"
+	},
 	"eyb:EnergizedPower":
 	{
 		"DESCRIPTIONS": ["Gain #b{0} additional [E] next turn."],
@@ -55,6 +60,11 @@
 	{
 		"DESCRIPTIONS": ["Deal #b{0} less #yAttack damage."],
 		"NAME": "Freezing"
+	},
+	"eyb:InsanityPower":
+	{
+		"DESCRIPTIONS": ["At the start of each turn, add #b{0} #yUpgraded, #yMotivated random cards to your draw pile."],
+		"NAME": "Insanity"
 	},
 	"eyb:InspirationPower":
 	{

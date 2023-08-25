@@ -108,6 +108,12 @@
 		"NAMES": ["energized"],
 		"PROPER_NAME": "Energized"
 	},
+	"Enlightenment":
+	{
+		"DESCRIPTION": "At the start of each turn, gain #b1 [E].",
+		"NAMES": ["enlightenment"],
+		"PROPER_NAME": "Enlightenment"
+	},
 	"Envenom":
 	{
 		"DESCRIPTION": "Whenever an attack deals unblocked damage, apply #b1 #yPoison.",
@@ -167,6 +173,12 @@
 		"DESCRIPTION": "#yImitating a card creates a copy of it with #yPurge, base damage and [Block] reduced to #b1, and [E] cost reduced by #b2.",
 		"NAMES": ["imitate", "imitation", "imitations"],
 		"PROPER_NAME": "Imitate"
+	},
+	"Insanity":
+	{
+		"DESCRIPTION": "At the start of each turn, add #b1 #yUpgraded, #yMotivated random cards to your draw pile.",
+		"NAMES": ["insanity"],
+		"PROPER_NAME": "Insanity"
 	},
 	"Inspiration":
 	{

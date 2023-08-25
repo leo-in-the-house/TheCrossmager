@@ -6,20 +6,21 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.utilities.CardSelection;
 import eatyourbeets.utilities.GameActions;
 
 public class MasamiIwasawa extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(MasamiIwasawa.class)
-            .SetSkill(2, CardRarity.COMMON)
+            .SetSkill(2, CardRarity.COMMON, EYBCardTarget.None)
             .SetSeriesFromClassPackage();
 
     public MasamiIwasawa()
     {
         super(DATA);
 
-        Initialize(0, 20, 2, 1);
+        Initialize(0, 20, 2, 0);
         SetUpgrade(0, 8, 0, 0);
 
         SetAffinity_Light(1);
@@ -33,6 +34,6 @@ public class MasamiIwasawa extends AnimatorCard
 
         GameActions.Bottom.MakeCardInDrawPile(new Dazed())
         .SetDestination(CardSelection.Top)
-        .Repeat(secondaryValue);
+        .Repeat(magicNumber);
     }
 }

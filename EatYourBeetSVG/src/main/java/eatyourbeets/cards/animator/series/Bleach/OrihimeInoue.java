@@ -13,7 +13,9 @@ import eatyourbeets.utilities.GameActions;
 
 public class OrihimeInoue extends AnimatorCard
 {
-    public static final EYBCardData DATA = Register(OrihimeInoue.class).SetSkill(1, CardRarity.COMMON, EYBCardTarget.None);
+    public static final EYBCardData DATA = Register(OrihimeInoue.class)
+            .SetSkill(1, CardRarity.COMMON, EYBCardTarget.None)
+            .SetSeriesFromClassPackage();
 
     public OrihimeInoue()
     {

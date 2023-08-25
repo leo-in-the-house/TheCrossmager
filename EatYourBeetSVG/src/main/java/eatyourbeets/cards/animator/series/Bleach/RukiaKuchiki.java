@@ -13,7 +13,9 @@ import eatyourbeets.utilities.GameActions;
 
 public class RukiaKuchiki extends AnimatorCard
 {
-    public static final EYBCardData DATA = Register(RukiaKuchiki.class).SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None);
+    public static final EYBCardData DATA = Register(RukiaKuchiki.class)
+            .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None)
+            .SetSeriesFromClassPackage();
     static
     {
         DATA.AddPreview(new RukiaBankai(), false);

@@ -27,7 +27,6 @@ public class Yusa extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
-        GameActions.Top.ExhaustFromPile(name, magicNumber, p.discardPile);
-        GameActions.Top.Scry(magicNumber);
+        GameActions.Bottom.Scry(magicNumber);
     }
 }

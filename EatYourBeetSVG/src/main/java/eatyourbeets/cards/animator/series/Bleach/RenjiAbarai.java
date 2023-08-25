@@ -9,7 +9,9 @@ import eatyourbeets.utilities.GameActions;
 
 public class RenjiAbarai extends AnimatorCard
 {
-    public static final EYBCardData DATA = Register(RenjiAbarai.class).SetAttack(1, CardRarity.COMMON, EYBAttackType.Piercing, EYBCardTarget.Normal);
+    public static final EYBCardData DATA = Register(RenjiAbarai.class)
+            .SetAttack(1, CardRarity.COMMON, EYBAttackType.Piercing, EYBCardTarget.Normal)
+            .SetSeriesFromClassPackage();
 
     public RenjiAbarai()
     {

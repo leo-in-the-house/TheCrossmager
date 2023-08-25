@@ -46,7 +46,7 @@ public class Noda extends AnimatorCard
 
         if (!hasEthereal)
         {
-            GameActions.Bottom.Exhaust(this);
+            GameActions.Last.Exhaust(this);
         }
     }
 }

@@ -6,7 +6,7 @@ import eatyourbeets.utilities.GameActions;
 
 public class EnlightenmentPower extends CommonPower
 {
-    public static final String POWER_ID = CreateFullID(VitalityPower.class);
+    public static final String POWER_ID = CreateFullID(EnlightenmentPower.class);
 
     public EnlightenmentPower(AbstractCreature owner, int amount)
     {
@@ -18,7 +18,7 @@ public class EnlightenmentPower extends CommonPower
     @Override
     public void updateDescription()
     {
-        this.description = FormatDescription(0, amount, maxAmount);
+        this.description = FormatDescription(0, amount);
     }
 
     @Override

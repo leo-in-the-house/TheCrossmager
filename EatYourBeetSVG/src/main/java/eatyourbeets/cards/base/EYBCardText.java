@@ -4,7 +4,6 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -257,11 +256,11 @@ public class EYBCardText
                 cs.text = "x" + scaling.V1;
             }
 
-            offset_y += RenderScaling(sb, affinity.GetAffinityIcon(), cs, offset_y, Color.BLACK);//affinity.GetAlternateColor());
+            offset_y += RenderScaling(sb, affinity.GetIcon(), cs, offset_y, Color.BLACK);//affinity.GetAlternateColor());
         }
     }
 
-    private float RenderScaling(SpriteBatch sb, TextureRegion texture, ColoredString scaling, float y, Color backgroundColor)
+    private float RenderScaling(SpriteBatch sb, Texture texture, ColoredString scaling, float y, Color backgroundColor)
     {
         final float alpha = card.transparency;
         final float offset_x = -AbstractCard.RAW_W * 0.4625f;

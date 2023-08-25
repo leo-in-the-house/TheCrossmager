@@ -12,7 +12,7 @@ import eatyourbeets.utilities.RandomizedList;
 
 public class InsanityPower extends CommonPower
 {
-    public static final String POWER_ID = CreateFullID(VitalityPower.class);
+    public static final String POWER_ID = CreateFullID(InsanityPower.class);
 
     //All Commons, Uncommons, Rares, and Colorless cards
     protected final static RandomizedList<AbstractCard> allCards = new RandomizedList<>();
