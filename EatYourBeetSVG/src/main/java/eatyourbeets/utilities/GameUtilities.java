@@ -1279,6 +1279,18 @@ public class GameUtilities
         return orbs.size();
     }
 
+    public static int GetPotentialXCostEnergy(AbstractCard card)
+    {
+        int amount = EnergyPanel.getCurrentEnergy();
+
+        if (player.hasRelic(ChemicalX.ID))
+        {
+            amount += ChemicalX.BOOST;
+        }
+
+        return amount;
+    }
+
     public static int GetXCostEnergy(AbstractCard card)
     {
         int amount = EnergyPanel.getCurrentEnergy();

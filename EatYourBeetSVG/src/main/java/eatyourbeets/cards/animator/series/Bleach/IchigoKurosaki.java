@@ -3,6 +3,7 @@ package eatyourbeets.cards.animator.series.Bleach;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.stances.NeutralStance;
 import eatyourbeets.cards.animator.special.IchigoBankai;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.stances.WrathStance;
@@ -37,6 +38,7 @@ public class IchigoKurosaki extends AnimatorCard
 
         if (WrathStance.IsActive())
         {
+            GameActions.Bottom.ChangeStance(NeutralStance.STANCE_ID);
             GameActions.Bottom.MakeCardInDrawPile(new IchigoBankai());
             GameActions.Last.ModifyAllInstances(uuid).AddCallback(GameActions.Bottom::Exhaust);
         }

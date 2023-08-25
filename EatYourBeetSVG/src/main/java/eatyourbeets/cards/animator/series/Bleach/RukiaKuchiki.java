@@ -3,6 +3,7 @@ package eatyourbeets.cards.animator.series.Bleach;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.Frost;
+import com.megacrit.cardcrawl.stances.NeutralStance;
 import eatyourbeets.cards.animator.special.RukiaBankai;
 import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
@@ -10,6 +11,7 @@ import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.stances.WrathStance;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class RukiaKuchiki extends AnimatorCard
 {
@@ -36,12 +38,13 @@ public class RukiaKuchiki extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         Frost frost = new Frost();
-        frost.passiveAmount += magicNumber;
+        GameUtilities.IncreaseOrbPassiveAmount(frost, magicNumber);
         GameActions.Bottom.ChannelOrb(frost);
 
         if (WrathStance.IsActive())
         {
-            GameActions.Bottom.MakeCardInDrawPile(new RukiaKuchiki());
+            GameActions.Bottom.ChangeStance(NeutralStance.STANCE_ID);
+            GameActions.Bottom.MakeCardInDrawPile(new RukiaBankai());
             GameActions.Last.ModifyAllInstances(uuid).AddCallback(GameActions.Bottom::Exhaust);
         }
     }

@@ -288,6 +288,11 @@ public class EYBCardAffinitySystem extends GUIElement implements OnStartOfTurnSu
         return p == null ? 0 : p.GetPlayerClass() == GR.Animator.PlayerClass ? p.GetThresholdLevel() : p.amount;
     }
 
+    public int GetAffinityLevel(Affinity affinity)
+    {
+        return Mathf.Min(BaseAffinities.GetLevel(affinity), CurrentAffinities.GetLevel(affinity));
+    }
+
     @Override
     public void OnStartOfTurn()
     {

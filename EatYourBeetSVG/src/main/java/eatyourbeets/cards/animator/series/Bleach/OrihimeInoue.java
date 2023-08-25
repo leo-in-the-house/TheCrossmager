@@ -21,8 +21,8 @@ public class OrihimeInoue extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 8, 0, 0);
-        SetUpgrade(0, 4, 0);
+        Initialize(0, 16, 1, 0);
+        SetUpgrade(0, 8, 0);
 
         SetAffinity_Red(1);
     }
@@ -74,7 +74,7 @@ public class OrihimeInoue extends AnimatorCard
 
             this.amount--;
 
-            GameActions.Bottom.ChangeStance(WrathStance.STANCE_ID);
+            GameActions.Top.ChangeStance(WrathStance.STANCE_ID);
 
             return damageAmount;
         }

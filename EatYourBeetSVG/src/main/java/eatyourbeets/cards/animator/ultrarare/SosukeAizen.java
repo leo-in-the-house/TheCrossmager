@@ -35,6 +35,7 @@ public class SosukeAizen extends AnimatorCard_UltraRare
                 GameActions.Bottom.StackPower(new IntangiblePlayerPower(player, energy));
             }
             else {
+                GameActions.Bottom.ChangeStance(WrathStance.STANCE_ID);
                 GameActions.Bottom.GainStrength(energy);
                 GameActions.Last.MoveCard(this, player.drawPile).ShowEffect(true, true);
             }

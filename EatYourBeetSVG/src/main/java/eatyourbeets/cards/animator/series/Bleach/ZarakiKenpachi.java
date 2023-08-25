@@ -16,15 +16,15 @@ import eatyourbeets.utilities.GameActions;
 public class ZarakiKenpachi extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(ZarakiKenpachi.class)
-            .SetPower(3, CardRarity.RARE)
+            .SetPower(1, CardRarity.RARE)
             .SetSeriesFromClassPackage();
 
     public ZarakiKenpachi()
     {
         super(DATA);
 
-        Initialize(0, 9, 2);
-        SetUpgrade(0, 5, 0);
+        Initialize(0, 18, 2);
+        SetUpgrade(0, 10, 0);
 
         SetAffinity_Red(2, 0, 0);
         SetAffinity_Dark(1, 0, 0);

@@ -30,8 +30,6 @@ public class IchigoBankai extends AnimatorCard
 
         SetAffinity_Light(1);
         SetAffinity_Red(1);
-
-        SetExhaust(true);
     }
 
     @Override

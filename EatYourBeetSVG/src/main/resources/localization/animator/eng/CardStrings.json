@@ -396,7 +396,6 @@
 		"animator:GirlDeMo":
 		{
 			"DESCRIPTION": "Double your highest amount among [R], [G], [B], [L], and [D].",
-			"UPGRADE_DESCRIPTION": "Triple your highest amount among [R], [G], [B], [L], and [D].",
 			"NAME": "Girls Dead Monster"
 		},
 		"animator:Godan":
@@ -437,8 +436,8 @@
 		},
 		"animator:YuriNakamura":
 		{
-			"DESCRIPTION": "Add !M! copies of an Attack from your exhaust pile to your draw pile. They gain Ethereal.",
-			"EXTENDED_DESCRIPTION": ["Choose a card to add copies to your draw pile."],
+			"DESCRIPTION": "Add up to !M! copies of an Attack from your exhaust pile to your draw pile. They gain Ethereal.",
+			"EXTENDED_DESCRIPTION": ["Choose cards to add copies to your draw pile."],
 			"NAME": "Yuri Nakamura"
 		},
 		"animator:Yusa":
@@ -448,7 +447,7 @@
 		},
 		"animator:YuzuruOtonashi":
 		{
-			"DESCRIPTION": "This card has [L] scaling equal to the number of #yEthereal cards in your hand.",
+			"DESCRIPTION": "This card has [L] scaling equal to the number of {Ethereal} cards in your hand.",
 			"NAME": "Yuzuru Otonashi"
 		}
 	},
@@ -461,7 +460,7 @@
 		},
 		"animator:ByakuyaKuchiki":
 		{
-			"DESCRIPTION": "Choose whether to Attack or Block. || <WS>: Exhaust and add {Byakuya Bankai} to your draw pile.",
+			"DESCRIPTION": "Choose whether to Attack or Block. || <WS>: Exhaust, exit your Stance, and add {Byakuya Bankai} to your draw pile.",
 			"NAME": "Byakuya Kuchiki"
 		},
 		"animator:Defend_Bleach":
@@ -471,12 +470,12 @@
 		},
 		"animator:IchigoBankai":
 		{
-			"DESCRIPTION": "When Drawn: Gain !M! [L]. || This card deals +X damage for each [L] and [R] you have.",
+			"DESCRIPTION": "When Drawn: Gain !M! [L]. || This card has X [L] and [R] Scaling.",
 			"NAME": "Ichigo Bankai"
 		},
 		"animator:IchigoKurosaki":
 		{
-			"DESCRIPTION": "Gain !M! [L]. || <WS>: Exhaust and add {Ichigo Bankai} to your draw pile.",
+			"DESCRIPTION": "Gain !M! [L]. || <WS>: Exhaust, exit your Stance, and add {Ichigo Bankai} to your draw pile.",
 			"NAME": "Ichigo Kurosaki"
 		},
 		"animator:IkkakuBankai":
@@ -486,7 +485,7 @@
 		},
 		"animator:IkkakuMadarame":
 		{
-			"DESCRIPTION": "<WS>: Exhaust and add {Ikkaku Bankai} to your draw pile.",
+			"DESCRIPTION": "<WS>: Exhaust, exit your Stance, and add {Ikkaku Bankai} to your draw pile.",
 			"NAME": "Ikkaku Madarame"
 		},
 		"animator:IsshinKurosaki":
@@ -517,7 +516,7 @@
 		},
 		"animator:RukiaKuchiki":
 		{
-			"DESCRIPTION": "Channel [Frost]. Increase its amount by !M!. || <WS>: Exhaust and add {Rukia Bankai} to your draw pile.",
+			"DESCRIPTION": "Channel [Frost]. Increase its amount by !M!. || <WS>: Exhaust, exit your Stance, and add {Rukia Bankai} to your draw pile.",
 			"NAME": "Rukia Kuchiki"
 		},
 		"animator:SajinKomamura":
@@ -527,7 +526,7 @@
 		},
 		"animator:SosukeAizen":
 		{
-			"DESCRIPTION": "<WS>: Gain [~Intangible] X times. || Otherwise, Enter <WS>, gain X [Strength], and shuffle this card into your draw pile.",
+			"DESCRIPTION": "<WS>: Gain [~Intangible] X times. || Otherwise, if you paid at least 1 [E], Enter <WS>, gain X [Strength], and shuffle this card into your draw pile.",
 			"NAME": "Sosuke Aizen"
 		},
 		"animator:Strike_Bleach":

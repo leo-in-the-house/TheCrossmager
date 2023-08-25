@@ -3,13 +3,14 @@ package eatyourbeets.cards.animator.special;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
+import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
 public class IkkakuBankai extends AnimatorCard
 {
-    public static final EYBCardData DATA = Register(IkkakuBankai.class).SetAttack(2, CardRarity.SPECIAL, EYBAttackType.Piercing, EYBCardTarget.ALL).SetSeries(CardSeries.Bleach);
+    public static final EYBCardData DATA = Register(IkkakuBankai.class).SetAttack(-1, CardRarity.SPECIAL, EYBAttackType.Piercing, EYBCardTarget.ALL).SetSeries(CardSeries.Bleach);
 
     public IkkakuBankai()
     {
@@ -19,7 +20,13 @@ public class IkkakuBankai extends AnimatorCard
         SetUpgrade(4, 0, 0);
 
         SetAffinity_Red(2);
-        SetExhaust(true);
+        SetMultiDamage(true);
+    }
+
+    @Override
+    public AbstractAttribute GetDamageInfo()
+    {
+        return super.GetDamageInfo().AddMultiplier(GameUtilities.GetPotentialXCostEnergy(this));
     }
 
     @Override

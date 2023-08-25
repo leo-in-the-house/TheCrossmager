@@ -21,7 +21,6 @@ public class RukiaBankai extends AnimatorCard
         SetAffinity_Red(1);
         SetAffinity_Blue(1);
 
-        SetExhaust(true);
         SetMultiDamage(true);
     }
 
@@ -34,7 +33,7 @@ public class RukiaBankai extends AnimatorCard
 
         for (int i=0; i<stacks; i++) {
             Frost frost = new Frost();
-            frost.passiveAmount += secondaryValue;
+            GameUtilities.IncreaseOrbPassiveAmount(frost, secondaryValue);
             GameActions.Bottom.ChannelOrb(frost);
         }
     }

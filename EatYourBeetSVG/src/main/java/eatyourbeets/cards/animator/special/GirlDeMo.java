@@ -28,23 +28,24 @@ public class GirlDeMo extends AnimatorCard
         SetAffinity_Dark(1);
 
         SetEthereal(true);
+        SetExhaust(true);
     }
 
     @Override
     protected void OnUpgrade()
     {
-        SetEthereal(false);
+        SetExhaust(false);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         ArrayList<Pair<ActionT1<Integer>, Integer>> pairs = new ArrayList<>();
-        pairs.add(new Pair<>(GameActions.Bottom::GainRed, CombatStats.Affinities.GetPowerAmount(Affinity.Red)));
-        pairs.add(new Pair<>(GameActions.Bottom::GainGreen, CombatStats.Affinities.GetPowerAmount(Affinity.Green)));
-        pairs.add(new Pair<>(GameActions.Bottom::GainBlue, CombatStats.Affinities.GetPowerAmount(Affinity.Blue)));
-        pairs.add(new Pair<>(GameActions.Bottom::GainDark, CombatStats.Affinities.GetPowerAmount(Affinity.Dark)));
-        pairs.add(new Pair<>(GameActions.Bottom::GainLight, CombatStats.Affinities.GetPowerAmount(Affinity.Light)));
+        pairs.add(new Pair<>(GameActions.Bottom::GainRed, CombatStats.Affinities.GetAffinityLevel(Affinity.Red)));
+        pairs.add(new Pair<>(GameActions.Bottom::GainGreen, CombatStats.Affinities.GetAffinityLevel(Affinity.Green)));
+        pairs.add(new Pair<>(GameActions.Bottom::GainBlue, CombatStats.Affinities.GetAffinityLevel(Affinity.Blue)));
+        pairs.add(new Pair<>(GameActions.Bottom::GainDark, CombatStats.Affinities.GetAffinityLevel(Affinity.Dark)));
+        pairs.add(new Pair<>(GameActions.Bottom::GainLight, CombatStats.Affinities.GetAffinityLevel(Affinity.Light)));
         pairs.sort(Comparator.comparingInt(Pair::getValue));
 
         int amount = pairs.get(4).getValue();

@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.stances.NeutralStance;
 import eatyourbeets.cards.animator.special.ByakuyaBankai;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.interfaces.delegates.ActionT3;
@@ -42,6 +43,7 @@ public class ByakuyaKuchiki extends AnimatorCard
 
         if (WrathStance.IsActive())
         {
+            GameActions.Bottom.ChangeStance(NeutralStance.STANCE_ID);
             GameActions.Bottom.MakeCardInDrawPile(new ByakuyaBankai());
             GameActions.Last.ModifyAllInstances(uuid).AddCallback(GameActions.Bottom::Exhaust);
         }

@@ -41,6 +41,7 @@ public class Yui extends AnimatorCard
     {
         GameActions.Bottom.Motivate(secondaryValue);
 
-       GameActions.Bottom.MakeCardInDrawPile(new GirlDeMo());
+       GameActions.Bottom.MakeCardInDrawPile(new GirlDeMo())
+               .SetUpgrade(upgraded, true);
     }
 }

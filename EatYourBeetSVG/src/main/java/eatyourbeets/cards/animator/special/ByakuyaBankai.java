@@ -27,7 +27,6 @@ public class ByakuyaBankai extends AnimatorCard {
         SetAffinity_Blue(1);
         SetAffinity_Dark(1);
 
-        SetExhaust(true);
         SetMultiDamage(true);
     }
 
