@@ -8,7 +8,7 @@ import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.powers.CombatStats;
-import eatyourbeets.stances.ForceStance;
+import eatyourbeets.stances.WrathStance;
 import eatyourbeets.utilities.GameActions;
 
 public class Shion extends AnimatorClassicCard
@@ -33,7 +33,7 @@ public class Shion extends AnimatorClassicCard
 
         if (info.IsSynergizing && CombatStats.TryActivateLimited(cardID))
         {
-            GameActions.Bottom.ChangeStance(ForceStance.STANCE_ID);
+            GameActions.Bottom.ChangeStance(WrathStance.STANCE_ID);
         }
     }
 

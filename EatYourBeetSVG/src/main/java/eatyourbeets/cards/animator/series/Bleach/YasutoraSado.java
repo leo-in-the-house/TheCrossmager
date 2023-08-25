@@ -4,7 +4,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.stances.ForceStance;
+import eatyourbeets.stances.WrathStance;
 import eatyourbeets.utilities.GameActions;
 
 public class YasutoraSado extends AnimatorCard
@@ -26,7 +26,7 @@ public class YasutoraSado extends AnimatorCard
     @Override
     public void triggerOnExhaust()
     {
-        GameActions.Bottom.ChangeStance(ForceStance.STANCE_ID);
+        GameActions.Bottom.ChangeStance(WrathStance.STANCE_ID);
     }
 
     @Override

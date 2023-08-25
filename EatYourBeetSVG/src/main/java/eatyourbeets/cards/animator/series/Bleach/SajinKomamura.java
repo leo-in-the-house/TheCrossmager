@@ -6,7 +6,7 @@ import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
-import eatyourbeets.stances.ForceStance;
+import eatyourbeets.stances.WrathStance;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
@@ -48,6 +48,6 @@ public class SajinKomamura extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
-        GameActions.Bottom.ChangeStance(ForceStance.STANCE_ID);
+        GameActions.Bottom.ChangeStance(WrathStance.STANCE_ID);
     }
 }

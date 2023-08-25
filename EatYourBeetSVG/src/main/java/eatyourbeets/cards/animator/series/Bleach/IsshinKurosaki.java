@@ -8,7 +8,7 @@ import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.orbs.animator.Fire;
-import eatyourbeets.stances.ForceStance;
+import eatyourbeets.stances.WrathStance;
 import eatyourbeets.utilities.GameActions;
 
 public class IsshinKurosaki extends AnimatorCard
@@ -40,7 +40,7 @@ public class IsshinKurosaki extends AnimatorCard
         GameActions.Bottom.GainBlock(block);
         GameActions.Bottom.ChannelOrbs(Fire::new, magicNumber);
 
-        if (ForceStance.IsActive()){
+        if (WrathStance.IsActive()){
             GameActions.Last.Callback(cards -> {
                 GameActions.Bottom.Add(new ApplyAmountToOrbs(Fire.ORB_ID, secondaryValue));
             });

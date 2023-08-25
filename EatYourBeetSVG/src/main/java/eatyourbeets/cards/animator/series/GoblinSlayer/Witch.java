@@ -9,7 +9,7 @@ import eatyourbeets.cards.base.*;
 import eatyourbeets.cards.effects.GenericEffects.GenericEffect_EnterStance;
 import eatyourbeets.orbs.animator.Fire;
 import eatyourbeets.stances.AgilityStance;
-import eatyourbeets.stances.ForceStance;
+import eatyourbeets.stances.WrathStance;
 import eatyourbeets.stances.IntellectStance;
 import eatyourbeets.utilities.GameActions;
 
@@ -62,7 +62,7 @@ public class Witch extends AnimatorCard
         {
             if (choices.TryInitialize(new Spearman()))
             {
-                choices.AddEffect(new GenericEffect_EnterStance(ForceStance.STANCE_ID));
+                choices.AddEffect(new GenericEffect_EnterStance(WrathStance.STANCE_ID));
                 choices.AddEffect(new GenericEffect_EnterStance(AgilityStance.STANCE_ID));
                 choices.Initialize(this);
                 choices.AddEffect(new GenericEffect_EnterStance(IntellectStance.STANCE_ID));

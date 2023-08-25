@@ -8,7 +8,7 @@ import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
-import eatyourbeets.stances.ForceStance;
+import eatyourbeets.stances.WrathStance;
 import eatyourbeets.utilities.GameActions;
 
 public class RukiaKuchiki extends AnimatorCard
@@ -39,7 +39,7 @@ public class RukiaKuchiki extends AnimatorCard
         frost.passiveAmount += magicNumber;
         GameActions.Bottom.ChannelOrb(frost);
 
-        if (ForceStance.IsActive())
+        if (WrathStance.IsActive())
         {
             GameActions.Bottom.MakeCardInDrawPile(new RukiaKuchiki());
             GameActions.Last.ModifyAllInstances(uuid).AddCallback(GameActions.Bottom::Exhaust);

@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.orbs.Dark;
 import com.megacrit.cardcrawl.orbs.Frost;
 import eatyourbeets.effects.VFX;
 import eatyourbeets.resources.GR;
-import eatyourbeets.stances.ForceStance;
+import eatyourbeets.stances.WrathStance;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
 
@@ -52,7 +52,7 @@ public class Lu extends AnimatorCard
     {
         super.triggerWhenDrawn();
 
-        GameActions.Bottom.ChangeStance(ForceStance.STANCE_ID)
+        GameActions.Bottom.ChangeStance(WrathStance.STANCE_ID)
         .RequireNeutralStance(true)
         .AddCallback(stance ->
         {

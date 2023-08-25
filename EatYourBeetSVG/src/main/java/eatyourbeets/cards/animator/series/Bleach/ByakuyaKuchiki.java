@@ -9,7 +9,7 @@ import eatyourbeets.cards.animator.special.ByakuyaBankai;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.interfaces.delegates.ActionT3;
 import eatyourbeets.resources.GR;
-import eatyourbeets.stances.ForceStance;
+import eatyourbeets.stances.WrathStance;
 import eatyourbeets.utilities.GameActions;
 
 public class ByakuyaKuchiki extends AnimatorCard
@@ -40,7 +40,7 @@ public class ByakuyaKuchiki extends AnimatorCard
             ChooseAction(m);
         });
 
-        if (ForceStance.IsActive())
+        if (WrathStance.IsActive())
         {
             GameActions.Bottom.MakeCardInDrawPile(new ByakuyaBankai());
             GameActions.Last.ModifyAllInstances(uuid).AddCallback(GameActions.Bottom::Exhaust);

@@ -11,8 +11,8 @@ import eatyourbeets.powers.AnimatorClickablePower;
 import eatyourbeets.powers.PowerTriggerConditionType;
 import eatyourbeets.stances.AgilityStance;
 import eatyourbeets.stances.CorruptionStance;
-import eatyourbeets.stances.ForceStance;
 import eatyourbeets.stances.IntellectStance;
+import eatyourbeets.stances.WrathStance;
 import eatyourbeets.ui.common.EYBCardPopupActions;
 import eatyourbeets.utilities.GameActions;
 
@@ -80,7 +80,7 @@ public class RemiliaScarlet extends AnimatorCard
             {
                 GameActions.Bottom.GainGreen(1, true);
             }
-            else if (ForceStance.IsActive())
+            else if (WrathStance.IsActive())
             {
                 GameActions.Bottom.GainRed(1, true);
             }

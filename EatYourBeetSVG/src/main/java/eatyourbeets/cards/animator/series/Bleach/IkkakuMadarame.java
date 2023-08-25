@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.special.IkkakuBankai;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.stances.ForceStance;
+import eatyourbeets.stances.WrathStance;
 import eatyourbeets.utilities.GameActions;
 
 public class IkkakuMadarame extends AnimatorCard
@@ -34,7 +34,7 @@ public class IkkakuMadarame extends AnimatorCard
     {
         GameActions.Bottom.DealDamageToAll(this, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL);
 
-        if (ForceStance.IsActive())
+        if (WrathStance.IsActive())
         {
             GameActions.Bottom.MakeCardInDrawPile(new IkkakuBankai());
             GameActions.Last.ModifyAllInstances(uuid).AddCallback(GameActions.Bottom::Exhaust);

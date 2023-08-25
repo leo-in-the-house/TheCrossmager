@@ -4,7 +4,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.stances.ForceStance;
+import eatyourbeets.stances.WrathStance;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
@@ -31,7 +31,7 @@ public class SosukeAizen extends AnimatorCard_UltraRare
 
         if (energy > 0)
         {
-            if (ForceStance.IsActive()) {
+            if (WrathStance.IsActive()) {
                 GameActions.Bottom.StackPower(new IntangiblePlayerPower(player, energy));
             }
             else {

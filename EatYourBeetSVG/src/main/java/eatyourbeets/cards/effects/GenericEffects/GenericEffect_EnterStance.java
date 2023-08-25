@@ -35,7 +35,12 @@ public class GenericEffect_EnterStance extends GenericEffect
             .replace(GR.Tooltips.Agility.title, "[Agility]")
             .replace(GR.Tooltips.Force.title, "[Force]")
             .replace(GR.Tooltips.Intellect.title, "[Intellect]")
-            .replace(GR.Tooltips.Corruption.title, "[Corruption]");
+            .replace(GR.Tooltips.Corruption.title, "[Corruption]")
+            .replace(GR.Tooltips.WrathStance.title, "[Wrath Stance]")
+            .replace(GR.Tooltips.TranceStance.title, "[Trance Stance]")
+            .replace(GR.Tooltips.MagicStance.title, "[Magic Stance]")
+            .replace(GR.Tooltips.CalmStance.title, "[Calm Stance]")
+            .replace(GR.Tooltips.DivinityStance.title, "[Divinity Stance]");
         }
         else
         {
@@ -43,7 +48,12 @@ public class GenericEffect_EnterStance extends GenericEffect
             .replace(GR.Tooltips.Agility.title, "[A]")
             .replace(GR.Tooltips.Force.title, "[F]")
             .replace(GR.Tooltips.Intellect.title, "[I]")
-            .replace(GR.Tooltips.Corruption.title, "[C]");
+            .replace(GR.Tooltips.Corruption.title, "[C]")
+            .replace(GR.Tooltips.WrathStance.title, "[Wrath Stance]")
+            .replace(GR.Tooltips.TranceStance.title, "[Trance Stance]")
+            .replace(GR.Tooltips.MagicStance.title, "[Magic Stance]")
+            .replace(GR.Tooltips.CalmStance.title, "[Calm Stance]")
+            .replace(GR.Tooltips.DivinityStance.title, "[Divinity Stance]");
         }
 
         return GR.Animator.Strings.Actions.EnterStance("{" + text + "}", true);

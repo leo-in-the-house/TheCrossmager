@@ -17,6 +17,11 @@
 	"<FS>": "{[F] Stance}",
 	"<IS>": "{[I] Stance}",
 	"<AS>": "{[A] Stance}",
+	"<WS>": "{[Wrath Stance] Stance}",
+	"<TS>": "{[Trance Stance] Stance}",
+	"<MS>": "{[Magic Stance] Stance}",
+	"<CS>": "{[Calm Stance] Stance}",
+	"<DS>": "{[Divinity Stance] Stance}",
 
 	" ** ": " NL ",
 	" || ": " NL  NL "

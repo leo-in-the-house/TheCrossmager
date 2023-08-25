@@ -9,6 +9,7 @@ import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.stances.ForceStance;
+import eatyourbeets.stances.WrathStance;
 import eatyourbeets.utilities.GameActions;
 
 public class Shion extends AnimatorCard
@@ -52,13 +53,13 @@ public class Shion extends AnimatorCard
 
         if (CheckSpecialCondition(true))
         {
-            GameActions.Bottom.ChangeStance(ForceStance.STANCE_ID);
+            GameActions.Bottom.ChangeStance(WrathStance.STANCE_ID);
         }
     }
 
     @Override
     public boolean CheckSpecialCondition(boolean tryUse)
     {
-        return !ForceStance.IsActive() && super.CheckSpecialConditionLimited(tryUse, super::CheckSpecialCondition);
+        return !WrathStance.IsActive() && super.CheckSpecialConditionLimited(tryUse, super::CheckSpecialCondition);
     }
 }

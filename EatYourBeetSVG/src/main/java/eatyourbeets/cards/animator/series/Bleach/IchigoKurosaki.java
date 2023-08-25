@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.special.IchigoBankai;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.stances.ForceStance;
+import eatyourbeets.stances.WrathStance;
 import eatyourbeets.utilities.GameActions;
 
 public class IchigoKurosaki extends AnimatorCard
@@ -35,7 +35,7 @@ public class IchigoKurosaki extends AnimatorCard
 
         GameActions.Bottom.GainLight(magicNumber);
 
-        if (ForceStance.IsActive())
+        if (WrathStance.IsActive())
         {
             GameActions.Bottom.MakeCardInDrawPile(new IchigoBankai());
             GameActions.Last.ModifyAllInstances(uuid).AddCallback(GameActions.Bottom::Exhaust);

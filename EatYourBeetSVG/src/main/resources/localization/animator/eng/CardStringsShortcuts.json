@@ -13,7 +13,11 @@
 	"<FS>": "{[Force] Stance}",
 	"<IS>": "{[Intellect] Stance}",
 	"<AS>": "{[Agility] Stance}",
-	"<CS>": "{[Corruption] Stance}",
+	"<WS>": "{[Wrath Stance] Stance}",
+	"<TS>": "{[Trance Stance] Stance}",
+	"<MS>": "{[Magic Stance] Stance}",
+	"<CS>": "{[Calm Stance] Stance}",
+	"<DS>": "{[Divinity Stance] Stance}",
 
 	"<R>": "[A_Red]",
 	"<G>": "[A_Green]",

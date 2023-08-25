@@ -401,7 +401,7 @@
 		},
 		"animator:Godan":
 		{
-			"DESCRIPTION": "<SLM>. If you have another {Ethereal} card in your hand, Enter <FS>.",
+			"DESCRIPTION": "<SLM>. If you have another {Ethereal} card in your hand, Enter {[Wrath Stance] Stance}.",
 			"NAME": "Godan Matsushita"
 		},
 		"animator:HidekiHinata":
@@ -461,7 +461,7 @@
 		},
 		"animator:ByakuyaKuchiki":
 		{
-			"DESCRIPTION": "Choose whether to Attack or Block. || <FS>: Exhaust and add {Byakuya Bankai} to your draw pile.",
+			"DESCRIPTION": "Choose whether to Attack or Block. || <WS>: Exhaust and add {Byakuya Bankai} to your draw pile.",
 			"NAME": "Byakuya Kuchiki"
 		},
 		"animator:Defend_Bleach":
@@ -476,7 +476,7 @@
 		},
 		"animator:IchigoKurosaki":
 		{
-			"DESCRIPTION": "Gain !M! [L]. || <FS>: Exhaust and add {Ichigo Bankai} to your draw pile.",
+			"DESCRIPTION": "Gain !M! [L]. || <WS>: Exhaust and add {Ichigo Bankai} to your draw pile.",
 			"NAME": "Ichigo Kurosaki"
 		},
 		"animator:IkkakuBankai":
@@ -486,12 +486,12 @@
 		},
 		"animator:IkkakuMadarame":
 		{
-			"DESCRIPTION": "<FS>: Exhaust and add {Ikkaku Bankai} to your draw pile.",
+			"DESCRIPTION": "<WS>: Exhaust and add {Ikkaku Bankai} to your draw pile.",
 			"NAME": "Ikkaku Madarame"
 		},
 		"animator:IsshinKurosaki":
 		{
-			"DESCRIPTION": "Channel !M! [Fire]. || <FS>. All [Fire] deal !S! additional damage this combat.",
+			"DESCRIPTION": "Channel !M! [Fire]. || <WS>. All [Fire] deal !S! additional damage this combat.",
 			"NAME": "Isshin Kurosaki"
 		},
 		"animator:MayuriKurotsuchi":
@@ -501,13 +501,13 @@
 		},
 		"animator:OrihimeInoue":
 		{
-			"DESCRIPTION": "The next time you are attacked this turn, Enter <FS>.",
+			"DESCRIPTION": "The next time you are attacked this turn, Enter <WS>.",
 			"EXTENDED_DESCRIPTION": ["The next #b{0} time you are attacked this turn, Enter #yForce #yStance."],
 			"NAME": "Orihime Inoue"
 		},
 		"animator:RenjiAbarai":
 		{
-			"DESCRIPTION": "On Discard: Enter <FS>.",
+			"DESCRIPTION": "On Discard: Enter <WS>.",
 			"NAME": "Renji Abarai"
 		},
 		"animator:RukiaBankai":
@@ -517,17 +517,17 @@
 		},
 		"animator:RukiaKuchiki":
 		{
-			"DESCRIPTION": "Channel [Frost]. Increase its amount by !M!. || <FS>: Exhaust and add {Rukia Bankai} to your draw pile.",
+			"DESCRIPTION": "Channel [Frost]. Increase its amount by !M!. || <WS>: Exhaust and add {Rukia Bankai} to your draw pile.",
 			"NAME": "Rukia Kuchiki"
 		},
 		"animator:SajinKomamura":
 		{
-			"DESCRIPTION": "This card can only be played if you have less than !M!% of your [MHP]. || Enter <FS>.",
+			"DESCRIPTION": "This card can only be played if you have less than !M!% of your [MHP]. || Enter <WS>.",
 			"NAME": "Sajin Komamura"
 		},
 		"animator:SosukeAizen":
 		{
-			"DESCRIPTION": "<FS>: Gain [~Intangible] X times. || Otherwise, Enter <FS>, gain X [Strength], and shuffle this card into your draw pile.",
+			"DESCRIPTION": "<WS>: Gain [~Intangible] X times. || Otherwise, Enter <WS>, gain X [Strength], and shuffle this card into your draw pile.",
 			"NAME": "Sosuke Aizen"
 		},
 		"animator:Strike_Bleach":
@@ -542,12 +542,12 @@
 		},
 		"animator:YasutoraSado":
 		{
-			"DESCRIPTION": "On Exhaust: Enter <FS>.",
+			"DESCRIPTION": "On Exhaust: Enter <WS>.",
 			"NAME": "Yasutora Sado"
 		},
 		"animator:ZarakiKenpachi":
 		{
-			"DESCRIPTION": "Enter <FS>. || Whenever you gain [Force]: You gain an additional !M! [Strength].",
+			"DESCRIPTION": "Enter <WS>. || Whenever you gain [Force]: You gain an additional !M! [Strength].",
 			"EXTENDED_DESCRIPTION": ["Whenever you gain #yForce, You gain an additional #b{0} #yStrength."],
 			"NAME": "Zaraki Kenpachi"
 		}
@@ -725,7 +725,7 @@
 		},
 		"animator:Lu":
 		{
-			"DESCRIPTION": "Channel 1 [Dark] and [Frost]. || When Drawn: If in Neutral Stance, take !M! [DD] and enter <FS>.",
+			"DESCRIPTION": "Channel 1 [Dark] and [Frost]. || When Drawn: If in Neutral Stance, take !M! [DD] and enter <WS>.",
 			"NAME": "Lu"
 		},
 		"animator:Noah":
@@ -765,7 +765,7 @@
 		},
 		"animator:Berserker":
 		{
-			"DESCRIPTION": "Gain !M! [R]. || If the enemy dies or loses its [Block]: Gain !S! [Block]. || !A! [R]: Enter <FS>.",
+			"DESCRIPTION": "Gain !M! [R]. || If the enemy dies or loses its [Block]: Gain !S! [Block]. || !A! [R]: Enter <WS>.",
 			"NAME": "Berserker"
 		},
 		"animator:Caster":
@@ -1163,7 +1163,7 @@
 		},
 		"animator:Nikolay":
 		{
-			"DESCRIPTION": "Gain [R]. Motivate all other copies of this card. || <FS>: Gain !M! [Block].",
+			"DESCRIPTION": "Gain [R]. Motivate all other copies of this card. || <WS>: Gain !M! [Block].",
 			"NAME": "Nikolay"
 		},
 		"animator:Viivi":
@@ -1237,8 +1237,8 @@
 		},
 		"animator:Shichika":
 		{
-			"DESCRIPTION": "Choose 1: Enter <AS> and gain !M! [Counter-Attack]; Enter <FS> and obtain {Kyotouryuu}.",
-			"EXTENDED_DESCRIPTION": ["Enter <FS>. Obtain {{0}}.", "Enter <AS>. Gain {0} [Counter-Attack]."],
+			"DESCRIPTION": "Choose 1: Enter <AS> and gain !M! [Counter-Attack]; Enter <WS> and obtain {Kyotouryuu}.",
+			"EXTENDED_DESCRIPTION": ["Enter <WS>. Obtain {{0}}.", "Enter <AS>. Gain {0} [Counter-Attack]."],
 			"NAME": "Shichika"
 		},
 		"animator:Shichika_Kyotouryuu":
@@ -2006,7 +2006,7 @@
 		},
 		"animator:Shion":
 		{
-			"DESCRIPTION": "Discard 1 {[W] Token} to gain !M! [Block]. || <LIM>. !A! [R]: Enter <FS>.",
+			"DESCRIPTION": "Discard 1 {[W] Token} to gain !M! [Block]. || <LIM>. !A! [R]: Enter <WS>.",
 			"NAME": "Shion"
 		},
 		"animator:Shizu":
@@ -2142,7 +2142,7 @@
 			"DESCRIPTION": "Once per combat, pay !S! [E]: Choose and Enter any Stance, then end your turn.",
 			"EXTENDED_DESCRIPTION":
 			[
-				"Once per combat, pay !S! [E]: Enter <FS>, then end your turn.",
+				"Once per combat, pay !S! [E]: Enter <WS>, then end your turn.",
 				"Once per combat, pay !S! [E]: Enter <AS>, then end your turn.",
 				"Once per combat, pay !S! [E]: Enter <IS>, then end your turn."
 			],
@@ -2541,7 +2541,7 @@
 		},
 		"animator:Veldora":
 		{
-			"DESCRIPTION": "Gain !S! [B]. Evoke ALL orbs !M! times. || When Sealed: Channel 3 random orbs.",
+			"DESCRIPTION": "Gain !S! [B]. Evoke ALL orbs !M! times. || When Sealed: Channel 3 [Random Orb].",
 			"NAME": "Veldora"
 		},
 		"animator:Walpurgisnacht":

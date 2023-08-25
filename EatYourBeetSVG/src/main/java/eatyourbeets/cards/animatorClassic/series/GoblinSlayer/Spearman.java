@@ -11,7 +11,7 @@ import eatyourbeets.cards.effects.GenericEffects.GenericEffect_EnterStance;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.stances.AgilityStance;
-import eatyourbeets.stances.ForceStance;
+import eatyourbeets.stances.WrathStance;
 import eatyourbeets.stances.IntellectStance;
 import eatyourbeets.utilities.GameActions;
 
@@ -47,7 +47,7 @@ public class Spearman extends AnimatorClassicCard
 
         if (choices.TryInitialize(this))
         {
-            choices.AddEffect(new GenericEffect_EnterStance(ForceStance.STANCE_ID));
+            choices.AddEffect(new GenericEffect_EnterStance(WrathStance.STANCE_ID));
             choices.AddEffect(new GenericEffect_EnterStance(AgilityStance.STANCE_ID));
             choices.Initialize(new Witch());
             choices.AddEffect(new GenericEffect_EnterStance(IntellectStance.STANCE_ID));

@@ -8,7 +8,7 @@ import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBAttackType;
 import eatyourbeets.cards.base.EYBCardData;
-import eatyourbeets.stances.ForceStance;
+import eatyourbeets.stances.WrathStance;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
@@ -34,9 +34,9 @@ public class SuikaIbuki extends AnimatorCard
         GameActions.Bottom.GainBlock(block);
         GameActions.Bottom.DealDamage(this, m, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
 
-        if (!GameUtilities.InStance(ForceStance.STANCE_ID))
+        if (!GameUtilities.InStance(WrathStance.STANCE_ID))
         {
-            GameActions.Bottom.ChangeStance(ForceStance.STANCE_ID);
+            GameActions.Bottom.ChangeStance(WrathStance.STANCE_ID);
             GameActions.Bottom.DrawReduction(magicNumber);
         }
 

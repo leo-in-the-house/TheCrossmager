@@ -10,7 +10,7 @@ import eatyourbeets.interfaces.subscribers.OnAffinityThresholdReachedSubscriber;
 import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.powers.affinity.AbstractAffinityPower;
-import eatyourbeets.stances.ForceStance;
+import eatyourbeets.stances.WrathStance;
 import eatyourbeets.utilities.GameActions;
 
 public class ZarakiKenpachi extends AnimatorCard
@@ -43,7 +43,7 @@ public class ZarakiKenpachi extends AnimatorCard
     {
         GameActions.Bottom.GainBlock(block);
 
-        GameActions.Bottom.ChangeStance(ForceStance.STANCE_ID);
+        GameActions.Bottom.ChangeStance(WrathStance.STANCE_ID);
 
         GameActions.Bottom.StackPower(new ZarakiKenpachiPower(p, magicNumber));
     }

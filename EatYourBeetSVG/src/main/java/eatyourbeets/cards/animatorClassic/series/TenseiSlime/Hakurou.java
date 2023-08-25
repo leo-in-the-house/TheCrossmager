@@ -8,7 +8,7 @@ import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.effects.AttackEffects;
-import eatyourbeets.stances.ForceStance;
+import eatyourbeets.stances.WrathStance;
 import eatyourbeets.utilities.GameActions;
 
 public class Hakurou extends AnimatorClassicCard
@@ -51,7 +51,7 @@ public class Hakurou extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
-        if (ForceStance.IsActive())
+        if (WrathStance.IsActive())
         {
             GameActions.Bottom.GainBlock(secondaryValue)
             .SetVFX(true, true);

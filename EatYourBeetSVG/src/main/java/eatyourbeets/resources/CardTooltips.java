@@ -174,6 +174,11 @@ public class CardTooltips
     public EYBCardTooltip DarkScaling = FindByID(GR.Animator.PlayerClass, "Dark Scaling");
     public EYBCardTooltip LightScaling = FindByID(GR.Animator.PlayerClass, "Light Scaling");
     public EYBCardTooltip MulticolorScaling = FindByID(GR.Animator.PlayerClass, "Multicolor Scaling");
+    public EYBCardTooltip WrathStance = FindByID(GR.Animator.PlayerClass, "Wrath Stance");
+    public EYBCardTooltip TranceStance = FindByID(GR.Animator.PlayerClass, "Trance Stance");
+    public EYBCardTooltip MagicStance = FindByID(GR.Animator.PlayerClass, "Magic Stance");
+    public EYBCardTooltip CalmStance = FindByID(GR.Animator.PlayerClass, "Calm Stance");
+    public EYBCardTooltip DivinityStance = FindByID(GR.Animator.PlayerClass, "Divinity Stance");
 
     //AnimatorClassic
     public EYBCardTooltip Boost_Synergy = FindByID(GR.AnimatorClassic.PlayerClass, "Boost");
@@ -292,6 +297,11 @@ public class CardTooltips
         RegisterID(null,"T-Knife", ThrowingKnife);
         RegisterID(null,"Gold", Gold);
         RegisterID(null,"INS", Inspiration);
+        RegisterID(null,"Wrath Stance", WrathStance);
+        RegisterID(null,"Trance Stance", TranceStance);
+        RegisterID(null,"Magic Stance", MagicStance);
+        RegisterID(null,"Calm Stance", CalmStance);
+        RegisterID(null,"Divinity Stance", DivinityStance);
     }
 
     public void InitializeIcons()
@@ -321,6 +331,11 @@ public class CardTooltips
         MultiHP.SetIcon(icons.MultiHP.Texture(), 6);
         Health.SetIcon(icons.HP.Texture(), 6);
         Block.SetIcon(icons.Block.Texture(), 10).SetIconSizeMulti(1f, 0.9f);
+        WrathStance.SetIcon(icons.Wrath_St.Texture(), 6);
+        TranceStance.SetIcon(icons.Trance_St.Texture(), 6);
+        MagicStance.SetIcon(icons.Magic_St.Texture(), 6);
+        CalmStance.SetIcon(icons.Calm_St.Texture(), 6);
+        DivinityStance.SetIcon(icons.Divinity_St.Texture(), 6);
 
         CommonImages.AffinityIcons affinities = GR.Common.Images.Affinities;
         Affinity_Red.SetIcon(affinities.Red.Texture(), 8);

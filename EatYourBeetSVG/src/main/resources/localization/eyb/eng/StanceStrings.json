@@ -31,5 +31,45 @@
 		[
 			"#g+{0} [Strength], #g+{0} [Dexterity], #g+{0} [Focus]. NL Upon exiting: Gain #b{1} [E]."
 		]
+	},
+	"eyb:WrathStance":
+	{
+		"NAME": "Wrath Stance",
+		"DESCRIPTION":
+		[
+			"Deal and receive double damage."
+		]
+	},
+	"eyb:TranceStance":
+	{
+		"NAME": "Trance Stance",
+		"DESCRIPTION":
+		[
+			"Deal and receive half damage."
+		]
+	},
+	"eyb:MagicStance":
+	{
+		"NAME": "Magic Stance",
+		"DESCRIPTION":
+		[
+			"#g+{0} [Focus]. #g-{0} [Strength]. #g-{0} [Dexterity]."
+		]
+	},
+	"eyb:CalmStance":
+	{
+		"NAME": "Calm Stance",
+		"DESCRIPTION":
+		[
+			"Upon exiting: Gain [E][E]."
+		]
+	},
+	"eyb:DivinityStance":
+	{
+		"NAME": "Divinity Stance",
+		"DESCRIPTION":
+		[
+			"Upon entering: Gain [E][E][E].  Triples damage dealt. NL Leave this stance at the end of your next turn."
+		]
 	}
 }

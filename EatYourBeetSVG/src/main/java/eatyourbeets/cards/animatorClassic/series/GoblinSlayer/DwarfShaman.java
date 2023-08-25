@@ -8,8 +8,8 @@ import eatyourbeets.cards.base.EYBAttackType;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.orbs.animator.Earth;
-import eatyourbeets.stances.ForceStance;
 import eatyourbeets.stances.IntellectStance;
+import eatyourbeets.stances.WrathStance;
 import eatyourbeets.utilities.GameActions;
 
 public class DwarfShaman extends AnimatorClassicCard
@@ -35,7 +35,7 @@ public class DwarfShaman extends AnimatorClassicCard
         GameActions.Bottom.DealDamage(this, m, AttackEffects.BLUNT_LIGHT);
         GameActions.Bottom.ChannelOrb(new Earth());
 
-        if (ForceStance.IsActive() || IntellectStance.IsActive())
+        if (WrathStance.IsActive() || IntellectStance.IsActive())
         {
             GameActions.Bottom.Draw(1);
             GameActions.Bottom.UpgradeFromHand(name, 1, false);

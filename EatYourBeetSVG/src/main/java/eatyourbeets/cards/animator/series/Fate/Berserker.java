@@ -9,7 +9,7 @@ import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.effects.VFX;
-import eatyourbeets.stances.ForceStance;
+import eatyourbeets.stances.WrathStance;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
@@ -48,7 +48,7 @@ public class Berserker extends AnimatorCard
 
         if (CheckSpecialCondition(true))
         {
-            GameActions.Bottom.ChangeStance(ForceStance.STANCE_ID);
+            GameActions.Bottom.ChangeStance(WrathStance.STANCE_ID);
         }
     }
 }

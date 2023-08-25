@@ -8,7 +8,7 @@ import eatyourbeets.cards.base.AnimatorClassicCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
-import eatyourbeets.stances.ForceStance;
+import eatyourbeets.stances.WrathStance;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
@@ -50,7 +50,7 @@ public class Azekura extends AnimatorClassicCard
             }
         }
 
-        if (ForceStance.IsActive())
+        if (WrathStance.IsActive())
         {
             GameActions.Bottom.GainThorns(secondaryValue);
         }

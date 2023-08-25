@@ -9,7 +9,7 @@ import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBAttackType;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.AttackEffects;
-import eatyourbeets.stances.ForceStance;
+import eatyourbeets.stances.WrathStance;
 import eatyourbeets.utilities.GameActions;
 
 public class Naotsugu extends AnimatorClassicCard
@@ -39,7 +39,7 @@ public class Naotsugu extends AnimatorClassicCard
             {
                 if (c.block > 0 && c.block < maxBlock)
                 {
-                    if (ForceStance.IsActive())
+                    if (WrathStance.IsActive())
                     {
                         GameActions.Top.PlayCard(c, player.hand, (AbstractMonster) e)
                         .SetDuration(Settings.ACTION_DUR_MED, true);

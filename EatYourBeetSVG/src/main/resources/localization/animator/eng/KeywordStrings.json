@@ -86,6 +86,36 @@
 		"NAMES": ["[corruption] stance", "demon stance"],
 		"PROPER_NAME": "Demon Stance"
 	},
+	"Wrath Stance":
+	{
+		"DESCRIPTION": "Deal and receive double damage.",
+		"NAMES": ["[Wrath Stance] Stance", "[wrath stance] stance", "wrath stance"],
+		"PROPER_NAME": "Wrath Stance"
+	},
+	"Trance Stance":
+	{
+		"DESCRIPTION": "Deal and receive half damage.",
+		"NAMES": ["[Trance Stance] Stance", "[trance stance] stance", "trance stance"],
+		"PROPER_NAME": "Trance Stance"
+	},
+	"Magic Stance":
+	{
+		"DESCRIPTION": "#g+5 [Focus]. #g-5 [Strength]. #g-5 [Dexterity].",
+		"NAMES": ["[Magic Stance] Stance", "[magic stance] stance", "magic stance"],
+		"PROPER_NAME": "Magic Stance"
+	},
+	"Calm Stance":
+	{
+		"DESCRIPTION": "Upon exiting: Gain [E][E].",
+		"NAMES": ["[Calm Stance] Stance", "[calm stance] stance", "calm stance"],
+		"PROPER_NAME": "Calm Stance"
+	},
+	"Divinity Stance":
+	{
+		"DESCRIPTION": "Upon entering: Gain [E][E][E].  Triples damage dealt. Leave this stance at the end of your next turn.",
+		"NAMES": ["[Divinity Stance] Stance", "[divinity stance] stance", "divinity stance"],
+		"PROPER_NAME": "Divinity Stance"
+	},
 	
 	"Green Scaling":
 	{

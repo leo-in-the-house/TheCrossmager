@@ -12,6 +12,7 @@ import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.stances.AgilityStance;
 import eatyourbeets.stances.ForceStance;
 import eatyourbeets.stances.IntellectStance;
+import eatyourbeets.stances.WrathStance;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
@@ -78,7 +79,7 @@ public class Henrietta extends AnimatorCard
                     {
                         choices.AddEffect(new GenericEffect_EnterStance(AgilityStance.STANCE_ID));
                         choices.AddEffect(new GenericEffect_EnterStance(IntellectStance.STANCE_ID));
-                        choices.AddEffect(new GenericEffect_EnterStance(ForceStance.STANCE_ID));
+                        choices.AddEffect(new GenericEffect_EnterStance(WrathStance.STANCE_ID));
                         choices.AddEffect(new GenericEffect_EnterStance(NeutralStance.STANCE_ID));
                     }
 

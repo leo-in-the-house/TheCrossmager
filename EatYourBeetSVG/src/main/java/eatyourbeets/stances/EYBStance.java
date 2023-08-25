@@ -9,13 +9,10 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.StanceStrings;
 import com.megacrit.cardcrawl.stances.AbstractStance;
 import com.megacrit.cardcrawl.stances.NeutralStance;
-import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import eatyourbeets.cards.base.EYBCardTooltip;
-import eatyourbeets.effects.SFX;
 import eatyourbeets.interfaces.delegates.FuncT0;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.resources.GR;
-import eatyourbeets.utilities.GameEffects;
 import eatyourbeets.utilities.JUtils;
 
 import java.util.HashMap;
@@ -37,12 +34,22 @@ public abstract class EYBStance extends AbstractStance
         stances.put(IntellectStance.STANCE_ID, IntellectStance::new);
         stances.put(AgilityStance.STANCE_ID, AgilityStance::new);
         stances.put(CorruptionStance.STANCE_ID, CorruptionStance::new);
+        stances.put(WrathStance.STANCE_ID, WrathStance::new);
+        stances.put(TranceStance.STANCE_ID, TranceStance::new);
+        stances.put(MagicStance.STANCE_ID, MagicStance::new);
+        stances.put(CalmStance.STANCE_ID, CalmStance::new);
+        stances.put(DivinityStance.STANCE_ID, DivinityStance::new);
         
         classicTooltips.clear();
         classicTooltips.put(ForceStance.STANCE_ID, GR.Tooltips.ForceStance);
         classicTooltips.put(AgilityStance.STANCE_ID, GR.Tooltips.AgilityStance);
         classicTooltips.put(IntellectStance.STANCE_ID, GR.Tooltips.IntellectStance);
         classicTooltips.put(CorruptionStance.STANCE_ID, GR.Tooltips.CorruptionStance);
+        classicTooltips.put(WrathStance.STANCE_ID, GR.Tooltips.WrathStance);
+        classicTooltips.put(TranceStance.STANCE_ID, GR.Tooltips.TranceStance);
+        classicTooltips.put(MagicStance.STANCE_ID, GR.Tooltips.MagicStance);
+        classicTooltips.put(CalmStance.STANCE_ID, GR.Tooltips.CalmStance);
+        classicTooltips.put(DivinityStance.STANCE_ID, GR.Tooltips.DivinityStance);
 
         for (String key : classicTooltips.keySet())
         {
@@ -141,9 +148,9 @@ public abstract class EYBStance extends AbstractStance
             this.stopIdleSfx();
         }
 
-        SFX.Play(SFX.STANCE_ENTER_CALM);
-        sfxId = CardCrawlGame.sound.playAndLoop(SFX.STANCE_LOOP_CALM);
-        GameEffects.Queue.Add(new BorderFlashEffect(GetMainColor(), true));
+        //SFX.Play(SFX.STANCE_ENTER_CALM);
+        //sfxId = CardCrawlGame.sound.playAndLoop(SFX.STANCE_LOOP_CALM);
+       // GameEffects.Queue.Add(new BorderFlashEffect(GetMainColor(), true));
     }
 
     @Override
@@ -151,7 +158,7 @@ public abstract class EYBStance extends AbstractStance
     {
         super.onExitStance();
 
-        this.stopIdleSfx();
+        //this.stopIdleSfx();
     }
 
     public void onRefreshStance()

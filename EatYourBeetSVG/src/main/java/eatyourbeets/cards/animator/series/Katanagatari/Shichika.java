@@ -8,7 +8,7 @@ import eatyourbeets.cards.base.*;
 import eatyourbeets.cards.effects.GenericEffects.GenericEffect;
 import eatyourbeets.powers.common.CounterAttackPower;
 import eatyourbeets.stances.AgilityStance;
-import eatyourbeets.stances.ForceStance;
+import eatyourbeets.stances.WrathStance;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.JUtils;
 
@@ -69,7 +69,7 @@ public class Shichika extends AnimatorCard
         @Override
         public void Use(EYBCard card, AbstractPlayer p, AbstractMonster m)
         {
-            GameActions.Bottom.ChangeStance(ForceStance.STANCE_ID);
+            GameActions.Bottom.ChangeStance(WrathStance.STANCE_ID);
             GameActions.Bottom.MakeCardInHand(kyotouryuu);
         }
     }

@@ -8,8 +8,8 @@ import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.effects.GenericEffects.GenericEffect_EnterStance;
 import eatyourbeets.powers.PowerTriggerCondition;
 import eatyourbeets.stances.AgilityStance;
-import eatyourbeets.stances.ForceStance;
 import eatyourbeets.stances.IntellectStance;
+import eatyourbeets.stances.WrathStance;
 import eatyourbeets.utilities.GameActions;
 
 public class Enchantment1 extends Enchantment
@@ -48,7 +48,7 @@ public class Enchantment1 extends Enchantment
         {
             if (choices.TryInitialize(this))
             {
-                choices.AddEffect(new GenericEffect_EnterStance(ForceStance.STANCE_ID));
+                choices.AddEffect(new GenericEffect_EnterStance(WrathStance.STANCE_ID));
                 choices.AddEffect(new GenericEffect_EnterStance(AgilityStance.STANCE_ID));
                 choices.AddEffect(new GenericEffect_EnterStance(IntellectStance.STANCE_ID));
             }
@@ -59,7 +59,7 @@ public class Enchantment1 extends Enchantment
         {
             switch (upgradeIndex)
             {
-                case 1: GameActions.Bottom.ChangeStance(ForceStance.STANCE_ID); break;
+                case 1: GameActions.Bottom.ChangeStance(WrathStance.STANCE_ID); break;
                 case 2: GameActions.Bottom.ChangeStance(AgilityStance.STANCE_ID); break;
                 case 3: GameActions.Bottom.ChangeStance(IntellectStance.STANCE_ID); break;
                 default: throw new RuntimeException("Invalid upgrade index: " + upgradeIndex);

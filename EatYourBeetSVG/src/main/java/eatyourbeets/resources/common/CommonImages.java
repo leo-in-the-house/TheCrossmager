@@ -57,6 +57,11 @@ public class CommonImages
         public final TextureCache Intellect             = new TextureCache("images/eyb/cardui/core/Intellect.png");
         public final TextureCache Force                 = new TextureCache("images/eyb/cardui/core/Force.png");
         public final TextureCache Agility               = new TextureCache("images/eyb/cardui/core/Agility.png");
+        public final TextureCache Wrath_St              = new TextureCache("images/eyb/cardui/core/Wrath_St.png");
+        public final TextureCache Trance_St             = new TextureCache("images/eyb/cardui/core/Trance_St.png");
+        public final TextureCache Magic_St              = new TextureCache("images/eyb/cardui/core/Magic_St.png");
+        public final TextureCache Calm_St               = new TextureCache("images/eyb/cardui/core/Calm_St.png");
+        public final TextureCache Divinity_St           = new TextureCache("images/eyb/cardui/core/Divinity_St.png");
     }
 
     public static class AffinityIcons

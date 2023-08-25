@@ -4,7 +4,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.stances.ForceStance;
+import eatyourbeets.stances.WrathStance;
 import eatyourbeets.utilities.GameActions;
 
 public class RenjiAbarai extends AnimatorCard
@@ -34,6 +34,6 @@ public class RenjiAbarai extends AnimatorCard
     {
         super.triggerOnManualDiscard();
 
-        GameActions.Bottom.ChangeStance(ForceStance.STANCE_ID);
+        GameActions.Bottom.ChangeStance(WrathStance.STANCE_ID);
     }
 }

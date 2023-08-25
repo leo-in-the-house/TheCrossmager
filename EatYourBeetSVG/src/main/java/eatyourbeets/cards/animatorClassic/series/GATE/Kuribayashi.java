@@ -9,7 +9,7 @@ import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.stances.AgilityStance;
-import eatyourbeets.stances.ForceStance;
+import eatyourbeets.stances.WrathStance;
 import eatyourbeets.utilities.GameActions;
 
 public class Kuribayashi extends AnimatorClassicCard
@@ -52,7 +52,7 @@ public class Kuribayashi extends AnimatorClassicCard
             GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_DIAGONAL);
         }
 
-        if (ForceStance.IsActive())
+        if (WrathStance.IsActive())
         {
             GameActions.Bottom.ReduceStrength(m, secondaryValue, true);
         }

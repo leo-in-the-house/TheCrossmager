@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.orbs.Frost;
 import com.megacrit.cardcrawl.vfx.combat.ClawEffect;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.effects.AttackEffects;
-import eatyourbeets.stances.ForceStance;
+import eatyourbeets.stances.WrathStance;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
 
@@ -42,7 +42,7 @@ public class Lu extends AnimatorClassicCard
     {
         super.triggerWhenDrawn();
 
-        GameActions.Bottom.ChangeStance(ForceStance.STANCE_ID)
+        GameActions.Bottom.ChangeStance(WrathStance.STANCE_ID)
         .RequireNeutralStance(true)
         .AddCallback(stance ->
         {

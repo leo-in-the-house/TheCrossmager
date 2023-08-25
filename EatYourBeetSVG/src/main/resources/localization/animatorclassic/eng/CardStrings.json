@@ -1294,7 +1294,7 @@
 		},
 		"animatorClassic:OrbCore_Chaos":
 		{
-			"DESCRIPTION": "Channel !K! Random Orb. || On your second Synergy each turn: Choose 1 of 3 cards to obtain, it costs 1 less.",
+			"DESCRIPTION": "Channel !K! [Random Orb]. || On your second Synergy each turn: Choose 1 of 3 cards to obtain, it costs 1 less.",
 		  	"EXTENDED_DESCRIPTION": ["On your next {0} #ySynergies this turn, Obtain #b1 of #b{1} cards, it costs #b1 less."],
 			"NAME": "Chaos Core"
 		},
@@ -1493,7 +1493,7 @@
 		},
 		"animatorClassic:Veldora":
 		{
-			"DESCRIPTION": "Gain !S! [I]. Evoke ALL orbs !M! times. || When Drawn: Channel 2 random Orbs.",
+			"DESCRIPTION": "Gain !S! [I]. Evoke ALL orbs !M! times. || When Drawn: Channel 2 [Random Orb].",
 			"NAME": "Veldora"
 		},
 		"animatorClassic:Walpurgisnacht":
