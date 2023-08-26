@@ -37,6 +37,7 @@ public class AyatoNaoi extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         //Put this last to be more player-friendly aka dark orbs won't kill an enemy that might have contributed
         //to the above effect's damage
         for (int i = 0; i < magicNumber; i++)

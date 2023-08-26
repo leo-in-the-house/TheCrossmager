@@ -9,6 +9,7 @@ import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.utilities.CardSelection;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class MasamiIwasawa extends AnimatorCard
 {
@@ -30,6 +31,8 @@ public class MasamiIwasawa extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
+
         GameActions.Bottom.GainBlock(block);
 
         GameActions.Bottom.MakeCardInDrawPile(new Dazed())

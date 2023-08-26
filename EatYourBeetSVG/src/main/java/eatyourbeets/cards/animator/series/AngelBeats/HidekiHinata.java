@@ -29,6 +29,8 @@ public class HidekiHinata extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
+
         GameActions.Bottom.DealDamage(this, m, AbstractGameAction.AttackEffect.FIRE);
 
         if (GameUtilities.IsAttacking(m.intent))

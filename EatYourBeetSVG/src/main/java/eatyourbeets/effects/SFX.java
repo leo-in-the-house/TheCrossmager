@@ -36,6 +36,9 @@ public class SFX
         //BaseMod.addAudio(Audio_TheUnnamed, "audio/music/ANIMATOR_THE_UNNAMED.ogg");
     }
 
+    public static String GetVoiceString(String cardName) {
+        return "VOICE_"+cardName;
+    }
     public static final String ANIMATOR_ARROW = "ANIMATOR_ARROW";
     public static final String ANIMATOR_GUNSHOT = "ANIMATOR_GUNSHOT";
     public static final String ANIMATOR_SPEAR_1 = "ANIMATOR_SPEAR_1";

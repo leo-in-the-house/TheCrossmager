@@ -9,6 +9,7 @@ import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.cards.base.modifiers.CostModifiers;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class KanadeTachibana extends AnimatorCard
 {
@@ -34,6 +35,8 @@ public class KanadeTachibana extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
+
         GameActions.Top.FetchFromPile(name, magicNumber, p.discardPile)
         .SetOptions(false, true)
         .SetMessage(cardData.Strings.EXTENDED_DESCRIPTION[0])

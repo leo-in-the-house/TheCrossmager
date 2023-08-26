@@ -8,6 +8,7 @@ import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Yui extends AnimatorCard
 {
@@ -39,6 +40,8 @@ public class Yui extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
+
         GameActions.Bottom.Motivate(secondaryValue);
 
        GameActions.Bottom.MakeCardInDrawPile(new GirlDeMo())

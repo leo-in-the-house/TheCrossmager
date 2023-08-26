@@ -35,6 +35,7 @@ import eatyourbeets.ui.common.EYBCardPopup;
 import eatyourbeets.utilities.*;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -1122,6 +1123,15 @@ public abstract class EYBCard extends EYBCardBase
         {
             Refresh(mo);
         }
+    }
+
+    public EYBCardTooltip GetFlavorText() {
+        String flavorText = GR.TryGetFlavorText(name);
+
+        if (flavorText == null) {
+            return null;
+        }
+        return new EYBCardTooltip(null, Arrays.stream(flavorText.split(" ")).map(string -> "#g"+string).reduce("", (str1, str2) -> str1 + " " + str2));
     }
 
     @Override

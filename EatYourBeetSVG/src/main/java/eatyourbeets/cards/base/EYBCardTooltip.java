@@ -234,6 +234,10 @@ public class EYBCardTooltip
             }
         }
 
+        if (card.GetFlavorText() != null) {
+            tooltips.add(card.GetFlavorText());
+        }
+
         final boolean alt = Gdx.input.isKeyPressed(Input.Keys.ALT_LEFT) || Gdx.input.isKeyPressed(Input.Keys.ALT_RIGHT);
         for (int i = 0; i < tooltips.size(); i++)
         {

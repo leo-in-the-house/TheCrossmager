@@ -10,6 +10,7 @@ import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.stances.WrathStance;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Godan extends AnimatorCard
 {
@@ -28,6 +29,8 @@ public class Godan extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
+
         GameActions.Bottom.DealDamage(this, m, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
 
         boolean hasEthereal = false;

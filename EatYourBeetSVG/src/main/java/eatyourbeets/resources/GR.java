@@ -23,7 +23,9 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import eatyourbeets.cards.base.EYBCardTooltip;
+import eatyourbeets.effects.SFX;
 import eatyourbeets.interfaces.markers.Hidden;
+import eatyourbeets.localization.AnimatorCardStrings;
 import eatyourbeets.resources.animator.AnimatorResources;
 import eatyourbeets.resources.animatorClassic.AnimatorClassicResources;
 import eatyourbeets.resources.common.CommonResources;
@@ -53,6 +55,9 @@ public class GR
     protected static final ArrayList<String> relicClassNames = JUtils.GetClassNamesFromJarFile(RELIC_PREFIX);
     protected static final ArrayList<String> powerClassNames = JUtils.GetClassNamesFromJarFile(POWER_PREFIX);
     protected static final HashMap<String, Texture> textures = new HashMap<>();
+
+    //Contains all flavor texts, though the flavor texts are not guaranteed to exist!
+    protected static final HashMap<String, String> flavorTexts = new HashMap<>();
 
     public static EYBCardLibrary CardLibrary = new EYBCardLibrary();
     public static CardTooltips Tooltips = null; // Created by CommonResources
@@ -231,6 +236,10 @@ public class GR
         }
 
         return texture;
+    }
+
+    public static String TryGetFlavorText(String name) {
+        return flavorTexts.get(name);
     }
 
     public static String CreateID(String prefix, String suffix)
@@ -415,15 +424,29 @@ public class GR
         final Map cardStrings = new HashMap<>();
         try
         {
-            final Type typeToken = new TypeToken<Map<String, Map<String, CardStrings>>>(){}.getType();
+            final Type typeToken = new TypeToken<Map<String, Map<String, AnimatorCardStrings>>>(){}.getType();
             final Map map = new HashMap<>((Map)new Gson().fromJson(jsonString, typeToken));
 
             for (Object key1 : map.keySet())
             {
-                final Map map3 = ((Map<Object, CardStrings>)map.get(key1));
+                final Map map3 = ((Map<Object, AnimatorCardStrings>)map.get(key1));
                 for (Object key2 : map3.keySet())
                 {
-                    cardStrings.put(key2, map3.get(key2));
+                    AnimatorCardStrings curAnimatorString = (AnimatorCardStrings) map3.get(key2);
+                    CardStrings curString = (CardStrings) curAnimatorString;
+                    cardStrings.put(key2, curString);
+
+                    if (curAnimatorString.FLAVOR_TEXT != null) {
+                        flavorTexts.put(curString.NAME, curAnimatorString.FLAVOR_TEXT);
+                    }
+
+                    //Add voices
+                    String fileName = "audio/animator/voice/"+curString.NAME+".ogg";
+
+                    FileHandle sfxFile = Gdx.files.internal(fileName);
+                    if (sfxFile != null && sfxFile.exists()) {
+                        BaseMod.addAudio(SFX.GetVoiceString(curString.NAME), fileName);
+                    }
                 }
             }
         }

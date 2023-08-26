@@ -367,18 +367,21 @@
 	{
 		"animator:AngelAlter":
 		{
+			"FLAVOR_TEXT": "'Guard Skill: Hand Sonic.'",
 			"DESCRIPTION": "On Exhaust:  Gain !M! [L] and !M! [R].  || Add a copy of this card to your draw pile, and double the amounts gained.",
 			"UPGRADE_DESCRIPTION": "On Exhaust:  Gain !M! [L] and !M! [R].  || Add a copy of this card to your draw pile, and triple the amounts gained.",
 			"NAME": "Angel Alter"
 		},
 		"animator:AyatoNaoi":
 		{
+			"FLAVOR_TEXT": "'Are you going to defy me?  I'm God. I am GOD!'",
 			"DESCRIPTION": "Channel !M! [Dark]. || ALL enemies lose HP equal to their Attack damage.",
 			"UPGRADE_DESCRIPTION": "Channel !M! [Dark]. || ALL enemies lose HP equal to twice their Attack damage.",
 			"NAME": "Ayato Naoi"
 		},
 		"animator:Chaa":
 		{
+			"FLAVOR_TEXT": "'Guys! Hold her off with these!'",
 			"DESCRIPTION": "Start of Turn: {Exhaust} a card, then obtain a random card of the next rarity. || If you exhausted an {Ethereal} card, the new card gains {Ethereal} and costs 1 less.",
 			"EXTENDED_DESCRIPTION": ["Start of Turn: #yExhaust #b{0} cards, then add a random card of the next rarity for each card exhausted.  If you #yExhaust an #yEthereal card, the new card gains #yEthereal and costs 1 less. "],
 			"NAME": "Chaa"
@@ -390,37 +393,44 @@
 		},
 		"animator:EriShiina":
 		{
+			"FLAVOR_TEXT": "'Ever since that day, I keep running it over and over in that head, how I could have lost to that noobie!'",
 			"DESCRIPTION": "On Exhaust: Add !M! {Throwing-Knives} to your hand.",
 			"NAME": "Eri Shiina"
 		},
 		"animator:GirlDeMo":
 		{
-			"DESCRIPTION": "Double your highest amount among [R], [G], [B], [L], and [D].",
+			"FLAVOR_TEXT": "'I'll keep singing for everyone, even when I'm wetting myself! I'll show you what I've got!'",
+			"DESCRIPTION": "Double your highest amounts among [R], [G], [B], [L], and [D].",
 			"NAME": "Girls Dead Monster"
 		},
 		"animator:Godan":
 		{
+			"FLAVOR_TEXT": "'What's wrong with this world?  Someone tell me what's going on here!'",
 			"DESCRIPTION": "<SLM>. If you have another {Ethereal} card in your hand, Enter {[Wrath Stance] Stance}.",
 			"NAME": "Godan Matsushita"
 		},
 		"animator:HidekiHinata":
 		{
+			"FLAVOR_TEXT": "'We've spent a lot of time together. So I'll be with you in the end too.'",
 			"DESCRIPTION": "If the enemy intends to attack, this card attacks a second time.",
 			"NAME": "Hideki Hinata"
 		},
 		"animator:KanadeTachibana":
 		{
+			"FLAVOR_TEXT": "'Please let me believe in everything you believed in. Let me believe that life is great.'",
 			"DESCRIPTION": "Fetch up to !M! cards from your discard pile. They gain {Ethereal} and cost 1 less.",
 			"EXTENDED_DESCRIPTION": ["Choose cards to put into your hand."],
 			"NAME": "Kanade Tachibana"
 		},
 		"animator:MasamiIwasawa":
 		{
+			"FLAVOR_TEXT": "'This is my life... to go on singing like this... Just as I was saved... I'll save someone else like this.'",
 			"DESCRIPTION": "Put !M! {Dazed} on top of your draw pile.",
 			"NAME": "Masami Iwasawa"
 		},
 		"animator:Noda":
 		{
+			"FLAVOR_TEXT": "'You jerk!  You're the one who insulted Yurippe and refused to enlist in the Battlefront!'",
 			"DESCRIPTION": "Exhaust this card unless you have an {Ethereal} card in your hand.",
 			"NAME": "Noda"
 		},
@@ -431,22 +441,26 @@
 		},
 		"animator:Yui":
 		{
+			"FLAVOR_TEXT": "'Even death can't cure idiocy!'",
 			"DESCRIPTION": "Motivate !S!.  Add a {Girls Dead Monster} to your draw pile.",
 			"NAME": "Yui"
 		},
 		"animator:YuriNakamura":
 		{
+			"FLAVOR_TEXT": "'We have no choice but to accept the one and only life we're given, no matter how cruel and heartless it might be.'",
 			"DESCRIPTION": "Add up to !M! copies of an Attack from your exhaust pile to your draw pile. They gain Ethereal.",
 			"EXTENDED_DESCRIPTION": ["Choose cards to add copies to your draw pile."],
 			"NAME": "Yuri Nakamura"
 		},
 		"animator:Yusa":
 		{
+			"FLAVOR_TEXT": "'I can only describe it as a shadow.  Noda just caught up with it and he killed it.  Ooyama would have been in trouble if he was alone...'",
 			"DESCRIPTION": "{Scry} !M!.",
 			"NAME": "Yusa"
 		},
 		"animator:YuzuruOtonashi":
 		{
+			"FLAVOR_TEXT": "'There’s nothing false about the lives we endured! Everyone lived to their fullest! We’ve carved those memories into ourselves!'",
 			"DESCRIPTION": "This card has [L] scaling equal to the number of {Ethereal} cards in your hand.",
 			"NAME": "Yuzuru Otonashi"
 		}

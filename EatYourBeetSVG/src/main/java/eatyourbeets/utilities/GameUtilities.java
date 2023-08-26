@@ -2070,6 +2070,11 @@ public class GameUtilities
         return true;
     }
 
+    //Tries to play the voice SFX if it exists.
+    public static void PlayVoiceSFX(String cardName) {
+        GameActions.Bottom.SFX(SFX.GetVoiceString(cardName));
+    }
+
     public static void RemoveDamagePowers()
     {
         if (player.hasPower(PenNibPower.POWER_ID))
