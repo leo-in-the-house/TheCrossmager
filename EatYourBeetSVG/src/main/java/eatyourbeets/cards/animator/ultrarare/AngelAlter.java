@@ -43,12 +43,7 @@ public class AngelAlter extends AnimatorCard_UltraRare
                 magicNumberIncrease *= this.magicNumber;
             }
 
-            if (c.baseMagicNumber + magicNumberIncrease > 999) {
-                c.magicNumber = 999;
-            }
-            else {
-                GameUtilities.IncreaseMagicNumber(c, magicNumberIncrease, false);
-            }
+            GameUtilities.IncreaseMagicNumber(c, magicNumberIncrease, false);
         });
     }
 }
