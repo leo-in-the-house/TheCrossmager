@@ -13,6 +13,8 @@ public class AgilityPower extends AnimatorAffinityPower
     public AgilityPower()
     {
         super(AFFINITY_TYPE, POWER_ID, SYMBOL);
+
+        upgradeMin = 3;
     }
 
     @Override

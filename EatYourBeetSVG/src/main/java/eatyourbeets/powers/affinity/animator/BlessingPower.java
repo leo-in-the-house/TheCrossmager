@@ -13,6 +13,8 @@ public class BlessingPower extends AnimatorAffinityPower
     public BlessingPower()
     {
         super(AFFINITY_TYPE, POWER_ID, SYMBOL);
+
+        upgradeMin = 5;
     }
 
     @Override

@@ -13,6 +13,8 @@ public class CorruptionPower extends AnimatorAffinityPower
     public CorruptionPower()
     {
         super(AFFINITY_TYPE, POWER_ID, SYMBOL);
+
+        upgradeMin = 5;
     }
 
     @Override

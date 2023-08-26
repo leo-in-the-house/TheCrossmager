@@ -16,6 +16,7 @@ import eatyourbeets.utilities.*;
 
 public abstract class AnimatorAffinityPower extends AbstractAffinityPower
 {
+    protected int upgradeMin;
     protected AnimatorAffinityPower(Affinity affinity, String powerID, String symbol)
     {
         super(affinity, powerID, symbol);
@@ -142,7 +143,8 @@ public abstract class AnimatorAffinityPower extends AbstractAffinityPower
     public int GetUpgradeCost()
     {
         final int level = GetThresholdLevel();
-        return Mathf.Max(0, level + 3 - boost);
+
+        return Mathf.Max(0, level + upgradeMin - boost);
     }
 
     @Override

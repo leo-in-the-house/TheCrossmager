@@ -13,6 +13,8 @@ public class IntellectPower extends AnimatorAffinityPower
     public IntellectPower()
     {
         super(AFFINITY_TYPE, POWER_ID, SYMBOL);
+
+        upgradeMin = 3;
     }
 
     @Override

@@ -381,7 +381,7 @@
 		},
 		"animator:Chaa":
 		{
-			"FLAVOR_TEXT": "'Guys! Hold her off with these!'",
+			"FLAVOR_TEXT": "'All you need to take is your memory and your pride, as good technicians!  It's all you need!'",
 			"DESCRIPTION": "Start of Turn: {Exhaust} a card, then obtain a random card of the next rarity. || If you exhausted an {Ethereal} card, the new card gains {Ethereal} and costs 1 less.",
 			"EXTENDED_DESCRIPTION": ["Start of Turn: #yExhaust #b{0} cards, then add a random card of the next rarity for each card exhausted.  If you #yExhaust an #yEthereal card, the new card gains #yEthereal and costs 1 less. "],
 			"NAME": "Chaa"
@@ -469,11 +469,13 @@
 	{
 		"animator:ByakuyaBankai":
 		{
+			"FLAVOR_TEXT": "'To justify the actions I have taken, I need but one reason. You raised your blade in contempt of my pride.'",
 			"DESCRIPTION": "Choose whether to Attack or Block X times.",
 			"NAME": "Byakuya Bankai"
 		},
 		"animator:ByakuyaKuchiki":
 		{
+			"FLAVOR_TEXT": "'At what point did I ever claim that I was cutting you down in my capacity as a Shinigami?'",
 			"DESCRIPTION": "Choose whether to Attack or Block. || <WS>: Exhaust, exit your Stance, and add {Byakuya Bankai} to your draw pile.",
 			"NAME": "Byakuya Kuchiki"
 		},
@@ -484,62 +486,74 @@
 		},
 		"animator:IchigoBankai":
 		{
+			"FLAVOR_TEXT": "'If I cannot protect them from the wheel, then give me a strong blade, and enough strength... to shatter fate.'",
 			"DESCRIPTION": "When Drawn: Gain !M! [L]. || This card has X [L] and [R] Scaling.",
 			"NAME": "Ichigo Bankai"
 		},
 		"animator:IchigoKurosaki":
 		{
+			"FLAVOR_TEXT": "'If fate is a millstone, then we are the grist. There is nothing we can do. So I wish for strength.'",
 			"DESCRIPTION": "Gain !M! [L]. || <WS>: Exhaust, exit your Stance, and add {Ichigo Bankai} to your draw pile.",
 			"NAME": "Ichigo Kurosaki"
 		},
 		"animator:IkkakuBankai":
 		{
+			"FLAVOR_TEXT": "'Finish them off properly! That's how you show respect to the enemy who started this battle.'",
 			"DESCRIPTION": "",
 			"NAME": "Ikkaku Bankai"
 		},
 		"animator:IkkakuMadarame":
 		{
+			"FLAVOR_TEXT": "'You really think you're gonna win a fight like this without taking any lives?'",
 			"DESCRIPTION": "<WS>: Exhaust, exit your Stance, and add {Ikkaku Bankai} to your draw pile.",
 			"NAME": "Ikkaku Madarame"
 		},
 		"animator:IsshinKurosaki":
 		{
+			"FLAVOR_TEXT": "'Live well, age well, and go bald well. And die after me. And... if you can, die smiling.'",
 			"DESCRIPTION": "Channel !M! [Fire]. || <WS>. All [Fire] deal !S! additional damage this combat.",
 			"NAME": "Isshin Kurosaki"
 		},
 		"animator:MayuriKurotsuchi":
 		{
+			"FLAVOR_TEXT": "'How about this? I'll give you top class special treatment. I'll only drug you eight times a day and only four hours of machine operations a day!'",
 			"DESCRIPTION": "Apply !M! [Poison].",
 			"NAME": "Mayuri Kurotsuchi"
 		},
 		"animator:OrihimeInoue":
 		{
+			"FLAVOR_TEXT": "'Maybe it's impossible to feel exactly the same way as another person, but it's possible for people to care about one another and to place their hearts as close together as they can manage.'",
 			"DESCRIPTION": "The next time you are attacked this turn, Enter <WS>.",
 			"EXTENDED_DESCRIPTION": ["The next #b{0} time you are attacked this turn, Enter #yForce #yStance."],
 			"NAME": "Orihime Inoue"
 		},
 		"animator:RenjiAbarai":
 		{
+			"FLAVOR_TEXT": "'Only a piece of trash would slaughter a woman in cold blood. To live on as a worthless piece of trash would be just as bad as dying here now.'",
 			"DESCRIPTION": "On Discard: Enter <WS>.",
 			"NAME": "Renji Abarai"
 		},
 		"animator:RukiaBankai":
 		{
+			"FLAVOR_TEXT": "'Love, companionship and friendship... it's nothing but trouble.'",
 			"DESCRIPTION": "Gain !M! [Orb_S]. || Channel X [Frost]. Increase their amounts by !S!.",
 			"NAME": "Rukia Bankai"
 		},
 		"animator:RukiaKuchiki":
 		{
+			"FLAVOR_TEXT": "'Whether I like him, whether I hate him, it's just all so troublesome.'",
 			"DESCRIPTION": "Channel [Frost]. Increase its amount by !M!. || <WS>: Exhaust, exit your Stance, and add {Rukia Bankai} to your draw pile.",
 			"NAME": "Rukia Kuchiki"
 		},
 		"animator:SajinKomamura":
 		{
+			"FLAVOR_TEXT": "'If our core beliefs are truly incompatible, then attempting to solve this with words is meaningless.'",
 			"DESCRIPTION": "This card can only be played if you have less than !M!% of your [MHP]. || Enter <WS>.",
 			"NAME": "Sajin Komamura"
 		},
 		"animator:SosukeAizen":
 		{
+			"FLAVOR_TEXT": "'It is the nature of all living things to find some being greater than themselves and place their trust in that being, following it blindly.'",
 			"DESCRIPTION": "<WS>: Gain [~Intangible] X times. || Otherwise, if you paid at least 1 [E], Enter <WS>, gain X [Strength], and shuffle this card into your draw pile.",
 			"NAME": "Sosuke Aizen"
 		},
@@ -550,16 +564,19 @@
 		},
 		"animator:UryuuIshida":
 		{
+			"FLAVOR_TEXT": "'You're asking if this is a bow? Of course it is. You think I would use anything else?'",
 			"DESCRIPTION": "Any Stance: Transfer all [Weak] and [Vulnerable] from you to the enemy.",
 			"NAME": "Uryuu Ishida"
 		},
 		"animator:YasutoraSado":
 		{
+			"FLAVOR_TEXT": "'The more complex a person, the weaker they are.'",
 			"DESCRIPTION": "On Exhaust: Enter <WS>.",
 			"NAME": "Yasutora Sado"
 		},
 		"animator:ZarakiKenpachi":
 		{
+			"FLAVOR_TEXT": "'To feel this desire again... I want to get stronger!'",
 			"DESCRIPTION": "Enter <WS>. || Whenever you gain [Force]: You gain an additional !M! [Strength].",
 			"EXTENDED_DESCRIPTION": ["Whenever you gain #yForce, You gain an additional #b{0} #yStrength."],
 			"NAME": "Zaraki Kenpachi"

@@ -27,8 +27,8 @@ public class RukiaKuchiki extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 0, 2, 0);
-        SetUpgrade(0, 0, 2, 0);
+        Initialize(0, 0, 3, 0);
+        SetUpgrade(0, 0, 3, 0);
         
         SetAffinity_Blue(1);
         

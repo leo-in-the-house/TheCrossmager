@@ -13,6 +13,8 @@ public class ForcePower extends AnimatorAffinityPower
     public ForcePower()
     {
         super(AFFINITY_TYPE, POWER_ID, SYMBOL);
+
+        upgradeMin = 3;
     }
 
     @Override
