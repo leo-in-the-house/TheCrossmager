@@ -7,6 +7,7 @@ import eatyourbeets.cards.base.*;
 import eatyourbeets.interfaces.delegates.ActionT1;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -40,6 +41,8 @@ public class GirlDeMo extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
+
         ArrayList<Pair<ActionT1<Integer>, Integer>> pairs = new ArrayList<>();
         pairs.add(new Pair<>(GameActions.Bottom::GainRed, CombatStats.Affinities.GetAffinityLevel(Affinity.Red)));
         pairs.add(new Pair<>(GameActions.Bottom::GainGreen, CombatStats.Affinities.GetAffinityLevel(Affinity.Green)));

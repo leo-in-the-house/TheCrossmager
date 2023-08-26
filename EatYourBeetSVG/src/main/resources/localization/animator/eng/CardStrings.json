@@ -368,8 +368,8 @@
 		"animator:AngelAlter":
 		{
 			"FLAVOR_TEXT": "'Guard Skill: Hand Sonic.'",
-			"DESCRIPTION": "On Exhaust:  Gain !M! [L] and !M! [R].  || Add a copy of this card to your draw pile, and double the amounts gained.",
-			"UPGRADE_DESCRIPTION": "On Exhaust:  Gain !M! [L] and !M! [R].  || Add a copy of this card to your draw pile, and triple the amounts gained.",
+			"DESCRIPTION": "On Exhaust:  Gain !M! [L] and !M! [R]. Add a copy of this card to your draw pile, and double the amounts gained.",
+			"UPGRADE_DESCRIPTION": "On Exhaust:  Gain !M! [L] and !M! [R].  Add a copy of this card to your draw pile, and triple the amounts gained.",
 			"NAME": "Angel Alter"
 		},
 		"animator:AyatoNaoi":

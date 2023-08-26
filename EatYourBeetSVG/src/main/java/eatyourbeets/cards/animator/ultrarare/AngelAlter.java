@@ -6,10 +6,11 @@ import eatyourbeets.cards.base.CardSeries;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class AngelAlter extends AnimatorCard_UltraRare
 {
-    public static final EYBCardData DATA = Register(AngelAlter.class).SetSkill(0, CardRarity.SPECIAL, EYBCardTarget.None).SetColor(CardColor.COLORLESS).SetSeries(CardSeries.AngelBeats);
+    public static final EYBCardData DATA = Register(AngelAlter.class).SetSkill(-2, CardRarity.SPECIAL, EYBCardTarget.None).SetColor(CardColor.COLORLESS).SetSeries(CardSeries.AngelBeats);
 
     public AngelAlter()
     {
@@ -31,17 +32,23 @@ public class AngelAlter extends AnimatorCard_UltraRare
 
         AbstractCard copy = this.makeCopy();
 
-        if (upgraded) {
-            copy.magicNumber = copy.magicNumber * copy.magicNumber * copy.magicNumber;
-        }
-        else {
-            copy.magicNumber *= copy.magicNumber;
-        }
-        if (copy.magicNumber > 999) {
-            //Let's not get too crazy now ;)
-            copy.magicNumber = 999;
-        }
+        GameActions.Bottom.MakeCardInDrawPile(copy)
+        .SetUpgrade(upgraded, true)
+        .AddCallback(c -> {
+            c.baseMagicNumber = Math.min(this.magicNumber, 999);
 
-        GameActions.Bottom.MakeCardInDrawPile(copy);
+            int magicNumberIncrease = this.magicNumber;
+
+            if (upgraded) {
+                magicNumberIncrease *= this.magicNumber;
+            }
+
+            if (c.baseMagicNumber + magicNumberIncrease > 999) {
+                c.magicNumber = 999;
+            }
+            else {
+                GameUtilities.IncreaseMagicNumber(c, magicNumberIncrease, false);
+            }
+        });
     }
 }
