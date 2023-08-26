@@ -59,6 +59,7 @@ public class Hakurou extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.VFX(new DieDieDieEffect());
         for (int i = 0; i < magicNumber; i++)
         {

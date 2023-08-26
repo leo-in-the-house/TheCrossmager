@@ -39,6 +39,7 @@ public class Benimaru extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.VFX(new FireballEffect2(player.hb.cX, player.hb.cY, m.hb.cX, m.hb.cY)
         .SetColor(Color.RED, Color.ORANGE).SetRealtime(true), 1f, true);
 

@@ -74,6 +74,7 @@ public class MamiTomoe extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.SFX("ATTACK_HEAVY");
         GameActions.Bottom.VFX(new MindblastEffect(p.dialogX, p.dialogY, p.flipHorizontal), 0.05f * magicNumber);
 

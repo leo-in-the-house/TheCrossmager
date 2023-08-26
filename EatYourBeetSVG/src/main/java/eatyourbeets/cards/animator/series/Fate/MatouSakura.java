@@ -49,6 +49,7 @@ public class MatouSakura extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
         GameActions.Bottom.GainDark(1, true);
         GameActions.Bottom.ChannelOrb(new Dark());

@@ -31,6 +31,7 @@ public class GoblinShaman extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         if (this.dontTriggerOnUseCard)
         {
             GameActions.Bottom.StackPower(new FrailPower(p, 1, true));

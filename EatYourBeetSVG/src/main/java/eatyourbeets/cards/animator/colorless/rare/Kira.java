@@ -89,6 +89,7 @@ public class Kira extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainStrength(p, m, secondaryValue);
 
         if (m.type == AbstractMonster.EnemyType.BOSS)

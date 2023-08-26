@@ -83,6 +83,7 @@ public class Assassin extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.NONE)
         .SetDamageEffect(e -> DamageEffect(e, 0));
 

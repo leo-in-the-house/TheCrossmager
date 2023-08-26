@@ -34,6 +34,7 @@ public class Azriel extends AnimatorCard_UltraRare
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         if (!p.hasPower(PlayerFlightPower.POWER_ID))
         {
             GameActions.Bottom.StackPower(new PlayerFlightPower(p, 2));

@@ -25,6 +25,7 @@ public class Kuroyukihime_BlackLotus extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
         GameActions.Bottom.SFX("ATTACK_DEFECT_BEAM");
         GameActions.Bottom.VFX(new ColoredSweepingBeamEffect(p.hb.cX, p.hb.cY, p.flipHorizontal, Color.valueOf("3d0066")), 0.3f);

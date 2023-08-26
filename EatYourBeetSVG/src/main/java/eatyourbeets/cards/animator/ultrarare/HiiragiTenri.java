@@ -65,6 +65,7 @@ public class HiiragiTenri extends AnimatorCard_UltraRare
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         if (magicNumber > 0)
         {
             GameActions.Bottom.GainTemporaryHP(magicNumber);

@@ -33,6 +33,7 @@ public class LizardPriest extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
         GameActions.Bottom.GainAffinity(Affinity.Red, 1, upgraded);
         GameActions.Bottom.GainAffinity(Affinity.Light, 1, upgraded);

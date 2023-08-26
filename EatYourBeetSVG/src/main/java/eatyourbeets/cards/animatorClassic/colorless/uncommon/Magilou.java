@@ -58,6 +58,7 @@ public class Magilou extends AnimatorClassicCard implements OnCardResetSubscribe
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.Callback(new TriggerOrbPassiveAbility(magicNumber));
         GameActions.Bottom.Callback(new WaitRealtimeAction(0.3f), () -> GameActions.Bottom.Add(new EvokeOrbAction(1)));
     }

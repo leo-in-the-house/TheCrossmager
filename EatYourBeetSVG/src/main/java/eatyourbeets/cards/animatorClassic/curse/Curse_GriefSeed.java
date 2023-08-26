@@ -58,6 +58,7 @@ public class Curse_GriefSeed extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
 
     }
 }

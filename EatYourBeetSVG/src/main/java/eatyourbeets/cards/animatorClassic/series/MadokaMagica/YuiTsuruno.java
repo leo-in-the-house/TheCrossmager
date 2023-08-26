@@ -52,6 +52,7 @@ public class YuiTsuruno extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.FIRE);
         GameActions.Bottom.MoveCards(p.drawPile, p.discardPile, 1)
         .ShowEffect(true, true)

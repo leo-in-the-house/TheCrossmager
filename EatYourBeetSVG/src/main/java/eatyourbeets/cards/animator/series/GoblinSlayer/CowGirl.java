@@ -53,6 +53,7 @@ public class CowGirl extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.Heal(magicNumber).Overheal(upgraded);
         CombatStats.Affinities.AddTempAffinity(Affinity.Star, secondaryValue);
     }

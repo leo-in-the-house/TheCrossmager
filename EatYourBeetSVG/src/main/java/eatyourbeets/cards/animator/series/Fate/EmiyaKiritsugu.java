@@ -54,6 +54,7 @@ public class EmiyaKiritsugu extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         final WeightedList<AbstractCard> uncommonCards = new WeightedList<>();
         for (AbstractCard c : p.drawPile.group)
         {

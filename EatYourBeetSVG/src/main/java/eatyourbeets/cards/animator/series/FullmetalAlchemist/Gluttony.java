@@ -53,6 +53,7 @@ public class Gluttony extends AnimatorCard implements OnAffinityGainedSubscriber
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Top.HealPlayerLimited(this, magicNumber);
 
         if (CheckSpecialCondition(true))

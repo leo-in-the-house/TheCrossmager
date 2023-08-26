@@ -80,6 +80,7 @@ public class Tyuule extends AnimatorCard implements OnCardResetListener
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         for (AbstractMonster enemy : GameUtilities.GetEnemies(true))
         {
             for (AbstractPower debuff : enemy.powers)

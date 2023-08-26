@@ -30,6 +30,7 @@ public class HiiragiShinya extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
         GameActions.Bottom.FetchFromPile(name, 1, p.discardPile)
         .SetMessage(MoveCardsAction.TEXT[0])

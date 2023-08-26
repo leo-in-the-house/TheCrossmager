@@ -27,6 +27,7 @@ public class Curse_Writhe extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
 
     }
 }

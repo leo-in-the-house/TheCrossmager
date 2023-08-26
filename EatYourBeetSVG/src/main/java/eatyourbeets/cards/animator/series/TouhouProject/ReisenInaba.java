@@ -50,6 +50,7 @@ public class ReisenInaba extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         if (m.hasPower(ArtifactPower.POWER_ID))
         {
             GameUtilities.UseArtifact(m);

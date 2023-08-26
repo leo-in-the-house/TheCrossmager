@@ -42,6 +42,7 @@ public class Lancer extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         AbstractGameAction.AttackEffect attackEffect;
         if (this.damage >= 15)
         {

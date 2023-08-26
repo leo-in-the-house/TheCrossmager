@@ -40,6 +40,7 @@ public class Nikolay extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_HEAVY);
         GameActions.Bottom.GainAffinity(Affinity.Red);
         GameActions.Bottom.ModifyAllCopies(cardID)

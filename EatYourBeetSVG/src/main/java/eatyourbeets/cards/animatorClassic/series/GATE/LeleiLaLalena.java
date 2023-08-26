@@ -45,6 +45,7 @@ public class LeleiLaLalena extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         if (info.IsSynergizing)
         {
             if (m == null)

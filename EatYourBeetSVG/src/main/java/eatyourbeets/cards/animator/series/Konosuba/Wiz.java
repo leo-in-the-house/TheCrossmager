@@ -65,6 +65,7 @@ public class Wiz extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.ExhaustFromHand(name, 1, true)
         .ShowEffect(true, true)
         .SetOptions(false, false, false)

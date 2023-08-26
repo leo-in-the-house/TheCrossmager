@@ -66,6 +66,7 @@ public class Aqua extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         if (!transformed)
         {
             GameActions.Bottom.Heal(magicNumber);

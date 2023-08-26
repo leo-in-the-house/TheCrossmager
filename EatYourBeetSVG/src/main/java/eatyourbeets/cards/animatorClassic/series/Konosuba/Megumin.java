@@ -44,6 +44,7 @@ public class Megumin extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.SFX(SFX.ORB_LIGHTNING_PASSIVE, 0.7f, 0.9f, 1.2f);
         GameActions.Bottom.WaitRealtime(0.5f);
         GameActions.Bottom.SFX(SFX.ORB_LIGHTNING_PASSIVE, 1.1f, 1.3f, 1.2f);

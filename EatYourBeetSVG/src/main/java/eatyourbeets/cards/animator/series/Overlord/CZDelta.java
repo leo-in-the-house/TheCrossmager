@@ -68,6 +68,7 @@ public class CZDelta extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.LoseBlock(magicNumber);
 
         if (upgraded)

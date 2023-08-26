@@ -37,6 +37,7 @@ public class Vesta extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainAffinity(Affinity.Blue, magicNumber, false);
         GameActions.Bottom.GainInspiration(magicNumber);
 

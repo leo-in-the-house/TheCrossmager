@@ -56,6 +56,7 @@ public class Vesta_Elixir extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         for (VestaElixirEffect effect : effects)
         {
             effect.EnqueueAction(this, p);

@@ -36,6 +36,7 @@ public class Tatsumaki extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         if (IntellectStance.IsActive())
         {
             GameActions.Bottom.GainOrbSlots(1);

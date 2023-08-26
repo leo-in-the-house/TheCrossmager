@@ -55,6 +55,7 @@ public class Melzalgald extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.RecoverHP(magicNumber);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_HEAVY);
 

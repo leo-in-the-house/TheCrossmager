@@ -31,6 +31,7 @@ public class Souei extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.ApplyPoison(p, m, magicNumber);
 
         if (CombatStats.TryActivateSemiLimited(cardID))

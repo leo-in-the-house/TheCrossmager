@@ -38,6 +38,7 @@ public class YachiyoNanami extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainOrbSlots(1);
         GameActions.Bottom.ChannelOrb(new Frost());
         GameActions.Bottom.StackPower(new YachiyoNanamiPower(p, 1));

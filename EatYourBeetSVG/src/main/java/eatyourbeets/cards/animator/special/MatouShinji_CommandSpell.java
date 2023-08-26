@@ -47,6 +47,7 @@ public class MatouShinji_CommandSpell extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         if (upgraded)
         {
             GameActions.Bottom.GainTemporaryHP(magicNumber);

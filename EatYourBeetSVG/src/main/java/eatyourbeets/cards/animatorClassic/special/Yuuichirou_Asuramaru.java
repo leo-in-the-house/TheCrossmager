@@ -30,6 +30,7 @@ public class Yuuichirou_Asuramaru extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.StackPower(new DemonFormPower(p, secondaryValue));
         GameActions.Bottom.GainBlue(magicNumber);
         GameActions.Bottom.GainGreen(magicNumber);

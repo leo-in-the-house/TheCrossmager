@@ -98,6 +98,7 @@ public class IzunaHatsuse extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         if (transformed)
         {
             GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_HORIZONTAL);

@@ -30,6 +30,7 @@ public class NarberalGamma extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.ChannelOrb(new Lightning());
 
         if (upgraded)

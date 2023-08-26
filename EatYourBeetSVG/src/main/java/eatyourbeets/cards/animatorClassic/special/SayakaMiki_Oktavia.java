@@ -46,6 +46,7 @@ public class SayakaMiki_Oktavia extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.Add(new CreateRandomCurses(secondaryValue, p.hand));
         GameActions.Bottom.Callback(() ->
         { //

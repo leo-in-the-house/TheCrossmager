@@ -39,6 +39,7 @@ public class CowGirl extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         FetchFromPile fetchFromPile;
 
         if (upgraded)

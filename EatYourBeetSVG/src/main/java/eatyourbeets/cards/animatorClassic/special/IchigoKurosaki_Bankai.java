@@ -50,6 +50,7 @@ public class IchigoKurosaki_Bankai extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameUtilities.UseXCostEnergy(this);
 
         if (damage > 0)

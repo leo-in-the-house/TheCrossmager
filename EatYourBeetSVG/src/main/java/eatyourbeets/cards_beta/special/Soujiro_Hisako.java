@@ -38,6 +38,7 @@ public class Soujiro_Hisako extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.EvokeOrb(1)
         .AddCallback(orbs ->
         {

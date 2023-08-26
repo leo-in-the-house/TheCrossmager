@@ -48,6 +48,7 @@ public class Shichika_Kyotouryuu extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.Add(new RemoveBlock(m, p)).SetVFX(true, true);
         GameActions.Bottom.VFX(new ViolentAttackEffect(m.hb.cX, m.hb.cY, Color.SCARLET.cpy()));
         GameActions.Bottom.DealDamage(this, m, AttackEffects.BLUNT_LIGHT);

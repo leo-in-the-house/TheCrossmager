@@ -82,6 +82,7 @@ public class NivaLada extends AnimatorCard_UltraRare implements OnAfterCardExhau
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         if (type == CardType.ATTACK)
         {
             GameActions.Bottom.VFX(new LaserBeamEffect2(player.hb.cX, player.hb.cY), 0.1f);

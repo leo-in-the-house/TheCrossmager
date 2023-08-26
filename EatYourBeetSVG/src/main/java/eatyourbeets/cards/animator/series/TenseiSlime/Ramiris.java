@@ -53,6 +53,7 @@ public class Ramiris extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         final int charge = GameUtilities.UseXCostEnergy(this) * 2;
         if (charge > 0)
         {

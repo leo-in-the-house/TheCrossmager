@@ -31,6 +31,7 @@ public class CrowleyEusford extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamageToRandomEnemy(this, AttackEffects.SLASH_HEAVY);
         GameActions.Bottom.GainGreen(1, true);
         GameActions.Bottom.GainRed(1, true);

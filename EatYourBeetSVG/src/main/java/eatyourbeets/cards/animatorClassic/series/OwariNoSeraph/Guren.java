@@ -37,6 +37,7 @@ public class Guren extends AnimatorClassicCard implements OnPhaseChangedSubscrib
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         for (int i = 0; i < magicNumber; i++)
         {
             GameActions.Bottom.Add(new GurenAction(m));

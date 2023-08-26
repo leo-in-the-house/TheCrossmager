@@ -56,6 +56,7 @@ public class Cirno extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.Callback(() ->
         {
             MonsterGroup monsters = AbstractDungeon.getMonsters();

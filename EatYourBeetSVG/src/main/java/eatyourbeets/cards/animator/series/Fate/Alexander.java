@@ -43,6 +43,7 @@ public class Alexander extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamageToAll(this, AttackEffects.SLASH_HEAVY);
     }
 }

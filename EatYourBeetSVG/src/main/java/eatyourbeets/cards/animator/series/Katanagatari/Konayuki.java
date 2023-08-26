@@ -39,6 +39,7 @@ public class Konayuki extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainRed(magicNumber);
         GameActions.Bottom.MakeCardInDrawPile(GetCurrentClassCard(Wound.ID, false));
 

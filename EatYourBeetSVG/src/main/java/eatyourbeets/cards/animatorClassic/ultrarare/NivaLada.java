@@ -64,6 +64,7 @@ public class NivaLada extends AnimatorClassicCard_UltraRare implements OnAfterCa
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         cooldown.ProgressCooldownAndTrigger(m);
     }
 

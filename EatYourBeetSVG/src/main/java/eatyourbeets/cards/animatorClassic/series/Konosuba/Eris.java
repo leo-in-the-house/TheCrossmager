@@ -75,6 +75,7 @@ public class Eris extends AnimatorClassicCard implements OnLosingHPSubscriber
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.Heal(magicNumber);
     }
 

@@ -84,6 +84,7 @@ public class Elesis extends AnimatorCard implements CustomSavable<Elesis.Form>
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_HEAVY);
 
         switch (currentForm)

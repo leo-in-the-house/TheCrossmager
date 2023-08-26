@@ -37,6 +37,7 @@ public class RukiaKuchiki extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         Frost frost = new Frost();
         GameUtilities.IncreaseOrbPassiveAmount(frost, magicNumber);
         GameActions.Bottom.ChannelOrb(frost);

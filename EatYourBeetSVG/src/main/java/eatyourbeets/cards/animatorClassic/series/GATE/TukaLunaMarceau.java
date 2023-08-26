@@ -35,6 +35,7 @@ public class TukaLunaMarceau extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         if (p.currentBlock <= 0)
         {
             GameActions.Bottom.Draw(1);

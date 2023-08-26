@@ -48,6 +48,7 @@ public class SajinKomamura extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.ChangeStance(WrathStance.STANCE_ID);
     }
 }

@@ -46,6 +46,7 @@ public class Emonzaemon extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.SFX("ATTACK_FIRE");
         GameActions.Bottom.DealDamage(this, m, AttackEffects.NONE);
         GameActions.Bottom.SFX("ATTACK_FIRE");

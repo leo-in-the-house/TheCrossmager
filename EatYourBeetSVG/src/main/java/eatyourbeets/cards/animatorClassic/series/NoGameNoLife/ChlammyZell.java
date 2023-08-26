@@ -30,6 +30,7 @@ public class ChlammyZell extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.Draw(2);
         GameActions.Bottom.StackPower(new DrawCardNextTurnPower(p, magicNumber));
 

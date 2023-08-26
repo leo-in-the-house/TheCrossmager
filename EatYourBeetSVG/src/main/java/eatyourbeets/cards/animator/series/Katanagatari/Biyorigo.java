@@ -33,6 +33,7 @@ public class Biyorigo extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
         GameActions.Bottom.StackPower(new BiyorigoPower(p, magicNumber, secondaryValue));
     }

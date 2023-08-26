@@ -35,6 +35,7 @@ public class ElricAlphonse extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
         GameActions.Bottom.GainBlue(1, false);
         GameActions.Bottom.DrawNextTurn(1);

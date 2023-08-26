@@ -50,6 +50,7 @@ public class Genos extends AnimatorCard implements OnModifyDamageFirstSubscriber
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.FIRE);
         GameActions.Bottom.ApplyBurning(p, p, magicNumber);
         GameActions.Bottom.ApplyBurning(p, m, magicNumber);

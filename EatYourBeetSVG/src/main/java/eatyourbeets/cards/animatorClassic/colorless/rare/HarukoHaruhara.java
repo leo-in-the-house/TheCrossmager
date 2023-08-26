@@ -26,6 +26,7 @@ public class HarukoHaruhara extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DiscardFromHand(name, 1, true)
         .ShowEffect(true, true)
         .SetOptions(false, false, false)

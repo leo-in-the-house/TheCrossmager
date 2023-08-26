@@ -51,6 +51,7 @@ public class Vanir extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         if (damage > 8)
         {
             GameActions.Bottom.SFX(SFX.ATTACK_DEFECT_BEAM);

@@ -45,6 +45,7 @@ public class HououinKyouma extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         final CardGroup choices = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
         for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisCombat)
         {

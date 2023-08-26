@@ -43,6 +43,7 @@ public class Curse_Depression extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
     }
 
 }

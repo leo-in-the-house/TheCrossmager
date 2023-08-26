@@ -35,6 +35,7 @@ public class Shizu extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.StackPower(new FlamingWeaponPower(p, 1));
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_DIAGONAL);
         GameActions.Bottom.MakeCardInDiscardPile(new Burn());

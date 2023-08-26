@@ -38,6 +38,7 @@ public class ShuuOuma extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.StackPower(new ShuuOumaPower(player, 1));
         GameActions.Bottom.FetchFromPile(name, magicNumber, player.drawPile)
         .SetOptions(false, false)

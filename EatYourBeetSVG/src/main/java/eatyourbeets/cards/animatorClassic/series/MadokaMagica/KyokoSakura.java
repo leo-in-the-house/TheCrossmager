@@ -27,6 +27,7 @@ public class KyokoSakura extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamageToRandomEnemy(this, AttackEffects.SLASH_VERTICAL);
 
         if (IsStarter())

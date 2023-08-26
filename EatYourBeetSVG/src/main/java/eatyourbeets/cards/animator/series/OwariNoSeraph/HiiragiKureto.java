@@ -37,6 +37,7 @@ public class HiiragiKureto extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.StackPower(new HiiragiKuretoPower(p, 1));
     }
 

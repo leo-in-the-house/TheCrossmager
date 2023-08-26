@@ -52,6 +52,7 @@ public class ElricAlphonse extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         if (GameUtilities.GetPowerAmount(p, IntellectPower.POWER_ID) <= magicNumber)
         {
             GameActions.Bottom.GainBlue(1, true);

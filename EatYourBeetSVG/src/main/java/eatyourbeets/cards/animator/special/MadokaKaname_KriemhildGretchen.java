@@ -35,6 +35,7 @@ public class MadokaKaname_KriemhildGretchen extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.ChannelOrbs(Dark::new, magicNumber);
         GameActions.Bottom.StackPower(new MadokaKaname_KriemhildGretchenPower(p, secondaryValue));
     }

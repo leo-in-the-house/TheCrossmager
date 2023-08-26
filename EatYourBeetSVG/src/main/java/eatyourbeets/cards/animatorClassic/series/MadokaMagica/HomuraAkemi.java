@@ -40,6 +40,7 @@ public class HomuraAkemi extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.SFX("POWER_TIME_WARP", 0.95F, 1.05f);
         GameActions.Bottom.VFX(new TimeWarpTurnEndEffect());
         GameActions.Bottom.VFX(new BorderFlashEffect(Color.VIOLET, true));

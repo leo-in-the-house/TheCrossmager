@@ -50,6 +50,7 @@ public class Greed extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         if (choices.TryInitialize(this))
         {
             choices.AddEffect(new GenericEffect_GainBlock(BLOCK));

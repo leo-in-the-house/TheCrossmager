@@ -59,6 +59,7 @@ public class Caster extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.ChannelOrb(new Dark());
 
         if (info.IsSynergizing)

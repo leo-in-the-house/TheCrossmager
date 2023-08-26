@@ -101,6 +101,7 @@ public abstract class OrbCore extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainOrbSlots(1);
         GameActions.Bottom.ChannelOrbs(orbConstructor, orbChannelAmount);
         ApplyPower();

@@ -48,6 +48,7 @@ public class SilverFang extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
         BlockModifiers.For(this).Set(0);
 

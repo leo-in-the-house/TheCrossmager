@@ -40,6 +40,7 @@ public class SwordMaiden extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainRed(1, true);
         GameActions.Bottom.GainGreen(1, true);
         GameActions.Bottom.GainBlue(1, true);

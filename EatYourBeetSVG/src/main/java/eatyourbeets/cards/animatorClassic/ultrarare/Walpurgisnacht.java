@@ -31,6 +31,7 @@ public class Walpurgisnacht extends AnimatorClassicCard_UltraRare
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
 //        if (spellcasterPool.Size() == 0)
 //        {
 //            spellcasterPool.AddAll(JUtils.Filter(Synergies.GetNonColorlessCard(), c -> c.hasTag(SPELLCASTER)));

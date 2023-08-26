@@ -57,6 +57,7 @@ public class Shalltear extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainTemporaryHP(magicNumber);
         GameActions.Bottom.DealDamageToAll(this, AttackEffects.NONE)
         .SetDamageEffect((enemy, aBoolean) ->

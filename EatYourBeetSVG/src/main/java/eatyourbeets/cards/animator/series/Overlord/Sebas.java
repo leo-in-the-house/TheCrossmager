@@ -34,6 +34,7 @@ public class Sebas extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
 
         final int counter = JUtils.Count(GameUtilities.GetIntents(), EnemyIntent::IsAttacking);

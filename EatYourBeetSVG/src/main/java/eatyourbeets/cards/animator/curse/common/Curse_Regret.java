@@ -36,6 +36,7 @@ public class Curse_Regret extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         if (dontTriggerOnUseCard && magicNumber > 0)
         {
             GameActions.Bottom.LoseHP(null, player, magicNumber, AttackEffects.DARK)

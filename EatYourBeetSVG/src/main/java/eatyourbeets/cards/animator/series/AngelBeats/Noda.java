@@ -33,6 +33,7 @@ public class Noda extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
+        GameUtilities.PlayVoiceSFX(name);
 
         for (int i=0; i<magicNumber; i++) {
             GameActions.Bottom.DealDamageToAll(this, AbstractGameAction.AttackEffect.SLASH_HEAVY);

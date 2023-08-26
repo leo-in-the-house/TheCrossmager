@@ -126,6 +126,7 @@ public class AnimatorCard_Dynamic extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         if (onUse != null)
         {
             onUse.Invoke(this, p, m);

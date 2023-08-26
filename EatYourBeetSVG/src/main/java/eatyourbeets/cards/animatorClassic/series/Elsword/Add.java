@@ -42,6 +42,7 @@ public class Add extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.StackPower(new EnergizedBluePower(p, 2));
         GameActions.Bottom.StackPower(new DrawCardNextTurnPower(p, magicNumber));
     }

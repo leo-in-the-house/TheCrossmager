@@ -62,6 +62,7 @@ public class SuzuneAmano extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.FIRE);
         GameActions.Bottom.ExhaustFromPile(name, 1, p.hand, p.drawPile)
         .SetOptions(false, false, false);

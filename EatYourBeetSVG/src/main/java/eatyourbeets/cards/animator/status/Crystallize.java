@@ -31,6 +31,7 @@ public class Crystallize extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         if (!this.dontTriggerOnUseCard)
         {
             if (GameUtilities.GetHP(player, true, false) > (secondaryValue * 2))

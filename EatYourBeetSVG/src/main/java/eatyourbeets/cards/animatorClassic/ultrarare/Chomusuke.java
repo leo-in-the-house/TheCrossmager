@@ -41,6 +41,7 @@ public class Chomusuke extends AnimatorClassicCard_UltraRare
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.Draw(1);
     }
 }

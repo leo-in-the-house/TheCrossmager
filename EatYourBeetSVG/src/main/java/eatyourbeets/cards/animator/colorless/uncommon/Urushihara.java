@@ -36,6 +36,7 @@ public class Urushihara extends AnimatorCard implements OnStartOfTurnPostDrawSub
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.ChannelOrb(new Dark());
 
         Urushihara other = (Urushihara) makeStatEquivalentCopy();

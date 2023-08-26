@@ -37,6 +37,7 @@ public class PinaCoLada extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         if (CheckSpecialCondition(true))
         {
             GameActions.Bottom.StackPower(new PinaCoLadaPower(p, 1));

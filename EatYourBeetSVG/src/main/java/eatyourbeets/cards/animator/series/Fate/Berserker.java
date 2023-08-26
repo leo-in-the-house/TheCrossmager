@@ -34,6 +34,7 @@ public class Berserker extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.VFX(VFX.VerticalImpact(m.hb));
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_HEAVY)
         .AddCallback(m.currentBlock, (initialBlock, target) ->

@@ -23,6 +23,7 @@ public class Melzalgald_R extends MelzalgaldAlt
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_HEAVY);
         GameActions.Bottom.GainRed(magicNumber);
     }

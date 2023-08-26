@@ -43,6 +43,7 @@ public class Clownpiece extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         if (player.drawPile.isEmpty())
         {
             if (player.discardPile.size() > 0)

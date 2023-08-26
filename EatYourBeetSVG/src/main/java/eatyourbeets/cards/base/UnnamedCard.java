@@ -222,6 +222,7 @@ public abstract class UnnamedCard extends EYBCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         OnUse(p, m);
     }
 

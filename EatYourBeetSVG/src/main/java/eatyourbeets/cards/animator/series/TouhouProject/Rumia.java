@@ -29,6 +29,7 @@ public class Rumia extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         if (info.TryActivateStarter())
         {
             GameActions.Bottom.Motivate(1).SetFilter(GameUtilities::HasDarkAffinity);

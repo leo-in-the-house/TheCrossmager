@@ -40,6 +40,7 @@ public class Raven extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_DIAGONAL);
 
         if (GameUtilities.IsAttacking(m.intent))

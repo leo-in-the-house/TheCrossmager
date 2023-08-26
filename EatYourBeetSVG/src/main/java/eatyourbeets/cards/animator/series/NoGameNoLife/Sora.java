@@ -52,6 +52,7 @@ public class Sora extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.StackPower(new SoraPower(p, 1));
 
         if (info.TryActivateLimited())

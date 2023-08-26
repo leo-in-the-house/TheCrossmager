@@ -38,6 +38,7 @@ public class Albedo extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(2);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_HEAVY);
         GameActions.Bottom.StackPower(new EnchantedArmorPower(p, damage));

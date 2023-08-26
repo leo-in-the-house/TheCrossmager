@@ -31,6 +31,7 @@ public class Hans_Slimed extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainTemporaryHP(magicNumber);
 
         if (upgraded)

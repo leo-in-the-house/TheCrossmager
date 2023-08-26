@@ -37,6 +37,7 @@ public class KaguyaHouraisan extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         for (int i = 0; i < magicNumber; i++)
         {
             GameActions.Bottom.DealDamageToAll(this, AbstractGameAction.AttackEffect.POISON);

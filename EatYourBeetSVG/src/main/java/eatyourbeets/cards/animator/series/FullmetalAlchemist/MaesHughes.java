@@ -27,6 +27,7 @@ public class MaesHughes extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.Draw(Math.floorDiv(p.drawPile.size(), magicNumber));
 
         if (CheckSpecialCondition(true))

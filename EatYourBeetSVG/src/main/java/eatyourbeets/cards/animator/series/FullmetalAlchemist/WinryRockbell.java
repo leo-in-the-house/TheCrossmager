@@ -41,6 +41,7 @@ public class WinryRockbell extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
         GameActions.Bottom.StackPower(new WinryRockbellPower(p, 1));
     }

@@ -43,6 +43,7 @@ public class Benimaru extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.FIRE)
         .SetDamageEffect(e -> GameEffects.List.Add(VFX.Fireball(player.hb, e.hb)).SetColor(Color.RED, Color.ORANGE).SetRealtime(true).duration)
         .AddCallback(m, (enemy, __) -> GameActions.Top.ApplyBurning(player, enemy, magicNumber))

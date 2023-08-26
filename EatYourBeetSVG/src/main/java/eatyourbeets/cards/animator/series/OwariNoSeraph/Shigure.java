@@ -38,6 +38,7 @@ public class Shigure extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.NONE)
         .SetDamageEffect(enemy -> GameEffects.List.Add(VFX.DaggerSpray()).duration);
 

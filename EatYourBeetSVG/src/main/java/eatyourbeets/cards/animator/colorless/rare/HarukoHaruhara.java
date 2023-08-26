@@ -29,6 +29,7 @@ public class HarukoHaruhara extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.SFX(SFX.THUNDERCLAP, 3.3f, 3.3f, 0.9f);
         GameActions.Bottom.SFX(SFX.BELL, 5f,5f, 0.9f);
 

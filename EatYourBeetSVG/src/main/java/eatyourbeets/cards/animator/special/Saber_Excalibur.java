@@ -33,6 +33,7 @@ public class Saber_Excalibur extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainIntangible(1);
         GameActions.Bottom.BorderLongFlash(Color.GOLD);
         GameActions.Bottom.VFX(VFX.ShockWave(p.hb, Color.GOLD), 0.4f).SetRealtime(true);

@@ -31,6 +31,7 @@ public class ByakurenHijiri extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainRed(magicNumber, false);
         GameActions.Bottom.GainGreen(magicNumber, false);
         GameActions.Bottom.GainBlue(magicNumber, false);

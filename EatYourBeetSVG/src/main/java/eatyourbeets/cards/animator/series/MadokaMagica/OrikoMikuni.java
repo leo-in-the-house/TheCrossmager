@@ -31,6 +31,7 @@ public class OrikoMikuni extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.Scry(magicNumber)
         .AddCallback(cards ->
         {

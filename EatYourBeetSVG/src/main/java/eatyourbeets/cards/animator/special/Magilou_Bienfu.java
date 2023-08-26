@@ -49,6 +49,7 @@ public class Magilou_Bienfu extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
 
     }
 

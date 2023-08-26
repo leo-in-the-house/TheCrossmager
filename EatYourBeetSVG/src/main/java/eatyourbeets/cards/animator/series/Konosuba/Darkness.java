@@ -32,6 +32,7 @@ public class Darkness extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.StackPower(new PlatedArmorPower(p, magicNumber));
         GameActions.Bottom.StackPower(new DarknessPower(p, 1));
     }

@@ -46,6 +46,7 @@ public class CatoElAltestan extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         if (info.TryActivateStarter())
         {
             GameActions.Bottom.GainBlue(1, true);

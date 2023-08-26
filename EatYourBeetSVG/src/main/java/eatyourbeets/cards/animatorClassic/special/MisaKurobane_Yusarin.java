@@ -23,6 +23,7 @@ public class MisaKurobane_Yusarin extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.Motivate(magicNumber);
     }
 }

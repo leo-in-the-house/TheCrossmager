@@ -61,6 +61,7 @@ public class Caster extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.ReduceStrength(m, magicNumber, false).SetStrengthGain(true);
         GameActions.Bottom.ApplyFrail(info.IsStarter ? p : null, p, magicNumber);
         GameActions.Bottom.GainDark(magicNumber);

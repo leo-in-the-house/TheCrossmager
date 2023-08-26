@@ -85,6 +85,7 @@ public class Nanami extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         energyOnUse = GameUtilities.UseXCostEnergy(this);
         NanamiEffect.GetEffect(m).EnqueueActions(this, p, m);
     }

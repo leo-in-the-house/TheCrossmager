@@ -49,6 +49,7 @@ public class Father extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         if (p.hasRelic(relic.relicId))
         {
             GameActions.Bottom.GainVitality(magicNumber);

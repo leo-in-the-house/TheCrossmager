@@ -26,6 +26,7 @@ public class Hans extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.StackPower(new HansPower(p, magicNumber, secondaryValue));
     }
 }

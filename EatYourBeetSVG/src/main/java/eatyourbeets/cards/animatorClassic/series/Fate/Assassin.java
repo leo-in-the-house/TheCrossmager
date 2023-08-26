@@ -80,6 +80,7 @@ public class Assassin extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_HORIZONTAL)
         .SetDamageEffect(this::DamageEffect)
         .SetDuration(0.3f, false);

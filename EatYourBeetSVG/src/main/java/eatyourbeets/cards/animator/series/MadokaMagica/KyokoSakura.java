@@ -41,6 +41,7 @@ public class KyokoSakura extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamageToRandomEnemy(this, AttackEffects.SPEAR).SetVFXColor(Color.RED);
         GameActions.Bottom.Draw(magicNumber);
 

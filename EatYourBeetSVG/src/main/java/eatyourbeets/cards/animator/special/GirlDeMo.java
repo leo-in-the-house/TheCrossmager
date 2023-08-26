@@ -42,6 +42,7 @@ public class GirlDeMo extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
+        GameUtilities.PlayVoiceSFX(name);
 
         ArrayList<Pair<ActionT1<Integer>, Integer>> pairs = new ArrayList<>();
         pairs.add(new Pair<>(GameActions.Bottom::GainRed, CombatStats.Affinities.GetAffinityLevel(Affinity.Red)));

@@ -32,6 +32,7 @@ public class IkkakuBankai extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         int stacks = GameUtilities.UseXCostEnergy(this);
 
         for (int i=0; i<stacks-1; i++) {

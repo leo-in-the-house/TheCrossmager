@@ -52,6 +52,7 @@ public class Destroyer extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.StackPower(new DestroyerPower(p, magicNumber, upgraded ? 2 : 1, BURNING_AMOUNT));
     }
 

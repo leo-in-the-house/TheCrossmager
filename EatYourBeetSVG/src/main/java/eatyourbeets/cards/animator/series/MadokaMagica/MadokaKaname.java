@@ -46,6 +46,7 @@ public class MadokaKaname extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainTemporaryArtifact(magicNumber);
         GameActions.Bottom.ObtainAffinityToken(Affinity.Light, upgraded)
         .AddCallback(c -> GameActions.Bottom.Motivate(c, 1));

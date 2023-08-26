@@ -47,6 +47,7 @@ public class ChaikaTrabant extends AnimatorClassicCard implements OnStartOfTurnP
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         m.useFastShakeAnimation(0.5f);
 
         ChaikaTrabant other = (ChaikaTrabant) makeStatEquivalentCopy();

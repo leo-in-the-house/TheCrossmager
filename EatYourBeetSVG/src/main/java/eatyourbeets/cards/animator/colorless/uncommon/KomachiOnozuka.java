@@ -54,6 +54,7 @@ public class KomachiOnozuka extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.SFX(SFX.ATTACK_REAPER, 0.95f, 1.05f);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_HORIZONTAL)
         .SetSoundPitch(0, 0)

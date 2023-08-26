@@ -37,6 +37,7 @@ public class Emonzaemon_EntouJyuu extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainGreen(magicNumber);
         GameActions.Bottom.StackPower(new Emonzaemon_EntouJyuuPower(p, secondaryValue));
     }

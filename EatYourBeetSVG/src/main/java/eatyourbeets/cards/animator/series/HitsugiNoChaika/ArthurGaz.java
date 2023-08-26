@@ -72,6 +72,7 @@ public class ArthurGaz extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         if ((tempHP = GetTempHP()) > 0)
         {
             GameActions.Bottom.GainTemporaryHP(tempHP);

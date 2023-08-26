@@ -39,6 +39,7 @@ public class YachiyoNanami extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.StackPower(new YachiyoNanamiPower(p, 1));
 
         if (info.IsSynergizing)

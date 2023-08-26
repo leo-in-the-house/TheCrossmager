@@ -37,6 +37,7 @@ public class Sonic extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
         GameActions.Bottom.GainBlur(secondaryValue);
         GameActions.Bottom.StackPower(new SonicPower(p, magicNumber));

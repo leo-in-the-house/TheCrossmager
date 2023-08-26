@@ -70,6 +70,7 @@ public class KotoriKanbe extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.ApplyWeak(player, m, secondaryValue);
         GameActions.Bottom.ApplyVulnerable(player, m, secondaryValue);
         GameActions.Bottom.Heal(p, m, GetHealAmount(m))

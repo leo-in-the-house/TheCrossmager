@@ -23,6 +23,7 @@ public class GoblinKing extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         if (this.dontTriggerOnUseCard)
         {
             GameActions.Bottom.Add(new CreateRandomGoblins(3));

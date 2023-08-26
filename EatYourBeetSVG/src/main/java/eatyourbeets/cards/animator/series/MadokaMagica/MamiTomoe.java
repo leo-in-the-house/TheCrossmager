@@ -61,6 +61,7 @@ public class MamiTomoe extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.GUNSHOT)
         .SetVFXColor(Color.GOLD).SetSoundPitch(0.6f, 0.6f);
         GameActions.Bottom.Draw(magicNumber)

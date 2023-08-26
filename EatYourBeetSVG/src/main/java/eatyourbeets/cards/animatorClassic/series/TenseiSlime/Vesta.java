@@ -43,6 +43,7 @@ public class Vesta extends AnimatorClassicCard implements OnStartOfTurnPostDrawS
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         AnimatorClassicVestaElixirEffects.BeginCreateElixir((Vesta) this.makeStatEquivalentCopy(), this.upgraded);
     }
 

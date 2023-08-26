@@ -72,6 +72,7 @@ public class KrulTepes extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         if (m != null)
         {
             GameActions.Bottom.DealDamage(this, m, AttackEffects.NONE)

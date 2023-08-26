@@ -45,6 +45,7 @@ public class TanyaDegurechaff_Type95 extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.ChannelOrb(new Plasma());
         GameActions.Bottom.ModifyAllInstances(uuid, c ->
         {

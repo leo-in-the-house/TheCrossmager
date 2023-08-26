@@ -39,6 +39,7 @@ public class Pride extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.ApplyConstricted(p, m, secondaryValue);
         GameActions.Bottom.ChannelOrbs(Dark::new, magicNumber);
         GameActions.Bottom.StackPower(new PridePower(p));

@@ -52,6 +52,7 @@ public class SanaFutaba extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.SelectFromPile(name, magicNumber, p.drawPile)
         .SetOptions(CardSelection.Top, true)
         .SetFilter(SanaFutaba::Filter)

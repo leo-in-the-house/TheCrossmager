@@ -34,6 +34,7 @@ public class Eve extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         if (!p.hasPower(EvePower.POWER_ID))
         {
             GameActions.Bottom.StackPower(new EvePower(p, 1));

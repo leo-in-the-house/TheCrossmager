@@ -49,6 +49,7 @@ public class FeliciaMitsuki extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.StackPower(new TemporaryDamageModifierPower(p, magicNumber).SetIcon(cardData.GetCardIcon()));
     }
 }

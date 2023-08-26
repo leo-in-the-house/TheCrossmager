@@ -24,6 +24,7 @@ public class ShikizakiKiki extends AnimatorClassicCard_UltraRare
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.Draw(magicNumber)
         .AddCallback(() ->
         {

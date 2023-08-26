@@ -44,6 +44,7 @@ public class Tyuule extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.ApplyPoison(TargetHelper.Enemies(), magicNumber).AddCallback(power ->
         {
             final AbstractCreature target = power.owner;

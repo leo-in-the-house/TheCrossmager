@@ -29,6 +29,7 @@ public class Scar extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.NONE)
         .SetDamageEffect(__ -> SFX.Play(SFX.ORB_DARK_EVOKE, 0.7f, 0.75f));
 

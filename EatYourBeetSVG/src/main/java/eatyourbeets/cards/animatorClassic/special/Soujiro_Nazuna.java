@@ -30,6 +30,7 @@ public class Soujiro_Nazuna extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainTemporaryHP(magicNumber);
         GameActions.Bottom.DrawReduction(1);
     }

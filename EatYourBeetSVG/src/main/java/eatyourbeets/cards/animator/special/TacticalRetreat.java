@@ -35,6 +35,7 @@ public class TacticalRetreat extends AnimatorCard implements OnStartOfTurnPostDr
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
         CombatStats.onStartOfTurnPostDraw.SubscribeOnce(this);
     }

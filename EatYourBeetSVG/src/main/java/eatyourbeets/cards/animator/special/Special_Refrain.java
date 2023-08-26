@@ -52,6 +52,7 @@ public class Special_Refrain extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.ApplyWeak(p, p, 1);
         GameActions.Bottom.LoseHP(magicNumber, AttackEffects.POISON).IgnoreTempHP(false).CanKill(true);
 

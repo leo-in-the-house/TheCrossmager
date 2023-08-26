@@ -65,6 +65,7 @@ public class ChaikaBohdan extends AnimatorClassicCard implements OnAttackSubscri
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_HORIZONTAL);
         DamageModifiers.For(this).Set(0);
     }

@@ -32,6 +32,7 @@ public class SeriousSaitama extends AnimatorCard_UltraRare
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         final int x = GameUtilities.UseXCostEnergy(this);
         final int amount = x + magicNumber;
 

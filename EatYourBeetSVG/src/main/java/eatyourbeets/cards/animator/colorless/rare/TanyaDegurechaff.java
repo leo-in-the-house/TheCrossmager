@@ -34,6 +34,7 @@ public class TanyaDegurechaff extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.GUNSHOT).SetSoundPitch(0.75f, 0.8f);
         GameActions.Bottom.DiscardFromPile(name, magicNumber, p.drawPile)

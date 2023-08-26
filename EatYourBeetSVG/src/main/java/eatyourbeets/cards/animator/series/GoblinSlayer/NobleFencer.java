@@ -53,6 +53,7 @@ public class NobleFencer extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
         GameActions.Bottom.EvokeOrb(1)
         .SetFilter(o -> Lightning.ORB_ID.equals(o.ID));

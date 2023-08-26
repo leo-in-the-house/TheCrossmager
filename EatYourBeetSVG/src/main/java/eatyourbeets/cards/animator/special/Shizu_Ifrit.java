@@ -37,6 +37,7 @@ public class Shizu_Ifrit extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         final ScreenOnFireEffect effect = new ScreenOnFireEffect();
         effect.duration = effect.startingDuration = 1.5f; // Changed from 3f
         GameActions.Bottom.VFX(effect, 0.2f);

@@ -64,6 +64,7 @@ public class HataNoKokoro extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.PurgeFromPile(name, 1, p.exhaustPile)
         //.SetOptions(false, false)
         .SetFilter(this::CanSelectCard)

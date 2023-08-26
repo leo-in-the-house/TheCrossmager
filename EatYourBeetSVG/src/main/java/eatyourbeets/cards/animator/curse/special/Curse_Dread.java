@@ -63,6 +63,7 @@ public class Curse_Dread extends AnimatorCard implements OnStartOfTurnPostDrawSu
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
 
     }
 

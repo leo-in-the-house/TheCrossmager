@@ -33,6 +33,7 @@ public class Bozes extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_VERTICAL);
         GameActions.Bottom.Motivate(magicNumber);
         GameActions.Bottom.StackPower(new BozesPower(p, 1));

@@ -90,6 +90,7 @@ public class Gilgamesh extends AnimatorClassicCard implements OnRelicObtainedSub
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         if (timesUpgraded >= 8)
         {
             GameActions.Bottom.VFX(new BorderLongFlashEffect(Color.GOLD));

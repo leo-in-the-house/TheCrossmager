@@ -43,6 +43,7 @@ public class Kyubey extends AnimatorCard implements OnAddToDeckListener
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.Draw(magicNumber);
         GameActions.Bottom.GainEnergy(2);
     }

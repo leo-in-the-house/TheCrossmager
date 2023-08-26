@@ -36,6 +36,7 @@ public class Mikaela extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainTemporaryHP(magicNumber);
         GameActions.Bottom.TakeDamageAtEndOfTurn(secondaryValue);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_DIAGONAL);

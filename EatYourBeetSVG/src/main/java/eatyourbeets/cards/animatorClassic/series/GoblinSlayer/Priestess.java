@@ -71,6 +71,7 @@ public class Priestess extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         if (upgraded)
         {
             GameActions.Bottom.ApplyWeak(TargetHelper.Enemies(), secondaryValue);

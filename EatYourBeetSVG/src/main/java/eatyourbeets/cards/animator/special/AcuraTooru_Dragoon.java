@@ -33,6 +33,7 @@ public class AcuraTooru_Dragoon extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_DIAGONAL);
         GameActions.Bottom.GainGreen(1, true);
         GameActions.Bottom.PlayFromPile(name, 1, m, p.drawPile).SetExhaust(true)

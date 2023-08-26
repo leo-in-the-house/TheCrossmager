@@ -47,6 +47,7 @@ public class SummoningRitual extends AnimatorCard_UltraRare
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.HealPlayerLimited(this, magicNumber);
         GameActions.Bottom.Callback(() ->
         {

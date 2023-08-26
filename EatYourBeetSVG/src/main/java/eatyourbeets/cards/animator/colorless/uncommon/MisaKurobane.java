@@ -33,6 +33,7 @@ public class MisaKurobane extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.ChannelOrb(new Fire());
         GameActions.Bottom.Draw(magicNumber);
 

@@ -25,6 +25,7 @@ public class Crystallize extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         if (!this.dontTriggerOnUseCard)
         {
             GameActions.Bottom.SFX("ORB_FROST_Evoke", 0.8f, 1f);

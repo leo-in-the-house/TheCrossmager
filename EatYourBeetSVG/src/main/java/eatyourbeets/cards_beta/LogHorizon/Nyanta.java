@@ -57,6 +57,7 @@ public class Nyanta extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainGreen(1, upgraded);
 
         for (int i = 0; i < magicNumber; i++)

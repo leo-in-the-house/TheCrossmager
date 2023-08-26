@@ -35,6 +35,7 @@ public class Tet extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.SelectFromPile(name, magicNumber, player.hand, player.drawPile)
         .SetMessage(GR.Common.Strings.GridSelection.Discard)
         .SetOptions(false, false)

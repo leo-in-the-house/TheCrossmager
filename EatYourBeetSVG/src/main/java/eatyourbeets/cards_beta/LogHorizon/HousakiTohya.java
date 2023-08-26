@@ -29,6 +29,7 @@ public class HousakiTohya extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_VERTICAL);
         GameActions.Bottom.ApplyVulnerable(player, m, magicNumber);
     }

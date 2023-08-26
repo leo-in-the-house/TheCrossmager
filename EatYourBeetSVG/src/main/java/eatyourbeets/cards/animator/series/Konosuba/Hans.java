@@ -43,6 +43,7 @@ public class Hans extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.MakeCardInDrawPile(new Status_Slimed(upgraded)).Repeat(secondaryValue);
         GameActions.Bottom.StackPower(new HansPower(p, magicNumber));
     }

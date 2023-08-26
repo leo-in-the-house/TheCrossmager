@@ -38,6 +38,7 @@ public class ShikizakiKiki extends AnimatorCard_UltraRare
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
         GameActions.Bottom.StackPower(new ShikizakiKikiPower(p, magicNumber));
     }

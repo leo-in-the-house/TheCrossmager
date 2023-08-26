@@ -46,6 +46,7 @@ public class SwordMaiden extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainTemporaryHP(magicNumber);
         GameActions.Bottom.RecoverHP(secondaryValue);
         GameActions.Bottom.RemoveDebuffs(player, ListSelection.Last(0), 1);

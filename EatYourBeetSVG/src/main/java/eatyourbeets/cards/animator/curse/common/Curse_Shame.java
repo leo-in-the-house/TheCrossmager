@@ -26,6 +26,7 @@ public class Curse_Shame extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         if (dontTriggerOnUseCard)
         {
             GameActions.Bottom.ApplyFrail(player, null, magicNumber);

@@ -33,6 +33,7 @@ public class MisakiNakahara extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         CardGroup group = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
         CardRarity rarity = rng.randomBoolean(0.25f) ? CardRarity.RARE : CardRarity.UNCOMMON;
         RandomizedList<AbstractCard> list = new RandomizedList<>(AbstractDungeon.colorlessCardPool.group);

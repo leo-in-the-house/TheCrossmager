@@ -59,6 +59,7 @@ public abstract class ImprovedStrike extends ImprovedBasicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_DIAGONAL);
 
         if (magicNumber > 0)

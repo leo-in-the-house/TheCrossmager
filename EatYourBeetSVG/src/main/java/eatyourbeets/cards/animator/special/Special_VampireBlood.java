@@ -41,6 +41,7 @@ public class Special_VampireBlood extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.VFX(new OfferingEffect(), 0f);
         GameActions.Bottom.LoseHP(magicNumber, AttackEffects.DARK);
         GameActions.Bottom.GainDark(1, true);

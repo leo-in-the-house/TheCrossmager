@@ -39,6 +39,7 @@ public class QuestionMark extends AnimatorClassicCard implements OnStartOfTurnSu
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.MakeCardInHand(new HigakiRinne());
     }
 

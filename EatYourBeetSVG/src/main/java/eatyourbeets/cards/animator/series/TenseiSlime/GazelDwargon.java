@@ -41,6 +41,7 @@ public class GazelDwargon extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         final int stacks = GameUtilities.UseXCostEnergy(this);
         if (stacks > 0)
         {

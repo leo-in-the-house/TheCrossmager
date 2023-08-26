@@ -69,6 +69,7 @@ public class Patchouli extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         RandomizedList<ActionT0> actions = new RandomizedList<>();
         for (int i = 0; i < magicNumber; i++)
         {

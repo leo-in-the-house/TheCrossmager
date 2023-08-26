@@ -43,6 +43,7 @@ public class ManiwaKyouken extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         for (int i = 0; i < secondaryValue; i++)
         {
             GameActions.Bottom.GainBlock(block).SetVFX(true, true);

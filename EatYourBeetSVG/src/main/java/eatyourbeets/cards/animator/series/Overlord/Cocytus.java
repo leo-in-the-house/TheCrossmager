@@ -45,6 +45,7 @@ public class Cocytus extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.BLUNT_HEAVY);
         GameActions.Bottom.EvokeOrb(1)
         .SetFilter(o -> Frost.ORB_ID.equals(o.ID))

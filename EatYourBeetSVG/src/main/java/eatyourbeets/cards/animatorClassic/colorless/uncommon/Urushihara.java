@@ -32,6 +32,7 @@ public class Urushihara extends AnimatorClassicCard implements OnStartOfTurnPost
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         Urushihara other = (Urushihara) makeStatEquivalentCopy();
 
         other.lazyCounter = rng.random(3);

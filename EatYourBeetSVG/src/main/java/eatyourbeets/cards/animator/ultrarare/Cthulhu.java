@@ -110,6 +110,7 @@ public class Cthulhu extends AnimatorCard_UltraRare implements OnAddToDeckListen
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         if (EnergyPanel.getCurrentEnergy() < COST)
         {
             return;

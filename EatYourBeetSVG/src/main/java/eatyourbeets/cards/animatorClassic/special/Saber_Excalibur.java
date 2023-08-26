@@ -31,6 +31,7 @@ public class Saber_Excalibur extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.StackPower(new IntangiblePlayerPower(p, 1));
         GameActions.Bottom.VFX(new BorderLongFlashEffect(Color.GOLD));
 

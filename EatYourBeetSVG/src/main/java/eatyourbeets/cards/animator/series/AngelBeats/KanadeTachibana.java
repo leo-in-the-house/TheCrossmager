@@ -36,6 +36,7 @@ public class KanadeTachibana extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
+        GameUtilities.PlayVoiceSFX(name);
 
         GameActions.Top.FetchFromPile(name, magicNumber, p.discardPile)
         .SetOptions(false, true)

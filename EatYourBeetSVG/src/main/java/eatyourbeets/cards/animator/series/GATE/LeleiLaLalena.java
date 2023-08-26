@@ -30,6 +30,7 @@ public class LeleiLaLalena extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlue(1);
 
         if (CheckSpecialCondition(true))

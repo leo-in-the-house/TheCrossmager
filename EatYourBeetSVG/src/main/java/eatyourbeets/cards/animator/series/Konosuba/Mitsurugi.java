@@ -76,6 +76,7 @@ public class Mitsurugi extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainRed(1, upgraded);
 
         if (GameUtilities.IsAttacking(m.intent))

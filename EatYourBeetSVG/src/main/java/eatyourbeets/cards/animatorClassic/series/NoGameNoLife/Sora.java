@@ -32,6 +32,7 @@ public class Sora extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.Add(new WaitAction(0.4f));
         GameActions.Bottom.Add(new SoraAction(name, magicNumber));
         GameActions.Bottom.Draw(1)

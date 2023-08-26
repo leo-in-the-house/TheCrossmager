@@ -47,6 +47,7 @@ public class YunYun extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamageToAll(this, AttackEffects.LIGHTNING);
 
         if (TryUseAffinity(Affinity.Blue))

@@ -27,6 +27,7 @@ public class RukiaBankai extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         int stacks = GameUtilities.UseXCostEnergy(this);
 
         GameActions.Bottom.GainOrbSlots(magicNumber);

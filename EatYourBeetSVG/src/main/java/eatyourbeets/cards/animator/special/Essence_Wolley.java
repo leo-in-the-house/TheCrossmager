@@ -49,6 +49,7 @@ public class Essence_Wolley extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.Draw(magicNumber);
         GameActions.Bottom.DiscardFromHand(name, 1, false)
         .SetOptions(false, false, false);

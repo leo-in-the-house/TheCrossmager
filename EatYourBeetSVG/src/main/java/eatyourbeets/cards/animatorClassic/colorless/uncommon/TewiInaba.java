@@ -26,6 +26,7 @@ public class TewiInaba extends AnimatorClassicCard implements Hidden // TODO:
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         if (p.orbs.size() > 0)
         {
             AbstractOrb orb = p.orbs.get(0);

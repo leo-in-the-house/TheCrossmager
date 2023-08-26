@@ -44,6 +44,7 @@ public class Aisha extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         for (int i = 0; i < magicNumber; i++)
         {
             GameActions.Bottom.DealDamage(this, m, AttackEffects.FIRE).SetVFX(true, false)

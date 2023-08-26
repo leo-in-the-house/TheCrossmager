@@ -44,6 +44,7 @@ public class ShunyaKengun extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.GUNSHOT).SetSoundPitch(0.9f, 1f);
         GameActions.Bottom.Draw(1)
         .SetFilter(ShunyaKengun::Filter, false);

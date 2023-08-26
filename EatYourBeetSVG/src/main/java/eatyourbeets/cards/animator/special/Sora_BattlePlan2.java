@@ -38,6 +38,7 @@ public class Sora_BattlePlan2 extends Sora_BattlePlan
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.ApplyWeak(TargetHelper.Enemies(), magicNumber);
         GameActions.Bottom.GainTemporaryStats(0, secondaryValue, 0);
     }

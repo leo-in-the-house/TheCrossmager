@@ -28,6 +28,7 @@ public class EmiyaShirou extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
 
         for (int i = 0; i < magicNumber; i++)

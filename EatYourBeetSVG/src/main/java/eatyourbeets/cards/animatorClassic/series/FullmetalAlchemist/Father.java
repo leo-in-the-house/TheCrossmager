@@ -47,6 +47,7 @@ public class Father extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         if (!p.hasRelic(relic.relicId))
         {
             p.decreaseMaxHealth((int)Math.ceil(p.maxHealth * (secondaryValue / 100f)));

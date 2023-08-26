@@ -30,6 +30,7 @@ public class Special_Miracle extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainLight(1, true);
         GameActions.Bottom.GainEnergy(magicNumber);
     }

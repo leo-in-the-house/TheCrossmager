@@ -34,6 +34,7 @@ public class ZankiKiguchi extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.BLUNT_HEAVY);
         GameActions.Bottom.GainTemporaryStats(magicNumber, 0, 0);
 

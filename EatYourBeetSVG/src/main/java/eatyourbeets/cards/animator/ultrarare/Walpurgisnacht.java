@@ -42,6 +42,7 @@ public class Walpurgisnacht extends AnimatorCard_UltraRare
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainEnergyNextTurn(magicNumber);
         GameActions.Bottom.StackPower(new WalpurgisnachtPower(p, 1));
     }

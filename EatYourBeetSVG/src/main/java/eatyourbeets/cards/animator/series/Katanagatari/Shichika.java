@@ -44,6 +44,7 @@ public class Shichika extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
         choices.Initialize(this, true);
         choices.AddEffect(new GenericEffect_Force(this));

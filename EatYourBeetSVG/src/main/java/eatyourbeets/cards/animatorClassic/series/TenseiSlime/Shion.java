@@ -29,6 +29,7 @@ public class Shion extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.BLUNT_HEAVY);
 
         if (info.IsSynergizing && CombatStats.TryActivateLimited(cardID))

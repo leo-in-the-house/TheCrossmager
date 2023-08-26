@@ -45,6 +45,7 @@ public class Truth extends AnimatorClassicCard_UltraRare
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         int amount = 1;
 
         GameActions.Bottom.GainRed(magicNumber);

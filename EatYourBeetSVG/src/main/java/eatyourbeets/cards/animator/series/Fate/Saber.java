@@ -43,6 +43,7 @@ public class Saber extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_DIAGONAL);
 
         cooldown.ProgressCooldownAndTrigger(CheckSpecialCondition(true) ? 3 : 1, m);

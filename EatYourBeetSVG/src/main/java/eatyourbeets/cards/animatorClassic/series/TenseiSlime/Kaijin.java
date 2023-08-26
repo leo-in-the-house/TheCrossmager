@@ -33,6 +33,7 @@ public class Kaijin extends AnimatorClassicCard implements OnAddToDeckListener
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.StackPower(new KaijinPower(p, magicNumber));
     }
 

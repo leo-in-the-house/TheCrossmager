@@ -57,6 +57,7 @@ public class MariKurokawa extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.RecoverHP(magicNumber);
 
         if (CheckSpecialCondition(true))

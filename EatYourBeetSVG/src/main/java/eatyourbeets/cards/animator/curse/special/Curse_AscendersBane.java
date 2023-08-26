@@ -79,6 +79,7 @@ public class Curse_AscendersBane extends AnimatorCard implements OnRemovedFromDe
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         if (!dontTriggerOnUseCard)
         {
             GameActions.Bottom.TakeDamage(magicNumber, AttackEffects.DARK)

@@ -49,6 +49,7 @@ public class SayakaMiki extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainTemporaryHP(magicNumber);
         GameActions.Bottom.StackPower(new SayakaMikiPower(p, 1)).ShowEffect(false, false);
 

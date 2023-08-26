@@ -40,6 +40,7 @@ public class Holou extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainTemporaryHP(magicNumber);
         GameActions.Bottom.SFX(SFX.POWER_TIME_WARP, 0.5f, 0.5f);
         GameActions.Bottom.MoveCards(p.hand, p.drawPile);

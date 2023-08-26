@@ -93,6 +93,7 @@ public class Gilgamesh extends AnimatorCard implements OnRelicObtainedSubscriber
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.SFX(SFX.ATTACK_WHIRLWIND);
         GameActions.Bottom.VFX(new WhirlwindEffect(), 0f);
 

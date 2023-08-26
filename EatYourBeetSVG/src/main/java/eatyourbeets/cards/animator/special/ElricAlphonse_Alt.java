@@ -32,6 +32,7 @@ public class ElricAlphonse_Alt extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainOrbSlots(1);
         GameActions.Bottom.GainPlatedArmor(magicNumber);
         GameActions.Bottom.StackPower(new ElricAlphonse_AltPower(p, 1));

@@ -37,6 +37,7 @@ public class NagisaMomoe_CharlotteAlt extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.BITE)
         .SetDamageEffect(e ->
         {

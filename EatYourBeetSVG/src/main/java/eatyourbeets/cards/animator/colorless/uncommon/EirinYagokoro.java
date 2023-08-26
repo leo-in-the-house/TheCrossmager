@@ -38,6 +38,7 @@ public class EirinYagokoro extends AnimatorCard implements OnAddToDeckListener
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.SelectCreature(SelectCreature.Targeting.Any, name)
         .IsCancellable(false)
         .AddCallback(c ->

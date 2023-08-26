@@ -44,6 +44,7 @@ public class ChaikaGaz extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainTemporaryHP(TEMP_HP_AMOUNT);
         GameActions.Bottom.GainDark(magicNumber, false);
     }

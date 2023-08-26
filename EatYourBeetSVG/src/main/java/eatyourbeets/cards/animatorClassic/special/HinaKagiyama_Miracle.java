@@ -29,6 +29,7 @@ public class HinaKagiyama_Miracle extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainEnergy(magicNumber);
     }
 }

@@ -30,6 +30,7 @@ public class Curse_Parasite extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.Callback(() ->
         {
             final AbstractCard c = GameUtilities.GetMasterDeckInstance(uuid);

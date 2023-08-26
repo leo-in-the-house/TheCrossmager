@@ -34,6 +34,7 @@ public class KoishiKomeiji extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.StackPower(new KoishiPower(p, magicNumber));
     }
 

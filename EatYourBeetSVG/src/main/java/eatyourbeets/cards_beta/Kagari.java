@@ -45,6 +45,7 @@ public class Kagari extends AnimatorCard implements Hidden //TODO:
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         for (AbstractMonster enemy : GameUtilities.GetEnemies(true))
         {
             GameActions.Bottom.ReduceStrength(enemy, magicNumber, true);

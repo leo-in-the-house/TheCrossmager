@@ -95,6 +95,7 @@ public class Saitama extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         switch (stage)
         {
             case 0:

@@ -56,6 +56,7 @@ public class Shiro extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.StackPower(new ShiroPower(p, 1));
         GameActions.Bottom.Draw(1)
         .ShuffleIfEmpty(false)

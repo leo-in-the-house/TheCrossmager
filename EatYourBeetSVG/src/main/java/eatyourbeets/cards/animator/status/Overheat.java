@@ -41,6 +41,7 @@ public class Overheat extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         if (!this.dontTriggerOnUseCard)
         {
             GameActions.Bottom.Draw(1);

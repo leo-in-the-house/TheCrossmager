@@ -50,6 +50,7 @@ public class Evileye extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         choices.Initialize(this, true);
         choices.AddEffect(new GenericEffect_GainOrBoost(Affinity.Blue, INTELLECT_AMOUNT, false));
         choices.AddEffect(new GenericEffect_GainOrbSlots(secondaryValue));

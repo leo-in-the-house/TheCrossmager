@@ -38,6 +38,7 @@ public class Melzalgald extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_HEAVY);
 
         GameActions.Bottom.MakeCardInHand(new Melzalgald_R()).SetUpgrade(upgraded, false).AddCallback(GameUtilities::Retain);

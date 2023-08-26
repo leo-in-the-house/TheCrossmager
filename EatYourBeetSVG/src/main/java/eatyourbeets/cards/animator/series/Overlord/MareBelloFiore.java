@@ -59,6 +59,7 @@ public class MareBelloFiore extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.ChannelOrbs(Earth::new, secondaryValue);
         GameActions.Bottom.TriggerOrbPassive(player.orbs.size())
         .SetFilter(o -> Earth.ORB_ID.equals(o.ID))

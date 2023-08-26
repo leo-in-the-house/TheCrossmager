@@ -46,6 +46,7 @@ public class Raven extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         if (CheckSpecialCondition(true))
         {
             GameActions.Bottom.GainEnergy(1);

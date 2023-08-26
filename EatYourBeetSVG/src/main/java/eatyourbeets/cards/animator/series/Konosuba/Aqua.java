@@ -57,6 +57,7 @@ public class Aqua extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         if (!transformed)
         {
             GameActions.Bottom.GainLight(1, upgraded);

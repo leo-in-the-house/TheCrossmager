@@ -31,6 +31,7 @@ public class IchigoKurosaki extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.Draw(1);
         GameActions.Bottom.GainRed(1, upgraded);
         GameActions.Bottom.GainGreen(1, upgraded);

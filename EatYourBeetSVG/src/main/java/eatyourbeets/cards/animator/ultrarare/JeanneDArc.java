@@ -39,6 +39,7 @@ public class JeanneDArc extends AnimatorCard_UltraRare
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SPEAR).SetVFXColor(Color.GOLD).SetSoundPitch(0.6f, 0.7f);
         GameActions.Bottom.GainLight(1, true);
         GameActions.Bottom.ExhaustFromPile(name, 1, p.drawPile, p.hand, p.discardPile)

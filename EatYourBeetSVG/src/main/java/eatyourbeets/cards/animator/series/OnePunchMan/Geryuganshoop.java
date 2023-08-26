@@ -38,6 +38,7 @@ public class Geryuganshoop extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainEnergy(magicNumber);
         GameActions.Bottom.SFX(SFX.ORB_DARK_CHANNEL, 0.3f, 0.4f, 0.9f);
         GameActions.Bottom.MakeCardInDrawPile(new Status_Void());

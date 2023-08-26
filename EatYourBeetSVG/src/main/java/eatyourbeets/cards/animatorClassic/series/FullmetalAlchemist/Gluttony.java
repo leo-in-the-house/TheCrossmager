@@ -52,6 +52,7 @@ public class Gluttony extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         if (p.drawPile.size() >= magicNumber)
         {
             GameActions.Bottom.MoveCards(p.drawPile, p.exhaustPile, magicNumber)

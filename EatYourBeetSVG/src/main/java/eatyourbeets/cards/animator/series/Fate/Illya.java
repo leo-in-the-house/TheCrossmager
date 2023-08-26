@@ -46,6 +46,7 @@ public class Illya extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         final AbstractCard card = cardPreview.FindCard(m);
         if (card != null)
         {

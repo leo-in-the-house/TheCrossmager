@@ -47,6 +47,7 @@ public class YuyukoSaigyouji extends AnimatorCard_UltraRare
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DrawNextTurn(1);
 
         final ArrayList<AbstractMonster> targets = new ArrayList<>();

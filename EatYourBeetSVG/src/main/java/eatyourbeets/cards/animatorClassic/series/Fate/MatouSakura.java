@@ -47,6 +47,7 @@ public class MatouSakura extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.ApplyConstricted(TargetHelper.Enemies(p), magicNumber);
     }
 }

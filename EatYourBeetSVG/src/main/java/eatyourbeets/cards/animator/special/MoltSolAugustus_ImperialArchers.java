@@ -51,6 +51,7 @@ public class MoltSolAugustus_ImperialArchers extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
         GameActions.Bottom.StackPower(new SupportDamagePower(p, magicNumber));
     }

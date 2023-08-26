@@ -59,6 +59,7 @@ public class KotoriKanbe extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         int heal = m.maxHealth - m.currentHealth;
         int stacks = Math.floorDiv(heal, magicNumber);
 

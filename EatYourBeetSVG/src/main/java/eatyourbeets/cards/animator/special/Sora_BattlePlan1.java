@@ -28,6 +28,7 @@ public class Sora_BattlePlan1 extends Sora_BattlePlan
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.ApplyVulnerable(p, m, magicNumber);
 
         final RandomizedList<EYBCardData> cards = new RandomizedList<>(ImprovedStrike.GetCards());

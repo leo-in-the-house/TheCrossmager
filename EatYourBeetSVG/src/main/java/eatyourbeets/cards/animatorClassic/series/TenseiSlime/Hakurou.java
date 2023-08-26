@@ -51,6 +51,7 @@ public class Hakurou extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         if (WrathStance.IsActive())
         {
             GameActions.Bottom.GainBlock(secondaryValue)

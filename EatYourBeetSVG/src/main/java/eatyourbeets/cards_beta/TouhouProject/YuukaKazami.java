@@ -35,6 +35,7 @@ public class YuukaKazami extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AbstractGameAction.AttackEffect.POISON);
         GameActions.Bottom.DealDamage(this, m, AbstractGameAction.AttackEffect.POISON);
     }

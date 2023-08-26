@@ -27,6 +27,7 @@ public class Arpeggio extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         if (secondaryValue > 0)
         {
             GameActions.Bottom.GainOrbSlots(magicNumber);

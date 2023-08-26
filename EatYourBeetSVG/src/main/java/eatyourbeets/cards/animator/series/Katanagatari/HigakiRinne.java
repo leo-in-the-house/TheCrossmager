@@ -131,6 +131,7 @@ public class HigakiRinne extends AnimatorCard implements OnAddToDeckListener
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         if (this.type == CardType.POWER)
         {
             GameActions.Bottom.StackPower(new HigakiRinnePower(p, this, upgraded ? 2 : 1));

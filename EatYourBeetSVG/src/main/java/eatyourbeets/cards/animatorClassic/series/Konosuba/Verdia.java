@@ -33,6 +33,7 @@ public class Verdia extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
         GameActions.Bottom.Draw(magicNumber);
         GameActions.Bottom.ApplyVulnerable(p, m, secondaryValue);

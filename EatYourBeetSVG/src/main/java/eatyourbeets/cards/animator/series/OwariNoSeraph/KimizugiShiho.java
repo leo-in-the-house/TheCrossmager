@@ -53,6 +53,7 @@ public class KimizugiShiho extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         for (int i = 0; i < magicNumber; i++)
         {
             GameActions.Bottom.DealDamage(this, m, AttackEffects.DAGGER).SetVFXColor(Color.RED);

@@ -25,6 +25,7 @@ public class Biyorigo extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainThorns(magicNumber);
         GameActions.Bottom.GainArtifact(secondaryValue);
         GameActions.Bottom.StackPower(new BiyorigoPower(p, 1));

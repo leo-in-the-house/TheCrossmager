@@ -43,6 +43,7 @@ public class Henrietta extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         if (!GameUtilities.InStance(NeutralStance.STANCE_ID))
         {
             GameActions.Bottom.GainEnergy(1);

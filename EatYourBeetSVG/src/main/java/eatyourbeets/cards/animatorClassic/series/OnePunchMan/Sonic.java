@@ -35,6 +35,7 @@ public class Sonic extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlur(magicNumber);
         GameActions.Bottom.GainGreen(secondaryValue);
 

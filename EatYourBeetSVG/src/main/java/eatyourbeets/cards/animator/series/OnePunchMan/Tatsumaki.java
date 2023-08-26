@@ -34,6 +34,7 @@ public class Tatsumaki extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.ChannelOrb(new Aether());
         GameActions.Bottom.GainTemporaryStats(0, 0, magicNumber);
         GameActions.Bottom.StackPower(new TatsumakiPower(p));

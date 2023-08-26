@@ -118,6 +118,7 @@ public class ThrowingKnife extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         if (m == null || GameUtilities.IsDeadOrEscaped(m))
         {
             GameActions.Bottom.DealDamageToRandomEnemy(this, AttackEffects.NONE)

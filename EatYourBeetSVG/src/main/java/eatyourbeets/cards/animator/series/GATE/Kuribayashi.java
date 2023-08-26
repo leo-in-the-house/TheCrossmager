@@ -39,6 +39,7 @@ public class Kuribayashi extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.GUNSHOT).SetSoundPitch(0.6f, 0.8f);
         GameActions.Bottom.ApplyVulnerable(p, m, magicNumber);
         GameActions.Bottom.StackPower(new KuribayashiPower(p, 1));

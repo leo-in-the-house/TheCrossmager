@@ -44,6 +44,7 @@ public class FielNirvalen extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.Add(AffinityToken.SelectTokenAction(name, upgraded, false, 1))
         .AddCallback(cards ->
         {

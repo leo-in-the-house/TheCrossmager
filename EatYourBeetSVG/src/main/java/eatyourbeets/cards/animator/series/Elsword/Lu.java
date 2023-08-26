@@ -67,6 +67,7 @@ public class Lu extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         if (isMultiDamage)
         {
             GameActions.Bottom.DealDamageToAll(this, AttackEffects.NONE)

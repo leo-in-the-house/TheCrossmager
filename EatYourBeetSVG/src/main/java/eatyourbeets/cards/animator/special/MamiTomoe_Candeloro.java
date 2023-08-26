@@ -62,6 +62,7 @@ public class MamiTomoe_Candeloro extends AnimatorCard implements OnLoseHPSubscri
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
         GameActions.Bottom.StackPower(TargetHelper.Enemies(), PowerHelper.Strength, magicNumber);
     }

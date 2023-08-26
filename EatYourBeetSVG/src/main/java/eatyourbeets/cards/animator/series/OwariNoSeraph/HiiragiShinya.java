@@ -28,6 +28,7 @@ public class HiiragiShinya extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.ApplyLockOn(p, m, magicNumber);
         GameActions.Bottom.StackPower(new SupportDamagePower(p, secondaryValue));
         GameActions.Bottom.FetchFromPile(name, 1, p.discardPile)

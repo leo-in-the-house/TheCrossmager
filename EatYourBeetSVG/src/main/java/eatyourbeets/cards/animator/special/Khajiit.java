@@ -73,6 +73,7 @@ public class Khajiit extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainTemporaryHP(magicNumber);
         GameActions.Bottom.GainDark(1, upgraded);
         GameActions.Bottom.TriggerOrbPassive(1)

@@ -35,6 +35,7 @@ public class MetalKnight extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.VFX(new WeightyImpactEffect(m.hb.cX, m.hb.cY));
         GameActions.Bottom.Wait(0.8f);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.NONE);

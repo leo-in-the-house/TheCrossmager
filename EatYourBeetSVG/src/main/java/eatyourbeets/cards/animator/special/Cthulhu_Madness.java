@@ -32,6 +32,7 @@ public class Cthulhu_Madness extends AnimatorCard implements Hidden
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.Add(new MadnessAction());
     }
 }

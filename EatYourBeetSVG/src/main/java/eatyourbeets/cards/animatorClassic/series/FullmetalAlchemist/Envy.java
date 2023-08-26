@@ -49,6 +49,7 @@ public class Envy extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.StackPower(new EnvyPower(p, 1));
 
         int tempHP = Math.floorDiv(p.maxHealth - p.currentHealth, 5);

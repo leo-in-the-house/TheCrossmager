@@ -32,6 +32,7 @@ public class MarisaKirisame extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.VFX(VFX.ShootingStars(player.hb, player.hb.height));
         GameActions.Bottom.DealDamageToAll(this, AttackEffects.NONE);
 

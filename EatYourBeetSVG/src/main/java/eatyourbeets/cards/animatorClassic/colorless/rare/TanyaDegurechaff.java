@@ -45,6 +45,7 @@ public class TanyaDegurechaff extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
         GameActions.Bottom.DiscardFromHand(name, 999, true)
         .SetOptions(false, true, true)

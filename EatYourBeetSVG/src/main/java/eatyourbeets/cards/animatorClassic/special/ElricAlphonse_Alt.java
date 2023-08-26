@@ -26,6 +26,7 @@ public class ElricAlphonse_Alt extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.ChannelOrbs(Lightning::new, secondaryValue);
         GameActions.Bottom.GainBlock(block);
         GameActions.Bottom.GainOrbSlots(1);

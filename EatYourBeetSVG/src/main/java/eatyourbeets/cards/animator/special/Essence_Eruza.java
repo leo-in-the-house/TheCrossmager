@@ -49,6 +49,7 @@ public class Essence_Eruza extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainEnergy(1);
         GameActions.Bottom.GainBlock(block);
     }

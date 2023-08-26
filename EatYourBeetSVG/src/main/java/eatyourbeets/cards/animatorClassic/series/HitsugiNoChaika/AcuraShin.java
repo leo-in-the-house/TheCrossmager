@@ -36,6 +36,7 @@ public class AcuraShin extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.ApplyPoison(p, m, magicNumber);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_VERTICAL);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_VERTICAL);

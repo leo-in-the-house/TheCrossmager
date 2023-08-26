@@ -49,6 +49,7 @@ public class TheHaunt extends AnimatorCard implements Hidden
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainGold(magicNumber);
 
         final AbstractBlight blight = player.getBlight(Haunted.ID);

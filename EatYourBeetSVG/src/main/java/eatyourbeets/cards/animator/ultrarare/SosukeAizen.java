@@ -27,6 +27,7 @@ public class SosukeAizen extends AnimatorCard_UltraRare
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         int energy = GameUtilities.UseXCostEnergy(this);
 
         if (energy > 0)

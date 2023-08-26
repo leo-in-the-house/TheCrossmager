@@ -50,6 +50,7 @@ public class FlandreScarlet extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.NONE)
         .SetDamageEffect(enemy -> GameEffects.List.Add(VFX.Claw(enemy.hb, Color.SCARLET, Color.RED).SetScale(1.2f)).duration);
 

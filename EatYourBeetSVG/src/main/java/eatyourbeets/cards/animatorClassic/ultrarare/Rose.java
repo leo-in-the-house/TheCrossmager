@@ -21,6 +21,7 @@ public class Rose extends AnimatorClassicCard_UltraRare
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
 //        GameActions.Bottom.Draw(magicNumber);
 //        GameActions.Bottom.Reload(name, m, (enemy, cards) ->
 //        {

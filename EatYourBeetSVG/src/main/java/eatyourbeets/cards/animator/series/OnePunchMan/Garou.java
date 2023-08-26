@@ -46,6 +46,7 @@ public class Garou extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         if (p.drawPile.size() >= secondaryValue)
         {
             GameActions.Bottom.GainRed(1, true);

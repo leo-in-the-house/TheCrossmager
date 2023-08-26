@@ -53,6 +53,7 @@ public class Lelouch extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.ExhaustFromHand(name, magicNumber, true)
         .ShowEffect(true, true)
         .SetOptions(false, false, false)

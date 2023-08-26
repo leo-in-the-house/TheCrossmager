@@ -42,6 +42,7 @@ public class HinaKagiyama extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.StackPower(new HinaKagiyamaPower(p, magicNumber));
     }
 

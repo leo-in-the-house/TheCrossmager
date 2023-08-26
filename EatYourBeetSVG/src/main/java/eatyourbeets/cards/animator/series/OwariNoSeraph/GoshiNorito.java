@@ -73,6 +73,7 @@ public class GoshiNorito extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         final float stepX = Settings.WIDTH / 8f; // 0 (1 2 3 4 5 6 7) 8
         GameActions.Bottom.VFX(new SmokeBombEffect2(stepX * 4, p.hb.cY), 0.02f);
         for (int i = 1; i <= 3; i++)

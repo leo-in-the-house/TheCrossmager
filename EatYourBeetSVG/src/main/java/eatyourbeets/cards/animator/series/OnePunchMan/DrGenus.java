@@ -71,6 +71,7 @@ public class DrGenus extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.TakeDamageAtEndOfTurn(magicNumber);
         GameActions.Bottom.FetchFromPile(name, 1, p.discardPile)
         .SetOptions(false, false)

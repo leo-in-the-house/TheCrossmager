@@ -41,6 +41,7 @@ public class Hibiki extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         for (int i = 0; i < magicNumber; i++)
         {
             GameActions.Bottom.DealDamageToRandomEnemy(this, AttackEffects.GUNSHOT)

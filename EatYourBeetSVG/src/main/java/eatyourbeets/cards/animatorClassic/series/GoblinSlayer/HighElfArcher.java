@@ -29,6 +29,7 @@ public class HighElfArcher extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.BLUNT_LIGHT);
 
         if (GameUtilities.GetPowerAmount(p, AgilityPower.POWER_ID) <= magicNumber)

@@ -28,6 +28,7 @@ public class Hitei extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.StackPower(new HiteiPower(p, magicNumber, secondaryValue));
     }
 

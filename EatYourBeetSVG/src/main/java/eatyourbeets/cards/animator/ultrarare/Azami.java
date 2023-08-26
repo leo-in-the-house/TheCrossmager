@@ -63,6 +63,7 @@ public class Azami extends AnimatorCard_UltraRare implements OnEndOfTurnLastSubs
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.StackPower(TargetHelper.Enemies(p), PowerHelper.Shackles, SHACKLES_AMOUNT);
         GameActions.Bottom.StackPower(TargetHelper.Enemies(p), PowerHelper.Poison, magicNumber);
         GameActions.Bottom.StackPower(TargetHelper.Enemies(p), PowerHelper.Constricted, secondaryValue);

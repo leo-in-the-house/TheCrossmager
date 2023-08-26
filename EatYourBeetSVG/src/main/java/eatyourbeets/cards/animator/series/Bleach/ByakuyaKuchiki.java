@@ -12,6 +12,7 @@ import eatyourbeets.interfaces.delegates.ActionT3;
 import eatyourbeets.resources.GR;
 import eatyourbeets.stances.WrathStance;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class ByakuyaKuchiki extends AnimatorCard
 {
@@ -37,6 +38,7 @@ public class ByakuyaKuchiki extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.Callback(card -> {
             ChooseAction(m);
         });

@@ -33,6 +33,7 @@ public class SayakaMiki_Oktavia extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.VFX(VFX.Mindblast(p.dialogX, p.dialogY).SetColor(Color.VIOLET));
         GameActions.Bottom.GainBlock(block);
         GameActions.Bottom.DealDamageToAll(this, AttackEffects.DARK);

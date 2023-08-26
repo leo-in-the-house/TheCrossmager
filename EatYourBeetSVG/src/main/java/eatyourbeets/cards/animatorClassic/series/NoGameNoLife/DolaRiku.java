@@ -28,6 +28,7 @@ public class DolaRiku extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         if (info.IsSynergizing && CombatStats.TryActivateSemiLimited(cardID))
         {
             GameActions.Bottom.Draw(1)

@@ -134,6 +134,7 @@ public class Fredrika extends AnimatorCard implements OnEndOfTurnLastSubscriber
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         switch (currentForm)
         {
             case Default:

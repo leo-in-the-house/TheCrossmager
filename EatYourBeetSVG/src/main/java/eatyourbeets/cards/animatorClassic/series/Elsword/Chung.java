@@ -34,6 +34,7 @@ public class Chung extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         if (this.block > 0)
         {
             GameActions.Bottom.GainBlock(block);

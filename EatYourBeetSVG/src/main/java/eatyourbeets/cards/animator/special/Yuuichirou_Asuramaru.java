@@ -32,6 +32,7 @@ public class Yuuichirou_Asuramaru extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         for (Affinity a : Affinity.Basic())
         {
             GameActions.Bottom.GainAffinity(a, magicNumber, false);

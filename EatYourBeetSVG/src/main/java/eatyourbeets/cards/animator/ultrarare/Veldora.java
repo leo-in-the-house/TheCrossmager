@@ -43,6 +43,7 @@ public class Veldora extends AnimatorCard_UltraRare
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlue(secondaryValue);
 
         int orbCount = p.filledOrbCount();

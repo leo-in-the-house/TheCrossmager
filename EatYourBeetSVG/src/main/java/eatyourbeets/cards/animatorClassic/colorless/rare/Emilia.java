@@ -36,6 +36,7 @@ public class Emilia extends AnimatorClassicCard implements OnStartOfTurnPostDraw
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.ChannelOrbs(Frost::new, magicNumber);
         CombatStats.onStartOfTurnPostDraw.Subscribe((Emilia) makeStatEquivalentCopy());
     }

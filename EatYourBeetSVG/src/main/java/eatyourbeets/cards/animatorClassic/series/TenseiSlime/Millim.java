@@ -44,6 +44,7 @@ public class Millim extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_HEAVY);
         GameActions.Bottom.ApplyBurning(p, m, magicNumber);
         GameActions.Bottom.ApplyPoison(p, m, magicNumber);

@@ -25,6 +25,7 @@ public class ChlammyZell_Scheme extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.VFX(new FlickCoinEffect(p.hb.cX, p.hb.cY, p.hb.cX, p.hb.cY + p.hb.height), 0.15f);
         GameActions.Bottom.StackPower(new ChlammyZellPower(p, magicNumber));
     }

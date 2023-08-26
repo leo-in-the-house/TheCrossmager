@@ -28,6 +28,7 @@ public class Curse_Decay extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         if (dontTriggerOnUseCard)
         {
             GameActions.Bottom.TakeDamage(player, magicNumber, AttackEffects.FIRE);

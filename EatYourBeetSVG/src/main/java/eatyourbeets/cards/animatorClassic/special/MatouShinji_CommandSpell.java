@@ -34,6 +34,7 @@ public class MatouShinji_CommandSpell extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         if (p.maxOrbs > 0)
         {
             GameActions.Bottom.Add(new DecreaseMaxOrbAction(1));

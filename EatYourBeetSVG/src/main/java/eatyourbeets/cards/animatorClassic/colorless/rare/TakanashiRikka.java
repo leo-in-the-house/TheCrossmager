@@ -31,6 +31,7 @@ public class TakanashiRikka extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         for (AbstractCard c : p.hand.getAttacks().group)
         {
             GameActions.Top.MakeCardInHand(c)

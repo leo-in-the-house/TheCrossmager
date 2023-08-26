@@ -59,6 +59,7 @@ public class YunYun extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.SFX("ORB_LIGHTNING_EVOKE");
 
         for (AbstractMonster m1 : GameUtilities.GetEnemies(true))

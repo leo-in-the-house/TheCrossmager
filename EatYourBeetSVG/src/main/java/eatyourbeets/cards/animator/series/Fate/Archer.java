@@ -34,6 +34,7 @@ public class Archer extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         if (CheckSpecialCondition(true))
         {
             GameActions.Bottom.Motivate(1);

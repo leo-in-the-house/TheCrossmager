@@ -44,6 +44,7 @@ public class ClaudiaDodge extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.ApplyLockOn(p, m, magicNumber);
         GameActions.Bottom.Reload(name, cards ->
         {

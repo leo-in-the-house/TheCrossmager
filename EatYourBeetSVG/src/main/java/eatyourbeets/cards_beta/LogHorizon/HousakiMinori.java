@@ -32,6 +32,7 @@ public class HousakiMinori extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
         cooldown.ProgressCooldownAndTrigger(m);
     }

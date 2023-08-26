@@ -36,6 +36,7 @@ public class Kanami extends AnimatorClassicCard_UltraRare
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamageToAll(this, AttackEffects.SLASH_HORIZONTAL)
         .SetVFX(false, true)
         .AddCallback(enemies ->

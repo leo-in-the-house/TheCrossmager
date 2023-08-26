@@ -57,6 +57,7 @@ public class YoumuKonpaku extends AnimatorCard implements OnStartOfTurnSubscribe
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.NONE)
         .SetDamageEffect(c -> GameEffects.List.Add(VFX.Clash(c.hb)).duration)

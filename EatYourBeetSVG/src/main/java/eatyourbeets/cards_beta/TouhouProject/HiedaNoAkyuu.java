@@ -30,6 +30,7 @@ public class HiedaNoAkyuu extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.MoveCards(player.drawPile, player.discardPile)
         .SetDuration(0.01f, false);
 

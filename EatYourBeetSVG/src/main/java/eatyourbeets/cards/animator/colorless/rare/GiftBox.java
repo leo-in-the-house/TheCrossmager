@@ -38,6 +38,7 @@ public class GiftBox extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         Random rng = CombatStats.GetCombatData(cardID + "rng", null);
         if (rng == null)
         {

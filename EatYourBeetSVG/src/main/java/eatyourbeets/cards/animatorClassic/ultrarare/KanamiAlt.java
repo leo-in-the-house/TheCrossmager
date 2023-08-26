@@ -58,6 +58,7 @@ public class KanamiAlt extends AnimatorClassicCard_UltraRare implements Hidden
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.VFX(new ViolentAttackEffect(m.hb.cX, m.hb.cY, Color.RED.cpy()));
         GameActions.Bottom.DealDamage(this, m, AttackEffects.NONE)
         .AddCallback(block, (amount, __) ->

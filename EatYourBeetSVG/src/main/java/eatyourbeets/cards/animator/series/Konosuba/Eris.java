@@ -32,6 +32,7 @@ public class Eris extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainAffinity(Affinity.Light, 1, true);
         GameActions.Bottom.MakeCard(new Special_Miracle(), p.drawPile).Repeat(magicNumber);
         GameActions.Bottom.StackPower(new ErisPower(p, 1));

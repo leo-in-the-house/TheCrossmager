@@ -44,6 +44,7 @@ public class Laby extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainTemporaryHP(magicNumber);
         GameActions.Bottom.StackPower(new EnchantedArmorPower(p, secondaryValue));
         GameActions.Bottom.StackPower(new LabyPower(p, 1, upgraded));

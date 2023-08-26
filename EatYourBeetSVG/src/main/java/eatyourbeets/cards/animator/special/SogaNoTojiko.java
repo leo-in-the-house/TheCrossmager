@@ -49,6 +49,7 @@ public class SogaNoTojiko extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.StackPower(new AnimatorIntangiblePower(p, 1));
         GameActions.Bottom.TriggerOrbPassive(1).SetFilter(o -> Lightning.ORB_ID.equals(o.ID));
     }

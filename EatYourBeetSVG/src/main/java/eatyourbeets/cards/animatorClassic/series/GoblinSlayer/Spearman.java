@@ -40,6 +40,7 @@ public class Spearman extends AnimatorClassicCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_VERTICAL);
         GameActions.Bottom.GainGreen(magicNumber, true);
         GameActions.Bottom.GainRed(magicNumber, true);

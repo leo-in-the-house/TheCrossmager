@@ -27,6 +27,7 @@ public class Curse_Doubt extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         if (dontTriggerOnUseCard)
         {
             GameActions.Bottom.ApplyWeak(null, p, magicNumber);

@@ -41,6 +41,7 @@ public class ApprenticeCleric extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DiscardFromPile(name, 1, player.drawPile)
         .ShowEffect(true, true)
         .SetOptions(false, false)

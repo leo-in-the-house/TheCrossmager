@@ -37,6 +37,7 @@ public class Layla extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.BLUNT_LIGHT);
         GameActions.Bottom.StackPower(new LaylaPower(m, p, magicNumber));
 
