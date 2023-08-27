@@ -31,7 +31,7 @@ public class Zadkiel extends AnimatorCard {
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info) {
 
         GameUtilities.PlayVoiceSFX(name);
-        
+
         GameActions.Bottom.GainOrbSlots(magicNumber);
         GameActions.Bottom.ChannelOrbs(Frost::new, GameUtilities.GetOrbCount(EmptyOrbSlot.ORB_ID));
     }

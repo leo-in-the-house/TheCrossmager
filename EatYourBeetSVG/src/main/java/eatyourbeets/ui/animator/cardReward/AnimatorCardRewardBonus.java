@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.rewards.RewardItem;
 import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.AnimatorCard_UltraRare;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.EYBCard;
 import eatyourbeets.effects.SFX;
 import eatyourbeets.effects.card.PermanentUpgradeEffect;

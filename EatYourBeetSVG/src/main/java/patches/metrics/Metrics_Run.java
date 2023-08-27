@@ -19,6 +19,7 @@ import com.megacrit.cardcrawl.metrics.Metrics;
 import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.AnimatorCard_UltraRare;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.resources.GR;
 import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.JavaUtilities;

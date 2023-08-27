@@ -5,6 +5,7 @@ import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.random.Random;
 import eatyourbeets.cards.base.AnimatorCard_UltraRare;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardSeries;
 import eatyourbeets.relics.deprecated.Destiny;
 import eatyourbeets.resources.GR;

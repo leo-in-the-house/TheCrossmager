@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import eatyourbeets.cards.animator.ultrarare.HolyGrail;
 import eatyourbeets.cards.base.AnimatorCard_UltraRare;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.EYBCardTooltip;
 import eatyourbeets.relics.AnimatorRelic;
 import eatyourbeets.resources.GR;

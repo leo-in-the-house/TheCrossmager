@@ -31,6 +31,7 @@ import eatyourbeets.cards.animator.series.OwariNoSeraph.Guren;
 import eatyourbeets.cards.animator.ultrarare.Cthulhu;
 import eatyourbeets.cards.animator.ultrarare.SummoningRitual;
 import eatyourbeets.cards.base.AnimatorCard_UltraRare;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.interfaces.listeners.OnTryApplyPowerListener;
 import eatyourbeets.interfaces.subscribers.OnBattleStartSubscriber;
 import eatyourbeets.interfaces.subscribers.OnStartOfTurnPostDrawSubscriber;

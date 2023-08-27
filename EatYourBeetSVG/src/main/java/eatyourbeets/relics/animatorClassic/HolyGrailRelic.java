@@ -2,6 +2,7 @@ package eatyourbeets.relics.animatorClassic;
 
 import eatyourbeets.cards.animator.ultrarare.HolyGrail;
 import eatyourbeets.cards.base.AnimatorCard_UltraRare;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.relics.AnimatorClassicRelic;
 import eatyourbeets.utilities.GameActions;
 
