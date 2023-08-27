@@ -2,40 +2,34 @@ package eatyourbeets.cards.animator.series.DateALive;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.ShakeScreenAction;
-import com.megacrit.cardcrawl.cards.status.Burn;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBAttackType;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
+import eatyourbeets.utilities.TargetHelper;
 
 public class KotoriItsuka extends AnimatorCard
 {
-    public static final EYBCardData DATA = Register(KotoriItsuka.class).SetAttack(1, CardRarity.RARE, EYBAttackType.Normal);
+    public static final EYBCardData DATA = Register(KotoriItsuka.class)
+            .SetAttack(1, CardRarity.RARE, EYBAttackType.Normal)
+            .SetSeriesFromClassPackage();
 
     public KotoriItsuka()
     {
         super(DATA);
 
-        Initialize(6, 0, 5, 5);
+        Initialize(5, 0, 5, 5);
         SetUpgrade(0, 0, 0);
 
+        SetAffinity_Red(2);
+
         SetExhaust(true);
-
-        
-    }
-
-    @Override
-    protected void OnUpgrade()
-    {
-        SetHaste(true);
     }
 
     @Override
@@ -54,21 +48,14 @@ public class KotoriItsuka extends AnimatorCard
         {
             GameActions.Bottom.DealDamage(this, m, AbstractGameAction.AttackEffect.FIRE);
         }
-    }
 
-    @Override
-    public boolean cardPlayable(AbstractMonster m)
-    {
-        return player.discardPile.size() > player.drawPile.size();
-    }
+        int amount_burning = block;
 
-    @Override
-    public void OnLateUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
-    {
-        for (int i=0; i<secondaryValue; i++)
-        {
-            GameActions.Bottom.MakeCardInDrawPile(new Burn())
-            .SetDuration(Settings.ACTION_DUR_XFAST, true);
+        if (!upgraded) {
+            amount_burning /= 2;
         }
+
+        GameActions.Bottom.LoseBlock(player.currentBlock);
+        GameActions.Bottom.ApplyBurning(TargetHelper.Normal(m), amount_burning);
     }
 }

@@ -61,6 +61,7 @@ public abstract class EYBCard extends EYBCardBase
     public static final CardTags HASTE = GR.Enums.CardTags.HASTE;
     public static final CardTags PURGE = GR.Enums.CardTags.PURGE;
     public static final CardTags DELAYED = GR.Enums.CardTags.DELAYED;
+    public static final CardTags AUTOPLAYED = GR.Enums.CardTags.AUTOPLAYED;
     public static final CardTags UNIQUE = GR.Enums.CardTags.UNIQUE;
     public static final CardTags VOLATILE = GR.Enums.CardTags.VOLATILE;
     public static final CardTags SUMMON = GR.Enums.CardTags.SUMMON;
@@ -276,6 +277,14 @@ public abstract class EYBCard extends EYBCardBase
         super.triggerWhenDrawn();
 
         this.dontTriggerOnUseCard = false;
+
+        if (hasTag(AUTOPLAYED))
+        {
+            GameActions.Bottom.PlayCard(this, player.hand, null)
+                    .SpendEnergy(true, true)
+                    .AddCondition(AbstractCard::hasEnoughEnergy);
+        }
+
     }
 
     @Override
@@ -691,6 +700,10 @@ public abstract class EYBCard extends EYBCardBase
         this.SetTag(FADING, value);
     }
 
+    public void SetAutoplayed(boolean value)
+    {
+        this.SetTag(AUTOPLAYED, value);
+    }
     public void SetEthereal(boolean value)
     {
         this.isEthereal = value;

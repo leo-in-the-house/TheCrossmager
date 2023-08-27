@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.effects.AttackEffects;
-import eatyourbeets.powers.CombatStats;
+import eatyourbeets.powers.common.InsanityPower;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
@@ -46,33 +46,10 @@ public class InverseTohka extends AnimatorCard
     }
 
     @Override
-    protected float ModifyDamage(AbstractMonster enemy, float amount)
-    {
-        return super.ModifyDamage(enemy, amount + CombatStats.SynergiesThisCombat().size() * magicNumber);
-    }
-
-    @Override
-    public void triggerWhenDrawn()
-    {
-        super.triggerWhenDrawn();
-
-        GameActions.Bottom.SpendEnergy(1,false).AddCallback(() -> {
-            GameActions.Bottom.SelectFromPile(name, magicNumber, player.drawPile, player.hand, player.discardPile)
-                    .SetOptions(true, true)
-                    .SetFilter(c -> c instanceof AnimatorCard && this.series.equals(((AnimatorCard) c).series))
-                    .AddCallback(cards ->
-                    {
-                        for (AbstractCard c : cards) {
-                            GameActions.Bottom.Motivate(c, 1);
-                        }
-                    });
-        });
-    }
-
-    @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamageToAll(this, AttackEffects.SLASH_HEAVY);
+        GameActions.Bottom.StackPower(new InsanityPower(p, 1));
     }
 }

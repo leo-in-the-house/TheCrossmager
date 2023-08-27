@@ -3,19 +3,16 @@ package eatyourbeets.cards.animator.series.DateALive;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
-import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.cards.base.CardUseInfo;
-import eatyourbeets.cards.base.EYBCardData;
-import eatyourbeets.cards.base.EYBCardTarget;
-import eatyourbeets.cards.base.modifiers.BlockModifiers;
+import eatyourbeets.cards.base.*;
 import eatyourbeets.cards.base.modifiers.CostModifiers;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
 public class ReineMurasame extends AnimatorCard
 {
-    public static final EYBCardData DATA = Register(ReineMurasame.class).SetSkill(-1, CardRarity.UNCOMMON, EYBCardTarget.None);
+    public static final EYBCardData DATA = Register(ReineMurasame.class)
+            .SetSkill(-1, CardRarity.UNCOMMON, EYBCardTarget.None)
+            .SetSeriesFromClassPackage();
     static
     {
         DATA.AddPreview(new eatyourbeets.cards.animator.series.DateALive.ShidoItsuka(), true);
@@ -25,11 +22,23 @@ public class ReineMurasame extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 0, 3);
-        SetUpgrade(0, 0);
+        Initialize(0, 0, 1);
+        SetUpgrade(0, 0, 0);
 
         SetExhaust(true);
+
+        SetAffinity_Blue(5);
+
+        SetAffinityRequirement(Affinity.Blue, 7);
         
+    }
+
+    @Override
+    protected void OnUpgrade()
+    {
+        super.OnUpgrade();
+
+        SetRetain(true);
     }
 
     @Override
@@ -49,11 +58,6 @@ public class ReineMurasame extends AnimatorCard
 
                     CostModifiers.For(card).Add(key, -1);
 
-                    if (card.baseBlock >= 0)
-                    {
-                        BlockModifiers.For(card).Add(key, -magicNumber);
-                    }
-
                     GameUtilities.TriggerWhenPlayed(card, key, (k, c) ->
                     {
                         CostModifiers.For(c).Remove(k, false);
@@ -62,7 +66,7 @@ public class ReineMurasame extends AnimatorCard
             });
         }
 
-        if (isSynergizing && stacks > 0)
+        if (CheckSpecialCondition(false) && stacks > 0)
         {
             GameActions.Bottom.StackPower(new DrawCardNextTurnPower(p, stacks));
         }

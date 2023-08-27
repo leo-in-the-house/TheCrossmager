@@ -2,41 +2,29 @@ package eatyourbeets.cards.animator.series.DateALive;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBAttackType;
 import eatyourbeets.cards.base.EYBCardData;
-import eatyourbeets.powers.common.ForcePower;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
 public class YamaiSisters extends AnimatorCard
 {
-    public static final EYBCardData DATA = Register(YamaiSisters.class).SetAttack(0, CardRarity.COMMON, EYBAttackType.Normal);
+    public static final EYBCardData DATA = Register(YamaiSisters.class)
+            .SetAttack(0, CardRarity.COMMON, EYBAttackType.Normal)
+            .SetSeriesFromClassPackage();
 
     public YamaiSisters()
     {
         super(DATA);
 
-        Initialize(2, 0);
-        SetUpgrade(1, 0);
-        
-    }
+        Initialize(2, 2);
+        SetUpgrade(2, 1);
 
-    @Override
-    protected float ModifyDamage(AbstractMonster enemy, float damage)
-    {
-        int forceAmount = GameUtilities.GetPowerAmount(AbstractDungeon.player, ForcePower.POWER_ID);
-
-        if (enemy != null && GameUtilities.IsAttacking(enemy.intent) && forceAmount > 0)
-        {
-            damage += forceAmount;
-        }
-
-        return super.ModifyDamage(enemy, damage);
+        SetAffinity_Red(1);
+        SetAffinity_Green(1);
     }
 
     @Override
@@ -44,6 +32,7 @@ public class YamaiSisters extends AnimatorCard
     {
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
+        GameActions.Bottom.GainBlock(block);
 
         if (IsStarter())
         {

@@ -13,7 +13,9 @@ import eatyourbeets.utilities.GameUtilities;
 
 public class OrigamiTobiichi extends AnimatorCard
 {
-    public static final EYBCardData DATA = Register(OrigamiTobiichi.class).SetPower(2, CardRarity.UNCOMMON);
+    public static final EYBCardData DATA = Register(OrigamiTobiichi.class)
+            .SetPower(2, CardRarity.UNCOMMON)
+            .SetSeriesFromClassPackage();
     static
     {
         DATA.AddPreview(new InverseOrigami(), false);
@@ -23,33 +25,28 @@ public class OrigamiTobiichi extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 3, 1, 10);
-        SetUpgrade(0, 4, 0);
+        Initialize(0, 0, 50, 0);
+        SetUpgrade(0, 0, 50);
 
-        
-        
+        SetAffinity_Light(1);
+        SetAffinity_Blue(1);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.GainBlock(block);
-        GameActions.Bottom.StackPower(new OrigamiTobiichiPower(p, magicNumber, secondaryValue));
+        GameActions.Bottom.StackPower(new OrigamiTobiichiPower(p, magicNumber));
     }
 
     public static class OrigamiTobiichiPower extends AnimatorPower
     {
-        public static final int SUPPORT_DAMAGE_AMOUNT = 1;
 
-        private final int supportDamageLimit;
-
-        public OrigamiTobiichiPower(AbstractPlayer owner, int amount, int limit)
+        public OrigamiTobiichiPower(AbstractPlayer owner, int amount)
         {
             super(owner, OrigamiTobiichi.DATA);
 
             this.amount = amount;
-            this.supportDamageLimit = limit;
 
             updateDescription();
         }
@@ -65,7 +62,7 @@ public class OrigamiTobiichi extends AnimatorCard
         @Override
         public void updateDescription()
         {
-            description = FormatDescription(0, SUPPORT_DAMAGE_AMOUNT * amount, supportDamageLimit);
+            description = FormatDescription(0, amount);
         }
 
         @Override
@@ -75,25 +72,9 @@ public class OrigamiTobiichi extends AnimatorCard
             {
                 flash();
 
-                GameActions.Bottom.StackPower(new SupportDamagePower(player, amount)).AddCallback(this::InverseOrigamiCheck);
-            }
-            else
-            {
-                InverseOrigamiCheck();
+                GameActions.Bottom.StackPower(new SupportDamagePower(player, (amount / 100) * player.currentBlock));
             }
         }
 
-        private void InverseOrigamiCheck()
-        {
-            if (GameUtilities.GetPowerAmount(SupportDamagePower.POWER_ID) > (supportDamageLimit))
-            {
-                for (int i = 0; i < amount; i++)
-                {
-                    GameActions.Bottom.MakeCardInDrawPile(new InverseOrigami()).SetUpgrade(false, false);
-                }
-
-                GameActions.Bottom.RemovePower(player, player, this);
-            }
-        }
     }
 }

@@ -1,36 +1,37 @@
 package eatyourbeets.cards.animator.series.DateALive;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.powers.AnimatorPower;
-import eatyourbeets.stances.AgilityStance;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
 public class NiaHonjou extends AnimatorCard
 {
-    public static final EYBCardData DATA = Register(NiaHonjou.class).SetSkill(1, CardRarity.COMMON, EYBCardTarget.None);
+    public static final EYBCardData DATA = Register(NiaHonjou.class)
+            .SetSkill(0, CardRarity.COMMON, EYBCardTarget.None)
+            .SetSeriesFromClassPackage();
 
     public NiaHonjou()
     {
         super(DATA);
 
-        Initialize(0, 0, 2, 1);
+        Initialize(0, 0);
 
-        
+        SetAffinity_Blue(1);
+
+        SetExhaust(true);
     }
 
     @Override
     protected void OnUpgrade()
     {
-        SetHaste(true);
+        SetExhaust(false);
     }
 
     @Override
@@ -84,13 +85,9 @@ public class NiaHonjou extends AnimatorCard
         {
             super.onAfterCardPlayed(usedCard);
 
-            int blockAmount = amount;
-            if (GameUtilities.InStance(AgilityStance.STANCE_ID))
-            {
-                blockAmount *= 2;
+            if (usedCard.block > 0) {
+                GameActions.Bottom.Draw(amount);
             }
-
-            GameActions.Bottom.GainBlock(blockAmount);
         }
     }
 }

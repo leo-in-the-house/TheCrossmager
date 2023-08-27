@@ -406,7 +406,7 @@
 		"animator:Godan":
 		{
 			"FLAVOR_TEXT": "'What's wrong with this world?  Someone tell me what's going on here!'",
-			"DESCRIPTION": "<SLM>. If you have another {Ethereal} card in your hand, Enter {[Wrath Stance] Stance}.",
+			"DESCRIPTION": "<SLM>. If you have another {Ethereal} card in your hand, Enter <WS>.",
 			"NAME": "Godan Matsushita"
 		},
 		"animator:HidekiHinata":
@@ -608,63 +608,63 @@
 		},
 		"animator:KotoriItsuka":
 		{
-			"DESCRIPTION": "This card can only be played if you have more cards in your discard pile than your draw pile. || Add !S! {Burn} to your draw pile.",
+			"DESCRIPTION": "Remove all of your [Block].  Apply half that much [Burning] on the enemy.",
+			"UPGRADE_DESCRIPTION": "Remove all of your [Block].  Apply that much [Burning] on the enemy.",
 			"NAME": "Kotori Itsuka"
 		},
 		"animator:KurumiTokisaki":
 		{
-			"DESCRIPTION": "{Autoplay}. || Next turn: Gain !M! [E]. || Cooldown !S!: Skip the next enemy turn. Shuffle 3 copies of this into your draw pile.",
+			"DESCRIPTION": "Gain !M! [Blur]. || Next turn: Draw !M! cards.",
+			"UPGRADE_DESCRIPTION": "Gain !M! [Blur]. || Next turn: Draw !M! cards and Gain !M! [E]",
 			"NAME": "Kurumi Tokisaki"
 		},
 		"animator:MikuIzayoi":
 		{
-			"DESCRIPTION": "Unaffected by Block modifiers. || <LIM>. When Discarded: Gain [F], [A], or [I].",
+			"DESCRIPTION": "On Discard: Increase the [Block] for all cards in your hand by 1.",
 			"NAME": "Miku Izayoi"
 		},
 		"animator:MioTakamiya":
 		{
-			"DESCRIPTION": "At the start of combat: Enter <AS> and Shuffle three copies of {Shido Itsuka} into your draw pile. || If in <AS>: Exit your stance and gain [A] for every !M! [Block].",
+			"DESCRIPTION": "Start of Combat: Enter <TS>, Gain Blur !M! and Shuffle !S! {0-Cost} {Shido Itsuka}’s into your draw pile. || <TS>: Gain [G] for every 2 [Block].",
 			"NAME": "Mio Takamiya"
 		},
 		"animator:Mayuri":
 		{
-			"DESCRIPTION": "If you have !M! or less [A]: enter <AS>. || Synergy: Retain ALL Defends in your hand.",
+			"DESCRIPTION": "Retain ALL Defends in your hand.",
 			"NAME": "Mayuri"
 		},
 		"animator:MukuroHoshimiya":
 		{
-			"DESCRIPTION": "Increase damage for every !M! cards in your draw pile. || Whenever this enters your draw pile, move it to the sixth spot from the top.",
+			"DESCRIPTION": "This card can only be played if you have at least !M! [Block]. || {Seal} all cards in your hand, then draw !S! cards..",
 			"NAME": "Mukuro Hoshimiya"
 		},
 		"animator:Natsumi":
 		{
-			"DESCRIPTION": "Transform up to !M! cards in your hand into random Uncommons. || Whenever you transform a {Hindrance}: Add a {Depression} into your draw pile.",
+			"DESCRIPTION": "Transform up to !M! cards in your hand into random {Common} or {Uncommon} Skills. || Whenever you transform a {Hindrance}: Add a {Depression} into your draw pile.",
 			"EXTENDED_DESCRIPTION": ["Choose a card to transform."],
 			"NAME": "Natsumi Kyouno"
 		},
 		"animator:NiaHonjou":
 		{
-			"DESCRIPTION": "Whenever you play a card this turn: Gain !M! [Block].  Gain double [Block] in <AS>. || When Discarded: Scry !S!.",
-			"EXTENDED_DESCRIPTION": ["Whenever you play a card this turn, gain #b{0} #yBlock."],
+			"DESCRIPTION": "Whenever you play a card with [Block] this turn: Draw a card.",
+			"EXTENDED_DESCRIPTION": ["Whenever you play a card with #yBlock this turn: Draw a card."],
 			"NAME": "Nia Honjou"
 		},
 		"animator:OrigamiTobiichi":
 		{
-			"DESCRIPTION": "At end of turn: Gain !M! [Support Damage]. || If you have over !S! [Support Damage]: Remove this power. Add {Inverse Origami} to your draw pile.",
-			"EXTENDED_DESCRIPTION": ["At end of turn: gain #b{0} Support Damage. If you have over #b{1} Support Damage, remove this power.  Add #b{0} #yInverse #yOrigami to your draw pile."],
+			"DESCRIPTION": "End of Turn: Gain [Support Damage] equal to !M!% your [Block].",
+			"EXTENDED_DESCRIPTION": ["End of turn: gain #ySupport #yDamage equal to #b{0}% your #yBlock"],
 			"NAME": "Origami Tobiichi"
 		},
 		"animator:ReineMurasame":
 		{
-			"DESCRIPTION": "Add X copies of {Shido Itsuka} to your draw pile.  {Motivate} them and reduce their [Block] by !M!. || Synergy: Draw X cards next turn.",
-			"NAME": "Reine Murasame",
-			"UPGRADE_DESCRIPTION": "Add X Upgraded copies of {Shido Itsuka} to your draw pile.  {Motivate} them and reduce their [Block] by !M!. || Synergy: Draw X cards next turn."
+			"DESCRIPTION": "Add X copies of {Shido Itsuka} to your draw pile.  {Motivate} them. || !A! [B]: Draw !S! cards next turn.",
+			"NAME": "Reine Murasame"
 		},
 		"animator:ShidoItsuka":
 		{
-			"DESCRIPTION": "Add 1 of !M! cards that would Synergize with this card to your discard pile. || Synergy: Add it to your draw pile instead.",
-			"NAME": "Shido Itsuka",
-			"UPGRADE_DESCRIPTION": "Add 1 of !M! Upgraded cards that would Synergize with this card to your discard pile. || Synergy: Add it to your draw pile instead."
+			"DESCRIPTION": "When {Sealed}: Play this card.",
+			"NAME": "Shido Itsuka"
 		},
 		"animator:Strike_DateALive":
 		{
@@ -673,22 +673,22 @@
 		},
 		"animator:TohkaYatogami":
 		{
-			"DESCRIPTION": "Unaffected by damage modifiers. || If there are !M! or more cards in Exhaust pile: Transform this card into {Inverse Tohka}.",
+			"DESCRIPTION": "This card costs !M! less if you have !S! or more [Block].",
 			"NAME": "Tohka Yatogami"
 		},
 		"animator:YamaiSisters":
 		{
-			"DESCRIPTION": "{Starter}: Add a copy of this card to your hand. || This card has [F] scaling against an enemy who intends to attack.",
+			"DESCRIPTION": "{Starter}: Add a copy of this card to your hand.",
 			"NAME": "Yamai Sisters"
 		},
 		"animator:YoshinoHimekawa":
 		{
-			"DESCRIPTION": "All [Frost] gain 1 additional [Block] this combat. || When drawn with Haste: Discard this card and shuffle a Zadkiel into your discard pile.",
+			"DESCRIPTION": "Increase the amount on all [Frost] by !M! this combat. || <LIM>. When drawn: Add {Zadkiel} to your draw pile.",
 			"NAME": "Yoshino Himekawa"
 		},
 		"animator:Zadkiel":
 		{
-			"DESCRIPTION": "Gain 1 Orb Slot. || Fill your empty orb slots with Frost.",
+			"DESCRIPTION": "Gain !M! [Orb_S]. || Fill your [Orb_S] with [Frost].",
 			"NAME": "Zadkiel"
 		}
 	},

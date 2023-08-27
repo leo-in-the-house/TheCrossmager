@@ -2,13 +2,11 @@ package eatyourbeets.cards.animator.series.DateALive;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.curse.common.Curse_Depression;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
@@ -17,7 +15,9 @@ import java.util.HashMap;
 
 public class Natsumi extends AnimatorCard
 {
-    public static final EYBCardData DATA = Register(Natsumi.class).SetAttack(1, CardRarity.UNCOMMON, EYBAttackType.Elemental, EYBCardTarget.Random);
+    public static final EYBCardData DATA = Register(Natsumi.class)
+            .SetAttack(1, CardRarity.UNCOMMON, EYBAttackType.Elemental, EYBCardTarget.Random)
+            .SetSeriesFromClassPackage();
 
     static
     {
@@ -30,14 +30,12 @@ public class Natsumi extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(2, 0, 2);
+        Initialize(7, 0, 2);
         SetUpgrade(0,0, 1);
 
+        SetAffinity_Blue(1);
 
         SetExhaust(true);
-
-        
-        
     }
 
     @Override
@@ -65,9 +63,18 @@ public class Natsumi extends AnimatorCard
                         GameActions.Bottom.MakeCardInDrawPile(new Curse_Depression());
                     }
 
-                    GameActions.Bottom.ReplaceCard(card.uuid, AbstractDungeon.getCard(CardRarity.UNCOMMON).makeCopy());
+                    GameActions.Bottom.ReplaceCard(card.uuid, GetRandomCommonOrUncommonSkill().makeCopy());
                 }
             }
         });
+    }
+
+    private AbstractCard GetRandomCommonOrUncommonSkill() {
+        if (rng.randomBoolean()) {
+            return AbstractDungeon.getCardFromPool(CardRarity.COMMON, CardType.SKILL, true);
+        }
+        else {
+            return AbstractDungeon.getCardFromPool(CardRarity.UNCOMMON, CardType.SKILL, true);
+        }
     }
 }

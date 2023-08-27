@@ -4,9 +4,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.Frost;
 import eatyourbeets.actions.animator.ApplyAmountToOrbs;
-import eatyourbeets.cards.animator.beta.special.Zadkiel;
+import eatyourbeets.cards.animator.special.Zadkiel;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
@@ -15,7 +14,9 @@ import eatyourbeets.utilities.GameUtilities;
 
 public class YoshinoHimekawa extends AnimatorCard
 {
-    public static final EYBCardData DATA = Register(YoshinoHimekawa.class).SetSkill(3, CardRarity.UNCOMMON, EYBCardTarget.None);
+    public static final EYBCardData DATA = Register(YoshinoHimekawa.class)
+            .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None)
+            .SetSeriesFromClassPackage();
     static
     {
         DATA.AddPreview(new Zadkiel(), true);
@@ -25,12 +26,10 @@ public class YoshinoHimekawa extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 0, 1, 4);
+        Initialize(0, 4, 1, 0);
+        SetUpgrade(0, 2, 1);
 
-        SetExhaust(true);
-        SetHaste(true);
-        
-        SetCostUpgrade(-1);
+        SetAffinity_Green(1, 0, 1);
     }
 
     @Override
@@ -48,13 +47,10 @@ public class YoshinoHimekawa extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-    }
+        GameActions.Bottom.GainBlock(block);
 
-    @Override
-    public void OnLateUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
-    {
         GameActions.Last.Callback(cards -> {
-            GameActions.Bottom.Add(new ApplyAmountToOrbs(Frost.ORB_ID, 1));
+            GameActions.Bottom.Add(new ApplyAmountToOrbs(Frost.ORB_ID, magicNumber));
         });
     }
 }

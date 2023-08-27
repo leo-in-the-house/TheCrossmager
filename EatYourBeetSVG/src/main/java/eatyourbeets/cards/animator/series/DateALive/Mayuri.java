@@ -2,61 +2,48 @@ package eatyourbeets.cards.animator.series.DateALive;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.cards.base.CardUseInfo;
-import eatyourbeets.cards.base.EYBAttackType;
-import eatyourbeets.cards.base.EYBCardData;
-import eatyourbeets.powers.common.AgilityPower;
-import eatyourbeets.stances.AgilityStance;
+import eatyourbeets.cards.base.*;
+import eatyourbeets.effects.SFX;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
 public class Mayuri extends AnimatorCard
 {
-    public static final EYBCardData DATA = Register(Mayuri.class).SetAttack(2, CardRarity.COMMON, EYBAttackType.Normal);
+    public static final EYBCardData DATA = Register(Mayuri.class)
+            .SetAttack(2, CardRarity.COMMON, EYBAttackType.Normal, EYBCardTarget.ALL)
+            .SetSeriesFromClassPackage();
 
     public Mayuri()
     {
         super(DATA);
 
-        Initialize(8, 0, 2);
-        SetUpgrade(0, 0, 1);
+        Initialize(11, 0);
+        SetUpgrade(8, 0);
 
-
-        
+        SetAffinity_Red(1);
+        SetAffinity_Light(1);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.DealDamage(this, m, AbstractGameAction.AttackEffect.LIGHTNING);
 
-        if (GameUtilities.GetPowerAmount(p, AgilityPower.POWER_ID) <= magicNumber)
-        {
-            GameActions.Bottom.ChangeStance(AgilityStance.STANCE_ID);
-        }
+        int[] damageMatrix = DamageInfo.createDamageMatrix(damage, true);
+        GameActions.Bottom.DealDamageToAll(damageMatrix, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.LIGHTNING);
+        GameActions.Bottom.SFX(SFX.ORB_LIGHTNING_EVOKE);
 
-        if (isSynergizing)
-        {
-            GameActions.Bottom.Callback(cards -> {
-                    for (AbstractCard card : GameUtilities.GetOtherCardsInHand(this))
+        GameActions.Bottom.Callback(cards -> {
+                for (AbstractCard card : GameUtilities.GetOtherCardsInHand(this))
+                {
+                    if (card.tags.contains(CardTags.STARTER_DEFEND))
                     {
-                        if (card.tags.contains(CardTags.STARTER_DEFEND))
-                        {
-                            GameUtilities.Retain(card);
-                        }
+                        GameUtilities.Retain(card);
                     }
-            });
-        }
-    }
-
-    @Override
-    public void OnLateUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
-    {
+                }
+        });
     }
 }

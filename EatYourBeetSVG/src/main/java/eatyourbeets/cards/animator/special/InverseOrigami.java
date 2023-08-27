@@ -1,5 +1,6 @@
 package eatyourbeets.cards.animator.special;
 
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -19,8 +20,15 @@ public class InverseOrigami extends AnimatorCard
         super(DATA);
 
         Initialize(0, 0);
-        SetAffinity_Dark(1);
-        SetAffinity_Blue(1);
+        SetAffinity_Dark(1, 0, 2);
+        SetAffinity_Blue(1, 0, 2);
+    }
+
+    @Override
+    protected void OnUpgrade()
+    {
+        AddScaling(Affinity.Dark, 2);
+        AddScaling(Affinity.Blue, 2);
     }
 
     @Override
@@ -41,7 +49,7 @@ public class InverseOrigami extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info) {
         GameUtilities.PlayVoiceSFX(name);
 
-
+        GameActions.Bottom.DealDamage(this, m, AbstractGameAction.AttackEffect.LIGHTNING);
 
         GameActions.Bottom.Callback(c -> {
             SupportDamagePower supportDamage = GameUtilities.GetPower(player, SupportDamagePower.class);

@@ -1,24 +1,18 @@
 package eatyourbeets.cards.animator.series.DateALive;
 
-import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.watcher.SkipEnemiesTurnAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.EnergizedPower;
-import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.DieDieDieEffect;
-import com.megacrit.cardcrawl.vfx.combat.TimeWarpTurnEndEffect;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
 public class KurumiTokisaki extends AnimatorCard
 {
-    public static final EYBCardData DATA = Register(KurumiTokisaki.class).SetAttack(3, CardRarity.RARE, EYBAttackType.Ranged, EYBCardTarget.ALL);
+    public static final EYBCardData DATA = Register(KurumiTokisaki.class)
+            .SetAttack(3, CardRarity.RARE, EYBAttackType.Ranged, EYBCardTarget.ALL)
+            .SetSeriesFromClassPackage();
 
     public KurumiTokisaki()
     {
@@ -27,9 +21,11 @@ public class KurumiTokisaki extends AnimatorCard
         Initialize(12, 12, 2);
         SetUpgrade(0,0,1);
 
-        SetEthereal(true);
+        SetAffinity_Dark(2);
+        SetAffinity_Green(1);
 
-        SetCooldown(3, 0, this::OnCooldownCompleted);
+        SetEthereal(true);
+        SetAutoplayed(true);
         
     }
 
@@ -40,16 +36,6 @@ public class KurumiTokisaki extends AnimatorCard
     }
 
     @Override
-    public void triggerWhenDrawn()
-    {
-        super.triggerWhenDrawn();
-
-        GameActions.Bottom.PlayCard(this, player.hand, null)
-        .SpendEnergy(true)
-        .AddCondition(AbstractCard::hasEnoughEnergy);
-    }
-
-    @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
@@ -57,21 +43,13 @@ public class KurumiTokisaki extends AnimatorCard
         GameActions.Bottom.SFX("ATTACK_HEAVY");
         GameActions.Bottom.VFX(new DieDieDieEffect());
         GameActions.Bottom.DealDamageToAll(this, AbstractGameAction.AttackEffect.NONE);
-        GameActions.Bottom.StackPower(new EnergizedPower(p, magicNumber));
 
-        cooldown.ProgressCooldownAndTrigger(m);
-    }
+        GameActions.Bottom.GainBlur(magicNumber);
 
-    protected void OnCooldownCompleted(AbstractMonster m)
-    {
-        GameActions.Bottom.SFX("POWER_TIME_WARP", 0.05F);
-        GameActions.Bottom.VFX(new TimeWarpTurnEndEffect());
-        GameActions.Bottom.VFX(new BorderFlashEffect(Color.RED, true));
-        GameActions.Bottom.Add(new SkipEnemiesTurnAction());
+        GameActions.Bottom.DrawNextTurn(magicNumber);
 
-        for (int i = 0; i < 3; i++)
-        {
-            GameActions.Bottom.MakeCardInDrawPile(this.makeStatEquivalentCopy());
+        if (upgraded) {
+            GameActions.Bottom.GainEnergyNextTurn(magicNumber);
         }
     }
 }

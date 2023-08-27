@@ -1,24 +1,22 @@
 package eatyourbeets.cards.animator.series.DateALive;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
-import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.powers.CombatStats;
+import eatyourbeets.cards.base.AnimatorCard;
+import eatyourbeets.cards.base.CardUseInfo;
+import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.utilities.RandomizedList;
 
 import java.util.ArrayList;
 
 public class ShidoItsuka extends AnimatorCard
 {
-    public static final EYBCardData DATA = Register(ShidoItsuka.class).SetSkill(1, CardRarity.COMMON, EYBCardTarget.None);
+    public static final EYBCardData DATA = Register(ShidoItsuka.class)
+            .SetSkill(1, CardRarity.COMMON, EYBCardTarget.None)
+            .SetSeriesFromClassPackage();
 
     protected final static ArrayList<AbstractCard> dateALiveCards = new ArrayList<>();
     protected final static ArrayList<AbstractCard> otherSynergicCards = new ArrayList<>();
@@ -27,8 +25,10 @@ public class ShidoItsuka extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 8, 3);
-        SetUpgrade(0, 0);
+        Initialize(0, 5);
+        SetUpgrade(0, 4);
+
+        SetAffinity_Star(1);
 
         SetExhaust(true);
         
@@ -37,100 +37,16 @@ public class ShidoItsuka extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
-
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
     }
 
+
     @Override
-    public void OnLateUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
+    public void triggerOnAffinitySeal(boolean reshuffle)
     {
-        InitializeSynergicCards();
+        super.triggerOnAffinitySeal(reshuffle);
 
-        RandomizedList<AbstractCard> randomizedDALCards = new RandomizedList<>(dateALiveCards);
-        RandomizedList<AbstractCard> randomizedSynergicCards = new RandomizedList<>(otherSynergicCards);
-
-        final CardGroup options = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
-        for (int i = 0; i < magicNumber; i++)
-        {
-            AbstractCard randomCard;
-            if (i == 0 && rng.randomBoolean(0.4f))
-            {
-                //40% chance the first option is a non-Date-a-Live card such as a shapeshifter
-                if (randomizedSynergicCards.Size() == 0)
-                {
-                    break;
-                }
-
-                randomCard = randomizedSynergicCards.Retrieve(rng, true).makeCopy();
-            }
-            else
-            {
-                if (randomizedDALCards.Size() == 0)
-                {
-                    break;
-                }
-
-                randomCard = randomizedDALCards.Retrieve(rng, true).makeCopy();
-            }
-
-            if (upgraded)
-            {
-                randomCard.upgrade();
-            }
-
-            options.addToBottom(randomCard);
-        }
-
-        GameActions.Top.SelectFromPile(name, 1, options)
-                .SetOptions(false, false)
-                .AddCallback(cards ->
-                {
-                    if (cards.size() > 0)
-                    {
-                        if (isSynergizing)
-                        {
-                            GameActions.Bottom.MakeCardInDrawPile(cards.get(0))
-                                    .SetDuration(Settings.ACTION_DUR_FASTER, true);
-                        }
-                        else
-                        {
-                            GameActions.Bottom.MakeCardInDiscardPile(cards.get(0))
-                                    .SetDuration(Settings.ACTION_DUR_FASTER, true);
-                        }
-                    }
-                });
-
-        if (isSynergizing && CombatStats.TryActivateLimited(cardID))
-        {
-            GameActions.Last.ModifyAllInstances(uuid, c -> ((EYBCard) c).SetExhaust(true));
-        }
-    }
-
-    private void InitializeSynergicCards()
-    {
-        dateALiveCards.clear();
-        otherSynergicCards.clear();
-
-        for (AbstractCard c : CardLibrary.getAllCards())
-        {
-            if (c instanceof AnimatorCard && !GameUtilities.IsHindrance(c)
-            && !c.hasTag(AbstractCard.CardTags.HEALING)
-            && c.rarity != AbstractCard.CardRarity.SPECIAL
-            && c.rarity != AbstractCard.CardRarity.BASIC)
-            {
-                if (Synergies.WouldSynergize(this, c))
-                {
-                    if (((AnimatorCard) c).synergy == Synergies.DateALive)
-                    {
-                        dateALiveCards.add(c);
-                    }
-                    else
-                    {
-                        otherSynergicCards.add(c);
-                    }
-                }
-            }
-        }
+        GameActions.Top.PlayCopy(this, null);
     }
 }

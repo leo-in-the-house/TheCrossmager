@@ -1,40 +1,29 @@
 package eatyourbeets.cards.animator.series.DateALive;
 
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.misc.GenericEffects.GenericEffect_GainStat;
-import eatyourbeets.powers.CombatStats;
+import eatyourbeets.cards.base.AnimatorCard;
+import eatyourbeets.cards.base.CardUseInfo;
+import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.cards.base.EYBCardTarget;
+import eatyourbeets.cards.base.modifiers.BlockModifiers;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.utilities.PlayerAttribute;
 
 public class MikuIzayoi extends AnimatorCard
 {
-    public static final EYBCardData DATA = Register(MikuIzayoi.class).SetSkill(1, CardRarity.COMMON, EYBCardTarget.None);
-
-    private static final CardEffectChoice choices = new CardEffectChoice();
+    public static final EYBCardData DATA = Register(MikuIzayoi.class)
+            .SetSkill(1, CardRarity.COMMON, EYBCardTarget.None)
+            .SetSeriesFromClassPackage();
 
     public MikuIzayoi()
     {
         super(DATA);
 
         Initialize(0, 9, 1);
-        SetEthereal(true);
 
-        
-    }
-
-    @Override
-    public void OnUpgrade() {
-        SetEthereal(false);
-    }
-
-    @Override
-    protected void UpdateBlock(float amount)
-    {
-        super.UpdateBlock(baseBlock);
+        SetAffinity_Light(1);
     }
 
     @Override
@@ -42,16 +31,10 @@ public class MikuIzayoi extends AnimatorCard
     {
         super.triggerOnManualDiscard();
 
-        if (CombatStats.TryActivateLimited(cardID))
-        {
-            if (choices.TryInitialize(this))
-            {
-                choices.AddEffect(new GenericEffect_GainStat(1, PlayerAttribute.Force));
-                choices.AddEffect(new GenericEffect_GainStat(1, PlayerAttribute.Agility));
-                choices.AddEffect(new GenericEffect_GainStat(1, PlayerAttribute.Intellect));
+        for (AbstractCard card : player.hand.group) {
+            if (card.block > 0) {
+                BlockModifiers.For(card).Add(cardID, 1);
             }
-
-            choices.Select(1, null);
         }
     }
 

@@ -1,78 +1,58 @@
 package eatyourbeets.cards.animator.series.DateALive;
 
-import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.math.MathUtils;
-import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.StartupCard;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
-import eatyourbeets.cards.base.EYBAttackType;
 import eatyourbeets.cards.base.EYBCardData;
-import eatyourbeets.effects.vfx.SmallLaserEffect;
-import eatyourbeets.interfaces.subscribers.OnAddedToDrawPileSubscriber;
-import eatyourbeets.interfaces.subscribers.OnShuffleSubscriber;
-import eatyourbeets.powers.CombatStats;
-import eatyourbeets.utilities.*;
+import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
-public class MukuroHoshimiya extends AnimatorCard implements StartupCard, OnShuffleSubscriber, OnAddedToDrawPileSubscriber
+public class MukuroHoshimiya extends AnimatorCard
 {
-    public static final EYBCardData DATA = Register(MukuroHoshimiya.class).SetAttack(2, CardRarity.RARE, EYBAttackType.Elemental);
+    public static final EYBCardData DATA = Register(MukuroHoshimiya.class)
+            .SetSkill(1, CardRarity.RARE)
+            .SetSeriesFromClassPackage();
 
     public MukuroHoshimiya()
     {
         super(DATA);
 
-        Initialize(16, 0, 4);
-        SetUpgrade(0,0,-1);
+        Initialize(0, 0, 6, 4);
+        SetUpgrade(0,0,0, 2);
 
-        
-        
+        SetAffinity_Light(2);
+        SetRetain(true);
+        SetExhaust(true);
     }
 
     @Override
-    protected float GetInitialDamage()
+    protected void OnUpgrade()
     {
-        return baseDamage + (player.drawPile.size() / magicNumber);
+        SetInnate(true);
+    }
+
+    @Override
+    public boolean cardPlayable(AbstractMonster m)
+    {
+        if (super.cardPlayable(m))
+        {
+            return player.currentBlock >= magicNumber;
+        }
+
+        return false;
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.DealDamage(this, m, AbstractGameAction.AttackEffect.NONE)
-        .SetDamageEffect(e -> GameEffects.Queue.Add(new SmallLaserEffect(player.hb.cX, player.hb.cY,
-        e.hb.cX + MathUtils.random(-0.05F, 0.05F), e.hb.cY + MathUtils.random(-0.05F, 0.05F), Color.PURPLE)));
-        GameActions.Bottom.SFX("ATTACK_FIRE");
-    }
 
-    @Override
-    public boolean atBattleStartPreDraw()
-    {
-        OnShuffle(false);
+        for (AbstractCard card : player.hand.group) {
+            GameActions.Bottom.SealAffinities(card, true);
+        }
 
-        return false;
-    }
-
-    @Override
-    public void triggerWhenCreated(boolean startOfBattle)
-    {
-        super.triggerWhenCreated(startOfBattle);
-
-        CombatStats.onShuffle.Subscribe(this);
-    }
-
-    @Override
-    public void OnAddedToDrawPile(boolean visualOnly, CardSelection.Mode destination)
-    {
-        OnShuffle(false);
-    }
-
-    @Override
-    public void OnShuffle(boolean triggerRelics)
-    {
-        GameActions.Top.Callback(() -> JUtils.ChangeIndex(this, player.drawPile.group, player.drawPile.size() - 6));
+        GameActions.Bottom.Draw(secondaryValue);
     }
 }
