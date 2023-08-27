@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animatorClassic.special.Kuroyukihime_BlackLotus;
 import eatyourbeets.cards.base.*;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.GameActions;
 
 public class Kuroyukihime extends AnimatorClassicCard

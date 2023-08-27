@@ -2,12 +2,14 @@ package eatyourbeets.cards_beta.special;
 
 import eatyourbeets.effects.AttackEffects;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.WhirlwindEffect;
 import eatyourbeets.cards.base.*;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.CardSelection;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;

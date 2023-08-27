@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.*;
 import eatyourbeets.actions.utility.WaitRealtimeAction;
 import eatyourbeets.cards.base.*;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.effects.GenericEffects.GenericEffect_Auto;
 import eatyourbeets.effects.SFX;
 import eatyourbeets.effects.utility.CallbackEffect;

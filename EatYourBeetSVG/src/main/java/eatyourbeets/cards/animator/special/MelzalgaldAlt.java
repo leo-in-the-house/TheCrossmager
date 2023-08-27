@@ -2,6 +2,7 @@ package eatyourbeets.cards.animator.special;
 
 import eatyourbeets.cards.animator.series.OnePunchMan.Melzalgald;
 import eatyourbeets.cards.base.AnimatorCard;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardSeries;
 import eatyourbeets.cards.base.EYBCardData;
 

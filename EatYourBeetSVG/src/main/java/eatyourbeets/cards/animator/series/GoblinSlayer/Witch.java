@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.orbs.Dark;
 import com.megacrit.cardcrawl.stances.NeutralStance;
 import eatyourbeets.cards.base.*;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.effects.GenericEffects.GenericEffect_EnterStance;
 import eatyourbeets.orbs.animator.Fire;
 import eatyourbeets.stances.AgilityStance;

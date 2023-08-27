@@ -1,9 +1,11 @@
 package eatyourbeets.cards.animator.series.TenseiSlime;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.actions.animator.RimuruAction;
 import eatyourbeets.cards.animator.status.Status_Slimed;
 import eatyourbeets.cards.base.AnimatorCard;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.interfaces.subscribers.OnAfterCardPlayedSubscriber;

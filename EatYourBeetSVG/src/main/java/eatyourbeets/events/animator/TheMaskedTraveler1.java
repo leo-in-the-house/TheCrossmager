@@ -1,6 +1,7 @@
 package eatyourbeets.events.animator;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.vfx.RainingGoldEffect;
 import eatyourbeets.cards.animator.basic.ImprovedDefend;

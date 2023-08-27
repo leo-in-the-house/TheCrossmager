@@ -598,12 +598,12 @@
 		},
 		"animator:InverseOrigami":
 		{
-			"DESCRIPTION": "If you would gain [Block] when this card is your hand, you gain that much [Support Damage] instead. || Trigger your [Support Damage].",
+			"DESCRIPTION": "Whenever you play a Skill while in hand: you gain [Support Damage] equal to half its [Block]. || Trigger your [Support Damage].",
 			"NAME": "Inverse Origami"
 		},
 		"animator:InverseTohka":
 		{
-			"DESCRIPTION": "If you would gain [Block] while this card is in your hand, you gain that much [D] instead. || Gain [Insanity].",
+			"DESCRIPTION": "Whenever you play a Skill while in hand: You gain [D] equal to half its [Block]. || Gain [Insanity].",
 			"NAME": "Inverse Tohka"
 		},
 		"animator:KotoriItsuka":

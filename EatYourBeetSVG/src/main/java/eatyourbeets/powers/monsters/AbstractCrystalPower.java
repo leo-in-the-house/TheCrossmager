@@ -2,6 +2,7 @@ package eatyourbeets.powers.monsters;
 
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.utilities.GameUtilities;

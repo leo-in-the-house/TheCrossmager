@@ -4,6 +4,7 @@ import basemod.Pair;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.interfaces.delegates.ActionT1;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;

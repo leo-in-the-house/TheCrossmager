@@ -2,6 +2,7 @@ package eatyourbeets.actions.animator;
 
 import basemod.BaseMod;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.core.Settings;
 import eatyourbeets.actions.EYBActionWithCallback;
 import eatyourbeets.interfaces.delegates.ActionT1;

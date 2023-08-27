@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.series.OwariNoSeraph.Yuuichirou;
 import eatyourbeets.cards.animator.status.Status_Void;
 import eatyourbeets.cards.base.*;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.stances.CorruptionStance;
 import eatyourbeets.utilities.GameActions;
 

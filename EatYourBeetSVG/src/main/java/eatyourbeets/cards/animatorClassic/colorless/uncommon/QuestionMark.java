@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.actions.animatorClassic.QuestionMarkAction;
 import eatyourbeets.cards.animatorClassic.series.Katanagatari.HigakiRinne;
 import eatyourbeets.cards.base.AnimatorClassicCard;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;

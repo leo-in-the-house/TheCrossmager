@@ -1,11 +1,13 @@
 package eatyourbeets.cards.animatorClassic.series.Fate;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.Dark;
 import eatyourbeets.actions.special.SelectCreature;
 import eatyourbeets.cards.base.AnimatorClassicCard;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardEffectChoice;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;

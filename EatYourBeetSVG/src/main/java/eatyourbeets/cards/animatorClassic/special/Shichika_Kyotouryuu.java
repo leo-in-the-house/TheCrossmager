@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.ViolentAttackEffect;
 import eatyourbeets.actions.basic.RemoveBlock;
 import eatyourbeets.cards.base.AnimatorClassicCard;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardSeries;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;

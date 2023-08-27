@@ -4,6 +4,7 @@ import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.actions.utility.ShowCardAndPoofAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.EYBCard;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.FieldInfo;

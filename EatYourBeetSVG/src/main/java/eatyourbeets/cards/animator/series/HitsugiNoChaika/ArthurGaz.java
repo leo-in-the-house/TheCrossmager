@@ -2,6 +2,7 @@ package eatyourbeets.cards.animator.series.HitsugiNoChaika;
 
 import basemod.BaseMod;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -10,6 +11,7 @@ import com.megacrit.cardcrawl.powers.MetallicizePower;
 import eatyourbeets.actions.cardManipulation.RandomCostIncrease;
 import eatyourbeets.cards.animator.status.Status_Void;
 import eatyourbeets.cards.base.*;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.cards.base.attributes.TempHPAttribute;
 import eatyourbeets.effects.AttackEffects;

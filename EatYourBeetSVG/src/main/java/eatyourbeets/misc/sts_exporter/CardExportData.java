@@ -3,6 +3,7 @@ package eatyourbeets.misc.sts_exporter;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import eatyourbeets.cards.base.AnimatorCard;
+import eatyourbeets.utilities.GameUtilities;
 
 import java.lang.reflect.Method;
 

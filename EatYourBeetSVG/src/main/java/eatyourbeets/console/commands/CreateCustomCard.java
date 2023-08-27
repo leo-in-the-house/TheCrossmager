@@ -5,6 +5,7 @@ import basemod.devcommands.ConsoleCommand;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import eatyourbeets.cards.base.AnimatorCard_Dynamic;

@@ -2,6 +2,7 @@ package eatyourbeets.cards.base.modifiers;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpireField;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.interfaces.subscribers.OnCardResetSubscriber;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameUtilities;

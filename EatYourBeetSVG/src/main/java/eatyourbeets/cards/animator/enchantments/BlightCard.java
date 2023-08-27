@@ -2,6 +2,7 @@ package eatyourbeets.cards.animator.enchantments;
 
 import com.megacrit.cardcrawl.blights.AbstractBlight;
 import eatyourbeets.cards.base.AnimatorCard;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.cards.base.EYBCardTooltip;

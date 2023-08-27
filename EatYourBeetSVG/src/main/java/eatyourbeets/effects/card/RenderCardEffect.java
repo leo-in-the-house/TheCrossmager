@@ -2,6 +2,7 @@ package eatyourbeets.effects.card;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.effects.EYBEffect;
 
 public class RenderCardEffect extends EYBEffect

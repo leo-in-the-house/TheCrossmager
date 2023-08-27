@@ -1,6 +1,7 @@
 package eatyourbeets.cards.base;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import eatyourbeets.interfaces.subscribers.OnSynergyCheckSubscriber;
 import eatyourbeets.powers.CombatStats;

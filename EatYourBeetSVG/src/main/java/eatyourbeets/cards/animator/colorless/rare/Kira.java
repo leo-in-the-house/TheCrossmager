@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.powers.FadingPower;
 import com.megacrit.cardcrawl.vfx.CollectorCurseEffect;
 import eatyourbeets.actions.utility.WaitRealtimeAction;
 import eatyourbeets.cards.base.AnimatorCard;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardSeries;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;

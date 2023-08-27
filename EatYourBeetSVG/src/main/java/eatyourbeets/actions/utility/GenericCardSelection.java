@@ -1,6 +1,7 @@
 package eatyourbeets.actions.utility;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import eatyourbeets.actions.EYBActionWithCallback;
 import eatyourbeets.interfaces.delegates.FuncT1;

@@ -1,10 +1,12 @@
 package eatyourbeets.cards.animator.series.Katanagatari;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.special.Shichika_Kyotouryuu;
 import eatyourbeets.cards.base.*;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.effects.GenericEffects.GenericEffect;
 import eatyourbeets.powers.common.CounterAttackPower;
 import eatyourbeets.stances.AgilityStance;

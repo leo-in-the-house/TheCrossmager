@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.orbs.Frost;
 import com.megacrit.cardcrawl.stances.NeutralStance;
 import eatyourbeets.cards.animator.special.RukiaBankai;
 import eatyourbeets.cards.base.AnimatorCard;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;

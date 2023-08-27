@@ -1,6 +1,7 @@
 package eatyourbeets.actions.animator;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import eatyourbeets.actions.EYBActionWithCallback;
 import eatyourbeets.powers.CombatStats;

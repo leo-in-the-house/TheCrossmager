@@ -1,6 +1,7 @@
 package eatyourbeets.relics.animator;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;

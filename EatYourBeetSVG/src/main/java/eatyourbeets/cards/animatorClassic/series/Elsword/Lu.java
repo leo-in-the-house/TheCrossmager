@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.orbs.Dark;
 import com.megacrit.cardcrawl.orbs.Frost;
 import com.megacrit.cardcrawl.vfx.combat.ClawEffect;
 import eatyourbeets.cards.base.*;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.stances.WrathStance;
 import eatyourbeets.utilities.GameActions;

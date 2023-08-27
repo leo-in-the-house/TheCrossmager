@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.series.Katanagatari.Nanami;
 import eatyourbeets.cards.base.AnimatorClassicCard;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.EYBCard;
 import eatyourbeets.cards.base.EYBCardTooltip;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;

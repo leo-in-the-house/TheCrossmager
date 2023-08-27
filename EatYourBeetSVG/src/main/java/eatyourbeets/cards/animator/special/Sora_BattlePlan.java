@@ -2,6 +2,7 @@ package eatyourbeets.cards.animator.special;
 
 import eatyourbeets.cards.animator.series.NoGameNoLife.Sora;
 import eatyourbeets.cards.base.AnimatorCard;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardSeries;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.resources.GR;

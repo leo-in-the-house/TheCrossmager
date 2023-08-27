@@ -2,6 +2,7 @@ package eatyourbeets.effects.card;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
 public class HideCardEffect extends AbstractGameEffect

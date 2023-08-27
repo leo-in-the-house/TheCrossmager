@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.vfx.combat.WhirlwindEffect;
 import eatyourbeets.actions.damage.DealDamageToRandomEnemy;
 import eatyourbeets.cards.animatorClassic.special.OrbCore;
 import eatyourbeets.cards.base.*;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.interfaces.delegates.ActionT0;

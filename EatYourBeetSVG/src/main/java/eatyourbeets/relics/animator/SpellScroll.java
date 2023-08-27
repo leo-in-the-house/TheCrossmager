@@ -1,6 +1,7 @@
 package eatyourbeets.relics.animator;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.Affinity;
 import eatyourbeets.effects.SFX;
 import eatyourbeets.powers.CombatStats;

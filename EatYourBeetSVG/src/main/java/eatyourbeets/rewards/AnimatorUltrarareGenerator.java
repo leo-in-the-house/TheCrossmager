@@ -1,6 +1,7 @@
 package eatyourbeets.rewards;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.random.Random;
 import eatyourbeets.cards.base.AnimatorCard_UltraRare;

@@ -3,6 +3,7 @@ package eatyourbeets.cards.animator.series.TenseiSlime;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.GameActions;
 
 public class Shuna extends AnimatorCard

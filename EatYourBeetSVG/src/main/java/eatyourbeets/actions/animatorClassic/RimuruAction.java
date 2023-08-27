@@ -1,6 +1,7 @@
 package eatyourbeets.actions.animatorClassic;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import eatyourbeets.actions.EYBAction;
 import eatyourbeets.cards.animatorClassic.series.TenseiSlime.Rimuru;

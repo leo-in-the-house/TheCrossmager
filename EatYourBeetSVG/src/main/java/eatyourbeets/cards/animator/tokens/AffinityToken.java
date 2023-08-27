@@ -1,12 +1,14 @@
 package eatyourbeets.cards.animator.tokens;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.random.Random;
 import eatyourbeets.actions.pileSelection.SelectFromPile;
 import eatyourbeets.cards.animator.colorless.uncommon.AffinityToken_General;
 import eatyourbeets.cards.base.*;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.resources.GR;
 import eatyourbeets.utilities.*;

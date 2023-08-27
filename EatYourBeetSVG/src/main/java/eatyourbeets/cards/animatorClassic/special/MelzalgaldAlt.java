@@ -1,6 +1,7 @@
 package eatyourbeets.cards.animatorClassic.special;
 
 import eatyourbeets.cards.base.AnimatorClassicCard;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardSeries;
 import eatyourbeets.cards.base.EYBCardData;
 

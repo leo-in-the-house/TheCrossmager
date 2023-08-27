@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.orbs.Lightning;
 import eatyourbeets.cards.base.*;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.interfaces.subscribers.OnAffinitySealedSubscriber;
 import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.powers.CombatStats;

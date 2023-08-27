@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.powers.EquilibriumPower;
 import eatyourbeets.cards.animator.curse.special.Curse_GriefSeed;
 import eatyourbeets.cards.animator.series.MadokaMagica.SayakaMiki;
 import eatyourbeets.cards.base.*;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.effects.VFX;
 import eatyourbeets.utilities.GameActions;

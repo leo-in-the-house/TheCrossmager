@@ -1,6 +1,7 @@
 package eatyourbeets.cards.effects.VestaElixirEffects;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.random.Random;
 import eatyourbeets.cards.animator.series.TenseiSlime.Vesta;

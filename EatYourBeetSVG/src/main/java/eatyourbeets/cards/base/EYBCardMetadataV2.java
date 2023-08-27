@@ -2,6 +2,7 @@ package eatyourbeets.cards.base;
 
 import com.google.gson.annotations.SerializedName;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.JUtils;
 
 public class EYBCardMetadataV2

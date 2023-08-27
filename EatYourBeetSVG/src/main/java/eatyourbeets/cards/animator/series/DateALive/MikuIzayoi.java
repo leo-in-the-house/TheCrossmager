@@ -3,6 +3,7 @@ package eatyourbeets.cards.animator.series.DateALive;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.misc.GenericEffects.GenericEffect_GainStat;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;

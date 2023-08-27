@@ -3,6 +3,7 @@ package eatyourbeets.cards.animatorClassic.series.Konosuba;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
 

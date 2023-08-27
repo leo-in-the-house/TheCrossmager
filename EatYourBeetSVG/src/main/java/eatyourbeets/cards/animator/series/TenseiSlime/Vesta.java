@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import eatyourbeets.cards.animator.special.Vesta_Elixir;
 import eatyourbeets.cards.base.*;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.effects.VestaElixirEffects.VestaElixirEffect;
 import eatyourbeets.cards.effects.VestaElixirEffects.VestaElixirEffect_CompleteFaster;
 import eatyourbeets.cards.effects.VestaElixirEffects.VestaElixirEffects;

@@ -3,6 +3,7 @@ package eatyourbeets.rewards.animator;
 import basemod.BaseMod;
 import basemod.abstracts.CustomReward;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.rewards.RewardSave;

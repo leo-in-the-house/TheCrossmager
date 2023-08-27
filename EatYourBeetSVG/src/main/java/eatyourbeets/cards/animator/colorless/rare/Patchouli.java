@@ -1,6 +1,7 @@
 package eatyourbeets.cards.animator.colorless.rare;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -14,6 +15,7 @@ import com.megacrit.cardcrawl.vfx.combat.WhirlwindEffect;
 import eatyourbeets.actions.damage.DealDamageToRandomEnemy;
 import eatyourbeets.cards.animator.special.OrbCore;
 import eatyourbeets.cards.base.*;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.interfaces.delegates.ActionT0;

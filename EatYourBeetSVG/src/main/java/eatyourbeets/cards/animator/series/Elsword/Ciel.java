@@ -3,6 +3,7 @@ package eatyourbeets.cards.animator.series.Elsword;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.resources.GR;
 import eatyourbeets.utilities.GameActions;

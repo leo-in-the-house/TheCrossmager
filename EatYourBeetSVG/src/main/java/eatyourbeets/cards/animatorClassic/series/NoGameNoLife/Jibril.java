@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.vfx.combat.ShockWaveEffect;
 import eatyourbeets.actions.orbs.ShuffleOrbs;
 import eatyourbeets.actions.orbs.TriggerOrbPassiveAbility;
 import eatyourbeets.cards.base.*;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;

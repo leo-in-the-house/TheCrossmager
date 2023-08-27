@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.ui.cards.CardPreview;
 import eatyourbeets.utilities.CardSelection;
 import eatyourbeets.utilities.GameActions;

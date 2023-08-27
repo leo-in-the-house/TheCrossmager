@@ -4,6 +4,7 @@ import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.EmptyDeckShuffleAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.powers.NoDrawPower;
 import eatyourbeets.actions.EYBActionWithCallback;
 import eatyourbeets.interfaces.delegates.FuncT1;

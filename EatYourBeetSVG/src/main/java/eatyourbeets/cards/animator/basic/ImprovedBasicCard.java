@@ -2,6 +2,7 @@ package eatyourbeets.cards.animator.basic;
 
 import eatyourbeets.cards.base.Affinity;
 import eatyourbeets.cards.base.AnimatorCard;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.resources.GR;
 import eatyourbeets.utilities.AdvancedTexture;

@@ -2,6 +2,7 @@ package eatyourbeets.actions.animatorClassic;
 
 import com.megacrit.cardcrawl.actions.common.EmptyDeckShuffleAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import eatyourbeets.actions.cardManipulation.PlayCard;
 import eatyourbeets.cards.animatorClassic.series.OwariNoSeraph.Guren;

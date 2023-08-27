@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.orbs.Frost;
 import com.megacrit.cardcrawl.vfx.combat.FallingIceEffect;
 import eatyourbeets.cards.base.*;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.monsters.EnemyIntent;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;

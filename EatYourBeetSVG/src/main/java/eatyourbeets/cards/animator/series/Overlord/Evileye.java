@@ -3,6 +3,7 @@ package eatyourbeets.cards.animator.series.Overlord;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.effects.GenericEffects.GenericEffect_Draw;
 import eatyourbeets.cards.effects.GenericEffects.GenericEffect_GainOrBoost;
 import eatyourbeets.cards.effects.GenericEffects.GenericEffect_GainOrbSlots;

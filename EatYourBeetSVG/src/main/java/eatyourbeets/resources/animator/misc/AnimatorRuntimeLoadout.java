@@ -1,10 +1,12 @@
 package eatyourbeets.resources.animator.misc;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import eatyourbeets.cards.base.*;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.resources.GR;
 import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.JUtils;

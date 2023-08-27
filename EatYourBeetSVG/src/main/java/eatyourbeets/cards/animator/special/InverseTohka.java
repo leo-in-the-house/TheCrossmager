@@ -11,7 +11,9 @@ import eatyourbeets.utilities.GameUtilities;
 
 public class InverseTohka extends AnimatorCard
 {
-    public static final EYBCardData DATA = Register(InverseTohka.class).SetAttack(1, CardRarity.SPECIAL, EYBAttackType.Normal, EYBCardTarget.ALL).SetSeries(CardSeries.DateALive);
+    public static final EYBCardData DATA = Register(InverseTohka.class)
+            .SetAttack(2, CardRarity.SPECIAL, EYBAttackType.Normal, EYBCardTarget.ALL).SetSeries(CardSeries.DateALive)
+            .SetSeries(CardSeries.DateALive);
 
     public InverseTohka()
     {
@@ -19,10 +21,28 @@ public class InverseTohka extends AnimatorCard
 
         Initialize(8, 0, 2, 1);
         SetUpgrade(3, 0);
-        SetAffinity_Fire(2, 0, 0);
-        SetAffinity_Dark(1, 0, 0);
+        SetAffinity_Dark(2, 0, 2);
+    }
 
-        SetAutoplay(true);
+    @Override
+    protected void OnUpgrade()
+    {
+        AddScaling(Affinity.Dark, 3);
+    }
+
+    @Override
+    public void triggerOnOtherCardPlayed(AbstractCard c)
+    {
+        super.triggerOnOtherCardPlayed(c);
+
+        if (c.type == CardType.SKILL)
+        {
+            int half_amount = c.block / 2;
+
+            if (half_amount > 0) {
+                GameActions.Bottom.GainDark(half_amount);
+            }
+        }
     }
 
     @Override

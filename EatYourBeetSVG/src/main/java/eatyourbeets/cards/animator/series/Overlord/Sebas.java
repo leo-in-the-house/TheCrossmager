@@ -3,6 +3,7 @@ package eatyourbeets.cards.animator.series.Overlord;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.monsters.EnemyIntent;
 import eatyourbeets.powers.common.CounterAttackPower;
 import eatyourbeets.stances.AgilityStance;

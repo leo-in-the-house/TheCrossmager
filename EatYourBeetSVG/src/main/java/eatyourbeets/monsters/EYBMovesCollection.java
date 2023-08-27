@@ -1,6 +1,7 @@
 package eatyourbeets.monsters;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import eatyourbeets.monsters.SharedMoveset.*;
 import eatyourbeets.monsters.SharedMoveset.special.EYBMove_ShuffleCard;

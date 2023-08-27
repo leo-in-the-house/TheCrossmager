@@ -27,6 +27,7 @@ import com.megacrit.cardcrawl.stances.AbstractStance;
 import eatyourbeets.actions.EYBAction;
 import eatyourbeets.actions.special.HasteAction;
 import eatyourbeets.cards.base.*;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.characters.EYBPlayerCharacter;
 import eatyourbeets.interfaces.listeners.OnCardResetListener;
 import eatyourbeets.interfaces.subscribers.*;

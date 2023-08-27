@@ -1,6 +1,7 @@
 package eatyourbeets.powers.animatorClassic;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.interfaces.subscribers.OnSynergyCheckSubscriber;

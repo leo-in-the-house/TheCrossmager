@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.vfx.BorderLongFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.ShockWaveEffect;
 import eatyourbeets.cards.animator.colorless.uncommon.IchigoKurosaki;
 import eatyourbeets.cards.base.*;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;

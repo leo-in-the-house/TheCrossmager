@@ -1,6 +1,7 @@
 package eatyourbeets.powers.animatorClassic;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import eatyourbeets.cards.animatorClassic.special.HinaKagiyama;
 import eatyourbeets.cards.animatorClassic.special.HinaKagiyama_Miracle;

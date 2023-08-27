@@ -1,6 +1,7 @@
 package eatyourbeets.powers.unnamed;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import eatyourbeets.interfaces.subscribers.OnPlayerMinionActionSubscriber;
 import eatyourbeets.powers.CombatStats;

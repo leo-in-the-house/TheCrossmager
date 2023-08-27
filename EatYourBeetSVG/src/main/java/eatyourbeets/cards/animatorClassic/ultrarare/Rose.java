@@ -3,6 +3,7 @@ package eatyourbeets.cards.animatorClassic.ultrarare;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Rose extends AnimatorClassicCard_UltraRare
 {

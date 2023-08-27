@@ -1,6 +1,7 @@
 package eatyourbeets.cards.base;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.animator.colorless.uncommon.QuestionMark;
 import eatyourbeets.resources.GR;
 

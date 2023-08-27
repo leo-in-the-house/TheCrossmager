@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.actions.animator.CreateRandomGoblins;
 import eatyourbeets.cards.animator.series.GoblinSlayer.GoblinSlayer;
 import eatyourbeets.cards.base.*;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.GameActions;
 
 public class GoblinKing extends AnimatorCard

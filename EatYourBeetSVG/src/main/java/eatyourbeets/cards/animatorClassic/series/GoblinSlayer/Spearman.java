@@ -1,12 +1,14 @@
 package eatyourbeets.cards.animatorClassic.series.GoblinSlayer;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.cards.status.Wound;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.stances.NeutralStance;
 import eatyourbeets.cards.animator.status.Status_Wound;
 import eatyourbeets.cards.base.*;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.effects.GenericEffects.GenericEffect_EnterStance;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.powers.CombatStats;

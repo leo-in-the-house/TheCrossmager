@@ -2,6 +2,7 @@ package eatyourbeets.resources.animator.misc;
 
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import eatyourbeets.cards.base.EYBCard;
 import eatyourbeets.cards.base.EYBCardAffinities;

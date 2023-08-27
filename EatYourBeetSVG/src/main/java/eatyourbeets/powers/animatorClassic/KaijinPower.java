@@ -2,6 +2,7 @@ package eatyourbeets.powers.animatorClassic;
 
 import com.megacrit.cardcrawl.actions.unique.RetainCardsAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import eatyourbeets.powers.AnimatorClassicPower;

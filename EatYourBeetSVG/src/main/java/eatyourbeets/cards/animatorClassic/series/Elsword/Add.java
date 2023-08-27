@@ -1,6 +1,7 @@
 package eatyourbeets.cards.animatorClassic.series.Elsword;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -9,6 +10,7 @@ import com.megacrit.cardcrawl.powers.EnergizedBluePower;
 import eatyourbeets.cards.animatorClassic.special.OrbCore;
 import eatyourbeets.cards.animatorClassic.status.Crystallize;
 import eatyourbeets.cards.base.AnimatorClassicCard;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;

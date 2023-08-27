@@ -1,6 +1,7 @@
 package eatyourbeets.powers.common;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import eatyourbeets.powers.CommonPower;

@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.relics.Sozu;
 import eatyourbeets.actions.special.SelectCreature;
 import eatyourbeets.cards.base.*;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.effects.VFX;
 import eatyourbeets.interfaces.listeners.OnAddToDeckListener;
 import eatyourbeets.utilities.GameActions;

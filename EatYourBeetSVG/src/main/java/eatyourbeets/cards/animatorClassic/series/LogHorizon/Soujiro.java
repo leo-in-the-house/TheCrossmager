@@ -1,6 +1,7 @@
 package eatyourbeets.cards.animatorClassic.series.LogHorizon;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
@@ -10,6 +11,7 @@ import eatyourbeets.cards.animatorClassic.special.Soujiro_Isami;
 import eatyourbeets.cards.animatorClassic.special.Soujiro_Kawara;
 import eatyourbeets.cards.animatorClassic.special.Soujiro_Nazuna;
 import eatyourbeets.cards.base.AnimatorClassicCard;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBAttackType;
 import eatyourbeets.cards.base.EYBCardData;

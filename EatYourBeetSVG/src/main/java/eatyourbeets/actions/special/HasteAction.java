@@ -2,6 +2,7 @@ package eatyourbeets.actions.special;
 
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import eatyourbeets.actions.EYBAction;
 import eatyourbeets.resources.GR;

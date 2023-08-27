@@ -1,6 +1,7 @@
 package eatyourbeets.interfaces.listeners;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.utilities.GameUtilities;
 
 public interface OnAddToDeckListener
 {

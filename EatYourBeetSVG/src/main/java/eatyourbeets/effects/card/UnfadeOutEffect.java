@@ -1,6 +1,7 @@
 package eatyourbeets.effects.card;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.core.Settings;
 import eatyourbeets.effects.EYBEffect;
 

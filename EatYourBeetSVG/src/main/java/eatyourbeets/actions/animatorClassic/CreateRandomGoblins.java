@@ -1,6 +1,7 @@
 package eatyourbeets.actions.animatorClassic;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.random.Random;
 import eatyourbeets.actions.EYBActionWithCallback;
@@ -9,6 +10,7 @@ import eatyourbeets.cards.animatorClassic.status.GoblinKing;
 import eatyourbeets.cards.animatorClassic.status.GoblinShaman;
 import eatyourbeets.cards.animatorClassic.status.GoblinSoldier;
 import eatyourbeets.cards.base.AnimatorClassicCard;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.interfaces.delegates.ActionT1;
 import eatyourbeets.utilities.GameActions;
 

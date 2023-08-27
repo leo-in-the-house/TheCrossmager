@@ -2,6 +2,7 @@ package eatyourbeets.cards.animatorClassic.basic;
 
 import com.badlogic.gdx.graphics.Color;
 import eatyourbeets.cards.base.AnimatorClassicCard;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.resources.GR;
 import eatyourbeets.utilities.AdvancedTexture;

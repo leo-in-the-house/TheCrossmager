@@ -3,6 +3,7 @@ package eatyourbeets.cards.animatorClassic.series.Fate;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.stances.WrathStance;
 import eatyourbeets.utilities.GameActions;

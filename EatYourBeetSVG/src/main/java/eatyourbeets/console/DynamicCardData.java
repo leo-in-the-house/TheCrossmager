@@ -2,9 +2,11 @@ package eatyourbeets.console;
 
 import com.badlogic.gdx.Gdx;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import eatyourbeets.cards.animator.colorless.uncommon.QuestionMark;
 import eatyourbeets.cards.base.AnimatorCard;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.AnimatorCardBuilder;
 import eatyourbeets.cards.base.AnimatorCard_Dynamic;
 import eatyourbeets.cards.base.EYBCard;

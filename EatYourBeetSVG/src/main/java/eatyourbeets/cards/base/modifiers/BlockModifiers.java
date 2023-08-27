@@ -3,6 +3,7 @@ package eatyourbeets.cards.base.modifiers;
 import com.evacipated.cardcrawl.modthespire.lib.SpireField;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import eatyourbeets.utilities.GameUtilities;
+import eatyourbeets.utilities.GameUtilities;
 import patches.abstractCard.AbstractCardPatches;
 
 public class BlockModifiers extends AbstractModifiers

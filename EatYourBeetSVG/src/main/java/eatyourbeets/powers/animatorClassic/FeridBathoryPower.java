@@ -2,6 +2,7 @@ package eatyourbeets.powers.animatorClassic;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import eatyourbeets.cards.animator.series.OwariNoSeraph.FeridBathory;

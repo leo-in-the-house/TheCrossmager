@@ -1,11 +1,13 @@
 package eatyourbeets.actions.animator;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.core.Settings;
 import eatyourbeets.actions.EYBAction;
 import eatyourbeets.cards.animator.colorless.uncommon.QuestionMark;
 import eatyourbeets.cards.base.Affinity;
 import eatyourbeets.cards.base.AnimatorCard;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.EYBCardAffinity;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameUtilities;

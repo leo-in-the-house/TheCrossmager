@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.modthespire.lib.SpireOverride;
 import com.evacipated.cardcrawl.modthespire.lib.SpireSuper;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.cards.blue.*;
 import com.megacrit.cardcrawl.cards.colorless.*;
 import com.megacrit.cardcrawl.cards.curses.AscendersBane;

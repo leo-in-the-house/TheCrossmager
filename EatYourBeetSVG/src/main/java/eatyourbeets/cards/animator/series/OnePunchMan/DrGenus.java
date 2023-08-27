@@ -1,12 +1,14 @@
 package eatyourbeets.cards.animator.series.OnePunchMan;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import eatyourbeets.cards.base.*;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.modifiers.BlockModifiers;
 import eatyourbeets.cards.base.modifiers.CostModifiers;
 import eatyourbeets.cards.base.modifiers.DamageModifiers;

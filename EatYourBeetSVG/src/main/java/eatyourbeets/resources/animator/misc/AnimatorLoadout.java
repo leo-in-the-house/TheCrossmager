@@ -1,6 +1,7 @@
 package eatyourbeets.resources.animator.misc;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
@@ -11,6 +12,7 @@ import eatyourbeets.cards.animator.basic.ImprovedDefend;
 import eatyourbeets.cards.animator.basic.ImprovedStrike;
 import eatyourbeets.cards.animator.basic.Strike;
 import eatyourbeets.cards.base.*;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.characters.AnimatorCharacter;
 import eatyourbeets.relics.animator.LivingPicture;
 import eatyourbeets.resources.GR;

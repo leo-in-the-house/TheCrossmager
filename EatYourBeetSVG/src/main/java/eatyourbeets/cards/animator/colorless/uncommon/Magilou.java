@@ -7,6 +7,7 @@ import eatyourbeets.actions.orbs.TriggerOrbPassiveAbility;
 import eatyourbeets.actions.utility.WaitRealtimeAction;
 import eatyourbeets.cards.animator.special.Magilou_Bienfu;
 import eatyourbeets.cards.base.*;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.interfaces.listeners.OnCardResetListener;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;

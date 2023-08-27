@@ -6,6 +6,7 @@ import eatyourbeets.cards.animatorClassic.special.Melzalgald_B;
 import eatyourbeets.cards.animatorClassic.special.Melzalgald_G;
 import eatyourbeets.cards.animatorClassic.special.Melzalgald_R;
 import eatyourbeets.cards.base.AnimatorClassicCard;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.AttackEffects;
