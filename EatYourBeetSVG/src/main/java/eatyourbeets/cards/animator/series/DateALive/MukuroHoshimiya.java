@@ -6,20 +6,21 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
 public class MukuroHoshimiya extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(MukuroHoshimiya.class)
-            .SetSkill(1, CardRarity.RARE)
+            .SetSkill(1, CardRarity.RARE, EYBCardTarget.None)
             .SetSeriesFromClassPackage();
 
     public MukuroHoshimiya()
     {
         super(DATA);
 
-        Initialize(0, 0, 6, 4);
+        Initialize(0, 0, 6, 2);
         SetUpgrade(0,0,0, 2);
 
         SetAffinity_Light(2);
@@ -49,10 +50,12 @@ public class MukuroHoshimiya extends AnimatorCard
     {
         GameUtilities.PlayVoiceSFX(name);
 
-        for (AbstractCard card : player.hand.group) {
-            GameActions.Bottom.SealAffinities(card, true);
-        }
+        GameActions.Bottom.Draw(secondaryValue)
+        .AddCallback(c -> {
+            for (AbstractCard card : player.hand.group) {
+                GameActions.Top.SealAffinities(card, false);
+            }
+        });
 
-        GameActions.Bottom.Draw(secondaryValue);
     }
 }

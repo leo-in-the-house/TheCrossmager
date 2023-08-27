@@ -4,7 +4,6 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.helpers.GameDictionary;
 import com.megacrit.cardcrawl.helpers.TipHelper;
@@ -115,6 +114,9 @@ public class CardTooltips
     public EYBCardTooltip Fading = FindByID(null, "~Fading");
     public EYBCardTooltip Haste = FindByID(null, "~Haste");
     public EYBCardTooltip Retain = FindByID(null, "~Retain");
+    public EYBCardTooltip Autoplay = FindByID(null, "Autoplay");
+    public EYBCardTooltip Loyal = FindByID(null, "Loyal");
+    public EYBCardTooltip Protagonist = FindByID(null, "Protagonist");
     public EYBCardTooltip Metallicize = FindByID(null, "Metallicize");
     public EYBCardTooltip PlatedArmor = FindByID(null, "Plated Armor");
     public EYBCardTooltip CounterAttack = FindByID(null, "Counter-Attack");
@@ -322,6 +324,9 @@ public class CardTooltips
         Purge.SetIcon(badges.Purge.Texture(), 6);
         Recast.SetIcon(badges.Recast.Texture(), 6);
         Fading.SetIcon(badges.Fading.Texture(), 6);
+        Autoplay.SetIcon(badges.Autoplay.Texture(), 6);
+        Loyal.SetIcon(badges.Loyal.Texture(), 6);
+        Protagonist.SetIcon(badges.Protagonist.Texture(), 6);
 
         CommonImages.CardIcons icons = GR.Common.Images.Icons;
         Ranged.SetIcon(icons.Ranged.Texture(), 6);

@@ -95,6 +95,9 @@ public class CommonImages
         public final TextureCache Retain                  = new TextureCache("images/eyb/cardui/badges/Retain.png");
         public final TextureCache RetainOnce              = new TextureCache("images/eyb/cardui/badges/RetainOnce.png");
         public final TextureCache Haste                   = new TextureCache("images/eyb/cardui/badges/Haste.png");
+        public final TextureCache Autoplay                = new TextureCache("images/eyb/cardui/badges/Autoplay.png");
+        public final TextureCache Loyal                   = new TextureCache("images/eyb/cardui/badges/Loyal.png");
+        public final TextureCache Protagonist             = new TextureCache("images/eyb/cardui/badges/Protagonist.png");
         public final TextureCache Recast                  = new TextureCache("images/eyb/cardui/badges/Recast.png");
     }
 

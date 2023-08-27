@@ -14,7 +14,6 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.utility.TextAboveCreatureAction;
 import com.megacrit.cardcrawl.blights.AbstractBlight;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -44,7 +43,6 @@ import com.megacrit.cardcrawl.ui.FtueTip;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.modifiers.CostModifiers;
 import eatyourbeets.effects.SFX;
 import eatyourbeets.interfaces.delegates.ActionT1;
@@ -74,7 +72,8 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.util.*;
 
-import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.*;
+import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager;
+import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.player;
 
 public class GameUtilities
 {
@@ -1313,6 +1312,24 @@ public class GameUtilities
     public static boolean HasOrb(String orbID)
     {
         return GetOrbCount(orbID) > 0;
+    }
+
+    public static int GetEmptyOrbCount()
+    {
+
+        int count = 0;
+        if (player != null && player.orbs != null)
+        {
+            for (AbstractOrb orb : player.orbs)
+            {
+                if (orb.ID == null)
+                {
+                    count += 1;
+                }
+            }
+        }
+
+        return count;
     }
 
     public static int GetOrbCount(String orbID)

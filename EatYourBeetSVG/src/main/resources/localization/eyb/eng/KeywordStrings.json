@@ -9,7 +9,7 @@
 	"Autoplay":
 	{
 		"DESCRIPTION": "Automatically played, using your [E].",
-		"NAMES": ["autoplay", "autoplayed"],
+		"NAMES": ["autoplay", "autoplayed","~autoplay"],
 		"PROPER_NAME": "Autoplay"
 	},
 	"Burn":
@@ -210,6 +210,12 @@
 		"NAMES": ["low-cost", "low cost"],
 		"PROPER_NAME": "Low-Cost Card"
 	},
+	"Loyal":
+	{
+		"DESCRIPTION": "If this would enter your discard pile, move it to your draw pile instead.",
+		"NAMES": ["loyal"],
+		"PROPER_NAME": "Loyal"
+	},
 	"Malleable":
 	{
 		"DESCRIPTION": "Upon receiving damage, gain #yBlock. #yBlock gain increases as this power is triggered. Resets at the start of turn.",
@@ -263,6 +269,12 @@
 		"DESCRIPTION": "At the start of each turn, lose [HP] equal to [Poison], then reduce [Poison] by #b1.",
 		"NAMES": ["poison"],
 		"PROPER_NAME": "Poison"
+	},
+	"Protagonist":
+	{
+		"DESCRIPTION": "When you add this card to your deck: Add 1 of 4 Non-Rare Same-Series cards to your deck.  This is NOT optional.",
+		"NAMES": ["protagonist"],
+		"PROPER_NAME": "Protagonist"
 	},
 	"Purge":
 	{

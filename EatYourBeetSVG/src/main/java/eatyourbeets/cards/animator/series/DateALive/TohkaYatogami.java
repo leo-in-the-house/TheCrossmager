@@ -2,30 +2,31 @@ package eatyourbeets.cards.animator.series.DateALive;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import eatyourbeets.cards.animator.curse.common.Curse_Depression;
 import eatyourbeets.cards.animator.special.InverseTohka;
 import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBAttackType;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.modifiers.CostModifiers;
-import eatyourbeets.interfaces.subscribers.OnBlockGainedSubscriber;
+import eatyourbeets.ui.common.EYBCardPopupActions;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
-public class TohkaYatogami extends AnimatorCard implements OnBlockGainedSubscriber
+public class TohkaYatogami extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(TohkaYatogami.class)
             .SetAttack(2, CardRarity.UNCOMMON, EYBAttackType.Normal)
-            .SetSeriesFromClassPackage();
+            .SetSeriesFromClassPackage()
+            .PostInitialize(data ->
+            {
+                data.AddPopupAction(new EYBCardPopupActions.DAL_Inversion(InverseTohka.DATA));
+                data.AddPreview(new InverseTohka(), false);
+                data.AddPreview(new Curse_Depression(), false);
+            });
 
     private boolean transformed;
-
-    static
-    {
-        DATA.AddPreview(new InverseTohka(), true);
-    }
 
     public TohkaYatogami()
     {
@@ -43,17 +44,18 @@ public class TohkaYatogami extends AnimatorCard implements OnBlockGainedSubscrib
     }
 
     @Override
-    public void OnBlockGained(AbstractCreature creature, int block) {
+    public void Refresh(AbstractMonster enemy) {
+        super.Refresh(enemy);
         RefreshCost();
     }
 
     public void RefreshCost()
     {
         if (player.currentBlock >= 10) {
-            CostModifiers.For(this).Set(cardData.BaseCost - magicNumber);
+            CostModifiers.For(this).Add("Tohka", -1 * magicNumber);
         }
         else {
-            CostModifiers.For(this).Set(cardData.BaseCost);
+            CostModifiers.For(this).Remove("Tohka");
         }
     }
 

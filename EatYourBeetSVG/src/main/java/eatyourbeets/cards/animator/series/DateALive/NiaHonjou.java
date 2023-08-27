@@ -38,7 +38,7 @@ public class NiaHonjou extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.StackPower(new NiaHonjouPower(p, magicNumber));
+        GameActions.Bottom.StackPower(new NiaHonjouPower(p, 1));
     }
 
     @Override

@@ -614,8 +614,8 @@
 		},
 		"animator:KurumiTokisaki":
 		{
-			"DESCRIPTION": "Gain !M! [Blur]. || Next turn: Draw !M! cards.",
-			"UPGRADE_DESCRIPTION": "Gain !M! [Blur]. || Next turn: Draw !M! cards and Gain !M! [E]",
+			"DESCRIPTION": "Gain !M! [~Blur]. || Next turn: Draw !M! cards.",
+			"UPGRADE_DESCRIPTION": "Gain !M! [~Blur]. || Next turn: Draw !M! cards and Gain !M! [E]",
 			"NAME": "Kurumi Tokisaki"
 		},
 		"animator:MikuIzayoi":
@@ -635,7 +635,7 @@
 		},
 		"animator:MukuroHoshimiya":
 		{
-			"DESCRIPTION": "This card can only be played if you have at least !M! [Block]. || {Seal} all cards in your hand, then draw !S! cards..",
+			"DESCRIPTION": "This card can only be played if you have at least !M! [Block]. || Draw !S! cards. {Seal} all cards in your hand.",
 			"NAME": "Mukuro Hoshimiya"
 		},
 		"animator:Natsumi":
@@ -647,7 +647,7 @@
 		"animator:NiaHonjou":
 		{
 			"DESCRIPTION": "Whenever you play a card with [Block] this turn: Draw a card.",
-			"EXTENDED_DESCRIPTION": ["Whenever you play a card with #yBlock this turn: Draw a card."],
+			"EXTENDED_DESCRIPTION": ["Whenever you play a card with #yBlock this turn: Draw #b{0} cards."],
 			"NAME": "Nia Honjou"
 		},
 		"animator:OrigamiTobiichi":
@@ -658,7 +658,7 @@
 		},
 		"animator:ReineMurasame":
 		{
-			"DESCRIPTION": "Add X copies of {Shido Itsuka} to your draw pile.  {Motivate} them. || !A! [B]: Draw !S! cards next turn.",
+			"DESCRIPTION": "Add X copies of {Shido Itsuka} to your draw pile.  {Motivate} them. || !A! [B]: Draw X cards next turn.",
 			"NAME": "Reine Murasame"
 		},
 		"animator:ShidoItsuka":
@@ -683,7 +683,7 @@
 		},
 		"animator:YoshinoHimekawa":
 		{
-			"DESCRIPTION": "Increase the amount on all [Frost] by !M! this combat. || <LIM>. When drawn: Add {Zadkiel} to your draw pile.",
+			"DESCRIPTION": "Increase the amount on all [Frost] by !M! this combat. || When drawn with {Haste}: Add {Zadkiel} to your draw pile.",
 			"NAME": "Yoshino Himekawa"
 		},
 		"animator:Zadkiel":

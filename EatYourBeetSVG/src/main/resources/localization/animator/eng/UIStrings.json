@@ -233,15 +233,18 @@
 			"Transform. Receive [Grief Seed].",
 			"Transform. Lose #b{0} [HP].",
 			"Transform. Lose #b{0} Max [HP].",
-			"Transform this card into {0}. NL You can only perform this action at #yRest #ySites, and if you don't already have {0}.",
-			"If you have {0}, transform this card into {1}. NL You can only perform this action at #yRest #ySites, and if you don't already have {1}.",
-			"Remove {0} and {1} to transform this card into {2}. NL You can only perform this action at #yRest #ySites, and if you don't already have {2}.",
-			
+			"Transform this card into {0}. NL You can only perform this action at #yRest #ySites.",
+			"If you have {0}, transform this card into {1}. NL You can only perform this action at #yRest #ySites.",
+			"Remove {0} and {1} to transform this card into {2}. NL You can only perform this action at #yRest #ySites.",
+
+			"Inverse Transformation.",
+			"Transform this card into {0} and a #yDepression. NL You can only perform this action at #yRest #ySites.",
+
 			"Obtain card. Gain #b{0} [Vulnerable].",
-			"Obtain {0} and start your next combat with #b{1} [Vulnerable]. NL You can only perform this action at #yRest #ySites, and if you don't already have {0}.",
+			"Obtain {0} and start your next combat with #b{1} [Vulnerable]. NL You can only perform this action at #yRest #ySites.",
 			
 			"Obtain Curse. Heal #b{0} [HP].",
-			"If you have at least #b{0} Curses, Obtain {1}. NL You can only perform this action at #yRest #ySites, and if you don't already have {1}."
+			"If you have at least #b{0} Curses, Obtain {1}. NL You can only perform this action at #yRest #ySites."
 		]
 	},
 	

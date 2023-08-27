@@ -440,6 +440,19 @@ public class AnimatorStrings
             return JUtils.Format(D_Transform_RemoveCards_F3, f1, f2, f3);
         }
 
+        public final String T_Transform_GainDepression_F1 = Strings.TEXT[INDEX++];
+        public final String D_Transform_GainDepression_F2 = Strings.TEXT[INDEX++];
+
+        public final String TransformCardAndGainDepression()
+        {
+            return JUtils.Format(T_Transform_GainDepression_F1);
+        }
+
+        public final String TransformCardAndGainDepression_D(String cardName)
+        {
+            return JUtils.Format(D_Transform_GainDepression_F2, JUtils.ModifyString(cardName, w -> "#y" + w));
+        }
+
         public final String T_Obtain_GainVulnerable_F1 = Strings.TEXT[INDEX++];
         public final String D_Obtain_GainVulnerable_F2 = Strings.TEXT[INDEX++];
 

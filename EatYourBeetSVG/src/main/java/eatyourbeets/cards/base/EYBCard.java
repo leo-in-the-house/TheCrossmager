@@ -553,6 +553,13 @@ public abstract class EYBCard extends EYBCardBase
         {
             dynamicTooltips.add(GR.Tooltips.Fading);
         }
+
+        if (hasTag(EYBCard.AUTOPLAYED))
+        {
+            dynamicTooltips.add(GR.Tooltips.Autoplay);
+        }
+
+        //TODO: Add Loyal and Protagonist
         if (affinities.HasStar())
         {
             dynamicTooltips.add(GR.Tooltips.Affinity_Star);

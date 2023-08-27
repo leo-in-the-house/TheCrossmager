@@ -6,7 +6,6 @@ import com.badlogic.gdx.math.Interpolation;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.curses.AscendersBane;
 import com.megacrit.cardcrawl.core.Settings;
@@ -30,7 +29,6 @@ import eatyourbeets.cards.animator.special.Essence_Wolley;
 import eatyourbeets.cards.animator.special.OrbCore;
 import eatyourbeets.cards.animator.tokens.AffinityToken;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.effects.SFX;
 import eatyourbeets.misc.sts_exporter.Exporter;
@@ -522,6 +520,7 @@ public class ParseGenericCommand extends ConsoleCommand
 
                 if (tokens[1].equals("get-cards") && tokens.length > 2)
                 {
+                    //Example: parse get-cards DateALive
                     if (!GameUtilities.InGame() || player == null || player.masterDeck == null)
                     {
                         DevConsole.log("You need to be in game to use this command.");
@@ -533,14 +532,9 @@ public class ParseGenericCommand extends ConsoleCommand
                     if (name.equals("colorless"))
                     {
                         cards.addAll(CardSeries.Affinity.GetColorlessCards());
-
-                        if (GameUtilities.IsTestMode() && tokens.length > 3 && tokens[3].equals("ur"))
+                        for (AbstractCard c : AnimatorCard_UltraRare.GetCards().values())
                         {
-                            DevConsole.log("Test mode detected: Adding UltraRares.");
-                            for (AbstractCard c : AnimatorCard_UltraRare.GetCards().values())
-                            {
-                                cards.add((AnimatorCard) c.makeCopy());
-                            }
+                            cards.add((AnimatorCard) c.makeCopy());
                         }
                     }
                     else

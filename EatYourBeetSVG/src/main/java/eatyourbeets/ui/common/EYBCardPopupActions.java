@@ -1,13 +1,12 @@
 package eatyourbeets.ui.common;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import eatyourbeets.actions.pileSelection.SelectFromPile;
 import eatyourbeets.cards.animator.basic.*;
+import eatyourbeets.cards.animator.curse.common.Curse_Depression;
 import eatyourbeets.cards.animator.curse.special.Curse_GriefSeed;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.EYBCard;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.SFX;
@@ -40,7 +39,7 @@ public class EYBCardPopupActions
         @Override
         public boolean CanExecute(AbstractCard card)
         {
-            return IsRestRoom() && !HasCard(TARGET1) && HasHp(MAX_HP_LOSS) && HasCard(card) && HasCard(REQUIRED1);
+            return IsRestRoom() && HasHp(MAX_HP_LOSS) && HasCard(card) && HasCard(REQUIRED1);
         }
 
         @Override
@@ -73,7 +72,7 @@ public class EYBCardPopupActions
         @Override
         public boolean CanExecute(AbstractCard card)
         {
-            return IsRestRoom() && !HasCard(TARGET1) && HasHp(HP_LOSS) && HasCard(card) && HasCard(REQUIRED1);
+            return IsRestRoom() && HasHp(HP_LOSS) && HasCard(card) && HasCard(REQUIRED1);
         }
 
         @Override
@@ -108,7 +107,7 @@ public class EYBCardPopupActions
         @Override
         public boolean CanExecute(AbstractCard card)
         {
-            return IsRestRoom() && !HasCard(TARGET1) && HasHp(HP_LOSS) && HasCard(card) && HasCard(REQUIRED1) && HasCard(REQUIRED2);
+            return IsRestRoom() && HasHp(HP_LOSS) && HasCard(card) && HasCard(REQUIRED1) && HasCard(REQUIRED2);
         }
 
         @Override
@@ -149,7 +148,7 @@ public class EYBCardPopupActions
         @Override
         public boolean CanExecute(AbstractCard card)
         {
-            return IsRestRoom() && !HasCard(TARGET1) && HasCard(card);
+            return IsRestRoom() && HasCard(card);
         }
 
         @Override
@@ -161,6 +160,34 @@ public class EYBCardPopupActions
                 SFX.Play(SFX.TINGSHA, 0.4f);
                 Complete();
             }
+        }
+    }
+
+    public static class DAL_Inversion extends EYBCardPopupAction
+    {
+        protected final EYBCardData TARGET1;
+
+        public DAL_Inversion(EYBCardData targetCard)
+        {
+            TARGET1 = targetCard;
+
+            SetText(specialActions.TransformCardAndGainDepression(), terms.Obtain, specialActions.TransformCardAndGainDepression_D(TARGET1.Strings.NAME));
+        }
+
+        @Override
+        public boolean CanExecute(AbstractCard card)
+        {
+            return IsRestRoom() && HasCard(card);
+        }
+
+        @Override
+        public void Execute()
+        {
+            if (Replace(card, TARGET1.MakeCopy(card.upgraded)) != null) {
+                Obtain(new Curse_Depression().makeCopy());
+                SFX.Play(SFX.ORB_LIGHTNING_EVOKE, 0.4f);
+            };
+            Complete();
         }
     }
 
@@ -180,7 +207,7 @@ public class EYBCardPopupActions
         @Override
         public boolean CanExecute(AbstractCard card)
         {
-            return IsRestRoom() && !HasCard(TARGET1) && HasCard(card);
+            return IsRestRoom() && HasCard(card);
         }
 
         @Override
@@ -281,7 +308,7 @@ public class EYBCardPopupActions
         @Override
         public boolean CanExecute(AbstractCard card)
         {
-            return IsAnimator() && IsRestRoom() && !HasCard(TARGET1) && Count(c -> c.type == AbstractCard.CardType.CURSE) >= REQUIRED_CURSES;
+            return IsAnimator() && IsRestRoom()  && Count(c -> c.type == AbstractCard.CardType.CURSE) >= REQUIRED_CURSES;
         }
 
         @Override

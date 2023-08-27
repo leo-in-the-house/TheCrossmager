@@ -2,12 +2,15 @@ package eatyourbeets.cards.animator.series.DateALive;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import eatyourbeets.cards.animator.curse.common.Curse_Depression;
 import eatyourbeets.cards.animator.special.InverseOrigami;
+import eatyourbeets.cards.animator.special.InverseTohka;
 import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.powers.animator.SupportDamagePower;
+import eatyourbeets.ui.common.EYBCardPopupActions;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
@@ -15,11 +18,13 @@ public class OrigamiTobiichi extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(OrigamiTobiichi.class)
             .SetPower(2, CardRarity.UNCOMMON)
-            .SetSeriesFromClassPackage();
-    static
-    {
-        DATA.AddPreview(new InverseOrigami(), false);
-    }
+            .SetSeriesFromClassPackage()
+            .PostInitialize(data ->
+            {
+                data.AddPopupAction(new EYBCardPopupActions.DAL_Inversion(InverseTohka.DATA));
+                data.AddPreview(new InverseOrigami(), false);
+                data.AddPreview(new Curse_Depression(), false);
+            });
 
     public OrigamiTobiichi()
     {

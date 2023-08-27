@@ -27,9 +27,9 @@ public class ReineMurasame extends AnimatorCard
 
         SetExhaust(true);
 
-        SetAffinity_Blue(5);
+        SetAffinity_Blue(2);
 
-        SetAffinityRequirement(Affinity.Blue, 7);
+        SetAffinityRequirement(Affinity.Blue, 5);
         
     }
 
