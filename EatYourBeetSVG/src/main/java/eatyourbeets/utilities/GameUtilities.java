@@ -1282,6 +1282,10 @@ public class GameUtilities
 
     public static int GetPotentialXCostEnergy(AbstractCard card)
     {
+        if (!GameUtilities.InGame()) {
+            return 0;
+        }
+
         int amount = EnergyPanel.getCurrentEnergy();
 
         if (player.hasRelic(ChemicalX.ID))
