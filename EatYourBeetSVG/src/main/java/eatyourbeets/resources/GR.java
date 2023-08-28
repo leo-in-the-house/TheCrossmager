@@ -11,7 +11,6 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -439,6 +438,7 @@ public class GR
 
                     if (curAnimatorString.FLAVOR_TEXT != null) {
                         flavorTexts.put(curString.NAME, curAnimatorString.FLAVOR_TEXT);
+                        flavorTexts.put(curString.NAME+"+", curAnimatorString.FLAVOR_TEXT);
                     }
 
                     //Add voices

@@ -598,71 +598,84 @@
 		},
 		"animator:InverseOrigami":
 		{
+			"FLAVOR_TEXT": "'I want the absolute power to grant my dear wish! I want... The strongest power that no one can reach!'",
 			"DESCRIPTION": "Whenever you play a Skill while in hand: you gain [Support Damage] equal to half its [Block]. || Trigger your [Support Damage].",
 			"NAME": "Inverse Origami"
 		},
 		"animator:InverseTohka":
 		{
+			"FLAVOR_TEXT": "'Don’t let me... Don’t let ‘Tohka’ feel sad.'",
 			"DESCRIPTION": "Whenever you play a Skill while in hand: You gain [D] equal to half its [Block]. || Gain [Insanity].",
 			"NAME": "Inverse Tohka"
 		},
 		"animator:KotoriItsuka":
 		{
+			"FLAVOR_TEXT": "'The white me, is the weak me. If it wasn't the black, strong me, today would be impossible.'",
 			"DESCRIPTION": "Remove all of your [Block].  Apply half that much [Burning] on the enemy.",
 			"UPGRADE_DESCRIPTION": "Remove all of your [Block].  Apply that much [Burning] on the enemy.",
 			"NAME": "Kotori Itsuka"
 		},
 		"animator:KurumiTokisaki":
 		{
+			"FLAVOR_TEXT": "'You were ready to kill another creature, yet you're scared to be killed. Don't you think that's weird? When you point a gun at another life... This is what happens.'",
 			"DESCRIPTION": "Gain !M! [~Blur]. || Next turn: Draw !M! cards.",
 			"UPGRADE_DESCRIPTION": "Gain !M! [~Blur]. || Next turn: Draw !M! cards and Gain !M! [E]",
 			"NAME": "Kurumi Tokisaki"
 		},
 		"animator:MikuIzayoi":
 		{
+			"FLAVOR_TEXT": "'You kept our promise. If it's you, there's no problem. Only you... I can trust.'",
 			"DESCRIPTION": "On Discard: Increase the [Block] for all cards in your hand by 1.",
 			"NAME": "Miku Izayoi"
 		},
 		"animator:MioTakamiya":
 		{
+			"FLAVOR_TEXT": "'I'll never let you go. I'll absolutely won't make a mistake anymore. So... please wait! Shin!'",
 			"DESCRIPTION": "Start of Combat: Enter <TS>, Gain Blur !M! and Shuffle !S! {0-Cost} {Shido Itsuka}’s into your draw pile. || <TS>: Gain [G] for every 2 [Block].",
 			"NAME": "Mio Takamiya"
 		},
 		"animator:Mayuri":
 		{
+			"FLAVOR_TEXT": "'Idiot. I was born from everyone’s Spirit power. Of course I don’t hate you. From the time I was I born, I loved you.'",
 			"DESCRIPTION": "Retain ALL Defends in your hand.",
 			"NAME": "Mayuri"
 		},
 		"animator:MukuroHoshimiya":
 		{
+			"FLAVOR_TEXT": "'It’s simple to destroy, but not easily to restore it. Such is the case of family. Muku advises you that no matter what the end result may be, you shouldn’t do anything that will lead to regrets.'",
 			"DESCRIPTION": "This card can only be played if you have at least !M! [Block]. || Draw !S! cards. {Seal} all cards in your hand.",
 			"NAME": "Mukuro Hoshimiya"
 		},
 		"animator:Natsumi":
 		{
+			"FLAVOR_TEXT": "'I... can do this! I... am strong! I... am cute! Everyone... I'll... I'll protect you all!'",
 			"DESCRIPTION": "Transform up to !M! cards in your hand into random {Common} or {Uncommon} Skills. || Whenever you transform a {Hindrance}: Add a {Depression} into your draw pile.",
 			"EXTENDED_DESCRIPTION": ["Choose a card to transform."],
 			"NAME": "Natsumi Kyouno"
 		},
 		"animator:NiaHonjou":
 		{
+			"FLAVOR_TEXT": "'The truth is... I've never fallen in love with anything but 2D!'",
 			"DESCRIPTION": "Whenever you play a card with [Block] this turn: Draw a card.",
 			"EXTENDED_DESCRIPTION": ["Whenever you play a card with #yBlock this turn: Draw #b{0} cards."],
 			"NAME": "Nia Honjou"
 		},
 		"animator:OrigamiTobiichi":
 		{
+			"FLAVOR_TEXT": "'I... want power. Even if I have to leave everything. Even if I have to sacrifice everything...!'",
 			"DESCRIPTION": "End of Turn: Gain [Support Damage] equal to !M!% your [Block].",
-			"EXTENDED_DESCRIPTION": ["End of turn: gain #ySupport #yDamage equal to #b{0}% your #yBlock"],
+			"EXTENDED_DESCRIPTION": ["End of turn: gain #ySupport #yDamage equal to #b{0}% your #yBlock."],
 			"NAME": "Origami Tobiichi"
 		},
 		"animator:ReineMurasame":
 		{
+			"FLAVOR_TEXT": "'I dare say that I will never be able to go beyond him in my heart. He will always be my first and last lover.'",
 			"DESCRIPTION": "Add X copies of {Shido Itsuka} to your draw pile.  {Motivate} them. || !A! [B]: Draw X cards next turn.",
 			"NAME": "Reine Murasame"
 		},
 		"animator:ShidoItsuka":
 		{
+			"FLAVOR_TEXT": "'If people refuse to accept you, I'll just accept you even more!'",
 			"DESCRIPTION": "When {Sealed}: Play this card.",
 			"NAME": "Shido Itsuka"
 		},
@@ -673,21 +686,25 @@
 		},
 		"animator:TohkaYatogami":
 		{
+			"FLAVOR_TEXT": "'Shido was the one that made my world... then it’s my turn now to help Shido!'",
 			"DESCRIPTION": "This card costs !M! less if you have !S! or more [Block].",
 			"NAME": "Tohka Yatogami"
 		},
 		"animator:YamaiSisters":
 		{
+			"FLAVOR_TEXT": "'I don’t want to die... I want to live... I want to be with Yuzuru more!' 'Yuzuru... too. I don’t want to disappear! I want to live with Kaguya!'",
 			"DESCRIPTION": "{Starter}: Add a copy of this card to your hand.",
 			"NAME": "Yamai Sisters"
 		},
 		"animator:YoshinoHimekawa":
 		{
+			"FLAVOR_TEXT": "'I'm not Yoshinon, I'm Yoshino. Yoshinon is my best friend.'",
 			"DESCRIPTION": "Increase the amount on all [Frost] by !M! this combat. || When drawn with {Haste}: Add {Zadkiel} to your draw pile.",
 			"NAME": "Yoshino Himekawa"
 		},
 		"animator:Zadkiel":
 		{
+			"FLAVOR_TEXT": "'Yoshinon is my ideal yearnings of myself. Unlike me... (Yoshinon is) not weak, unlike me... not hesitant... (Yoshinon is) strong and cool!'",
 			"DESCRIPTION": "Gain !M! [Orb_S]. || Fill your [Orb_S] with [Frost].",
 			"NAME": "Zadkiel"
 		}

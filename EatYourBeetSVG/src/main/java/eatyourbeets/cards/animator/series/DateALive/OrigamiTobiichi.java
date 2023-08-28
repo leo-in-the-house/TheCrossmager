@@ -21,7 +21,7 @@ public class OrigamiTobiichi extends AnimatorCard
             .SetSeriesFromClassPackage()
             .PostInitialize(data ->
             {
-                data.AddPopupAction(new EYBCardPopupActions.DAL_Inversion(InverseTohka.DATA));
+                data.AddPopupAction(new EYBCardPopupActions.DAL_Inversion(InverseOrigami.DATA));
                 data.AddPreview(new InverseOrigami(), false);
                 data.AddPreview(new Curse_Depression(), false);
             });

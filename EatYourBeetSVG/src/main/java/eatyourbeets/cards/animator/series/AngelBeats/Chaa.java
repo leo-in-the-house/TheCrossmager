@@ -37,7 +37,6 @@ public class Chaa extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameUtilities.PlayVoiceSFX(name);
 
         GameActions.Bottom.GainBlock(block);
 
