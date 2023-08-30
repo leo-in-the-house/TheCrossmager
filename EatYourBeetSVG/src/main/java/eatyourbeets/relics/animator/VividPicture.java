@@ -16,8 +16,8 @@ import java.util.ArrayList;
 public class VividPicture extends EnchantableRelic implements CustomSavable<Integer>, OnEquipUnnamedReignRelicListener, OnAffinitySealedSubscriber
 {
     public static final String ID = CreateFullID(VividPicture.class);
-    public static final int INSPIRATION = 2;
-    public static final int HP_RECOVER = 2;
+    public static final int GAIN_ENERGY = 2;
+    public static final int DRAW_CARDS = 2;
 
     public VividPicture()
     {
@@ -32,7 +32,7 @@ public class VividPicture extends EnchantableRelic implements CustomSavable<Inte
     @Override
     public String getUpdatedDescription()
     {
-        return FormatDescription(0, INSPIRATION, HP_RECOVER);
+        return FormatDescription(0, GAIN_ENERGY, DRAW_CARDS);
     }
 
     @Override
@@ -47,6 +47,21 @@ public class VividPicture extends EnchantableRelic implements CustomSavable<Inte
         relic.instantObtain(player, index >= 0 ? index : player.relics.size(), true);
         relic.OnEquipUnnamedReignRelic();
         player.relics.remove(this);
+    }
+    @Override
+    public void atBattleStart()
+    {
+        super.atBattleStart();
+
+        SetEnabled(true);
+    }
+
+    @Override
+    public void onVictory()
+    {
+        super.onVictory();
+
+        SetEnabled(true);
     }
 
     @Override
@@ -94,8 +109,9 @@ public class VividPicture extends EnchantableRelic implements CustomSavable<Inte
     {
         if (IsEnabled() && player.hand.contains(card))
         {
-            GameActions.Bottom.GainInspiration(INSPIRATION);
-            GameActions.Bottom.GainTemporaryHP(HP_RECOVER);
+            GameActions.Bottom.GainEnergy(GAIN_ENERGY);
+            GameActions.Bottom.Draw(DRAW_CARDS);
+            this.SetEnabled(false);
             flash();
         }
     }

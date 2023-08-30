@@ -35,12 +35,14 @@ public class TohkaYatogami extends AnimatorCard
         Initialize(10, 0, 2, 10);
 
         SetAffinity_Light(1);
+        SetAffinity_Dark(1);
     }
 
     @Override
     protected void OnUpgrade()
     {
         SetRetain(true);
+        SetHaste(true);
     }
 
     @Override

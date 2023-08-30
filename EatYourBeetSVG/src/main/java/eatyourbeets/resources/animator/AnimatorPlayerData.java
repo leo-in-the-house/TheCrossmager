@@ -267,19 +267,22 @@ public class AnimatorPlayerData
 
         add.Invoke(new Loadout_GATE(), 0);
         add.Invoke(new Loadout_Konosuba(), 0);
-        add.Invoke(new Loadout_Elsword(), 1);
-        add.Invoke(new Loadout_Katanagatari(), 2);
-        add.Invoke(new Loadout_GoblinSlayer(), 2);
-        add.Invoke(new Loadout_OwariNoSeraph(), 3);
-        add.Invoke(new Loadout_FullmetalAlchemist(), 3);
-        add.Invoke(new Loadout_TenseiSlime(), 4);
-        add.Invoke(new Loadout_Overlord(), 4);
-        add.Invoke(new Loadout_Fate(), 5);
-        add.Invoke(new Loadout_HitsugiNoChaika(), 5);
-        add.Invoke(new Loadout_OnePunchMan(), 6);
-        add.Invoke(new Loadout_NoGameNoLife(), 6);
-        add.Invoke(new Loadout_MadokaMagica(), 7);
-        add.Invoke(new Loadout_TouhouProject(), 7);
+        add.Invoke(new Loadout_Elsword(), 0);
+        add.Invoke(new Loadout_AngelBeats(), 0);
+        add.Invoke(new Loadout_Bleach(), 0);
+        add.Invoke(new Loadout_DateALive(), 0);
+        add.Invoke(new Loadout_Katanagatari(), 0);
+        add.Invoke(new Loadout_GoblinSlayer(), 0);
+        add.Invoke(new Loadout_OwariNoSeraph(), 0);
+        add.Invoke(new Loadout_FullmetalAlchemist(), 0);
+        add.Invoke(new Loadout_TenseiSlime(), 0);
+        add.Invoke(new Loadout_Overlord(), 0);
+        add.Invoke(new Loadout_Fate(), 0);
+        add.Invoke(new Loadout_HitsugiNoChaika(), 0);
+        add.Invoke(new Loadout_OnePunchMan(), 0);
+        add.Invoke(new Loadout_NoGameNoLife(), 0);
+        add.Invoke(new Loadout_MadokaMagica(), 0);
+        add.Invoke(new Loadout_TouhouProject(), 0);
         //add.Invoke(new Loadout_LogHorizon(), 7);
 
         for (AnimatorLoadout loadout : BaseLoadouts)

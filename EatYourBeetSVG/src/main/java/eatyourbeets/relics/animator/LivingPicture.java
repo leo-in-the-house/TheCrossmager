@@ -12,7 +12,7 @@ import eatyourbeets.utilities.GameActions;
 public class LivingPicture extends EnchantableRelic implements CustomSavable<Integer>, OnEquipUnnamedReignRelicListener, OnAffinitySealedSubscriber
 {
     public static final String ID = CreateFullID(LivingPicture.class);
-    public static final int DRAW_ESSENCE = 2;
+    public static final int DRAW_CARDS = 2;
 
     public LivingPicture()
     {
@@ -27,13 +27,29 @@ public class LivingPicture extends EnchantableRelic implements CustomSavable<Int
     @Override
     public String getUpdatedDescription()
     {
-        return FormatDescription(0, DRAW_ESSENCE);
+        return FormatDescription(0, DRAW_CARDS);
     }
 
     @Override
     public void OnEquipUnnamedReignRelic()
     {
 
+    }
+
+    @Override
+    public void atBattleStart()
+    {
+        super.atBattleStart();
+
+        SetEnabled(true);
+    }
+
+    @Override
+    public void onVictory()
+    {
+        super.onVictory();
+
+        SetEnabled(true);
     }
 
     @Override
@@ -57,7 +73,8 @@ public class LivingPicture extends EnchantableRelic implements CustomSavable<Int
     {
         if (IsEnabled() && player.hand.contains(card))
         {
-            GameActions.Bottom.GainInspiration(DRAW_ESSENCE);
+            GameActions.Bottom.Draw(DRAW_CARDS);
+            SetEnabled(false);
             flash();
         }
     }
