@@ -25,7 +25,7 @@ public class Sloth extends AnimatorCard
         SetUpgrade(0, 0, -1, 0);
 
         SetAffinity_Red(2, 0, 2);
-        SetAffinity_Dark(1);
+        SetAffinity_Black(1);
     }
 
     @Override

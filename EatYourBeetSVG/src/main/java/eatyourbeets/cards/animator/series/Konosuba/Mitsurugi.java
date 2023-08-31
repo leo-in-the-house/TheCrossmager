@@ -10,12 +10,10 @@ import eatyourbeets.effects.AttackEffects;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.ui.cards.TargetEffectPreview;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class Mitsurugi extends AnimatorCard
 {
@@ -25,7 +23,7 @@ public class Mitsurugi extends AnimatorCard
             .PostInitialize(data ->
             {
                 data.AddPreview(AffinityToken.GetCard(Affinity.Red), false);
-                data.AddPreview(AffinityToken.GetCard(Affinity.Light), false);
+                data.AddPreview(AffinityToken.GetCard(Affinity.White), false);
             });
 
     private final TargetEffectPreview targetEffectPreview = new TargetEffectPreview(this::OnTargetChanged);
@@ -39,7 +37,7 @@ public class Mitsurugi extends AnimatorCard
         SetUpgrade(2, 0);
 
         SetAffinity_Red(1, 0, 1);
-        SetAffinity_Light(1);
+        SetAffinity_White(1);
     }
 
     @Override
@@ -63,7 +61,7 @@ public class Mitsurugi extends AnimatorCard
 
         final CardGroup group = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
         group.group.add(AffinityToken.GetCopy(Affinity.Red, false));
-        group.group.add(AffinityToken.GetCopy(Affinity.Light, false));
+        group.group.add(AffinityToken.GetCopy(Affinity.White, false));
         GameActions.Bottom.SelectFromPile(name, 1, group)
         .SetOptions(false, false)
         .AddCallback(cards2 ->

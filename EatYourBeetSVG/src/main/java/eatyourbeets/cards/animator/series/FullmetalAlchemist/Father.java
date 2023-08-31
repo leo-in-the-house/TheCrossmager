@@ -28,7 +28,7 @@ public class Father extends AnimatorCard
         Initialize(0, 0, 3, 45);
         SetCostUpgrade(-1);
 
-        SetAffinity_Dark(2);
+        SetAffinity_Black(2);
 
         SetExhaust(true);
         SetObtainableInCombat(false);

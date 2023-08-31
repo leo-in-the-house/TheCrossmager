@@ -27,7 +27,7 @@ public class ElricAlphonse_Alt extends AnimatorCard
         SetCostUpgrade(-1);
 
         SetAffinity_Blue(2);
-        SetAffinity_Light(1);
+        SetAffinity_White(1);
     }
 
     @Override

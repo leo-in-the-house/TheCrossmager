@@ -8,7 +8,6 @@ import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.powers.common.DelayedDamagePower;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class Rider extends AnimatorCard
 {
@@ -25,7 +24,7 @@ public class Rider extends AnimatorCard
 
         SetAffinity_Green(1);
         SetAffinity_Blue(1);
-        SetAffinity_Dark(2, 0, 1);
+        SetAffinity_Black(2, 0, 1);
     }
 
     @Override

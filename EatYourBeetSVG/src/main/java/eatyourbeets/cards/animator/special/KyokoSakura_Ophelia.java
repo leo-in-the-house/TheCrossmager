@@ -14,7 +14,6 @@ import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.orbs.animator.Fire;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
-import eatyourbeets.utilities.GameUtilities;
 
 public class KyokoSakura_Ophelia extends AnimatorCard
 {
@@ -29,7 +28,7 @@ public class KyokoSakura_Ophelia extends AnimatorCard
         Initialize(8, 0, 1, 2);
         SetUpgrade(0, 0, 1);
 
-        SetAffinity_Dark(1);
+        SetAffinity_Black(1);
         SetAffinity_Red(2);
         SetAffinity_Blue(0, 0, 2);
     }

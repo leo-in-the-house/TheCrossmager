@@ -8,7 +8,6 @@ import eatyourbeets.monsters.EnemyIntent;
 import eatyourbeets.powers.common.CounterAttackPower;
 import eatyourbeets.stances.AgilityStance;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.JUtils;
 
 public class Sebas extends AnimatorCard
@@ -25,7 +24,7 @@ public class Sebas extends AnimatorCard
         SetUpgrade(0, 4, 0);
 
         SetAffinity_Red(2, 0, 2);
-        SetAffinity_Light(1);
+        SetAffinity_White(1);
 
         SetExhaust(true);
 

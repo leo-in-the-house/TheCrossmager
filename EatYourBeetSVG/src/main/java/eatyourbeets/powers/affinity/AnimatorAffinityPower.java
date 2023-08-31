@@ -12,7 +12,10 @@ import eatyourbeets.cards.base.EYBCard;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.powers.affinity.animator.*;
 import eatyourbeets.resources.GR;
-import eatyourbeets.utilities.*;
+import eatyourbeets.utilities.Colors;
+import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.Mathf;
+import eatyourbeets.utilities.RenderHelpers;
 
 public abstract class AnimatorAffinityPower extends AbstractAffinityPower
 {
@@ -43,8 +46,13 @@ public abstract class AnimatorAffinityPower extends AbstractAffinityPower
             case Red: return GR.Tooltips.RedPower.description;
             case Green: return GR.Tooltips.GreenPower.description;
             case Blue: return GR.Tooltips.BluePower.description;
-            case Light: return GR.Tooltips.LightPower.description;
-            case Dark: return GR.Tooltips.DarkPower.description;
+            case White: return GR.Tooltips.WhitePower.description;
+            case Black: return GR.Tooltips.BlackPower.description;
+            case Brown: return GR.Tooltips.BrownPower.description;
+            case Yellow: return GR.Tooltips.YellowPower.description;
+            case Pink: return GR.Tooltips.PinkPower.description;
+            case Violet: return GR.Tooltips.VioletPower.description;
+            case Teal: return GR.Tooltips.TealPower.description;
         }
 
         throw new RuntimeException("Affinity not supported: " + affinity);
@@ -57,8 +65,13 @@ public abstract class AnimatorAffinityPower extends AbstractAffinityPower
             case Red: return new ForcePower();
             case Green: return new AgilityPower();
             case Blue: return new IntellectPower();
-            case Light: return new BlessingPower();
-            case Dark: return new CorruptionPower();
+            case White: return new BlessingPower();
+            case Black: return new CorruptionPower();
+            case Yellow: return new YellowThresholdPower();
+            case Brown: return new BrownThresholdPower();
+            case Pink: return new PinkThresholdPower();
+            case Violet: return new VioletThresholdPower();
+            case Teal: return new TealThresholdPower();
 
             default: throw new RuntimeException("Invalid enum value: " + affinity.name());
         }

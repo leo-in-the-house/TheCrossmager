@@ -15,7 +15,6 @@ import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.powers.AnimatorClickablePower;
 import eatyourbeets.powers.PowerTriggerConditionType;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.TargetHelper;
 
 public class MedicineMelancholy extends AnimatorCard
@@ -33,7 +32,7 @@ public class MedicineMelancholy extends AnimatorCard
         Initialize(0, 0, 2, POWER_COST);
 
         SetAffinity_Green(1);
-        SetAffinity_Dark(1);
+        SetAffinity_Black(1);
     }
 
     @Override

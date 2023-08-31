@@ -5,13 +5,11 @@ import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.cards.base.modifiers.CostModifiers;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class KanadeTachibana extends AnimatorCard
 {
@@ -27,8 +25,9 @@ public class KanadeTachibana extends AnimatorCard
         SetUpgrade(0, 0, 0, 0);
         SetCostUpgrade(-1);
 
-        SetAffinity_Light(1);
+        SetAffinity_White(1);
         SetAffinity_Blue(1);
+        SetAffinity_Violet(1);
 
         SetExhaust(true);
         

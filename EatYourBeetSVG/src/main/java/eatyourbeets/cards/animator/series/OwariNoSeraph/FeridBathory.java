@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.AttackEffects;
@@ -33,7 +32,7 @@ public class FeridBathory extends AnimatorCard
 
         SetAffinity_Red(2);
         SetAffinity_Green(1);
-        SetAffinity_Dark(2);
+        SetAffinity_Black(2);
 
         SetExhaust(true);
     }
@@ -50,7 +49,7 @@ public class FeridBathory extends AnimatorCard
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainRed(magicNumber);
         GameActions.Bottom.GainGreen(magicNumber);
-        GameActions.Bottom.GainDark(magicNumber);
+        GameActions.Bottom.GainBlack(magicNumber);
     }
 
     @Override

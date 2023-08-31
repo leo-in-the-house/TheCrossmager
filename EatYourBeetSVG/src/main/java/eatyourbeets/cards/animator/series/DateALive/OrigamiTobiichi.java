@@ -4,7 +4,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.curse.common.Curse_Depression;
 import eatyourbeets.cards.animator.special.InverseOrigami;
-import eatyourbeets.cards.animator.special.InverseTohka;
 import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
@@ -33,7 +32,7 @@ public class OrigamiTobiichi extends AnimatorCard
         Initialize(0, 0, 50, 0);
         SetUpgrade(0, 0, 50);
 
-        SetAffinity_Light(1);
+        SetAffinity_White(1);
         SetAffinity_Blue(1);
     }
 

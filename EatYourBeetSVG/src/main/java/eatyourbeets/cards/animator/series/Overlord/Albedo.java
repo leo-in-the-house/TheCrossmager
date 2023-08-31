@@ -12,7 +12,6 @@ import eatyourbeets.monsters.EnemyIntent;
 import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.powers.animator.EnchantedArmorPlayerPower;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class Albedo extends AnimatorCard
 {
@@ -28,7 +27,7 @@ public class Albedo extends AnimatorCard
         SetUpgrade(2, 0, 0);
 
         SetAffinity_Red(2, 0, 2);
-        SetAffinity_Dark(2, 0, 2);
+        SetAffinity_Black(2, 0, 2);
     }
 
     @Override

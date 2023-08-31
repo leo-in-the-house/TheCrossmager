@@ -23,7 +23,7 @@ public class MadokaKaname extends AnimatorCard
                 data.AddPopupAction(new EYBCardPopupActions.MadokaMagica_Witch(MadokaKaname_KriemhildGretchen.DATA));
                 data.AddPreview(new MadokaKaname_KriemhildGretchen(), true);
                 data.AddPreview(new Curse_GriefSeed(), false);
-                data.AddPreview(AffinityToken.GetCard(Affinity.Light), true);
+                data.AddPreview(AffinityToken.GetCard(Affinity.White), true);
             });
 
     public MadokaKaname()
@@ -33,9 +33,9 @@ public class MadokaKaname extends AnimatorCard
         Initialize(0, 0, 2, 2);
 
         SetAffinity_Blue(1);
-        SetAffinity_Light(2);
+        SetAffinity_White(2);
 
-        SetAffinityRequirement(Affinity.Light, 6);
+        SetAffinityRequirement(Affinity.White, 6);
     }
 
     @Override
@@ -49,7 +49,7 @@ public class MadokaKaname extends AnimatorCard
     {
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainTemporaryArtifact(magicNumber);
-        GameActions.Bottom.ObtainAffinityToken(Affinity.Light, upgraded)
+        GameActions.Bottom.ObtainAffinityToken(Affinity.White, upgraded)
         .AddCallback(c -> GameActions.Bottom.Motivate(c, 1));
 
         if (CheckSpecialCondition(true))

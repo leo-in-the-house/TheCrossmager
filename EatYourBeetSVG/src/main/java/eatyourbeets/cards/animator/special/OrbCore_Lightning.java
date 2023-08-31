@@ -27,7 +27,7 @@ public class OrbCore_Lightning extends OrbCore
 
         Initialize(0, 0, DAMAGE_AMOUNT, POWER_ACTIVATION_COST);
 
-        SetAffinity_Light(2);
+        SetAffinity_White(2);
     }
 
     public void ApplyPower()

@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.SFX;
@@ -16,7 +15,6 @@ import eatyourbeets.powers.CombatStats;
 import eatyourbeets.powers.PowerTriggerConditionType;
 import eatyourbeets.utilities.ColoredString;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.JUtils;
 
 public class Boros extends AnimatorCard
@@ -37,7 +35,7 @@ public class Boros extends AnimatorCard
 
         SetAffinity_Red(2);
         SetAffinity_Green(1);
-        SetAffinity_Dark(2);
+        SetAffinity_Black(2);
     }
 
     @Override

@@ -6,14 +6,12 @@ import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.modifiers.DamageModifiers;
 import eatyourbeets.effects.AttackEffects;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
-import eatyourbeets.utilities.GameUtilities;
 
 public class Elesis extends AnimatorCard implements CustomSavable<Elesis.Form>
 {
@@ -94,7 +92,7 @@ public class Elesis extends AnimatorCard implements CustomSavable<Elesis.Form>
             case Saber:
             {
                 GameActions.Bottom.GainRed(secondaryValue);
-                GameActions.Bottom.GainLight(secondaryValue);
+                GameActions.Bottom.GainWhite(secondaryValue);
                 break;
             }
 
@@ -230,7 +228,7 @@ public class Elesis extends AnimatorCard implements CustomSavable<Elesis.Form>
                 affinities.Clear();
                 SetAffinity_Red(1, 0, 3);
                 SetAffinity_Green(1);
-                SetAffinity_Light(2, 0, 6);
+                SetAffinity_White(2, 0, 6);
 
                 this.cardText.OverrideDescription(cardData.Strings.EXTENDED_DESCRIPTION[0], true);
                 this.isCostModified = this.isCostModifiedForTurn = false;
@@ -267,7 +265,7 @@ public class Elesis extends AnimatorCard implements CustomSavable<Elesis.Form>
 
                 affinities.Clear();
                 SetAffinity_Red(2, 0, 1);
-                SetAffinity_Dark(2, 0, 2);
+                SetAffinity_Black(2, 0, 2);
 
                 this.cardText.OverrideDescription(cardData.Strings.EXTENDED_DESCRIPTION[2], true);
                 this.isCostModified = this.isCostModifiedForTurn = false;

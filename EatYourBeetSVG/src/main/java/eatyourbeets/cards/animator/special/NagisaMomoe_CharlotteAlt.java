@@ -13,7 +13,6 @@ import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.effects.VFX;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
-import eatyourbeets.utilities.GameUtilities;
 
 public class NagisaMomoe_CharlotteAlt extends AnimatorCard
 {
@@ -28,7 +27,7 @@ public class NagisaMomoe_CharlotteAlt extends AnimatorCard
         Initialize(13, 0, 4);
         SetUpgrade(2, 0);
 
-        SetAffinity_Dark(2, 0, 1);
+        SetAffinity_Black(2, 0, 1);
         SetAffinity_Red(1, 1, 0);
         SetAffinity_Blue(1, 1, 0);
 

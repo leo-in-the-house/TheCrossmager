@@ -14,7 +14,6 @@ import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.effects.VFX;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
-import eatyourbeets.utilities.GameUtilities;
 
 public class Lust extends AnimatorCard
 {
@@ -33,7 +32,7 @@ public class Lust extends AnimatorCard
 
         SetAffinity_Star(1, 0, 0);
         SetAffinity_Green(0, 0, 1);
-        SetAffinity_Dark(0, 0, 1);
+        SetAffinity_Black(0, 0, 1);
     }
 
     @Override

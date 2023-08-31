@@ -1,12 +1,10 @@
 package eatyourbeets.cards.animator.special;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.series.MadokaMagica.HomuraAkemi;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
@@ -27,7 +25,7 @@ public class HomuraAkemi_Homulilly extends AnimatorCard
         Initialize(0, 4, 3, 3);
         SetUpgrade(0, 2, 1, 1);
 
-        SetAffinity_Dark(2, 0, 3);
+        SetAffinity_Black(2, 0, 3);
         SetAffinity_Red(1);
 
         SetExhaust(true);
@@ -37,7 +35,7 @@ public class HomuraAkemi_Homulilly extends AnimatorCard
     public void OnLateUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameActions.Bottom.GainBlock(block);
-        GameActions.Bottom.GainDark(secondaryValue);
+        GameActions.Bottom.GainBlack(secondaryValue);
         GameActions.Bottom.Cycle(name, secondaryValue);
         GameActions.Bottom.Callback(() ->
         {

@@ -4,7 +4,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.special.Kuroyukihime_BlackLotus;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.GameActions;
 
 public class Kuroyukihime extends AnimatorCard
@@ -22,7 +21,7 @@ public class Kuroyukihime extends AnimatorCard
         Initialize(0, 0, 2);
         SetCostUpgrade(-1);
 
-        SetAffinity_Light(1);
+        SetAffinity_White(1);
 
         SetExhaust(true);
 

@@ -28,7 +28,7 @@ public class Kyubey extends AnimatorCard implements OnAddToDeckListener
         SetUpgrade(0, 0, 1);
 
         SetAffinity_Blue(1, 1, 0);
-        SetAffinity_Dark(2);
+        SetAffinity_Black(2);
 
         SetExhaust(true);
     }

@@ -13,7 +13,6 @@ import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class IchigoBankai extends AnimatorCard
 {
@@ -29,7 +28,7 @@ public class IchigoBankai extends AnimatorCard
         Initialize(12, 0, 2);
         SetUpgrade(3, 0, 1);
 
-        SetAffinity_Light(1);
+        SetAffinity_White(1);
         SetAffinity_Red(1);
     }
 
@@ -47,7 +46,7 @@ public class IchigoBankai extends AnimatorCard
             effect += ChemicalX.BOOST;
         }
 
-        int numLight = CombatStats.Affinities.GetUsableAffinity(Affinity.Light) * effect;
+        int numLight = CombatStats.Affinities.GetUsableAffinity(Affinity.White) * effect;
         int numRed = CombatStats.Affinities.GetUsableAffinity(Affinity.Red) * effect;
 
         return numLight + numRed + amount;
@@ -66,6 +65,6 @@ public class IchigoBankai extends AnimatorCard
             GameActions.Bottom.DealDamageToAll(this, AttackEffects.SLASH_HEAVY);
         }
 
-        GameActions.Bottom.GainLight(magicNumber);
+        GameActions.Bottom.GainWhite(magicNumber);
     }
 }

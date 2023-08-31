@@ -22,7 +22,7 @@ public class GazefStronoff extends AnimatorCard
         Initialize(0, 14, 3);
 
         SetAffinity_Red(1, 1, 0);
-        SetAffinity_Light(1);
+        SetAffinity_White(1);
 
         SetAffinityRequirement(Affinity.Red, 1);
 

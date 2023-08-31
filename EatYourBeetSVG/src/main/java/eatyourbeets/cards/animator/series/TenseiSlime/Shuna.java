@@ -20,7 +20,7 @@ public class Shuna extends AnimatorCard
         SetUpgrade(0, 0, 0, 1);
 
         SetAffinity_Blue(1);
-        SetAffinity_Light(1, 1, 0);
+        SetAffinity_White(1, 1, 0);
     }
 
     @Override
@@ -36,7 +36,7 @@ public class Shuna extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.GainAffinity(Affinity.Light, 1, upgraded);
+        GameActions.Bottom.GainAffinity(Affinity.White, 1, upgraded);
         GameActions.Bottom.Draw(magicNumber);
     }
 }

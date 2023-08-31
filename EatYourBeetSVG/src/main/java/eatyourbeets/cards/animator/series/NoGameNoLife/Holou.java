@@ -6,7 +6,6 @@ import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.cards.base.attributes.TempHPAttribute;
 import eatyourbeets.effects.SFX;
@@ -27,8 +26,8 @@ public class Holou extends AnimatorCard
         SetUpgrade(0, 0, 4);
 
         SetAffinity_Blue(1);
-        SetAffinity_Light(1);
-        SetAffinity_Dark(1);
+        SetAffinity_White(1);
+        SetAffinity_Black(1);
 
         SetPurge(true);
     }
@@ -50,7 +49,7 @@ public class Holou extends AnimatorCard
         .ShowEffect(true, false, Math.max(0.0075f, 0.09f - p.drawPile.size() * 0.01f));
         GameActions.Bottom.Add(new ShuffleAction(p.drawPile, false));
 
-        final int amount = CombatStats.Affinities.GetPowerAmount(Affinity.Light) + CombatStats.Affinities.GetPowerAmount(Affinity.Dark);
+        final int amount = CombatStats.Affinities.GetPowerAmount(Affinity.White) + CombatStats.Affinities.GetPowerAmount(Affinity.Black);
         if (amount > 0)
         {
             GameActions.Bottom.Draw(amount)

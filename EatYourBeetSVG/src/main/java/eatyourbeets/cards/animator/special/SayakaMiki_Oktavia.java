@@ -26,9 +26,9 @@ public class SayakaMiki_Oktavia extends AnimatorCard
         SetUpgrade(4, 0, 0, 0);
 
         SetAffinity_Blue(1, 0, 1);
-        SetAffinity_Dark(1);
+        SetAffinity_Black(1);
 
-        SetAffinityRequirement(Affinity.Dark, 1);
+        SetAffinityRequirement(Affinity.Black, 1);
     }
 
     @Override
@@ -42,7 +42,7 @@ public class SayakaMiki_Oktavia extends AnimatorCard
         GameActions.Bottom.DrawReduction(secondaryValue);
         GameActions.Bottom.RecoverHP(magicNumber);
 
-        if (TryUseAffinity(Affinity.Dark))
+        if (TryUseAffinity(Affinity.Black))
         {
             GameActions.Bottom.FetchFromPile(name, 999, p.drawPile, p.discardPile)
             .SetOptions(true, true)

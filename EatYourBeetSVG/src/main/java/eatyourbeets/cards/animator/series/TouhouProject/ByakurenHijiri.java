@@ -22,11 +22,11 @@ public class ByakurenHijiri extends AnimatorCard
         SetUpgrade(0, 0, 1, 2);
 
         SetAffinity_Blue(1);
-        SetAffinity_Dark(1);
+        SetAffinity_Black(1);
 
         SetEthereal(true);
 
-        SetAffinityRequirement(Affinity.Dark, 1);
+        SetAffinityRequirement(Affinity.Black, 1);
     }
 
     @Override

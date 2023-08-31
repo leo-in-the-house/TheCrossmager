@@ -21,13 +21,13 @@ public class InverseTohka extends AnimatorCard
 
         Initialize(8, 0, 2, 1);
         SetUpgrade(3, 0);
-        SetAffinity_Dark(2, 0, 2);
+        SetAffinity_Black(2, 0, 2);
     }
 
     @Override
     protected void OnUpgrade()
     {
-        AddScaling(Affinity.Dark, 3);
+        AddScaling(Affinity.Black, 3);
     }
 
     @Override
@@ -40,7 +40,7 @@ public class InverseTohka extends AnimatorCard
             int half_amount = c.block / 2;
 
             if (half_amount > 0) {
-                GameActions.Bottom.GainDark(half_amount);
+                GameActions.Bottom.GainBlack(half_amount);
             }
         }
     }

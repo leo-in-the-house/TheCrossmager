@@ -8,7 +8,6 @@ import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.powers.animator.SupportDamagePower;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class ItamiYouji extends AnimatorCard
 {
@@ -25,7 +24,7 @@ public class ItamiYouji extends AnimatorCard
 
         SetAffinity_Red(1);
         SetAffinity_Green(1);
-        SetAffinity_Light(1);
+        SetAffinity_White(1);
 
         SetExhaust(true);
 

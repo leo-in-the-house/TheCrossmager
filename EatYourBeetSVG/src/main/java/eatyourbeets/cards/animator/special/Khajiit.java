@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.Dark;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.cards.base.attributes.TempHPAttribute;
 import eatyourbeets.powers.CombatStats;
@@ -31,7 +30,7 @@ public class Khajiit extends AnimatorCard
         Initialize(0, 0, 4, 1);
         SetUpgrade(0, 0, 2, 0);
 
-        SetAffinity_Dark(1);
+        SetAffinity_Black(1);
         SetAffinity_Blue(1);
 
         SetCardPreview((cards, m) ->
@@ -77,7 +76,7 @@ public class Khajiit extends AnimatorCard
     {
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainTemporaryHP(magicNumber);
-        GameActions.Bottom.GainDark(1, upgraded);
+        GameActions.Bottom.GainBlack(1, upgraded);
         GameActions.Bottom.TriggerOrbPassive(1)
         .SetFilter(c -> Dark.ORB_ID.equals(c.ID))
         .SetSequential(true);

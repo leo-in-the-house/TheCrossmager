@@ -70,8 +70,13 @@ public class CommonImages
         public final TextureCache Green                 = new TextureCache("images/eyb/cardui/affinities/Green.png", true);
         public final TextureCache Red                   = new TextureCache("images/eyb/cardui/affinities/Red.png", true);
         public final TextureCache Blue                  = new TextureCache("images/eyb/cardui/affinities/Blue.png", true);
-        public final TextureCache Light                 = new TextureCache("images/eyb/cardui/affinities/Light.png", true);
-        public final TextureCache Dark                  = new TextureCache("images/eyb/cardui/affinities/Dark.png", true);
+        public final TextureCache White                 = new TextureCache("images/eyb/cardui/affinities/White.png", true);
+        public final TextureCache Black                 = new TextureCache("images/eyb/cardui/affinities/Black.png", true);
+        public final TextureCache Yellow                = new TextureCache("images/eyb/cardui/affinities/Yellow.png", true);
+        public final TextureCache Brown                 = new TextureCache("images/eyb/cardui/affinities/Brown.png", true);
+        public final TextureCache Pink                  = new TextureCache("images/eyb/cardui/affinities/Pink.png", true);
+        public final TextureCache Violet                = new TextureCache("images/eyb/cardui/affinities/Violet.png", true);
+        public final TextureCache Teal                  = new TextureCache("images/eyb/cardui/affinities/Teal.png", true);
         public final TextureCache Seal                  = new TextureCache("images/eyb/cardui/affinities/Seal.png", true);
         public final TextureCache Star                  = new TextureCache("images/eyb/cardui/affinities/Star.png", true);
         public final TextureCache Star_BG               = new TextureCache("images/eyb/cardui/affinities/Star_BG.png", true);

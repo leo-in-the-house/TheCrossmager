@@ -32,7 +32,7 @@ public class MamiTomoe extends AnimatorCard
         SetUpgrade(0, 0, 1);
 
         SetAffinity_Blue(2, 0, 1);
-        SetAffinity_Light(2);
+        SetAffinity_White(2);
 
         SetCardPreview(c -> c.costForTurn == 0);
     }
@@ -44,7 +44,7 @@ public class MamiTomoe extends AnimatorCard
 
         if (CombatStats.TryActivateSemiLimited(cardID))
         {
-            GameActions.Bottom.ObtainAffinityToken(Affinity.Light, false);
+            GameActions.Bottom.ObtainAffinityToken(Affinity.White, false);
         }
     }
 
@@ -55,7 +55,7 @@ public class MamiTomoe extends AnimatorCard
 
         if (CombatStats.TryActivateSemiLimited(cardID))
         {
-            GameActions.Bottom.ObtainAffinityToken(Affinity.Light, false);
+            GameActions.Bottom.ObtainAffinityToken(Affinity.White, false);
         }
     }
 

@@ -24,7 +24,7 @@ public class Shigure extends AnimatorCard
         Initialize(7, 0, 5);
         SetUpgrade(3, 0, 0);
 
-        SetAffinity_Light(1);
+        SetAffinity_White(1);
         SetAffinity_Green(2, 0, 1);
 
         SetAffinityRequirement(Affinity.Green, 2);

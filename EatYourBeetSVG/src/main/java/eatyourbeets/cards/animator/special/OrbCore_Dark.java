@@ -27,7 +27,7 @@ public class OrbCore_Dark extends OrbCore
 
         Initialize(0, 0, WEAK_TIMES, POWER_ACTIVATION_COST);
 
-        SetAffinity_Dark(2);
+        SetAffinity_Black(2);
     }
 
     public void ApplyPower()

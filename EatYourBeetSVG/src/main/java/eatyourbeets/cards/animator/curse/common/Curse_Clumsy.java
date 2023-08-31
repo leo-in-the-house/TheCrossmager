@@ -19,7 +19,7 @@ public class Curse_Clumsy extends AnimatorCard
 
         Initialize(0, 0);
 
-        SetAffinity_Dark(1);
+        SetAffinity_Black(1);
 
         SetEndOfTurnPlay(false);
         SetEthereal(true);

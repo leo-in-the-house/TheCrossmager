@@ -38,7 +38,7 @@ public class RemiliaScarlet extends AnimatorCard
 
         SetAffinity_Red(1, 1, 0);
         SetAffinity_Green(1);
-        SetAffinity_Dark(1);
+        SetAffinity_Black(1);
     }
 
     @Override
@@ -92,7 +92,7 @@ public class RemiliaScarlet extends AnimatorCard
             }
             else if (CorruptionStance.IsActive())
             {
-                GameActions.Bottom.GainDark(1, true);
+                GameActions.Bottom.GainBlack(1, true);
             }
             else
             {

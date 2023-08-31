@@ -11,7 +11,6 @@ import eatyourbeets.effects.VFX;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
-import eatyourbeets.utilities.GameUtilities;
 
 public class Shalltear extends AnimatorCard
 {
@@ -28,7 +27,7 @@ public class Shalltear extends AnimatorCard
 
         SetAffinity_Green(1);
         SetAffinity_Blue(2, 0, 3);
-        SetAffinity_Dark(2, 0, 9);
+        SetAffinity_Black(2, 0, 9);
 
         SetHealing(true);
         SetExhaust(true);
@@ -47,11 +46,11 @@ public class Shalltear extends AnimatorCard
 
         GameActions.Bottom.Callback(() ->
         {
-            final int light = CombatStats.Affinities.UseAffinity(Affinity.Light, 99);
+            final int light = CombatStats.Affinities.UseAffinity(Affinity.White, 99);
             if (light > 0)
             {
                 GameActions.Bottom.ShowCopy(this);
-                GameActions.Bottom.GainAffinity(Affinity.Dark, light, false);
+                GameActions.Bottom.GainAffinity(Affinity.Black, light, false);
             }
         });
     }
@@ -61,7 +60,7 @@ public class Shalltear extends AnimatorCard
     {
         super.Refresh(enemy);
 
-        GameUtilities.ModifyMagicNumber(this, CombatStats.Affinities.GetPowerAmount(Affinity.Dark) * secondaryValue, false);
+        GameUtilities.ModifyMagicNumber(this, CombatStats.Affinities.GetPowerAmount(Affinity.Black) * secondaryValue, false);
     }
 
     @Override

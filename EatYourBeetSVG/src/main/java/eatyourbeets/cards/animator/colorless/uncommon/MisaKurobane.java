@@ -28,7 +28,7 @@ public class MisaKurobane extends AnimatorCard
         SetExhaust(true);
         SetEvokeOrbCount(1);
 
-        SetAffinityRequirement(Affinity.Light, 2);
+        SetAffinityRequirement(Affinity.White, 2);
     }
 
     @Override
@@ -38,7 +38,7 @@ public class MisaKurobane extends AnimatorCard
         GameActions.Bottom.ChannelOrb(new Fire());
         GameActions.Bottom.Draw(magicNumber);
 
-        if (TryUseAffinity(Affinity.Light))
+        if (TryUseAffinity(Affinity.White))
         {
             GameActions.Bottom.MakeCardInDrawPile(new MisaKurobane_Yusarin());
         }

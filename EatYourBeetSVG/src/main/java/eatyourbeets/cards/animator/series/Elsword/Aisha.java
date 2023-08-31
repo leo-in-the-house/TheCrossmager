@@ -27,7 +27,7 @@ public class Aisha extends AnimatorCard
         SetUpgrade(2, 0, 0, 0);
 
         SetAffinity_Blue(1, 0, 1);
-        SetAffinity_Dark(1, 0, 1);
+        SetAffinity_Black(1, 0, 1);
     }
 
     @Override
@@ -63,7 +63,7 @@ public class Aisha extends AnimatorCard
             if (orbs.size() > 0)
             {
                 GameActions.Bottom.GainBlue(1, true);
-                GameActions.Bottom.GainDark(1, true);
+                GameActions.Bottom.GainBlack(1, true);
             }
         });
     }

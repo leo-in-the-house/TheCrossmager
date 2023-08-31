@@ -21,7 +21,7 @@ public class Status_Dazed extends AnimatorCard
 
         Initialize(0, 0);
 
-        SetAffinity_Dark(1);
+        SetAffinity_Black(1);
 
         SetEndOfTurnPlay(false);
         SetEthereal(true);
@@ -35,7 +35,7 @@ public class Status_Dazed extends AnimatorCard
         if (CombatStats.TryActivateLimited(cardID))
         {
             GameActions.Delayed.Exhaust(this)
-            .AddCallback(() -> GameActions.Top.GainDark(1));
+            .AddCallback(() -> GameActions.Top.GainBlack(1));
         }
     }
 

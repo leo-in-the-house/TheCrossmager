@@ -21,7 +21,7 @@ public class Curse_GriefSeed extends AnimatorCard
 
         Initialize(0, 0, 2);
 
-        SetAffinity_Dark(1);
+        SetAffinity_Black(1);
 
         SetEndOfTurnPlay(false);
     }

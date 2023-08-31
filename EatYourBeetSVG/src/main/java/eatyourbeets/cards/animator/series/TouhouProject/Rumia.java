@@ -8,7 +8,6 @@ import eatyourbeets.cards.base.*;
 import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.effects.SFX;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class Rumia extends AnimatorCard
 {
@@ -16,7 +15,7 @@ public class Rumia extends AnimatorCard
             .SetSkill(1, CardRarity.COMMON, EYBCardTarget.None)
             
             .SetSeriesFromClassPackage()
-            .PostInitialize(data -> data.AddPreview(AffinityToken.GetCard(Affinity.Dark), true));
+            .PostInitialize(data -> data.AddPreview(AffinityToken.GetCard(Affinity.Black), true));
 
     public Rumia()
     {
@@ -24,7 +23,7 @@ public class Rumia extends AnimatorCard
 
         Initialize(0, 0);
 
-        SetAffinity_Dark(1, 1, 0);
+        SetAffinity_Black(1, 1, 0);
     }
 
     @Override
@@ -46,7 +45,7 @@ public class Rumia extends AnimatorCard
             }
             else
             {
-                GameActions.Top.ObtainAffinityToken(Affinity.Dark, upgraded);
+                GameActions.Top.ObtainAffinityToken(Affinity.Black, upgraded);
                 GameActions.Top.SFX(SFX.ATTACK_MAGIC_FAST_1, 0.75f, 0.8f).SetDuration(0.2f, true);
             }
         });

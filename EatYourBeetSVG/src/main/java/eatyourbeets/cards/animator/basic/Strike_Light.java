@@ -5,7 +5,7 @@ import eatyourbeets.cards.base.EYBCardData;
 
 public class Strike_Light extends ImprovedStrike
 {
-    public static final Affinity AFFINITY_TYPE = Affinity.Light;
+    public static final Affinity AFFINITY_TYPE = Affinity.White;
     public static final EYBCardData DATA = Register(Strike_Light.class);
 
     public Strike_Light()

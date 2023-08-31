@@ -14,7 +14,6 @@ import eatyourbeets.cards.base.attributes.SpecialAttribute;
 import eatyourbeets.effects.SFX;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.Mathf;
 
 import java.util.ArrayList;
@@ -34,7 +33,7 @@ public class YuyukoSaigyouji extends AnimatorCard_UltraRare
         SetUpgrade(0, 0, 6, 0);
 
         SetAffinity_Blue(2);
-        SetAffinity_Dark(2);
+        SetAffinity_Black(2);
 
         SetInnate(true);
     }

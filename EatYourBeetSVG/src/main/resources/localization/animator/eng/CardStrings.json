@@ -368,8 +368,8 @@
 		"animator:AngelAlter":
 		{
 			"FLAVOR_TEXT": "'Guard Skill: Hand Sonic.'",
-			"DESCRIPTION": "On Exhaust:  Gain !M! [L] and !M! [R]. Add a copy of this card to your draw pile, and double the amounts gained.",
-			"UPGRADE_DESCRIPTION": "On Exhaust:  Gain !M! [L] and !M! [R].  Add a copy of this card to your draw pile, and triple the amounts gained.",
+			"DESCRIPTION": "On Exhaust:  Gain !M! [R], !M! [B] and !M! [V]. Add a copy of this card to your draw pile, and double the amounts gained.",
+			"UPGRADE_DESCRIPTION": "On Exhaust:  Gain !M! [R], !M! [B] and !M! [V].  Add a copy of this card to your draw pile, and triple the amounts gained.",
 			"NAME": "Angel Alter"
 		},
 		"animator:AyatoNaoi":
@@ -461,7 +461,7 @@
 		"animator:YuzuruOtonashi":
 		{
 			"FLAVOR_TEXT": "'There’s nothing false about the lives we endured! Everyone lived to their fullest! We’ve carved those memories into ourselves!'",
-			"DESCRIPTION": "This card has [L] scaling equal to the number of {Ethereal} cards in your hand.",
+			"DESCRIPTION": "This card has [P] and [O] scaling equal to the number of {Ethereal} cards in your hand.",
 			"NAME": "Yuzuru Otonashi"
 		}
 	},
@@ -2254,14 +2254,39 @@
 			"EXTENDED_DESCRIPTION": ["[B]", "I"],
 			"NAME": "Affinity Token"
 		},
-		"animator:AffinityToken_Light":
+		"animator:AffinityToken_White":
 		{
 			"EXTENDED_DESCRIPTION": ["[L]", "B"],
 			"NAME": "Affinity Token"
 		},
-		"animator:AffinityToken_Dark":
+		"animator:AffinityToken_Black":
 		{
 			"EXTENDED_DESCRIPTION": ["[D]", "C"],
+			"NAME": "Affinity Token"
+		},
+		"animator:AffinityToken_Brown":
+		{
+			"EXTENDED_DESCRIPTION": ["[O]", "OT"],
+			"NAME": "Affinity Token"
+		},
+		"animator:AffinityToken_Pink":
+		{
+			"EXTENDED_DESCRIPTION": ["[P]", "PT"],
+			"NAME": "Affinity Token"
+		},
+		"animator:AffinityToken_Teal":
+		{
+			"EXTENDED_DESCRIPTION": ["[T]", "TT"],
+			"NAME": "Affinity Token"
+		},
+		"animator:AffinityToken_Violet":
+		{
+			"EXTENDED_DESCRIPTION": ["[V]", "VT"],
+			"NAME": "Affinity Token"
+		},
+		"animator:AffinityToken_Yellow":
+		{
+			"EXTENDED_DESCRIPTION": ["[Y]", "YT"],
 			"NAME": "Affinity Token"
 		},
 		"animator:AffinityToken_General":
@@ -2424,6 +2449,21 @@
 			"DESCRIPTION": "Boost [D]. Lose !M! [HP]. || Whenever you play an {Attack}: Recover !S! [HP]. || Once per turn, pay {0} [MHP]: Gain 1 [E].",
 			"EXTENDED_DESCRIPTION": ["Pay #b{0} [MHP]: Gain #b1 [E]. || Whenever you play an #yAttack, #yRecover #b{1} [HP] (Does not stack)."],
 			"NAME": "Vampire Blood"
+		},
+		"animator:Protect_1":
+		{
+			"DESCRIPTION": "",
+			"NAME": "Protect"
+		},
+		"animator:Protect_2":
+		{
+			"DESCRIPTION": "Gain [Artifact].",
+			"NAME": "Protect"
+		},
+		"animator:Protect_3":
+		{
+			"DESCRIPTION": "",
+			"NAME": "Protect"
 		}
 	},
 

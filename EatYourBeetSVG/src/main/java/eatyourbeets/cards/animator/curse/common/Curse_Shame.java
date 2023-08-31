@@ -21,7 +21,7 @@ public class Curse_Shame extends AnimatorCard
         Initialize(0, 0, 1);
 
         SetEndOfTurnPlay(true);
-        SetAffinity_Dark(1);
+        SetAffinity_Black(1);
     }
 
     @Override

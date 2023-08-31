@@ -23,7 +23,7 @@ public class IsuzuTonan extends AnimatorCard
         SetUpgrade(0, 0, 1);
 
         SetAffinity_Blue(1);
-        SetAffinity_Light(1);
+        SetAffinity_White(1);
     }
 
     @Override

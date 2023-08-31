@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.modifiers.BlockModifiers;
 import eatyourbeets.cards.base.modifiers.CostModifiers;
 import eatyourbeets.cards.base.modifiers.DamageModifiers;
@@ -45,7 +44,7 @@ public class DrGenus extends AnimatorCard
         if ((this.effect = effect) == 0)
         {
             SetAffinity_Blue(1);
-            SetAffinity_Dark(1);
+            SetAffinity_Black(1);
 
             SetPurge(true);
             SetEthereal(true);

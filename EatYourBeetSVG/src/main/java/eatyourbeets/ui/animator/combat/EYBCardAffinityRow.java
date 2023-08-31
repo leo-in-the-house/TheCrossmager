@@ -3,7 +3,6 @@ package eatyourbeets.ui.animator.combat;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.Hitbox;
 import eatyourbeets.cards.base.Affinity;
@@ -248,6 +247,11 @@ public class EYBCardAffinityRow extends GUIElement
                         case "I": icon = "[Intellect]"; break;
                         case "B": icon = "[Blessing]"; break;
                         case "C": icon = "[Corruption]"; break;
+                        case "OT": icon = "[Brown Threshold]"; break;
+                        case "PT": icon = "[Pink Threshold]"; break;
+                        case "YT": icon = "[Yellow Threshold]"; break;
+                        case "VT": icon = "[Violet Threshold]"; break;
+                        case "TT": icon = "[Teal Threshold]"; break;
                         default: throw new RuntimeException("Unsupported Affinity Power: " + Power.ID);
                     }
 

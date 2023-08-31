@@ -8,7 +8,6 @@ import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class MetalBat extends AnimatorCard
 {
@@ -24,7 +23,7 @@ public class MetalBat extends AnimatorCard
         SetUpgrade(0, 0, 1, 0);
 
         SetAffinity_Red(1, 1, 2);
-        SetAffinity_Light(1);
+        SetAffinity_White(1);
 
         SetObtainableInCombat(false);
     }

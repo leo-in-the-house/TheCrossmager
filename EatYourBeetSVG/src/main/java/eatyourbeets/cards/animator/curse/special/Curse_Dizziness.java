@@ -17,7 +17,7 @@ public class Curse_Dizziness extends AnimatorCard
     {
         super(DATA);
 
-        SetAffinity_Dark(1);
+        SetAffinity_Black(1);
 
         SetEndOfTurnPlay(false);
     }

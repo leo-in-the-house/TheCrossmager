@@ -28,7 +28,7 @@ public class OrbCore_Plasma extends OrbCore
 
         SetAffinity_Red(2);
         SetAffinity_Green(2);
-        SetAffinity_Light(2);
+        SetAffinity_White(2);
     }
 
     public void ApplyPower()

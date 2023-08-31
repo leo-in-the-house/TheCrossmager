@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.orbs.Dark;
 import eatyourbeets.cards.animator.series.MadokaMagica.MadokaKaname;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.powers.AnimatorPower;
@@ -28,8 +27,8 @@ public class MadokaKaname_KriemhildGretchen extends AnimatorCard
         Initialize(0, 0, 2, 5);
         SetUpgrade(0, 0, 0, 2);
 
-        SetAffinity_Dark(2);
-        SetAffinity_Light(1);
+        SetAffinity_Black(2);
+        SetAffinity_White(1);
 
         SetEthereal(true);
     }

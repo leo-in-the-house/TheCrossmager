@@ -20,7 +20,6 @@ import eatyourbeets.relics.animator.unnamedReign.AncientMedallion;
 import eatyourbeets.relics.animator.unnamedReign.UnnamedReignRelic;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
-import eatyourbeets.utilities.GameUtilities;
 
 public class KrulTepes extends AnimatorCard
 {
@@ -41,7 +40,7 @@ public class KrulTepes extends AnimatorCard
 
         SetAffinity_Red(2, 0, 1);
         SetAffinity_Green(2, 0, 1);
-        SetAffinity_Dark(2, 0, 1);
+        SetAffinity_Black(2, 0, 1);
 
         SetObtainableInCombat(false);
     }

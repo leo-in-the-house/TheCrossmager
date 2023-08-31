@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardSeries;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
@@ -39,7 +38,7 @@ public class Rorona extends AnimatorCard
         SetUpgrade(0, 0, -6);
 
         SetAffinity_Blue(1);
-        SetAffinity_Light(1);
+        SetAffinity_White(1);
 
         SetObtainableInCombat(false);
     }

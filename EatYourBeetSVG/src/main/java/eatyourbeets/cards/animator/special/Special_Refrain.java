@@ -6,14 +6,12 @@ import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 import java.util.ArrayList;
 
@@ -32,7 +30,7 @@ public class Special_Refrain extends AnimatorCard
 
         Initialize(0, 0, 3);
 
-        SetAffinity_Dark(1);
+        SetAffinity_Black(1);
 
         SetExhaust(true);
     }

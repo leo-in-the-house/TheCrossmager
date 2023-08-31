@@ -3,7 +3,6 @@ package eatyourbeets.cards.base;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.core.Settings;
 import eatyourbeets.resources.GR;
 import eatyourbeets.utilities.AdvancedTexture;
@@ -97,8 +96,8 @@ public class EYBCardAffinities
         Add(Affinity.Red, red);
         Add(Affinity.Green, green);
         Add(Affinity.Blue, blue);
-        Add(Affinity.Light, light);
-        Add(Affinity.Dark, dark);
+        Add(Affinity.White, light);
+        Add(Affinity.Black, dark);
     }
 
     public void Set(int red, int green, int blue, int light, int dark)
@@ -106,8 +105,8 @@ public class EYBCardAffinities
         Set(Affinity.Red, red);
         Set(Affinity.Green, green);
         Set(Affinity.Blue, blue);
-        Set(Affinity.Light, light);
-        Set(Affinity.Dark, dark);
+        Set(Affinity.White, light);
+        Set(Affinity.Black, dark);
     }
 
     public EYBCardAffinity AddStar(int level)

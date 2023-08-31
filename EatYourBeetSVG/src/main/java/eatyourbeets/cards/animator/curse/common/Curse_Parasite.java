@@ -5,12 +5,10 @@ import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class Curse_Parasite extends AnimatorCard
 {
@@ -23,7 +21,7 @@ public class Curse_Parasite extends AnimatorCard
 
         Initialize(0, 0, 3);
 
-        SetAffinity_Dark(1);
+        SetAffinity_Black(1);
 
         SetEndOfTurnPlay(false);
         SetExhaust(true);

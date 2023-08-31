@@ -1,11 +1,9 @@
 package eatyourbeets.powers.common;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.modifiers.CostModifiers;
 import eatyourbeets.powers.CommonPower;
 import eatyourbeets.utilities.GameActions;
@@ -29,7 +27,7 @@ public class InsanityPower extends CommonPower
     @Override
     public void updateDescription()
     {
-        this.description = FormatDescription(0, 3 * amount);
+        this.description = FormatDescription(0, amount);
     }
 
     @Override
@@ -43,7 +41,7 @@ public class InsanityPower extends CommonPower
 
         if (amount > 0)
         {
-            int numCards = 3 * amount;
+            int numCards = amount;
 
             for (int i=0; i<numCards; i++) {
                 GameActions.Bottom.MakeCardInDrawPile(allCards.Retrieve(rng).makeCopy())

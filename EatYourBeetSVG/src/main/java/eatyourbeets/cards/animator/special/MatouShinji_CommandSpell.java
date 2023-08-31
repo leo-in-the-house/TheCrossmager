@@ -7,11 +7,9 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.series.Fate.MatouShinji;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.cards.base.attributes.TempHPAttribute;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class MatouShinji_CommandSpell extends AnimatorCard
 {
@@ -27,7 +25,7 @@ public class MatouShinji_CommandSpell extends AnimatorCard
         SetUpgrade(0, 0, 3);
 
         SetAffinity_Blue(1);
-        SetAffinity_Dark(2);
+        SetAffinity_Black(2);
 
         SetRetain(true);
     }

@@ -6,7 +6,6 @@ import com.badlogic.gdx.graphics.g2d.*;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.math.Vector2;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -825,9 +824,19 @@ public class RenderHelpers
                 case "B":
                     return GR.Tooltips.Affinity_Blue.icon;
                 case "L":
-                    return GR.Tooltips.Affinity_Light.icon;
+                    return GR.Tooltips.Affinity_White.icon;
                 case "D":
-                    return GR.Tooltips.Affinity_Dark.icon;
+                    return GR.Tooltips.Affinity_Black.icon;
+                case "O":
+                    return GR.Tooltips.Affinity_Brown.icon;
+                case "P":
+                    return GR.Tooltips.Affinity_Pink.icon;
+                case "T":
+                    return GR.Tooltips.Affinity_Teal.icon;
+                case "V":
+                    return GR.Tooltips.Affinity_Violet.icon;
+                case "Y":
+                    return GR.Tooltips.Affinity_Yellow.icon;
                 case "M":
                     return GR.Tooltips.Affinity_Star.icon;
                 case "S":
@@ -842,15 +851,15 @@ public class RenderHelpers
             switch (id)
             {
                 case "F":
-                    return GR.Tooltips.Force.icon;
+                    return GR.Tooltips.RedThreshold.icon;
                 case "A":
-                    return GR.Tooltips.Agility.icon;
+                    return GR.Tooltips.GreenThreshold.icon;
                 case "I":
-                    return GR.Tooltips.Intellect.icon;
+                    return GR.Tooltips.BlueThreshold.icon;
                 case "B":
-                    return GR.Tooltips.Blessing.icon;
+                    return GR.Tooltips.WhiteThreshold.icon;
                 case "C":
-                    return GR.Tooltips.Corruption.icon;
+                    return GR.Tooltips.BlackThreshold.icon;
             }
         }
 

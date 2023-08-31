@@ -6,12 +6,10 @@ import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.cards.base.attributes.HPAttribute;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class IzunaHatsuse extends AnimatorCard
 {
@@ -145,7 +143,7 @@ public class IzunaHatsuse extends AnimatorCard
 
                 affinities.sealed = false;
                 affinities.Set(Affinity.Red, 1);
-                affinities.Set(Affinity.Dark, 1);
+                affinities.Set(Affinity.Black, 1);
 
                 this.type = CardType.ATTACK;
                 this.cardText.OverrideDescription(cardData.Strings.EXTENDED_DESCRIPTION[0], true);
@@ -155,7 +153,7 @@ public class IzunaHatsuse extends AnimatorCard
                 LoadImage(null);
 
                 affinities.Set(Affinity.Red, 0);
-                affinities.Set(Affinity.Dark, 0);
+                affinities.Set(Affinity.Black, 0);
 
                 this.type = CardType.SKILL;
                 this.cardText.OverrideDescription(null, true);

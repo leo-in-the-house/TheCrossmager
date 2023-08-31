@@ -9,12 +9,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.BorderLongFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.ShockWaveEffect;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.interfaces.delegates.ActionT3;
 import eatyourbeets.resources.GR;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class ByakuyaBankai extends AnimatorCard {
     public static final EYBCardData DATA = Register(ByakuyaBankai.class).SetAttack(-1, CardRarity.SPECIAL, EYBAttackType.Ranged, EYBCardTarget.ALL).SetSeries(CardSeries.Bleach);
@@ -27,7 +25,7 @@ public class ByakuyaBankai extends AnimatorCard {
 
         SetAffinity_Red(1);
         SetAffinity_Blue(1);
-        SetAffinity_Dark(1);
+        SetAffinity_Black(1);
 
         SetMultiDamage(true);
     }

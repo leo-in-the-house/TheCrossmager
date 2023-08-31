@@ -2,9 +2,7 @@ package eatyourbeets.cards.effects.NanamiEffects;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.animator.series.Katanagatari.Nanami;
 import eatyourbeets.cards.base.AnimatorClassicCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.EYBCard;
 import eatyourbeets.cards.base.EYBCardTooltip;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
@@ -150,6 +148,6 @@ public abstract class NanamiEffect
 
     protected EYBCardTooltip GetForceTooltip(EYBCard nanami)
     {
-        return nanami instanceof AnimatorClassicCard ? GR.Tooltips.Force : GR.Tooltips.Affinity_Red;
+        return nanami instanceof AnimatorClassicCard ? GR.Tooltips.RedThreshold : GR.Tooltips.Affinity_Red;
     }
 }

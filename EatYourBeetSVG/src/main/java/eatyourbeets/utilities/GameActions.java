@@ -11,7 +11,6 @@ import com.megacrit.cardcrawl.actions.utility.ShakeScreenAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -66,8 +65,12 @@ import eatyourbeets.interfaces.subscribers.OnPhaseChangedSubscriber;
 import eatyourbeets.monsters.PlayerMinions.UnnamedDoll;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.powers.PowerHelper;
+import eatyourbeets.powers.affinity.animator.*;
+import eatyourbeets.powers.affinity.animatorClassic.AgilityPower;
+import eatyourbeets.powers.affinity.animatorClassic.BlessingPower;
 import eatyourbeets.powers.affinity.animatorClassic.CorruptionPower;
-import eatyourbeets.powers.affinity.animatorClassic.*;
+import eatyourbeets.powers.affinity.animatorClassic.ForcePower;
+import eatyourbeets.powers.affinity.animatorClassic.IntellectPower;
 import eatyourbeets.powers.animator.EarthenThornsPower;
 import eatyourbeets.powers.common.EnergizedPower;
 import eatyourbeets.powers.common.*;
@@ -551,12 +554,12 @@ public final class GameActions
         return StackPower(new ArtifactPower(player, amount));
     }
 
-    public ApplyAffinityPower GainLight(int amount)
+    public ApplyAffinityPower GainWhite(int amount)
     {
-        return GainLight(amount, false);
+        return GainWhite(amount, false);
     }
 
-    public ApplyAffinityPower GainLight(int amount, boolean retain)
+    public ApplyAffinityPower GainWhite(int amount, boolean retain)
     {
         return GainAffinity(BlessingPower.AFFINITY_TYPE, amount, retain);
     }
@@ -586,14 +589,64 @@ public final class GameActions
         return StackPower(new AnimatorBlurPower(player, amount));
     }
 
-    public ApplyAffinityPower GainDark(int amount)
+    public ApplyAffinityPower GainBlack(int amount)
     {
-        return GainDark(amount, false);
+        return GainBlack(amount, false);
     }
     
-    public ApplyAffinityPower GainDark(int amount, boolean retain)
+    public ApplyAffinityPower GainBlack(int amount, boolean retain)
     {
         return GainAffinity(CorruptionPower.AFFINITY_TYPE, amount, retain);
+    }
+
+    public ApplyAffinityPower GainBrown(int amount)
+    {
+        return GainBrown(amount, false);
+    }
+
+    public ApplyAffinityPower GainBrown(int amount, boolean retain)
+    {
+        return GainAffinity(BrownThresholdPower.AFFINITY_TYPE, amount, retain);
+    }
+
+    public ApplyAffinityPower GainPink(int amount)
+    {
+        return GainPink(amount, false);
+    }
+
+    public ApplyAffinityPower GainPink(int amount, boolean retain)
+    {
+        return GainAffinity(PinkThresholdPower.AFFINITY_TYPE, amount, retain);
+    }
+
+    public ApplyAffinityPower GainTeal(int amount)
+    {
+        return GainTeal(amount, false);
+    }
+
+    public ApplyAffinityPower GainTeal(int amount, boolean retain)
+    {
+        return GainAffinity(TealThresholdPower.AFFINITY_TYPE, amount, retain);
+    }
+
+    public ApplyAffinityPower GainViolet(int amount)
+    {
+        return GainViolet(amount, false);
+    }
+
+    public ApplyAffinityPower GainViolet(int amount, boolean retain)
+    {
+        return GainAffinity(VioletThresholdPower.AFFINITY_TYPE, amount, retain);
+    }
+
+    public ApplyAffinityPower GainYellow(int amount)
+    {
+        return GainYellow(amount, false);
+    }
+
+    public ApplyAffinityPower GainYellow(int amount, boolean retain)
+    {
+        return GainAffinity(YellowThresholdPower.AFFINITY_TYPE, amount, retain);
     }
 
     public ApplyPower GainDexterity(int amount)

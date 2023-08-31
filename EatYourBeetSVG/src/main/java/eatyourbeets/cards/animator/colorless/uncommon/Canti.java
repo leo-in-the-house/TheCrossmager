@@ -11,7 +11,6 @@ import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class Canti extends AnimatorCard
 {
@@ -27,7 +26,7 @@ public class Canti extends AnimatorCard
         Initialize(2, 3);
 
         SetAffinity_Red(1);
-        SetAffinity_Light(2);
+        SetAffinity_White(2);
     }
 
     @Override

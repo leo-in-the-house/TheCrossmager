@@ -25,7 +25,7 @@ public class Garou extends AnimatorCard
 
         SetAffinity_Red(2);
         SetAffinity_Green(1);
-        SetAffinity_Dark(1);
+        SetAffinity_Black(1);
 
         SetExhaust(true);
     }
@@ -52,7 +52,7 @@ public class Garou extends AnimatorCard
         {
             GameActions.Bottom.GainRed(1, true);
             GameActions.Bottom.GainGreen(1, true);
-            GameActions.Bottom.GainDark(1, true);
+            GameActions.Bottom.GainBlack(1, true);
             GameActions.Bottom.GainTemporaryStats(magicNumber, magicNumber, 0);
             GameActions.Bottom.MoveCards(p.drawPile, p.exhaustPile, 3)
             .ShowEffect(true, true)

@@ -5,9 +5,7 @@ import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class Kazuma extends AnimatorCard
 {
@@ -25,7 +23,7 @@ public class Kazuma extends AnimatorCard
 
         SetAffinity_Red(1);
         SetAffinity_Green(1);
-        SetAffinity_Light(1);
+        SetAffinity_White(1);
     }
 
     @Override
@@ -41,7 +39,7 @@ public class Kazuma extends AnimatorCard
                if (GameUtilities.IsSealed(c))
                {
                    GameActions.Bottom.GainTemporaryHP(magicNumber);
-                   GameActions.Bottom.GainLight(1);
+                   GameActions.Bottom.GainWhite(1);
                    return;
                }
            }

@@ -76,8 +76,8 @@ public class Enchantment4 extends Enchantment
             case 1: return Affinity.Red;
             case 2: return Affinity.Green;
             case 3: return Affinity.Blue;
-            case 4: return Affinity.Light;
-            case 5: return Affinity.Dark;
+            case 4: return Affinity.White;
+            case 5: return Affinity.Black;
             default: return null;
         }
     }

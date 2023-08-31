@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.RainbowCardEffect;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.cards.base.attributes.HPAttribute;
 import eatyourbeets.cards.base.attributes.MixedHPAttribute;
@@ -35,7 +34,7 @@ public class Aqua extends AnimatorCard
         Initialize(0, 0, 2, 2);
         SetUpgrade(0, 0, 0, 0);
 
-        SetAffinity_Light(2);
+        SetAffinity_White(2);
         SetAffinity_Blue(1);
 
         SetHealing(true);
@@ -62,7 +61,7 @@ public class Aqua extends AnimatorCard
         GameUtilities.PlayVoiceSFX(name);
         if (!transformed)
         {
-            GameActions.Bottom.GainLight(1, upgraded);
+            GameActions.Bottom.GainWhite(1, upgraded);
             GameActions.Bottom.Heal(magicNumber).Overheal(upgraded);
             GameActions.Bottom.Draw(1);
             GameActions.Bottom.Callback(() -> SetTransformed(true));

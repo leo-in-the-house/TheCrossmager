@@ -7,7 +7,6 @@ import eatyourbeets.cards.animator.special.MatouShinji_CommandSpell;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 import java.util.HashSet;
 
@@ -27,9 +26,9 @@ public class MatouShinji extends AnimatorCard
         Initialize(0, 5, 3);
         SetUpgrade(0, 0, 2);
 
-        SetAffinity_Dark(1, 0, 1);
+        SetAffinity_Black(1, 0, 1);
 
-        SetAffinityRequirement(Affinity.Dark, 2);
+        SetAffinityRequirement(Affinity.Black, 2);
     }
 
     @Override

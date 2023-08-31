@@ -9,10 +9,8 @@ import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import eatyourbeets.actions.orbs.RemoveOrb;
 import eatyourbeets.cards.animator.status.Crystallize;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.resources.GR;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class Truth extends AnimatorCard_UltraRare
 {
@@ -32,8 +30,8 @@ public class Truth extends AnimatorCard_UltraRare
         SetUpgrade(0, 0, 0);
 
         SetAffinity_Blue(2);
-        SetAffinity_Light(2);
-        SetAffinity_Dark(2);
+        SetAffinity_White(2);
+        SetAffinity_Black(2);
 
         SetExhaust(true);
     }

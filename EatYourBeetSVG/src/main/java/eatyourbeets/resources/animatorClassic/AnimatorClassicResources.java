@@ -2,11 +2,9 @@ package eatyourbeets.resources.animatorClassic;
 
 import basemod.BaseMod;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.*;
 import eatyourbeets.cards.base.CardSeries;
@@ -25,7 +23,6 @@ import eatyourbeets.rewards.animator.SpecialCardReward;
 import eatyourbeets.rewards.animator.SpecialGoldReward;
 import eatyourbeets.utilities.JUtils;
 
-import java.nio.charset.StandardCharsets;
 import java.util.Map;
 
 public class AnimatorClassicResources extends AbstractResources

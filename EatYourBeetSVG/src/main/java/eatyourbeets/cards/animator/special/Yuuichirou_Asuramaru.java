@@ -24,7 +24,7 @@ public class Yuuichirou_Asuramaru extends AnimatorCard
         SetUpgrade(0, 0, 2, 0);
 
         SetAffinity_Green(2);
-        SetAffinity_Dark(2);
+        SetAffinity_Black(2);
 
         SetRetainOnce(true);
         SetExhaust(true);

@@ -22,10 +22,10 @@ public class ChlammyZell extends AnimatorCard
         SetUpgrade(0, 0, 1, 1);
 
         SetAffinity_Blue(1);
-        SetAffinity_Dark(1);
+        SetAffinity_Black(1);
 
         SetAffinityRequirement(Affinity.Blue, 2);
-        SetAffinityRequirement(Affinity.Dark, 2);
+        SetAffinityRequirement(Affinity.Black, 2);
     }
 
     @Override

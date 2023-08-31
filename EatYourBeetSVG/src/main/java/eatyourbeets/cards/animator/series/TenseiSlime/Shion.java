@@ -9,7 +9,6 @@ import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.AttackEffects;
-import eatyourbeets.stances.ForceStance;
 import eatyourbeets.stances.WrathStance;
 import eatyourbeets.utilities.GameActions;
 
@@ -27,7 +26,7 @@ public class Shion extends AnimatorCard
         SetUpgrade(4, 0, 0);
 
         SetAffinity_Red(2, 0, 2);
-        SetAffinity_Light(1);
+        SetAffinity_White(1);
 
         SetAffinityRequirement(Affinity.Red, 2);
     }

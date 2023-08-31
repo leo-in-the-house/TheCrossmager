@@ -25,6 +25,31 @@
 		"DESCRIPTIONS": ["At the start of each turn, lose #b1 [C].", " At #b{0} [C]: Gain #b{1} #yInsanity."],
 		"NAME": "Corruption"
 	},
+	"eyb:BrownThresholdPower":
+	{
+		"DESCRIPTIONS": ["At the start of each turn, lose #b1 [O].", " At #b{0} [O]: Gain #b{1} #yResistance."],
+		"NAME": "Brown Threshold"
+	},
+	"eyb:PinkThresholdPower":
+	{
+		"DESCRIPTIONS": ["At the start of each turn, lose #b1 [P].", " At #b{0} [P]: Gain #b{1} #yKnowledge"],
+		"NAME": "Pink Threshold"
+	},
+	"eyb:TealThresholdPower":
+	{
+		"DESCRIPTIONS": ["At the start of each turn, lose #b1 [T].", " At #b{0} [T]: Gain #b{1} #yInnovation"],
+		"NAME": "Teal Threshold"
+	},
+	"eyb:VioletThresholdPower":
+	{
+		"DESCRIPTIONS": ["At the start of each turn, lose #b1 [V].", " At #b{0} [V]: Gain #b{1} #yPestilence."],
+		"NAME": "Violet Threshold"
+	},
+	"eyb:YellowThresholdPower":
+	{
+		"DESCRIPTIONS": ["At the start of each turn, lose #b1 [Y].", " At #b{0} [Y]: Gain #b{1} #ySupercharge."],
+		"NAME": "Yellow Threshold"
+	},
 	
 	"eyb:AftershockPower":
 	{
@@ -130,5 +155,30 @@
 	{
 		"DESCRIPTIONS": ["At the start of each turn, #yRecover #b{0} [MHP] (Max #b{1})."],
 		"NAME": "Vitality"
+	},
+	"eyb:KnowledgePower":
+	{
+		"DESCRIPTIONS": ["At the start of each turn, Draw #b{0} cards."],
+		"NAME": "Knowledge"
+	},
+	"eyb:InnovationPower":
+	{
+		"DESCRIPTIONS": ["If you would gain an #yAttribute, gain #b{0} more of that #yAttribute."],
+		"NAME": "Innovation"
+	},
+	"eyb:PestilencePower":
+	{
+		"DESCRIPTIONS": ["Whenever you apply a #yCommon #yDebuff, apply #b{0} more of that #ydebuff."],
+		"NAME": "Pestilence"
+	},
+	"eyb:ResistancePower":
+	{
+		"DESCRIPTIONS": ["At the end of turn, gain #b{0} charge(s).  You can pay #b{1} #ycharges to Obtain a #yProtect."],
+		"NAME": "Resistance"
+	},
+	"eyb:SuperchargePower":
+	{
+		"DESCRIPTIONS": ["At the end of turn, gain #b{0} charge(s).  You can pay #b{1} #ycharges to enter #yDivinity #yStance."],
+		"NAME": "Supercharge"
 	}
 }

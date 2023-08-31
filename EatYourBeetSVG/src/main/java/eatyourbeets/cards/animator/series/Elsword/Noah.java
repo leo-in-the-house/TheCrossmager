@@ -10,7 +10,6 @@ import eatyourbeets.effects.VFX;
 import eatyourbeets.powers.common.DelayedDamagePower;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
-import eatyourbeets.utilities.GameUtilities;
 
 public class Noah extends AnimatorCard
 {
@@ -26,9 +25,9 @@ public class Noah extends AnimatorCard
         SetUpgrade(2, 0, 0);
 
         SetAffinity_Green(1);
-        SetAffinity_Dark(2, 0, 2);
+        SetAffinity_Black(2, 0, 2);
 
-        SetAffinityRequirement(Affinity.Dark, 2);
+        SetAffinityRequirement(Affinity.Black, 2);
     }
 
     @Override
@@ -60,7 +59,7 @@ public class Noah extends AnimatorCard
 
         if (CheckSpecialCondition(true))
         {
-            GameActions.Bottom.GainDark(1, true);
+            GameActions.Bottom.GainBlack(1, true);
         }
         else
         {

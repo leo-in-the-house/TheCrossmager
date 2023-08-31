@@ -19,10 +19,10 @@ public class Miko extends AnimatorCard
         Initialize(0, 12, 2, 2);
         SetUpgrade(0, 0, 1, 1);
 
-        SetAffinity_Light(1);
+        SetAffinity_White(1);
         SetAffinity_Red(1);
 
-        SetAffinityRequirement(Affinity.Light, 1);
+        SetAffinityRequirement(Affinity.White, 1);
     }
 
     @Override
@@ -38,7 +38,7 @@ public class Miko extends AnimatorCard
         }
         else
         {
-            GameActions.Bottom.GainAffinity(Affinity.Light, secondaryValue, false);
+            GameActions.Bottom.GainAffinity(Affinity.White, secondaryValue, false);
         }
     }
 }

@@ -16,7 +16,6 @@ import eatyourbeets.relics.animator.ShinigamiFerry;
 import eatyourbeets.relics.animator.unnamedReign.AncientMedallion;
 import eatyourbeets.relics.animator.unnamedReign.UnnamedReignRelic;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class KomachiOnozuka extends AnimatorCard
 {
@@ -35,7 +34,7 @@ public class KomachiOnozuka extends AnimatorCard
         Initialize(11, 0, 2, 0);
         SetUpgrade(3, 0, 0, 0);
 
-        SetAffinity_Dark(1, 0, 6);
+        SetAffinity_Black(1, 0, 6);
         SetAffinity_Green(1, 0, 6);
 
         SetObtainableInCombat(false);

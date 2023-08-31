@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.OfferingEffect;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.AttackEffects;
@@ -31,7 +30,7 @@ public class Special_VampireBlood extends AnimatorCard
         Initialize(0, 0, 2, RECOVER_AMOUNT);
         SetCostUpgrade(-1);
 
-        SetAffinity_Dark(2);
+        SetAffinity_Black(2);
     }
 
     @Override
@@ -46,7 +45,7 @@ public class Special_VampireBlood extends AnimatorCard
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.VFX(new OfferingEffect(), 0f);
         GameActions.Bottom.LoseHP(magicNumber, AttackEffects.DARK);
-        GameActions.Bottom.GainDark(1, true);
+        GameActions.Bottom.GainBlack(1, true);
         GameActions.Bottom.StackPower(new Special_VampireBloodPower(p));
     }
 

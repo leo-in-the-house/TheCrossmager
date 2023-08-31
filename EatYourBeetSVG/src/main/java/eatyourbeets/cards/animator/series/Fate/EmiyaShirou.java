@@ -6,12 +6,10 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.actions.cardManipulation.RandomCardUpgrade;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class EmiyaShirou extends AnimatorCard
 {
@@ -27,7 +25,7 @@ public class EmiyaShirou extends AnimatorCard
         SetUpgrade(0, 2, 1);
 
         SetAffinity_Red(1);
-        SetAffinity_Light(1);
+        SetAffinity_White(1);
     }
 
     @Override

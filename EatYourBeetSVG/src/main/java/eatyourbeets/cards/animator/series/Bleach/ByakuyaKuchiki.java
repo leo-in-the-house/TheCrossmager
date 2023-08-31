@@ -9,12 +9,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.stances.NeutralStance;
 import eatyourbeets.cards.animator.special.ByakuyaBankai;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.interfaces.delegates.ActionT3;
 import eatyourbeets.resources.GR;
 import eatyourbeets.stances.WrathStance;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class ByakuyaKuchiki extends AnimatorCard
 {
@@ -33,7 +31,7 @@ public class ByakuyaKuchiki extends AnimatorCard
         SetUpgrade(5, 5, 0);
         
         SetAffinity_Blue(1);
-        SetAffinity_Dark(1);
+        SetAffinity_Black(1);
         
     }
 

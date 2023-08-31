@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.colorless.rare.TanyaDegurechaff;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.GameActions;
 
 public class TanyaDegurechaff_Type95 extends AnimatorCard
@@ -22,8 +21,8 @@ public class TanyaDegurechaff_Type95 extends AnimatorCard
 
         Initialize(0, 0, 3, 1);
 
-        SetAffinity_Dark(1);
-        SetAffinity_Light(1);
+        SetAffinity_Black(1);
+        SetAffinity_White(1);
 
         SetExhaust(true);
     }

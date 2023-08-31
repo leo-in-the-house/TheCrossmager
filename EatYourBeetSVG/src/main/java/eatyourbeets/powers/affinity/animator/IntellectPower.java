@@ -14,7 +14,7 @@ public class IntellectPower extends AnimatorAffinityPower
     {
         super(AFFINITY_TYPE, POWER_ID, SYMBOL);
 
-        upgradeMin = 3;
+        upgradeMin = 5;
     }
 
     @Override

@@ -25,7 +25,7 @@ public class Geryuganshoop extends AnimatorCard
         Initialize(0, 0, 1, 2);
 
         SetAffinity_Blue(2);
-        SetAffinity_Dark(2);
+        SetAffinity_Black(2);
 
         SetPurge(true);
     }

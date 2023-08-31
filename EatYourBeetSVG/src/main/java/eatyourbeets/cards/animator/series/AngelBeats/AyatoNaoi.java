@@ -29,7 +29,7 @@ public class AyatoNaoi extends AnimatorCard
         Initialize(0, 0, 2, 0);
         SetUpgrade(0, 0, 0, 0);
 
-        SetAffinity_Dark(1);
+        SetAffinity_Black(2);
 
         SetEthereal(true);
     }

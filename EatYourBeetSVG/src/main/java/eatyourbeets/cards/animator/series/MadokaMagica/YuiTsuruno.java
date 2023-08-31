@@ -6,14 +6,12 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.curse.special.Curse_GriefSeed;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBAttackType;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.orbs.animator.Fire;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.RandomizedList;
 
 public class YuiTsuruno extends AnimatorCard
@@ -29,7 +27,7 @@ public class YuiTsuruno extends AnimatorCard
         Initialize(8, 0, 2);
 
         SetAffinity_Red(1);
-        SetAffinity_Light(1);
+        SetAffinity_White(1);
     }
 
     @Override

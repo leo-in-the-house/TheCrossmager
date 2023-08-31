@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.Frost;
 import com.megacrit.cardcrawl.orbs.Lightning;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBAttackType;
 import eatyourbeets.cards.base.EYBCardData;
@@ -30,7 +29,7 @@ public class ElricEdward extends AnimatorCard
         SetUpgrade(2, 0, 0);
 
         SetAffinity_Blue(1, 1, 1);
-        SetAffinity_Light(1, 1, 1);
+        SetAffinity_White(1, 1, 1);
 
         SetEvokeOrbCount(1);
     }

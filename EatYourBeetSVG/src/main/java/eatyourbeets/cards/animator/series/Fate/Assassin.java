@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.AnimatedSlashEffect;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBAttackType;
 import eatyourbeets.cards.base.EYBCardData;
@@ -19,7 +18,6 @@ import eatyourbeets.effects.SFX;
 import eatyourbeets.resources.GR;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
-import eatyourbeets.utilities.GameUtilities;
 
 public class Assassin extends AnimatorCard
 {
@@ -39,7 +37,7 @@ public class Assassin extends AnimatorCard
         SetRetain(true);
 
         SetAffinity_Green(1);
-        SetAffinity_Dark(1);
+        SetAffinity_Black(1);
     }
 
     @Override

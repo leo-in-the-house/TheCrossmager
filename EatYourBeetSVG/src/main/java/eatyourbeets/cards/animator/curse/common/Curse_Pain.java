@@ -6,7 +6,6 @@ import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
@@ -24,7 +23,7 @@ public class Curse_Pain extends AnimatorCard
         Initialize(0, 0, 1);
 
         SetEndOfTurnPlay(false);
-        SetAffinity_Dark(1);
+        SetAffinity_Black(1);
     }
 
     @Override

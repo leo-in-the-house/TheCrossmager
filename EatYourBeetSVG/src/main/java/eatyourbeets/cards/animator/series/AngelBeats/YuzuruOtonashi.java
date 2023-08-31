@@ -5,9 +5,7 @@ import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class YuzuruOtonashi extends AnimatorCard
 {
@@ -21,9 +19,8 @@ public class YuzuruOtonashi extends AnimatorCard
         Initialize(0, 7, 0, 0);
         SetUpgrade(0, 4, 0, 0);
 
-        SetAffinity_Light(1);
-
-
+        SetAffinity_Pink(1);
+        SetAffinity_Brown(1);
     }
 
     @Override
@@ -39,7 +36,8 @@ public class YuzuruOtonashi extends AnimatorCard
             }
         }
 
-        GameActions.Bottom.SetScaling(this, Affinity.Light, numEthereal);
+        GameActions.Bottom.SetScaling(this, Affinity.Pink, numEthereal);
+        GameActions.Bottom.SetScaling(this, Affinity.Brown, numEthereal);
     }
 
     @Override

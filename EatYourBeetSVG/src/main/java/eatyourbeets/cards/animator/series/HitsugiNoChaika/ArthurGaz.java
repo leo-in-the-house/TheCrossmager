@@ -11,7 +11,6 @@ import com.megacrit.cardcrawl.powers.MetallicizePower;
 import eatyourbeets.actions.cardManipulation.RandomCostIncrease;
 import eatyourbeets.cards.animator.status.Status_Void;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.cards.base.attributes.TempHPAttribute;
 import eatyourbeets.effects.AttackEffects;
@@ -52,7 +51,7 @@ public class ArthurGaz extends AnimatorCard
         SetUpgrade(0, 0, 0, -2);
 
         SetAffinity_Blue(1);
-        SetAffinity_Dark(2);
+        SetAffinity_Black(2);
 
         SetPurge(true);
     }

@@ -15,7 +15,6 @@ import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.powers.AnimatorClickablePower;
 import eatyourbeets.powers.PowerTriggerConditionType;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class YachiyoNanami extends AnimatorCard
 {
@@ -33,7 +32,7 @@ public class YachiyoNanami extends AnimatorCard
         SetCostUpgrade(-1);
 
         SetAffinity_Blue(2);
-        SetAffinity_Light(1);
+        SetAffinity_White(1);
     }
 
     @Override

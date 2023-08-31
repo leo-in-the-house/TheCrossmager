@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class Curse_Nutcracker extends AnimatorCard
 {
@@ -20,7 +19,7 @@ public class Curse_Nutcracker extends AnimatorCard
 
         Initialize(0, 0, 3);
 
-        SetAffinity_Dark(1);
+        SetAffinity_Black(1);
 
         SetEndOfTurnPlay(true);
     }

@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.Lightning;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.modifiers.CostModifiers;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
@@ -25,7 +24,7 @@ public class YunYun extends AnimatorCard
         SetUpgrade(3, 0);
 
         SetAffinity_Blue(1, 0, 1);
-        SetAffinity_Light(1, 0, 1);
+        SetAffinity_White(1, 0, 1);
 
         SetAffinityRequirement(Affinity.Blue, 1);
     }

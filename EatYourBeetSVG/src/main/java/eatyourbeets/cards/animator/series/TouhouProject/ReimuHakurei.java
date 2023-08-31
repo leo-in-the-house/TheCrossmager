@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.tokens.AffinityToken;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.modifiers.BlockModifiers;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.powers.CombatStats;
@@ -18,7 +17,7 @@ public class ReimuHakurei extends AnimatorCard
             .SetAttack(1, CardRarity.COMMON, EYBAttackType.Ranged)
             
             .SetSeriesFromClassPackage()
-            .PostInitialize(data -> data.AddPreview(AffinityToken.GetCard(Affinity.Light), true));
+            .PostInitialize(data -> data.AddPreview(AffinityToken.GetCard(Affinity.White), true));
 
     public ReimuHakurei()
     {
@@ -26,10 +25,10 @@ public class ReimuHakurei extends AnimatorCard
 
         Initialize(6, 0, 1);
 
-        SetAffinity_Light(2, 0, 1);
+        SetAffinity_White(2, 0, 1);
         SetAffinity_Red(1);
 
-        SetAffinityRequirement(Affinity.Light, 1);
+        SetAffinityRequirement(Affinity.White, 1);
     }
 
     @Override
@@ -37,7 +36,7 @@ public class ReimuHakurei extends AnimatorCard
     {
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_VERTICAL);
-        GameActions.Bottom.ObtainAffinityToken(Affinity.Light, upgraded);
+        GameActions.Bottom.ObtainAffinityToken(Affinity.White, upgraded);
     }
 
     @Override

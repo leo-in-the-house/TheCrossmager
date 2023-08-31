@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.effects.SFX;
@@ -28,9 +27,9 @@ public class IrohaTamaki extends AnimatorCard
         SetUpgrade(1, 0, 0, 0);
 
         SetAffinity_Green(1);
-        SetAffinity_Light(2);
+        SetAffinity_White(2);
 
-        SetAffinityRequirement(Affinity.Light, 1);
+        SetAffinityRequirement(Affinity.White, 1);
     }
 
     @Override

@@ -10,7 +10,6 @@ import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.utilities.CardSelection;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class MasamiIwasawa extends AnimatorCard
 {
@@ -25,8 +24,7 @@ public class MasamiIwasawa extends AnimatorCard
         Initialize(0, 20, 2, 0);
         SetUpgrade(0, 8, 0, 0);
 
-        SetAffinity_Light(1);
-        SetAffinity_Blue(1);
+        SetAffinity_Yellow(2);
     }
 
     @Override

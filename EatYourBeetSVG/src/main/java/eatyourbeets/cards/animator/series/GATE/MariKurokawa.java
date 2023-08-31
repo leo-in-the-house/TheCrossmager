@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
@@ -15,7 +14,6 @@ import eatyourbeets.cards.base.attributes.HPAttribute;
 import eatyourbeets.utilities.ColoredString;
 import eatyourbeets.utilities.Colors;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class MariKurokawa extends AnimatorCard
 {
@@ -33,7 +31,7 @@ public class MariKurokawa extends AnimatorCard
         SetUpgrade(0, 0, 2, 0);
 
         SetAffinity_Green(1);
-        SetAffinity_Light(1, 1, 0);
+        SetAffinity_White(1, 1, 0);
     }
 
     @Override

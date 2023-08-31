@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardSeries;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
@@ -31,7 +30,7 @@ public class AcuraShin extends AnimatorCard
         Initialize(0,0, 2, ENVENOM_AMOUNT);
 
         SetAffinity_Green(1);
-        SetAffinity_Dark(1);
+        SetAffinity_Black(1);
     }
 
     @Override

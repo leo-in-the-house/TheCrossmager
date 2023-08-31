@@ -154,9 +154,9 @@ public class PowerTriggerCondition
             case Affinity_Blue:
                 return CombatStats.Affinities.GetUsableAffinity(Affinity.Blue) >= requiredAmount;
             case Affinity_Light:
-                return CombatStats.Affinities.GetUsableAffinity(Affinity.Light) >= requiredAmount;
+                return CombatStats.Affinities.GetUsableAffinity(Affinity.White) >= requiredAmount;
             case Affinity_Dark:
-                return CombatStats.Affinities.GetUsableAffinity(Affinity.Dark) >= requiredAmount;
+                return CombatStats.Affinities.GetUsableAffinity(Affinity.Black) >= requiredAmount;
             case Affinity_Star:
                 return CombatStats.Affinities.GetUsableAffinity(Affinity.Star) >= requiredAmount;
 
@@ -254,12 +254,12 @@ public class PowerTriggerCondition
             }
             case Affinity_Light:
             {
-                CombatStats.Affinities.TryUseAffinity(Affinity.Light, requiredAmount);
+                CombatStats.Affinities.TryUseAffinity(Affinity.White, requiredAmount);
                 break;
             }
             case Affinity_Dark:
             {
-                CombatStats.Affinities.TryUseAffinity(Affinity.Dark, requiredAmount);
+                CombatStats.Affinities.TryUseAffinity(Affinity.Black, requiredAmount);
                 break;
             }
             case Affinity_Star:

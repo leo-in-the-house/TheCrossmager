@@ -12,7 +12,6 @@ import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
-import eatyourbeets.utilities.GameUtilities;
 
 public class Akatsuki extends AnimatorCard
 {
@@ -28,7 +27,7 @@ public class Akatsuki extends AnimatorCard
         SetUpgrade(0, 0, 1);
 
         SetAffinity_Green(2, 0, 1);
-        SetAffinity_Light(1);
+        SetAffinity_White(1);
     }
 
     @Override

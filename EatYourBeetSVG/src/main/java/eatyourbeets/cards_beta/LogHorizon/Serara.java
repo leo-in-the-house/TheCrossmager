@@ -5,14 +5,12 @@ import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.cards.base.attributes.TempHPAttribute;
 import eatyourbeets.monsters.EnemyIntent;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.resources.GR;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.JUtils;
 
 import java.util.HashSet;
@@ -32,7 +30,7 @@ public class Serara extends AnimatorCard
         Initialize(0, 0, 1);
 
         SetAffinity_Blue(1);
-        SetAffinity_Light(1);
+        SetAffinity_White(1);
     }
 
     @Override

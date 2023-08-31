@@ -11,14 +11,12 @@ import eatyourbeets.cards.animator.special.Sora_BattlePlan1;
 import eatyourbeets.cards.animator.special.Sora_BattlePlan2;
 import eatyourbeets.cards.animator.special.Sora_BattlePlan3;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.utilities.CardSelection;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.JUtils;
 
 public class Sora extends AnimatorCard
@@ -40,7 +38,7 @@ public class Sora extends AnimatorCard
         Initialize(0, 0);
 
         SetAffinity_Blue(2);
-        SetAffinity_Light(2);
+        SetAffinity_White(2);
 
         SetExhaust(true);
     }
