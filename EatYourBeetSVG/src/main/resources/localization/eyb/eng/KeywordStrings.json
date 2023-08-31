@@ -176,7 +176,7 @@
 	},
 	"Innovation":
 	{
-		"DESCRIPTION": "If you would gain an #yAttribute, gain more of that #yAttribute.",
+		"DESCRIPTION": "If you would gain a non-Teal #yAttribute, gain more of that #yAttribute.",
 		"NAMES": ["innovation"],
 		"PROPER_NAME": "Innovation"
 	},

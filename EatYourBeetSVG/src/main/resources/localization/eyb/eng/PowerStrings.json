@@ -163,7 +163,7 @@
 	},
 	"eyb:InnovationPower":
 	{
-		"DESCRIPTIONS": ["If you would gain an #yAttribute, gain #b{0} more of that #yAttribute."],
+		"DESCRIPTIONS": ["If you would gain a non-Teal #yAttribute, gain #b{0} more of that #yAttribute."],
 		"NAME": "Innovation"
 	},
 	"eyb:PestilencePower":

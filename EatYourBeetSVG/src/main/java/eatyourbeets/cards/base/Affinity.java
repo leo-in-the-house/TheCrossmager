@@ -206,8 +206,8 @@ public enum Affinity implements Comparable<Affinity>
             case Red: return GR.Tooltips.RedScaling;
             case Green: return GR.Tooltips.GreenScaling;
             case Blue: return GR.Tooltips.BlueScaling;
-            case White: return GR.Tooltips.LightScaling;
-            case Black: return GR.Tooltips.DarkScaling;
+            case White: return GR.Tooltips.WhiteScaling;
+            case Black: return GR.Tooltips.BlackScaling;
             case Brown: return GR.Tooltips.BrownScaling;
             case Pink: return GR.Tooltips.PinkScaling;
             case Teal: return GR.Tooltips.TealScaling;

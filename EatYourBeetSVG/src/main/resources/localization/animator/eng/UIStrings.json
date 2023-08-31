@@ -267,7 +267,7 @@
 		[
 			"#pClick #pto #pcycle #p({0}/{1}). NL ",
 			
-			"Cards can have a combination of the following #yAffinity ( [A_Gen] ) NL colors: [A_Red], [A_Green], [A_Blue], [A_Light], [A_Dark]. NL NL Card #yAffinities are further distinguished in #yLV1 [A_Gen] (normal border) and #yLV2 [A_Gen] (animated border). NL NL Some #yLV1 [A_Gen] can be upgraded to #yLV2 (different border).",
+			"Cards can have a combination of the following #yAffinity ( [A_Gen] ) NL colors: [A_Red], [A_Green], [A_Blue], [A_White], [A_Black]. NL NL Card #yAffinities are further distinguished in #yLV1 [A_Gen] (normal border) and #yLV2 [A_Gen] (animated border). NL NL Some #yLV1 [A_Gen] can be upgraded to #yLV2 (different border).",
 			
 			"Once per turn, you may #yRight-Click on a card to #ySeal it. #ySealing a card #yReshuffles it, removes its #yAffinities, and adds 1 point per level of each of its #yAffinities to its corresponding #yAffinity counter NL NL For example, #ySealing a card with #yLV1 [A_Red] and #yLV2 [A_Green] will give #b1 [A_Red] point and #b2 [A_Green] points.",
 			

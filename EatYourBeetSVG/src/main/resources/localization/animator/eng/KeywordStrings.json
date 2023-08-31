@@ -2,7 +2,7 @@
 {
 	"Affinity":
 	{
-		"DESCRIPTION": "#yAffinity can be of any color NL between [A_Red], [A_Green], [A_Blue], [A_Light], [A_Dark]. NL [A_Gen] refers either to generic #yAffinity, or your current best #yAffinity.",
+		"DESCRIPTION": "#yAffinity can be of any color NL between [A_Red], [A_Green], [A_Blue], [A_White], [A_Black], [A_Brown], [A_Yellow], [A_Pink], [A_Violet], [A_Teal]. NL [A_Gen] refers either to generic #yAffinity, or your current best #yAffinity.",
 		"NAMES": ["affinity", "affinities"],
 		"PROPER_NAME": "Affinity"
 	},
@@ -14,7 +14,7 @@
 	},
 	"Affinity Power":
 	{
-		"DESCRIPTION": "[A_Red] -> [F], [A_Green] -> [A], [A_Blue] -> [I], NL [A_Light] -> [B], [A_Dark] -> [C]",
+		"DESCRIPTION": "[A_Red] -> [F], [A_Green] -> [A], [A_Blue] -> [I], NL [A_White] -> [B], [A_Black] -> [C], [A_Brown] -> [O], [A_Yellow] -> [Y], [A_Pink] -> [P], [A_Violet] -> [V], [A_Teal] -> [T]",
 		"NAMES": ["[a_gen] power", "[a_gen] powers", "affinity power", "affinity powers"],
 		"PROPER_NAME": "Affinity Power"
 	},
@@ -33,61 +33,61 @@
 	
 	"Force":
 	{
-		"DESCRIPTION": "When you gain [Force], also gain [Strength].",
+		"DESCRIPTION": "When you gain [Force], also gain [Strength] (increases attack damage).",
 		"NAMES": ["force"],
 		"PROPER_NAME": "Force"
 	},
 	"Agility":
 	{
-		"DESCRIPTION": "When you gain [Agility], also gain [Dexterity].",
+		"DESCRIPTION": "When you gain [Agility], also gain [Dexterity] (increases block gain).",
 		"NAMES": ["agility"],
 		"PROPER_NAME": "Agility"
 	},
 	"Blessing":
 	{
-		"DESCRIPTION": "When you gain [Blessing], also gain [Enlightenment].",
+		"DESCRIPTION": "When you gain [Blessing], also gain [Enlightenment] (gain energy).",
 		"NAMES": ["blessing"],
 		"PROPER_NAME": "Blessing"
 	},
 	"Intellect":
 	{
-		"DESCRIPTION": "When you gain [Intellect], also gain [Focus].",
+		"DESCRIPTION": "When you gain [Intellect], also gain [Focus] (increases orb amount).",
 		"NAMES": ["intellect"],
 		"PROPER_NAME": "Intellect"
 	},
 	"Corruption":
 	{
-		"DESCRIPTION": "When you gain [Corruption], also gain [Insanity].",
+		"DESCRIPTION": "When you gain [Corruption], also gain [Insanity] (add random cards to your draw pile).",
 		"NAMES": ["corruption"],
 		"PROPER_NAME": "Corruption"
 	},
 	"Brown Threshold":
 	{
-		"DESCRIPTION": "When you gain this power, also gain #b3 [Resistance].",
+		"DESCRIPTION": "When you gain this power, also gain [Resistance] (trigger to add a Protect to your hand).",
 		"NAMES": ["brown threshold"],
 		"PROPER_NAME": "Brown Threshold"
 	},
 	"Yellow Threshold":
 	{
-		"DESCRIPTION": "When you gain this power, also gain #b5 [Supercharge].",
+		"DESCRIPTION": "When you gain this power, also gain [Supercharge] (trigger to enter Divinity Stance).",
 		"NAMES": ["yellow threshold"],
 		"PROPER_NAME": "Yellow Threshold"
 	},
 	"Pink Threshold":
 	{
-		"DESCRIPTION": "When you gain this power, also gain [Knowledge].",
+		"DESCRIPTION": "When you gain this power, also gain [Knowledge] (draw cards).",
 		"NAMES": ["pink threshold"],
 		"PROPER_NAME": "Pink Threshold"
 	},
 	"Violet Threshold":
 	{
-		"DESCRIPTION": "When you gain this power, also gain [Pestilence].",
+		"DESCRIPTION": "When you gain this power, also gain [Pestilence] (increase common debuff amounts).",
 		"NAMES": ["violet threshold"],
 		"PROPER_NAME": "Violet Threshold"
 	},
 	"Teal Threshold":
 	{
-		"DESCRIPTION": "When you gain this power, also gain [Innovation].",
+		"DESCRIPTION": "When you gain this power, also gain [Innovation] (increase affinity gain amounts).",
 		"NAMES": ["teal threshold"],
 		"PROPER_NAME": "Teal Threshold"
 	},
@@ -165,17 +165,47 @@
 		"NAMES": ["[a_blue] scaling"],
 		"PROPER_NAME": "[A_Blue] Scaling"
 	},
-	"Light Scaling":
+	"White Scaling":
 	{
 		"DESCRIPTION": "",
-		"NAMES": ["[a_light] scaling"],
-		"PROPER_NAME": "[A_Light] Scaling"
+		"NAMES": ["[A_white] scaling"],
+		"PROPER_NAME": "[A_White] Scaling"
 	},
-	"Dark Scaling":
+	"Black Scaling":
 	{
 		"DESCRIPTION": "",
-		"NAMES": ["[a_dark] scaling"],
-		"PROPER_NAME": "[A_Dark] Scaling"
+		"NAMES": ["[A_black] scaling"],
+		"PROPER_NAME": "[A_Black] Scaling"
+	},
+	"Brown Scaling":
+	{
+		"DESCRIPTION": "",
+		"NAMES": ["[A_brown] scaling"],
+		"PROPER_NAME": "[A_Brown] Scaling"
+	},
+	"Yellow Scaling":
+	{
+		"DESCRIPTION": "",
+		"NAMES": ["[A_yellow] scaling"],
+		"PROPER_NAME": "[A_Yellow] Scaling"
+	},
+	"Pink Scaling":
+	{
+		"DESCRIPTION": "",
+		"NAMES": ["[A_pink] scaling"],
+		"PROPER_NAME": "[A_Pink] Scaling"
+	},
+	"Violet Scaling":
+	{
+		"DESCRIPTION": "",
+		"NAMES": ["[A_violet] scaling"],
+		"PROPER_NAME": "[A_Violet] Scaling"
+	},
+	"Teal Scaling":
+	{
+		"DESCRIPTION": "",
+		"NAMES": ["[A_teal] scaling"],
+		"PROPER_NAME": "[A_Teal] Scaling"
 	},
 	"Multicolor Scaling":
 	{

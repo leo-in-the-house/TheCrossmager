@@ -184,8 +184,8 @@ public class CardTooltips
     public EYBCardTooltip RedScaling = FindByID(GR.Animator.PlayerClass, "Red Scaling");
     public EYBCardTooltip GreenScaling = FindByID(GR.Animator.PlayerClass, "Green Scaling");
     public EYBCardTooltip BlueScaling = FindByID(GR.Animator.PlayerClass, "Blue Scaling");
-    public EYBCardTooltip DarkScaling = FindByID(GR.Animator.PlayerClass, "Dark Scaling");
-    public EYBCardTooltip LightScaling = FindByID(GR.Animator.PlayerClass, "Light Scaling");
+    public EYBCardTooltip BlackScaling = FindByID(GR.Animator.PlayerClass, "Black Scaling");
+    public EYBCardTooltip WhiteScaling = FindByID(GR.Animator.PlayerClass, "White Scaling");
     public EYBCardTooltip BrownScaling = FindByID(GR.Animator.PlayerClass, "Brown Scaling");
     public EYBCardTooltip PinkScaling = FindByID(GR.Animator.PlayerClass, "Pink Scaling");
     public EYBCardTooltip TealScaling = FindByID(GR.Animator.PlayerClass, "Teal Scaling");
@@ -312,8 +312,13 @@ public class CardTooltips
         RegisterID(GR.Animator.PlayerClass, "A_Red", Affinity_Red);
         RegisterID(GR.Animator.PlayerClass, "A_Green", Affinity_Green);
         RegisterID(GR.Animator.PlayerClass, "A_Blue", Affinity_Blue);
-        RegisterID(GR.Animator.PlayerClass, "A_Light", Affinity_White);
-        RegisterID(GR.Animator.PlayerClass, "A_Dark", Affinity_Black);
+        RegisterID(GR.Animator.PlayerClass, "A_White", Affinity_White);
+        RegisterID(GR.Animator.PlayerClass, "A_Black", Affinity_Black);
+        RegisterID(GR.Animator.PlayerClass, "A_Brown", Affinity_Brown);
+        RegisterID(GR.Animator.PlayerClass, "A_Yellow", Affinity_Yellow);
+        RegisterID(GR.Animator.PlayerClass, "A_Pink", Affinity_Pink);
+        RegisterID(GR.Animator.PlayerClass, "A_Violet", Affinity_Violet);
+        RegisterID(GR.Animator.PlayerClass, "A_Teal", Affinity_Teal);
         RegisterID(GR.Animator.PlayerClass, "A_Star", Affinity_Star);
         RegisterID(GR.Animator.PlayerClass, "A_Gen", Affinity_General);
         RegisterID(GR.Animator.PlayerClass, "A_Seal", Affinity_Sealed);
@@ -378,6 +383,11 @@ public class CardTooltips
         Affinity_Blue.SetIcon(affinities.Blue.Texture(), 8);
         Affinity_White.SetIcon(affinities.White.Texture(), 8);
         Affinity_Black.SetIcon(affinities.Black.Texture(), 8);
+        Affinity_Teal.SetIcon(affinities.Teal.Texture(), 8);
+        Affinity_Brown.SetIcon(affinities.Brown.Texture(), 8);
+        Affinity_Yellow.SetIcon(affinities.Yellow.Texture(), 8);
+        Affinity_Pink.SetIcon(affinities.Pink.Texture(), 8);
+        Affinity_Violet.SetIcon(affinities.Violet.Texture(), 8);
         Affinity_Star.SetIcon(affinities.Star.Texture(), 8);
         Affinity_Sealed.SetIcon(affinities.Seal.Texture(), 8);
         Affinity_General.SetIcon(affinities.General.Texture(), 8);

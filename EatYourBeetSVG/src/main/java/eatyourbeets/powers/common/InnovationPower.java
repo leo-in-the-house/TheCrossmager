@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import eatyourbeets.actions.powers.ApplyPower;
 import eatyourbeets.powers.CommonPower;
 import eatyourbeets.powers.affinity.AbstractAffinityPower;
+import eatyourbeets.powers.affinity.animator.TealThresholdPower;
 import eatyourbeets.utilities.JUtils;
 
 public class InnovationPower extends CommonPower
@@ -32,7 +33,7 @@ public class InnovationPower extends CommonPower
     {
         super.onApplyPower(p, target, source);
 
-        if (p instanceof AbstractAffinityPower && source.isPlayer)
+        if (p instanceof AbstractAffinityPower && !p.ID.equals(TealThresholdPower.POWER_ID) && source.isPlayer)
         {
             p.amount += this.amount;
 
