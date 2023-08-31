@@ -7,8 +7,8 @@ import eatyourbeets.powers.affinity.AnimatorAffinityPower;
 public class TealThresholdPower extends AnimatorAffinityPower
 {
     public static final String POWER_ID = CreateFullID(TealThresholdPower.class);
-    public static final Affinity AFFINITY_TYPE = Affinity.Black;
-    public static final String SYMBOL = "C";
+    public static final Affinity AFFINITY_TYPE = Affinity.Teal;
+    public static final String SYMBOL = "TT";
 
     public TealThresholdPower()
     {

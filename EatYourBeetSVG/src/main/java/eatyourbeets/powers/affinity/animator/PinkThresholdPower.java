@@ -7,14 +7,14 @@ import eatyourbeets.powers.affinity.AnimatorAffinityPower;
 public class PinkThresholdPower extends AnimatorAffinityPower
 {
     public static final String POWER_ID = CreateFullID(PinkThresholdPower.class);
-    public static final Affinity AFFINITY_TYPE = Affinity.Black;
-    public static final String SYMBOL = "C";
+    public static final Affinity AFFINITY_TYPE = Affinity.Pink;
+    public static final String SYMBOL = "PT";
 
     public PinkThresholdPower()
     {
         super(AFFINITY_TYPE, POWER_ID, SYMBOL);
 
-        upgradeMin = 5;
+        upgradeMin = 4;
     }
 
     @Override

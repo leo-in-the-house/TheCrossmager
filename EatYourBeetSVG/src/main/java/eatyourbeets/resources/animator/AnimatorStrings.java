@@ -543,7 +543,7 @@ public class AnimatorStrings
 
         public String[] GetStrings()
         {
-            final String[] result = new String[5];
+            final String[] result = new String[10];
             System.arraycopy(Strings.TEXT, 1, result, 0, 5);
             return result;
         }

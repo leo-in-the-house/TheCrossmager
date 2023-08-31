@@ -61,6 +61,36 @@
 		"NAMES": ["corruption"],
 		"PROPER_NAME": "Corruption"
 	},
+	"BrownThreshold":
+	{
+		"DESCRIPTION": "When you gain this power, also gain [Resistance].",
+		"NAMES": ["brown threshold"],
+		"PROPER_NAME": "Brown Threshold"
+	},
+	"YellowThreshold":
+	{
+		"DESCRIPTION": "When you gain this power, also gain [Supercharge].",
+		"NAMES": ["yellow threshold"],
+		"PROPER_NAME": "Yellow Threshold"
+	},
+	"PinkThreshold":
+	{
+		"DESCRIPTION": "When you gain this power, also gain [Knowledge].",
+		"NAMES": ["pink threshold"],
+		"PROPER_NAME": "Pink Threshold"
+	},
+	"VioletThreshold":
+	{
+		"DESCRIPTION": "When you gain this power, also gain [Pestilence].",
+		"NAMES": ["violet threshold"],
+		"PROPER_NAME": "Violet Threshold"
+	},
+	"TealThreshold":
+	{
+		"DESCRIPTION": "When you gain this power, also gain [Innovation].",
+		"NAMES": ["teal threshold"],
+		"PROPER_NAME": "Teal Threshold"
+	},
 	
 	"Agility Stance":
 	{

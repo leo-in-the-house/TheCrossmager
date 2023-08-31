@@ -7,14 +7,14 @@ import eatyourbeets.powers.affinity.AnimatorAffinityPower;
 public class BrownThresholdPower extends AnimatorAffinityPower
 {
     public static final String POWER_ID = CreateFullID(BrownThresholdPower.class);
-    public static final Affinity AFFINITY_TYPE = Affinity.Black;
-    public static final String SYMBOL = "C";
+    public static final Affinity AFFINITY_TYPE = Affinity.Brown;
+    public static final String SYMBOL = "OT";
 
     public BrownThresholdPower()
     {
         super(AFFINITY_TYPE, POWER_ID, SYMBOL);
 
-        upgradeMin = 5;
+        upgradeMin = 3;
     }
 
     @Override

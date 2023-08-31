@@ -13,12 +13,7 @@ import eatyourbeets.cards.base.EYBCardMetadata;
 import eatyourbeets.characters.AnimatorClassicCharacter;
 import eatyourbeets.potions.FalseLifePotion;
 import eatyourbeets.potions.GrowthPotion;
-import eatyourbeets.powers.affinity.animator.*;
-import eatyourbeets.powers.affinity.animatorClassic.AgilityPower;
-import eatyourbeets.powers.affinity.animatorClassic.BlessingPower;
-import eatyourbeets.powers.affinity.animatorClassic.CorruptionPower;
-import eatyourbeets.powers.affinity.animatorClassic.ForcePower;
-import eatyourbeets.powers.affinity.animatorClassic.IntellectPower;
+import eatyourbeets.powers.affinity.animatorClassic.*;
 import eatyourbeets.resources.AbstractResources;
 import eatyourbeets.resources.CardTooltips;
 import eatyourbeets.resources.GR;
@@ -148,11 +143,6 @@ public class AnimatorClassicResources extends AbstractResources
         CardTooltips.RegisterPowerTooltip(GR.AnimatorClassic.PlayerClass, "[I]", "Intellect", new IntellectPower());
         CardTooltips.RegisterPowerTooltip(GR.AnimatorClassic.PlayerClass, "[B]", "Blessing", new BlessingPower());
         CardTooltips.RegisterPowerTooltip(GR.AnimatorClassic.PlayerClass, "[C]", "Corruption", new CorruptionPower());
-        CardTooltips.RegisterPowerTooltip(GR.AnimatorClassic.PlayerClass, "[OT]", "Brown Threshold", new BrownThresholdPower());
-        CardTooltips.RegisterPowerTooltip(GR.AnimatorClassic.PlayerClass, "[PT]", "Pink Threshold", new PinkThresholdPower());
-        CardTooltips.RegisterPowerTooltip(GR.AnimatorClassic.PlayerClass, "[VT]", "Violet Threshold", new VioletThresholdPower());
-        CardTooltips.RegisterPowerTooltip(GR.AnimatorClassic.PlayerClass, "[YT]", "Yellow Threshold", new YellowThresholdPower());
-        CardTooltips.RegisterPowerTooltip(GR.AnimatorClassic.PlayerClass, "[TT]", "Teal Threshold", new TealThresholdPower());
     }
 
     @Override
