@@ -155,5 +155,30 @@
 	{
 		"DESCRIPTIONS": ["At the start of each turn, #yRecover #b{0} [MHP] (Max #b{1})."],
 		"NAME": "Vitality"
+	},
+	"eyb:KnowledgePower":
+	{
+		"DESCRIPTIONS": ["At the start of each turn, Draw #b{0} cards."],
+		"NAME": "Knowledge"
+	},
+	"eyb:InnovationPower":
+	{
+		"DESCRIPTIONS": ["If you would gain an #yAttribute, gain #b{0} more of that #yAttribute."],
+		"NAME": "Innovation"
+	},
+	"eyb:PestilencePower":
+	{
+		"DESCRIPTIONS": ["Whenever you apply a #yCommon #yDebuff, apply #b{0} more of that #ydebuff."],
+		"NAME": "Pestilence"
+	},
+	"eyb:ResistancePower":
+	{
+		"DESCRIPTIONS": ["At the end of turn, gain #b{0} charge(s).  You can pay #b{1} #ycharges to Obtain a #yProtect."],
+		"NAME": "Resistance"
+	},
+	"eyb:SuperchargePower":
+	{
+		"DESCRIPTIONS": ["At the end of turn, gain #b{0} charge(s).  You can pay #b{1} #ycharges to enter #yDivinity #yStance."],
+		"NAME": "Supercharge"
 	}
 }

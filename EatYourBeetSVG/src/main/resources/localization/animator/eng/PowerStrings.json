@@ -302,7 +302,7 @@
 	},
 	"animator:ResistancePower":
 	{
-		"DESCRIPTIONS": ["You can pay #b{0} #ycharges to Obtain a #yProtect."],
+		"DESCRIPTIONS": ["At the end of turn, gain #b{0} charge(s).  You can pay #b{1} #ycharges to Obtain a #yProtect."],
 		"NAME": "Resistance"
 	},
 	"animator:RoryMercuryPower":

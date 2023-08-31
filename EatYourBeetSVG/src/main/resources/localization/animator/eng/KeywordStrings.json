@@ -61,31 +61,31 @@
 		"NAMES": ["corruption"],
 		"PROPER_NAME": "Corruption"
 	},
-	"BrownThreshold":
+	"Brown Threshold":
 	{
-		"DESCRIPTION": "When you gain this power, also gain [Resistance].",
+		"DESCRIPTION": "When you gain this power, also gain #b3 [Resistance].",
 		"NAMES": ["brown threshold"],
 		"PROPER_NAME": "Brown Threshold"
 	},
-	"YellowThreshold":
+	"Yellow Threshold":
 	{
-		"DESCRIPTION": "When you gain this power, also gain [Supercharge].",
+		"DESCRIPTION": "When you gain this power, also gain #b5 [Supercharge].",
 		"NAMES": ["yellow threshold"],
 		"PROPER_NAME": "Yellow Threshold"
 	},
-	"PinkThreshold":
+	"Pink Threshold":
 	{
 		"DESCRIPTION": "When you gain this power, also gain [Knowledge].",
 		"NAMES": ["pink threshold"],
 		"PROPER_NAME": "Pink Threshold"
 	},
-	"VioletThreshold":
+	"Violet Threshold":
 	{
 		"DESCRIPTION": "When you gain this power, also gain [Pestilence].",
 		"NAMES": ["violet threshold"],
 		"PROPER_NAME": "Violet Threshold"
 	},
-	"TealThreshold":
+	"Teal Threshold":
 	{
 		"DESCRIPTION": "When you gain this power, also gain [Innovation].",
 		"NAMES": ["teal threshold"],

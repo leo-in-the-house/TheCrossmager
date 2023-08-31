@@ -211,11 +211,11 @@ public class CardTooltips
     public EYBCardTooltip BlueThreshold = FindByID(GR.AnimatorClassic.PlayerClass, "Intellect");
     public EYBCardTooltip WhiteThreshold = FindByID(GR.AnimatorClassic.PlayerClass, "Blessing");
     public EYBCardTooltip BlackThreshold = FindByID(GR.AnimatorClassic.PlayerClass, "Corruption");
-    public EYBCardTooltip YellowThreshold = FindByID(GR.AnimatorClassic.PlayerClass, "YellowThreshold");
-    public EYBCardTooltip BrownThreshold = FindByID(GR.AnimatorClassic.PlayerClass, "BrownThreshold");
-    public EYBCardTooltip PinkThreshold = FindByID(GR.AnimatorClassic.PlayerClass, "PinkThreshold");
-    public EYBCardTooltip VioletThreshold = FindByID(GR.AnimatorClassic.PlayerClass, "VioletThreshold");
-    public EYBCardTooltip TealThreshold = FindByID(GR.AnimatorClassic.PlayerClass, "TealThreshold");
+    public EYBCardTooltip YellowThreshold = FindByID(GR.Animator.PlayerClass, "Yellow Threshold");
+    public EYBCardTooltip BrownThreshold = FindByID(GR.Animator.PlayerClass, "Brown Threshold");
+    public EYBCardTooltip PinkThreshold = FindByID(GR.Animator.PlayerClass, "Pink Threshold");
+    public EYBCardTooltip VioletThreshold = FindByID(GR.Animator.PlayerClass, "Violet Threshold");
+    public EYBCardTooltip TealThreshold = FindByID(GR.Animator.PlayerClass, "Teal Threshold");
     public EYBCardTooltip AgilityScaling = FindByID(GR.AnimatorClassic.PlayerClass, "Agility Scaling");
     public EYBCardTooltip ForceScaling = FindByID(GR.AnimatorClassic.PlayerClass, "Force Scaling");
     public EYBCardTooltip IntellectScaling = FindByID(GR.AnimatorClassic.PlayerClass, "Intellect Scaling");
@@ -417,6 +417,11 @@ public class CardTooltips
         LoadFromPower(Invocation, new InvocationPower(FakeCharacter.Instance, 0));
         LoadFromPower(Enlightenment, new EnlightenmentPower(FakeCharacter.Instance, 0));
         LoadFromPower(Insanity, new InsanityPower(FakeCharacter.Instance, 0));
+        LoadFromPower(Resistance, new ResistancePower(FakeCharacter.Instance, 0));
+        LoadFromPower(Supercharge, new SuperchargePower(FakeCharacter.Instance, 0));
+        LoadFromPower(Knowledge, new KnowledgePower(FakeCharacter.Instance, 0));
+        LoadFromPower(Pestilence, new PestilencePower(FakeCharacter.Instance, 0));
+        LoadFromPower(Innovation, new InnovationPower(FakeCharacter.Instance, 0));
         LoadFromPower(Envenom, new EnvenomPower(FakeCharacter.Instance, 0));
         LoadFromPower(NoxiousFumes, new NoxiousFumesPower(FakeCharacter.Instance, 0));
         LoadFromPower(Vigor, new VigorPower(FakeCharacter.Instance, 0));

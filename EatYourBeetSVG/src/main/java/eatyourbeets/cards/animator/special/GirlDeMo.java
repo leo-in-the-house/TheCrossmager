@@ -57,12 +57,12 @@ public class GirlDeMo extends AnimatorCard
         pairs.add(new Pair<>(GameActions.Bottom::GainViolet, CombatStats.Affinities.GetAffinityLevel(Affinity.Violet)));
         pairs.sort(Comparator.comparingInt(Pair::getValue));
 
-        int amount = pairs.get(4).getValue();
+        int amount = pairs.get(9).getValue();
         if (amount > 0)
         {
-            pairs.get(4).getKey().Invoke(amount);
+            pairs.get(9).getKey().Invoke(amount);
 
-            for (int i = 3; i >= 0; i--) {
+            for (int i = 8; i >= 0; i--) {
                 if (pairs.get(i).getValue().equals(amount))
                 {
                     pairs.get(i).getKey().Invoke(amount);

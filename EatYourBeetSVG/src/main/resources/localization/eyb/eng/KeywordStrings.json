@@ -320,7 +320,7 @@
 	},
 	"Resistance":
 	{
-		"DESCRIPTION": "You can pay #b2 #ycharges to Obtain a #yProtect.",
+		"DESCRIPTION": "Gain charges each turn.  You can pay #b2 #ycharges to Obtain a #yProtect.",
 		"NAMES": ["resistance"],
 		"PROPER_NAME": "Resistance"
 	},
@@ -368,7 +368,7 @@
 	},
 	"Supercharge":
 	{
-		"DESCRIPTION": "You can pay #b10 charges to enter #yDivinity #yStance",
+		"DESCRIPTION": "Gain charges each turn.  You can pay #b10 charges to enter #yDivinity #yStance",
 		"NAMES": ["supercharge"],
 		"PROPER_NAME": "Supercharge"
 	},

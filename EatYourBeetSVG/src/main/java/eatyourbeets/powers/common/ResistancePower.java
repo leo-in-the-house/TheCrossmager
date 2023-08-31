@@ -1,30 +1,29 @@
 package eatyourbeets.powers.common;
 
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.special.Protect_1;
 import eatyourbeets.cards.animator.special.Protect_2;
 import eatyourbeets.cards.animator.special.Protect_3;
 import eatyourbeets.powers.CommonClickablePower;
 import eatyourbeets.powers.PowerTriggerConditionType;
-import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.utilities.InputManager;
-import eatyourbeets.utilities.RandomizedList;
+import eatyourbeets.utilities.*;
 
 public class ResistancePower extends CommonClickablePower
 {
     public static final String POWER_ID = CreateFullID(ResistancePower.class);
-    public static final int REQUIRED_AMOUNT = 1;
-
+    public static final int REQUIRED_AMOUNT = 2;
+    protected int charge = 0;
     public ResistancePower(AbstractCreature owner, int amount)
     {
         super(owner, POWER_ID, PowerTriggerConditionType.Special, REQUIRED_AMOUNT);
 
         this.canBeZero = true;
-        this.triggerCondition.SetCondition(v -> this.amount >= v);
-        this.triggerCondition.SetPayCost(this::ReducePower);
+        this.triggerCondition.SetCondition(v -> this.charge >= v);
+        this.triggerCondition.SetPayCost(this::ReduceCharge);
         this.triggerCondition.SetUses(-1, false, false);
 
         Initialize(amount);
@@ -33,7 +32,7 @@ public class ResistancePower extends CommonClickablePower
     @Override
     public String GetUpdatedDescription()
     {
-        return FormatDescription(0, REQUIRED_AMOUNT);
+        return FormatDescription(0, amount, REQUIRED_AMOUNT);
     }
 
     @Override
@@ -45,6 +44,29 @@ public class ResistancePower extends CommonClickablePower
         {
             TryClick();
         }
+    }
+
+    @Override
+    public void atEndOfTurn(boolean isPlayer)
+    {
+        super.atEndOfTurn(isPlayer);
+
+        if (enabled && amount > 0)
+        {
+            charge = charge + amount;
+
+            flashWithoutSound();
+        }
+    }
+
+    @Override
+    protected ColoredString GetSecondaryAmount(Color c)
+    {
+        return new ColoredString(charge, Colors.Lerp(Color.LIGHT_GRAY, Settings.PURPLE_COLOR, charge, c.a));
+    }
+
+    public void ReduceCharge(int amount) {
+        this.charge -= amount;
     }
 
     @Override
