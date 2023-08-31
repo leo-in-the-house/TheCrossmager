@@ -20,14 +20,14 @@ public class InverseOrigami extends AnimatorCard
         super(DATA);
 
         Initialize(0, 0);
-        SetAffinity_Dark(1, 0, 2);
+        SetAffinity_Black(1, 0, 2);
         SetAffinity_Blue(1, 0, 2);
     }
 
     @Override
     protected void OnUpgrade()
     {
-        AddScaling(Affinity.Dark, 2);
+        AddScaling(Affinity.Black, 2);
         AddScaling(Affinity.Blue, 2);
     }
 

@@ -6,7 +6,6 @@ import eatyourbeets.cards.base.*;
 import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.orbs.animator.Earth;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class LizardPriest extends AnimatorCard
 {
@@ -22,7 +21,7 @@ public class LizardPriest extends AnimatorCard
         SetUpgrade(0, 2, 0, 0);
 
         SetAffinity_Red(1, 0, 0);
-        SetAffinity_Light(2, 0, 0);
+        SetAffinity_White(2, 0, 0);
     }
 
     @Override
@@ -37,6 +36,6 @@ public class LizardPriest extends AnimatorCard
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
         GameActions.Bottom.GainAffinity(Affinity.Red, 1, upgraded);
-        GameActions.Bottom.GainAffinity(Affinity.Light, 1, upgraded);
+        GameActions.Bottom.GainAffinity(Affinity.White, 1, upgraded);
     }
 }

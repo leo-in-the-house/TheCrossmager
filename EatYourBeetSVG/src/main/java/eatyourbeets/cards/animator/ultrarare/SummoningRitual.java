@@ -17,7 +17,6 @@ import eatyourbeets.monsters.PlayerMinions.UnnamedDoll_SummoningRitual;
 import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.resources.GR;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class SummoningRitual extends AnimatorCard_UltraRare
 {
@@ -32,7 +31,7 @@ public class SummoningRitual extends AnimatorCard_UltraRare
         Initialize(0, 0, 6);
         SetUpgrade(0, 0, 0);
 
-        SetAffinity_Dark(2);
+        SetAffinity_Black(2);
 
         SetRetain(true);
         SetPurge(true, false);

@@ -8,7 +8,6 @@ import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.interfaces.delegates.ActionT1;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -26,8 +25,9 @@ public class GirlDeMo extends AnimatorCard
         Initialize(0, 0, 1);
         SetUpgrade(0, 0, 1);
 
-        SetAffinity_Light(2);
-        SetAffinity_Dark(1);
+        SetAffinity_Yellow(2);
+        SetAffinity_White(1);
+        SetAffinity_Black(1);
 
         SetEthereal(true);
         SetExhaust(true);
@@ -48,8 +48,13 @@ public class GirlDeMo extends AnimatorCard
         pairs.add(new Pair<>(GameActions.Bottom::GainRed, CombatStats.Affinities.GetAffinityLevel(Affinity.Red)));
         pairs.add(new Pair<>(GameActions.Bottom::GainGreen, CombatStats.Affinities.GetAffinityLevel(Affinity.Green)));
         pairs.add(new Pair<>(GameActions.Bottom::GainBlue, CombatStats.Affinities.GetAffinityLevel(Affinity.Blue)));
-        pairs.add(new Pair<>(GameActions.Bottom::GainDark, CombatStats.Affinities.GetAffinityLevel(Affinity.Dark)));
-        pairs.add(new Pair<>(GameActions.Bottom::GainLight, CombatStats.Affinities.GetAffinityLevel(Affinity.Light)));
+        pairs.add(new Pair<>(GameActions.Bottom::GainBlack, CombatStats.Affinities.GetAffinityLevel(Affinity.Black)));
+        pairs.add(new Pair<>(GameActions.Bottom::GainWhite, CombatStats.Affinities.GetAffinityLevel(Affinity.White)));
+        pairs.add(new Pair<>(GameActions.Bottom::GainTeal, CombatStats.Affinities.GetAffinityLevel(Affinity.Teal)));
+        pairs.add(new Pair<>(GameActions.Bottom::GainYellow, CombatStats.Affinities.GetAffinityLevel(Affinity.Yellow)));
+        pairs.add(new Pair<>(GameActions.Bottom::GainPink, CombatStats.Affinities.GetAffinityLevel(Affinity.Pink)));
+        pairs.add(new Pair<>(GameActions.Bottom::GainBrown, CombatStats.Affinities.GetAffinityLevel(Affinity.Brown)));
+        pairs.add(new Pair<>(GameActions.Bottom::GainViolet, CombatStats.Affinities.GetAffinityLevel(Affinity.Violet)));
         pairs.sort(Comparator.comparingInt(Pair::getValue));
 
         int amount = pairs.get(4).getValue();

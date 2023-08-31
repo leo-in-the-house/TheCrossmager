@@ -11,7 +11,6 @@ import eatyourbeets.cards.effects.GenericEffects.GenericEffect_GainBlock;
 import eatyourbeets.cards.effects.GenericEffects.GenericEffect_GainTempHP;
 import eatyourbeets.cards.effects.GenericEffects.GenericEffect_ApplyToPlayer;
 import eatyourbeets.powers.PowerHelper;
-import eatyourbeets.utilities.GameUtilities;
 
 public class Greed extends AnimatorCard
 {
@@ -35,7 +34,7 @@ public class Greed extends AnimatorCard
         SetUpgrade(0,0, -50);
 
         SetAffinity_Red(2);
-        SetAffinity_Dark(2);
+        SetAffinity_Black(2);
     }
 
     @Override

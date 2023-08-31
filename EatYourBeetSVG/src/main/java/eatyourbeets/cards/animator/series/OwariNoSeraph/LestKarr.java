@@ -10,7 +10,6 @@ import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.effects.SFX;
 import eatyourbeets.stances.IntellectStance;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class LestKarr extends AnimatorCard
 {
@@ -20,7 +19,7 @@ public class LestKarr extends AnimatorCard
             .ObtainableAsReward((data, deck) -> deck.size() > 16)
             .PostInitialize(data ->
             {
-                data.AddPreview(AffinityToken.GetCard(Affinity.Dark), false);
+                data.AddPreview(AffinityToken.GetCard(Affinity.Black), false);
                 data.AddPreview(GetClassCard(Burn.ID), false);
             });
 
@@ -31,7 +30,7 @@ public class LestKarr extends AnimatorCard
         Initialize(0, 2, 0);
         SetUpgrade(0, 1, 0);
 
-        SetAffinity_Dark(1, 1, 2);
+        SetAffinity_Black(1, 1, 2);
         SetAffinity_Blue(1, 1, 0);
     }
 
@@ -60,7 +59,7 @@ public class LestKarr extends AnimatorCard
         else
         {
             GameActions.Bottom.SFX(SFX.ATTACK_MAGIC_FAST_1, 0.75f, 0.8f).SetDuration(0.2f, true);
-            GameActions.Bottom.ObtainAffinityToken(Affinity.Dark, false);
+            GameActions.Bottom.ObtainAffinityToken(Affinity.Black, false);
         }
     }
 }

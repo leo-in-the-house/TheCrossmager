@@ -22,7 +22,7 @@ public class GoblinSoldier extends AnimatorCard
         Initialize(0, 0, 2);
 
         SetAffinity_Red(1);
-        SetAffinity_Dark(1);
+        SetAffinity_Black(1);
 
         SetEndOfTurnPlay(true);
     }

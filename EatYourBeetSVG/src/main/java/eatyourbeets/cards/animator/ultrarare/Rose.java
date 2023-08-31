@@ -6,7 +6,6 @@ import eatyourbeets.actions.animator.RoseDamageAction;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class Rose extends AnimatorCard_UltraRare
 {
@@ -23,7 +22,7 @@ public class Rose extends AnimatorCard_UltraRare
         SetUpgrade(2, 0, 0, 8);
 
         SetAffinity_Red(2);
-        SetAffinity_Light(1);
+        SetAffinity_White(1);
     }
 
     @Override

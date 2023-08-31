@@ -27,7 +27,7 @@ public class Emilia extends AnimatorCard implements OnStartOfTurnPostDrawSubscri
         SetUpgrade(0, 0, 1);
 
         SetAffinity_Blue(2);
-        SetAffinity_Light(1);
+        SetAffinity_White(1);
 
         SetEvokeOrbCount(magicNumber);
         SetExhaust(true);

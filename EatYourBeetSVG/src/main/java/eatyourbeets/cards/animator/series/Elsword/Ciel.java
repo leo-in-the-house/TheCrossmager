@@ -7,7 +7,6 @@ import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.resources.GR;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.TargetHelper;
 
 public class Ciel extends AnimatorCard
@@ -32,9 +31,9 @@ public class Ciel extends AnimatorCard
         SetUpgrade(0, 1, 0, 0);
 
         SetAffinity_Green(1, 1, 0);
-        SetAffinity_Dark(1, 1, 0);
+        SetAffinity_Black(1, 1, 0);
 
-        SetAffinityRequirement(Affinity.Dark, 1);
+        SetAffinityRequirement(Affinity.Black, 1);
     }
 
     @Override

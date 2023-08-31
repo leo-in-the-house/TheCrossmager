@@ -13,7 +13,6 @@ import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.powers.PowerHelper;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.TargetHelper;
 
 import java.util.ArrayList;
@@ -30,8 +29,8 @@ public class YukariYakumo extends AnimatorCard
 
         Initialize(0, 0);
 
-        SetAffinity_Light(2);
-        SetAffinity_Dark(2);
+        SetAffinity_White(2);
+        SetAffinity_Black(2);
 
         SetRetain(true);
         SetExhaust(true);

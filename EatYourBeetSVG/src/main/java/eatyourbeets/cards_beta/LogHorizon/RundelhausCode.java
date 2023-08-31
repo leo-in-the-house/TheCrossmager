@@ -7,14 +7,12 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.Frost;
 import com.megacrit.cardcrawl.orbs.Lightning;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.cards.effects.GenericEffects.GenericEffect_ChannelOrb;
 import eatyourbeets.orbs.animator.Fire;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.resources.GR;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 import java.util.HashSet;
 
@@ -35,7 +33,7 @@ public class RundelhausCode extends AnimatorCard
         SetUpgrade(0, 0, 1);
 
         SetAffinity_Blue(2, 0, 1);
-        SetAffinity_Light(1);
+        SetAffinity_White(1);
 
         SetAffinityRequirement(Affinity.General, 3);
     }

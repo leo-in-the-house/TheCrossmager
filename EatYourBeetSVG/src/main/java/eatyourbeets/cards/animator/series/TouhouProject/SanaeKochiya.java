@@ -6,11 +6,9 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.tokens.AffinityToken;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.orbs.animator.Aether;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class SanaeKochiya extends AnimatorCard
 {
@@ -26,7 +24,7 @@ public class SanaeKochiya extends AnimatorCard
         Initialize(0, 4, 1);
         SetUpgrade(0, 2, 1);
 
-        SetAffinity_Light(2, 0, 2);
+        SetAffinity_White(2, 0, 2);
         SetAffinity_Green(1);
     }
 
@@ -53,7 +51,7 @@ public class SanaeKochiya extends AnimatorCard
     {
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
-        GameActions.Bottom.GainLight(magicNumber, false);
+        GameActions.Bottom.GainWhite(magicNumber, false);
 
         if (CheckSpecialCondition(true))
         {
@@ -65,6 +63,6 @@ public class SanaeKochiya extends AnimatorCard
     @Override
     public boolean CheckSpecialCondition(boolean tryUse)
     {
-        return GameUtilities.GetPowerAmount(Affinity.Light) > 0;
+        return GameUtilities.GetPowerAmount(Affinity.White) > 0;
     }
 }

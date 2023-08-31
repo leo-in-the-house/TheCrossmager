@@ -20,7 +20,7 @@ public class LimeBell extends AnimatorCard
         Initialize(0, 9, 4, 1);
         SetUpgrade(0, 3, 2, 0);
 
-        SetAffinity_Light(2);
+        SetAffinity_White(2);
 
         SetExhaust(true);
     }
@@ -40,6 +40,6 @@ public class LimeBell extends AnimatorCard
             }
         });
 
-        GameActions.Bottom.Reload(name, cards -> GameActions.Bottom.GainLight(cards.size() * secondaryValue));
+        GameActions.Bottom.Reload(name, cards -> GameActions.Bottom.GainWhite(cards.size() * secondaryValue));
     }
 }

@@ -23,7 +23,7 @@ public class GoblinKing extends AnimatorCard
         SetEndOfTurnPlay(true);
 
         SetAffinity_Red(1);
-        SetAffinity_Dark(1);
+        SetAffinity_Black(1);
     }
 
     @Override
@@ -36,7 +36,7 @@ public class GoblinKing extends AnimatorCard
         }
         else
         {
-            GameActions.Bottom.GainAffinity(Affinity.Dark, 1, true);
+            GameActions.Bottom.GainAffinity(Affinity.Black, 1, true);
         }
     }
 }

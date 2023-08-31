@@ -14,7 +14,6 @@ import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.powers.AnimatorClickablePower;
 import eatyourbeets.powers.PowerTriggerConditionType;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class MetalKnight extends AnimatorCard
 {
@@ -32,7 +31,7 @@ public class MetalKnight extends AnimatorCard
 
         SetAffinity_Red(1);
         SetAffinity_Blue(1, 0, 2);
-        SetAffinity_Dark(1);
+        SetAffinity_Black(1);
 
         SetInnate(true);
     }

@@ -3,7 +3,6 @@ package eatyourbeets.cards_beta;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.interfaces.markers.Hidden;
 import eatyourbeets.utilities.CardSelection;
 import eatyourbeets.utilities.GameActions;
@@ -21,7 +20,7 @@ public class Guy extends AnimatorCard implements Hidden
         Initialize(0, 0, 1, 2);
         SetUpgrade(0, 0, 1);
 
-        SetAffinity_Dark(1);
+        SetAffinity_Black(1);
     }
 
     @Override

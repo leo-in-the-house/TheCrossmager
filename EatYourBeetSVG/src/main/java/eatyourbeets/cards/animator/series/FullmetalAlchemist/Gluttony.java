@@ -5,14 +5,12 @@ import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.cards.base.attributes.HPAttribute;
 import eatyourbeets.interfaces.subscribers.OnAffinityGainedSubscriber;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.CardSelection;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class Gluttony extends AnimatorCard implements OnAffinityGainedSubscriber
 {
@@ -29,7 +27,7 @@ public class Gluttony extends AnimatorCard implements OnAffinityGainedSubscriber
         SetUpgrade(0, 0, 3);
 
         SetAffinity_Red(2);
-        SetAffinity_Dark(2);
+        SetAffinity_Black(2);
 
         SetHealing(true);
         SetExhaust(true);
@@ -44,7 +42,7 @@ public class Gluttony extends AnimatorCard implements OnAffinityGainedSubscriber
     @Override
     public int OnAffinityGained(Affinity affinity, int amount)
     {
-        if (amount > 0 && affinity == Affinity.Dark && player.hand.contains(this) && GameUtilities.Retain(this))
+        if (amount > 0 && affinity == Affinity.Black && player.hand.contains(this) && GameUtilities.Retain(this))
         {
             flash();
         }

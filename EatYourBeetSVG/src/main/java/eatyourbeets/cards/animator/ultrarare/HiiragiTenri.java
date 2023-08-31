@@ -6,13 +6,11 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.tokens.AffinityToken;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.cards.base.attributes.TempHPAttribute;
 import eatyourbeets.powers.animator.SupportDamagePower;
 import eatyourbeets.utilities.ColoredString;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class HiiragiTenri extends AnimatorCard_UltraRare
 {
@@ -35,8 +33,8 @@ public class HiiragiTenri extends AnimatorCard_UltraRare
         Initialize(0, 0, 0, 5);
         SetUpgrade(0, 0, 0, 2);
 
-        SetAffinity_Light(1);
-        SetAffinity_Dark(2);
+        SetAffinity_White(1);
+        SetAffinity_Black(2);
 
         SetRetainOnce(true);
         SetPurge(true);

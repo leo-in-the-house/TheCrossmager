@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.tokens.AffinityToken;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.effects.SFX;
 import eatyourbeets.effects.VFX;
@@ -35,8 +34,8 @@ public class Eve extends AnimatorCard
         SetUpgrade(0, 0, 2);
 
         SetAffinity_Blue(2);
-        SetAffinity_Light(1);
-        SetAffinity_Dark(1);
+        SetAffinity_White(1);
+        SetAffinity_Black(1);
     }
 
     @Override

@@ -16,7 +16,6 @@ import eatyourbeets.effects.VFX;
 import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
-import eatyourbeets.utilities.GameUtilities;
 
 public class Entoma extends AnimatorCard
 {
@@ -31,9 +30,9 @@ public class Entoma extends AnimatorCard
         Initialize(4, 0, 2);
         SetUpgrade(0, 0, 2);
 
-        SetAffinity_Dark(2, 0, 1);
+        SetAffinity_Black(2, 0, 1);
 
-        SetAffinityRequirement(Affinity.Dark, 3);
+        SetAffinityRequirement(Affinity.Black, 3);
     }
 
     @Override
@@ -42,7 +41,7 @@ public class Entoma extends AnimatorCard
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.POISON)
         .SetDamageEffect(e -> GameEffects.List.Add(VFX.Bite(e.hb, Color.GREEN)).duration);
-        GameActions.Bottom.GainAffinity(Affinity.Dark);
+        GameActions.Bottom.GainAffinity(Affinity.Black);
         GameActions.Bottom.ApplyPoison(p, m, magicNumber);
 
         if (!m.hasPower(EntomaPower.DeriveID(cardID)) && CheckSpecialCondition(true))

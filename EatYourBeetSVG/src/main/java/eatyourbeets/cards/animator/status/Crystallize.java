@@ -10,7 +10,6 @@ import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.effects.SFX;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class Crystallize extends AnimatorCard
 {
@@ -23,7 +22,7 @@ public class Crystallize extends AnimatorCard
 
         Initialize(0, 0, 4, 3);
 
-        SetAffinity_Dark(1);
+        SetAffinity_Black(1);
 
         SetEndOfTurnPlay(false);
         SetExhaust(true);

@@ -20,7 +20,7 @@ public class GoblinShaman extends AnimatorCard
         Initialize(0, 0);
 
         SetAffinity_Blue(1);
-        SetAffinity_Dark(1);
+        SetAffinity_Black(1);
 
         SetEndOfTurnPlay(true);
     }
@@ -40,7 +40,7 @@ public class GoblinShaman extends AnimatorCard
         if (this.dontTriggerOnUseCard)
         {
             GameActions.Bottom.ApplyFrail(null, p, 1);
-            GameActions.Bottom.GainDark(1);
+            GameActions.Bottom.GainBlack(1);
         }
     }
 }

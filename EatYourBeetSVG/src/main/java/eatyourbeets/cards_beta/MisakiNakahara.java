@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.interfaces.markers.Hidden;
 import eatyourbeets.interfaces.subscribers.OnAfterCardDrawnSubscriber;
 import eatyourbeets.powers.CombatStats;
@@ -27,7 +26,7 @@ public class MisakiNakahara extends AnimatorCard implements Hidden //TODO:
 
         Initialize(0, 0, 2);
 
-        SetAffinity_Light(1);
+        SetAffinity_White(1);
 
         SetExhaust(true);
     }

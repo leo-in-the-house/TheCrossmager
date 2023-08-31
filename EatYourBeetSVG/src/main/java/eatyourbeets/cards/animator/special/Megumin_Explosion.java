@@ -12,7 +12,6 @@ import eatyourbeets.effects.SFX;
 import eatyourbeets.effects.VFX;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
-import eatyourbeets.utilities.GameUtilities;
 
 public class Megumin_Explosion extends AnimatorCard
 {
@@ -29,7 +28,7 @@ public class Megumin_Explosion extends AnimatorCard
 
         SetAffinity_Blue(2);
         SetAffinity_Red(1);
-        SetAffinity_Light(2);
+        SetAffinity_White(2);
         SetAffinity_Star(0, 0, 3);
 
         cropPortrait = false;

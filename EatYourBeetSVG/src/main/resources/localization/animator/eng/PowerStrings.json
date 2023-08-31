@@ -190,6 +190,11 @@
 		"DESCRIPTIONS": ["Immune to #yBurning. NL Dies upon losing #yFlight."],
 		"NAME": "Horned Bat (R)"
 	},
+	"animator:InnovationPower":
+	{
+		"DESCRIPTIONS": ["If you would gain an #yAttribute, gain #b{0} more of that #yAttribute."],
+		"NAME": "Innovation"
+	},
 	"animator:InsanityPower":
 	{
 		"DESCRIPTIONS": ["At the start of each turn, add #b{0} #yUpgraded, #yMotivated random cards to your draw pile."],
@@ -199,6 +204,11 @@
 	{
 		"DESCRIPTIONS": ["At the end of each turn, #yRetain a card and increase its damage and #yBlock by #b{0} this combat."],
 		"NAME": "Kaijin"
+	},
+	"animator:KnowledgePower":
+	{
+		"DESCRIPTIONS": ["At the start of each turn, Draw #b{0} cards."],
+		"NAME": "Knowledge"
 	},
 	"animator:LightningCrystalPower":
 	{
@@ -270,6 +280,11 @@
 		"DESCRIPTIONS": ["On your next #b{0} #ySynergies this turn, gain #b{1} #yTemporary #yHP."],
 		"NAME": "Plasma Core"
 	},
+	"animator:PestilencePower":
+	{
+		"DESCRIPTIONS": ["Whenever you apply a #yCommon #yDebuff, apply #b{0} more of that #ydebuff."],
+		"NAME": "Pestilence"
+	},
 	"animator:PinaCoLadaPower":
 	{
 		"DESCRIPTIONS": ["Your next #b{0} #y0-Cost card(s) are played twice."],
@@ -284,6 +299,11 @@
 	{
 		"DESCRIPTIONS": ["Until your next turn, when you would take unblocked damage, your rightmost #yDark Orb loses that much damage instead."],
 		"NAME": "Pride"
+	},
+	"animator:ResistancePower":
+	{
+		"DESCRIPTIONS": ["You can pay #b{0} #ycharges to Obtain a #yProtect."],
+		"NAME": "Resistance"
 	},
 	"animator:RoryMercuryPower":
 	{
@@ -314,6 +334,11 @@
 	{
 		"DESCRIPTIONS": ["The next #b{0} time(s) you discard a card, gain #b{1} #yBlock and deal #b{2} damage to the lowest health enemy."],
 		"NAME": "Strategic Information"
+	},
+	"animator:SuperchargePower":
+	{
+		"DESCRIPTIONS": ["You can pay #b{0} #ycharges to enter #yDivinity #yStance."],
+		"NAME": "Supercharge"
 	},
 	"animator:SupportDamagePower":
 	{

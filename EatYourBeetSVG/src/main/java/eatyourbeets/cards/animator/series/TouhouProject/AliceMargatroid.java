@@ -12,7 +12,6 @@ import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
-import eatyourbeets.utilities.GameUtilities;
 
 import java.util.HashSet;
 
@@ -30,7 +29,7 @@ public class AliceMargatroid extends AnimatorCard
         SetUpgrade(0, 0, 1);
 
         SetAffinity_Blue(2);
-        SetAffinity_Light(1);
+        SetAffinity_White(1);
 
         SetEthereal(true);
     }

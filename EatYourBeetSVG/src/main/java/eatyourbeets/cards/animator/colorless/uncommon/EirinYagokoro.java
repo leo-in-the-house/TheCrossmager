@@ -12,7 +12,6 @@ import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.effects.VFX;
 import eatyourbeets.interfaces.listeners.OnAddToDeckListener;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class EirinYagokoro extends AnimatorCard implements OnAddToDeckListener
 {
@@ -29,7 +28,7 @@ public class EirinYagokoro extends AnimatorCard implements OnAddToDeckListener
         Initialize(0, 0, 6, 5);
         SetUpgrade(0, 0, 2, 2);
 
-        SetAffinity_Dark(1);
+        SetAffinity_Black(1);
         SetAffinity_Blue(1);
 
         SetHealing(true);

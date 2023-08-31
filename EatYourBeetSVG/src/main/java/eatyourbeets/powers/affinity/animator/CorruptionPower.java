@@ -7,7 +7,7 @@ import eatyourbeets.powers.affinity.AnimatorAffinityPower;
 public class CorruptionPower extends AnimatorAffinityPower
 {
     public static final String POWER_ID = CreateFullID(CorruptionPower.class);
-    public static final Affinity AFFINITY_TYPE = Affinity.Dark;
+    public static final Affinity AFFINITY_TYPE = Affinity.Black;
     public static final String SYMBOL = "C";
 
     public CorruptionPower()

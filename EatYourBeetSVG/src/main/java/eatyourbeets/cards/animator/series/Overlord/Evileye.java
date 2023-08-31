@@ -27,11 +27,11 @@ public class Evileye extends AnimatorCard
         Initialize(0,0,4, 2);
 
         SetAffinity_Blue(1, 1, 0);
-        SetAffinity_Light(1);
-        SetAffinity_Dark(1);
+        SetAffinity_White(1);
+        SetAffinity_Black(1);
 
-        SetAffinityRequirement(Affinity.Dark, 2);
-        SetAffinityRequirement(Affinity.Light, 2);
+        SetAffinityRequirement(Affinity.Black, 2);
+        SetAffinityRequirement(Affinity.White, 2);
 
         SetEthereal(true);
     }
@@ -58,7 +58,7 @@ public class Evileye extends AnimatorCard
         choices.AddEffect(new GenericEffect_Draw(magicNumber));
         choices.Select(1, m);
 
-        if (TryUseAffinities(Affinity.Dark, Affinity.Light))
+        if (TryUseAffinities(Affinity.Black, Affinity.White))
         {
             GameActions.Bottom.GainEnergy(2);
             this.exhaustOnUseOnce = true;

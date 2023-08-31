@@ -38,6 +38,11 @@ public class PowerHelper
     public static final PowerHelper Focus = new PowerHelper(FocusPower.POWER_ID, GR.Tooltips.Focus, FocusPower::new);
     public static final PowerHelper Enlightenment = new PowerHelper(EnlightenmentPower.POWER_ID, GR.Tooltips.Enlightenment, EnlightenmentPower::new);
     public static final PowerHelper Insanity = new PowerHelper(InsanityPower.POWER_ID, GR.Tooltips.Insanity, InsanityPower::new);
+    public static final PowerHelper Supercharge = new PowerHelper(StrengthPower.POWER_ID, GR.Tooltips.Supercharge, StrengthPower::new);
+    public static final PowerHelper Resistance = new PowerHelper(DexterityPower.POWER_ID, GR.Tooltips.Resistance, DexterityPower::new);
+    public static final PowerHelper Knowledge = new PowerHelper(FocusPower.POWER_ID, GR.Tooltips.Knowledge, FocusPower::new);
+    public static final PowerHelper Pestilence = new PowerHelper(EnlightenmentPower.POWER_ID, GR.Tooltips.Pestilence, EnlightenmentPower::new);
+    public static final PowerHelper Innovation = new PowerHelper(InsanityPower.POWER_ID, GR.Tooltips.Innovation, InsanityPower::new);
     public static final PowerHelper Vitality = new PowerHelper(VitalityPower.POWER_ID, GR.Tooltips.Vitality, VitalityPower::new);
     public static final PowerHelper Invocation = new PowerHelper(InvocationPower.POWER_ID, GR.Tooltips.Invocation, InvocationPower::new);
 

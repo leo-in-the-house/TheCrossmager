@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.tokens.AffinityToken;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardEffectChoice;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
@@ -33,8 +32,8 @@ public class FielNirvalen extends AnimatorCard
         SetUpgrade(0, 0, 0, 0);
 
         SetAffinity_Blue(1);
-        SetAffinity_Light(1);
-        SetAffinity_Dark(1);
+        SetAffinity_White(1);
+        SetAffinity_Black(1);
     }
 
     @Override

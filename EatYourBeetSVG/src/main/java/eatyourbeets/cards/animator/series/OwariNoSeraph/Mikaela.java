@@ -25,7 +25,7 @@ public class Mikaela extends AnimatorCard
         SetUpgrade(0, 0, 0, -2);
 
         SetAffinity_Red(1, 1, 1);
-        SetAffinity_Dark(1);
+        SetAffinity_Black(1);
     }
 
     @Override

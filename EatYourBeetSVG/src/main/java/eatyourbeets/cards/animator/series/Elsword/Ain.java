@@ -15,7 +15,6 @@ import eatyourbeets.effects.SFX;
 import eatyourbeets.stances.IntellectStance;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.Mathf;
 
 public class Ain extends AnimatorCard
@@ -32,7 +31,7 @@ public class Ain extends AnimatorCard
         Initialize(2, 0, 3);
         SetUpgrade(1, 0, 0);
 
-        SetAffinity_Light(2);
+        SetAffinity_White(2);
         SetAffinity_Blue(2, 0, 2);
 
         SetAffinityRequirement(Affinity.Blue, 2);

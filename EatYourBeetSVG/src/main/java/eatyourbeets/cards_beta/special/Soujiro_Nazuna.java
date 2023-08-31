@@ -26,7 +26,7 @@ public class Soujiro_Nazuna extends AnimatorCard
         SetUpgrade(0, 0, 1);
 
         SetAffinity_Green(1);
-        SetAffinity_Light(1);
+        SetAffinity_White(1);
     }
 
     @Override

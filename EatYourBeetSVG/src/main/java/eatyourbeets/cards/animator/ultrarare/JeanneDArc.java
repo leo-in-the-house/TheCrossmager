@@ -11,7 +11,6 @@ import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
-import eatyourbeets.utilities.GameUtilities;
 
 public class JeanneDArc extends AnimatorCard_UltraRare
 {
@@ -28,7 +27,7 @@ public class JeanneDArc extends AnimatorCard_UltraRare
         SetUpgrade(2, 0, 0);
 
         SetAffinity_Red(1);
-        SetAffinity_Light(2, 0, 2);
+        SetAffinity_White(2, 0, 2);
     }
 
     @Override
@@ -42,7 +41,7 @@ public class JeanneDArc extends AnimatorCard_UltraRare
     {
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SPEAR).SetVFXColor(Color.GOLD).SetSoundPitch(0.6f, 0.7f);
-        GameActions.Bottom.GainLight(1, true);
+        GameActions.Bottom.GainWhite(1, true);
         GameActions.Bottom.ExhaustFromPile(name, 1, p.drawPile, p.hand, p.discardPile)
         .ShowEffect(true, true)
         .SetOptions(true, true)

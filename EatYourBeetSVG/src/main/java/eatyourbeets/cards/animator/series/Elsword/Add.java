@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.special.OrbCore;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.JUtils;
 
@@ -30,9 +29,9 @@ public class Add extends AnimatorCard
         SetUpgrade(0, 0, 2, 1);
 
         SetAffinity_Blue(2);
-        SetAffinity_Dark(2);
+        SetAffinity_Black(2);
 
-        SetAffinityRequirement(Affinity.Dark, 2);
+        SetAffinityRequirement(Affinity.Black, 2);
 
         SetExhaust(true);
     }
@@ -41,7 +40,7 @@ public class Add extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.GainDark(secondaryValue);
+        GameActions.Bottom.GainBlack(secondaryValue);
         GameActions.Bottom.GainEnergyNextTurn(1);
         GameActions.Bottom.GainInspiration(magicNumber);
     }

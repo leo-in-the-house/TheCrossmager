@@ -9,7 +9,6 @@ import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class Curse_Regret extends AnimatorCard
 {
@@ -23,7 +22,7 @@ public class Curse_Regret extends AnimatorCard
         Initialize(0, 0);
 
         SetEndOfTurnPlay(true);
-        SetAffinity_Dark(1);
+        SetAffinity_Black(1);
     }
 
     @Override

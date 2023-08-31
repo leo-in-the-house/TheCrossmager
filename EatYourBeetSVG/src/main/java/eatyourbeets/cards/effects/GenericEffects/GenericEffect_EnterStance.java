@@ -32,10 +32,10 @@ public class GenericEffect_EnterStance extends GenericEffect
         if (GameUtilities.IsPlayerClass(GR.Animator.PlayerClass))
         {
             text = tooltip.title
-            .replace(GR.Tooltips.Agility.title, "[Agility]")
-            .replace(GR.Tooltips.Force.title, "[Force]")
-            .replace(GR.Tooltips.Intellect.title, "[Intellect]")
-            .replace(GR.Tooltips.Corruption.title, "[Corruption]")
+            .replace(GR.Tooltips.GreenThreshold.title, "[Agility]")
+            .replace(GR.Tooltips.RedThreshold.title, "[Force]")
+            .replace(GR.Tooltips.BlueThreshold.title, "[Intellect]")
+            .replace(GR.Tooltips.BlackThreshold.title, "[Corruption]")
             .replace(GR.Tooltips.WrathStance.title, "[Wrath Stance]")
             .replace(GR.Tooltips.TranceStance.title, "[Trance Stance]")
             .replace(GR.Tooltips.MagicStance.title, "[Magic Stance]")
@@ -45,10 +45,10 @@ public class GenericEffect_EnterStance extends GenericEffect
         else
         {
             text = tooltip.title
-            .replace(GR.Tooltips.Agility.title, "[A]")
-            .replace(GR.Tooltips.Force.title, "[F]")
-            .replace(GR.Tooltips.Intellect.title, "[I]")
-            .replace(GR.Tooltips.Corruption.title, "[C]")
+            .replace(GR.Tooltips.GreenThreshold.title, "[A]")
+            .replace(GR.Tooltips.RedThreshold.title, "[F]")
+            .replace(GR.Tooltips.BlueThreshold.title, "[I]")
+            .replace(GR.Tooltips.BlackThreshold.title, "[C]")
             .replace(GR.Tooltips.WrathStance.title, "[Wrath Stance]")
             .replace(GR.Tooltips.TranceStance.title, "[Trance Stance]")
             .replace(GR.Tooltips.MagicStance.title, "[Magic Stance]")

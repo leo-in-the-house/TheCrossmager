@@ -22,7 +22,7 @@ public class Special_Bite extends AnimatorCard
         Initialize(9, 0, 3);
         SetUpgrade(3, 0, 0);
 
-        SetAffinity_Dark(1);
+        SetAffinity_Black(1);
         SetAffinity_Red(1);
     }
 

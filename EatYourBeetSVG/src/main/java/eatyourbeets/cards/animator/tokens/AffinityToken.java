@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.random.Random;
 import eatyourbeets.actions.pileSelection.SelectFromPile;
 import eatyourbeets.cards.animator.colorless.uncommon.AffinityToken_General;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.resources.GR;
 import eatyourbeets.utilities.*;
@@ -62,8 +61,13 @@ public abstract class AffinityToken extends AnimatorCard
             case Red: return AffinityToken_Red.DATA;
             case Green: return AffinityToken_Green.DATA;
             case Blue: return AffinityToken_Blue.DATA;
-            case Light: return AffinityToken_Light.DATA;
-            case Dark: return AffinityToken_Dark.DATA;
+            case White: return AffinityToken_White.DATA;
+            case Black: return AffinityToken_Black.DATA;
+            case Brown: return AffinityToken_Brown.DATA;
+            case Pink: return AffinityToken_Pink.DATA;
+            case Violet: return AffinityToken_Violet.DATA;
+            case Teal: return AffinityToken_Teal.DATA;
+            case Yellow: return AffinityToken_Yellow.DATA;
 
             case Star:
             case General: return AffinityToken_General.DATA;

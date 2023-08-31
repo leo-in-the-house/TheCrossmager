@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
@@ -30,7 +29,7 @@ public class Ramiris extends AnimatorCard
         Initialize(0, 0, 1, 3);
         SetUpgrade(0, 0, 1, 0);
 
-        SetAffinity_Light(2);
+        SetAffinity_White(2);
         SetAffinity_Blue(1);
         SetAffinity_Green(1);
 

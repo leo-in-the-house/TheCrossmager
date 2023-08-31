@@ -11,12 +11,10 @@ import eatyourbeets.actions.EYBAction;
 import eatyourbeets.actions.special.RefreshHandLayout;
 import eatyourbeets.cards.animatorClassic.series.NoGameNoLife.Sora;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.interfaces.delegates.ActionT3;
 import eatyourbeets.resources.GR;
 import eatyourbeets.resources.animator.AnimatorStrings;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.RandomizedList;
 import eatyourbeets.utilities.TargetHelper;
 
@@ -117,18 +115,18 @@ public class SoraAction extends EYBAction
     {
         DamageRandomTwice(0, "", 5),
         DamageAll(0, "", 6),
-        GainForce(0, ACTIONS.GainAmount(2, GR.Tooltips.Force, true), 2),
+        GainForce(0, ACTIONS.GainAmount(2, GR.Tooltips.RedThreshold, true), 2),
         ApplyVulnerable(0, ACTIONS.ApplyToALL(2, GR.Tooltips.Vulnerable, true), 2),
 
         GainBlock(1, "", 7),
-        GainAgility(1, ACTIONS.GainAmount(2, GR.Tooltips.Agility, true), 2),
+        GainAgility(1, ACTIONS.GainAmount(2, GR.Tooltips.GreenThreshold, true), 2),
         ApplyWeak(1, ACTIONS.ApplyToALL(2, GR.Tooltips.Weak, true), 2),
         GainTemporaryHP(1, ACTIONS.GainAmount(5, "{" + GR.Tooltips.TempHP + "}", true), 5),
 
         UpgradeAll(2, ACTIONS.UpgradeALLCardsInHand(true), 0),
         Motivate(2, ACTIONS.Motivate(1, true), 1),
         CycleCards(2, ACTIONS.Cycle(3, true), 3),
-        GainIntellect(2, ACTIONS.GainAmount(2, GR.Tooltips.Intellect, true), 2);
+        GainIntellect(2, ACTIONS.GainAmount(2, GR.Tooltips.BlueThreshold, true), 2);
 
         private int group;
         private String cardDescription;

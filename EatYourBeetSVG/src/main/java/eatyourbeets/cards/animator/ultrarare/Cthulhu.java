@@ -31,7 +31,7 @@ public class Cthulhu extends AnimatorCard_UltraRare implements OnAddToDeckListen
 
         Initialize(800, 0, 120);
 
-        SetAffinity_Dark(2, 0, 32);
+        SetAffinity_Black(2, 0, 32);
     }
 
     @Override

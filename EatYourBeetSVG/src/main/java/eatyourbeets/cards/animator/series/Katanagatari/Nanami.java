@@ -8,7 +8,6 @@ import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.cards.effects.NanamiEffects.NanamiEffect;
 import eatyourbeets.ui.cards.TargetEffectPreview;
-import eatyourbeets.utilities.GameUtilities;
 
 public class Nanami extends AnimatorCard
 {
@@ -29,7 +28,7 @@ public class Nanami extends AnimatorCard
 
         SetAffinity_Red(1);
         SetAffinity_Green(1);
-        SetAffinity_Dark(1, 1, 0);
+        SetAffinity_Black(1, 1, 0);
 
         SetAttackType(EYBAttackType.Normal);
         SetExhaust(true);

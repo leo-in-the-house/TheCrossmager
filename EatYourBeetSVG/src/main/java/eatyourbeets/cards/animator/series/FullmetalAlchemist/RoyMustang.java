@@ -8,7 +8,6 @@ import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.orbs.animator.Fire;
 import eatyourbeets.powers.common.BurningPower;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class RoyMustang extends AnimatorCard
 {
@@ -25,7 +24,7 @@ public class RoyMustang extends AnimatorCard
         SetUpgrade(2, 0, 0);
 
         SetAffinity_Blue(1, 1, 1);
-        SetAffinity_Light(1);
+        SetAffinity_White(1);
         SetAffinity_Red(1, 1, 0);
 
         SetEvokeOrbCount(1);

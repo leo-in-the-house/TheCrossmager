@@ -22,7 +22,7 @@ public class HousakiTohya extends AnimatorCard
         SetUpgrade(3, 0, 0);
 
         SetAffinity_Red(1, 0, 1);
-        SetAffinity_Light(1);
+        SetAffinity_White(1);
 
         SetAffinityRequirement(Affinity.General, 3);
     }

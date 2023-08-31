@@ -3,12 +3,10 @@ package eatyourbeets.cards.animator.ultrarare;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.AnimatorCard_UltraRare;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardSeries;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class AngelAlter extends AnimatorCard_UltraRare
 {
@@ -19,8 +17,11 @@ public class AngelAlter extends AnimatorCard_UltraRare
         super(DATA);
 
         Initialize(0, 0, 2, 0);
+
         SetAffinity_Red(1);
-        SetAffinity_Light(1);
+        SetAffinity_Blue(1);
+        SetAffinity_Violet(1);
+
         SetHaste(true);
         SetEthereal(true);
         SetUnplayable(true);
@@ -30,7 +31,8 @@ public class AngelAlter extends AnimatorCard_UltraRare
     public void triggerOnExhaust()
     {
         GameActions.Bottom.GainRed(magicNumber);
-        GameActions.Bottom.GainLight(magicNumber);
+        GameActions.Bottom.GainBlue(magicNumber);
+        GameActions.Bottom.GainViolet(magicNumber);
 
         AbstractCard copy = this.makeCopy();
 

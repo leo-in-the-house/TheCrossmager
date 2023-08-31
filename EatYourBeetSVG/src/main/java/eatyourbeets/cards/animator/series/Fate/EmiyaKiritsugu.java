@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.tokens.AffinityToken;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.*;
 
@@ -19,8 +18,8 @@ public class EmiyaKiritsugu extends AnimatorCard
             .SetSeriesFromClassPackage()
             .PostInitialize(data ->
             {
-                data.AddPreview(AffinityToken.GetCard(Affinity.Light), true);
-                data.AddPreview(AffinityToken.GetCard(Affinity.Dark), true);
+                data.AddPreview(AffinityToken.GetCard(Affinity.White), true);
+                data.AddPreview(AffinityToken.GetCard(Affinity.Black), true);
             });
     public static final int CARD_CHOICE = 2;
 
@@ -30,8 +29,8 @@ public class EmiyaKiritsugu extends AnimatorCard
 
         Initialize(9, 9, 0, 2);
 
-        SetAffinity_Light(1);
-        SetAffinity_Dark(1);
+        SetAffinity_White(1);
+        SetAffinity_Black(1);
         SetAffinity_Green(0, 0, 3);
         SetAffinity_Blue(0, 0, 1);
 
@@ -98,13 +97,13 @@ public class EmiyaKiritsugu extends AnimatorCard
                 {
                     GameActions.Bottom.SealAffinities(c, false);
 
-                    if (a.GetLevel(Affinity.Light, true) > 0)
+                    if (a.GetLevel(Affinity.White, true) > 0)
                     {
-                        GameActions.Bottom.ObtainAffinityToken(Affinity.Dark, true);
+                        GameActions.Bottom.ObtainAffinityToken(Affinity.Black, true);
                     }
-                    if (a.GetLevel(Affinity.Dark, true) > 0)
+                    if (a.GetLevel(Affinity.Black, true) > 0)
                     {
-                        GameActions.Bottom.ObtainAffinityToken(Affinity.Light, true);
+                        GameActions.Bottom.ObtainAffinityToken(Affinity.White, true);
                     }
                     if (a.GetLevel(Affinity.Blue, true) > 0)
                     {

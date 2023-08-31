@@ -24,7 +24,7 @@ public class Mayuri extends AnimatorCard
         SetUpgrade(8, 0);
 
         SetAffinity_Red(1);
-        SetAffinity_Light(1);
+        SetAffinity_White(1);
     }
 
     @Override

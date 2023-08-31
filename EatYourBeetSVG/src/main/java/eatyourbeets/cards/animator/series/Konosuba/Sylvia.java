@@ -11,7 +11,6 @@ import eatyourbeets.ui.common.EYBCardPopupActions;
 import eatyourbeets.utilities.CardSelection;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
-import eatyourbeets.utilities.GameUtilities;
 
 public class Sylvia extends AnimatorCard
 {
@@ -32,7 +31,7 @@ public class Sylvia extends AnimatorCard
         SetUpgrade(0, 3, 0, 0);
 
         SetAffinity_Red(1);
-        SetAffinity_Dark(1);
+        SetAffinity_Black(1);
         SetAffinity_Star(0, 0, 1);
     }
 

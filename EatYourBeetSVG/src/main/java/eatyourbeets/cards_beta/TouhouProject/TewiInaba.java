@@ -26,7 +26,7 @@ public class TewiInaba extends AnimatorCard implements Hidden // TODO:
         Initialize(0, 0, 2, 4);
         SetUpgrade(0, 0, 0, 0);
 
-        SetAffinity_Dark(1);
+        SetAffinity_Black(1);
     }
 
     @Override

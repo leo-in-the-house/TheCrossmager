@@ -6,7 +6,6 @@ import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.SFX;
@@ -14,7 +13,6 @@ import eatyourbeets.orbs.animator.Chaos;
 import eatyourbeets.powers.AnimatorClickablePower;
 import eatyourbeets.powers.PowerTriggerConditionType;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class Ainz extends AnimatorCard
 {
@@ -34,7 +32,7 @@ public class Ainz extends AnimatorCard
 
         SetAffinity_Red(1);
         SetAffinity_Blue(2);
-        SetAffinity_Dark(2);
+        SetAffinity_Black(2);
     }
 
     @Override

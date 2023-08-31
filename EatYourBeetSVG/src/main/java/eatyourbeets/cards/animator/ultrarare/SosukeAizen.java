@@ -7,7 +7,6 @@ import eatyourbeets.cards.base.*;
 import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.stances.WrathStance;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class SosukeAizen extends AnimatorCard_UltraRare
 {
@@ -19,7 +18,7 @@ public class SosukeAizen extends AnimatorCard_UltraRare
         Initialize(0, 0, 0);
         SetUpgrade(0,0,0);
 
-        SetAffinity_Dark(2, 0, 0);
+        SetAffinity_Black(2, 0, 0);
         SetAffinity_Red(1, 0, 0);
 
         SetMultiDamage(true);

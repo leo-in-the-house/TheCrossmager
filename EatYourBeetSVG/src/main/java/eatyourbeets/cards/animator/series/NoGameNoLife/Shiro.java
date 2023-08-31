@@ -6,7 +6,6 @@ import eatyourbeets.cards.base.*;
 import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.effects.SFX;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class Shiro extends AnimatorCard
 {
@@ -22,7 +21,7 @@ public class Shiro extends AnimatorCard
         Initialize(0, 0, 2, 2);
 
         SetAffinity_Blue(2);
-        SetAffinity_Light(1, 1, 0);
+        SetAffinity_White(1, 1, 0);
 
         SetAffinityRequirement(Affinity.Blue, 5);
 

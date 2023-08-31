@@ -37,7 +37,7 @@ public class Kira extends AnimatorCard
         SetUpgrade(0, 0, 0, -1);
 
         SetAffinity_Blue(2);
-        SetAffinity_Dark(2);
+        SetAffinity_Black(2);
 
         SetExhaust(true);
         SetEthereal(true);

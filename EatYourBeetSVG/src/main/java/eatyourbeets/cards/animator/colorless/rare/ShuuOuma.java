@@ -5,7 +5,6 @@ import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.utilities.GameActions;
@@ -23,8 +22,8 @@ public class ShuuOuma extends AnimatorCard
 
         Initialize(0, 0, 1);
 
-        SetAffinity_Light(1);
-        SetAffinity_Dark(1);
+        SetAffinity_White(1);
+        SetAffinity_Black(1);
 
         SetExhaust(true);
 
@@ -82,7 +81,7 @@ public class ShuuOuma extends AnimatorCard
 
             if (card.type.equals(CardType.POWER))
             {
-                GameActions.Bottom.GainDark(amount, true);
+                GameActions.Bottom.GainBlack(amount, true);
                 GameActions.Bottom.GainBlue(amount, true);
                 GameActions.Bottom.GainRed(amount, true);
                 this.flashWithoutSound();

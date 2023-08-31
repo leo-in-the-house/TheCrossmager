@@ -6,7 +6,6 @@ import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.card.PermanentUpgradeEffect;
@@ -14,7 +13,6 @@ import eatyourbeets.interfaces.listeners.OnAddToDeckListener;
 import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
-import eatyourbeets.utilities.GameUtilities;
 
 public class Kaijin extends AnimatorCard implements OnAddToDeckListener
 {
@@ -29,7 +27,7 @@ public class Kaijin extends AnimatorCard implements OnAddToDeckListener
         Initialize(0, 0, 1);
 
         SetAffinity_Red(1);
-        SetAffinity_Light(1);
+        SetAffinity_White(1);
     }
 
     @Override

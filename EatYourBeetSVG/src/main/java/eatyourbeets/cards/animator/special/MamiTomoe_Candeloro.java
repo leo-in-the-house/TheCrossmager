@@ -14,7 +14,6 @@ import eatyourbeets.monsters.EnemyIntent;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.powers.PowerHelper;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.TargetHelper;
 
 public class MamiTomoe_Candeloro extends AnimatorCard implements OnLoseHPSubscriber
@@ -30,8 +29,8 @@ public class MamiTomoe_Candeloro extends AnimatorCard implements OnLoseHPSubscri
         Initialize(0, 20, 1);
         SetUpgrade(0, 6, 0);
 
-        SetAffinity_Dark(2);
-        SetAffinity_Light(2);
+        SetAffinity_Black(2);
+        SetAffinity_White(2);
         SetAffinity_Star(0, 0, 1);
 
         SetRetainOnce(true);

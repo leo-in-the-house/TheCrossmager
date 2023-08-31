@@ -4,7 +4,6 @@ import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.ui.cards.CardPreview;
 import eatyourbeets.utilities.CardSelection;
 import eatyourbeets.utilities.GameActions;
@@ -26,7 +25,7 @@ public class DolaRiku extends AnimatorCard
         Initialize(0, 7);
         SetUpgrade(0, 3);
 
-        SetAffinity_Light(1);
+        SetAffinity_White(1);
         SetAffinity_Green(1);
 
         SetAffinityRequirement(Affinity.Blue, 2);

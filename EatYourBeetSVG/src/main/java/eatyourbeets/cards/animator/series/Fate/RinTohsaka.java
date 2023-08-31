@@ -6,13 +6,11 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.special.OrbCore;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class RinTohsaka extends AnimatorCard
 {
@@ -30,7 +28,7 @@ public class RinTohsaka extends AnimatorCard
         SetUpgrade(0, 2, 0, 0);
 
         SetAffinity_Blue(1, 1, 0);
-        SetAffinity_Light(1, 1, 0);
+        SetAffinity_White(1, 1, 0);
     }
 
     @Override

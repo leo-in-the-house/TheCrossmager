@@ -13,12 +13,10 @@ import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 import com.megacrit.cardcrawl.powers.IntangiblePower;
 import com.megacrit.cardcrawl.powers.InvinciblePower;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.effects.VFX;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.JUtils;
 
 public class Saitama extends AnimatorCard
@@ -50,7 +48,7 @@ public class Saitama extends AnimatorCard
 
         SetAffinity_Red(2);
         SetAffinity_Green(2);
-        SetAffinity_Light(1);
+        SetAffinity_White(1);
 
         SetAttackType(EYBAttackType.Normal);
         GameUtilities.ModifyCostForCombat(this, stage, false);

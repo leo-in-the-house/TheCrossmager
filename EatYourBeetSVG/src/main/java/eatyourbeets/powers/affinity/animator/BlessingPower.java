@@ -7,7 +7,7 @@ import eatyourbeets.powers.affinity.AnimatorAffinityPower;
 public class BlessingPower extends AnimatorAffinityPower
 {
     public static final String POWER_ID = CreateFullID(BlessingPower.class);
-    public static final Affinity AFFINITY_TYPE = Affinity.Light;
+    public static final Affinity AFFINITY_TYPE = Affinity.White;
     public static final String SYMBOL = "B";
 
     public BlessingPower()

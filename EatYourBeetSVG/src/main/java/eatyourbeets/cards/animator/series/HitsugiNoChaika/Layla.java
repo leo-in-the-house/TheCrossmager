@@ -12,7 +12,6 @@ import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.utilities.ColoredString;
 import eatyourbeets.utilities.Colors;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class Layla extends AnimatorCard
 {
@@ -30,7 +29,7 @@ public class Layla extends AnimatorCard
         SetUpgrade(4, 0);
 
         SetAffinity_Blue(1, 0, 1);
-        SetAffinity_Dark(2, 0, 1);
+        SetAffinity_Black(2, 0, 1);
 
         SetAffinityRequirement(Affinity.Blue, 2);
     }

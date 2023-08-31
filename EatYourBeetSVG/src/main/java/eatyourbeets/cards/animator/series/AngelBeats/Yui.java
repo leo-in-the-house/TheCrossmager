@@ -9,7 +9,6 @@ import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class Yui extends AnimatorCard
 {
@@ -27,7 +26,8 @@ public class Yui extends AnimatorCard
 
         Initialize(0, 0, 1, 2);
 
-        SetAffinity_Light(2);
+        SetAffinity_Yellow(1);
+        SetAffinity_White(1);
 
         SetExhaust(true);
     }

@@ -9,7 +9,6 @@ import eatyourbeets.cards.base.EYBAttackType;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class SuzuneAmano extends AnimatorCard
 {
@@ -26,7 +25,7 @@ public class SuzuneAmano extends AnimatorCard
         SetUpgrade(3, 0);
 
         SetAffinity_Red(2, 0, 1);
-        SetAffinity_Dark(1, 0, 1);
+        SetAffinity_Black(1, 0, 1);
     }
 
     @Override

@@ -8,11 +8,9 @@ import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.tokens.AffinityToken;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.resources.GR;
 import eatyourbeets.resources.animator.misc.AnimatorLoadout;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.RandomizedList;
 
 public class EmirEins extends AnimatorCard
@@ -31,7 +29,7 @@ public class EmirEins extends AnimatorCard
         SetUpgrade(0, 0);
 
         SetAffinity_Red(1);
-        SetAffinity_Dark(1);
+        SetAffinity_Black(1);
 
         SetEthereal(true);
     }

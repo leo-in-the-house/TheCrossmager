@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.EYBAttackType;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.stances.WrathStance;
@@ -28,7 +27,7 @@ public class Naotsugu extends AnimatorCard
         SetUpgrade(3, 0);
 
         SetAffinity_Red(2, 0, 1);
-        SetAffinity_Light(1);
+        SetAffinity_White(1);
     }
 
     @Override

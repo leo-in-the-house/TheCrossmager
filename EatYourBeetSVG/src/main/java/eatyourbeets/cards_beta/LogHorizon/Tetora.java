@@ -12,7 +12,6 @@ import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.utilities.ColoredString;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class Tetora extends AnimatorCard
 {
@@ -28,7 +27,7 @@ public class Tetora extends AnimatorCard
         Initialize(0, 0, 0);
 
         SetAffinity_Blue(1);
-        SetAffinity_Light(1);
+        SetAffinity_White(1);
 
         SetAffinityRequirement(Affinity.General, 4);
     }

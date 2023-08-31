@@ -480,7 +480,7 @@ public class GameUtilities
 
     public static boolean HasLightAffinity(AbstractCard card, boolean allowSeal)
     {
-        return HasAffinity(card, Affinity.Light, true, allowSeal);
+        return HasAffinity(card, Affinity.White, true, allowSeal);
     }
 
     public static boolean HasDarkAffinity(AbstractCard card)
@@ -490,7 +490,7 @@ public class GameUtilities
 
     public static boolean HasDarkAffinity(AbstractCard card, boolean allowSeal)
     {
-        return HasAffinity(card, Affinity.Dark, true, allowSeal);
+        return HasAffinity(card, Affinity.Black, true, allowSeal);
     }
 
     public static boolean HasMulticolorAffinity(AbstractCard card)

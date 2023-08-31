@@ -14,7 +14,6 @@ import eatyourbeets.powers.CombatStats;
 import eatyourbeets.powers.animator.FlamingWeaponPower;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
-import eatyourbeets.utilities.GameUtilities;
 
 public class Shizu extends AnimatorCard
 {
@@ -32,7 +31,7 @@ public class Shizu extends AnimatorCard
 
         SetAffinity_Green(1, 0, 1);
         SetAffinity_Red(1);
-        SetAffinity_Light(2);
+        SetAffinity_White(2);
     }
 
     @Override

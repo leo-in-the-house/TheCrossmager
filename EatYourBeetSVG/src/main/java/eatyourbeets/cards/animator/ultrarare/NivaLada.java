@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.ExplosionSmallEffect;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.cards.base.attributes.SpecialAttribute;
 import eatyourbeets.effects.AttackEffects;
@@ -20,7 +19,6 @@ import eatyourbeets.interfaces.subscribers.OnStartOfTurnSubscriber;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
-import eatyourbeets.utilities.GameUtilities;
 
 public class NivaLada extends AnimatorCard_UltraRare implements OnAfterCardExhaustedSubscriber, OnAfterCardDiscardedSubscriber, OnStartOfTurnSubscriber
 {
@@ -43,8 +41,8 @@ public class NivaLada extends AnimatorCard_UltraRare implements OnAfterCardExhau
         Initialize(0, 0);
 
         SetAffinity_Blue(2);
-        SetAffinity_Light(1);
-        SetAffinity_Dark(1);
+        SetAffinity_White(1);
+        SetAffinity_Black(1);
 
         SetCooldown(14, 0, this::OnCooldownCompleted);
         SetAttackType(EYBAttackType.Elemental);

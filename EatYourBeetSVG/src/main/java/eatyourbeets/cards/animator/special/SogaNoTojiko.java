@@ -8,7 +8,6 @@ import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.monsters.EnemyIntent;
 import eatyourbeets.powers.replacement.AnimatorIntangiblePower;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class SogaNoTojiko extends AnimatorCard
 {
@@ -23,8 +22,8 @@ public class SogaNoTojiko extends AnimatorCard
 
         Initialize(0, 0, 3);
 
-        SetAffinity_Light(1);
-        SetAffinity_Dark(1);
+        SetAffinity_White(1);
+        SetAffinity_Black(1);
 
         SetExhaust(true);
         SetEthereal(true);

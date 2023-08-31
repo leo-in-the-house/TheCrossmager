@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.BorderLongFlashEffect;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.interfaces.delegates.ActionT3;
 import eatyourbeets.powers.AnimatorClassicPower;
@@ -138,10 +137,10 @@ public class Ainz extends AnimatorClassicCard
             DrawCards(ACTIONS.Draw(2, true), 10, 2),
             GainThorns(ACTIONS.GainAmount(3, GR.Tooltips.Thorns, true), 10, 3),
             DamageAll("", 10, 12),
-            GainIntellect(ACTIONS.GainAmount(2, GR.Tooltips.Intellect, true), 8, 2),
+            GainIntellect(ACTIONS.GainAmount(2, GR.Tooltips.BlueThreshold, true), 8, 2),
             GainEnergy(ACTIONS.GainAmount(2, GR.Tooltips.Energy, true), 8, 2),
-            GainAgility(ACTIONS.GainAmount(2, GR.Tooltips.Agility, true), 8, 2),
-            GainForce(ACTIONS.GainAmount(2, GR.Tooltips.Force, true), 8, 2);
+            GainAgility(ACTIONS.GainAmount(2, GR.Tooltips.GreenThreshold, true), 8, 2),
+            GainForce(ACTIONS.GainAmount(2, GR.Tooltips.RedThreshold, true), 8, 2);
 
             private final String text;
             private final int weight;

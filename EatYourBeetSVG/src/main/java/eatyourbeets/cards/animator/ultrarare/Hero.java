@@ -9,13 +9,11 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import eatyourbeets.cards.base.AnimatorCard_UltraRare;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardSeries;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.Mathf;
 
 public class Hero extends AnimatorCard_UltraRare
@@ -34,7 +32,7 @@ public class Hero extends AnimatorCard_UltraRare
 
         SetAffinity_Red(1);
         SetAffinity_Green(1);
-        SetAffinity_Light(2, 0, 2);
+        SetAffinity_White(2, 0, 2);
     }
 
     @Override

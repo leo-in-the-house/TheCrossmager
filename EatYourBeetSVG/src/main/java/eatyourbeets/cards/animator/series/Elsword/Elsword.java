@@ -25,7 +25,7 @@ public class Elsword extends AnimatorCard
         SetUpgrade(4, 0, 0);
 
         SetAffinity_Red(2, 0, 3);
-        SetAffinity_Light(1);
+        SetAffinity_White(1);
     }
 
     @Override

@@ -15,7 +15,7 @@ public class VestaElixirEffect_Affinity_Green extends VestaElixirEffect
     @Override
     public String GetDescription()
     {
-        return ACTIONS.GainAmount(amount, GR.AnimatorClassic.IsSelected() ? GR.Tooltips.Agility : GR.Tooltips.Affinity_Green, true);
+        return ACTIONS.GainAmount(amount, GR.AnimatorClassic.IsSelected() ? GR.Tooltips.GreenThreshold : GR.Tooltips.Affinity_Green, true);
     }
 
     @Override

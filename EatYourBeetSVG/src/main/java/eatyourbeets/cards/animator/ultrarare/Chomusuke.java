@@ -20,8 +20,8 @@ public class Chomusuke extends AnimatorCard_UltraRare
 
         Initialize(0, 0);
 
-        SetAffinity_Light(1);
-        SetAffinity_Dark(1);
+        SetAffinity_White(1);
+        SetAffinity_Black(1);
     }
 
     @Override

@@ -15,7 +15,7 @@ public class VestaElixirEffect_Affinity_Blue extends VestaElixirEffect
     @Override
     public String GetDescription()
     {
-        return ACTIONS.GainAmount(amount, GR.AnimatorClassic.IsSelected() ? GR.Tooltips.Intellect : GR.Tooltips.Affinity_Blue, true);
+        return ACTIONS.GainAmount(amount, GR.AnimatorClassic.IsSelected() ? GR.Tooltips.BlueThreshold : GR.Tooltips.Affinity_Blue, true);
     }
 
     @Override

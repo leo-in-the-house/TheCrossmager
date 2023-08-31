@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.Dark;
 import eatyourbeets.cards.animator.tokens.AffinityToken;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.cards.base.attributes.TempHPAttribute;
 import eatyourbeets.powers.CombatStats;
@@ -22,7 +21,7 @@ public class ChaikaGaz extends AnimatorCard
             .PostInitialize(data ->
             {
                 data.AddPreview(AffinityToken.GetCard(Affinity.Blue), false);
-                data.AddPreview(AffinityToken.GetCard(Affinity.Dark), false);
+                data.AddPreview(AffinityToken.GetCard(Affinity.Black), false);
             });
     public static final int TEMP_HP_AMOUNT = 2;
 
@@ -34,7 +33,7 @@ public class ChaikaGaz extends AnimatorCard
         SetUpgrade(0, 0, 1);
 
         SetAffinity_Blue(1, 1, 0);
-        SetAffinity_Dark(1, 1, 0);
+        SetAffinity_Black(1, 1, 0);
     }
 
     @Override
@@ -48,7 +47,7 @@ public class ChaikaGaz extends AnimatorCard
     {
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainTemporaryHP(TEMP_HP_AMOUNT);
-        GameActions.Bottom.GainDark(magicNumber, false);
+        GameActions.Bottom.GainBlack(magicNumber, false);
     }
 
     @Override
@@ -73,7 +72,7 @@ public class ChaikaGaz extends AnimatorCard
         {
             final CardGroup group = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
             group.group.add(AffinityToken.GetCopy(Affinity.Blue, false));
-            group.group.add(AffinityToken.GetCopy(Affinity.Dark, false));
+            group.group.add(AffinityToken.GetCopy(Affinity.Black, false));
             GameActions.Bottom.SelectFromPile(name, 1, group)
             .SetOptions(false, false)
             .AddCallback(cards2 ->
@@ -89,6 +88,6 @@ public class ChaikaGaz extends AnimatorCard
     @Override
     public boolean CheckSpecialCondition(boolean tryUse)
     {
-        return CombatStats.Affinities.GetUsableAffinity(Affinity.Dark) >= (tryUse ? secondaryValue : (secondaryValue - magicNumber));
+        return CombatStats.Affinities.GetUsableAffinity(Affinity.Black) >= (tryUse ? secondaryValue : (secondaryValue - magicNumber));
     }
 }

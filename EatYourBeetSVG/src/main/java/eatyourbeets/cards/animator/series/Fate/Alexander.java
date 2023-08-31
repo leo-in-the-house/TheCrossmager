@@ -6,7 +6,6 @@ import eatyourbeets.cards.base.*;
 import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class Alexander extends AnimatorCard
 {
@@ -22,7 +21,7 @@ public class Alexander extends AnimatorCard
         SetUpgrade(3, 0);
 
         SetAffinity_Red(2, 0, 1);
-        SetAffinity_Light(1);
+        SetAffinity_White(1);
     }
 
     @Override

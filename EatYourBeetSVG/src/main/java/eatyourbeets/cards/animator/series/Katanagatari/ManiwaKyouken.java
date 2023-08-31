@@ -23,9 +23,9 @@ public class ManiwaKyouken extends AnimatorCard
         SetUpgrade(0, 0, 0, 1);
 
         SetAffinity_Green(1);
-        SetAffinity_Dark(1, 0, 2);
+        SetAffinity_Black(1, 0, 2);
 
-        SetAffinityRequirement(Affinity.Dark, 1);
+        SetAffinityRequirement(Affinity.Black, 1);
     }
 
     @Override
@@ -68,7 +68,7 @@ public class ManiwaKyouken extends AnimatorCard
 
         if (CheckSpecialCondition(true))
         {
-            SetAffinityRequirement(Affinity.Dark, affinities.GetRequirement(Affinity.Dark) + 1);
+            SetAffinityRequirement(Affinity.Black, affinities.GetRequirement(Affinity.Black) + 1);
         }
         else
         {

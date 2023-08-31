@@ -30,9 +30,9 @@ public class Sonic extends AnimatorCard
         SetCostUpgrade(-1);
 
         SetAffinity_Green(2);
-        SetAffinity_Dark(1);
+        SetAffinity_Black(1);
 
-        SetAffinityRequirement(Affinity.Dark, 1);
+        SetAffinityRequirement(Affinity.Black, 1);
     }
 
     @Override

@@ -6,13 +6,11 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.effects.SFX;
 import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.resources.GR;
 import eatyourbeets.resources.animator.misc.AnimatorLoadout;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.RandomizedList;
 
 public class Walpurgisnacht extends AnimatorCard_UltraRare
@@ -30,7 +28,7 @@ public class Walpurgisnacht extends AnimatorCard_UltraRare
         SetUpgrade(0, 0, 1);
 
         SetAffinity_Blue(2);
-        SetAffinity_Dark(2);
+        SetAffinity_Black(2);
 
         SetEthereal(true);
     }
@@ -72,7 +70,7 @@ public class Walpurgisnacht extends AnimatorCard_UltraRare
             super.onAfterCardPlayed(usedCard);
 
             final EYBCardAffinities a = GameUtilities.GetAffinities(usedCard);
-            if (a != null && a.GetLevel(Affinity.Blue, true) <= 0 && a.GetLevel(Affinity.Dark, true) <= 0)
+            if (a != null && a.GetLevel(Affinity.Blue, true) <= 0 && a.GetLevel(Affinity.Black, true) <= 0)
             {
                 for (int i = 0; i < amount; i++)
                 {
@@ -93,7 +91,7 @@ public class Walpurgisnacht extends AnimatorCard_UltraRare
                 if (GameUtilities.IsObtainableInCombat(c))
                 {
                     final EYBCardAffinities b = GameUtilities.GetAffinities(c);
-                    if (b != null && (b.GetLevel(Affinity.Blue, true) > 0 || b.GetLevel(Affinity.Dark, true) > 0))
+                    if (b != null && (b.GetLevel(Affinity.Blue, true) > 0 || b.GetLevel(Affinity.Black, true) > 0))
                     {
                         if (!betaSeries && c instanceof AnimatorCard)
                         {

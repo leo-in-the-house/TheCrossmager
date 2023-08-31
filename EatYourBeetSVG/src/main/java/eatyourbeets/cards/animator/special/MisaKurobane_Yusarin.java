@@ -24,7 +24,7 @@ public class MisaKurobane_Yusarin extends AnimatorCard
         Initialize(0, 0, 1);
         SetUpgrade(0, 0, 1);
 
-        SetAffinity_Light(1);
+        SetAffinity_White(1);
 
         SetExhaust(true);
     }

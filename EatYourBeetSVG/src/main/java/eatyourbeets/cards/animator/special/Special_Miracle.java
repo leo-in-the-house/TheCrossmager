@@ -22,7 +22,7 @@ public class Special_Miracle extends AnimatorCard
         Initialize(0, 0, 1);
         SetUpgrade(0, 0, 1);
 
-        SetAffinity_Light(1);
+        SetAffinity_White(1);
 
         SetPurge(true);
         SetRetain(true);
@@ -32,7 +32,7 @@ public class Special_Miracle extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.GainLight(1, true);
+        GameActions.Bottom.GainWhite(1, true);
         GameActions.Bottom.GainEnergy(magicNumber);
     }
 }

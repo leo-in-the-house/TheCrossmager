@@ -26,8 +26,8 @@ public class HolyGrail extends AnimatorCard_UltraRare implements OnBattleEndSubs
         Initialize(0, 0, 3, 3);
         SetUpgrade(0, 0, 0, -1);
 
-        SetAffinity_Light(2);
-        SetAffinity_Dark(2);
+        SetAffinity_White(2);
+        SetAffinity_Black(2);
 
         SetInnate(true);
         SetRetain(true);

@@ -31,7 +31,7 @@ public class Curse_Dread extends AnimatorCard implements OnStartOfTurnPostDrawSu
 
         Initialize(0, 0, 1, 1);
 
-        SetAffinity_Dark(1);
+        SetAffinity_Black(1);
 
         SetEndOfTurnPlay(false);
         SetExhaust(true);
@@ -56,7 +56,7 @@ public class Curse_Dread extends AnimatorCard implements OnStartOfTurnPostDrawSu
     {
         if (CombatStats.TryActivateLimited(cardID))
         {
-            GameActions.Bottom.GainDark(secondaryValue);
+            GameActions.Bottom.GainBlack(secondaryValue);
             GameActions.Bottom.Callback(() -> player.increaseMaxHp(1, true));
         }
     }

@@ -40,7 +40,7 @@ public class TheHaunt extends AnimatorCard implements Hidden
 
         Initialize(0, 0, goldBonus);
 
-        SetAffinity_Dark(2);
+        SetAffinity_Black(2);
 
         SetEndOfTurnPlay(false);
         SetEthereal(true);

@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.powers.AnimatorClickablePower;
@@ -32,7 +31,7 @@ public class Hitei extends AnimatorCard
         Initialize(0, 0, EXHAUST_SELECTION_SIZE, POWER_ACTIVATION_COST);
         SetCostUpgrade(-1);
 
-        SetAffinity_Dark(1);
+        SetAffinity_Black(1);
     }
 
     @Override

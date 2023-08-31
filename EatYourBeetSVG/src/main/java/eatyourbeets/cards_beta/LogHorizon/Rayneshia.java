@@ -7,11 +7,9 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.actions.special.RefreshHandLayout;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.resources.GR;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.RandomizedList;
 
 public class Rayneshia extends AnimatorCard
@@ -27,7 +25,7 @@ public class Rayneshia extends AnimatorCard
         Initialize(0, 0, 2, 4);
         SetUpgrade(0, 0, 1, 0);
 
-        SetAffinity_Light(1);
+        SetAffinity_White(1);
         SetAffinityRequirement(Affinity.General, 4);
     }
 

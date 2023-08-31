@@ -15,7 +15,6 @@ import eatyourbeets.interfaces.subscribers.OnModifyDamageFirstSubscriber;
 import eatyourbeets.monsters.EnemyIntent;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class Genos extends AnimatorCard implements OnModifyDamageFirstSubscriber
 {
@@ -31,7 +30,7 @@ public class Genos extends AnimatorCard implements OnModifyDamageFirstSubscriber
         SetUpgrade(4, 0, 0, 0);
 
         SetAffinity_Red(1);
-        SetAffinity_Light(1);
+        SetAffinity_White(1);
     }
 
     @Override

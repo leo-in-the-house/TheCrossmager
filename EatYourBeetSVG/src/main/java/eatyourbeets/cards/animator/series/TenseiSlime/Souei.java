@@ -9,14 +9,12 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.actions.special.SelectCreature;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.effects.VFX;
 import eatyourbeets.monsters.EnemyIntent;
 import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.utilities.ColoredString;
 import eatyourbeets.utilities.Colors;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class Souei extends AnimatorCard
 {
@@ -37,7 +35,7 @@ public class Souei extends AnimatorCard
         SetUpgrade(0, 0, 0, 1);
 
         SetAffinity_Green(1, 1, 0);
-        SetAffinity_Dark(1);
+        SetAffinity_Black(1);
 
         SetEthereal(true);
 

@@ -11,7 +11,6 @@ import eatyourbeets.cards.base.EYBAttackType;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.TargetHelper;
 
 public class Nyanta extends AnimatorCard
@@ -27,7 +26,7 @@ public class Nyanta extends AnimatorCard
         Initialize(2, 0, 3);
 
         SetAffinity_Green(2, 0, 1);
-        SetAffinity_Light(1);
+        SetAffinity_White(1);
 
         SetRetain(true);
     }

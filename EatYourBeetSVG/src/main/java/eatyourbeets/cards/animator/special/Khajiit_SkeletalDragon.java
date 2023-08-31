@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.Dark;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardSeries;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
@@ -16,7 +15,6 @@ import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.effects.VFX;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
-import eatyourbeets.utilities.GameUtilities;
 
 public class Khajiit_SkeletalDragon extends AnimatorCard
 {
@@ -39,7 +37,7 @@ public class Khajiit_SkeletalDragon extends AnimatorCard
         Initialize(32, 8, 2);
         SetUpgrade(4, 0, 1);
 
-        SetAffinity_Dark(2);
+        SetAffinity_Black(2);
         SetAffinity_Red(2);
 
         this.summoner = summoner;

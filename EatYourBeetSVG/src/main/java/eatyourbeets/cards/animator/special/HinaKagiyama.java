@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardSeries;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
@@ -32,7 +31,7 @@ public class HinaKagiyama extends AnimatorCard
         Initialize(0, 0, 1);
 
         SetAffinity_Blue(1);
-        SetAffinity_Light(2);
+        SetAffinity_White(2);
     }
 
     @Override
@@ -103,7 +102,7 @@ public class HinaKagiyama extends AnimatorCard
         {
             if (c.type == AbstractCard.CardType.CURSE)
             {
-                GameActions.Bottom.GainLight(amount);
+                GameActions.Bottom.GainWhite(amount);
                 flashWithoutSound();
             }
         }

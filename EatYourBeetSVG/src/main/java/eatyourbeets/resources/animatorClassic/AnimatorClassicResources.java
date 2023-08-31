@@ -2,11 +2,9 @@ package eatyourbeets.resources.animatorClassic;
 
 import basemod.BaseMod;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.*;
 import eatyourbeets.cards.base.CardSeries;
@@ -15,7 +13,12 @@ import eatyourbeets.cards.base.EYBCardMetadata;
 import eatyourbeets.characters.AnimatorClassicCharacter;
 import eatyourbeets.potions.FalseLifePotion;
 import eatyourbeets.potions.GrowthPotion;
-import eatyourbeets.powers.affinity.animatorClassic.*;
+import eatyourbeets.powers.affinity.animator.*;
+import eatyourbeets.powers.affinity.animatorClassic.AgilityPower;
+import eatyourbeets.powers.affinity.animatorClassic.BlessingPower;
+import eatyourbeets.powers.affinity.animatorClassic.CorruptionPower;
+import eatyourbeets.powers.affinity.animatorClassic.ForcePower;
+import eatyourbeets.powers.affinity.animatorClassic.IntellectPower;
 import eatyourbeets.resources.AbstractResources;
 import eatyourbeets.resources.CardTooltips;
 import eatyourbeets.resources.GR;
@@ -25,7 +28,6 @@ import eatyourbeets.rewards.animator.SpecialCardReward;
 import eatyourbeets.rewards.animator.SpecialGoldReward;
 import eatyourbeets.utilities.JUtils;
 
-import java.nio.charset.StandardCharsets;
 import java.util.Map;
 
 public class AnimatorClassicResources extends AbstractResources
@@ -146,6 +148,11 @@ public class AnimatorClassicResources extends AbstractResources
         CardTooltips.RegisterPowerTooltip(GR.AnimatorClassic.PlayerClass, "[I]", "Intellect", new IntellectPower());
         CardTooltips.RegisterPowerTooltip(GR.AnimatorClassic.PlayerClass, "[B]", "Blessing", new BlessingPower());
         CardTooltips.RegisterPowerTooltip(GR.AnimatorClassic.PlayerClass, "[C]", "Corruption", new CorruptionPower());
+        CardTooltips.RegisterPowerTooltip(GR.AnimatorClassic.PlayerClass, "[OT]", "Brown Threshold", new BrownThresholdPower());
+        CardTooltips.RegisterPowerTooltip(GR.AnimatorClassic.PlayerClass, "[PT]", "Pink Threshold", new PinkThresholdPower());
+        CardTooltips.RegisterPowerTooltip(GR.AnimatorClassic.PlayerClass, "[VT]", "Violet Threshold", new VioletThresholdPower());
+        CardTooltips.RegisterPowerTooltip(GR.AnimatorClassic.PlayerClass, "[YT]", "Yellow Threshold", new YellowThresholdPower());
+        CardTooltips.RegisterPowerTooltip(GR.AnimatorClassic.PlayerClass, "[TT]", "Teal Threshold", new TealThresholdPower());
     }
 
     @Override

@@ -26,7 +26,7 @@ public class MarisaKirisame extends AnimatorCard
         Initialize(4, 0, 2);
         SetUpgrade(2, 0, 0);
 
-        SetAffinity_Light(1);
+        SetAffinity_White(1);
         SetAffinity_Blue(1, 1, 2);
     }
 

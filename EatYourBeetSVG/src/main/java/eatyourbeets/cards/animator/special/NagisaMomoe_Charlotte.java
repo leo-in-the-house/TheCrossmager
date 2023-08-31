@@ -2,7 +2,6 @@ package eatyourbeets.cards.animator.special;
 
 import eatyourbeets.cards.animator.series.MadokaMagica.NagisaMomoe;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.utilities.GameActions;
@@ -21,7 +20,7 @@ public class NagisaMomoe_Charlotte extends AnimatorCard
         Initialize(0, 0);
         SetUpgrade(0, 0);
 
-        SetAffinity_Dark(1);
+        SetAffinity_Black(1);
 
         SetUnplayable(true);
     }

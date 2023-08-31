@@ -12,7 +12,6 @@ import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.monsters.EnemyIntent;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
-import eatyourbeets.utilities.GameUtilities;
 
 public class Cirno extends AnimatorCard
 {
@@ -30,7 +29,7 @@ public class Cirno extends AnimatorCard
         SetUpgrade(3, 0, 0);
 
         SetAffinity_Blue(1, 0, 0);
-        SetAffinity_Light(0, 0, 1);
+        SetAffinity_White(0, 0, 1);
 
         SetEthereal(true);
     }

@@ -5,7 +5,6 @@ import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.TargetHelper;
@@ -25,7 +24,7 @@ public class Shiroe extends AnimatorCard
         SetUpgrade(0, 0, 0, 1);
 
         SetAffinity_Blue(2);
-        SetAffinity_Light(1);
+        SetAffinity_White(1);
 
         SetExhaust(true);
     }

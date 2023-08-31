@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.WhirlwindEffect;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.CardSelection;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
@@ -31,7 +30,7 @@ public class Kanami extends AnimatorCard_UltraRare
 
         SetAffinity_Red(1);
         SetAffinity_Green(2, 0, 2);
-        SetAffinity_Light(1);
+        SetAffinity_White(1);
 
         SetCooldown(2, 0, this::OnCooldownCompleted);
         SetHaste(true);

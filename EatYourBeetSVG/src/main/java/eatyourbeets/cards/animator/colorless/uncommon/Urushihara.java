@@ -10,7 +10,6 @@ import eatyourbeets.interfaces.subscribers.OnStartOfTurnPostDrawSubscriber;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
-import eatyourbeets.utilities.GameUtilities;
 
 public class Urushihara extends AnimatorCard implements OnStartOfTurnPostDrawSubscriber
 {
@@ -29,7 +28,7 @@ public class Urushihara extends AnimatorCard implements OnStartOfTurnPostDrawSub
         SetUpgrade(0, 0, -1, -1);
 
         SetAffinity_Blue(1);
-        SetAffinity_Dark(1);
+        SetAffinity_Black(1);
 
         SetEvokeOrbCount(1);
     }

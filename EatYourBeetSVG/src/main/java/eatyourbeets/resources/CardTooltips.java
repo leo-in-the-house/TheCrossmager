@@ -122,6 +122,11 @@ public class CardTooltips
     public EYBCardTooltip CounterAttack = FindByID(null, "Counter-Attack");
     public EYBCardTooltip Enlightenment = FindByID(null, "Enlightenment");
     public EYBCardTooltip Insanity = FindByID(null, "Insanity");
+    public EYBCardTooltip Supercharge = FindByID(null, "Supercharge");
+    public EYBCardTooltip Resistance = FindByID(null, "Resistance");
+    public EYBCardTooltip Knowledge = FindByID(null, "Knowledge");
+    public EYBCardTooltip Pestilence = FindByID(null, "Pestilence");
+    public EYBCardTooltip Innovation = FindByID(null, "Innovation");
     public EYBCardTooltip Vitality = FindByID(null, "Vitality");
     public EYBCardTooltip Invocation = FindByID(null, "Invocation");
     public EYBCardTooltip Envenom = FindByID(null, "Envenom");
@@ -165,8 +170,13 @@ public class CardTooltips
     public EYBCardTooltip RedPower = FindByID(GR.Animator.PlayerClass, "Force");
     public EYBCardTooltip GreenPower = FindByID(GR.Animator.PlayerClass, "Agility");
     public EYBCardTooltip BluePower = FindByID(GR.Animator.PlayerClass, "Intellect");
-    public EYBCardTooltip LightPower = FindByID(GR.Animator.PlayerClass, "Blessing");
-    public EYBCardTooltip DarkPower = FindByID(GR.Animator.PlayerClass, "Corruption");
+    public EYBCardTooltip WhitePower = FindByID(GR.Animator.PlayerClass, "Blessing");
+    public EYBCardTooltip BlackPower = FindByID(GR.Animator.PlayerClass, "Corruption");
+    public EYBCardTooltip BrownPower = FindByID(GR.Animator.PlayerClass, "Brown Threshold");
+    public EYBCardTooltip PinkPower = FindByID(GR.Animator.PlayerClass, "Pink Threshold");
+    public EYBCardTooltip TealPower = FindByID(GR.Animator.PlayerClass, "Teal Threshold");
+    public EYBCardTooltip VioletPower = FindByID(GR.Animator.PlayerClass, "Violet Threshold");
+    public EYBCardTooltip YellowPower = FindByID(GR.Animator.PlayerClass, "Yellow Threshold");
     public EYBCardTooltip RedStance = FindByID(GR.Animator.PlayerClass, "Force Stance");
     public EYBCardTooltip GreenStance = FindByID(GR.Animator.PlayerClass, "Agility Stance");
     public EYBCardTooltip BlueStance = FindByID(GR.Animator.PlayerClass, "Intellect Stance");
@@ -176,6 +186,11 @@ public class CardTooltips
     public EYBCardTooltip BlueScaling = FindByID(GR.Animator.PlayerClass, "Blue Scaling");
     public EYBCardTooltip DarkScaling = FindByID(GR.Animator.PlayerClass, "Dark Scaling");
     public EYBCardTooltip LightScaling = FindByID(GR.Animator.PlayerClass, "Light Scaling");
+    public EYBCardTooltip BrownScaling = FindByID(GR.Animator.PlayerClass, "Brown Scaling");
+    public EYBCardTooltip PinkScaling = FindByID(GR.Animator.PlayerClass, "Pink Scaling");
+    public EYBCardTooltip TealScaling = FindByID(GR.Animator.PlayerClass, "Teal Scaling");
+    public EYBCardTooltip VioletScaling = FindByID(GR.Animator.PlayerClass, "Violet Scaling");
+    public EYBCardTooltip YellowScaling = FindByID(GR.Animator.PlayerClass, "Yellow Scaling");
     public EYBCardTooltip MulticolorScaling = FindByID(GR.Animator.PlayerClass, "Multicolor Scaling");
     public EYBCardTooltip WrathStance = FindByID(GR.Animator.PlayerClass, "Wrath Stance");
     public EYBCardTooltip TranceStance = FindByID(GR.Animator.PlayerClass, "Trance Stance");
@@ -189,16 +204,25 @@ public class CardTooltips
     public EYBCardTooltip Spellcaster = FindByID(GR.AnimatorClassic.PlayerClass, "Spellcaster");
     public EYBCardTooltip MartialArtist = FindByID(GR.AnimatorClassic.PlayerClass, "Martial Artist");
     public EYBCardTooltip Shapeshifter = FindByID(GR.AnimatorClassic.PlayerClass, "Shapeshifter");
-    public EYBCardTooltip Force = FindByID(GR.AnimatorClassic.PlayerClass, "Force");
-    public EYBCardTooltip Agility = FindByID(GR.AnimatorClassic.PlayerClass, "Agility");
-    public EYBCardTooltip Intellect = FindByID(GR.AnimatorClassic.PlayerClass, "Intellect");
-    public EYBCardTooltip Blessing = FindByID(GR.AnimatorClassic.PlayerClass, "Blessing");
-    public EYBCardTooltip Corruption = FindByID(GR.AnimatorClassic.PlayerClass, "Corruption");
+
+    //Thresholds
+    public EYBCardTooltip RedThreshold = FindByID(GR.AnimatorClassic.PlayerClass, "Force");
+    public EYBCardTooltip GreenThreshold = FindByID(GR.AnimatorClassic.PlayerClass, "Agility");
+    public EYBCardTooltip BlueThreshold = FindByID(GR.AnimatorClassic.PlayerClass, "Intellect");
+    public EYBCardTooltip WhiteThreshold = FindByID(GR.AnimatorClassic.PlayerClass, "Blessing");
+    public EYBCardTooltip BlackThreshold = FindByID(GR.AnimatorClassic.PlayerClass, "Corruption");
+    public EYBCardTooltip YellowThreshold = FindByID(GR.AnimatorClassic.PlayerClass, "YellowThreshold");
+    public EYBCardTooltip BrownThreshold = FindByID(GR.AnimatorClassic.PlayerClass, "BrownThreshold");
+    public EYBCardTooltip PinkThreshold = FindByID(GR.AnimatorClassic.PlayerClass, "PinkThreshold");
+    public EYBCardTooltip VioletThreshold = FindByID(GR.AnimatorClassic.PlayerClass, "VioletThreshold");
+    public EYBCardTooltip TealThreshold = FindByID(GR.AnimatorClassic.PlayerClass, "TealThreshold");
     public EYBCardTooltip AgilityScaling = FindByID(GR.AnimatorClassic.PlayerClass, "Agility Scaling");
     public EYBCardTooltip ForceScaling = FindByID(GR.AnimatorClassic.PlayerClass, "Force Scaling");
     public EYBCardTooltip IntellectScaling = FindByID(GR.AnimatorClassic.PlayerClass, "Intellect Scaling");
     public EYBCardTooltip CorruptionScaling = FindByID(GR.AnimatorClassic.PlayerClass, "Corruption Scaling");
     public EYBCardTooltip BlessingScaling = FindByID(GR.AnimatorClassic.PlayerClass, "Blessing Scaling");
+
+    //Legacy Stances
     public EYBCardTooltip AgilityStance = FindByID(GR.AnimatorClassic.PlayerClass, "Agility Stance");
     public EYBCardTooltip ForceStance = FindByID(GR.AnimatorClassic.PlayerClass, "Force Stance");
     public EYBCardTooltip IntellectStance = FindByID(GR.AnimatorClassic.PlayerClass, "Intellect Stance");
@@ -221,8 +245,13 @@ public class CardTooltips
     public EYBCardTooltip Affinity_Red = new EYBCardTooltip("Red Affinity", null).ShowText(false);
     public EYBCardTooltip Affinity_Green = new EYBCardTooltip("Green Affinity", null).ShowText(false);
     public EYBCardTooltip Affinity_Blue = new EYBCardTooltip("Blue Affinity", null).ShowText(false);
-    public EYBCardTooltip Affinity_Light = new EYBCardTooltip("Light Affinity", null).ShowText(false);
-    public EYBCardTooltip Affinity_Dark = new EYBCardTooltip("Dark Affinity", null).ShowText(false);
+    public EYBCardTooltip Affinity_White = new EYBCardTooltip("White Affinity", null).ShowText(false);
+    public EYBCardTooltip Affinity_Black = new EYBCardTooltip("Black Affinity", null).ShowText(false);
+    public EYBCardTooltip Affinity_Brown = new EYBCardTooltip("Brown Affinity", null).ShowText(false);
+    public EYBCardTooltip Affinity_Pink = new EYBCardTooltip("Pink Affinity", null).ShowText(false);
+    public EYBCardTooltip Affinity_Teal = new EYBCardTooltip("Teal Affinity", null).ShowText(false);
+    public EYBCardTooltip Affinity_Violet = new EYBCardTooltip("Violet Affinity", null).ShowText(false);
+    public EYBCardTooltip Affinity_Yellow = new EYBCardTooltip("Yellow Affinity", null).ShowText(false);
     public EYBCardTooltip RandomOrb = new EYBCardTooltip("Random Orb", null);
     public EYBCardTooltip OrbSlot = new EYBCardTooltip("Orb Slot", null);
     public EYBCardTooltip ThrowingKnife = new EYBCardTooltip(eatyourbeets.cards.animator.special.ThrowingKnife.DATA.Strings.NAME, null);
@@ -283,8 +312,8 @@ public class CardTooltips
         RegisterID(GR.Animator.PlayerClass, "A_Red", Affinity_Red);
         RegisterID(GR.Animator.PlayerClass, "A_Green", Affinity_Green);
         RegisterID(GR.Animator.PlayerClass, "A_Blue", Affinity_Blue);
-        RegisterID(GR.Animator.PlayerClass, "A_Light", Affinity_Light);
-        RegisterID(GR.Animator.PlayerClass, "A_Dark", Affinity_Dark);
+        RegisterID(GR.Animator.PlayerClass, "A_Light", Affinity_White);
+        RegisterID(GR.Animator.PlayerClass, "A_Dark", Affinity_Black);
         RegisterID(GR.Animator.PlayerClass, "A_Star", Affinity_Star);
         RegisterID(GR.Animator.PlayerClass, "A_Gen", Affinity_General);
         RegisterID(GR.Animator.PlayerClass, "A_Seal", Affinity_Sealed);
@@ -347,8 +376,8 @@ public class CardTooltips
         Affinity_Red.SetIcon(affinities.Red.Texture(), 8);
         Affinity_Green.SetIcon(affinities.Green.Texture(), 8);
         Affinity_Blue.SetIcon(affinities.Blue.Texture(), 8);
-        Affinity_Light.SetIcon(affinities.Light.Texture(), 8);
-        Affinity_Dark.SetIcon(affinities.Dark.Texture(), 8);
+        Affinity_White.SetIcon(affinities.White.Texture(), 8);
+        Affinity_Black.SetIcon(affinities.Black.Texture(), 8);
         Affinity_Star.SetIcon(affinities.Star.Texture(), 8);
         Affinity_Sealed.SetIcon(affinities.Seal.Texture(), 8);
         Affinity_General.SetIcon(affinities.General.Texture(), 8);

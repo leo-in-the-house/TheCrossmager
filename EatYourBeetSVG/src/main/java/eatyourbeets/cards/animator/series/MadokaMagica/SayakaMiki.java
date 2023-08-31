@@ -13,7 +13,6 @@ import eatyourbeets.cards.base.attributes.TempHPAttribute;
 import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.ui.common.EYBCardPopupActions;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class SayakaMiki extends AnimatorCard
 {
@@ -38,7 +37,7 @@ public class SayakaMiki extends AnimatorCard
         SetAffinity_Green(1, 1, 0);
         SetAffinity_Blue(2);
 
-        SetAffinityRequirement(Affinity.Light, 1);
+        SetAffinityRequirement(Affinity.White, 1);
     }
 
     @Override
@@ -60,7 +59,7 @@ public class SayakaMiki extends AnimatorCard
         }
         else
         {
-            GameActions.Bottom.GainLight(1, true);
+            GameActions.Bottom.GainWhite(1, true);
         }
     }
 

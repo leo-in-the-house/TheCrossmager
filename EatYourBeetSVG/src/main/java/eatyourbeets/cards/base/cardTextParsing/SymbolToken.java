@@ -40,8 +40,8 @@ public class SymbolToken extends CTToken
         animator.map.put("R", new SymbolToken(animator.playerClass, "[R]"));
         animator.map.put("G", new SymbolToken(animator.playerClass, "[G]"));
         animator.map.put("B", new SymbolToken(animator.playerClass, "[B]"));
-        animator.map.put("L", new SymbolToken(animator.playerClass, "[L]"));
-        animator.map.put("D", new SymbolToken(animator.playerClass, "[D]"));
+        animator.map.put("H", new SymbolToken(animator.playerClass, "[L]"));
+        animator.map.put("L", new SymbolToken(animator.playerClass, "[D]"));
         animator.map.put("M", new SymbolToken(animator.playerClass, "[M]"));
         animator.map.put("W", new SymbolToken(animator.playerClass, "[W]"));
         animator.map.put("S", new SymbolToken(animator.playerClass, "[S]"));

@@ -5,11 +5,9 @@ import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.modifiers.BlockModifiers;
 import eatyourbeets.stances.AgilityStance;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class SilverFang extends AnimatorCard
 {
@@ -25,12 +23,12 @@ public class SilverFang extends AnimatorCard
         SetUpgrade(0, 3, 0);
 
         SetAffinity_Green(1);
-        SetAffinity_Light(1);
+        SetAffinity_White(1);
 
         SetRetainOnce(true);
 
         SetAffinityRequirement(Affinity.Green, 1);
-        SetAffinityRequirement(Affinity.Light, 1);
+        SetAffinityRequirement(Affinity.White, 1);
     }
 
     @Override

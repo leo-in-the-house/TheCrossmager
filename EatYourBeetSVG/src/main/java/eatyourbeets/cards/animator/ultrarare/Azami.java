@@ -27,7 +27,7 @@ public class Azami extends AnimatorCard_UltraRare implements OnEndOfTurnLastSubs
         Initialize(0, 0, 12, 16);
         SetCostUpgrade(-1);
 
-        SetAffinity_Dark(1);
+        SetAffinity_Black(1);
 
         SetEthereal(true);
         SetExhaust(true);
@@ -56,7 +56,7 @@ public class Azami extends AnimatorCard_UltraRare implements OnEndOfTurnLastSubs
     {
         if (player.exhaustPile.contains(this))
         {
-            GameActions.Bottom.GainDark(1, true);
+            GameActions.Bottom.GainBlack(1, true);
             GameActions.Bottom.MakeCardInDrawPile(new Status_Dazed()).SetDestination(CardSelection.Top);
         }
     }

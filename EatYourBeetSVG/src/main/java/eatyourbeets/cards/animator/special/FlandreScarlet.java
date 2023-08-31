@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.powers.VulnerablePower;
 import eatyourbeets.cards.animator.series.TouhouProject.RemiliaScarlet;
 import eatyourbeets.cards.base.Affinity;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.AttackEffects;
@@ -17,7 +16,6 @@ import eatyourbeets.effects.VFX;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
-import eatyourbeets.utilities.GameUtilities;
 
 public class FlandreScarlet extends AnimatorCard
 {
@@ -33,7 +31,7 @@ public class FlandreScarlet extends AnimatorCard
         Initialize(9, 0, 1, 3);
         SetUpgrade(0, 0, 1);
 
-        SetAffinity_Dark(1);
+        SetAffinity_Black(1);
         SetAffinity_Red(2);
         SetAffinity_Star(0, 0, 2);
     }

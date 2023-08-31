@@ -27,7 +27,7 @@ public class IchigoKurosaki extends AnimatorCard
         Initialize(12, 0, 2, 0);
         SetUpgrade(3, 0, 1, 0);
 
-        SetAffinity_Light(1, 0, 1);
+        SetAffinity_White(1, 0, 1);
     }
 
     @Override
@@ -36,7 +36,7 @@ public class IchigoKurosaki extends AnimatorCard
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamageToRandomEnemy(this, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL);
 
-        GameActions.Bottom.GainLight(magicNumber);
+        GameActions.Bottom.GainWhite(magicNumber);
 
         if (WrathStance.IsActive())
         {

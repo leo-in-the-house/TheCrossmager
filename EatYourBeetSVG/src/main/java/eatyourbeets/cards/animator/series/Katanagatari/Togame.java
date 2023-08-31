@@ -7,9 +7,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.tokens.AffinityToken;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class Togame extends AnimatorCard
 {
@@ -20,7 +18,7 @@ public class Togame extends AnimatorCard
             .PostInitialize(data ->
             {
                 data.AddPreview(AffinityToken.GetCard(Affinity.Blue), true);
-                data.AddPreview(AffinityToken.GetCard(Affinity.Dark), true);
+                data.AddPreview(AffinityToken.GetCard(Affinity.Black), true);
             });
 
     public Togame()
@@ -31,7 +29,7 @@ public class Togame extends AnimatorCard
         SetUpgrade(0, 0, 1);
 
         SetAffinity_Blue(1);
-        SetAffinity_Dark(1);
+        SetAffinity_Black(1);
 
         SetExhaust(true);
     }
@@ -55,7 +53,7 @@ public class Togame extends AnimatorCard
 
             final CardGroup group = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
             group.group.add(AffinityToken.GetCopy(Affinity.Blue, upgraded));
-            group.group.add(AffinityToken.GetCopy(Affinity.Dark, upgraded));
+            group.group.add(AffinityToken.GetCopy(Affinity.Black, upgraded));
             GameActions.Bottom.SelectFromPile(name, 1, group)
             .SetOptions(false, false)
             .AddCallback(cards2 ->

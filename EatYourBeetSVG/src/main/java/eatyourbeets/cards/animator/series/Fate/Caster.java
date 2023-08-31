@@ -9,7 +9,6 @@ import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class Caster extends AnimatorCard
 {
@@ -26,12 +25,12 @@ public class Caster extends AnimatorCard
         SetUpgrade(0, 0, 0);
 
         SetAffinity_Blue(2);
-        SetAffinity_Dark(2);
+        SetAffinity_Black(2);
 
         SetDelayed(true);
         SetExhaust(true);
 
-        SetAffinityRequirement(Affinity.Dark, 3);
+        SetAffinityRequirement(Affinity.Black, 3);
     }
 
     @Override
@@ -56,7 +55,7 @@ public class Caster extends AnimatorCard
     {
         super.Refresh(enemy);
 
-        SetEvokeOrbCount(CheckAffinity(Affinity.Dark) ? 1 : 0);
+        SetEvokeOrbCount(CheckAffinity(Affinity.Black) ? 1 : 0);
     }
 
     @Override
@@ -65,9 +64,9 @@ public class Caster extends AnimatorCard
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.ReduceStrength(m, magicNumber, false).SetStrengthGain(true);
         GameActions.Bottom.ApplyFrail(info.IsStarter ? p : null, p, magicNumber);
-        GameActions.Bottom.GainDark(magicNumber);
+        GameActions.Bottom.GainBlack(magicNumber);
 
-        if (TryUseAffinity(Affinity.Dark))
+        if (TryUseAffinity(Affinity.Black))
         {
             GameActions.Bottom.ChannelOrb(new Dark());
         }

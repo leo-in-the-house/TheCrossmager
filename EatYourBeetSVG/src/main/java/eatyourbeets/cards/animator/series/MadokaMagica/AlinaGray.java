@@ -13,7 +13,6 @@ import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.powers.PowerHelper;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.TargetHelper;
 
 public class AlinaGray extends AnimatorCard
@@ -32,7 +31,7 @@ public class AlinaGray extends AnimatorCard
 
         SetAffinity_Blue(1, 1, 0);
         SetAffinity_Green(1);
-        SetAffinity_Dark(1);
+        SetAffinity_Black(1);
 
         SetExhaust(true);
     }

@@ -3,7 +3,6 @@ package eatyourbeets.actions.powers;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.utility.TextAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -74,13 +73,13 @@ public class ApplyPower extends EYBActionWithCallback<AbstractPower>
             return;
         }
 
-        if (powerToApply.ID.equals(CorruptionPower.POWER_ID))
+        /*if (powerToApply.ID.equals(CorruptionPower.POWER_ID))
         {
             HardCodedStuff_Corruption(player.hand);
             HardCodedStuff_Corruption(player.drawPile);
             HardCodedStuff_Corruption(player.discardPile);
             HardCodedStuff_Corruption(player.exhaustPile);
-        }
+        }*/
     }
 
     public ApplyPower CanStack(boolean canStack)

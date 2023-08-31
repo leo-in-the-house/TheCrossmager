@@ -20,8 +20,8 @@ public abstract class AnimatorClassicAffinityPower extends AbstractAffinityPower
             case Red: return new ForcePower();
             case Green: return new AgilityPower();
             case Blue: return new IntellectPower();
-            case Light: return new BlessingPower();
-            case Dark: return new CorruptionPower();
+            case White: return new BlessingPower();
+            case Black: return new CorruptionPower();
 
             default: throw new RuntimeException("Invalid enum value: " + affinity.name());
         }

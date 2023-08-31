@@ -8,7 +8,6 @@ import eatyourbeets.cards.base.*;
 import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class Eris extends AnimatorCard
 {
@@ -25,7 +24,7 @@ public class Eris extends AnimatorCard
         SetCostUpgrade(-1);
 
         SetAffinity_Blue(1);
-        SetAffinity_Light(2);
+        SetAffinity_White(2);
 
         SetExhaust(true);
     }
@@ -34,7 +33,7 @@ public class Eris extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.GainAffinity(Affinity.Light, 1, true);
+        GameActions.Bottom.GainAffinity(Affinity.White, 1, true);
         GameActions.Bottom.MakeCard(new Special_Miracle(), p.drawPile).Repeat(magicNumber);
         GameActions.Bottom.StackPower(new ErisPower(p, 1));
     }

@@ -24,7 +24,7 @@ public class MatouSakura extends AnimatorCard
         Initialize(0, 4, 4);
         SetUpgrade(0, 2, 2);
 
-        SetAffinity_Dark(2, 0, 1);
+        SetAffinity_Black(2, 0, 1);
         SetAffinity_Blue(1, 0, 1);
 
         SetEvokeOrbCount(1);
@@ -52,7 +52,7 @@ public class MatouSakura extends AnimatorCard
     {
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
-        GameActions.Bottom.GainDark(1, true);
+        GameActions.Bottom.GainBlack(1, true);
         GameActions.Bottom.ChannelOrb(new Dark());
 
 //        GameActions.Bottom.Callback(m, (enemy, __) ->

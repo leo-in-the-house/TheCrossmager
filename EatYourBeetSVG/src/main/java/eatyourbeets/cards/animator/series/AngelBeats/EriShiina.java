@@ -8,7 +8,6 @@ import eatyourbeets.cards.base.*;
 import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class EriShiina extends AnimatorCard
 {
@@ -31,7 +30,7 @@ public class EriShiina extends AnimatorCard
         SetUpgrade(2, 0, 1, 0);
 
         SetAffinity_Green(1, 0, 1);
-        SetAffinity_Dark(1, 0, 1);
+        SetAffinity_Violet(1, 0, 1);
 
         SetEthereal(true);
         
