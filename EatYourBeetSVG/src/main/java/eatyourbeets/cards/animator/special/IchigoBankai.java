@@ -28,7 +28,7 @@ public class IchigoBankai extends AnimatorCard
         Initialize(12, 0, 2);
         SetUpgrade(3, 0, 1);
 
-        SetAffinity_White(1);
+        SetAffinity_White(2);
         SetAffinity_Red(1);
     }
 

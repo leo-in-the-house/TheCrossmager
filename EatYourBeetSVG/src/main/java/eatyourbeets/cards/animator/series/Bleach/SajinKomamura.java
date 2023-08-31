@@ -3,7 +3,6 @@ package eatyourbeets.cards.animator.series.Bleach;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
@@ -24,7 +23,7 @@ public class SajinKomamura extends AnimatorCard
         Initialize(0, 0, 90,0);
         SetUpgrade(0, 0, 0);
 
-        SetAffinity_Red(1);
+        SetAffinity_Brown(1);
     }
 
     @Override

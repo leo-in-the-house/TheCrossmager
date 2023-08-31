@@ -18,7 +18,7 @@ public class SosukeAizen extends AnimatorCard_UltraRare
         Initialize(0, 0, 0);
         SetUpgrade(0,0,0);
 
-        SetAffinity_Black(2, 0, 0);
+        SetAffinity_Violet(2, 0, 0);
         SetAffinity_Red(1, 0, 0);
 
         SetMultiDamage(true);

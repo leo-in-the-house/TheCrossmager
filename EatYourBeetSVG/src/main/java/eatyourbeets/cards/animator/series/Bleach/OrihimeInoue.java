@@ -25,7 +25,7 @@ public class OrihimeInoue extends AnimatorCard
         Initialize(0, 16, 1, 0);
         SetUpgrade(0, 8, 0);
 
-        SetAffinity_Red(1);
+        SetAffinity_Pink(1);
     }
 
     @Override

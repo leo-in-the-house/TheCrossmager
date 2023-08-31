@@ -3,7 +3,6 @@ package eatyourbeets.cards.animator.special;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
@@ -20,7 +19,8 @@ public class IkkakuBankai extends AnimatorCard
         Initialize(12, 0, 0);
         SetUpgrade(4, 0, 0);
 
-        SetAffinity_Red(2);
+        SetAffinity_Red(1);
+        SetAffinity_Black(2);
         SetMultiDamage(true);
     }
 

@@ -34,8 +34,8 @@ public class TohkaYatogami extends AnimatorCard
 
         Initialize(10, 0, 2, 10);
 
-        SetAffinity_White(1);
         SetAffinity_Black(1);
+        SetAffinity_Brown(1);
     }
 
     @Override

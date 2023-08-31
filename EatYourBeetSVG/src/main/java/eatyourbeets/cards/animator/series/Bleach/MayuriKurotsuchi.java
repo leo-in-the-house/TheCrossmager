@@ -20,7 +20,7 @@ public class MayuriKurotsuchi extends AnimatorCard
         Initialize(0, 0, 7, 0);
         SetUpgrade(0, 0, 3, 0);
 
-        SetAffinity_Green(1);
+        SetAffinity_Violet(1);
     }
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)

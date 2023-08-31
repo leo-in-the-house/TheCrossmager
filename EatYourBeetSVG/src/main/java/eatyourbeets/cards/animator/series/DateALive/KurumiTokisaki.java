@@ -21,7 +21,8 @@ public class KurumiTokisaki extends AnimatorCard
         Initialize(12, 12, 3);
         SetUpgrade(0,0,0);
 
-        SetAffinity_Black(2);
+        SetAffinity_Black(1);
+        SetAffinity_Violet(1);
         SetAffinity_Green(1);
 
         SetEthereal(true);

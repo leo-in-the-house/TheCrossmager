@@ -27,7 +27,7 @@ public class IchigoKurosaki extends AnimatorCard
         Initialize(12, 0, 2, 0);
         SetUpgrade(3, 0, 1, 0);
 
-        SetAffinity_White(1, 0, 1);
+        SetAffinity_White(2, 0, 1);
     }
 
     @Override

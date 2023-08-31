@@ -23,7 +23,8 @@ public class MukuroHoshimiya extends AnimatorCard
         Initialize(0, 0, 6, 2);
         SetUpgrade(0,0,0, 2);
 
-        SetAffinity_White(2);
+        SetAffinity_Yellow(1);
+        SetAffinity_Teal(1);
         SetRetain(true);
         SetExhaust(true);
     }

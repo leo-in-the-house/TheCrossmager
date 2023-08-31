@@ -22,6 +22,8 @@ public class YasutoraSado extends AnimatorCard
 
         Initialize(6, 6, 2);
         SetUpgrade(3, 3, 0);
+
+        SetAffinity_Brown(2);
     }
 
     @Override

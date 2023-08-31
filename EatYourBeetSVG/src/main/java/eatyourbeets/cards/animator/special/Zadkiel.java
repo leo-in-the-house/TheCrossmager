@@ -19,6 +19,7 @@ public class Zadkiel extends AnimatorCard {
         SetUpgrade(0, 0, 1);
 
         SetAffinity_Green(2);
+        SetAffinity_Blue(2);
 
         SetExhaust(true);
     }

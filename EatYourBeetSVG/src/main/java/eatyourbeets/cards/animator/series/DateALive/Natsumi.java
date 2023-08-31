@@ -34,6 +34,7 @@ public class Natsumi extends AnimatorCard
         SetUpgrade(0,0, 1);
 
         SetAffinity_Blue(1);
+        SetAffinity_Black(1);
 
         SetExhaust(true);
     }

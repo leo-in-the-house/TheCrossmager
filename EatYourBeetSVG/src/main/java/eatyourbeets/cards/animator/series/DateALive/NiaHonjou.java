@@ -23,7 +23,7 @@ public class NiaHonjou extends AnimatorCard
 
         Initialize(0, 0);
 
-        SetAffinity_Blue(1);
+        SetAffinity_Pink(1);
 
         SetExhaust(true);
     }

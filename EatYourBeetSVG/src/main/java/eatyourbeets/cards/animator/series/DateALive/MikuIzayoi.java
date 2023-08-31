@@ -23,7 +23,7 @@ public class MikuIzayoi extends AnimatorCard
 
         Initialize(0, 9, 1);
 
-        SetAffinity_White(1);
+        SetAffinity_Yellow(1);
     }
 
     @Override

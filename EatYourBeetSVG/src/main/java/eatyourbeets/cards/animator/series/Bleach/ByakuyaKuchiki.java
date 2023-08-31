@@ -30,8 +30,8 @@ public class ByakuyaKuchiki extends AnimatorCard
         Initialize(13, 11, 0);
         SetUpgrade(5, 5, 0);
         
-        SetAffinity_Blue(1);
-        SetAffinity_Black(1);
+        SetAffinity_White(1);
+        SetAffinity_Violet(1);
         
     }
 

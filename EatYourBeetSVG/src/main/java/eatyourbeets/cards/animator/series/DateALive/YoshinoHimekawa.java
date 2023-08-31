@@ -26,12 +26,13 @@ public class YoshinoHimekawa extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 4, 1, 0);
+        Initialize(0, 3, 1, 0);
         SetUpgrade(0, 2, 1);
 
         SetHaste(true);
 
         SetAffinity_Green(1, 0, 1);
+        SetAffinity_Blue(1, 0, 1);
     }
 
     @Override

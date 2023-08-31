@@ -24,8 +24,7 @@ public class MioTakamiya extends AnimatorCard_UltraRare
         Initialize(0, 19, 3, 3);
         SetUpgrade(0, 8, 1);
 
-        SetAffinity_White(2, 0, 2);
-        SetAffinity_Blue(1, 0, 1);
+        SetAffinity_Star(1);
     }
 
     @Override
