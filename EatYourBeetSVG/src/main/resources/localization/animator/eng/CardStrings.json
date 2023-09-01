@@ -548,7 +548,7 @@
 		"animator:SajinKomamura":
 		{
 			"FLAVOR_TEXT": "'If our core beliefs are truly incompatible, then attempting to solve this with words is meaningless.'",
-			"DESCRIPTION": "This card can only be played if you have less than !M!% of your [MHP]. || Enter <WS>.",
+			"DESCRIPTION": "This card can only be played if you have less than !M!% of your Max [HP]. || Enter <WS>.",
 			"NAME": "Sajin Komamura"
 		},
 		"animator:SosukeAizen":

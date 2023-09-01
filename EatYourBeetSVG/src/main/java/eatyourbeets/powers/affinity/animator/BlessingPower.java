@@ -14,7 +14,7 @@ public class BlessingPower extends AnimatorAffinityPower
     {
         super(AFFINITY_TYPE, POWER_ID, SYMBOL);
 
-        upgradeMin = 6;
+        upgradeMin = 5;
     }
 
     @Override

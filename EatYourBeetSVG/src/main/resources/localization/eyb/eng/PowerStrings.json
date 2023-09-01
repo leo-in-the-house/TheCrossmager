@@ -73,7 +73,7 @@
 	},
 	"eyb:EnlightenmentPower":
 	{
-		"DESCRIPTIONS": ["At the start of each turn, gain #b{0} [E]."],
+		"DESCRIPTIONS": ["At the start of each other turn (when the charge is 0), gain #b{0} [E]."],
 		"NAME": "Enlightenment"
 	},
 	"eyb:EnergizedPower":

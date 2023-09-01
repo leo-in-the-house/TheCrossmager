@@ -27,8 +27,8 @@ public class Chaa extends AnimatorCard
         SetUpgrade(0, 2, 0, 0);
         SetCostUpgrade(-1);
 
-        SetAffinity_Red(2);
-        SetAffinity_Teal(1);
+        SetAffinity_Teal(2);
+        SetAffinity_Red(1);
     }
 
     @Override
