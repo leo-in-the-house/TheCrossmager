@@ -42,7 +42,7 @@ public class Shizu extends AnimatorCard
         .SetDamageEffect(c -> GameEffects.List.Attack(player, c, AttackEffects.SLASH_DIAGONAL, 0.9f, 1.1f).duration * 0.33f);
         GameActions.Bottom.StackPower(new FlamingWeaponPower(p, 2));
 
-        if (CheckSpecialCondition(true))
+        if (CheckSpecialCondition(false))
         {
             GameActions.Bottom.MakeCardInHand(new Shizu_Ifrit()).SetUpgrade(upgraded, false);
         }

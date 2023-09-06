@@ -55,7 +55,7 @@ public class ItamiYouji extends AnimatorCard
             GameActions.Bottom.DealDamage(this, m, AttackEffects.GUNSHOT).SetSoundPitch(1.3f, 1.5f);
         }
 
-        if (CheckSpecialCondition(true))
+        if (CheckSpecialCondition(false))
         {
             GameActions.Bottom.StackPower(new SupportDamagePower(p, secondaryValue));
         }

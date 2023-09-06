@@ -47,7 +47,7 @@ public class Saber extends AnimatorCard
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_DIAGONAL);
 
-        cooldown.ProgressCooldownAndTrigger(CheckSpecialCondition(true) ? 3 : 1, m);
+        cooldown.ProgressCooldownAndTrigger(CheckSpecialCondition(false) ? 3 : 1, m);
     }
 
     protected void OnCooldownCompleted(AbstractMonster m)

@@ -72,7 +72,7 @@ public class IrohaTamaki extends AnimatorCard
             .SetDuration(0.05f, false);
         }
 
-        if (CheckSpecialCondition(true))
+        if (CheckSpecialCondition(false))
         {
             GameActions.Bottom.SelectFromPile(name, 1, p.drawPile)
             .SetFilter(GameUtilities::IsHindrance)

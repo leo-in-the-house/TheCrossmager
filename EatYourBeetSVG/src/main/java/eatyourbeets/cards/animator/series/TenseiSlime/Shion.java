@@ -52,7 +52,7 @@ public class Shion extends AnimatorCard
             }
         });
 
-        if (CheckSpecialCondition(true))
+        if (CheckSpecialCondition(false))
         {
             GameActions.Bottom.ChangeStance(WrathStance.STANCE_ID);
         }

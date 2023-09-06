@@ -56,7 +56,7 @@ public class DolaRiku extends AnimatorCard
         {
             if (cards.size() >= 1)
             {
-                if (CheckSpecialCondition(true))
+                if (CheckSpecialCondition(false))
                 {
                     GameActions.Bottom.FetchFromPile(name, 1, player.discardPile)
                     .ShowEffect(true, false)

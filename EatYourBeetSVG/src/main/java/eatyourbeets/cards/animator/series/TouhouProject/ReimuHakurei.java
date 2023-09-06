@@ -42,7 +42,7 @@ public class ReimuHakurei extends AnimatorCard
     @Override
     public void OnLateUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
-        if (CheckSpecialCondition(true))
+        if (CheckSpecialCondition(false))
         {
             CombatStats.Affinities.AddAffinitySealUses(1);
             GameActions.Bottom.Callback(() ->

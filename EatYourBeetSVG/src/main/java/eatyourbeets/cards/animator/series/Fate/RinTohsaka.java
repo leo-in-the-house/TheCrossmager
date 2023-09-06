@@ -38,7 +38,7 @@ public class RinTohsaka extends AnimatorCard
         GameActions.Bottom.GainBlock(block);
         GameActions.Bottom.GainTemporaryArtifact(secondaryValue);
 
-        if (CheckSpecialCondition(true))
+        if (CheckSpecialCondition(false))
         {
             GameActions.Bottom.Add(OrbCore.SelectCoreAction(name, 1, 3)
             .AddCallback(cards ->

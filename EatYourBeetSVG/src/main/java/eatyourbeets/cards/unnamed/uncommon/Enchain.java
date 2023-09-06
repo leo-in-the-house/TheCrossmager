@@ -37,7 +37,7 @@ public class Enchain extends UnnamedCard
         GameActions.Bottom.DealDamage(this, m, AttackEffects.DARK);
         GameActions.Bottom.Draw(1);
 
-        if (CheckSpecialCondition(true))
+        if (CheckSpecialCondition(false))
         {
             //GameActions.Bottom.SFX(SFX.POWER_CONSTRICTED, 0.6f, 0.6f);
             GameActions.Bottom.ApplyConstricted(p, m, magicNumber);

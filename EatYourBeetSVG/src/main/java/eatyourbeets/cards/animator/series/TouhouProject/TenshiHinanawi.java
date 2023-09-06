@@ -53,7 +53,7 @@ public class TenshiHinanawi extends AnimatorCard
             }
         });
 
-        if (CheckSpecialCondition(true))
+        if (CheckSpecialCondition(false))
         {
             GameActions.Bottom.Draw(1);
         }

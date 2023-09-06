@@ -619,7 +619,7 @@
 		{
 			"FLAVOR_TEXT": "'You were ready to kill another creature, yet you're scared to be killed. Don't you think that's weird? When you point a gun at another life... This is what happens.'",
 			"DESCRIPTION": "Gain !M! [~Blur]. || Next turn: Draw !M! cards.",
-			"UPGRADE_DESCRIPTION": "Gain !M! [~Blur]. || Next turn: Draw !M! cards and Gain !M! [E]",
+			"UPGRADE_DESCRIPTION": "Gain !M! [~Blur]. || Next turn: Draw !M! cards and Gain !M! [E].",
 			"NAME": "Kurumi Tokisaki"
 		},
 		"animator:MikuIzayoi":
@@ -637,7 +637,7 @@
 		"animator:Mayuri":
 		{
 			"FLAVOR_TEXT": "'Idiot. I was born from everyone’s Spirit power. Of course I don’t hate you. From the time I was I born, I loved you.'",
-			"DESCRIPTION": "Retain ALL Defends in your hand.",
+			"DESCRIPTION": "Retain ALL {Defend}s in your hand.",
 			"NAME": "Mayuri"
 		},
 		"animator:MukuroHoshimiya":
@@ -714,32 +714,32 @@
 	{
 		"animator:Add":
 		{
-			"DESCRIPTION": "Gain !S! [D] and !M! [INS]. Next turn: Gain [E]. || !A! [D]: Exhaust a card anywhere and replace it with an {Orb Core}.",
+			"DESCRIPTION": "Seal and Exhaust !M! card(s) anywhere.  Obtain {Orb Core} based on its affinities: ** [R] -> {Fire Core} ** [G] -> {Frost Core} ** [B] -> {Chaos Core}. || Obtain {Dark Core}.",
 			"NAME": "Add"
 		},
 		"animator:Ain":
 		{
-			"DESCRIPTION": "Obtain {[B] Token}{+}. || !A! [B], or if you have discarded a card this turn: Enter <IS>.",
+			"DESCRIPTION": "Obtain {[B] Token}{+}.",
 			"NAME": "Ain"
 		},
 		"animator:Aisha":
 		{
-			"DESCRIPTION": "Trigger your first [Dark] to Boost [B] [D]. || Deal !S! additional damage for each orb you have.",
+			"DESCRIPTION": "!S! [R]: Gains [R] Scaling. || !S! [G]: Gains [G] Scaling.",
 			"NAME": "Aisha"
 		},
 		"animator:Ara":
 		{
-			"DESCRIPTION": "Discard 1 card to obtain {[G] Token}. || !A! [G]: Boost [R].",
+			"DESCRIPTION": "!A! [G]: Gain|Boost [R].",
 			"NAME": "Ara"
 		},
 		"animator:Chung":
 		{
-			"DESCRIPTION": "Decrease this card's [Block] by !M! this combat. || When Exhausted: Channel 1 [Frost].",
+			"DESCRIPTION": "Decrease this card's [Block] by !M! this combat.",
 			"NAME": "Chung"
 		},
 		"animator:Ciel":
 		{
-			"DESCRIPTION": "<ST> or when Sealed: Apply !S! [~Lock-On] to ALL enemies. || !A! [D]: Give all copies of {Lu} +!M! damage and {~Haste}.",
+			"DESCRIPTION": "Give all copies of {Lu} +!M! damage and {~Haste}.",
 			"NAME": "Ciel"
 		},
 		"animator:Elesis":
@@ -747,47 +747,47 @@
 			"DESCRIPTION": "At the start of combat, choose 1 of 3 {Forms} and permanently change this card into it.",
 			"EXTENDED_DESCRIPTION": 
 			[
-				"Gain !S! [R] [L]. || When Drawn or Discarded: Give this card +!M! damage.",
-				"Apply !M! [Burning] for every {Debuff} on the enemy. || <SLM>. !A! [G] or Discard: <DRW-2>.",
-				"Apply 1 [Vulnerable]. || At the start of each combat: Lose !M! [HP]."
+				"You gain !M! [Block] for each [R], [G] and [B] you have.",
+				"Apply [Burning] equal to half your total [R], [G], [B].",
+				"!A! [R][G][B]: Channel !M! [Random Orb]."
 			],
 			"NAME": "Elesis"
 		},
 		"animator:Elsword":
 		{
-			"DESCRIPTION": "Cycle !M! card(s). || When Discarded or Sealed: Channel [Fire].",
+			"DESCRIPTION": "Cycle !M! card(s).",
 			"NAME": "Elsword"
 		},
 		"animator:Eve":
 		{
-			"DESCRIPTION": "<LIM>. At the start of turn, Reload: Obtain 1 {[M] Token}. || Whenever you Seal a card: Deal !M! damage to a random enemy.",
-			"EXTENDED_DESCRIPTION": ["At the start of turn, #yReload: Obtain #b1 [M] #yToken. Whenever you #ySeal a card: Deal #b{0} damage to a random enemy."],
+			"DESCRIPTION": "Obtain {Orb Core}. || Whenever you {Seal} a [R], [G], or [B] card: deal !M! damage to a random enemy, then increase this amount by 2.",
+			"EXTENDED_DESCRIPTION": ["Whenever you #ySeal a #yRed, #yGreen, or #yBlue card: deal #b{0} damage to a random enemy, then increase this amount by 2."],
 			"NAME": "Eve"
 		},
 		"animator:Laby":
 		{
-			"DESCRIPTION": "Gain !S! [Enchanted Armor]. || At the start of each turn: Apply 1 [Constricted] to ALL characters.",
+			"DESCRIPTION": "Gain !S! [Enchanted Armor]. || At the start of each turn: Apply [Constricted] to ALL characters.",
 			"EXTENDED_DESCRIPTION": ["At the start of each turn, apply #b{0} #yConstricted to ALL characters."],
 			"NAME": "Laby"
 		},
 		"animator:Lu":
 		{
-			"DESCRIPTION": "Channel 1 [Dark] and [Frost]. || When Drawn: If in Neutral Stance, take !M! [DD] and enter <WS>.",
+			"DESCRIPTION": "If in Neutral Stance: take !M! [DD] and enter <WS>.",
 			"NAME": "Lu"
 		},
 		"animator:Noah":
 		{
-			"DESCRIPTION": "Apply !M! [Freezing]. || !A! [D]: Boost [D]. Else: Take !S! [DD].",
+			"DESCRIPTION": "When this card is played, change its core affinity: ** [R] -> [G] ** [B] -> [R] ** [G] -> [B]. || Adjust its {Scaling} accordingly.",
 			"NAME": "Noah"
 		},
 		"animator:Raven":
 		{
-			"DESCRIPTION": "If the enemy is attacking: Apply 1 [Weak]. Else: Gain 2 [Vigor]. || !A! [G] [R]: Gain [E].",
+			"DESCRIPTION": "If the enemy is attacking: Apply !M! [Weak].",
 			"NAME": "Raven"
 		},
 		"animator:Rena":
 		{
-			"DESCRIPTION": "Apply !M! [Vulnerable]. || When Discarded: Gain 1 [G] and [~Blur].",
+			"DESCRIPTION": "When Discarded: Gain [G] and [~Blur].",
 			"NAME": "Rena"
 		}
 	},
@@ -2596,7 +2596,7 @@
 		},
 		"animator:Rose":
 		{
-			"DESCRIPTION": "<DRW-M>. Reload: Attack 1 additional time. || If this card kills an enemy, deal !S! damage to ALL enemies.",
+			"DESCRIPTION": "<DRW-M>. {Reload}: Attack 1 additional time. || If this card kills an enemy, Boost 3 [R][G][B], then deal !S! damage to ALL enemies.",
 			"NAME": "Rose"
 		},
 		"animator:SeriousSaitama":

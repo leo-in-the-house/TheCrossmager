@@ -73,7 +73,7 @@ public class Souei extends AnimatorCard
             }
         });
 
-        if (CheckSpecialCondition(true))
+        if (CheckSpecialCondition(false))
         {
             GameActions.Bottom.GainIntangible(1);
         }

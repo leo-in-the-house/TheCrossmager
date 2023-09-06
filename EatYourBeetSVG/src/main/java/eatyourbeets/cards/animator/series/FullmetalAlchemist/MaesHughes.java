@@ -31,7 +31,7 @@ public class MaesHughes extends AnimatorCard
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.Draw(Math.floorDiv(p.drawPile.size(), magicNumber));
 
-        if (CheckSpecialCondition(true))
+        if (CheckSpecialCondition(false))
         {
             GameActions.Bottom.Motivate(1);
         }

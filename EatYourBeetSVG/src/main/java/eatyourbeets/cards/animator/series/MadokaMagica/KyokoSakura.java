@@ -46,7 +46,7 @@ public class KyokoSakura extends AnimatorCard
         GameActions.Bottom.DealDamageToRandomEnemy(this, AttackEffects.SPEAR).SetVFXColor(Color.RED);
         GameActions.Bottom.Draw(magicNumber);
 
-        if (CheckSpecialCondition(true))
+        if (CheckSpecialCondition(false))
         {
             GameActions.Bottom.ChannelOrb(new Fire());
         }

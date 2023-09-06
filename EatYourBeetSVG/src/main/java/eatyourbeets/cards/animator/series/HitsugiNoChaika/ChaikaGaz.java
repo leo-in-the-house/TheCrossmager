@@ -55,7 +55,7 @@ public class ChaikaGaz extends AnimatorCard
     {
         GameActions.Bottom.Callback(() ->
         {
-           if (CheckSpecialCondition(true))
+           if (CheckSpecialCondition(false))
            {
                GameActions.Bottom.ChannelOrb(new Dark());
                GameActions.Bottom.Exhaust(this);

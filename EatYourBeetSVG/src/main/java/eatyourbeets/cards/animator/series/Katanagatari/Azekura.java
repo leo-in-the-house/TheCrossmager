@@ -38,7 +38,7 @@ public class Azekura extends AnimatorCard
             GameActions.Bottom.ModifyAllCopies(cardID, c -> GameUtilities.DecreaseMagicNumber(c, 1, false));
         }
 
-        if (!CheckSpecialCondition(true))
+        if (!CheckSpecialCondition(false))
         {
             GameActions.Bottom.DrawReduction(1);
         }

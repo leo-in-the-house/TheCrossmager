@@ -2,10 +2,7 @@ package eatyourbeets.cards.animator.series.Elsword;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.watcher.VigorPower;
-import eatyourbeets.cards.base.Affinity;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.AttackEffects;
@@ -23,14 +20,10 @@ public class Raven extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(4, 0, 2);
-        SetUpgrade(3, 0);
+        Initialize(9, 0, 2);
+        SetUpgrade(3, 0, 1);
 
         SetAffinity_Red(1);
-        SetAffinity_Green(1);
-
-        SetAffinityRequirement(Affinity.Green, 1);
-        SetAffinityRequirement(Affinity.Red, 1);
     }
 
     @Override
@@ -48,20 +41,12 @@ public class Raven extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        if (CheckSpecialCondition(true))
-        {
-            GameActions.Bottom.GainEnergy(1);
-        }
 
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_DIAGONAL);
 
         if (GameUtilities.IsAttacking(m.intent))
         {
-            GameActions.Bottom.ApplyWeak(p, m, 1);
-        }
-        else
-        {
-            GameActions.Bottom.StackPower(new VigorPower(p, magicNumber));
+            GameActions.Bottom.ApplyWeak(p, m, magicNumber);
         }
     }
 }

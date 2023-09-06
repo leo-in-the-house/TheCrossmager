@@ -36,7 +36,7 @@ public class ChlammyZell extends AnimatorCard
         GameActions.Bottom.GainInspiration(secondaryValue);
         GameActions.Bottom.DrawNextTurn(magicNumber);
 
-        if (CheckSpecialCondition(true))
+        if (CheckSpecialCondition(false))
         {
             GameActions.Bottom.MakeCardInHand(new ChlammyZell_Scheme());
         }

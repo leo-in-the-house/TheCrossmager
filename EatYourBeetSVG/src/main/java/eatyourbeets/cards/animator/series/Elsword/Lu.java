@@ -24,7 +24,7 @@ public class Lu extends AnimatorCard
             .SetSeriesFromClassPackage()
             .ModifyRewards((data, rewards) ->
             {
-                if (data.GetTotalCopies(player.masterDeck) < data.MaxCopies && Ciel.DATA.GetTotalCopies(player.masterDeck) > 0)
+                if (Ciel.DATA.GetTotalCopies(player.masterDeck) > 0)
                 {
                     GR.Common.Dungeon.TryReplaceFirstCardReward(rewards, 0.075f, true, data);
                 }
@@ -34,10 +34,12 @@ public class Lu extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(2, 0, 3);
+        Initialize(14, 0, 3);
+        SetUpgrade(6, 0, 0);
 
-        SetAffinity_Red(1, 0, 2);
-        SetAffinity_Black(2, 0, 2);
+        SetAffinity_Blue(1);
+        SetAffinity_Brown(1);
+        SetAffinity_Black(1);
     }
 
     @Override
@@ -84,8 +86,5 @@ public class Lu extends AnimatorCard
         {
             GameActions.Bottom.Add(new ShakeScreenAction(0.8f, ScreenShake.ShakeDur.MED, ScreenShake.ShakeIntensity.MED));
         }
-
-        GameActions.Bottom.ChannelOrb(new Frost());
-        GameActions.Bottom.ChannelOrb(new Dark());
     }
 }

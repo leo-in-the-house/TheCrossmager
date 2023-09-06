@@ -53,7 +53,7 @@ public class SakuyaIzayoi extends AnimatorCard
         GameActions.Bottom.GainBlock(block);
 
         int x = GameUtilities.UseXCostEnergy(this);
-        if (CheckSpecialCondition(true))
+        if (CheckSpecialCondition(false))
         {
             x += 1;
         }

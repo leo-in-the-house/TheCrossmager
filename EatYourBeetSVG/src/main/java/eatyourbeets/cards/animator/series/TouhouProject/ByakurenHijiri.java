@@ -37,7 +37,7 @@ public class ByakurenHijiri extends AnimatorCard
         GameActions.Bottom.GainGreen(magicNumber, false);
         GameActions.Bottom.GainBlue(magicNumber, false);
 
-        if (!CheckSpecialCondition(true))
+        if (!CheckSpecialCondition(false))
         {
             GameActions.Bottom.TakeDamageAtEndOfTurn(secondaryValue, AttackEffects.DARK);
         }

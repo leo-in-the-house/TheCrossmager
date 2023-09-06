@@ -19,11 +19,10 @@ public class Rena extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 4, 2, 1);
-        SetUpgrade(0, 3);
+        Initialize(0, 6);
+        SetUpgrade(0, 4);
 
-        SetAffinity_Green(1, 0, 1);
-        SetAffinity_Black(1, 0, 1);
+        SetAffinity_Green(1, 0, 2);
     }
 
     @Override
@@ -40,6 +39,5 @@ public class Rena extends AnimatorCard
     {
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
-        GameActions.Bottom.ApplyVulnerable(p, m, magicNumber);
     }
 }

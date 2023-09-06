@@ -42,7 +42,7 @@ public class Shiro extends AnimatorCard
         GameActions.Bottom.GainBlue(1, upgraded);
         GameActions.Bottom.Motivate(1);
 
-        if (CheckSpecialCondition(true))
+        if (CheckSpecialCondition(false))
         {
             GameActions.Bottom.Callback(() ->
             {

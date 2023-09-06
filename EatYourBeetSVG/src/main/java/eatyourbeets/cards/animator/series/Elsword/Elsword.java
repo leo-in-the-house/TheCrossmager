@@ -4,12 +4,11 @@ import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.AttackEffects;
-import eatyourbeets.orbs.animator.Fire;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Elsword extends AnimatorCard
 {
@@ -22,26 +21,10 @@ public class Elsword extends AnimatorCard
         super(DATA);
 
         Initialize(13, 0, 2);
-        SetUpgrade(4, 0, 0);
+        SetUpgrade(8, 0, 0);
 
-        SetAffinity_Red(2, 0, 3);
+        SetAffinity_Red(1);
         SetAffinity_White(1);
-    }
-
-    @Override
-    public void triggerOnManualDiscard()
-    {
-        super.triggerOnManualDiscard();
-
-        GameActions.Bottom.ChannelOrb(new Fire());
-    }
-
-    @Override
-    public void triggerOnAffinitySeal(boolean reshuffle)
-    {
-        super.triggerOnAffinitySeal(reshuffle);
-
-        GameActions.Bottom.ChannelOrb(new Fire());
     }
 
     @Override

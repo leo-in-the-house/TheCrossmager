@@ -57,7 +57,7 @@ public class NagisaMomoe extends AnimatorCard
                 case 2: return new Fire();
                 default: throw new RuntimeException("Invalid case");
             }
-        }, magicNumber + (CheckSpecialCondition(true) ? 1 : 0));
+        }, magicNumber + (CheckSpecialCondition(false) ? 1 : 0));
     }
 
     @Override

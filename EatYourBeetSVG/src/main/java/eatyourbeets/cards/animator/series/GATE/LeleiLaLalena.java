@@ -34,7 +34,7 @@ public class LeleiLaLalena extends AnimatorCard
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlue(1);
 
-        if (CheckSpecialCondition(true))
+        if (CheckSpecialCondition(false))
         {
             GameActions.Bottom.ObtainAffinityToken(Affinity.General, upgraded);
         }

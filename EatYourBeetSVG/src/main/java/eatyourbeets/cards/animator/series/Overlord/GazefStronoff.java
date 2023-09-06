@@ -42,7 +42,7 @@ public class GazefStronoff extends AnimatorCard
         GameActions.Bottom.GainBlock(block);
         GameActions.Bottom.StackPower(new DeEnergizedPower(p, 1)).ShowEffect(false, false);
 
-        if (CheckSpecialCondition(true))
+        if (CheckSpecialCondition(false))
         {
             GameActions.Bottom.RemovePower(p, p, WeakPower.POWER_ID);
         }

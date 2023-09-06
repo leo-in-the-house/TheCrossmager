@@ -66,7 +66,7 @@ public class MareBelloFiore extends AnimatorCard
         .SetFilter(o -> Earth.ORB_ID.equals(o.ID))
         .SetSequential(true);
 
-        if (CheckSpecialCondition(true))
+        if (CheckSpecialCondition(false))
         {
             GameActions.Bottom.ApplyWeak(p, m, WEAK);
         }

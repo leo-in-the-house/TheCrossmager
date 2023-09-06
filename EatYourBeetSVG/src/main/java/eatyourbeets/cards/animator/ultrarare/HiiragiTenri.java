@@ -71,7 +71,7 @@ public class HiiragiTenri extends AnimatorCard_UltraRare
             GameActions.Bottom.GainTemporaryHP(magicNumber);
         }
 
-        if (CheckSpecialCondition(true))
+        if (CheckSpecialCondition(false))
         {
             GameActions.Bottom.StackPower(new SupportDamagePower(p, SUPPORT_DAMAGE));
         }

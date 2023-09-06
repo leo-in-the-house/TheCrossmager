@@ -32,7 +32,7 @@ public class Miko extends AnimatorCard
         GameActions.Bottom.GainBlock(block);
         GameActions.Bottom.Scry(magicNumber);
 
-        if (CheckSpecialCondition(true))
+        if (CheckSpecialCondition(false))
         {
             GameActions.Bottom.GainInspiration(secondaryValue);
         }

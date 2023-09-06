@@ -43,7 +43,7 @@ public class Sonic extends AnimatorCard
         GameActions.Bottom.GainBlur(secondaryValue);
         GameActions.Bottom.StackPower(new SonicPower(p, magicNumber));
 
-        if (CheckSpecialCondition(true))
+        if (CheckSpecialCondition(false))
         {
             GameActions.Bottom.CreateThrowingKnives(1);
         }

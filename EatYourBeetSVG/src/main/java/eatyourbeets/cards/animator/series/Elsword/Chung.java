@@ -2,13 +2,12 @@ package eatyourbeets.cards.animator.series.Elsword;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.orbs.Frost;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Chung extends AnimatorCard
 {
@@ -20,19 +19,10 @@ public class Chung extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 12, 3);
-        SetUpgrade(0, 1, -1);
+        Initialize(0, 13, 3);
+        SetUpgrade(0, 3, -1);
 
-        SetAffinity_Red(1);
         SetAffinity_Green(1);
-    }
-
-    @Override
-    public void triggerOnExhaust()
-    {
-        super.triggerOnExhaust();
-
-        GameActions.Bottom.ChannelOrb(new Frost());
     }
 
     @Override

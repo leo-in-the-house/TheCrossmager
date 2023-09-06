@@ -52,7 +52,7 @@ public class MadokaKaname extends AnimatorCard
         GameActions.Bottom.ObtainAffinityToken(Affinity.White, upgraded)
         .AddCallback(c -> GameActions.Bottom.Motivate(c, 1));
 
-        if (CheckSpecialCondition(true))
+        if (CheckSpecialCondition(false))
         {
             GameActions.Bottom.GainIntangible(secondaryValue);
             GameActions.Bottom.VFX(new BorderFlashEffect(Color.PINK, true));

@@ -44,7 +44,7 @@ public class Konayuki extends AnimatorCard
         GameActions.Bottom.GainRed(magicNumber);
         GameActions.Bottom.MakeCardInDrawPile(GetCurrentClassCard(Wound.ID, false));
 
-        if (CheckSpecialCondition(true))
+        if (CheckSpecialCondition(false))
         {
             GameActions.Bottom.ApplyVulnerable(TargetHelper.RandomEnemy(), 1).IgnoreArtifact(true);
         }

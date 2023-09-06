@@ -39,7 +39,7 @@ public class ZankiKiguchi extends AnimatorCard
         GameActions.Bottom.DealDamage(this, m, AttackEffects.BLUNT_HEAVY);
         GameActions.Bottom.GainTemporaryStats(magicNumber, 0, 0);
 
-        if (CheckSpecialCondition(true))
+        if (CheckSpecialCondition(false))
         {
             GameActions.Bottom.ChangeStance(NeutralStance.STANCE_ID)
             .AddCallback(stance ->

@@ -81,7 +81,7 @@ public class Khajiit extends AnimatorCard
         .SetFilter(c -> Dark.ORB_ID.equals(c.ID))
         .SetSequential(true);
 
-        if (CheckSpecialCondition(true))
+        if (CheckSpecialCondition(false))
         {
             Khajiit_SkeletalDragon.DATA.MarkSeen();
             GameActions.Bottom.PlayCard(new Khajiit_SkeletalDragon(this), m);

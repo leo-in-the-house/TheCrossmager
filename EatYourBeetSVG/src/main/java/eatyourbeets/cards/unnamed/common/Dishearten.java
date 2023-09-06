@@ -38,7 +38,7 @@ public class Dishearten extends UnnamedCard
     {
         GameActions.Bottom.StackWithering(p, m, magicNumber);
 
-        if (CheckSpecialCondition(true))
+        if (CheckSpecialCondition(false))
         {
             GameActions.Bottom.GainEnergy(1);
         }

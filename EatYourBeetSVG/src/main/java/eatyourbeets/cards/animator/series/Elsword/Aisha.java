@@ -3,14 +3,13 @@ package eatyourbeets.cards.animator.series.Elsword;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.orbs.Dark;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.effects.VFX;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Aisha extends AnimatorCard
 {
@@ -23,23 +22,29 @@ public class Aisha extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(1, 0, 2, 2);
+        Initialize(1, 0, 2, 3);
         SetUpgrade(2, 0, 0, 0);
 
-        SetAffinity_Blue(1, 0, 1);
-        SetAffinity_Black(1, 0, 1);
+        SetAffinity_Red(1);
+        SetAffinity_Green(1);
+    }
+
+    @Override
+    public void Refresh(AbstractMonster enemy)
+    {
+        super.Refresh(enemy);
+
+        boolean redThresholdReached = GameUtilities.GetPowerAmount(Affinity.Red) >= secondaryValue;
+        boolean greenThresholdReached = GameUtilities.GetPowerAmount(Affinity.Red) >= secondaryValue;
+
+        GameActions.Bottom.SetScaling(this, Affinity.Red, redThresholdReached ? 1 : 0);
+        GameActions.Bottom.SetScaling(this, Affinity.Green, greenThresholdReached ? 1 : 0);
     }
 
     @Override
     public AbstractAttribute GetDamageInfo()
     {
         return super.GetDamageInfo().AddMultiplier(magicNumber);
-    }
-
-    @Override
-    protected float GetInitialDamage()
-    {
-        return super.GetInitialDamage() + (player.filledOrbCount() * secondaryValue);
     }
 
     @Override
@@ -55,16 +60,5 @@ public class Aisha extends AnimatorCard
                 return GameEffects.List.Add(VFX.SmallLaser(player.hb, enemy.hb, Color.VIOLET)).duration * 0.1f;
             });
         }
-
-        GameActions.Bottom.TriggerOrbPassive(1)
-        .SetFilter(o -> Dark.ORB_ID.equals(o.ID))
-        .AddCallback(orbs ->
-        {
-            if (orbs.size() > 0)
-            {
-                GameActions.Bottom.GainBlue(1, true);
-                GameActions.Bottom.GainBlack(1, true);
-            }
-        });
     }
 }

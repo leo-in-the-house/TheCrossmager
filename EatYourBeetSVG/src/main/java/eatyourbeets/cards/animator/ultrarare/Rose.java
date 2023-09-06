@@ -18,11 +18,12 @@ public class Rose extends AnimatorCard_UltraRare
     {
         super(DATA);
 
-        Initialize(8, 0, 2, 32);
-        SetUpgrade(2, 0, 0, 8);
+        Initialize(7, 0, 2, 25);
+        SetUpgrade(7, 0, 2, 0);
 
         SetAffinity_Red(2);
-        SetAffinity_White(1);
+        SetAffinity_Green(2);
+        SetAffinity_Blue(2);
     }
 
     @Override
@@ -33,6 +34,9 @@ public class Rose extends AnimatorCard_UltraRare
         {
             if (enemy != null && !GameUtilities.IsDeadOrEscaped(enemy))
             {
+                GameActions.Bottom.GainRed(3);
+                GameActions.Bottom.GainGreen(3);
+                GameActions.Bottom.GainBlue(3);
                 GameActions.Bottom.Add(new RoseDamageAction(enemy, this, cards.size() + 1, damage));
             }
         });

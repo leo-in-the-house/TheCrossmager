@@ -53,7 +53,7 @@ public class SanaeKochiya extends AnimatorCard
         GameActions.Bottom.GainBlock(block);
         GameActions.Bottom.GainWhite(magicNumber, false);
 
-        if (CheckSpecialCondition(true))
+        if (CheckSpecialCondition(false))
         {
             GameActions.Bottom.ChannelOrb(new Aether());
             exhaustOnUseOnce = true;

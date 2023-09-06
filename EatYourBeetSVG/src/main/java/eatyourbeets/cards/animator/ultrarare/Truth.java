@@ -51,7 +51,7 @@ public class Truth extends AnimatorCard_UltraRare
         GameActions.Bottom.GainBlue(magicNumber);
         GameActions.Bottom.GainEnergy(magicNumber);
 
-        if (CheckSpecialCondition(true))
+        if (CheckSpecialCondition(false))
         {
             for (AbstractOrb orb : GameUtilities.GetUniqueOrbs(3))
             {

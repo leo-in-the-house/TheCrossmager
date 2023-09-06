@@ -43,7 +43,7 @@ public class Vesta extends AnimatorCard
         GameActions.Bottom.GainInspiration(magicNumber);
 
         //TODO: This could all be done in VestaPower
-        VestaElixirEffects.BeginCreateElixir((Vesta) this.makeStatEquivalentCopy(), CheckSpecialCondition(true));
+        VestaElixirEffects.BeginCreateElixir((Vesta) this.makeStatEquivalentCopy(), CheckSpecialCondition(false));
     }
 
     public void ResearchElixir(Vesta_Elixir elixir)

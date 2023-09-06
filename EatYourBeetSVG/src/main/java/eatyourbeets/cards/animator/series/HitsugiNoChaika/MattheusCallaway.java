@@ -46,7 +46,7 @@ public class MattheusCallaway extends AnimatorCard
     {
         GameActions.Delayed.Callback(info, (info2, __) ->
         {
-            if (CheckSpecialCondition(true))
+            if (CheckSpecialCondition(false))
             {
                 GameActions.Bottom.GainOrbSlots(1);
                 GameActions.Bottom.ChannelOrb(new Earth());

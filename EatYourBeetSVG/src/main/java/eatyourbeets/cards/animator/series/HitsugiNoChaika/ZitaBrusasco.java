@@ -43,7 +43,7 @@ public class ZitaBrusasco extends AnimatorCard
             CombatStats.Affinities.AddAffinitySealUses(1);
         }
 
-        GameActions.Bottom.ChannelOrb(CheckSpecialCondition(true) ? new Frost() : new Lightning());
+        GameActions.Bottom.ChannelOrb(CheckSpecialCondition(false) ? new Frost() : new Lightning());
     }
 
     @Override

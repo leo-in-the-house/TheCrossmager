@@ -43,7 +43,7 @@ public class HighElfArcher extends AnimatorCard
             GameActions.Bottom.ApplyLockOn(player, m, magicNumber);
         }
 
-        if (CheckSpecialCondition(true))
+        if (CheckSpecialCondition(false))
         {
             GameActions.Bottom.DealDamageAtEndOfTurn(p, m, damage);
         }

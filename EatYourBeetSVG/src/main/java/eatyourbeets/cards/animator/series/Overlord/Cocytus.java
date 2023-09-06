@@ -62,7 +62,7 @@ public class Cocytus extends AnimatorCard
             }
         });
 
-        if (CheckSpecialCondition(true))
+        if (CheckSpecialCondition(false))
         {
             GameActions.Bottom.ApplyFreezing(p, m, 1);
         }

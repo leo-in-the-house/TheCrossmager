@@ -53,7 +53,7 @@ public class Nikolay extends AnimatorCard
             }
         });
 
-        if (CheckSpecialCondition(true))
+        if (CheckSpecialCondition(false))
         {
             GameActions.Bottom.GainBlock(magicNumber);
         }

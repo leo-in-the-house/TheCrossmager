@@ -39,7 +39,7 @@ public class Mitsuba extends AnimatorCard
         GameActions.Bottom.GainBlock(block);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_HEAVY);
 
-        if (CheckSpecialCondition(true))
+        if (CheckSpecialCondition(false))
         {
             CombatStats.Affinities.AddTempAffinity(Affinity.Star, 1);
         }

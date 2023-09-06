@@ -97,7 +97,7 @@ public class Patchouli extends AnimatorCard
             GameActions.Bottom.WaitRealtime(0.2f);
         }
 
-        if (CheckSpecialCondition(true))
+        if (CheckSpecialCondition(false))
         {
             GameActions.Bottom.Add(OrbCore.SelectCoreAction(name, 1, 5, true)
             .AddCallback(cards ->

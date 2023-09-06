@@ -69,7 +69,7 @@ public class ReisenInaba extends AnimatorCard
     @Override
     public void OnLateUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
-        if (CheckSpecialCondition(true))
+        if (CheckSpecialCondition(false))
         {
             GameActions.Bottom.ExhaustFromHand(name, 1, false)
             .SetOptions(false, false, false);

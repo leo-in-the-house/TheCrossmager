@@ -1,17 +1,15 @@
 package eatyourbeets.cards.animator.series.Elsword;
 
 import basemod.abstracts.CustomSavable;
-import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.cards.base.modifiers.DamageModifiers;
-import eatyourbeets.effects.AttackEffects;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import eatyourbeets.cards.base.*;
+import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameEffects;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Elesis extends AnimatorCard implements CustomSavable<Elesis.Form>
 {
@@ -20,7 +18,7 @@ public class Elesis extends AnimatorCard implements CustomSavable<Elesis.Form>
         None,
         Saber,
         Pyro,
-        Dark,
+        Soar,
     }
 
     public static final EYBCardData DATA = Register(Elesis.class)
@@ -30,7 +28,7 @@ public class Elesis extends AnimatorCard implements CustomSavable<Elesis.Form>
             {
                 data.AddPreview(new Elesis(Form.Saber, false), true);
                 data.AddPreview(new Elesis(Form.Pyro, false), true);
-                data.AddPreview(new Elesis(Form.Dark, false), true);
+                data.AddPreview(new Elesis(Form.Soar, false), true);
             });
 
     private Form currentForm;
@@ -55,60 +53,35 @@ public class Elesis extends AnimatorCard implements CustomSavable<Elesis.Form>
     }
 
     @Override
-    public void triggerWhenDrawn()
-    {
-        super.triggerWhenDrawn();
-
-        if (currentForm == Form.Saber)
-        {
-            GameActions.Bottom.ModifyAllInstances(uuid, c -> DamageModifiers.For(c).Add(magicNumber));
-            GameActions.Bottom.Flash(this);
-        }
-    }
-
-    @Override
-    public void triggerOnManualDiscard()
-    {
-        super.triggerOnManualDiscard();
-
-        if (currentForm == Form.Saber)
-        {
-            GameActions.Bottom.ModifyAllInstances(uuid, c -> DamageModifiers.For(c).Add(magicNumber));
-        }
-        else if (currentForm == Form.Pyro && CombatStats.TryActivateSemiLimited(cardID))
-        {
-            GameActions.Bottom.Draw(1);
-        }
-    }
-
-    @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_HEAVY);
 
+        int amount = CombatStats.Affinities.GetAffinityLevel(Affinity.Red) +
+                CombatStats.Affinities.GetAffinityLevel(Affinity.Green) + CombatStats.Affinities.GetAffinityLevel(Affinity.Blue);
+
         switch (currentForm)
         {
             case Saber:
             {
-                GameActions.Bottom.GainRed(secondaryValue);
-                GameActions.Bottom.GainWhite(secondaryValue);
+                GameActions.Bottom.GainBlock(magicNumber * amount);
                 break;
             }
 
             case Pyro:
             {
-                GameActions.Bottom.ApplyBurning(p, m, GameUtilities.GetDebuffsCount(m.powers) * magicNumber).SkipIfZero(true);
-                if (CheckSpecialCondition(true))
-                {
-                    GameActions.Bottom.Draw(2);
-                }
+                int burning_amount = amount / 2;
+                GameActions.Bottom.ApplyBurning(p, m, burning_amount).SkipIfZero(true);
                 break;
             }
 
-            case Dark:
+            case Soar:
             {
-                GameActions.Bottom.ApplyVulnerable(p, m, 1);
+                if (CheckSpecialCondition(false))
+                {
+                    GameActions.Bottom.ChannelRandomOrb(magicNumber);
+                }
                 break;
             }
         }
@@ -136,7 +109,7 @@ public class Elesis extends AnimatorCard implements CustomSavable<Elesis.Form>
             }
             else
             {
-                return new Elesis(Form.Dark, false);
+                return new Elesis(Form.Soar, false);
             }
         }
 
@@ -160,17 +133,12 @@ public class Elesis extends AnimatorCard implements CustomSavable<Elesis.Form>
     {
         super.triggerWhenCreated(startOfBattle);
 
-        if (currentForm == Form.Dark && startOfBattle)
-        {
-            GameEffects.List.ShowCopy(this);
-            GameActions.Delayed.LoseHP(magicNumber, AttackEffects.SLASH_DIAGONAL).CanKill(false);
-        }
-        else if (currentForm == Form.None)
+        if (currentForm == Form.None)
         {
             final CardGroup group = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
             group.group.add(new Elesis(Form.Saber, upgraded));
             group.group.add(new Elesis(Form.Pyro, upgraded));
-            group.group.add(new Elesis(Form.Dark, upgraded));
+            group.group.add(new Elesis(Form.Soar, upgraded));
 
             GameActions.Bottom.SelectFromPile(name, 1, group)
             .SetOptions(false, false)
@@ -208,7 +176,7 @@ public class Elesis extends AnimatorCard implements CustomSavable<Elesis.Form>
                 LoadImage(null);
 
                 affinities.Clear();
-                SetAffinity_Star(2);
+                SetAffinity_White(1);
 
                 cardText.OverrideDescription(null, true);
                 this.isCostModified = this.isCostModifiedForTurn = false;
@@ -221,14 +189,13 @@ public class Elesis extends AnimatorCard implements CustomSavable<Elesis.Form>
             {
                 LoadImage("_Saber");
 
-                Initialize(8, 0, 5, 3);
-                SetUpgrade(0, 0, 3, 0);
+                Initialize(9, 0, 2, 0);
+                SetUpgrade(0, 0, 1, 0);
                 SetExhaust(true);
 
                 affinities.Clear();
-                SetAffinity_Red(1, 0, 3);
-                SetAffinity_Green(1);
-                SetAffinity_White(2, 0, 6);
+                SetAffinity_Green(2);
+                SetAffinity_White(1);
 
                 this.cardText.OverrideDescription(cardData.Strings.EXTENDED_DESCRIPTION[0], true);
                 this.isCostModified = this.isCostModifiedForTurn = false;
@@ -241,13 +208,12 @@ public class Elesis extends AnimatorCard implements CustomSavable<Elesis.Form>
             {
                 LoadImage("_Pyro");
 
-                Initialize(3, 0, 2);
+                Initialize(6, 0, 2);
                 SetUpgrade(4, 0, 0);
 
                 affinities.Clear();
-                SetAffinity_Red(1, 0, 1);
-                SetAffinity_Green(2, 0, 2);
-                SetAffinityRequirement(Affinity.Green, 1);
+                SetAffinity_Red(1);
+                SetAffinity_White(2);
 
                 this.cardText.OverrideDescription(cardData.Strings.EXTENDED_DESCRIPTION[1], true);
                 this.isCostModified = this.isCostModifiedForTurn = false;
@@ -256,16 +222,21 @@ public class Elesis extends AnimatorCard implements CustomSavable<Elesis.Form>
                 break;
             }
 
-            case Dark:
+            case Soar:
             {
-                LoadImage("_Dark");
+                LoadImage("_Soar");
 
-                Initialize(6, 0, 2);
-                SetUpgrade(3, 0, 0);
+                Initialize(1, 0, 2);
+                SetUpgrade(1, 0, 1);
 
                 affinities.Clear();
-                SetAffinity_Red(2, 0, 1);
-                SetAffinity_Black(2, 0, 2);
+                SetAffinity_Blue(1, 0, 1);
+                SetAffinity_White(1, 0, 1);
+
+                SetExhaust(true);
+                SetAffinityRequirement(Affinity.Red, 2);
+                SetAffinityRequirement(Affinity.Green, 2);
+                SetAffinityRequirement(Affinity.Blue, 2);
 
                 this.cardText.OverrideDescription(cardData.Strings.EXTENDED_DESCRIPTION[2], true);
                 this.isCostModified = this.isCostModifiedForTurn = false;
@@ -285,8 +256,6 @@ public class Elesis extends AnimatorCard implements CustomSavable<Elesis.Form>
     @Override
     public boolean CheckSpecialCondition(boolean tryUse)
     {
-        return currentForm == Form.Saber
-             ? super.CheckSpecialConditionSemiLimited(tryUse, super::CheckSpecialCondition)
-             : super.CheckSpecialCondition(tryUse);
+        return GameUtilities.GetAllInBattleCopies(Elesis.DATA.ID).size() > 0 && super.CheckSpecialCondition(tryUse);
     }
 }

@@ -49,7 +49,7 @@ public class Emonzaemon extends AnimatorCard
         GameActions.Bottom.WaitRealtime(0.25f);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.GUNSHOT).SetSoundPitch(0.55f, 0.65f);
 
-        if (CheckSpecialCondition(true))
+        if (CheckSpecialCondition(false))
         {
             GameActions.Bottom.MakeCardInDrawPile(new Emonzaemon_EntouJyuu());
         }

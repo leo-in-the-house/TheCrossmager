@@ -53,7 +53,7 @@ public class SilverFang extends AnimatorCard
         GameActions.Bottom.GainBlock(block);
         BlockModifiers.For(this).Set(0);
 
-        if (CheckSpecialCondition(true))
+        if (CheckSpecialCondition(false))
         {
             GameActions.Bottom.ChangeStance(AgilityStance.STANCE_ID);
         }

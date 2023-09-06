@@ -44,7 +44,7 @@ public class DwarfShaman extends AnimatorCard
     @Override
     public void OnLateUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
-        if (CheckSpecialCondition(true))
+        if (CheckSpecialCondition(false))
         {
             GameActions.Bottom.UpgradeFromHand(name, 1, false);
             CombatStats.Affinities.AddAffinitySealUses(1);

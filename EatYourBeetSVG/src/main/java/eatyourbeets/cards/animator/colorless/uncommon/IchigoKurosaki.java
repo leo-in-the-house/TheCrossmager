@@ -37,7 +37,7 @@ public class IchigoKurosaki extends AnimatorCard
         GameActions.Bottom.GainRed(1, upgraded);
         GameActions.Bottom.GainGreen(1, upgraded);
 
-        if (CheckSpecialCondition(true))
+        if (CheckSpecialCondition(false))
         {
             GameActions.Bottom.MakeCardInDrawPile(new IchigoBankai());
         }

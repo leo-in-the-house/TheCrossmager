@@ -53,7 +53,7 @@ public class SayakaMiki extends AnimatorCard
         GameActions.Bottom.GainTemporaryHP(magicNumber);
         GameActions.Bottom.StackPower(new SayakaMikiPower(p, 1)).ShowEffect(false, false);
 
-        if (CheckSpecialCondition(true))
+        if (CheckSpecialCondition(false))
         {
             GameActions.Bottom.RecoverHP(secondaryValue);
         }

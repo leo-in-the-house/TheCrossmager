@@ -48,7 +48,7 @@ public class Berserker extends AnimatorCard
         GameActions.Bottom.ShakeScreen(0.5f, ScreenShake.ShakeDur.MED, ScreenShake.ShakeIntensity.MED);
         GameActions.Bottom.GainRed(2);
 
-        if (CheckSpecialCondition(true))
+        if (CheckSpecialCondition(false))
         {
             GameActions.Bottom.ChangeStance(WrathStance.STANCE_ID);
         }

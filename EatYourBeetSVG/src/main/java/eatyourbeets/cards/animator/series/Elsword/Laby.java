@@ -27,10 +27,12 @@ public class Laby extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 0, 3, 2);
+        Initialize(0, 0, 4, 2);
+        SetUpgrade(0, 0, 4, 0);
 
-        SetAffinity_White(1, 1, 0);
-        SetAffinity_Black(1, 1, 0);
+        SetAffinity_Blue(1);
+        SetAffinity_Pink(1);
+        SetAffinity_Violet(1);
 
         SetEthereal(true);
     }

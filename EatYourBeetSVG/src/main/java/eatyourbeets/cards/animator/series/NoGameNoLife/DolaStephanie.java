@@ -56,7 +56,7 @@ public class DolaStephanie extends AnimatorCard
                 GameActions.Top.MoveCard(c, player.hand, player.drawPile);
 
                 final EYBCardAffinities a = GameUtilities.GetAffinities(c);
-                if (a != null && !a.sealed && CheckSpecialCondition(true))
+                if (a != null && !a.sealed && CheckSpecialCondition(false))
                 {
                     final int star = a.GetLevel(Affinity.Star, true);
                     if (star > 0)

@@ -1,13 +1,13 @@
 package eatyourbeets.cards.animator.series.Elsword;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.animator.special.OrbCore;
+import eatyourbeets.cards.animator.special.*;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.JUtils;
 
 import java.util.ArrayList;
@@ -15,23 +15,29 @@ import java.util.ArrayList;
 public class Add extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Add.class)
-            .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None)
+            .SetSkill(4, CardRarity.RARE, EYBCardTarget.None)
             
             .SetSeriesFromClassPackage()
             .ObtainableAsReward((data, deck) -> deck.size() >= (14 + (10 * data.GetTotalCopies(deck))))
-            .PostInitialize(data -> data.AddPreviews(OrbCore.GetAllCores(), false));
+            .PostInitialize(data -> {
+                data.AddPreview(new OrbCore_Fire(), false);
+                data.AddPreview(new OrbCore_Frost(), false);
+                data.AddPreview(new OrbCore_Chaos(), false);
+                data.AddPreview(new OrbCore_Dark(), false);
+            });
 
     public Add()
     {
         super(DATA);
 
-        Initialize(0, 0, 3, 2);
-        SetUpgrade(0, 0, 2, 1);
+        Initialize(0, 0, 1);
+        SetUpgrade(0, 0, 0);
 
-        SetAffinity_Blue(2);
-        SetAffinity_Black(2);
+        SetRetain(true);
+        SetAffinity_Teal(1);
+        SetAffinity_Violet(1);
 
-        SetAffinityRequirement(Affinity.Black, 2);
+        SetCostUpgrade(-1);
 
         SetExhaust(true);
     }
@@ -40,44 +46,29 @@ public class Add extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.GainBlack(secondaryValue);
-        GameActions.Bottom.GainEnergyNextTurn(1);
-        GameActions.Bottom.GainInspiration(magicNumber);
-    }
 
-    @Override
-    public void OnLateUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
-    {
-        if (CheckSpecialCondition(true))
-        {
-            GameActions.Bottom.ExhaustFromPile(name, 1, p.hand, p.drawPile, p.discardPile)
-            .AddCallback(this::OnCardChosen);
-        }
+        GameActions.Bottom.ExhaustFromPile(name, 1, p.hand, p.drawPile, p.discardPile)
+                .AddCallback(this::OnCardChosen);
+        GameActions.Bottom.MakeCardInHand(new OrbCore_Dark());
     }
 
     private void OnCardChosen(ArrayList<AbstractCard> cards)
     {
         if (cards != null && cards.size() > 0)
         {
-            CardGroup cardGroup = null;
             final AbstractCard c = cards.get(0);
-            if (player.hand.contains(c))
-            {
-                cardGroup = player.hand;
-            }
-            else if (player.drawPile.contains(c))
-            {
-                cardGroup = player.drawPile;
-            }
-            else if (player.discardPile.contains(c))
-            {
-                cardGroup = player.discardPile;
-            }
 
-            if (cardGroup != null)
+            if (GameUtilities.HasAffinity(c, Affinity.Red))
             {
-                GameActions.Bottom.Add(OrbCore.SelectCoreAction(name, 1, 3)
-                .AddCallback(cardGroup, this::OrbChosen));
+                GameActions.Bottom.MakeCardInHand(new OrbCore_Fire());
+            }
+            if (GameUtilities.HasAffinity(c, Affinity.Green))
+            {
+                GameActions.Bottom.MakeCardInHand(new OrbCore_Frost());
+            }
+            if (GameUtilities.HasAffinity(c, Affinity.Blue))
+            {
+                GameActions.Bottom.MakeCardInHand(new OrbCore_Chaos());
             }
         }
     }

@@ -33,7 +33,7 @@ public class Yoichi extends AnimatorCard
         GameActions.Bottom.StackPower(new SupportDamagePower(p, magicNumber))
         .AddCallback(info, (info2, power) ->
         {
-            if (CheckSpecialCondition(true))
+            if (CheckSpecialCondition(false))
             {
                 final SupportDamagePower supportDamage = JUtils.SafeCast(power, SupportDamagePower.class);
                 if (supportDamage != null)

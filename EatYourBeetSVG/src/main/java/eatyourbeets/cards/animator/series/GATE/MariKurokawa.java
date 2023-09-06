@@ -60,7 +60,7 @@ public class MariKurokawa extends AnimatorCard
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.RecoverHP(magicNumber);
 
-        if (CheckSpecialCondition(true))
+        if (CheckSpecialCondition(false))
         {
             GameActions.Bottom.GainBlock(secondaryValue);
             GameActions.Bottom.DiscardFromHand(name, DISCARD_AMOUNT, true)

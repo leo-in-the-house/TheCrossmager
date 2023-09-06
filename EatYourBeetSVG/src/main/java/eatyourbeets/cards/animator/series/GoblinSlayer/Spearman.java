@@ -49,7 +49,7 @@ public class Spearman extends AnimatorCard
         GameActions.Bottom.GainRed(1, true);
         GameActions.Bottom.MakeCardInHand(new Status_Wound());
 
-        if (CheckSpecialCondition(true))
+        if (CheckSpecialCondition(false))
         {
             GameActions.Bottom.Draw(1)
             .SetFilter(Witch.DATA::IsCard, false)

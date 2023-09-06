@@ -56,7 +56,7 @@ public class Gluttony extends AnimatorCard implements OnAffinityGainedSubscriber
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Top.HealPlayerLimited(this, magicNumber);
 
-        if (CheckSpecialCondition(true))
+        if (CheckSpecialCondition(false))
         {
             GameActions.Top.MoveCards(p.drawPile, p.exhaustPile, secondaryValue)
             .ShowEffect(true, true)

@@ -5,7 +5,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.tokens.AffinityToken;
 import eatyourbeets.cards.base.Affinity;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
@@ -25,13 +24,12 @@ public class Ara extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(3, 0, 2);
-        SetUpgrade(2, 0, 0);
+        Initialize(5, 0, 2);
+        SetUpgrade(1, 0, 0);
 
-        SetAffinity_Green(2);
-        SetAffinity_Red(1);
+        SetAffinity_Yellow(1);
 
-        SetAffinityRequirement(Affinity.Green, 1);
+        SetAffinityRequirement(Affinity.Green, 2);
     }
 
     @Override
@@ -51,19 +49,14 @@ public class Ara extends AnimatorCard
     @Override
     public void OnLateUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
-        GameActions.Bottom.DiscardFromHand(name, 1, false)
-        .SetOptions(false, true, false)
-        .AddCallback(cards ->
+        if (CheckSpecialCondition(false))
         {
-            if (cards.size() >= 1)
-            {
-                GameActions.Bottom.ObtainAffinityToken(Affinity.Green, false);
+            if (upgraded) {
+                GameActions.Bottom.BoostAffinity(Affinity.Red);
             }
-        });
-
-        if (CheckSpecialCondition(true))
-        {
-            GameActions.Bottom.BoostAffinity(Affinity.Red);
+            else {
+                GameActions.Bottom.GainAffinity(Affinity.Red);
+            }
         }
     }
 }

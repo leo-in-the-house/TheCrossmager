@@ -66,7 +66,7 @@ public class ManiwaKyouken extends AnimatorCard
             }
         });
 
-        if (CheckSpecialCondition(true))
+        if (CheckSpecialCondition(false))
         {
             SetAffinityRequirement(Affinity.Black, affinities.GetRequirement(Affinity.Black) + 1);
         }

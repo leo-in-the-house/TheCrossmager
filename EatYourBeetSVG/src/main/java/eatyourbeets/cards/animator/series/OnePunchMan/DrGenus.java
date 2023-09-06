@@ -81,7 +81,7 @@ public class DrGenus extends AnimatorCard
         {
            for (AbstractCard c : cards)
            {
-               if (CheckSpecialCondition(true))
+               if (CheckSpecialCondition(false))
                {
                    GameActions.Bottom.StackPower(new DrGenusPower(player, c, secondaryValue));
                }

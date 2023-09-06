@@ -2,6 +2,7 @@ package eatyourbeets.cards.animator.series.Elsword;
 
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.cards.animator.special.OrbCore;
 import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -30,23 +31,32 @@ public class Eve extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 0, 5);
-        SetUpgrade(0, 0, 2);
+        Initialize(0, 0, 10);
+        SetUpgrade(0, 0, 10);
 
-        SetAffinity_Blue(2);
-        SetAffinity_White(1);
-        SetAffinity_Black(1);
+        SetAffinity_Teal(2);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
+
+        GameActions.Bottom.Add(OrbCore.SelectCoreAction(name, 1, 3)
+        .AddCallback(cards ->
+        {
+            for (AbstractCard c : cards)
+            {
+                GameActions.Bottom.MakeCardInHand(c);
+            }
+        }));
+
         GameActions.Bottom.StackPower(new EvePower(p, magicNumber));
     }
 
     public static class EvePower extends AnimatorPower implements OnAffinitySealedSubscriber
     {
+        protected static int amountToIncrease = 2;
         public EvePower(AbstractCreature owner, int amount)
         {
             super(owner, Eve.DATA);
@@ -81,30 +91,12 @@ public class Eve extends AnimatorCard
                 SFX.Play(SFX.ATTACK_MAGIC_BEAM_SHORT, 0.9f, 1.1f);
                 GameEffects.List.Add(VFX.SmallLaser(owner.hb, enemy.hb, Color.CYAN));
                 return 0f;
+            })
+            .AddCallback(enemy -> {
+                amount += amountToIncrease;
             });
 
             this.flash();
-        }
-
-        @Override
-        public void atStartOfTurnPostDraw()
-        {
-            super.atStartOfTurnPostDraw();
-
-            if (CombatStats.TryActivateLimited(Eve.DATA.ID))
-            {
-                GameActions.Last.Callback(() ->
-                {
-                    GameActions.Bottom.Reload(name, cards ->
-                    {
-                        for (AbstractCard c : cards)
-                        {
-                            GameActions.Bottom.ObtainAffinityToken(Affinity.Star, false);
-                        }
-                    });
-                    flash();
-                });
-            }
         }
     }
 }

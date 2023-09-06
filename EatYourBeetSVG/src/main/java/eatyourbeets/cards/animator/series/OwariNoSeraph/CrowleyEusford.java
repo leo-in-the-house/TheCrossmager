@@ -38,7 +38,7 @@ public class CrowleyEusford extends AnimatorCard
             GameActions.Bottom.GainRed(1, true);
         });
 
-        if (CheckSpecialCondition(true))
+        if (CheckSpecialCondition(false))
         {
             GameActions.Bottom.Motivate(1);
         }

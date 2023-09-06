@@ -2,12 +2,14 @@ package eatyourbeets.cards.animator.series.Elsword;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
+import eatyourbeets.cards.base.AnimatorCard;
+import eatyourbeets.cards.base.CardUseInfo;
+import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.resources.GR;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.TargetHelper;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Ciel extends AnimatorCard
 {
@@ -27,19 +29,17 @@ public class Ciel extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 4, 12, 2);
-        SetUpgrade(0, 1, 0, 0);
+        Initialize(0, 5, 12);
+        SetUpgrade(0, 2, 4);
 
-        SetAffinity_Green(1, 1, 0);
-        SetAffinity_Black(1, 1, 0);
-
-        SetAffinityRequirement(Affinity.Black, 1);
+        SetAffinity_Green(1, 0, 0);
+        SetAffinity_Black(1, 0, 0);
     }
 
     @Override
     public AbstractAttribute GetBlockInfo()
     {
-        return super.GetBlockInfo().AddMultiplier(2);
+        return super.GetBlockInfo().AddMultiplier(3);
     }
 
     @Override
@@ -48,30 +48,15 @@ public class Ciel extends AnimatorCard
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
         GameActions.Bottom.GainBlock(block);
+        GameActions.Bottom.GainBlock(block);
 
-        if (info.TryActivateStarter())
+        GameActions.Bottom.ModifyAllCopies(Lu.DATA.ID)
+        .AddCallback(info, (info2, c) ->
         {
-            GameActions.Bottom.ApplyLockOn(TargetHelper.Enemies(), secondaryValue);
-        }
-
-        if (CheckSpecialCondition(true))
-        {
-            GameActions.Bottom.ModifyAllCopies(Lu.DATA.ID)
-            .AddCallback(info, (info2, c) ->
-            {
-                GameUtilities.IncreaseDamage(c, magicNumber, false);
-                GameUtilities.SetCardTag(c, HASTE, true);
-                c.flash();
-            });
-        }
-    }
-
-    @Override
-    public void triggerOnAffinitySeal(boolean reshuffle)
-    {
-        super.triggerOnAffinitySeal(reshuffle);
-
-        GameActions.Bottom.ApplyLockOn(TargetHelper.Enemies(), secondaryValue);
+            GameUtilities.IncreaseDamage(c, magicNumber, false);
+            GameUtilities.SetCardTag(c, HASTE, true);
+            c.flash();
+        });
     }
 
     @Override

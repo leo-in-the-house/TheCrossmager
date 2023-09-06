@@ -39,7 +39,7 @@ public class Wrath extends AnimatorCard
     @Override
     public void OnLateUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
-        if (CheckSpecialCondition(true))
+        if (CheckSpecialCondition(false))
         {
             GameActions.Bottom.MakeCardInHand(AffinityToken.GetCopy(Affinity.Red, true));
         }

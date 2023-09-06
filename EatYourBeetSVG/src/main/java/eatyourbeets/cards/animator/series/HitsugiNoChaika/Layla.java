@@ -41,7 +41,7 @@ public class Layla extends AnimatorCard
         GameActions.Bottom.DealDamage(this, m, AttackEffects.BLUNT_LIGHT);
         GameActions.Bottom.StackPower(new LaylaPower(m, p, magicNumber));
 
-        if (CheckSpecialCondition(true))
+        if (CheckSpecialCondition(false))
         {
             for (AbstractMonster c : GameUtilities.GetEnemies(true))
             {
