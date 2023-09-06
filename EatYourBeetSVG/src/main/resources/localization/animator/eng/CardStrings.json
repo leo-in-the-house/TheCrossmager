@@ -714,36 +714,43 @@
 	{
 		"animator:Add":
 		{
+			"FLAVOR_TEXT": "'Yes, Success! This powerful release of energy ignoring the laws of physics, that can't be taken by anyone!'",
 			"DESCRIPTION": "Seal and Exhaust !M! card(s) anywhere.  Obtain {Orb Core} based on its affinities: ** [R] -> {Fire Core} ** [G] -> {Frost Core} ** [B] -> {Chaos Core}. || Obtain {Dark Core}.",
 			"NAME": "Add"
 		},
 		"animator:Ain":
 		{
+			"FLAVOR_TEXT": "'My will is God's desire, and my existence is God's will.'",
 			"DESCRIPTION": "Obtain {[B] Token}{+}.",
 			"NAME": "Ain"
 		},
 		"animator:Aisha":
 		{
+			"FLAVOR_TEXT": "'This genius magician won't be stopped just because it's a little dangerous!'",
 			"DESCRIPTION": "!S! [R]: Gains [R] Scaling. || !S! [G]: Gains [G] Scaling.",
 			"NAME": "Aisha"
 		},
 		"animator:Ara":
 		{
+			"FLAVOR_TEXT": "'I must end the cycle of tragedy so no one else suffers.'",
 			"DESCRIPTION": "!A! [G]: Gain|Boost [R].",
 			"NAME": "Ara"
 		},
 		"animator:Chung":
 		{
+			"FLAVOR_TEXT": "'I will shine endlessly, as everyone’s sanctuary.'",
 			"DESCRIPTION": "Decrease this card's [Block] by !M! this combat.",
 			"NAME": "Chung"
 		},
 		"animator:Ciel":
 		{
+			"FLAVOR_TEXT": "'I'll retake the throne... I'll give my soul for you... The contract is complete!'",
 			"DESCRIPTION": "Give all copies of {Lu} +!M! damage and {~Haste}.",
 			"NAME": "Ciel"
 		},
 		"animator:Elesis":
 		{
+			"FLAVOR_TEXT": "'People call me.... The 'Red Haired Knight'!'",
 			"DESCRIPTION": "At the start of combat, choose 1 of 3 {Forms} and permanently change this card into it.",
 			"EXTENDED_DESCRIPTION": 
 			[
@@ -755,38 +762,45 @@
 		},
 		"animator:Elsword":
 		{
+			"FLAVOR_TEXT": "'I, no, we will never lose!'",
 			"DESCRIPTION": "Cycle !M! card(s).",
 			"NAME": "Elsword"
 		},
 		"animator:Eve":
 		{
+			"FLAVOR_TEXT": "'I will show you the endless potential of the Nasod.'",
 			"DESCRIPTION": "Obtain {Orb Core}. || Whenever you {Seal} a [R], [G], or [B] card: deal !M! damage to a random enemy, then increase this amount by 4.",
 			"EXTENDED_DESCRIPTION": ["Whenever you #ySeal a #yRed, #yGreen, or #yBlue card: deal #b{0} damage to a random enemy, then increase this amount by 4."],
 			"NAME": "Eve"
 		},
 		"animator:Laby":
 		{
+			"FLAVOR_TEXT": "'This feels powerful. Laby doesn't feel painful anymore.'",
 			"DESCRIPTION": "Gain !S! [Enchanted Armor]. || At the start of each turn: Apply [Constricted] to ALL characters.",
 			"EXTENDED_DESCRIPTION": ["At the start of each turn, apply #b{0} #yConstricted to ALL characters."],
 			"NAME": "Laby"
 		},
 		"animator:Lu":
 		{
+			"FLAVOR_TEXT": "'Before the embers of my life go out.... will you... become my royal strength?'",
 			"DESCRIPTION": "If in Neutral Stance: take !M! [DD] and enter <WS>.",
 			"NAME": "Lu"
 		},
 		"animator:Noah":
 		{
+			"FLAVOR_TEXT": "'To have this revenge, and get my brother's body back. Until then, I cannot stop.'",
 			"DESCRIPTION": "When this card is played, change its core affinity: ** [R] -> [G] ** [B] -> [R] ** [G] -> [B]. || Adjust its {Scaling} accordingly.",
 			"NAME": "Noah"
 		},
 		"animator:Raven":
 		{
+			"FLAVOR_TEXT": "'This life that they saved was not just my own, so I could not afford to stand back.'",
 			"DESCRIPTION": "If the enemy is attacking: Apply !M! [Weak].",
 			"NAME": "Raven"
 		},
 		"animator:Rena":
 		{
+			"FLAVOR_TEXT": "'This is the will of Eldrasil... Yes, there's nothing to be afraid of.'",
 			"DESCRIPTION": "When Discarded: Gain [G] and [~Blur].",
 			"NAME": "Rena"
 		}
@@ -2596,6 +2610,7 @@
 		},
 		"animator:Rose":
 		{
+			"FLAVOR_TEXT": "'Hybrid railgun, Supersonic Buster with the greatest firepower!'",
 			"DESCRIPTION": "<DRW-M>. {Reload}: Attack 1 additional time. || If this card kills an enemy, Boost 3 [R][G][B], then deal !S! damage to ALL enemies.",
 			"NAME": "Rose"
 		},
