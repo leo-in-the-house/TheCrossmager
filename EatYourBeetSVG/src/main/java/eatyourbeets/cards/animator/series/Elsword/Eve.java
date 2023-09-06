@@ -56,7 +56,7 @@ public class Eve extends AnimatorCard
 
     public static class EvePower extends AnimatorPower implements OnAffinitySealedSubscriber
     {
-        protected static int amountToIncrease = 2;
+        protected static int amountToIncrease = 4;
         public EvePower(AbstractCreature owner, int amount)
         {
             super(owner, Eve.DATA);

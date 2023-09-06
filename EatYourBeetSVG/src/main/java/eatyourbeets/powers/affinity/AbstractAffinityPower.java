@@ -72,10 +72,7 @@ public abstract class AbstractAffinityPower extends CommonPower
 
     public void RetainOnce()
     {
-        if (this.boost == 0)
-        {
-            this.boost = 1;
-        }
+         this.boost += 1;
     }
 
     public void IncreaseMinimumAmount(int amount)

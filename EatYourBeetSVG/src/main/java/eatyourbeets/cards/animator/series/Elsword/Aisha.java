@@ -7,6 +7,7 @@ import eatyourbeets.cards.base.*;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.effects.VFX;
+import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
 import eatyourbeets.utilities.GameUtilities;
@@ -22,23 +23,22 @@ public class Aisha extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(1, 0, 2, 3);
-        SetUpgrade(2, 0, 0, 0);
+        Initialize(3, 0, 2, 3);
+        SetUpgrade(0, 0, 1, 0);
 
-        SetAffinity_Red(1);
-        SetAffinity_Green(1);
+        SetAffinity_Blue(1, 1, 1);
     }
 
     @Override
     public void Refresh(AbstractMonster enemy)
     {
+        boolean redThresholdReached = CombatStats.Affinities.GetAffinityLevel(Affinity.Red) >= secondaryValue;
+        boolean greenThresholdReached = CombatStats.Affinities.GetAffinityLevel(Affinity.Green) >= secondaryValue;
+
+        SetScaling(Affinity.Red, redThresholdReached ? 1 : 0);
+        SetScaling(Affinity.Green, greenThresholdReached ? 1 : 0);
+
         super.Refresh(enemy);
-
-        boolean redThresholdReached = GameUtilities.GetPowerAmount(Affinity.Red) >= secondaryValue;
-        boolean greenThresholdReached = GameUtilities.GetPowerAmount(Affinity.Red) >= secondaryValue;
-
-        GameActions.Bottom.SetScaling(this, Affinity.Red, redThresholdReached ? 1 : 0);
-        GameActions.Bottom.SetScaling(this, Affinity.Green, greenThresholdReached ? 1 : 0);
     }
 
     @Override

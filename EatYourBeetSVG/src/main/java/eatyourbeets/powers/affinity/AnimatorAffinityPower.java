@@ -178,6 +178,6 @@ public abstract class AnimatorAffinityPower extends AbstractAffinityPower
     public void atStartOfTurn()
     {
         amount = 1;
-        boost = 0;
+        //boost = 0;
     }
 }

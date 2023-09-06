@@ -54,10 +54,10 @@ public class ApplyAffinityPower extends ApplyPower
     protected void FirstUpdate()
     {
         final AbstractAffinityPower powerToApply = (AbstractAffinityPower) this.powerToApply;
-        if (retain)
+        /*if (retain)
         {
             powerToApply.RetainOnce();
-        }
+        }*/;
 
         if (amount == 0)
         {

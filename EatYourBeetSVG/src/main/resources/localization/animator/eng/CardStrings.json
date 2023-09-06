@@ -760,8 +760,8 @@
 		},
 		"animator:Eve":
 		{
-			"DESCRIPTION": "Obtain {Orb Core}. || Whenever you {Seal} a [R], [G], or [B] card: deal !M! damage to a random enemy, then increase this amount by 2.",
-			"EXTENDED_DESCRIPTION": ["Whenever you #ySeal a #yRed, #yGreen, or #yBlue card: deal #b{0} damage to a random enemy, then increase this amount by 2."],
+			"DESCRIPTION": "Obtain {Orb Core}. || Whenever you {Seal} a [R], [G], or [B] card: deal !M! damage to a random enemy, then increase this amount by 4.",
+			"EXTENDED_DESCRIPTION": ["Whenever you #ySeal a #yRed, #yGreen, or #yBlue card: deal #b{0} damage to a random enemy, then increase this amount by 4."],
 			"NAME": "Eve"
 		},
 		"animator:Laby":

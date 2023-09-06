@@ -189,7 +189,7 @@ public class Elesis extends AnimatorCard implements CustomSavable<Elesis.Form>
             {
                 LoadImage("_Saber");
 
-                Initialize(9, 0, 2, 0);
+                Initialize(8, 0, 2, 0);
                 SetUpgrade(0, 0, 1, 0);
                 SetExhaust(true);
 
