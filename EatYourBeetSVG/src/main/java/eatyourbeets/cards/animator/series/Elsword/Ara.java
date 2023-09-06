@@ -17,8 +17,7 @@ public class Ara extends AnimatorCard
     public static final EYBCardData DATA = Register(Ara.class)
             .SetAttack(1, CardRarity.COMMON)
             
-            .SetSeriesFromClassPackage()
-            .PostInitialize(data -> data.AddPreview(AffinityToken.GetCard(Affinity.Green), false));
+            .SetSeriesFromClassPackage();
 
     public Ara()
     {
