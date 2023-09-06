@@ -2,7 +2,6 @@ package eatyourbeets.cards.animator.series.Elsword;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.animator.tokens.AffinityToken;
 import eatyourbeets.cards.base.Affinity;
 import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
@@ -24,7 +23,7 @@ public class Ara extends AnimatorCard
         super(DATA);
 
         Initialize(5, 0, 2);
-        SetUpgrade(1, 0, 0);
+        SetUpgrade(2, 0, 0);
 
         SetAffinity_Yellow(1);
 
