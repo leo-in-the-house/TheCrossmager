@@ -5,7 +5,6 @@ import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
 import eatyourbeets.utilities.GameUtilities;
@@ -13,7 +12,7 @@ import eatyourbeets.utilities.GameUtilities;
 public class Illya_Miyu extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Illya_Miyu.class)
-            .SetAttack(2, CardRarity.SPECIAL, EYBAttackType.Elemental, EYBCardTarget.ALL)
+            .SetSkill(2, CardRarity.SPECIAL, EYBCardTarget.None)
             .SetSeries(CardSeries.Fate);
 
     public Illya_Miyu()
@@ -23,15 +22,15 @@ public class Illya_Miyu extends AnimatorCard
         Initialize(0, 3, 2);
         SetUpgrade(0, 4, 2);
 
-        SetAffinity_Pink(1);
         SetAffinity_Black(1, 0, 3);
+        SetAffinity_Pink(1);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.DealDamage(this, m, AttackEffects.LIGHTNING);
+        GameActions.Bottom.GainBlock(block);
         GameActions.Bottom.GainBlack(magicNumber);
         GameActions.Bottom.Callback(() -> {
             DrawIllya(player.drawPile);

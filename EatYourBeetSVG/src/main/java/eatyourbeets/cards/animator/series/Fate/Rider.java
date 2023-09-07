@@ -5,13 +5,14 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
 public class Rider extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Rider.class)
-            .SetSkill(2, CardRarity.COMMON)
+            .SetSkill(2, CardRarity.COMMON, EYBCardTarget.ALL)
             .SetSeriesFromClassPackage();
 
     public Rider()

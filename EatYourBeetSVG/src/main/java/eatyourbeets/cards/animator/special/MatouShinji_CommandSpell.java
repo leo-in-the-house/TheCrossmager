@@ -41,15 +41,15 @@ public class MatouShinji_CommandSpell extends AnimatorCard
             .SetFilter(c ->
             {
                 final EYBCardAffinities a = GameUtilities.GetAffinities(c);
-                return a != null && (a.GetLevel(Affinity.Sealed) > 0);
+                return a != null && (a.sealed);
             })
             .AddCallback(cards ->
             {
                 for (AbstractCard c : cards)
                 {
-                    GameActions.Bottom.IncreaseScaling(c, Affinity.White, c.costForTurn);
-                    GameActions.Bottom.IncreaseScaling(c, Affinity.Black, c.costForTurn);
-                    GameActions.Bottom.Motivate(c, 1);
+                    GameActions.Top.IncreaseScaling(c, Affinity.White, c.cost);
+                    GameActions.Top.IncreaseScaling(c, Affinity.Black, c.cost);
+                    GameActions.Top.Motivate(c, 1);
                 }
             });
         }

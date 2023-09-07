@@ -21,8 +21,8 @@ public class Berserker extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(20, 0, 14);
-        SetUpgrade(6, 0, 0);
+        Initialize(20, 0, 4);
+        SetUpgrade(8, 0, 2);
 
         SetAffinity_Red(2);
         SetAffinity_Brown(1);
@@ -38,7 +38,7 @@ public class Berserker extends AnimatorCard
         {
             if (GameUtilities.IsDeadOrEscaped(target) || (initialBlock > 0 && target.currentBlock <= 0))
             {
-                GameActions.Bottom.GainBlock(this.magicNumber);
+                GameActions.Bottom.GainWhite(this.magicNumber);
             }
         });
         GameActions.Bottom.ShakeScreen(0.5f, ScreenShake.ShakeDur.MED, ScreenShake.ShakeIntensity.MED);

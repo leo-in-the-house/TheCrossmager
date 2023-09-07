@@ -21,7 +21,6 @@ public class Illya extends AnimatorCard
             .PostInitialize(data ->
             {
                 data.AddPopupAction(new EYBCardPopupActions.Fate_PrismaIllya(Illya_Prisma.DATA));
-                data.AddPreview(new Berserker(), false);
                 data.AddPreview(new Illya_Prisma(), false);
                 data.AddPreview(new Illya_Miyu(), false);
             });

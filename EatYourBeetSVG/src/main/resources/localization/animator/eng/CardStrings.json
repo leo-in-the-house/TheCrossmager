@@ -817,32 +817,32 @@
 		"animator:Archer":
 		{
 			"FLAVOR_TEXT": "'There are always fewer seats called 'happiness' than there are people to fill them.'",
-			"DESCRIPTION": "At the end of turn: Deal !M! damage to a random enemy for each [B] you have.",
+			"DESCRIPTION": "At the end of turn: Deal !M! damage to a random enemy for each [D] you have.",
 			"EXTENDED_DESCRIPTION": ["At the end of turn: deal #b{0} damage to a random enemy for each #yBlack you have."],
 			"NAME": "Archer"
 		},
 		"animator:Assassin":
 		{
 			"FLAVOR_TEXT": "'A warrior would rather die, than accept defeat.'",
-			"DESCRIPTION": "Can only be played if you have at least !S! [B].",
+			"DESCRIPTION": "Can only be played if you have at least !S! [D].",
 			"NAME": "Assassin"
 		},
 		"animator:Berserker":
 		{
 			"FLAVOR_TEXT": "'Berserker can't lose to anyone, because he's the strongest in the world!' -Illyasviel von Einzbern",
-			"DESCRIPTION": "If the enemy dies or loses its [Block]: Gain !M! [Block].",
+			"DESCRIPTION": "If the enemy dies or loses its [Block]: Gain !M! [L].",
 			"NAME": "Berserker"
 		},
 		"animator:Caster":
 		{
-			"FLAVOR_TEXT": "'All I know I learned directly from the goddess Hecate herself. My spells are on a plane of existence higher than yours.'",
-			"DESCRIPTION": "Channel [Dark] for every !M! points of [B] you have.",
+			"FLAVOR_TEXT": "'All I know I learned directly from the goddess Hecate herself.'",
+			"DESCRIPTION": "{Boost} !M! [D].",
 			"NAME": "Caster"
 		},
 		"animator:EmiyaKiritsugu":
 		{
 			"FLAVOR_TEXT": "'The thing is, when you save one person's life, it means that you won't be able to save someone else's.'",
-			"DESCRIPTION": "To play this, Exhaust and Seal 1 of !M! {Uncommon}s from your draw pile. || If it is: ** [L] -> Obtain {[D] Token}{+} ** [D] -> Obtain {[L] Token}{+} ** [B] -> Boost [L][D].",
+			"DESCRIPTION": "To play this, Exhaust and Seal 1 of !M! {Uncommon}s from your draw pile. If it is: || [L] -> Obtain {[D] Token}{+} ** [D] -> Obtain {[L] Token}{+} ** [B] -> Boost [L][D].",
 			"NAME": "Emiya Kiritsugu"
 		},
 		"animator:EmiyaShirou":
@@ -866,13 +866,13 @@
 		"animator:Illya_Prisma":
 		{
 			"FLAVOR_TEXT": "'Ahhh! I'm so excited! I can't believe I can fight alongside Miyu!'",
-			"DESCRIPTION": "Gain !M! [L]. || {Draw Miyu Edelfelt} from your draw pile, it costs 0 to play this turn.",
+			"DESCRIPTION": "Gain !M! [L]. || Draw {Miyu Edelfelt} from your draw pile, it costs 0 to play this turn.",
 			"NAME": "Prisma Illya"
 		},
 		"animator:Illya_Miyu":
 		{
 			"FLAVOR_TEXT": "'I'm glad to know that Illya is here too.'",
-			"DESCRIPTION": "Gain !M! [D]. || {Draw Prisma Illya} from your draw pile, it costs 0 to play this turn.",
+			"DESCRIPTION": "Gain !M! [D]. || Draw {Prisma Illya} from your draw pile, it costs 0 to play this turn.",
 			"NAME": "Miyu Edelfelt"
 		},
 		"animator:Lancer":
@@ -885,20 +885,20 @@
 		"animator:MatouSakura":
 		{
 			"FLAVOR_TEXT": "'Would you be able to forgive me if I became a bad person?'",
-			"DESCRIPTION": "Channel [Dark]. || Trigger it X times, where X is half your [B] Affinity.",
-			"UPGRADE_DESCRIPTION": "Channel [Dark]. || Trigger it X times, where X is your [B] Affinity.",
+			"DESCRIPTION": "Channel [Dark]. || Trigger it X times, where X is half your [D] Affinity.",
+			"UPGRADE_DESCRIPTION": "Channel [Dark]. || Trigger it X times, where X is your [D] Affinity.",
 			"NAME": "Sakura Matou"
 		},
 		"animator:MatouShinji":
 		{
 			"FLAVOR_TEXT": "'Once I have the Holy Grail, I can become a true magus! Then everything will be mine!'",
-			"DESCRIPTION": "Apply !M! [Poison] to a random enemy. || <LIM>. !A! [D]: Obtain {Command Spell}.",
+			"DESCRIPTION": "Apply !M! [Poison] to a random enemy. || !A! [D]: Obtain {Command Spell}.",
 			"NAME": "Shinji Matou"
 		},
 		"animator:MatouShinji_CommandSpell":
 		{
 			"FLAVOR_TEXT": "'With this Command Spell I hereby order you.'",
-			"DESCRIPTION": "Fetch a [S] card from your discard pile. Give it [B] scaling equal to its cost and Motivate it.",
+			"DESCRIPTION": "Fetch a [S] card from your discard pile. Give it [L][D] scaling equal to its cost and Motivate it.",
 			"NAME": "Command Spell"
 		},
 		"animator:Rider":
@@ -916,7 +916,7 @@
 		"animator:Saber":
 		{
 			"FLAVOR_TEXT": "'I ask of you, are you my master?'",
-			"DESCRIPTION": "Cooldown !S!: Purge, then add {Excalibur} to your hand.|| Reduce this card's Cooldown by 1 for every 2 [L] you have.",
+			"DESCRIPTION": "Cooldown !S!: Purge, then add {Excalibur} to your hand.|| Reduce this card's Cooldown by 1 for every [L] you have.",
 			"NAME": "Saber"
 		},
 		"animator:Saber_Excalibur":

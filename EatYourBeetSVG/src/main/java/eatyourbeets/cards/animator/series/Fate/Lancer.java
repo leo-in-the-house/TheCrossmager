@@ -47,7 +47,7 @@ public class Lancer extends AnimatorCard
 
     public static class LancerPower extends AnimatorPower
     {
-        private static final float MODIFIER = 100f;
+        private static final float MODIFIER = 1f;
 
         public LancerPower(AbstractCreature owner, int amount)
         {

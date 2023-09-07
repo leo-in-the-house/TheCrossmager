@@ -31,7 +31,7 @@ public class Illya_Prisma extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.DealDamage(this, m, AttackEffects.LIGHTNING);
+        GameActions.Bottom.DealDamageToAll(this, AttackEffects.LIGHTNING);
         GameActions.Bottom.GainWhite(magicNumber);
         GameActions.Bottom.Callback(() -> {
             DrawMiyu(player.drawPile);
