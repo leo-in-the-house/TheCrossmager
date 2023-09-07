@@ -453,6 +453,19 @@ public class AnimatorStrings
             return JUtils.Format(D_Transform_GainDepression_F2, JUtils.ModifyString(cardName, w -> "#y" + w));
         }
 
+        public final String T_Transform_GainMiyu_F1 = Strings.TEXT[INDEX++];
+        public final String T_Transform_GainMiyu_F2 = Strings.TEXT[INDEX++];
+
+        public final String TransformCardAndGainMiyu()
+        {
+            return JUtils.Format(T_Transform_GainMiyu_F1);
+        }
+
+        public final String TransformCardAndGainMiyu_D(String cardName)
+        {
+            return JUtils.Format(T_Transform_GainMiyu_F2, cardName);
+        }
+
         public final String T_Obtain_GainVulnerable_F1 = Strings.TEXT[INDEX++];
         public final String D_Obtain_GainVulnerable_F2 = Strings.TEXT[INDEX++];
 

@@ -21,10 +21,9 @@ public class EmiyaShirou extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 5, 2);
-        SetUpgrade(0, 2, 1);
+        Initialize(0, 6, 2);
+        SetUpgrade(0, 3, 1);
 
-        SetAffinity_Red(1);
         SetAffinity_White(1);
     }
 
@@ -37,21 +36,6 @@ public class EmiyaShirou extends AnimatorCard
         for (int i = 0; i < magicNumber; i++)
         {
             GameActions.Bottom.Add(new RandomCardUpgrade());
-        }
-
-        boolean fullyUpgraded = true;
-        for (AbstractCard card : p.hand.group)
-        {
-            if (card != this && !card.upgraded && !GameUtilities.IsHindrance(card))
-            {
-                fullyUpgraded = false;
-                break;
-            }
-        }
-
-        if (fullyUpgraded)
-        {
-            GameActions.Bottom.Draw(2);
         }
     }
 }

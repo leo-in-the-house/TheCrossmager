@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.special.Saber_Excalibur;
 import eatyourbeets.cards.base.AnimatorCard;
+import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.utilities.GameActions;
@@ -24,12 +25,11 @@ public class Saber extends AnimatorCard
 
         Initialize(9, 0, 0);
         SetUpgrade(2, 0, 0);
+x
+        SetAffinity_White(1, 0, 1);
+        SetAffinity_Brown(1, 0, 1);
 
-        SetAffinity_Red(1, 0, 1);
-        SetAffinity_Green(1, 0, 1);
-        SetAffinity_White(1, 1, 0);
-
-        SetCooldown(8, 0, this::OnCooldownCompleted);
+        SetCooldown(10, -3, this::OnCooldownCompleted);
         SetLoyal(true);
 
         SetAffinityRequirement(Affinity.White, 1);
@@ -47,7 +47,9 @@ public class Saber extends AnimatorCard
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_DIAGONAL);
 
-        cooldown.ProgressCooldownAndTrigger(CheckSpecialCondition(false) ? 3 : 1, m);
+        int amountExtraProgressCooldown = CombatStats.Affinities.GetAffinityLevel(Affinity.White);
+
+        cooldown.ProgressCooldownAndTrigger(1 + amountExtraProgressCooldown, m);
     }
 
     protected void OnCooldownCompleted(AbstractMonster m)

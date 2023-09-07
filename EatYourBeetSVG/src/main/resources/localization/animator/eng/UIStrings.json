@@ -240,6 +240,9 @@
 			"Inverse Transformation.",
 			"Transform this card into {0} and a #yDepression. NL You can only perform this action at #yRest #ySites.",
 
+			"Kaleid Transformation.",
+			"Transform this card into {0} and obtain #yMiyu #yEdelfelt. NL You can only perform this action at #yRest #ySites.",
+
 			"Obtain card. Gain #b{0} [Vulnerable].",
 			"Obtain {0} and start your next combat with #b{1} [Vulnerable]. NL You can only perform this action at #yRest #ySites.",
 			

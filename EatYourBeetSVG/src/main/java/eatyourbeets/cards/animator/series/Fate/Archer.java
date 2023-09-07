@@ -4,13 +4,14 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import eatyourbeets.cards.base.Affinity;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.effects.VFX;
 import eatyourbeets.powers.AnimatorPower;
+import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
@@ -25,22 +26,17 @@ public class Archer extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 0, 2, 1);
-        SetUpgrade(0, 0, 1);
+        Initialize(0, 0, 2);
+        SetUpgrade(0, 0, 2);
 
-        SetAffinity_Red(1);
-        SetAffinity_Green(1, 1, 0);
+        SetAffinity_Green(1);
+        SetEthereal(true);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        if (CheckSpecialCondition(false))
-        {
-            GameActions.Bottom.Motivate(1);
-        }
-
         GameActions.Bottom.StackPower(new ArcherPower(p, magicNumber));
     }
 
@@ -79,15 +75,14 @@ public class Archer extends AnimatorCard
             super.atEndOfTurn(isPlayer);
 
             SetEnabled(true);
-            for (AbstractMonster m : GameUtilities.GetEnemies(true))
+
+            final int black = CombatStats.Affinities.GetAffinityLevel(Affinity.Black);
+            for (int i = 0; i < black; i++)
             {
-                final int debuffs = GameUtilities.GetDebuffsCount(m.powers);
-                for (int i = 0; i < debuffs; i++)
-                {
-                    GameActions.Bottom.VFX(VFX.ThrowDagger(m.hb, 0.2f));
-                    GameActions.Bottom.DealDamage(owner, m, amount, DamageInfo.DamageType.THORNS, AttackEffects.NONE)
-                    .SetVFX(true, true);
-                }
+                AbstractMonster monster = GameUtilities.GetRandomEnemy(true);
+                GameActions.Bottom.VFX(VFX.ThrowDagger(monster.hb, 0.2f));
+                GameActions.Bottom.DealDamage(owner, monster, amount, DamageInfo.DamageType.THORNS, AttackEffects.NONE)
+                .SetVFX(true, true);
             }
 
             this.flash();

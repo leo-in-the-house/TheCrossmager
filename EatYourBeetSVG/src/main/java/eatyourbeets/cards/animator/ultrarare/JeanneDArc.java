@@ -23,17 +23,11 @@ public class JeanneDArc extends AnimatorCard_UltraRare
     {
         super(DATA);
 
-        Initialize(11, 0, 8);
-        SetUpgrade(2, 0, 0);
+        Initialize(11, 0, 8, 5);
+        SetUpgrade(4, 0, 2);
 
-        SetAffinity_Red(1);
         SetAffinity_White(2, 0, 2);
-    }
-
-    @Override
-    protected void OnUpgrade()
-    {
-        SetHaste(true);
+        SetAffinity_Black(2, 0, 2);
     }
 
     @Override
@@ -41,11 +35,7 @@ public class JeanneDArc extends AnimatorCard_UltraRare
     {
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SPEAR).SetVFXColor(Color.GOLD).SetSoundPitch(0.6f, 0.7f);
-        GameActions.Bottom.GainWhite(1, true);
-        GameActions.Bottom.ExhaustFromPile(name, 1, p.drawPile, p.hand, p.discardPile)
-        .ShowEffect(true, true)
-        .SetOptions(true, true)
-        .SetFilter(GameUtilities::IsHindrance);
+        GameActions.Bottom.GainWhite(secondaryValue, true);
     }
 
     @Override

@@ -3,11 +3,10 @@ package eatyourbeets.cards.animator.series.Fate;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
-import eatyourbeets.powers.common.DelayedDamagePower;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Rider extends AnimatorCard
 {
@@ -19,18 +18,11 @@ public class Rider extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 6, 3, 3);
-        SetUpgrade(0, 0, 1, 0);
+        Initialize(0, 7, 4);
+        SetUpgrade(0, 4, 2);
 
         SetAffinity_Green(1);
-        SetAffinity_Blue(1);
-        SetAffinity_Black(2, 0, 1);
-    }
-
-    @Override
-    protected void OnUpgrade()
-    {
-        SetRetainOnce(true);
+        SetAffinity_Black(1);
     }
 
     @Override
@@ -49,24 +41,9 @@ public class Rider extends AnimatorCard
     {
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
-        GameActions.Bottom.ReduceStrength(m, magicNumber, true);
 
-        if (CheckSpecialCondition(false))
-        {
-            GameActions.Bottom.GainGreen(1, true);
-            GameActions.Bottom.GainBlue(1, true);
+        for (AbstractMonster target : GameUtilities.GetEnemies(true)) {
+            GameActions.Bottom.ReduceStrength(target, magicNumber, true);
         }
-    }
-
-    @Override
-    public boolean CheckSpecialCondition(boolean tryUse)
-    {
-        boolean canUse = GameUtilities.GetPowerAmount(DelayedDamagePower.POWER_ID) >= secondaryValue;
-        if (canUse && tryUse)
-        {
-            GameActions.Bottom.ReducePower(player, DelayedDamagePower.POWER_ID, secondaryValue);
-        }
-
-        return canUse;
     }
 }

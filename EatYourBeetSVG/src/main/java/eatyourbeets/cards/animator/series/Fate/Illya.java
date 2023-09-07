@@ -1,16 +1,15 @@
 package eatyourbeets.cards.animator.series.Fate;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
-import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import eatyourbeets.cards.animator.special.Illya_Miyu;
+import eatyourbeets.cards.animator.special.Illya_Prisma;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.ui.common.EYBCardPopupActions;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameEffects;
 import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.RotatingList;
 
@@ -19,30 +18,25 @@ public class Illya extends AnimatorCard
     public static final EYBCardData DATA = Register(Illya.class)
             .SetSkill(1, CardRarity.UNCOMMON)
             .SetSeriesFromClassPackage()
-            .PostInitialize(data -> data.AddPreview(new Berserker(), false));
+            .PostInitialize(data ->
+            {
+                data.AddPopupAction(new EYBCardPopupActions.Fate_PrismaIllya(Illya_Prisma.DATA));
+                data.AddPreview(new Berserker(), false);
+                data.AddPreview(new Illya_Prisma(), false);
+                data.AddPreview(new Illya_Miyu(), false);
+            });
 
     public Illya()
     {
         super(DATA);
 
         Initialize(0, 0, 6);
-        SetUpgrade(0, 0, -2);
+        SetUpgrade(0, 0, -3);
 
-        SetAffinity_Star(1);
+        SetAffinity_White(1);
+        SetAffinity_Blue(1);
 
         SetCardPreview(this::FindCards);
-    }
-
-    @Override
-    public void triggerOnExhaust()
-    {
-        super.triggerOnExhaust();
-
-        GameActions.Bottom.Callback(() ->
-        {
-            boolean __ = DrawBerserker(player.drawPile)    || DrawBerserker(player.discardPile)
-                      || DrawBerserker(player.exhaustPile) || DrawBerserker(player.hand);
-        });
     }
 
     @Override
@@ -55,27 +49,6 @@ public class Illya extends AnimatorCard
             GameActions.Bottom.TakeDamageAtEndOfTurn(magicNumber);
             GameActions.Bottom.PlayCard(card, p.drawPile, m);
         }
-    }
-
-    private boolean DrawBerserker(CardGroup group)
-    {
-        for (AbstractCard c : group.group)
-        {
-            if (Berserker.DATA.ID.equals(c.cardID))
-            {
-                if (group.type != CardGroup.CardGroupType.HAND)
-                {
-                    GameEffects.List.ShowCardBriefly(makeStatEquivalentCopy());
-                    GameActions.Top.MoveCard(c, group, player.hand)
-                    .ShowEffect(true, true)
-                    .AddCallback(GameUtilities::Retain);
-                }
-
-                return true;
-            }
-        }
-
-        return false;
     }
 
     private void FindCards(RotatingList<AbstractCard> cards, AbstractMonster target)

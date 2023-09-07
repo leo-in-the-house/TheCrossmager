@@ -27,21 +27,11 @@ public class EmiyaKiritsugu extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(9, 9, 0, 2);
+        Initialize(7, 7, 2);
+        SetUpgrade(3, 3, 0);
 
-        SetAffinity_White(1);
-        SetAffinity_Black(1);
-        SetAffinity_Green(0, 0, 3);
-        SetAffinity_Blue(0, 0, 1);
-
-        SetExhaust(true);
-        SetInnate(true);
-    }
-
-    @Override
-    protected void OnUpgrade()
-    {
-        SetRetainOnce(true);
+        SetAffinity_White(2);
+        SetAffinity_Black(2);
     }
 
     @Override
@@ -107,7 +97,8 @@ public class EmiyaKiritsugu extends AnimatorCard
                     }
                     if (a.GetLevel(Affinity.Blue, true) > 0)
                     {
-                        GameActions.Bottom.ApplyVulnerable(player, enemy, secondaryValue);
+                        GameActions.Bottom.BoostAffinity(Affinity.Black);
+                        GameActions.Bottom.BoostAffinity(Affinity.White);
                     }
                 }
             }

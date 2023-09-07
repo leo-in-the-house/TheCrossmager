@@ -2,13 +2,12 @@ package eatyourbeets.cards.animator.series.Fate;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.orbs.Dark;
-import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.cards.base.CardUseInfo;
-import eatyourbeets.cards.base.EYBCardData;
-import eatyourbeets.cards.base.EYBCardTarget;
+import eatyourbeets.cards.base.*;
+import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class MatouSakura extends AnimatorCard
 {
@@ -21,30 +20,11 @@ public class MatouSakura extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 4, 4);
-        SetUpgrade(0, 2, 2);
+        Initialize(0, 6);
+        SetUpgrade(0, 3);
 
-        SetAffinity_Black(2, 0, 1);
-        SetAffinity_Blue(1, 0, 1);
-
-        SetEvokeOrbCount(1);
-    }
-
-    @Override
-    public void triggerWhenDrawn()
-    {
-        super.triggerWhenDrawn();
-
-        GameActions.Bottom.TriggerOrbPassive(1)
-        .SetFilter(o -> Dark.ORB_ID.equals(o.ID))
-        .AddCallback(orbs ->
-        {
-            if (orbs.size() > 0)
-            {
-                GameActions.Bottom.GainBlock(magicNumber);
-                GameActions.Bottom.Flash(this);
-            }
-        });
+        SetAffinity_Black(1, 0, 2);
+        SetAffinity_Pink(1);
     }
 
     @Override
@@ -52,32 +32,20 @@ public class MatouSakura extends AnimatorCard
     {
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
-        GameActions.Bottom.GainBlack(1, true);
-        GameActions.Bottom.ChannelOrb(new Dark());
+        GameActions.Bottom.ChannelOrb(new Dark())
+        .AddCallback(orbs -> {
+            int amount = CombatStats.Affinities.GetAffinityLevel(Affinity.Black);
 
-//        GameActions.Bottom.Callback(m, (enemy, __) ->
-//        {
-//           final AbstractOrb orb = GameUtilities.GetFirstOrb(Dark.ORB_ID);
-//           if (orb != null)
-//           {
-//               GameEffects.Queue.RoomTint(Color.BLACK, 0.8F);
-//               GameEffects.Queue.BorderLongFlash(new Color(1.0F, 0.0F, 1.0F, 0.7F));
-//               GameEffects.Queue.Attack(player, enemy, AttackEffects.DARK, 1.1f, 1.2f);
-//               GameActions.Bottom.Add(new RemoveOrb(orb));
-//               GameActions.Bottom.ApplyConstricted(player, enemy, orb.evokeAmount / 2);
-//               GameActions.Bottom.SFX(SFX.ORB_DARK_EVOKE, 0.85f, 0.9f);
-//           }
-//           else
-//           {
-//               GameActions.Bottom.ChannelOrb(new Dark())
-//               .AddCallback(orbs ->
-//               {
-//                   for (AbstractOrb o : orbs)
-//                   {
-//                       GameActions.Bottom.TriggerOrbPassive(o, magicNumber);
-//                   }
-//               });
-//           }
-//        });
+            if (!upgraded) {
+                amount /= 2;
+            }
+
+            if (amount > 0) {
+                for (AbstractOrb o : orbs)
+                {
+                    GameActions.Bottom.TriggerOrbPassive(o, amount);
+                }
+            }
+        });
     }
 }

@@ -6,6 +6,7 @@ import eatyourbeets.actions.pileSelection.SelectFromPile;
 import eatyourbeets.cards.animator.basic.*;
 import eatyourbeets.cards.animator.curse.common.Curse_Depression;
 import eatyourbeets.cards.animator.curse.special.Curse_GriefSeed;
+import eatyourbeets.cards.animator.special.Illya_Miyu;
 import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.EYBCard;
 import eatyourbeets.cards.base.EYBCardData;
@@ -185,6 +186,35 @@ public class EYBCardPopupActions
         {
             if (Replace(card, TARGET1.MakeCopy(card.upgraded)) != null) {
                 Obtain(new Curse_Depression().makeCopy());
+                SFX.Play(SFX.ORB_LIGHTNING_EVOKE, 0.4f);
+            };
+            Complete();
+        }
+    }
+
+    public static class Fate_PrismaIllya extends EYBCardPopupAction
+    {
+        protected final EYBCardData TARGET1;
+
+
+        public Fate_PrismaIllya(EYBCardData targetCard)
+        {
+            TARGET1 = targetCard;
+
+            SetText(specialActions.TransformCardAndGainMiyu(), terms.Obtain, specialActions.TransformCardAndGainMiyu_D(TARGET1.Strings.NAME));
+        }
+
+        @Override
+        public boolean CanExecute(AbstractCard card)
+        {
+            return IsRestRoom() && HasCard(card);
+        }
+
+        @Override
+        public void Execute()
+        {
+            if (Replace(card, TARGET1.MakeCopy(card.upgraded)) != null) {
+                Obtain(new Illya_Miyu().makeCopy());
                 SFX.Play(SFX.ORB_LIGHTNING_EVOKE, 0.4f);
             };
             Complete();

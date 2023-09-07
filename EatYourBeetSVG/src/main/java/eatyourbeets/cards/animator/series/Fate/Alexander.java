@@ -17,19 +17,11 @@ public class Alexander extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(6, 0, 4);
-        SetUpgrade(3, 0);
+        Initialize(7, 0);
+        SetUpgrade(4, 0);
 
-        SetAffinity_Red(2, 0, 1);
+        SetAffinity_Red(1);
         SetAffinity_White(1);
-    }
-
-    @Override
-    public void triggerOnAffinitySeal(boolean reshuffle)
-    {
-        super.triggerOnAffinitySeal(reshuffle);
-
-        GameActions.Bottom.ModifyAllInstances(uuid).AddCallback(GameUtilities::MakeEthereal);
     }
 
     @Override

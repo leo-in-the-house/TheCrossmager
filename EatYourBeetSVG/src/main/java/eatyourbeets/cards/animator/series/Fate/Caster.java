@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.Dark;
 import eatyourbeets.cards.base.Affinity;
 import eatyourbeets.cards.base.AnimatorCard;
+import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
@@ -13,7 +14,7 @@ import eatyourbeets.utilities.GameActions;
 public class Caster extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Caster.class)
-            .SetSkill(1, CardRarity.UNCOMMON)
+            .SetSkill(0, CardRarity.COMMON)
             
             .SetSeriesFromClassPackage();
 
@@ -21,62 +22,25 @@ public class Caster extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 0, 2);
-        SetUpgrade(0, 0, 0);
+        Initialize(0, 0, 5);
+        SetUpgrade(0, 0, -2);
 
-        SetAffinity_Blue(2);
-        SetAffinity_Black(2);
+        SetAffinity_Blue(1);
 
-        SetDelayed(true);
+        SetEthereal(true);
         SetExhaust(true);
-
-        SetAffinityRequirement(Affinity.Black, 3);
-    }
-
-    @Override
-    protected void OnUpgrade()
-    {
-        SetDelayed(false);
-    }
-
-    @Override
-    public void OnDrag(AbstractMonster m)
-    {
-        super.OnDrag(m);
-
-        if (m != null)
-        {
-            GameUtilities.GetIntent(m).AddStrength(-magicNumber);
-        }
-    }
-
-    @Override
-    protected void Refresh(AbstractMonster enemy)
-    {
-        super.Refresh(enemy);
-
-        SetEvokeOrbCount(CheckAffinity(Affinity.Black) ? 1 : 0);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.ReduceStrength(m, magicNumber, false).SetStrengthGain(true);
-        GameActions.Bottom.ApplyFrail(info.IsStarter ? p : null, p, magicNumber);
-        GameActions.Bottom.GainBlack(magicNumber);
 
-        if (TryUseAffinity(Affinity.Black))
+        int amount = CombatStats.Affinities.GetAffinityLevel(Affinity.Black) / 4;
+
+        if (amount > 0)
         {
-            GameActions.Bottom.ChannelOrb(new Dark());
+            GameActions.Bottom.ChannelOrbs(Dark::new, amount);
         }
-    }
-
-    @Override
-    public void triggerOnAffinitySeal(boolean reshuffle)
-    {
-        super.triggerOnAffinitySeal(reshuffle);
-
-        GameActions.Bottom.ChannelOrb(new Dark());
     }
 }

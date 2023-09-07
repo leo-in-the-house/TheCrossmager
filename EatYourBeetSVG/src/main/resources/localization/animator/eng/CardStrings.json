@@ -810,88 +810,118 @@
 	{
 		"animator:Alexander":
 		{
-			"DESCRIPTION": "When Sealed: Give this card {~Ethereal}. || When Exhausted: Play this card.",
+			"FLAVOR_TEXT": "'When you someday find a way of life that you can truly be proud of, you’ll be forced into your own battle whether you like it or not.'",
+			"DESCRIPTION": "When Exhausted: Play this card.",
 			"NAME": "Alexander"
 		},
 		"animator:Archer":
 		{
-			"DESCRIPTION": "If every enemy has at least !S! {Debuff}: Motivate 1. || At the end of turn: Deal !M! damage to every enemy for each {Debuff} they have.",
-			"EXTENDED_DESCRIPTION": ["At the end of each turn, deal #b{0} damage to ALL enemies for each #yDebuff they have."],
+			"FLAVOR_TEXT": "'There are always fewer seats called 'happiness' than there are people to fill them.'",
+			"DESCRIPTION": "At the end of turn: Deal !M! damage to a random enemy for each [B] you have.",
+			"EXTENDED_DESCRIPTION": ["At the end of turn: deal #b{0} damage to a random enemy for each #yBlack you have."],
 			"NAME": "Archer"
 		},
 		"animator:Assassin":
 		{
-			"DESCRIPTION": "Can only be played if the enemy has !M! different {Debuffs}. || If you play an {Attack}: Cycle this card.",
+			"FLAVOR_TEXT": "'A warrior would rather die, than accept defeat.'",
+			"DESCRIPTION": "Can only be played if you have at least !S! [B].",
 			"NAME": "Assassin"
 		},
 		"animator:Berserker":
 		{
-			"DESCRIPTION": "Gain !M! [R]. || If the enemy dies or loses its [Block]: Gain !S! [Block]. || !A! [R]: Enter <WS>.",
+			"FLAVOR_TEXT": "'Berserker can't lose to anyone, because he's the strongest in the world!' -Illyasviel von Einzbern",
+			"DESCRIPTION": "If the enemy dies or loses its [Block]: Gain !M! [Block].",
 			"NAME": "Berserker"
 		},
 		"animator:Caster":
 		{
-			"DESCRIPTION": "Steal !M! [Strength]. Gain !M! [D] and [Frail]. || When Sealed: Channel [Dark].",
+			"FLAVOR_TEXT": "'All I know I learned directly from the goddess Hecate herself. My spells are on a plane of existence higher than yours.'",
+			"DESCRIPTION": "Channel [Dark] for every !M! points of [B] you have.",
 			"NAME": "Caster"
 		},
 		"animator:EmiyaKiritsugu":
 		{
-			"DESCRIPTION": "To play this, Exhaust and Seal 1 of 2 {Uncommon} cards in your draw pile. If it is: [L] -> Obtain {[D] Token}{+} [D] -> Obtain {[L] Token}{+} [B] -> Apply !S! [Vulnerable]",
+			"FLAVOR_TEXT": "'The thing is, when you save one person's life, it means that you won't be able to save someone else's.'",
+			"DESCRIPTION": "To play this, Exhaust and Seal 1 of !M! {Uncommon}s from your draw pile. || If it is: ** [L] -> Obtain {[D] Token}{+} ** [D] -> Obtain {[L] Token}{+} ** [B] -> Boost [L][D].",
 			"NAME": "Emiya Kiritsugu"
 		},
 		"animator:EmiyaShirou":
 		{
-			"DESCRIPTION": "Upgrade a random card in your hand !M! times. || If every card was already Upgraded: Draw 2 cards.",
+			"FLAVOR_TEXT": "'If you have a wish, don't go back to the past and redo everything. If you want to change yourself, don't change the past, but change who you are now!'",
+			"DESCRIPTION": "Upgrade a random card in your hand !M! times.",
 			"NAME": "Emiya Shirou"
 		},
 		"animator:Gilgamesh":
 		{
+			"FLAVOR_TEXT": "'Who gave you permission to talk to me, mongrel?'",
 			"DESCRIPTION": "{~Unique}. Whenever you obtain a {Relic}, except by purchasing it: Gain !S! [Gold] and permanently Upgrade this card.",
 			"NAME": "Gilgamesh"
 		},
 		"animator:Illya":
 		{
-			"DESCRIPTION": "Play the {Attack} with the highest damage from your draw pile. Take !M! [DD]. || When Exhausted: Draw {Berserker} from any pile and Retain it.",
-			"NAME": "Illya"
+			"FLAVOR_TEXT": "'You said an older brother protects his younger sister, right?  ...Yeah. I'm the older sister. So I have to protect my younger brother.'",
+			"DESCRIPTION": "Play the {Attack} with the highest damage from your draw pile. Take !M! [DD].",
+			"NAME": "Illyasviel"
+		},
+		"animator:Illya_Prisma":
+		{
+			"FLAVOR_TEXT": "'Ahhh! I'm so excited! I can't believe I can fight alongside Miyu!'",
+			"DESCRIPTION": "Gain !M! [L]. || {Draw Miyu Edelfelt} from your draw pile, it costs 0 to play this turn.",
+			"NAME": "Prisma Illya"
+		},
+		"animator:Illya_Miyu":
+		{
+			"FLAVOR_TEXT": "'I'm glad to know that Illya is here too.'",
+			"DESCRIPTION": "Gain !M! [D]. || {Draw Prisma Illya} from your draw pile, it costs 0 to play this turn.",
+			"NAME": "Miyu Edelfelt"
 		},
 		"animator:Lancer":
 		{
-			"DESCRIPTION": "Gain [G]. Apply 1 [Vulnerable]. || <slm>. For 2 turns: Increase the effect of [Vulnerable] on enemies by 25%.",
-			"EXTENDED_DESCRIPTION": ["Enemies take {0}% more damage from [Vulnerable]."],
+			"FLAVOR_TEXT": "'Don't worry about it. I'm used to this kind of thing. Heroes always die because of unreasonable orders.'",
+			"DESCRIPTION": "Apply !M! [Vulnerable]. || !A! [L]. For 2 turns: Double the effect of [Vulnerable] on enemies.",
+			"EXTENDED_DESCRIPTION": ["Enemies take twice as much damage from [Vulnerable]."],
 			"NAME": "Lancer"
 		},
 		"animator:MatouSakura":
 		{
-			"DESCRIPTION": "Boost [D]. Channel [Dark]. || When drawn: Trigger your first [Dark] to gain !M! [Block].",
+			"FLAVOR_TEXT": "'Would you be able to forgive me if I became a bad person?'",
+			"DESCRIPTION": "Channel [Dark]. || Trigger it X times, where X is half your [B] Affinity.",
+			"UPGRADE_DESCRIPTION": "Channel [Dark]. || Trigger it X times, where X is your [B] Affinity.",
 			"NAME": "Sakura Matou"
 		},
 		"animator:MatouShinji":
 		{
+			"FLAVOR_TEXT": "'Once I have the Holy Grail, I can become a true magus! Then everything will be mine!'",
 			"DESCRIPTION": "Apply !M! [Poison] to a random enemy. || <LIM>. !A! [D]: Obtain {Command Spell}.",
 			"NAME": "Shinji Matou"
 		},
 		"animator:MatouShinji_CommandSpell":
 		{
-			"DESCRIPTION": "Lose 1 [Orb_S] to Fetch a [S] card from your discard pile. Give it [M] scaling equal to its cost and Motivate it.",
+			"FLAVOR_TEXT": "'With this Command Spell I hereby order you.'",
+			"DESCRIPTION": "Fetch a [S] card from your discard pile. Give it [B] scaling equal to its cost and Motivate it.",
 			"NAME": "Command Spell"
 		},
 		"animator:Rider":
 		{
-			"DESCRIPTION": "Apply !M! [Shackles]. || Reduce [DD] by !S! to Boost [G] [B].",
+			"FLAVOR_TEXT": "'I cannot abide by that command. I prioritize your life more than anything else.'",
+			"DESCRIPTION": "Apply !M! [Shackles] to ALL enemies.",
 			"NAME": "Rider"
 		},
 		"animator:RinTohsaka":
 		{
-			"DESCRIPTION": "Gain !S! {Temp}. [Artifact]. || <LIM>. If you have 3 unique orbs: Add 1 {Orb Core} to your draw pile.",
+			"FLAVOR_TEXT": "'The world is just another word for the things you value around you, right? That's something I've had since I was born. If you tell me to rule such a world, I already rule it.'",
+			"DESCRIPTION": "Gain !M! {Temp}. [Artifact]. || !A! [L][D]: Add 1 of 3 {Orb Cores} to your draw pile.",
 			"NAME": "Rin Tohsaka"
 		},
 		"animator:Saber":
 		{
-			"DESCRIPTION": "Cooldown !S! : Purge, then add {Excalibur} to your hand. || If this would enter your discard pile: Move it to your draw pile. || !A! [L]: Reduce this card's Cooldown by an additional 2.",
+			"FLAVOR_TEXT": "'I ask of you, are you my master?'",
+			"DESCRIPTION": "Cooldown !S!: Purge, then add {Excalibur} to your hand.|| Reduce this card's Cooldown by 1 for every 2 [L] you have.",
 			"NAME": "Saber"
 		},
 		"animator:Saber_Excalibur":
 		{
+			"FLAVOR_TEXT": "'Sheathed in the breath of the planet, a torrent of shining life. Feel its wrath. Excalibur!'",
 			"DESCRIPTION": "Gain 1 [~Intangible].",
 			"NAME": "Excalibur"
 		}
@@ -2589,7 +2619,8 @@
 		},
 		"animator:JeanneDArc":
 		{
-			"DESCRIPTION": "Boost [L]. Exhaust a random Hindrance from anywhere. || At the start of combat: Gain !M! [THP] and 1 [Artifact].",
+			"FLAVOR_TEXT": "'While they may have their flaws, there is some good in them. Losing faith in humanity is easy. Simply hating them is even easier, but continuing to love them is extremely difficult.'",
+			"DESCRIPTION": "Boost !S! [L]. || At the start of combat: Gain !M! [THP] and [Artifact].",
 			"NAME": "Jeanne D'Arc"
 		},
 		"animator:Kanami":

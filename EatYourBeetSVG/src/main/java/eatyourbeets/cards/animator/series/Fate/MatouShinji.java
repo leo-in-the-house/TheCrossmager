@@ -5,17 +5,13 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.PotionBounceEffect;
 import eatyourbeets.cards.animator.special.MatouShinji_CommandSpell;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.GameActions;
-
-import java.util.HashSet;
+import eatyourbeets.utilities.GameUtilities;
 
 public class MatouShinji extends AnimatorCard
 {
-    private static final HashSet<CardType> cardTypes = new HashSet<>();
-
     public static final EYBCardData DATA = Register(MatouShinji.class)
-            .SetSkill(1, CardRarity.COMMON, EYBCardTarget.Random)
+            .SetSkill(2, CardRarity.UNCOMMON, EYBCardTarget.Random)
             .SetSeriesFromClassPackage()
             .PostInitialize(data -> data.AddPreview(new MatouShinji_CommandSpell(), false));
 
@@ -23,12 +19,12 @@ public class MatouShinji extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 5, 3);
-        SetUpgrade(0, 0, 2);
+        Initialize(0, 3, 8);
+        SetUpgrade(0, 3, 3);
 
-        SetAffinity_Black(1, 0, 1);
+        SetAffinity_Violet(2);
 
-        SetAffinityRequirement(Affinity.Black, 2);
+        SetAffinityRequirement(Affinity.Black, 5);
     }
 
     @Override
@@ -50,7 +46,8 @@ public class MatouShinji extends AnimatorCard
 
         if (CheckSpecialCondition(false))
         {
-            GameActions.Bottom.MakeCardInHand(new MatouShinji_CommandSpell());
+            GameActions.Bottom.MakeCardInHand(new MatouShinji_CommandSpell())
+                    .SetUpgrade(upgraded, true);
         }
     }
 

@@ -3,14 +3,11 @@ package eatyourbeets.cards.animator.series.Fate;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.base.Affinity;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.effects.VFX;
-import eatyourbeets.stances.WrathStance;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
@@ -24,12 +21,11 @@ public class Berserker extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(18, 0, 2, 14);
-        SetUpgrade(6, 0, 0, 0);
+        Initialize(20, 0, 14);
+        SetUpgrade(6, 0, 0);
 
-        SetAffinity_Red(2, 0, 6);
-
-        SetAffinityRequirement(Affinity.Red, 1);
+        SetAffinity_Red(2);
+        SetAffinity_Brown(1);
     }
 
     @Override
@@ -42,15 +38,9 @@ public class Berserker extends AnimatorCard
         {
             if (GameUtilities.IsDeadOrEscaped(target) || (initialBlock > 0 && target.currentBlock <= 0))
             {
-                GameActions.Bottom.GainBlock(this.secondaryValue);
+                GameActions.Bottom.GainBlock(this.magicNumber);
             }
         });
         GameActions.Bottom.ShakeScreen(0.5f, ScreenShake.ShakeDur.MED, ScreenShake.ShakeIntensity.MED);
-        GameActions.Bottom.GainRed(2);
-
-        if (CheckSpecialCondition(false))
-        {
-            GameActions.Bottom.ChangeStance(WrathStance.STANCE_ID);
-        }
     }
 }

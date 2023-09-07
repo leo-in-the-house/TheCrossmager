@@ -1,37 +1,31 @@
 package eatyourbeets.cards.animator.series.Fate;
 
 import com.badlogic.gdx.graphics.Color;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.AnimatedSlashEffect;
-import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.cards.base.CardUseInfo;
-import eatyourbeets.cards.base.EYBAttackType;
-import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.cards.base.*;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.effects.SFX;
-import eatyourbeets.resources.GR;
+import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Assassin extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Assassin.class)
             .SetAttack(0, CardRarity.COMMON, EYBAttackType.Piercing)
             .SetSeriesFromClassPackage();
-    public static final int ATTACKS_COUNT = 3;
-    public static final int DEBUFFS_COUNT = 3;
 
     public Assassin()
     {
         super(DATA);
 
-        Initialize(3, 0, DEBUFFS_COUNT);
+        Initialize(3, 0, 3, 4);
         SetUpgrade(1, 0);
 
         SetRetain(true);
@@ -41,34 +35,11 @@ public class Assassin extends AnimatorCard
     }
 
     @Override
-    public void triggerOnOtherCardPlayed(AbstractCard c)
-    {
-        if (c.type == CardType.ATTACK && player.hand.contains(this) && c.uuid != uuid && !c.hasTag(GR.Enums.CardTags.AUTOPLAYED))
-        {
-            GameActions.Bottom.MoveCard(this, player.hand, player.discardPile)
-            .AddCallback(() -> GameActions.Bottom.Draw(1));
-        }
-    }
-
-    @Override
     public boolean cardPlayable(AbstractMonster m)
     {
         if (super.cardPlayable(m))
         {
-            if (m == null)
-            {
-                for (AbstractMonster enemy : GameUtilities.GetEnemies(true))
-                {
-                    if (GameUtilities.GetDebuffsCount(enemy.powers) >= DEBUFFS_COUNT)
-                    {
-                        return true;
-                    }
-                }
-            }
-            else
-            {
-                return GameUtilities.GetDebuffsCount(m) >= DEBUFFS_COUNT;
-            }
+            return CombatStats.Affinities.GetAffinityLevel(Affinity.Black) >= secondaryValue;
         }
 
         return false;
@@ -77,7 +48,7 @@ public class Assassin extends AnimatorCard
     @Override
     public AbstractAttribute GetDamageInfo()
     {
-        return super.GetDamageInfo().AddMultiplier(ATTACKS_COUNT);
+        return super.GetDamageInfo().AddMultiplier(magicNumber);
     }
 
     @Override
