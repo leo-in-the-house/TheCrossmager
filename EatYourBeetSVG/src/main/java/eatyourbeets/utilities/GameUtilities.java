@@ -54,6 +54,7 @@ import eatyourbeets.interfaces.subscribers.OnPhaseChangedSubscriber;
 import eatyourbeets.monsters.EnemyIntent;
 import eatyourbeets.monsters.PlayerMinions.UnnamedDoll;
 import eatyourbeets.orbs.animator.Aether;
+import eatyourbeets.orbs.animator.Chaos;
 import eatyourbeets.orbs.animator.Earth;
 import eatyourbeets.orbs.animator.Fire;
 import eatyourbeets.powers.CombatStats;
@@ -1131,8 +1132,7 @@ public class GameUtilities
         return GetRandomElement(GetEnemies(aliveOnly), GetRNG());
     }
 
-    public static AbstractOrb GetRandomOrb()
-    {
+    public static void InitializeOrbs() {
         if (orbs.Size() == 0)
         {
             orbs.Add(new Lightning(), 7);
@@ -1142,7 +1142,13 @@ public class GameUtilities
             orbs.Add(new Plasma(), 4);
             orbs.Add(new Dark(), 4);
             orbs.Add(new Aether(), 4);
+            orbs.Add(new Chaos(), 4);
         }
+    }
+
+    public static AbstractOrb GetRandomOrb()
+    {
+        InitializeOrbs();
 
         return orbs.Retrieve(GetRNG(), false).makeCopy();
     }
@@ -1808,6 +1814,33 @@ public class GameUtilities
             card.baseSecondaryValue = card.secondaryValue;
         }
         card.isSecondaryValueModified = (card.secondaryValue != card.baseSecondaryValue);
+    }
+
+    public static List<String> GetAllOrbShortcuts() {
+        InitializeOrbs();
+
+        List<String> orbShortcuts = new ArrayList<>();
+
+        for (AbstractOrb orb : orbs.GetInnerList()) {
+            orbShortcuts.add(orb.name);
+        }
+
+        orbShortcuts.add("Random Orb");
+
+        return orbShortcuts;
+    }
+
+    public static boolean DescriptionContainsIcon(AbstractCard card, String... strs) {
+        String[] descSegments = card.rawDescription.split("[\\[\\]{}]");
+        List<String> strsList = Arrays.asList(strs);
+
+        for (String segment : descSegments) {
+            if (strsList.contains(segment)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     public static void ObtainBlight(float cX, float cY, AbstractBlight blight)

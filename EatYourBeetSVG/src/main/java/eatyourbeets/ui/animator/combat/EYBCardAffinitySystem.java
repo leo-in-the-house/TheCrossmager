@@ -4,14 +4,12 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.vfx.ThoughtBubble;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.effects.Projectile;
 import eatyourbeets.effects.SFX;
 import eatyourbeets.effects.VFX;
@@ -405,7 +403,7 @@ public class EYBCardAffinitySystem extends GUIElement implements OnStartOfTurnSu
 
     public void Initialize()
     {
-        final boolean classic = !GR.Animator.IsSelected();
+        final boolean classic = GameUtilities.GetPlayerClass() != null && !GR.Animator.IsSelected();
 
         BaseAffinities.Clear();
         CurrentAffinities.Clear();

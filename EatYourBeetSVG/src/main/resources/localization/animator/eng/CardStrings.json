@@ -942,7 +942,7 @@
 		},
 		"animator:ElricEdward":
 		{
-			"DESCRIPTION": "Cycle 1 card. If it is a: || {Skill} -> Channel 1 [Frost]. {Attack} -> Channel 1 [Lightning]. {Power} -> Channel 1 [Earth]. {Other} -> Channel 1 [Fire].",
+			"DESCRIPTION": "Cycle 1 card. If it is a: || {Attack} -> Channel 1 [Lightning]. ** {Skill} -> Channel 1 [Frost]. ** {Power} -> Channel 1 [Earth]. ** {Other} -> Channel 1 [Fire].",
 			"NAME": "Edward Elric"
 		},
 		"animator:Envy":
@@ -973,7 +973,7 @@
 		},
 		"animator:MaesHughes":
 		{
-			"DESCRIPTION": "<DRW> for every !M! cards in draw pile. || !A! [B]: Motivate 1.",
+			"DESCRIPTION": "Draw the top card from your draw pile which references an {Orb} or {Orb Core} in its description.",
 			"NAME": "Maes Hughes"
 		},
 		"animator:Pride":
