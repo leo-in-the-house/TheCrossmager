@@ -20,10 +20,10 @@ public class RinTohsaka extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 5, 2, 0);
+        Initialize(0, 4, 2, 0);
         SetUpgrade(0, 3, 1, 0);
 
-        SetAffinity_Blue(1);
+        SetAffinity_Blue(1, 0, 1);
 
         SetAffinityRequirement(Affinity.White, 7);
         SetAffinityRequirement(Affinity.Black, 7);

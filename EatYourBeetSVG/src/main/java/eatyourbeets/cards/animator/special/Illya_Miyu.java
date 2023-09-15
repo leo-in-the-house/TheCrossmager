@@ -22,7 +22,7 @@ public class Illya_Miyu extends AnimatorCard
         Initialize(0, 3, 2);
         SetUpgrade(0, 4, 2);
 
-        SetAffinity_Black(1, 0, 3);
+        SetAffinity_Black(1, 0, 2);
         SetAffinity_Pink(1);
     }
 

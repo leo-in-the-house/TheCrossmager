@@ -842,7 +842,7 @@
 		"animator:EmiyaKiritsugu":
 		{
 			"FLAVOR_TEXT": "'The thing is, when you save one person's life, it means that you won't be able to save someone else's.'",
-			"DESCRIPTION": "To play this, Exhaust and Seal 1 of !M! {Uncommon}s from your draw pile. If it is: || [L] -> Obtain {[D] Token}{+} ** [D] -> Obtain {[L] Token}{+} ** [B] -> Boost [L][D].",
+			"DESCRIPTION": "To play this, Exhaust and Seal 1 of !M! {Uncommon}s from your draw pile. If it is: || [L] -> Obtain {[D] Token}{+} ** [D] -> Obtain {[L] Token}{+} ** Other -> Gain [L][D] for each color.",
 			"NAME": "Emiya Kiritsugu"
 		},
 		"animator:EmiyaShirou":

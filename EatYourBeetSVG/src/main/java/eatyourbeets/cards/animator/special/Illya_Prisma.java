@@ -24,7 +24,7 @@ public class Illya_Prisma extends AnimatorCard
         SetUpgrade(4, 0, 2);
 
         SetAffinity_Pink(1);
-        SetAffinity_White(1, 0, 3);
+        SetAffinity_White(1, 0, 2);
     }
 
     @Override

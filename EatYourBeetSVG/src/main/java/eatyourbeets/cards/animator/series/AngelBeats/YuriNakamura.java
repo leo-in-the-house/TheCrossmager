@@ -54,7 +54,7 @@ public class YuriNakamura extends AnimatorCard
         GameActions.Bottom.DealDamage(this, m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
         GameActions.Bottom.DealDamage(this, m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
 
-        GameActions.Bottom.SelectFromPile(name, magicNumber, p.exhaustPile)
+        GameActions.Bottom.SelectFromPile(name, 1, p.exhaustPile)
         .SetOptions(false, true,  true)
         .SetFilter(c -> c.type == CardType.ATTACK)
         .SetMessage(cardData.Strings.EXTENDED_DESCRIPTION[0])

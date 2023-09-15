@@ -19,10 +19,10 @@ public class MatouShinji extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 3, 8);
+        Initialize(0, 2, 8);
         SetUpgrade(0, 3, 3);
 
-        SetAffinity_Violet(2);
+        SetAffinity_Violet(2, 0, 1);
 
         SetAffinityRequirement(Affinity.Black, 5);
     }

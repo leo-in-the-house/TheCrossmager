@@ -87,18 +87,22 @@ public class EmiyaKiritsugu extends AnimatorCard
                 {
                     GameActions.Bottom.SealAffinities(c, false);
 
-                    if (a.GetLevel(Affinity.White, true) > 0)
-                    {
-                        GameActions.Bottom.ObtainAffinityToken(Affinity.Black, true);
-                    }
-                    if (a.GetLevel(Affinity.Black, true) > 0)
-                    {
-                        GameActions.Bottom.ObtainAffinityToken(Affinity.White, true);
-                    }
-                    if (a.GetLevel(Affinity.Blue, true) > 0)
-                    {
-                        GameActions.Bottom.BoostAffinity(Affinity.Black);
-                        GameActions.Bottom.BoostAffinity(Affinity.White);
+                    for (EYBCardAffinity affinity : a.List) {
+
+                        if (affinity.level <= 0) {
+                            continue;
+                        }
+
+                        if (affinity.type == Affinity.White) {
+                            GameActions.Bottom.ObtainAffinityToken(Affinity.Black, true);
+                        }
+                        else if (affinity.type == Affinity.Black) {
+                            GameActions.Bottom.ObtainAffinityToken(Affinity.White, true);
+                        }
+                        else {
+                            GameActions.Bottom.GainAffinity(Affinity.Black);
+                            GameActions.Bottom.GainAffinity(Affinity.White);
+                        }
                     }
                 }
             }
