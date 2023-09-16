@@ -21,19 +21,10 @@ public class Sloth extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(13, 13, 2, 9);
-        SetUpgrade(0, 0, -1, 0);
+        Initialize(13, 13, 2, 0);
+        SetUpgrade(4, 4, 0, 0);
 
-        SetAffinity_Red(2, 0, 2);
-        SetAffinity_Black(1);
-    }
-
-    @Override
-    public void triggerOnExhaust()
-    {
-        super.triggerOnExhaust();
-
-        GameActions.Bottom.GainBlock(secondaryValue);
+        SetAffinity_Brown(2);
     }
 
     @Override

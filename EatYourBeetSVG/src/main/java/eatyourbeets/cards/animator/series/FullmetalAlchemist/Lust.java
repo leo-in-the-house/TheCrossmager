@@ -3,17 +3,17 @@ package eatyourbeets.cards.animator.series.FullmetalAlchemist;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBAttackType;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.effects.VFX;
+import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Lust extends AnimatorCard
 {
@@ -27,37 +27,16 @@ public class Lust extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(2, 0, 2, 4);
+        Initialize(4, 0, 2, 4);
         SetUpgrade(2, 0, 0, 0);
 
-        SetAffinity_Star(1, 0, 0);
-        SetAffinity_Green(0, 0, 1);
-        SetAffinity_Black(0, 0, 1);
+        SetAffinity_Pink(1);
     }
 
     @Override
     public AbstractAttribute GetDamageInfo()
     {
         return super.GetDamageInfo().AddMultiplier(magicNumber);
-    }
-
-    @Override
-    public void OnDrag(AbstractMonster m)
-    {
-        super.OnDrag(m);
-
-        if (m != null && m.hasPower(VulnerablePower.POWER_ID))
-        {
-            GameUtilities.GetIntent(m).AddWeak();
-        }
-    }
-
-    @Override
-    public void triggerOnExhaust()
-    {
-        super.triggerOnExhaust();
-
-        GameActions.Bottom.GainTemporaryHP(secondaryValue);
     }
 
     @Override
@@ -72,9 +51,8 @@ public class Lust extends AnimatorCard
                                       .FlipX(flipVfx ^= true).SetScale(0.7f)).duration);
         }
 
-        if (m.hasPower(VulnerablePower.POWER_ID))
-        {
-            GameActions.Bottom.ApplyWeak(p, m, 1);
+        if (!CombatStats.OrbsEvokedThisTurn().isEmpty()) {
+            GameActions.Bottom.GainTemporaryHP(secondaryValue);
         }
     }
 }

@@ -12,20 +12,17 @@ import eatyourbeets.utilities.GameActions;
 public class Scar extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Scar.class)
-            .SetAttack(2, CardRarity.UNCOMMON, EYBAttackType.Elemental)
+            .SetAttack(2, CardRarity.COMMON, EYBAttackType.Elemental)
             .SetSeriesFromClassPackage();
 
     public Scar()
     {
         super(DATA);
 
-        Initialize(14, 0, 0, 4);
-        SetUpgrade(4, 0);
+        Initialize(9, 0);
+        SetUpgrade(8, 0);
 
-        SetAffinity_Red(1);
-        SetAffinity_Blue(1);
-
-        SetAffinityRequirement(Affinity.Blue, 2);
+        SetAffinity_Violet(2);
     }
 
     @Override
@@ -52,21 +49,5 @@ public class Scar extends AnimatorCard
                 GameActions.Top.ChannelOrb(new Earth());
             }
         });
-
-        if (CheckSpecialCondition(false))
-        {
-            GameActions.Bottom.SelectFromPile(name, 1, p.exhaustPile)
-            .SetMessage(cardData.Strings.EXTENDED_DESCRIPTION[0], secondaryValue)
-            .SetOptions(false, true)
-            .AddCallback(cards ->
-            {
-                if (cards.size() > 0 && TryUseAffinity(Affinity.Blue))
-                {
-                    GameActions.Bottom.TakeDamageAtEndOfTurn(secondaryValue, AttackEffects.SMASH);
-                    GameActions.Top.MoveCard(cards.get(0), player.exhaustPile, player.discardPile)
-                    .ShowEffect(true, true);
-                }
-            });
-        }
     }
 }

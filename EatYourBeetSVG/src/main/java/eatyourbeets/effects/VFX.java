@@ -296,6 +296,14 @@ public class VFX
         return new VerticalImpactEffect2(target.cX + target.width / 4f, target.cY - target.height / 4f);
     }
 
+    public static FadingParticleEffect Water(float cX, float cY)
+    {
+        return (FadingParticleEffect) new FadingParticleEffect(EYBEffect.IMAGES.WaterSplash1.Texture(), cX, cY).SetColor(Color.WHITE)
+                .Edit(p -> p.SetRotation(MathUtils.random(100f,800f)).SetTargetRotation(36000, 360f).SetSpeed(0f, 0f, MathUtils.random(500f, 750f), 5f).SetTargetScale(1f,5f))
+                .SetTranslucent(MathUtils.random(0.7f,1f))
+                .SetDuration(1.3f,false);
+    }
+
     public static WeightyImpactEffect WeightyImpact(Hitbox target)
     {
         return WeightyImpact(target, new Color(1.0F, 1.0F, 0.1F, 0.0F));

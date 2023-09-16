@@ -931,18 +931,18 @@
 	{
 		"animator:ElricAlphonse":
 		{
-			"DESCRIPTION": "<ST>. Gain [S]. || Gain|Boost [B]. Draw 1 additional card next turn.",
+			"DESCRIPTION": "Channel [Lightning], [Frost], or [Fire] randomly.",
 			"NAME": "Alphonse Elric"
 		},
 		"animator:ElricAlphonse_Alt":
 		{
-			"DESCRIPTION": "Gain 1 [Orb_S] and !M! [Plated Armor]. || At the start of turn, if you have an empty orb slot: Channel [Lightning].",
+			"DESCRIPTION": "Gain 2 [Orb_S] and !M! [Plated Armor]. || At the start of turn, if you have an empty orb slot: Channel [Lightning].",
 			"EXTENDED_DESCRIPTION": ["At the start of turn, if you have an empty orb slot, #yChannel #b{0} [Lightning]."],
 			"NAME": "Armored Alphonse"
 		},
 		"animator:ElricEdward":
 		{
-			"DESCRIPTION": "Cycle 1 card. If it is a: || {Attack} -> Channel 1 [Lightning]. ** {Skill} -> Channel 1 [Frost]. ** {Power} -> Channel 1 [Earth]. ** {Other} -> Channel 1 [Fire].",
+			"DESCRIPTION": "Cycle 1 card. If it is a: || {Attack} -> Channel 1 [Lightning]. ** {Skill} -> Channel 1 [Frost]. ** {Power} -> Channel 1 [Earth]. ** {Other} -> Channel 1 [Water].",
 			"NAME": "Edward Elric"
 		},
 		"animator:Envy":
@@ -968,7 +968,7 @@
 		},
 		"animator:Lust":
 		{
-			"DESCRIPTION": "If the enemy has [Vulnerable]: Apply [Weak]. || When Exhausted: Gain !S! [THP].",
+			"DESCRIPTION": "Gain !S! [THP] if you Evoked an {Orb} this turn.",
 			"NAME": "Lust"
 		},
 		"animator:MaesHughes":
@@ -989,13 +989,12 @@
 		},
 		"animator:Scar":
 		{
-			"DESCRIPTION": "Exhaust a card to Channel 1 [Earth]. || !A! [B]: Move a card from your Exhaust pile to your discard pile. If you do, take !S! [DD].",
-			"EXTENDED_DESCRIPTION": ["Move a card to your discard pile, then take {0} damage."],
+			"DESCRIPTION": "Exhaust a card to Channel [Earth].",
 			"NAME": "Scar"
 		},
 		"animator:Sloth":
 		{
-			"DESCRIPTION": "Draw !M! less card(s) next turn. || When Exhausted: Gain !S! [Block].",
+			"DESCRIPTION": "Draw !M! less card(s) next turn.",
 			"NAME": "Sloth"
 		},
 		"animator:WinryRockbell":
@@ -2413,6 +2412,12 @@
 			"DESCRIPTION": "Gain 1 [Orb_S]. Channel !K! [Plasma]. || Once per combat, pay !S! [E]: Raise your max [E] and draw size by !M!.",
 			"EXTENDED_DESCRIPTION": ["Pay #b{0} [E]: Raise your max [E] and draw size by #b{1}. NL NL Note: Each further use of this effect this combat costs #b1 additional [E]."],
 			"NAME": "Plasma Core"
+		},
+		"animator:OrbCore_Water":
+		{
+			"DESCRIPTION": "Gain 1 [Orb_S]. Channel !K! [Water]. || Once per combat, pay !S! [E]: Gain !M! Block and !M! Temp. HP.",
+			"EXTENDED_DESCRIPTION": ["Pay #b{0} [E]: Raise your max [E] and draw size by #b{1}. NL NL Note: Each further use of this effect this combat costs #b1 additional [E]."],
+			"NAME": "Water Core"
 		},
 
 		"animator:CardNotFound":

@@ -1,7 +1,6 @@
 package eatyourbeets.cards.animator.series.FullmetalAlchemist;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.Frost;
@@ -12,24 +11,25 @@ import eatyourbeets.cards.base.EYBAttackType;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.orbs.animator.Earth;
-import eatyourbeets.orbs.animator.Fire;
+import eatyourbeets.orbs.animator.Water;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class ElricEdward extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(ElricEdward.class)
-            .SetAttack(1, CardRarity.COMMON, EYBAttackType.Elemental)
+            .SetAttack(1, CardRarity.UNCOMMON, EYBAttackType.Elemental)
             .SetSeriesFromClassPackage();
 
     public ElricEdward()
     {
         super(DATA);
 
-        Initialize(4, 0, 1);
-        SetUpgrade(2, 0, 0);
+        Initialize(4, 0, 0);
+        SetUpgrade(4, 0, 0);
 
-        SetAffinity_Blue(1, 1, 1);
-        SetAffinity_White(1, 1, 1);
+        SetAffinity_Blue(1, 0, 1);
+        SetAffinity_White(1);
 
         SetEvokeOrbCount(1);
     }
@@ -64,7 +64,7 @@ public class ElricEdward extends AnimatorCard
 
                     case CURSE:
                     case STATUS:
-                        GameActions.Bottom.ChannelOrb(new Fire());
+                        GameActions.Bottom.ChannelOrb(new Water());
                         return;
                 }
             }

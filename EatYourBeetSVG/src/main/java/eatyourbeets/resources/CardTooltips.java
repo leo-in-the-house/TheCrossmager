@@ -158,6 +158,7 @@ public class CardTooltips
     public EYBCardTooltip Earth = FindByID(null, "Earth");
     public EYBCardTooltip Aether = FindByID(null, "Aether");
     public EYBCardTooltip Dark = FindByID(null, "Dark");
+    public EYBCardTooltip Water = FindByID(null, "Water");
 
     //Animator
     public EYBCardTooltip Boost_Affinity = FindByID(GR.Animator.PlayerClass, "Boost");
@@ -406,6 +407,7 @@ public class CardTooltips
         Dark.SetIcon(tooltips.Dark.Texture(), 6);
         Frost.SetIcon(tooltips.Frost.Texture(), 6);
         Aether.SetIcon(tooltips.Aether.Texture(), 6);
+        Water.SetIcon(tooltips.Water.Texture(), 6);
         Earth.SetIcon(tooltips.Earth.Texture(), 6);
         Chaos.SetIcon(tooltips.Chaos.Texture(), 6);
         RandomOrb.SetIcon(tooltips.RandomOrb.Texture(), 6);

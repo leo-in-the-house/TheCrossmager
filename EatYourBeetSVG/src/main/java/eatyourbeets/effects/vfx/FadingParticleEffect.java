@@ -18,6 +18,17 @@ public class FadingParticleEffect extends EYBEffect
     protected float alpha;
     protected boolean isTranslucent;
 
+    public FadingParticleEffect(Texture texture, float x, float y) {
+        super(Settings.ACTION_DUR_FAST, false);
+
+        this.projectile = new Projectile(texture, texture.getWidth(), texture.getHeight());
+        this.projectile.SetPosition(x, y).SetTargetPosition(x, y);
+        this.x = x;
+        this.y = y;
+        this.alpha = 1.0F;
+        this.isTranslucent = false;
+    }
+
     public FadingParticleEffect(Texture texture, float x, float y, float size)
     {
         super(Settings.ACTION_DUR_FAST, false);

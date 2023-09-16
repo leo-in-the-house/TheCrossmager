@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.random.Random;
 import eatyourbeets.actions.pileSelection.SelectFromPile;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTooltip;
@@ -70,6 +69,7 @@ public abstract class OrbCore extends AnimatorCard
             cores.add(new OrbCore_Aether());
             cores.add(new OrbCore_Plasma());
             cores.add(new OrbCore_Chaos());
+            cores.add(new OrbCore_Water());
         }
 
         return cores;

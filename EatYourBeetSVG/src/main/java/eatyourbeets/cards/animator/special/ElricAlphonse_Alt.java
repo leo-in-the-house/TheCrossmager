@@ -26,15 +26,15 @@ public class ElricAlphonse_Alt extends AnimatorCard
         Initialize(0, 0, 2);
         SetCostUpgrade(-1);
 
-        SetAffinity_Blue(2);
-        SetAffinity_White(1);
+        SetAffinity_Blue(1);
+        SetAffinity_Brown(1);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.GainOrbSlots(1);
+        GameActions.Bottom.GainOrbSlots(2);
         GameActions.Bottom.GainPlatedArmor(magicNumber);
         GameActions.Bottom.StackPower(new ElricAlphonse_AltPower(p, 1));
     }

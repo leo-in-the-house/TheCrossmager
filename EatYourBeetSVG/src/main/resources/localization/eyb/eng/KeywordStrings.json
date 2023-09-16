@@ -396,6 +396,12 @@
 		"NAMES": ["void", "void+"],
 		"PROPER_NAME": "Void"
 	},
+	"Water":
+	{
+		"DESCRIPTION": "Orb: On evoke, gain #yTemp. #yHP.",
+		"NAMES": ["water", "water+"],
+		"PROPER_NAME": "Water"
+	},
 	"Zero-Cost":
 	{
 		"DESCRIPTION": "Card which costs #b0 [E].",
