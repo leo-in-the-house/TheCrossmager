@@ -14,22 +14,21 @@ public class RoyMustang extends AnimatorCard
     public static final EYBCardData DATA = Register(RoyMustang.class)
             .SetAttack(2, CardRarity.UNCOMMON, EYBAttackType.Elemental, EYBCardTarget.ALL)
             .SetSeriesFromClassPackage();
-    public static final int BURNING_ATTACK_BONUS = 25;
 
     public RoyMustang()
     {
         super(DATA);
 
-        Initialize(9, 0, 0, BURNING_ATTACK_BONUS);
-        SetUpgrade(2, 0, 0);
+        Initialize(7, 0, 0, 15);
+        SetUpgrade(8, 0, 0, 15);
 
-        SetAffinity_Blue(1, 1, 1);
-        SetAffinity_White(1);
-        SetAffinity_Red(1, 1, 0);
+        SetAffinity_Blue(1, 0, 1);
+        SetAffinity_White(1, 0, 1);
+        SetAffinity_Red(1, 0, 1);
 
         SetEvokeOrbCount(1);
 
-        SetAffinityRequirement(Affinity.Red, 2);
+        SetAffinityRequirement(Affinity.Red, 4);
     }
 
     @Override
@@ -39,9 +38,9 @@ public class RoyMustang extends AnimatorCard
         GameActions.Bottom.DealDamageToAll(this, AttackEffects.FIRE);
         GameActions.Bottom.ChannelOrbs(Fire::new, Math.min(p.orbs.size(), GameUtilities.GetEnemies(true).size()));
 
-        if (CheckSpecialCondition(false))
+        if (CheckSpecialConditionLimited(true))
         {
-            GameActions.Bottom.Callback(() -> BurningPower.AddPlayerAttackBonus(BURNING_ATTACK_BONUS));
+            GameActions.Bottom.Callback(() -> BurningPower.AddPlayerAttackBonus(secondaryValue));
         }
     }
 }

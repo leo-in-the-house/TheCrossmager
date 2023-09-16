@@ -46,7 +46,6 @@ public class MaesHughes extends AnimatorCard
 
         List<String> stringsToParse = GameUtilities.GetAllOrbShortcuts();
 
-        stringsToParse.add("Orb");
         stringsToParse.add("Orb Core");
 
         for (AbstractCard c : player.drawPile.group)

@@ -1,33 +1,34 @@
 package eatyourbeets.cards.animator.series.FullmetalAlchemist;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.base.*;
+import eatyourbeets.cards.base.AnimatorCard;
+import eatyourbeets.cards.base.CardUseInfo;
+import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.cards.base.attributes.HPAttribute;
-import eatyourbeets.interfaces.subscribers.OnAffinityGainedSubscriber;
-import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.CardSelection;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
-public class Gluttony extends AnimatorCard implements OnAffinityGainedSubscriber
+public class Gluttony extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Gluttony.class)
             .SetSkill(2, CardRarity.UNCOMMON, EYBCardTarget.None)
-            .SetSeriesFromClassPackage()
-            .ObtainableAsReward((data, deck) -> deck.size() >= (14 + (8 * data.GetTotalCopies(deck))));
+            .SetSeriesFromClassPackage();
 
     public Gluttony()
     {
         super(DATA);
 
         Initialize(0, 0, 6, 4);
-        SetUpgrade(0, 0, 3);
+        SetUpgrade(0, 0, 0);
+        SetCostUpgrade(-1);
 
-        SetAffinity_Red(2);
-        SetAffinity_Black(2);
+        SetAffinity_Yellow(1);
+        SetAffinity_Violet(1);
 
         SetHealing(true);
         SetExhaust(true);
@@ -40,21 +41,10 @@ public class Gluttony extends AnimatorCard implements OnAffinityGainedSubscriber
     }
 
     @Override
-    public int OnAffinityGained(Affinity affinity, int amount)
-    {
-        if (amount > 0 && affinity == Affinity.Black && player.hand.contains(this) && GameUtilities.Retain(this))
-        {
-            flash();
-        }
-
-        return 0;
-    }
-
-    @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Top.HealPlayerLimited(this, magicNumber);
+        GameActions.Top.Heal(magicNumber);
 
         if (CheckSpecialCondition(false))
         {
@@ -63,10 +53,15 @@ public class Gluttony extends AnimatorCard implements OnAffinityGainedSubscriber
             .SetOrigin(CardSelection.Top)
             .AddCallback(cards ->
             {
+                int evokeAmount = 0;
+
                 for (AbstractCard c : cards)
                 {
                     GameActions.Top.SealAffinities(c, false);
+                    evokeAmount++;
                 }
+
+                GameActions.Top.EvokeOrb(evokeAmount);
             });
         }
     }
@@ -75,13 +70,5 @@ public class Gluttony extends AnimatorCard implements OnAffinityGainedSubscriber
     public boolean CheckSpecialCondition(boolean tryUse)
     {
         return player.drawPile.size() >= secondaryValue;
-    }
-
-    @Override
-    public void triggerWhenCreated(boolean startOfBattle)
-    {
-        super.triggerWhenCreated(startOfBattle);
-
-        CombatStats.onAffinityGained.Subscribe(this);
     }
 }

@@ -355,6 +355,11 @@ public abstract class EYBCard extends EYBCardBase
         return affinityRequirement > 0 && CheckAffinities(tryUse);
     }
 
+    public boolean CheckSpecialConditionLimited(boolean tryUse)
+    {
+        return CheckSpecialConditionLimited(tryUse, use -> affinityRequirement > 0 && CheckAffinities(use));
+    }
+
     public boolean CheckSpecialConditionLimited(boolean tryUse, FuncT1<Boolean, Boolean> condition)
     {
         boolean t = CombatStats.CanActivateLimited(cardID);
@@ -373,6 +378,11 @@ public abstract class EYBCard extends EYBCardBase
         }
 
         return false;
+    }
+
+    public boolean CheckSpecialConditionSemiLimited(boolean tryUse)
+    {
+        return CheckSpecialConditionSemiLimited(tryUse, use -> affinityRequirement > 0 && CheckAffinities(use));
     }
 
     public boolean CheckSpecialConditionSemiLimited(boolean tryUse, FuncT1<Boolean, Boolean> condition)

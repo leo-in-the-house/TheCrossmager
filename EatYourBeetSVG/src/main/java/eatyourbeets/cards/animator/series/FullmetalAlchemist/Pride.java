@@ -27,10 +27,10 @@ public class Pride extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 0, 1, 2);
-        SetUpgrade(0, 0, 0, 1);
+        Initialize(0, 0, 2, 0);
+        SetUpgrade(0, 0, 1, 0);
 
-        SetAffinity_Star(1, 1, 0);
+        SetAffinity_Black(2);
 
         SetEvokeOrbCount(magicNumber);
         SetEthereal(true);
@@ -38,10 +38,16 @@ public class Pride extends AnimatorCard
     }
 
     @Override
+    protected void OnUpgrade() {
+        super.OnUpgrade();
+
+        SetEthereal(false);
+    }
+
+    @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.ApplyConstricted(p, m, secondaryValue);
         GameActions.Bottom.ChannelOrbs(Dark::new, magicNumber);
         GameActions.Bottom.StackPower(new PridePower(p));
     }

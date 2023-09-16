@@ -400,7 +400,7 @@
 		"animator:GirlDeMo":
 		{
 			"FLAVOR_TEXT": "'I'll keep singing for everyone, even when I'm wetting myself! I'll show you what I've got!'",
-			"DESCRIPTION": "Double your highest amounts among [R], [G], [B], [L], and [D].",
+			"DESCRIPTION": "Double your highest amounts among all of your stats.",
 			"NAME": "Girls Dead Monster"
 		},
 		"animator:Godan":
@@ -958,7 +958,7 @@
 		},
 		"animator:Gluttony":
 		{
-			"DESCRIPTION": "Exhaust and Seal the top !S! cards in draw pile. || While in hand, if you gain [D]: Retain this.",
+			"DESCRIPTION": "Exhaust and {Seal} the top !S! cards in draw pile.  Evoke your next {Orb} once for each card Exhausted this way.",
 			"NAME": "Gluttony"
 		},
 		"animator:Greed":
@@ -978,13 +978,13 @@
 		},
 		"animator:Pride":
 		{
-			"DESCRIPTION": "Apply !S! [Constricted]. Channel !M! [Dark]. || Until next turn: [Dark] absorbs all incoming unblocked damage.",
+			"DESCRIPTION": "Channel !M! [Dark]. || Until next turn: [Dark] absorbs all incoming unblocked damage.",
 			"EXTENDED_DESCRIPTION": ["Your [Dark] absorbs all incoming unblock damage."],
 			"NAME": "Pride"
 		},
 		"animator:RoyMustang":
 		{
-			"DESCRIPTION": "Channel 1 [Fire] for each enemy. || !A! [R]: Raise the damage bonus of [Burning] by !S!% this combat.",
+			"DESCRIPTION": "Channel [Fire] for each enemy. || <LIM>, !A! [R]: Increase the damage bonus for [Burning] by !S!% this combat.",
 			"NAME": "Roy Mustang"
 		},
 		"animator:Scar":
@@ -999,8 +999,8 @@
 		},
 		"animator:WinryRockbell":
 		{
-			"DESCRIPTION": "Once per turn, when you discard a card: Gain !M! [Block]. || Pay [E]: Upgrade !S! random cards.",
-			"EXTENDED_DESCRIPTION": ["Pay [E]: Upgrade {0} random cards. || The next #b{1} time(s) you discard a card this turn, gain #b{2} #yBlock."],
+			"DESCRIPTION": "Whenever you channel an {Orb}: Gain !M! [Block].",
+			"EXTENDED_DESCRIPTION": ["Whenever you channel an #yOrb, gain #b{0} #yBlock."],
 			"NAME": "Winry Rockbell"
 		},
 		"animator:Wrath":

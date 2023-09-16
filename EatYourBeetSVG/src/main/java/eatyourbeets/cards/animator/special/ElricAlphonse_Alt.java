@@ -23,7 +23,7 @@ public class ElricAlphonse_Alt extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 0, 2);
+        Initialize(0, 0, 4);
         SetCostUpgrade(-1);
 
         SetAffinity_Blue(1);
