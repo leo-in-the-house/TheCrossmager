@@ -50,7 +50,11 @@ public class GenericEffect_ChannelOrb extends GenericEffect
 
     public EYBCardTooltip GetOrbTooltip(AbstractOrb orb)
     {
-        return CardTooltips.FindByID(null, orb.ID.substring(orb.ID.lastIndexOf(':')));
+        int index = orb.ID.lastIndexOf(':');
+        if (index == -1) {
+            return null;
+        }
+        return CardTooltips.FindByID(null, orb.ID.substring(index+1));
     }
 
     @Override

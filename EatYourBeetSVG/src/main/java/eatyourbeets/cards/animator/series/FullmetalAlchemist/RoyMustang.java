@@ -12,7 +12,7 @@ import eatyourbeets.utilities.GameActions;
 public class RoyMustang extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(RoyMustang.class)
-            .SetAttack(2, CardRarity.UNCOMMON, EYBAttackType.Elemental, EYBCardTarget.ALL)
+            .SetAttack(3, CardRarity.UNCOMMON, EYBAttackType.Elemental, EYBCardTarget.ALL)
             .SetSeriesFromClassPackage();
 
     public RoyMustang()

@@ -2,8 +2,8 @@ package eatyourbeets.cards.animator.series.FullmetalAlchemist;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.orbs.Dark;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCard;
 import eatyourbeets.cards.base.EYBCardData;
@@ -11,27 +11,25 @@ import eatyourbeets.interfaces.subscribers.OnAffinitySealedSubscriber;
 import eatyourbeets.powers.AnimatorClickablePower;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.powers.PowerTriggerConditionType;
-import eatyourbeets.resources.GR;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
 public class Envy extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Envy.class)
-            .SetPower(2, CardRarity.RARE)
+            .SetPower(1, CardRarity.RARE)
             .SetSeriesFromClassPackage();
     public static final int TEMP_HP_ENERGY_COST = 2;
-    public static final int HP_THRESHOLD = 20;
 
     public Envy()
     {
         super(DATA);
 
-        Initialize(0, 0, TEMP_HP_ENERGY_COST, HP_THRESHOLD);
+        Initialize(0, 0, TEMP_HP_ENERGY_COST);
+        SetCostUpgrade(-1);
 
-        SetAffinity_Star(1, 1, 0);
-
-        SetDelayed(true);
+        SetAffinity_Pink(1);
+        SetAffinity_Violet(1);
         SetEthereal(true);
     }
 
@@ -85,20 +83,9 @@ public class Envy extends AnimatorCard
         {
             if (amount > 0)
             {
-                GameActions.Bottom.MakeCardInHand(GameUtilities.Imitate(card));
+                GameActions.Bottom.ChannelOrbs(Dark::new, amount);
                 reducePower(1);
                 flashWithoutSound();
-            }
-        }
-
-        @Override
-        public void update(int slot)
-        {
-            super.update(slot);
-
-            if (GR.UI.Elapsed25())
-            {
-                UpdateVitality();
             }
         }
 
@@ -113,18 +100,7 @@ public class Envy extends AnimatorCard
         {
             super.OnUse(m);
 
-            UpdateVitality();
-            GameActions.Bottom.GainVitality(vitality);
-        }
-
-        private void UpdateVitality()
-        {
-            final int newValue = GameUtilities.GetHP(player, false, false) < Envy.HP_THRESHOLD ? 2 : 1;
-            if (newValue != vitality)
-            {
-                vitality = newValue;
-                updateDescription();
-            }
+            GameActions.Bottom.SealAffinities(player.drawPile, 1, false);
         }
     }
 }

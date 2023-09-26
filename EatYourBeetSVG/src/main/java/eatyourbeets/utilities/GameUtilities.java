@@ -191,6 +191,24 @@ public class GameUtilities
         return (card.rarity != AbstractCard.CardRarity.SPECIAL) && !SoulboundField.soulbound.get(card);
     }
 
+    public static void RemoveFromDeck(UUID uuid)
+    {
+        AbstractCard cardInDeck = GameUtilities.GetMasterDeckInstance(uuid);
+
+        if (cardInDeck != null)
+        {
+            RemoveFromDeck(cardInDeck);
+        }
+    }
+
+    public static void RemoveFromDeck(AbstractCard card)
+    {
+        if (card != null && GameUtilities.CanRemoveFromDeck(card))
+        {
+            player.masterDeck.removeCard(card);
+        }
+    }
+
     public static boolean CanShowUpgrades(boolean isLibrary)
     {
         return SingleCardViewPopup.isViewingUpgrade && (player == null || isLibrary

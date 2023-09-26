@@ -1,23 +1,26 @@
 package eatyourbeets.cards.animator.ultrarare;
 
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
-import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
-import eatyourbeets.actions.orbs.RemoveOrb;
 import eatyourbeets.cards.animator.status.Crystallize;
-import eatyourbeets.cards.base.*;
-import eatyourbeets.resources.GR;
+import eatyourbeets.cards.base.AnimatorCard_UltraRare;
+import eatyourbeets.cards.base.CardSeries;
+import eatyourbeets.cards.base.CardUseInfo;
+import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.interfaces.subscribers.OnChannelOrbSubscriber;
+import eatyourbeets.powers.AnimatorPower;
+import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Truth extends AnimatorCard_UltraRare
 {
     private static final Crystallize status = new Crystallize();
 
     public static final EYBCardData DATA = Register(Truth.class)
-            .SetSkill(1, CardRarity.SPECIAL, EYBCardTarget.None)
+            .SetPower(0, CardRarity.SPECIAL)
             .SetColor(CardColor.COLORLESS)
             .SetSeries(CardSeries.FullmetalAlchemist)
             .PostInitialize(data -> data.AddPreview(status, false));
@@ -26,74 +29,54 @@ public class Truth extends AnimatorCard_UltraRare
     {
         super(DATA);
 
-        Initialize(0, 0, 4, 9);
-        SetUpgrade(0, 0, 0);
+        Initialize(0, 0, 5);
+        SetUpgrade(0, 0, 4);
 
-        SetAffinity_Blue(2);
-        SetAffinity_White(2);
-        SetAffinity_Black(2);
+        SetAffinity_Star(1);
 
         SetExhaust(true);
-    }
-
-    @Override
-    protected void OnUpgrade()
-    {
-        SetRetain(true);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.GainRed(magicNumber);
-        GameActions.Bottom.GainGreen(magicNumber);
-        GameActions.Bottom.GainBlue(magicNumber);
+        GameActions.Bottom.GainRed(1);
+        GameActions.Bottom.GainGreen(1);
+        GameActions.Bottom.GainBlue(1);
         GameActions.Bottom.GainEnergy(magicNumber);
 
-        if (CheckSpecialCondition(false))
-        {
-            for (AbstractOrb orb : GameUtilities.GetUniqueOrbs(3))
-            {
-                GameActions.Top.Add(new RemoveOrb(orb));
-            }
-        }
-        else
-        {
-            ReplaceCard(p);
-        }
+        GameActions.Bottom.StackPower(new Truth.TruthPower(p, magicNumber));
     }
 
-    private void ReplaceCard(AbstractPlayer p)
-    {
-        final CardGroup temp = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-        for (AbstractCard c : p.masterDeck.group)
-        {
-            if (!c.cardID.equals(status.cardID) && !c.uuid.equals(uuid) && GameUtilities.CanRemoveFromDeck(c))
-            {
-                temp.group.add(c);
-            }
+    public static class TruthPower extends AnimatorPower implements OnChannelOrbSubscriber {
+        public TruthPower(AbstractCreature owner, int amount) {
+            super(owner, Truth.DATA);
+            this.amount = amount;
+            updateDescription();
         }
 
-        if (temp.size() > 0)
-        {
-            GameActions.Bottom.SelectFromPile(name, 1, temp)
-            .SetOptions(false, false)
-            .SetMessage(GR.Common.Strings.GridSelection.TransformInto(status.name))
-            .AddCallback(cards ->
-            {
-                if (cards.size() > 0)
-                {
-                    player.masterDeck.removeCard(cards.get(0));
-                    player.masterDeck.addToTop(status.makeCopy());
-                }
-            });
-        }
-    }
 
-    @Override
-    public boolean CheckSpecialCondition(boolean tryUse)
-    {
-        return GameUtilities.GetUniqueOrbsCount() >= 3;
+        @Override
+        public void onInitialApplication()
+        {
+            super.onInitialApplication();
+
+            CombatStats.onChannelOrb.Subscribe(this);
+        }
+
+        @Override
+        public void onRemove()
+        {
+            super.onRemove();
+
+            CombatStats.onChannelOrb.Unsubscribe(this);
+        }
+
+
+        @Override
+        public void OnChannelOrb(AbstractOrb orb) {
+            GameActions.Top.EvokeOrb(amount, orb);
+        }
     }
 }

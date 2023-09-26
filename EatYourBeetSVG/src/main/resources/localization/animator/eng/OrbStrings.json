@@ -5,7 +5,7 @@
 		"NAME": "Chaos",
 		"DESCRIPTION":
 		[
-			"At the start of turn or on #yEvoke: Reduce the cost of a random card by #b1, and increase the cost of another random card by #b1."
+			"At the start of turn or on #yEvoke: Reduce the cost of a random card by #b3, and increase the cost of another random card by #b1."
 		]
 	},
 	"animator:Earth":

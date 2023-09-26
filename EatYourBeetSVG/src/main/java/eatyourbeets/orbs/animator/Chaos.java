@@ -4,7 +4,6 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import eatyourbeets.effects.SFX;
@@ -191,7 +190,7 @@ public class Chaos extends AnimatorOrb implements OnEndOfTurnLastSubscriber, OnA
         if (toDecrease.Size() > 0)
         {
             final AbstractCard c = toDecrease.Retrieve(GameUtilities.GetRNG(), true);
-            GameUtilities.ModifyCostForTurn(c, -1, true);
+            GameUtilities.ModifyCostForTurn(c, -3, true);
             GameUtilities.Flash(c, true);
             toIncrease.Remove(c);
         }

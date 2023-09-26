@@ -7,9 +7,9 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.relics.PhilosopherStone;
 import com.megacrit.cardcrawl.vfx.combat.OfferingEffect;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Father extends AnimatorCard
 {
@@ -25,12 +25,12 @@ public class Father extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 0, 3, 45);
-        SetCostUpgrade(-1);
+        Initialize(0, 0, 3, 50);
+        SetCostUpgrade(-2);
 
-        SetAffinity_Black(2);
+        SetAffinity_Star(1);
 
-        SetExhaust(true);
+        SetPurge(true);
         SetObtainableInCombat(false);
     }
 
@@ -51,18 +51,15 @@ public class Father extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        if (p.hasRelic(relic.relicId))
-        {
-            GameActions.Bottom.GainVitality(magicNumber);
-        }
-        else
-        {
-            p.decreaseMaxHealth((int)Math.ceil(p.maxHealth * (secondaryValue / 100f)));
-            GameActions.Bottom.VFX(new OfferingEffect(), 0.5f);
-            GameActions.Bottom.Callback(() -> GameEffects.Queue.SpawnRelic(relic.makeCopy(), current_x, current_y));
-            AbstractDungeon.bossRelicPool.remove(relic.relicId);
 
-            p.energy.energy += 1;
-        }
+        p.decreaseMaxHealth((int)Math.ceil(p.maxHealth * (secondaryValue / 100f)));
+        GameActions.Bottom.VFX(new OfferingEffect(), 0.5f);
+        GameActions.Bottom.Callback(() -> GameEffects.Queue.SpawnRelic(relic.makeCopy(), current_x, current_y));
+
+        AbstractDungeon.bossRelicPool.remove(relic.relicId);
+
+        p.energy.energy += 1;
+
+        GameUtilities.RemoveFromDeck(uuid);
     }
 }

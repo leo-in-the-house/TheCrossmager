@@ -2,10 +2,16 @@ package eatyourbeets.cards.animator.series.FullmetalAlchemist;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.FocusPower;
+import com.megacrit.cardcrawl.stances.AbstractStance;
 import eatyourbeets.cards.animator.tokens.AffinityToken;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
+import eatyourbeets.interfaces.subscribers.OnStanceChangedSubscriber;
+import eatyourbeets.powers.AnimatorPower;
+import eatyourbeets.powers.CombatStats;
+import eatyourbeets.stances.WrathStance;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Wrath extends AnimatorCard
 {
@@ -18,12 +24,11 @@ public class Wrath extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 9, 2);
-        SetUpgrade(0, 4, 0);
+        Initialize(0, 20, 6);
+        SetUpgrade(0, 8, 2);
 
         SetAffinity_Red(2, 0, 2);
-        SetAffinity_Green(1, 0, 2);
-        SetAffinity_Black(1);
+        SetAffinity_White(1);
 
         SetExhaust(true);
     }
@@ -33,23 +38,46 @@ public class Wrath extends AnimatorCard
     {
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
-        GameActions.Bottom.GainRed(magicNumber);
+        GameActions.Bottom.ChangeStance(WrathStance.STANCE_ID);
+        GameActions.Bottom.StackPower(new WrathPower(player, magicNumber));
     }
 
-    @Override
-    public void OnLateUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
+    public static class WrathPower extends AnimatorPower implements OnStanceChangedSubscriber
     {
-        if (CheckSpecialCondition(false))
+        public WrathPower(AbstractPlayer owner, int amount)
         {
-            GameActions.Bottom.MakeCardInHand(AffinityToken.GetCopy(Affinity.Red, true));
+            super(owner, Wrath.DATA);
+
+            Initialize(amount);
+        }
+        @Override
+        public void onInitialApplication()
+        {
+            super.onInitialApplication();
+
+            CombatStats.onStanceChanged.Subscribe(this);
         }
 
-        GameActions.Bottom.IncreaseScaling(player.hand, player.hand.size(), Affinity.Red, 1).SetFilter(c -> c.uuid != uuid);
-    }
+        @Override
+        public void onRemove()
+        {
+            super.onRemove();
 
-    @Override
-    public boolean CheckSpecialCondition(boolean tryUse)
-    {
-        return player.exhaustPile.size() >= 7;
+            CombatStats.onStanceChanged.Unsubscribe(this);
+        }
+
+
+        @Override
+        protected void onAmountChanged(int previousAmount, int difference)
+        {
+            GameActions.Top.StackPower(new FocusPower(owner, difference));
+
+            super.onAmountChanged(previousAmount, difference);
+        }
+
+        @Override
+        public void OnStanceChanged(AbstractStance oldStance, AbstractStance newStance) {
+            RemovePower();
+        }
     }
 }
