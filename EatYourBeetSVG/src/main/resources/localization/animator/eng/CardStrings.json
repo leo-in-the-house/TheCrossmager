@@ -931,80 +931,95 @@
 	{
 		"animator:ElricAlphonse":
 		{
+			"FLAVOR_TEXT": "'Humankind cannot gain anything without first giving something in return. To obtain, something of equal value must be lost. That is alchemy's first law of equivalent exchange.'",
 			"DESCRIPTION": "Channel [Lightning], [Frost], or [Fire] randomly.",
 			"NAME": "Alphonse Elric"
 		},
 		"animator:ElricAlphonse_Alt":
 		{
+			"FLAVOR_TEXT": "'You know, I didn't ask to be this big.'",
 			"DESCRIPTION": "Gain 2 [Orb_S] and !M! [Plated Armor]. || At the start of turn, if you have an empty orb slot: Channel [Lightning].",
 			"EXTENDED_DESCRIPTION": ["At the start of turn, if you have an empty orb slot, #yChannel #b{0} [Lightning]."],
 			"NAME": "Armored Alphonse"
 		},
 		"animator:ElricEdward":
 		{
+			"FLAVOR_TEXT": "'Whether it be an arm, or a leg, or even my heart you can take it! So give him back... HE'S MY LITTLE BROTHER AND HE'S ALL I HAVE LEFT!!!'",
 			"DESCRIPTION": "Cycle 1 card. If it is a: || {Attack} -> Channel 1 [Lightning]. ** {Skill} -> Channel 1 [Frost]. ** {Power} -> Channel 1 [Earth]. ** {Other} -> Channel 1 [Water].",
 			"NAME": "Edward Elric"
 		},
 		"animator:Envy":
 		{
+			"FLAVOR_TEXT": "'You humans don't make any sense to me. You throw away your lives for nothing.'",
 			"DESCRIPTION": "Whenever you {Seal} a card: Channel [Dark]. || Once per turn, pay !M! [E]: {Seal} a card in your discard pile.",
 			"EXTENDED_DESCRIPTION": ["Pay 2 [E] to #Seal a card in your discard pile. || #yChannel #b{1} Dark whenever you #ySeal a card."],
 			"NAME": "Envy"
 		},
 		"animator:Father":
 		{
+			"FLAVOR_TEXT": "'The life of an insect is so beneath you that it would be a waste of your time to even consider judging it. That would be an accurate summation of my feelings towards you humans.'",
 			"DESCRIPTION": "Lose !S!% of your Max [HP] to Obtain {Philosopher's Stone}.  Remove this card from your master deck.",
 			"NAME": "Father"
 		},
 		"animator:Gluttony":
 		{
+			"FLAVOR_TEXT": "'Time to eat you!'",
 			"DESCRIPTION": "Exhaust and {Seal} the top !S! cards in draw pile.  Evoke your next {Orb} once for each card Exhausted this way.",
 			"NAME": "Gluttony"
 		},
 		"animator:Greed":
 		{
+			"FLAVOR_TEXT": "'You humans think greed is only about money and power. But don't forget: everybody wants something they don't have.'",
 			"DESCRIPTION": "Choose !S!: Gain {0} [Block], Gain {1} [THP], Gain {2} [Malleable], Gain {3} [Plated Armor], or Gain {4} [Metallicize], or Channel {5} [Chaos]. || For every !M! [Gold] you have: Choose 1 additional effect.",
 			"NAME": "Greed"
 		},
 		"animator:Lust":
 		{
+			"FLAVOR_TEXT": "'You killed me. I hate losing. But there worse ways to die than at the hands of a man like you.'",
 			"DESCRIPTION": "Gain !S! [THP] if you Evoked an {Orb} this turn.",
 			"NAME": "Lust"
 		},
 		"animator:MaesHughes":
 		{
+			"FLAVOR_TEXT": "'OK! You boys have a safe trip! Stop in and give me a shout the next time you make it to Central!'",
 			"DESCRIPTION": "Draw the top card from your draw pile which references an {Orb} or {Orb Core} in its description.",
 			"NAME": "Maes Hughes"
 		},
 		"animator:Pride":
 		{
+			"FLAVOR_TEXT": "'You saw the little alchemist?!  Can I meet him sometime, Father?!'",
 			"DESCRIPTION": "Channel !M! [Dark]. || Until next turn: [Dark] absorbs all incoming unblocked damage.",
 			"EXTENDED_DESCRIPTION": ["Your [Dark] absorbs all incoming unblock damage."],
 			"NAME": "Pride"
 		},
 		"animator:RoyMustang":
 		{
+			"FLAVOR_TEXT": "'What's it like having the fluids inside of your eyes boil? I'd imagine it might sting a little.'",
 			"DESCRIPTION": "Channel [Fire] for each enemy. || <LIM>, !A! [R]: Increase the damage bonus for [Burning] by !S!% this combat.",
 			"NAME": "Roy Mustang"
 		},
 		"animator:Scar":
 		{
+			"FLAVOR_TEXT": "'I am the ooze born from the gaping wound that was Ishbal. I neither pray to God nor appeal to him.'",
 			"DESCRIPTION": "Exhaust a card to Channel [Earth].",
 			"NAME": "Scar"
 		},
 		"animator:Sloth":
 		{
+			"FLAVOR_TEXT": "'You cannot interfere.  See, I was told to kill you.'",
 			"DESCRIPTION": "Draw !M! less card(s) next turn.",
 			"NAME": "Sloth"
 		},
 		"animator:WinryRockbell":
 		{
+			"FLAVOR_TEXT": "'If you're so grateful, then you should clean up your act and stop picking pockets! Mr. Dominic gave you these legs out of a selfless act of good will!'",
 			"DESCRIPTION": "Whenever you channel an {Orb}: Gain !M! [Block].",
 			"EXTENDED_DESCRIPTION": ["Whenever you channel an #yOrb, gain #b{0} #yBlock."],
 			"NAME": "Winry Rockbell"
 		},
 		"animator:Wrath":
 		{
+			"FLAVOR_TEXT": "'Why must everyone make such a fuss over the death of a single soldier? The moment a soldier dons his uniform, he accepts the reality that he might be buried in it.'",
 			"DESCRIPTION": "Enter <WS>. || Until you change {Stances}, Gain !M! {Focus}.",
 			"EXTENDED_DESCRIPTION": ["Until you change Stances, gain #b{0} #yFocus."],
 			"NAME": "Wrath"
@@ -2675,6 +2690,7 @@
 		},
 		"animator:Truth":
 		{
+			"FLAVOR_TEXT": "'I am all, and I am one.  So, of course, this also means that I am you.'",
 			"DESCRIPTION": "Gain [R][G][B][E]. || Whenever you {Channel} an Orb: {Evoke} it !M! Times.",
 			"EXTENDED_DESCRIPTION": ["Whenever you #yChannel an #yOrb: #yEvoke it #b{0} times."],
 			"NAME": "Truth"
