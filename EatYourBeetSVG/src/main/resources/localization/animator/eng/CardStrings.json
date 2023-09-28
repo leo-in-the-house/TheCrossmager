@@ -362,7 +362,6 @@
 		}
 	},
 
-
 	"SERIES:ANGELBEATS":
 	{
 		"animator:AngelAlter":
@@ -465,6 +464,70 @@
 			"NAME": "Yuzuru Otonashi"
 		}
 	},
+
+	"SERIES:ATELIER":
+	{
+		"animator:AyeshaAltugle":
+		{
+			"FLAVOR_TEXT": "'Look, it’s so pretty, just like that day.  You liked those flowers, didn’t you, Nio?'",
+			"DESCRIPTION": "The next time you create a card: Gain !S! [THP].",
+			"EXTENDED_DESCRIPTION": ["The next time you create a card, gain #b{0} #yTemp. #yHP."],
+			"NAME": "Ayesha Altugle"
+		},
+		"animator:EschaMalier":
+		{
+			"FLAVOR_TEXT": "'Don’t you want to try it?  Let’s take on the challenge of building a dreadnought!'",
+			"DESCRIPTION": "<LIM>. When drawn: Add {Logy} to your draw pile.",
+			"NAME": "Escha Malier"
+		},
+		"animator:FirisMistlud":
+		{
+			"FLAVOR_TEXT": "'I wouldn’t like it if we couldn’t meet again, either... I definitely need to pass that exam tomorrow!'",
+			"DESCRIPTION": "Create !M! {0-Cost} Strikes in your hand.",
+			"UPGRADE_DESCRIPTION": "Create !M! {0-Cost} upgraded Strikes in your hand.",
+			"NAME": "Firis Mistlud"
+		},
+		"animator:JudithVolltone":
+		{
+			"FLAVOR_TEXT": "'I can’t imagine I could have flown 200 years in the future!  I mean, just a short while ago I was living in 681 AD!'",
+			"DESCRIPTION": "Remove !M! random {Rares} from your master deck permanently to obtain {Philosopher’s Stone}. Remove this card from your master deck.",
+			"NAME": "Judith Volltone"
+		},
+		"animator:KlaudiaValentz":
+		{
+			"FLAVOR_TEXT": "'It’s fine.  I realize I’m still kind of hiding part of it, even though I brought it all the way.'",
+			"DESCRIPTION": "The next time you create a card this turn: Enter <TS>.",
+			"EXTENDED_DESCRIPTION": ["The next #b{0} times you create a card this turn: Enter #yTrance #yStance."],
+			"NAME": "Klaudia Valentz"
+		},
+		"animator:LydieMalen":
+		{
+			"FLAVOR_TEXT": "'Huh?! Hello?! Wait, Sue!'",
+			"DESCRIPTION": "Exhaust this card, then add {Suelle Malen} to your draw pile.",
+			"NAME": "Lydie Malen"
+		},
+		"animator:Logy":
+		{
+			"FLAVOR_TEXT": "'Ugh... I guess there’s no convincing these two.  This is gonna be one hell of a ride.'",
+			"DESCRIPTION": "Draw {Escha Malier} from your discard pile.",
+			"NAME": "Logy"
+		},
+		"animator:Meruru":
+		{
+			"FLAVOR_TEXT": "'I’m the princess around here!  But... well, not that I’m complaining, but my life does lack a certain excitement.'",
+			"DESCRIPTION": "Add !M! {Power}(s) to your draw pile, they cost 0. || Whenever you create a card, that card costs 0 to play.",
+			"EXTENDED_DESCRIPTION": ["Whenever you create a card, that card costs 0 to play."],
+			"NAME": "Merurulince Arls"
+		},
+		"animator:Nelke":
+		{
+			"FLAVOR_TEXT": "'But I swear to finish what I start!  I WILL lift this village up and make it prosper!'",
+			"DESCRIPTION": "Whenever you create a card, gain !M! [Block] and !S! [THP].",
+			"EXTENDED_DESCRIPTION": ["Whenever you create a card, gain #b{0} #yBlock and #b{1} #yTemp. #yHP."],
+			"NAME": "Nelke von Lestamm"
+		}
+	},
+
 	"SERIES:BLEACH":
 	{
 		"animator:ByakuyaBankai":
@@ -2712,4 +2775,4 @@
 			"NAME": "Yuyuko Saigyouji"
 		}
 	}
-}
+},

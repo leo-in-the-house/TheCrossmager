@@ -14,6 +14,10 @@ public class Illya_Miyu extends AnimatorCard
     public static final EYBCardData DATA = Register(Illya_Miyu.class)
             .SetSkill(2, CardRarity.SPECIAL, EYBCardTarget.None)
             .SetSeries(CardSeries.Fate);
+    static
+    {
+        DATA.AddPreview(new Illya_Prisma(), false);
+    }
 
     public Illya_Miyu()
     {

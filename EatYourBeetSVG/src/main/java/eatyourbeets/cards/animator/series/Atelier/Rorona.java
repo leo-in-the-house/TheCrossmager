@@ -1,4 +1,4 @@
-package eatyourbeets.cards.animator.colorless.rare;
+package eatyourbeets.cards.animator.series.Atelier;
 
 import com.megacrit.cardcrawl.actions.common.ObtainPotionAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;

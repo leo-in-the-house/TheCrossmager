@@ -15,6 +15,10 @@ public class Illya_Prisma extends AnimatorCard
     public static final EYBCardData DATA = Register(Illya_Prisma.class)
             .SetAttack(2, CardRarity.SPECIAL, EYBAttackType.Elemental, EYBCardTarget.ALL)
             .SetSeries(CardSeries.Fate);
+    static
+    {
+        DATA.AddPreview(new Illya_Miyu(), false);
+    }
 
     public Illya_Prisma()
     {
