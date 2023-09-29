@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
+import eatyourbeets.cards.base.CardSeries;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.modifiers.CostModifiers;
@@ -17,7 +18,7 @@ public class ResnaSternlicht extends AnimatorCard {
     public static final EYBCardData DATA = Register(ResnaSternlicht.class)
             .SetPower(2, CardRarity.RARE)
             .SetColor(CardColor.COLORLESS)
-            .SetSeriesFromClassPackage();
+            .SetSeries(CardSeries.Atelier);
 
     public ResnaSternlicht() {
         super(DATA);

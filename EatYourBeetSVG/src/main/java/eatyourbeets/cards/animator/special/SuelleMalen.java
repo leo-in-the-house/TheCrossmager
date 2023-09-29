@@ -12,7 +12,7 @@ import eatyourbeets.utilities.GameUtilities;
 public class SuelleMalen extends AnimatorCard {
     public static final EYBCardData DATA = Register(SuelleMalen.class)
             .SetAttack(2, CardRarity.SPECIAL, EYBAttackType.Ranged, EYBCardTarget.Random)
-            .SetSeriesFromClassPackage();
+            .SetSeries(CardSeries.Atelier);
     static
     {
         DATA.AddPreview(new LydieMalen(), false);

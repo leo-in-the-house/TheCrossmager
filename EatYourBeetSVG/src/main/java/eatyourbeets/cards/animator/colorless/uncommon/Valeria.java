@@ -15,7 +15,7 @@ public class Valeria extends AnimatorCard {
     public static final EYBCardData DATA = Register(Valeria.class)
             .SetAttack(4, CardRarity.UNCOMMON, EYBAttackType.Normal, EYBCardTarget.Random)
             .SetColor(CardColor.COLORLESS)
-            .SetSeriesFromClassPackage();
+            .SetSeries(CardSeries.Atelier);
 
     public Valeria() {
         super(DATA);

@@ -27,8 +27,8 @@ public class JudithVolltone extends AnimatorCard {
     public JudithVolltone() {
         super(DATA);
 
-        Initialize(0, 0, 0);
-        SetUpgrade(0, 0, 0);
+        Initialize(0, 0, 6);
+        SetUpgrade(0, 0, -2);
 
         SetAffinity_Star(1);
 
