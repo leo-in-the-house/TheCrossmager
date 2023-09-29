@@ -595,7 +595,7 @@
 			"DESCRIPTION": "Add a copy of a random non-{Hindrance} card in your master deck on top of your draw pile.  It costs !S! less. || {Reload}: Repeat.",
 			"NAME": "Totooria Helmold"
 		},
-		"animator:VioratePlatane":
+		"animator:Viorate":
 		{
 			"FLAVOR_TEXT": "'Carrots are the ultimate ingredient for any dish!'",
 			"DESCRIPTION": "To play this card: Discard !M! random cards.",
