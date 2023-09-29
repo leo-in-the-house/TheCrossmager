@@ -41,7 +41,7 @@ public class PamelaIbis extends AnimatorCard_UltraRare implements OnCardCreatedS
 
     @Override
     public void OnCardCreated(AbstractCard card, boolean startOfBattle) {
-        this.magicNumber++;
+        GameUtilities.IncreaseMagicNumber(this, 1, true);
     }
 
     @Override

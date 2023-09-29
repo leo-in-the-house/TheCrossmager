@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.relics.PhilosopherStone;
+import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
 import com.megacrit.cardcrawl.vfx.combat.OfferingEffect;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.utilities.GameActions;
@@ -57,6 +58,7 @@ public class JudithVolltone extends AnimatorCard {
 
         if (raresToRemove != null) {
             for (AbstractCard rareCard : raresToRemove) {
+                AbstractDungeon.effectList.add(new PurgeCardEffect(rareCard));
                 player.masterDeck.removeCard(rareCard);
             }
 

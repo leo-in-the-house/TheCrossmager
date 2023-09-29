@@ -7,12 +7,13 @@ import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
+import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
 public class EschaMalier extends AnimatorCard {
     public static final EYBCardData DATA = Register(EschaMalier.class)
-            .SetSkill(1, CardRarity.COMMON, EYBCardTarget.None)
+            .SetSkill(0, CardRarity.COMMON, EYBCardTarget.None)
             .SetSeriesFromClassPackage();
     static
     {
@@ -40,6 +41,8 @@ public class EschaMalier extends AnimatorCard {
     public void triggerWhenDrawn() {
         super.triggerWhenDrawn();
 
-        GameActions.Bottom.MakeCardInDrawPile(new Logy().makeCopy());
+        if (CombatStats.TryActivateLimited(cardID)) {
+            GameActions.Bottom.MakeCardInDrawPile(new Logy().makeCopy());
+        }
     }
 }

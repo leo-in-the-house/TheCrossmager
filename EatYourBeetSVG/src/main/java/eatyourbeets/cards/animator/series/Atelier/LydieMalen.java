@@ -8,6 +8,7 @@ import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
+import eatyourbeets.utilities.CardSelection;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.TargetHelper;
@@ -47,7 +48,8 @@ public class LydieMalen extends AnimatorCard {
 
         GameActions.Bottom.ApplyVulnerable(TargetHelper.Enemies(), secondaryValue);
 
-        GameActions.Bottom.MakeCardInDrawPile(new SuelleMalen());
+        GameActions.Bottom.MakeCardInDrawPile(new SuelleMalen())
+                .SetDestination(CardSelection.Top);
 
         GameActions.Last.Exhaust(this);
     }

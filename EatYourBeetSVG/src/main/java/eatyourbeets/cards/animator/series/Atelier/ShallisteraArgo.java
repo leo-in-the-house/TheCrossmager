@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
+import eatyourbeets.powers.replacement.TemporaryRetainPower;
 import eatyourbeets.resources.GR;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
@@ -46,6 +47,6 @@ public class ShallisteraArgo extends AnimatorCard {
             });
         }
 
-        GameActions.Bottom.Retain(name, magicNumber, false);
+        GameActions.Bottom.StackPower(new TemporaryRetainPower(p, magicNumber));
     }
 }

@@ -66,7 +66,7 @@ public class EYBCardPopupActions
             MAX_HP_GAIN = maxHPGain;
             TARGET1 = targetCard;
 
-            SetText(specialActions.GainMaxHPLulua(), terms.Obtain, specialActions.GainMaxHPLulua_D(TARGET1.Strings.NAME));
+            SetText(specialActions.GainMaxHPLulua(), terms.Obtain, specialActions.GainMaxHPLulua_D(String.valueOf(MAX_HP_GAIN)));
         }
 
         @Override

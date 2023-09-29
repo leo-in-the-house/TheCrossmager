@@ -7,7 +7,6 @@ import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
-import eatyourbeets.cards.base.modifiers.CostModifiers;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
@@ -18,7 +17,7 @@ public class FirisMistlud extends AnimatorCard {
 
     static
     {
-        DATA.AddPreview(new Strike(), false);
+        DATA.AddPreview(new Strike(), true);
     }
 
     public FirisMistlud() {
@@ -37,9 +36,10 @@ public class FirisMistlud extends AnimatorCard {
         GameUtilities.PlayVoiceSFX(name);
 
         GameActions.Bottom.MakeCardInHand(new Strike())
+            .SetUpgrade(upgraded, true)
             .Repeat(magicNumber)
             .AddCallback(card -> {
-                 CostModifiers.For(card).Set(0);
+                GameUtilities.ModifyCostForCombat(card, 0, false);
             });
     }
 }

@@ -26,6 +26,8 @@ public class AyeshaAltugle extends AnimatorCard {
         Initialize(0, 0, 4, 4);
         SetUpgrade(0, 0, 2, 2);
 
+        SetExhaust(true);
+
         SetAffinity_Green(1);
     }
 

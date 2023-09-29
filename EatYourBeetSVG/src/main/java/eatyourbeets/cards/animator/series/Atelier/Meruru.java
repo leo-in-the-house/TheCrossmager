@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
-import eatyourbeets.cards.base.modifiers.CostModifiers;
 import eatyourbeets.interfaces.subscribers.OnCardCreatedSubscriber;
 import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.powers.CombatStats;
@@ -83,7 +82,7 @@ public class Meruru extends AnimatorCard {
         public void OnCardCreated(AbstractCard card, boolean startOfBattle) {
             if (enabled && !startOfBattle) {
                 if (card.costForTurn >= 0) {
-                    CostModifiers.For(card).Set(0);
+                    GameUtilities.ModifyCostForCombat(card, 0, false);
                 }
             }
         }

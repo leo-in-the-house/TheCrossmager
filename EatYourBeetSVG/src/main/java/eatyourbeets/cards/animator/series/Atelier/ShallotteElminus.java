@@ -6,13 +6,13 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
-import eatyourbeets.interfaces.subscribers.OnAfterCardDiscardedSubscriber;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
-public class ShallotteElminus extends AnimatorCard implements OnAfterCardDiscardedSubscriber {
-    public static final EYBCardData DATA = Register(ShallotteElminus.class).SetAttack(1, CardRarity.COMMON)
+public class ShallotteElminus extends AnimatorCard {
+    public static final EYBCardData DATA = Register(ShallotteElminus.class)
+            .SetAttack(0, CardRarity.UNCOMMON)
             .SetSeriesFromClassPackage();
 
     public ShallotteElminus() {
@@ -42,15 +42,18 @@ public class ShallotteElminus extends AnimatorCard implements OnAfterCardDiscard
     }
 
     @Override
-    public void OnAfterCardDiscarded()
+    public void triggerOnManualDiscard()
     {
+        super.triggerOnManualDiscard();
         ActivateLotte();
     }
 
     private void ActivateLotte() {
-        GameActions.Bottom.Flash(this);
-        GameActions.Bottom.Callback(() -> CombatStats.Affinities.AddAffinitySealUses(1));
-        GameActions.Bottom.MakeCardInHand(this.makeStatEquivalentCopy())
-                .Repeat(magicNumber);
+        if (CombatStats.TryActivateSemiLimited(cardID)) {
+            GameActions.Bottom.Flash(this);
+            GameActions.Bottom.Callback(() -> CombatStats.Affinities.AddAffinitySealUses(1));
+            GameActions.Bottom.MakeCardInHand(this.makeStatEquivalentCopy())
+                    .Repeat(magicNumber);
+        }
     }
 }

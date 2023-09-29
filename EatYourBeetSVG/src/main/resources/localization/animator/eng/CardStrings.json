@@ -134,8 +134,8 @@
 		"animator:ResnaSternlicht":
 		{
 			"FLAVOR_TEXT": "'Even though it looks completely different on the ground, the starry sky here is the same as my hometown’s.'",
-			"DESCRIPTION": "At the start of each turn: add !M! random {0-Cost} {Uncommon}(s) or {Rare}(s) to your hand.",
-			"EXTENDED_DESCRIPTION": ["At the start of each turn: add #b{0} random #y0-Cost #yUncommons or #yRares to your hand."],
+			"DESCRIPTION": "At the start of each turn: add !M! random {Rare} card(s) to your hand.",
+			"EXTENDED_DESCRIPTION": ["At the start of each turn: add #b{0} random #yRares to your hand."],
 			"NAME": "Resna Sternlicht"
 		},
 		"animator:SakuraKinomoto":
@@ -269,7 +269,7 @@
 		"animator:Valeria":
 		{
 			"FLAVOR_TEXT": "'Listen up, you’re gonna give it back without any tiresome rambling.  I’m not going to scold you nicely, I’m going to beat it out of you.'",
-			"DESCRIPTION": "This card costs 1 less for every {Uncommon} or {Rare} in your hand.",
+			"DESCRIPTION": "This card costs 1 less for each other {Uncommon} or {Rare} in your hand.",
 			"NAME": "Valeria"
 		},
 		"animator:Zero":
@@ -528,13 +528,13 @@
 		"animator:LydieMalen":
 		{
 			"FLAVOR_TEXT": "'Huh?! Hello?! Wait, Sue!'",
-			"DESCRIPTION": "Apply !S! [Vulnerable] to ALL enemies. || Exhaust this card, then add {Suelle Malen} to your draw pile.",
+			"DESCRIPTION": "Apply !S! [Vulnerable] to ALL enemies. || Exhaust this card, then add {Suelle Malen} to the top of your draw pile.",
 			"NAME": "Lydie Malen"
 		},
 		"animator:Meruru":
 		{
 			"FLAVOR_TEXT": "'I’m the princess around here!  But... well, not that I’m complaining, but my life does lack a certain excitement.'",
-			"DESCRIPTION": "Add !M! {0-Cost} {Power}(s) to your draw pile. || Whenever you create a card, that card costs 0 to play.",
+			"DESCRIPTION": "Add !M! {0-Cost} {Powers} to your draw pile. || Whenever you create a card, that card costs 0 to play.",
 			"EXTENDED_DESCRIPTION": ["Whenever you create a card, that card costs 0 to play."],
 			"NAME": "Merurulince Arls"
 		},
@@ -555,8 +555,8 @@
 		"animator:Rorona":
 		{
 			"FLAVOR_TEXT": "'I can do this!  Master, I will do my best to carry on your legacy!'",
-			"DESCRIPTION": "Once per turn: Pay !M! [Gold] to obtain a random potion (Max !S!).",
-			"EXTENDED_DESCRIPTION": ["Pay #b{0} [Gold] to obtain a random potion."],
+			"DESCRIPTION": "Pay !M! [Gold] to obtain a random potion.  Max !S! uses.",
+			"EXTENDED_DESCRIPTION": ["Pay #b30 [Gold] to obtain a random potion."],
 			"NAME": "Rorolina Frixell"
 		},
 		"animator:Ryza":
@@ -568,7 +568,7 @@
 		"animator:ShallisteraArgo":
 		{
 			"FLAVOR_TEXT": "'But, no matter how much it changes, Lugion Village will always be our Lugion... our Homeland...'",
-			"DESCRIPTION": "!A![B][O]: Copy a card in your hand. || Retain !M! cards.",
+			"DESCRIPTION": "!A![B][O]: Copy a card in your hand. || Retain !M! cards at the end of this turn.",
 			"NAME": "Shallistera Argo"
 		},
 		"animator:ShallotteElminus":

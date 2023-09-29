@@ -1,6 +1,5 @@
 package eatyourbeets.cards.animator.special;
 
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.series.Atelier.EschaMalier;
@@ -10,7 +9,7 @@ import eatyourbeets.utilities.GameUtilities;
 
 public class Logy extends AnimatorCard {
     public static final EYBCardData DATA = Register(Logy.class)
-            .SetSkill(1, CardRarity.SPECIAL, EYBCardTarget.None)
+            .SetSkill(2, CardRarity.SPECIAL, EYBCardTarget.None)
             .SetSeries(CardSeries.Atelier);
     static
     {
@@ -32,23 +31,8 @@ public class Logy extends AnimatorCard {
 
         GameActions.Bottom.GainBlock(block);
 
-
-        AbstractCard escha = this.FindEscha();
-
-        if (escha != null) {
-            GameActions.Bottom.Draw(escha);
-        }
-    }
-
-    private AbstractCard FindEscha()
-    {
-
-        for (AbstractCard c : player.discardPile.group)
-        {
-            if (EschaMalier.DATA.ID.equals(c.cardID)) {
-                return c;
-            }
-        }
-        return null;
+        GameActions.Bottom.FetchFromPile(name, 1, player.discardPile)
+                .SetFilter(card -> card.cardID.equals(EschaMalier.DATA.ID))
+                .SetOptions(true, true);
     }
 }

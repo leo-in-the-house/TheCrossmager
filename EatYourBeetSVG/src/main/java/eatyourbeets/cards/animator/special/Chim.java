@@ -16,7 +16,7 @@ public class Chim extends AnimatorCard {
     public Chim() {
         super(DATA);
 
-        Initialize(0, 0, 0);
+        Initialize(0, 0, 2);
         SetUpgrade(0, 0, 0);
         SetCostUpgrade(-1);
 

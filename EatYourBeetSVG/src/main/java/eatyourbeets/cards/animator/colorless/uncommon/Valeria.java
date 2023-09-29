@@ -60,6 +60,6 @@ public class Valeria extends AnimatorCard {
 
     public void RefreshCost()
     {
-        CostModifiers.For(this).Add(-1 * JUtils.Count(player.hand.group, card -> card.rarity == CardRarity.UNCOMMON || card.rarity == CardRarity.RARE));
+        CostModifiers.For(this).Set(-1 * JUtils.Count(player.hand.group, card -> (card.rarity == CardRarity.UNCOMMON || card.rarity == CardRarity.RARE) && !card.uuid.equals(this.uuid)));
     }
 }

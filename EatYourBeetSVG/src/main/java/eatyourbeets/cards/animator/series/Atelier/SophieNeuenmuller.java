@@ -51,7 +51,7 @@ public class SophieNeuenmuller extends AnimatorCard {
 
             GameActions.Bottom.MakeCardInHand(new Plachta())
             .AddCallback(card -> {
-                for (int i=0; i<timesUpgraded; i++) {
+                for (int i=0; i<(timesUpgraded - 1); i++) {
                     card.upgrade();
                 }
             });
