@@ -489,9 +489,9 @@ public class AnimatorStrings
             return JUtils.Format(T_GainChim_F1);
         }
 
-        public final String GainChim_D(String cardName)
+        public final String GainChim_D(String requiredName, int gold, String cardName)
         {
-            return JUtils.Format(T_GainChim_F2, cardName);
+            return JUtils.Format(T_GainChim_F2, requiredName, String.valueOf(gold), cardName);
         }
 
 

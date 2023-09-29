@@ -89,24 +89,29 @@ public class EYBCardPopupActions
     public static class Atelier_Totori extends EYBCardPopupAction
     {
         protected final EYBCardData TARGET1;
+        protected final int GOLD_AMOUNT;
+        protected final EYBCardData REQUIRED1;
 
-        public Atelier_Totori(EYBCardData targetCard)
+        public Atelier_Totori(EYBCardData requiredCard, int gold, EYBCardData targetCard)
         {
+            REQUIRED1 = requiredCard;
+            GOLD_AMOUNT = gold;
             TARGET1 = targetCard;
 
-            SetText(specialActions.GainChim(), terms.Obtain, specialActions.GainChim_D(TARGET1.Strings.NAME));
+            SetText(specialActions.GainChim(), terms.Obtain, specialActions.GainChim_D(REQUIRED1.Strings.NAME, GOLD_AMOUNT, TARGET1.Strings.NAME));
         }
 
         @Override
         public boolean CanExecute(AbstractCard card)
         {
-            return IsRestRoom() && HasCard(card);
+            return IsRestRoom() && HasCard(card) && HasCard(REQUIRED1) && HasGold(GOLD_AMOUNT);
         }
 
         @Override
         public void Execute()
         {
             final EYBCard card = TARGET1.MakeCopy(false);
+            LoseGold(GOLD_AMOUNT);
             Obtain(card);
             SFX.Play(SFX.ORB_LIGHTNING_EVOKE, 0.4f);
             Complete();

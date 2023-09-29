@@ -15,7 +15,7 @@ import eatyourbeets.utilities.GameUtilities;
 
 public class Nelke extends AnimatorCard {
     public static final EYBCardData DATA = Register(Nelke.class)
-            .SetPower(1, CardRarity.UNCOMMON)
+            .SetPower(2, CardRarity.UNCOMMON)
             .SetSeriesFromClassPackage();
 
     public Nelke() {

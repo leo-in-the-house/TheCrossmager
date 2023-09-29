@@ -20,7 +20,7 @@ public class Totori extends AnimatorCard {
             .SetSeriesFromClassPackage()
             .PostInitialize(data ->
             {
-                data.AddPopupAction(new EYBCardPopupActions.Atelier_Totori(Chim.DATA));
+                data.AddPopupAction(new EYBCardPopupActions.Atelier_Totori(Rorona.DATA, 50, Chim.DATA));
                 data.AddPreview(new Chim(), true);
             });
 
