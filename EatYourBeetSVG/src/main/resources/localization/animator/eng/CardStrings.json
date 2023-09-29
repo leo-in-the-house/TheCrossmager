@@ -131,11 +131,12 @@
 			"DESCRIPTION": "Attack 1 additional time for each unique orb Channeled this combat. || <LIM>. <IS> or !A! [B]: Obtain 1 {Orb Core+}.",
 			"NAME": "Patchouli"
 		},
-		"animator:Rorona":
+		"animator:ResnaSternlicht":
 		{
-			"DESCRIPTION": "Once per turn: Pay !M! [Gold] to obtain a random potion (Max 2). || At the end of combat, if your deck has 25+ cards: Upgrade a random card.",
-			"EXTENDED_DESCRIPTION": ["Pay #b{0} [Gold] to obtain a random potion. || At the end of combat, if your deck has more than #b{1} cards, #yUpgrade #b{2} random card(s) (max #b2 cards)."],
-			"NAME": "Rorona"
+			"FLAVOR_TEXT": "'Even though it looks completely different on the ground, the starry sky here is the same as my hometown’s.'",
+			"DESCRIPTION": "At the start of each turn: add !M! random {0-Cost} {Uncommon}(s) or {Rare}(s) to your hand.",
+			"EXTENDED_DESCRIPTION": ["At the start of each turn: add #b{0} random #y0-Cost #yUncommons or #yRares to your hand."],
+			"NAME": "Resna Sternlicht"
 		},
 		"animator:SakuraKinomoto":
 		{
@@ -264,6 +265,12 @@
 		{
 			"DESCRIPTION": "Channel 1 [Dark]. || Deal damage after !M! to !S! turns.",
 			"NAME": "Urushihara"
+		},
+		"animator:Valeria":
+		{
+			"FLAVOR_TEXT": "'Listen up, you’re gonna give it back without any tiresome rambling.  I’m not going to scold you nicely, I’m going to beat it out of you.'",
+			"DESCRIPTION": "This card costs 1 less for every {Uncommon} or {Rare} in your hand.",
+			"NAME": "Valeria"
 		},
 		"animator:Zero":
 		{
@@ -474,6 +481,12 @@
 			"EXTENDED_DESCRIPTION": ["The next time you create a card, gain #b{0} #yTemp. #yHP."],
 			"NAME": "Ayesha Altugle"
 		},
+		"animator:Chim":
+		{
+			"FLAVOR_TEXT": "'Chim! Chim!'",
+			"DESCRIPTION": "On Created Mid-Combat: gain [E] and draw !M! cards. || {Imitate} a random non-{Hindrance} card from your master deck.",
+			"NAME": "Chim"
+		},
 		"animator:EschaMalier":
 		{
 			"FLAVOR_TEXT": "'Don’t you want to try it?  Let’s take on the challenge of building a dreadnought!'",
@@ -500,22 +513,28 @@
 			"EXTENDED_DESCRIPTION": ["The next #b{0} times you create a card this turn: Enter #yTrance #yStance."],
 			"NAME": "Klaudia Valentz"
 		},
-		"animator:LydieMalen":
-		{
-			"FLAVOR_TEXT": "'Huh?! Hello?! Wait, Sue!'",
-			"DESCRIPTION": "Exhaust this card, then add {Suelle Malen} to your draw pile.",
-			"NAME": "Lydie Malen"
-		},
 		"animator:Logy":
 		{
 			"FLAVOR_TEXT": "'Ugh... I guess there’s no convincing these two.  This is gonna be one hell of a ride.'",
 			"DESCRIPTION": "Draw {Escha Malier} from your discard pile.",
 			"NAME": "Logy"
 		},
+		"animator:Lulua":
+		{
+			"FLAVOR_TEXT": "'The version of me from that time, she’s still separated from her Stia.  That... That makes me so sad!  That’s why... I have to do something!'",
+			"DESCRIPTION": "Gain|Boost !M! [P]. || Add a copy of this card and another card in your hand to your discard pile.",
+			"NAME": "Lulua"
+		},
+		"animator:LydieMalen":
+		{
+			"FLAVOR_TEXT": "'Huh?! Hello?! Wait, Sue!'",
+			"DESCRIPTION": "Apply !S! [Vulnerable] to ALL enemies. || Exhaust this card, then add {Suelle Malen} to your draw pile.",
+			"NAME": "Lydie Malen"
+		},
 		"animator:Meruru":
 		{
 			"FLAVOR_TEXT": "'I’m the princess around here!  But... well, not that I’m complaining, but my life does lack a certain excitement.'",
-			"DESCRIPTION": "Add !M! {Power}(s) to your draw pile, they cost 0. || Whenever you create a card, that card costs 0 to play.",
+			"DESCRIPTION": "Add !M! {0-Cost} {Power}(s) to your draw pile. || Whenever you create a card, that card costs 0 to play.",
 			"EXTENDED_DESCRIPTION": ["Whenever you create a card, that card costs 0 to play."],
 			"NAME": "Merurulince Arls"
 		},
@@ -525,6 +544,62 @@
 			"DESCRIPTION": "Whenever you create a card, gain !M! [Block] and !S! [THP].",
 			"EXTENDED_DESCRIPTION": ["Whenever you create a card, gain #b{0} #yBlock and #b{1} #yTemp. #yHP."],
 			"NAME": "Nelke von Lestamm"
+		},
+		"animator:Plachta":
+		{
+			"FLAVOR_TEXT": "'I may have lost my memories, but I am confident my knowledge of alchemy exceeds yours.'",
+			"DESCRIPTION": "{~Unique}. || The next !M! times you create a card: gain [Duplication].",
+			"EXTENDED_DESCRIPTION": ["The next #b{0} #ytimes you create a card, gain #yDuplication."],
+			"NAME": "Plachta"
+		},
+		"animator:Rorona":
+		{
+			"FLAVOR_TEXT": "'I can do this!  Master, I will do my best to carry on your legacy!'",
+			"DESCRIPTION": "Once per turn: Pay !M! [Gold] to obtain a random potion (Max !S!).",
+			"EXTENDED_DESCRIPTION": ["Pay #b{0} [Gold] to obtain a random potion."],
+			"NAME": "Rorolina Frixell"
+		},
+		"animator:Ryza":
+		{
+			"FLAVOR_TEXT": "'My name is Reisalin Stout, but everyone calls me Ryza. I'm the normal daughter of a normal farmer.'",
+			"DESCRIPTION": "Obtain !M! {Slimed}.",
+			"NAME": "Reisalin Stout"
+		},
+		"animator:ShallisteraArgo":
+		{
+			"FLAVOR_TEXT": "'But, no matter how much it changes, Lugion Village will always be our Lugion... our Homeland...'",
+			"DESCRIPTION": "!A![B][O]: Copy a card in your hand. || Retain !M! cards.",
+			"NAME": "Shallistera Argo"
+		},
+		"animator:ShallotteElminus":
+		{
+			"FLAVOR_TEXT": "'Picking up the traaash!  For almost no caaash!'",
+			"DESCRIPTION": "<SLM>. On {Discard} or {Retain}: Gain [A_Seal], then add !M! copies of this card to your hand.",
+			"NAME": "Shallotte Elminus"
+		},
+		"animator:SophieNeuenmuller":
+		{
+			"FLAVOR_TEXT": "'Was mastery of alchemy really your goal, Luard?  That’s wrong, isn’t it?  Your real goal... your real dream... was to use alchemy to bring people happiness!  You need to remember, Luard!'",
+			"DESCRIPTION": "{~Unique}. || Gain !M! [Plated Armor].  Channel [Random Orb]. || Limited: Permanently upgrade this card, Obtain {Plachta}, and shuffle this back to your draw pile.",
+			"NAME": "Sophie Neuenmuller"
+		},
+		"animator:SuelleMalen":
+		{
+			"FLAVOR_TEXT": "'Let's go, Lydie! It'll be fine as long as we're together!'",
+			"DESCRIPTION": "Add {Lydie Malen} to your draw pile, then exhaust this card.",
+			"NAME": "Suelle Malen"
+		},
+		"animator:Totori":
+		{
+			"FLAVOR_TEXT": "'What should I do... What am I saying, I’m an adventurer!  I have to go on more adventures!  Hehe, I think I can finally go on adventures for myself and no one else!'",
+			"DESCRIPTION": "Add a copy of a random non-{Hindrance} card in your master deck on top of your draw pile.  It costs !S! less. || {Reload}: Repeat.",
+			"NAME": "Totooria Helmold"
+		},
+		"animator:VioratePlatane":
+		{
+			"FLAVOR_TEXT": "'Carrots are the ultimate ingredient for any dish!'",
+			"DESCRIPTION": "To play this card: Discard !M! random cards.",
+			"NAME": "Viorate Platane"
 		}
 	},
 
@@ -2723,6 +2798,13 @@
 			"EXTENDED_DESCRIPTION": ["<slm>. While in your discard pile: Draw 2 cards at the start of each turn."],
 			"NAME": "Niva Lada"
 		},
+		"animator:PamelaIbis":
+		{
+			"FLAVOR_TEXT": "'Eek! Don’t scream in my face like that! It’s against the rules to scare a ghost!'",
+			"DESCRIPTION": "Gain !M! [~Intangible].  This is the amount of cards you created this combat. || On End of Turn: Lose [Dexterity].",
+			"EXTENDED_DESCRIPTION": ["At end of turn, lose #b{0} #yDexterity."],
+			"NAME": "Pamela Ibis"
+		},
 		"animator:Rose":
 		{
 			"FLAVOR_TEXT": "'Hybrid railgun, Supersonic Buster with the greatest firepower!'",
@@ -2775,4 +2857,4 @@
 			"NAME": "Yuyuko Saigyouji"
 		}
 	}
-},
+}

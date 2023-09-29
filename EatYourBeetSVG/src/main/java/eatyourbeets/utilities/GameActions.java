@@ -729,6 +729,10 @@ public final class GameActions
         return Add(new IncreaseMaxOrbAction(slots));
     }
 
+    public ApplyPower GainDuplication(int amount)
+    {
+        return StackPower(new DuplicationPower(player, amount));
+    }
     public ApplyPower GainPlatedArmor(int amount)
     {
         return StackPower(new AnimatorPlatedArmorPower(player, amount));

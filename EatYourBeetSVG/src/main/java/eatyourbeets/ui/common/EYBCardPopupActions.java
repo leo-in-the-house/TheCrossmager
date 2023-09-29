@@ -55,6 +55,64 @@ public class EYBCardPopupActions
         }
     }
 
+
+    public static class Atelier_Rorona extends EYBCardPopupAction
+    {
+        protected final int MAX_HP_GAIN;
+        protected final EYBCardData TARGET1;
+
+        public Atelier_Rorona(int maxHPGain, EYBCardData targetCard)
+        {
+            MAX_HP_GAIN = maxHPGain;
+            TARGET1 = targetCard;
+
+            SetText(specialActions.GainMaxHPLulua(), terms.Obtain, specialActions.GainMaxHPLulua_D(TARGET1.Strings.NAME));
+        }
+
+        @Override
+        public boolean CanExecute(AbstractCard card)
+        {
+            return IsRestRoom() && HasCard(card) && !HasCard(TARGET1);
+        }
+
+        @Override
+        public void Execute()
+        {
+            final EYBCard card = TARGET1.MakeCopy(false);
+            Obtain(card);
+            GainMaxHP(MAX_HP_GAIN);
+            SFX.Play(SFX.ATTACK_MAGIC_FAST_3, 0.4f);
+            Complete();
+        }
+    }
+
+    public static class Atelier_Totori extends EYBCardPopupAction
+    {
+        protected final EYBCardData TARGET1;
+
+        public Atelier_Totori(EYBCardData targetCard)
+        {
+            TARGET1 = targetCard;
+
+            SetText(specialActions.GainChim(), terms.Obtain, specialActions.GainChim_D(TARGET1.Strings.NAME));
+        }
+
+        @Override
+        public boolean CanExecute(AbstractCard card)
+        {
+            return IsRestRoom() && HasCard(card);
+        }
+
+        @Override
+        public void Execute()
+        {
+            final EYBCard card = TARGET1.MakeCopy(false);
+            Obtain(card);
+            SFX.Play(SFX.ORB_LIGHTNING_EVOKE, 0.4f);
+            Complete();
+        }
+    }
+
     public static class HitsugiNoChaika_Tooru extends EYBCardPopupAction
     {
         protected final int HP_LOSS;

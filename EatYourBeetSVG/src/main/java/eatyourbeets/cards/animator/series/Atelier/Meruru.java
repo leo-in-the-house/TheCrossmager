@@ -58,6 +58,12 @@ public class Meruru extends AnimatorCard {
         }
 
         @Override
+        public void updateDescription()
+        {
+            description = FormatDescription(0, amount);
+        }
+
+        @Override
         public void onInitialApplication()
         {
             super.onInitialApplication();

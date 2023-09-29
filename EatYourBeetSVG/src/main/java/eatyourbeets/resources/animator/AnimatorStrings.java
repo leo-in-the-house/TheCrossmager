@@ -466,6 +466,35 @@ public class AnimatorStrings
             return JUtils.Format(T_Transform_GainMiyu_F2, cardName);
         }
 
+        public final String T_GainMaxHP_Lulua_F1 = Strings.TEXT[INDEX++];
+
+        public final String T_GainMaxHP_Lulua_F2 = Strings.TEXT[INDEX++];
+
+        public final String GainMaxHPLulua()
+        {
+            return JUtils.Format(T_GainMaxHP_Lulua_F1);
+        }
+
+        public final String GainMaxHPLulua_D(String cardName)
+        {
+            return JUtils.Format(T_GainMaxHP_Lulua_F2, cardName);
+        }
+
+        public final String T_GainChim_F1 = Strings.TEXT[INDEX++];
+
+        public final String T_GainChim_F2 = Strings.TEXT[INDEX++];
+
+        public final String GainChim()
+        {
+            return JUtils.Format(T_GainChim_F1);
+        }
+
+        public final String GainChim_D(String cardName)
+        {
+            return JUtils.Format(T_GainChim_F2, cardName);
+        }
+
+
         public final String T_Obtain_GainVulnerable_F1 = Strings.TEXT[INDEX++];
         public final String D_Obtain_GainVulnerable_F2 = Strings.TEXT[INDEX++];
 

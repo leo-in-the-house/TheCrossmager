@@ -1,10 +1,10 @@
 package eatyourbeets.cards.animator.series.DateALive;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.DieDieDieEffect;
 import eatyourbeets.cards.base.*;
+import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
@@ -41,9 +41,7 @@ public class KurumiTokisaki extends AnimatorCard
     {
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
-        GameActions.Bottom.SFX("ATTACK_HEAVY");
-        GameActions.Bottom.VFX(new DieDieDieEffect());
-        GameActions.Bottom.DealDamageToAll(this, AbstractGameAction.AttackEffect.NONE);
+        GameActions.Bottom.DealDamageToAll(this, AttackEffects.GUNSHOT);
 
         GameActions.Bottom.GainBlur(magicNumber);
 

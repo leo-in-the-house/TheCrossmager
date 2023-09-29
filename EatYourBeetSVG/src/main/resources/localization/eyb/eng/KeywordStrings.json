@@ -96,6 +96,12 @@
 		"NAMES": ["discard", "discarded", "discarding"],
 		"PROPER_NAME": "Discard"
 	},
+	"Duplication":
+	{
+		"DESCRIPTION": "The next cards you play are played twice.",
+		"NAMES": ["duplication", "duplication"],
+		"PROPER_NAME": "Duplication"
+	},
 	"Earth":
 	{
 		"DESCRIPTION": "Orb: Gain #b2 [Thorns] the first #b3 times it is #yChanneled. It is #yEvoked after #b3 turns, dealing damage to random enemies.",

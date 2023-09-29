@@ -1,5 +1,6 @@
 package eatyourbeets.cards.animator.special;
 
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -7,7 +8,9 @@ import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardSeries;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.interfaces.subscribers.OnCardCreatedSubscriber;
 import eatyourbeets.powers.AnimatorPower;
+import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
@@ -19,22 +22,61 @@ public class Plachta extends AnimatorCard {
     public Plachta() {
         super(DATA);
 
-        Initialize(0, 0, 0);
-        SetUpgrade(0, 0, 0);
+        Initialize(0, 0, 2);
+        SetUpgrade(0, 0, 1);
+
+        SetUnique(true, true);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info) {
         GameUtilities.PlayVoiceSFX(name);
 
-        GameActions.Bottom.StackPower(new PlachtaPower(p, 1));
+        GameActions.Bottom.StackPower(new PlachtaPower(p, magicNumber));
     }
 
-    public static class PlachtaPower extends AnimatorPower {
+    public static class PlachtaPower extends AnimatorPower implements OnCardCreatedSubscriber {
         public PlachtaPower(AbstractCreature owner, int amount) {
             super(owner, Plachta.DATA);
-            this.amount = amount;
-            updateDescription();
+            Initialize(amount);
+        }
+
+        @Override
+        public void updateDescription()
+        {
+            description = FormatDescription(0, amount);
+        }
+
+        @Override
+        public void onInitialApplication()
+        {
+            super.onInitialApplication();
+
+            CombatStats.onCardCreated.Subscribe(this);
+        }
+
+        @Override
+        public void onRemove()
+        {
+            super.onRemove();
+
+            CombatStats.onCardCreated.Unsubscribe(this);
+        }
+
+        @Override
+        public void OnCardCreated(AbstractCard card, boolean startOfBattle) {
+            if (enabled && !startOfBattle) {
+                GameActions.Bottom.GainDuplication(1);
+
+                reducePower(1);
+                flashWithoutSound();
+
+                if (amount <= 0) {
+                    SetEnabled(false);
+                    RemovePower();
+                    flash();
+                }
+            }
         }
     }
 }

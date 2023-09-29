@@ -1,7 +1,6 @@
 package eatyourbeets.ui.common;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -167,6 +166,11 @@ public abstract class EYBCardPopupAction
     {
         AbstractDungeon.player.damage(new DamageInfo(AbstractDungeon.player, amount, DamageInfo.DamageType.HP_LOSS));
     }
+    protected static void GainMaxHP(int amount)
+    {
+        AbstractDungeon.player.increaseMaxHp(amount, false);
+    }
+
 
     protected static void LoseMaxHP(int amount)
     {
