@@ -25,7 +25,6 @@ public class YuriNakamura extends AnimatorCard
         SetUpgrade(3, 0);
 
         SetAffinity_Red(2);
-        SetAffinity_Green(2);
 
         SetExhaust(true);
 

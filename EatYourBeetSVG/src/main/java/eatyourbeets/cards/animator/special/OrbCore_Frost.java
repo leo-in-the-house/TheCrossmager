@@ -16,7 +16,7 @@ import eatyourbeets.utilities.TargetHelper;
 public class OrbCore_Frost extends OrbCore
 {
     public static final EYBCardData DATA = RegisterOrbCore(OrbCore_Frost.class, GR.Tooltips.Frost)
-            .SetPower(2, CardRarity.SPECIAL)
+            .SetPower(0, CardRarity.SPECIAL)
             .SetColor(CardColor.COLORLESS);
     public static final int POWER_ACTIVATION_COST = 2;
     public static final int FREEZING_AMOUNT = 2;

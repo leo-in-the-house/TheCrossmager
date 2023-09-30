@@ -65,7 +65,7 @@ public class JudithVolltone extends AnimatorCard {
             GameActions.Bottom.VFX(new OfferingEffect(), 0.5f);
             GameActions.Bottom.Callback(() -> GameEffects.Queue.SpawnRelic(relic.makeCopy(), current_x, current_y));
 
-            AbstractDungeon.bossRelicPool.remove(relic.relicId);
+            //AbstractDungeon.bossRelicPool.remove(relic.relicId);
 
             p.energy.energy += 1;
 

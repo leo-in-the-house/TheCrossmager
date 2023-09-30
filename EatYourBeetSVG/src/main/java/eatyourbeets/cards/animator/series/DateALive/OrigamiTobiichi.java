@@ -76,7 +76,7 @@ public class OrigamiTobiichi extends AnimatorCard
             {
                 flash();
 
-                GameActions.Bottom.StackPower(new SupportDamagePower(player, (amount / 100) * player.currentBlock));
+                GameActions.Bottom.StackPower(new SupportDamagePower(player, (int)((amount / 100f) * player.currentBlock)));
             }
         }
 

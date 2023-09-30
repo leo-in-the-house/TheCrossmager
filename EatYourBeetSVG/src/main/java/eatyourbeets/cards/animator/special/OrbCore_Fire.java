@@ -14,7 +14,7 @@ import eatyourbeets.utilities.GameActions;
 public class OrbCore_Fire extends OrbCore
 {
     public static final EYBCardData DATA = RegisterOrbCore(OrbCore_Fire.class, GR.Tooltips.Fire)
-            .SetPower(2, CardRarity.SPECIAL)
+            .SetPower(0, CardRarity.SPECIAL)
             .SetColor(CardColor.COLORLESS);
     public static final int POWER_ACTIVATION_COST = 1;
     public static final int BURNING_DAMAGE_BONUS = 15;

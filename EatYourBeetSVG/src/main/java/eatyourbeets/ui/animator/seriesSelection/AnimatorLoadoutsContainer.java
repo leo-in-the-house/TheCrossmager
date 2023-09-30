@@ -1,7 +1,6 @@
 package eatyourbeets.ui.animator.seriesSelection;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -91,11 +90,14 @@ public class AnimatorLoadoutsContainer
         }
 
         final Random rng = new Random(AbstractDungeon.cardRng.randomLong());
+
+        //Do not promote any additional series besides starting series
+        /*
         while (promotedCount < 3)
         {
             toPromote.Retrieve(rng).Promote();
             promotedCount += 1;
-        }
+        }*/
 
         for (AnimatorRuntimeLoadout c : seriesSelectionItems)
         {

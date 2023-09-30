@@ -28,7 +28,7 @@ public class ByakuyaKuchiki extends AnimatorCard
         super(DATA);
 
         Initialize(13, 11, 0);
-        SetUpgrade(5, 5, 0);
+        SetUpgrade(4, 4, 0);
         
         SetAffinity_White(1);
         SetAffinity_Violet(1);

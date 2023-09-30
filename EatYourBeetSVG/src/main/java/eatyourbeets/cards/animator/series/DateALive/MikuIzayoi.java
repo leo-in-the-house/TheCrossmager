@@ -22,8 +22,16 @@ public class MikuIzayoi extends AnimatorCard
         super(DATA);
 
         Initialize(0, 9, 1);
+        SetUpgrade(0, 0, 1);
 
         SetAffinity_Yellow(1);
+    }
+
+    @Override
+    protected void OnUpgrade() {
+        super.OnUpgrade();
+
+        SetHaste(true);
     }
 
     @Override

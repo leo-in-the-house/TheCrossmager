@@ -24,7 +24,7 @@ public class Chaa extends AnimatorCard
         super(DATA);
 
         Initialize(0, 8, 1, 0);
-        SetUpgrade(0, 2, 0, 0);
+        SetUpgrade(0, 0, 0, 0);
         SetCostUpgrade(-1);
 
         SetAffinity_Teal(2);

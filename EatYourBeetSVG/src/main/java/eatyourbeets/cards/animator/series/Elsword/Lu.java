@@ -1,20 +1,18 @@
 package eatyourbeets.cards.animator.series.Elsword;
 
 import com.badlogic.gdx.graphics.Color;
-import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.effects.AttackEffects;
 import com.megacrit.cardcrawl.actions.utility.ShakeScreenAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.orbs.Dark;
-import com.megacrit.cardcrawl.orbs.Frost;
+import eatyourbeets.cards.base.*;
+import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.effects.VFX;
 import eatyourbeets.resources.GR;
 import eatyourbeets.stances.WrathStance;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Lu extends AnimatorCard
 {
@@ -51,23 +49,6 @@ public class Lu extends AnimatorCard
     }
 
     @Override
-    public void triggerWhenDrawn()
-    {
-        super.triggerWhenDrawn();
-
-        GameActions.Bottom.ChangeStance(WrathStance.STANCE_ID)
-        .RequireNeutralStance(true)
-        .AddCallback(stance ->
-        {
-            if (stance != null)
-            {
-                GameActions.Bottom.Flash(this);
-                GameActions.Bottom.TakeDamageAtEndOfTurn(magicNumber, AttackEffects.CLAW);
-            }
-        });
-    }
-
-    @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
@@ -86,5 +67,16 @@ public class Lu extends AnimatorCard
         {
             GameActions.Bottom.Add(new ShakeScreenAction(0.8f, ScreenShake.ShakeDur.MED, ScreenShake.ShakeIntensity.MED));
         }
+
+        GameActions.Bottom.ChangeStance(WrathStance.STANCE_ID)
+                .RequireNeutralStance(true)
+                .AddCallback(stance ->
+                {
+                    if (stance != null)
+                    {
+                        GameActions.Bottom.Flash(this);
+                        GameActions.Bottom.TakeDamageAtEndOfTurn(magicNumber, AttackEffects.CLAW);
+                    }
+                });
     }
 }

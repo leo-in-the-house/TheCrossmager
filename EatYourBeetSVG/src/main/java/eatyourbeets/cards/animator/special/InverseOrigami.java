@@ -19,7 +19,7 @@ public class InverseOrigami extends AnimatorCard
     public InverseOrigami() {
         super(DATA);
 
-        Initialize(0, 0);
+        Initialize(1, 0);
         SetAffinity_White(1, 0, 2);
         SetAffinity_Blue(1, 0, 2);
         SetAffinity_Black(1);

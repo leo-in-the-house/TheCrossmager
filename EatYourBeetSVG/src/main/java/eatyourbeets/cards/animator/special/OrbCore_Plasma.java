@@ -15,7 +15,7 @@ import eatyourbeets.utilities.GameUtilities;
 public class OrbCore_Plasma extends OrbCore
 {
     public static final EYBCardData DATA = RegisterOrbCore(OrbCore_Plasma.class, GR.Tooltips.Plasma)
-            .SetPower(2, CardRarity.SPECIAL)
+            .SetPower(0, CardRarity.SPECIAL)
             .SetColor(CardColor.COLORLESS);
     public static final int POWER_ACTIVATION_COST = 4;
     public static final int DRAW_AND_HAND_SIZE_BONUS = 1;

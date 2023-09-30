@@ -16,7 +16,7 @@ import eatyourbeets.utilities.TargetHelper;
 public class OrbCore_Dark extends OrbCore
 {
     public static final EYBCardData DATA = RegisterOrbCore(OrbCore_Dark.class, GR.Tooltips.Dark)
-            .SetPower(2, CardRarity.SPECIAL)
+            .SetPower(0, CardRarity.SPECIAL)
             .SetColor(CardColor.COLORLESS);
     public static final int POWER_ACTIVATION_COST = 3;
     public static final int WEAK_TIMES = 2;

@@ -1,7 +1,6 @@
 package eatyourbeets.cards.animator.series.FullmetalAlchemist;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.relics.PhilosopherStone;
@@ -56,7 +55,7 @@ public class Father extends AnimatorCard
         GameActions.Bottom.VFX(new OfferingEffect(), 0.5f);
         GameActions.Bottom.Callback(() -> GameEffects.Queue.SpawnRelic(relic.makeCopy(), current_x, current_y));
 
-        AbstractDungeon.bossRelicPool.remove(relic.relicId);
+        //AbstractDungeon.bossRelicPool.remove(relic.relicId);
 
         p.energy.energy += 1;
 

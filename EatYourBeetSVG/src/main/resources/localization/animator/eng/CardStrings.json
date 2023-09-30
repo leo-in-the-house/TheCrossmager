@@ -871,7 +871,7 @@
 		"animator:Ara":
 		{
 			"FLAVOR_TEXT": "'I must end the cycle of tragedy so no one else suffers.'",
-			"DESCRIPTION": "!A! [G]: Gain|Boost [R].",
+			"DESCRIPTION": "!A! [G]: Gain [R].",
 			"NAME": "Ara"
 		},
 		"animator:Chung":

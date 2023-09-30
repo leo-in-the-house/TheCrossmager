@@ -21,6 +21,8 @@ public class Ryza extends AnimatorCard {
 
         Initialize(13, 0, 2);
         SetUpgrade(4, 0, 0);
+
+        SetAffinity_Brown(1);
     }
 
     @Override

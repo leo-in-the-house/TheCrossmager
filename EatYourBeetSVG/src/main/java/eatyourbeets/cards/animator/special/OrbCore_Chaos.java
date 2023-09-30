@@ -1,7 +1,6 @@
 package eatyourbeets.cards.animator.special;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.EYBCardData;
@@ -17,7 +16,7 @@ import eatyourbeets.utilities.WeightedList;
 public class OrbCore_Chaos extends OrbCore
 {
     public static final EYBCardData DATA = RegisterOrbCore(OrbCore_Chaos.class, GR.Tooltips.Chaos)
-            .SetPower(2, CardRarity.SPECIAL)
+            .SetPower(0, CardRarity.SPECIAL)
             .SetColor(CardColor.COLORLESS);
     public static final int POWER_ACTIVATION_COST = 2;
     public static final int RANDOM_ATTACKS_AMOUNT = 3;

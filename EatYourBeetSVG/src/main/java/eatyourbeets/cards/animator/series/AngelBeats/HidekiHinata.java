@@ -21,7 +21,7 @@ public class HidekiHinata extends AnimatorCard
         super(DATA);
 
         Initialize(10, 0, 0, 0);
-        SetUpgrade(3, 0, 0, 0);
+        SetUpgrade(4, 0, 0, 0);
 
         SetAffinity_White(1);
 

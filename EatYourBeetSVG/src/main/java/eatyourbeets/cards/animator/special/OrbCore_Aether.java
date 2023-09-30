@@ -13,7 +13,7 @@ import eatyourbeets.utilities.GameActions;
 public class OrbCore_Aether extends OrbCore
 {
     public static final EYBCardData DATA = RegisterOrbCore(OrbCore_Aether.class, GR.Tooltips.Aether)
-            .SetPower(2, CardRarity.SPECIAL)
+            .SetPower(0, CardRarity.SPECIAL)
             .SetColor(CardColor.COLORLESS);
     public static final int POWER_ACTIVATION_COST = 2;
     public static final int CARD_DRAW = 4;

@@ -16,7 +16,7 @@ import eatyourbeets.utilities.GameUtilities;
 public class OrbCore_Lightning extends OrbCore
 {
     public static final EYBCardData DATA = RegisterOrbCore(OrbCore_Lightning.class, GR.Tooltips.Lightning)
-            .SetPower(2, CardRarity.SPECIAL)
+            .SetPower(0, CardRarity.SPECIAL)
             .SetColor(CardColor.COLORLESS);
     public static final int POWER_ACTIVATION_COST = 2;
     public static final int DAMAGE_AMOUNT = 13;
