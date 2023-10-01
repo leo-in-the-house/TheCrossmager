@@ -691,6 +691,17 @@ public final class GameActions
         return Add(new GainGold(amount, true));
     }
 
+
+    public ApplyPower GainInsanity(int amount)
+    {
+        return GainInsanity(player, player, amount);
+    }
+
+    public ApplyPower GainInsanity(AbstractCreature source, AbstractCreature target, int amount)
+    {
+        return StackPower(source, new InsanityPower(target, amount));
+    }
+
     public ApplyPower GainInspiration(int amount)
     {
         return StackPower(new InspirationPower(player, amount));
@@ -735,10 +746,24 @@ public final class GameActions
     {
         return StackPower(new DuplicationPower(player, amount));
     }
+
+
+    public ApplyPower GainPestilence(int amount)
+    {
+        return GainPestilence(player, player, amount);
+    }
+
+    public ApplyPower GainPestilence(AbstractCreature source, AbstractCreature target, int amount)
+    {
+        return StackPower(source, new PestilencePower(target, amount));
+    }
+
     public ApplyPower GainPlatedArmor(int amount)
     {
         return StackPower(new AnimatorPlatedArmorPower(player, amount));
     }
+
+
 
     public ApplyAffinityPower GainRandomAffinityPower(int amount, boolean retain)
     {

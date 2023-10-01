@@ -14,7 +14,7 @@ public class VioletThresholdPower extends AnimatorAffinityPower
     {
         super(AFFINITY_TYPE, POWER_ID, SYMBOL);
 
-        upgradeMin = 3;
+        upgradeMin = 4;
     }
 
     @Override

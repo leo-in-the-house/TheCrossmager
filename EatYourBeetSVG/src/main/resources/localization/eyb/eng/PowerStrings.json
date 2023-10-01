@@ -168,7 +168,7 @@
 	},
 	"eyb:PestilencePower":
 	{
-		"DESCRIPTIONS": ["Whenever you apply a #yCommon #yDebuff, apply #b{0} more of that #ydebuff."],
+		"DESCRIPTIONS": ["Whenever you apply a #yCommon #yDebuff, this deals 2 times #b{0} damage to the enemy."],
 		"NAME": "Pestilence"
 	},
 	"eyb:ResistancePower":

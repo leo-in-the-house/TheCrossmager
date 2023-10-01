@@ -10,6 +10,7 @@ import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
+import eatyourbeets.utilities.TargetHelper;
 
 public class MoltSolAugustus_ImperialArchers extends AnimatorCard
 {
@@ -21,7 +22,7 @@ public class MoltSolAugustus_ImperialArchers extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(5, 5, 0, 0);
+        Initialize(4, 4, 0, 0);
         SetUpgrade(2, 2, 0, 0);
 
         SetAffinity_Green(1, 0, 1);
@@ -36,5 +37,7 @@ public class MoltSolAugustus_ImperialArchers extends AnimatorCard
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.BLUNT_LIGHT);
         GameActions.Bottom.GainBlock(block);
+        GameActions.Bottom.ApplyWeak(TargetHelper.Normal(m), 1);
+        GameActions.Bottom.ApplyVulnerable(TargetHelper.Normal(m), 1);
     }
 }

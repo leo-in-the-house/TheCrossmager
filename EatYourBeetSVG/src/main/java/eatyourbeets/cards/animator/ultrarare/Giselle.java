@@ -33,6 +33,8 @@ public class Giselle extends AnimatorCard_UltraRare
         SetAffinity_Red(1);
         SetAffinity_Blue(1);
         SetAffinity_Star(0, 0, 1);
+
+        SetAutoplayed(true);
     }
 
     @Override
@@ -44,26 +46,23 @@ public class Giselle extends AnimatorCard_UltraRare
         GameActions.Bottom.DealDamage(this, m, AttackEffects.NONE);
         GameActions.Bottom.Add(new ShakeScreenAction(0.5f, ScreenShake.ShakeDur.MED, ScreenShake.ShakeIntensity.MED));
 
-        if (IsStarter())
-        {
-            for (AbstractCard card : player.hand.group) {
-                if (card.type != CardType.ATTACK) {
-                    GameActions.Bottom.Discard(card, player.hand);
-                }
+        for (AbstractCard card : player.hand.group) {
+            if (card.type != CardType.ATTACK) {
+                GameActions.Bottom.Discard(card, player.hand);
             }
-
-            for (AbstractMonster enemy : GameUtilities.GetEnemies(true)) {
-                for (AbstractPower power : enemy.powers) {
-                    if (power.ID.equals(BurningPower.POWER_ID)) {
-                        int burningAmount = power.amount;
-                        GameActions.Bottom.ApplyBurning(player, enemy, burningAmount);
-                        break;
-                    }
-                }
-            }
-
-            GameActions.Bottom.GainEnergy(magicNumber);
         }
+
+        for (AbstractMonster enemy : GameUtilities.GetEnemies(true)) {
+            for (AbstractPower power : enemy.powers) {
+                if (power.ID.equals(BurningPower.POWER_ID)) {
+                    int burningAmount = power.amount;
+                    GameActions.Bottom.ApplyBurning(player, enemy, burningAmount);
+                    break;
+                }
+            }
+        }
+
+        GameActions.Bottom.GainEnergy(magicNumber);
     }
 
     @Override

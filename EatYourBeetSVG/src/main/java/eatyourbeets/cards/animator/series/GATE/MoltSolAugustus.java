@@ -44,7 +44,7 @@ public class MoltSolAugustus extends AnimatorCard
         {
             super(owner, MoltSolAugustus.DATA, PowerTriggerConditionType.Energy, MoltSolAugustus.ENERGY_COST);
 
-            triggerCondition.SetUses(1, true, true);
+            triggerCondition.SetUses(3, true, true);
             canBeZero = true;
 
             Initialize(amount);

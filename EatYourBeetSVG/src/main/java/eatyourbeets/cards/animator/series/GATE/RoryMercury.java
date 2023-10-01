@@ -18,8 +18,6 @@ public class RoryMercury extends AnimatorCard
             .SetAttack(1, CardRarity.UNCOMMON, EYBAttackType.Normal, EYBCardTarget.Random)
             .SetSeriesFromClassPackage();
 
-    private static final CardEffectChoice choices = new CardEffectChoice();
-
     private List<AbstractCreature> enemiesHit = new LinkedList<>();
 
     public RoryMercury()

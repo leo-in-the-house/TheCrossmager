@@ -1206,14 +1206,14 @@
 		},
 		"animator:MoltSolAugustus":
 		{
-			"DESCRIPTION": "Once per turn, pay [E]: Add {Imperial Archers} to your draw pile.",
-			"UPGRADE_DESCRIPTION": "Once per turn, pay [E]: Add {Imperial Archers+} to your draw pile.",
+			"DESCRIPTION": "Up to 3 times per turn, pay [E]: Add {Imperial Archers} to your draw pile.",
+			"UPGRADE_DESCRIPTION": "Up to 3 times per turn, pay [E]: Add {Imperial Archers+} to your draw pile.",
 			"EXTENDED_DESCRIPTION": ["Pay 1 #yEnergy to add #b{0} #yImperial #yArchers to your draw pile."],
 			"NAME": "Molt Sol Augustus"
 		},
 		"animator:MoltSolAugustus_ImperialArchers":
 		{
-			"DESCRIPTION": "",
+			"DESCRIPTION": "Apply [Weak] and [Vulnerable] to the enemy.",
 			"NAME": "Imperial Archers"
 		},
 		"animator:PinaCoLada":
@@ -1246,6 +1246,11 @@
 		{
 			"DESCRIPTION": "If the enemy has no [Artifact]: Apply !M! [Shackles]. || When Sealed: Gain !S! [Block].",
 			"NAME": "Yao Ha Ducy"
+		},
+		"animator:ZorzalElCaesar":
+		{
+			"DESCRIPTION": "Gain [Insanity] or [Pestilence] randomly once for each enemy. || On Discard: Add !M! {Imperial Archers} to you draw pile, then shuffle this back to your draw pile.",
+			"NAME": "Zorzal El Caesar"
 		}
 	},
 
@@ -2758,7 +2763,8 @@
 		},
 		"animator:Giselle":
 		{
-			"DESCRIPTION": "Starter: Discard all cards in your hand that are not {Attack}.  Double [Burning] on ALL enemies, then gain !M! [E]. || At the start of each combat: Channel !S! [Fire].",
+			"FLAVOR_TEXT": "'You're supposed to be the wife of a god!  Yet you so casually interact with these filthy... humans!  How dare you sully our family line!'",
+			"DESCRIPTION": "Discard all cards in your hand that are not {Attack}.  Double [Burning] on ALL enemies, then gain !M! [E]. || At the start of each combat: Channel !S! [Fire].",
 			"NAME": "Giselle"
 		},
 		"animator:Hero":

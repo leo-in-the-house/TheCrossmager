@@ -278,7 +278,7 @@
 	},
 	"Pestilence":
 	{
-		"DESCRIPTION": "Whenever you apply a #yCommon #yDebuff, apply more of that #ydebuff.",
+		"DESCRIPTION": "Whenever you apply a #yCommon #yDebuff, this deals 2 times #b{0} damage to the enemy.",
 		"NAMES": ["pestilence"],
 		"PROPER_NAME": "Pestilence"
 	},

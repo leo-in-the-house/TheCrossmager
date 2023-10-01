@@ -1,14 +1,13 @@
 package eatyourbeets.powers.common;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import eatyourbeets.actions.powers.ApplyPower;
+import eatyourbeets.effects.VFX;
 import eatyourbeets.powers.CommonPower;
+import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.utilities.JUtils;
 
 public class PestilencePower extends CommonPower
 {
@@ -34,18 +33,10 @@ public class PestilencePower extends CommonPower
 
         if (p.type == PowerType.DEBUFF && GameUtilities.IsCommonDebuff(p) && source.isPlayer)
         {
-            p.amount += this.amount;
-
-            final AbstractGameAction action = AbstractDungeon.actionManager.currentAction;
-            if (action instanceof ApplyPower || action instanceof ApplyPowerAction)
-            {
-                action.amount += this.amount;
+            if (!target.isPlayer) {
+                GameActions.Top.VFX(VFX.ThrowDagger(target.hb, 0.2f));
+                GameActions.Top.DealDamage(player, target, 2 * this.amount, DamageInfo.DamageType.HP_LOSS, AbstractGameAction.AttackEffect.NONE);
             }
-            else
-            {
-                JUtils.LogWarning(this, "Unknown action type: " + action.getClass().getName());
-            }
-            this.flash();
         }
     }
 }
