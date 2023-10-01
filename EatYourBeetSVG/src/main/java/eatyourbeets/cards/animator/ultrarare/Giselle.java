@@ -1,18 +1,20 @@
 package eatyourbeets.cards.animator.ultrarare;
 
-import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.effects.AttackEffects;
 import com.megacrit.cardcrawl.actions.utility.ShakeScreenAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.combat.FlameBarrierEffect;
 import com.megacrit.cardcrawl.vfx.combat.VerticalImpactEffect;
+import eatyourbeets.cards.base.*;
+import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.orbs.animator.Fire;
+import eatyourbeets.powers.common.BurningPower;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
-import eatyourbeets.utilities.TargetHelper;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Giselle extends AnimatorCard_UltraRare
 {
@@ -25,12 +27,12 @@ public class Giselle extends AnimatorCard_UltraRare
     {
         super(DATA);
 
-        Initialize(18, 0, 12, 2);
-        SetUpgrade(0, 0, 12, 0);
+        Initialize(18, 0, 2, 2);
+        SetUpgrade(6, 0, 2, 0);
 
-        SetAffinity_Red(2);
-        SetAffinity_Black(2);
-        SetAffinity_Star(0, 0, 2);
+        SetAffinity_Red(1);
+        SetAffinity_Blue(1);
+        SetAffinity_Star(0, 0, 1);
     }
 
     @Override
@@ -41,7 +43,27 @@ public class Giselle extends AnimatorCard_UltraRare
         GameActions.Bottom.VFX(new FlameBarrierEffect(m.hb.cX, m.hb.cY), 0.5f);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.NONE);
         GameActions.Bottom.Add(new ShakeScreenAction(0.5f, ScreenShake.ShakeDur.MED, ScreenShake.ShakeIntensity.MED));
-        GameActions.Bottom.ApplyBurning(TargetHelper.Enemies(), magicNumber);
+
+        if (IsStarter())
+        {
+            for (AbstractCard card : player.hand.group) {
+                if (card.type != CardType.ATTACK) {
+                    GameActions.Bottom.Discard(card, player.hand);
+                }
+            }
+
+            for (AbstractMonster enemy : GameUtilities.GetEnemies(true)) {
+                for (AbstractPower power : enemy.powers) {
+                    if (power.ID.equals(BurningPower.POWER_ID)) {
+                        int burningAmount = power.amount;
+                        GameActions.Bottom.ApplyBurning(player, enemy, burningAmount);
+                        break;
+                    }
+                }
+            }
+
+            GameActions.Bottom.GainEnergy(magicNumber);
+        }
     }
 
     @Override

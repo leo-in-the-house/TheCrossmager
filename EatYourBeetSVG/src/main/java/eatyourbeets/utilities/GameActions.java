@@ -20,6 +20,7 @@ import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.powers.*;
+import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 import com.megacrit.cardcrawl.stances.AbstractStance;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
@@ -72,6 +73,7 @@ import eatyourbeets.powers.affinity.animatorClassic.CorruptionPower;
 import eatyourbeets.powers.affinity.animatorClassic.ForcePower;
 import eatyourbeets.powers.affinity.animatorClassic.IntellectPower;
 import eatyourbeets.powers.animator.EarthenThornsPower;
+import eatyourbeets.powers.animator.SupportDamagePower;
 import eatyourbeets.powers.common.EnergizedPower;
 import eatyourbeets.powers.common.*;
 import eatyourbeets.powers.replacement.*;
@@ -763,6 +765,11 @@ public final class GameActions
         return StackPower(source, new StrengthPower(target, amount));
     }
 
+    public ApplyPower GainSupportDamage(int amount)
+    {
+        return StackPower(new SupportDamagePower(player, amount));
+    }
+
     public ApplyPower GainTemporaryArtifact(int amount)
     {
         return StackPower(new TemporaryArtifactPower(player, amount));
@@ -822,6 +829,12 @@ public final class GameActions
     {
         return StackPower(new VitalityPower(player, amount));
     }
+
+    public ApplyPower GainVigor(int amount)
+    {
+        return StackPower(new VigorPower(player, amount));
+    }
+
 
     public HealCreature Heal(AbstractCreature source, AbstractCreature target, int amount)
     {

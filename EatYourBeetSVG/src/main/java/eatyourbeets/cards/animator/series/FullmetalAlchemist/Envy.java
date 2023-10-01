@@ -84,7 +84,6 @@ public class Envy extends AnimatorCard
             if (amount > 0)
             {
                 GameActions.Bottom.ChannelOrbs(Dark::new, amount);
-                reducePower(1);
                 flashWithoutSound();
             }
         }
@@ -100,7 +99,7 @@ public class Envy extends AnimatorCard
         {
             super.OnUse(m);
 
-            GameActions.Bottom.SealAffinities(player.drawPile, 1, false);
+            GameActions.Bottom.SealAffinities(player.discardPile, 1, false);
         }
     }
 }

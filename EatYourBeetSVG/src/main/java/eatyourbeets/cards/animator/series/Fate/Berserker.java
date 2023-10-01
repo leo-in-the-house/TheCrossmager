@@ -21,7 +21,7 @@ public class Berserker extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(20, 0, 4);
+        Initialize(24, 0, 3);
         SetUpgrade(8, 0, 2);
 
         SetAffinity_Red(2);
@@ -29,18 +29,19 @@ public class Berserker extends AnimatorCard
     }
 
     @Override
+    public void triggerOnExhaust()
+    {
+        super.triggerOnExhaust();
+
+        GameActions.Bottom.GainWhite(this.magicNumber);
+    }
+
+    @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.VFX(VFX.VerticalImpact(m.hb));
-        GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_HEAVY)
-        .AddCallback(m.currentBlock, (initialBlock, target) ->
-        {
-            if (GameUtilities.IsDeadOrEscaped(target) || (initialBlock > 0 && target.currentBlock <= 0))
-            {
-                GameActions.Bottom.GainWhite(this.magicNumber);
-            }
-        });
+        GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_HEAVY);
         GameActions.Bottom.ShakeScreen(0.5f, ScreenShake.ShakeDur.MED, ScreenShake.ShakeIntensity.MED);
     }
 }

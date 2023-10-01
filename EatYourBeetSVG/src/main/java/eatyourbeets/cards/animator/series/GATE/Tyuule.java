@@ -3,25 +3,20 @@ package eatyourbeets.cards.animator.series.GATE;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import eatyourbeets.cards.base.Affinity;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
-import eatyourbeets.interfaces.listeners.OnCardResetListener;
-import eatyourbeets.powers.CombatStats;
 import eatyourbeets.powers.PowerHelper;
-import eatyourbeets.utilities.*;
+import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
+import eatyourbeets.utilities.TargetHelper;
 
-public class Tyuule extends AnimatorCard implements OnCardResetListener
+public class Tyuule extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Tyuule.class)
-            .SetSkill(1, CardRarity.UNCOMMON)
+            .SetSkill(1, CardRarity.COMMON)
             
             .SetSeriesFromClassPackage();
-
-    //TODO: Standard way to handle this
-    private ColoredString magicNumberString = new ColoredString();
 
     public Tyuule()
     {
@@ -30,58 +25,18 @@ public class Tyuule extends AnimatorCard implements OnCardResetListener
         Initialize(0, 0, 0, 2);
         SetCostUpgrade(-1);
 
-        SetAffinity_Black(1, 1, 0);
-        SetAffinity_Green(1);
+        SetAffinity_Violet(1);
 
-        SetFading(true);
-        OnReset();
-    }
-
-    @Override
-    protected void OnUpgrade()
-    {
-        if (magicNumberString.text.endsWith("X"))
-        {
-            OnReset();
-        }
-    }
-
-    @Override
-    public void OnReset()
-    {
-        magicNumberString.SetText(secondaryValue+"X").SetColor(Colors.Cream(1));
-    }
-
-    @Override
-    public void displayUpgrades()
-    {
-        super.displayUpgrades();
-
-        magicNumberString.SetColor(Colors.Green(1));
-    }
-
-    @Override
-    public ColoredString GetMagicNumberString()
-    {
-        return magicNumberString;
-    }
-
-    @Override
-    protected void Refresh(AbstractMonster enemy)
-    {
-        super.Refresh(enemy);
-
-        final int totalAffinity = CombatStats.Affinities.GetUsableAffinity(Affinity.Green);
-        SetAffinityRequirement(Affinity.Green, totalAffinity);
-        magicNumber = totalAffinity * secondaryValue;
-        isMagicNumberModified = magicNumber > secondaryValue;
-        magicNumberString = super.GetMagicNumberString();
+        SetHaste(true);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
+
+        int amountToStack = player.hand.getAttacks().size();
+
         for (AbstractMonster enemy : GameUtilities.GetEnemies(true))
         {
             for (AbstractPower debuff : enemy.powers)
@@ -90,16 +45,11 @@ public class Tyuule extends AnimatorCard implements OnCardResetListener
                 {
                     if (pw1.ID.equals(debuff.ID))
                     {
-                        GameActions.Bottom.StackPower(TargetHelper.Normal(enemy), pw1, 1);
+                        GameActions.Bottom.StackPower(TargetHelper.Normal(enemy), pw1, amountToStack);
                         break;
                     }
                 }
             }
-        }
-
-        if (CheckSpecialCondition(false))
-        {
-            GameActions.Bottom.ApplyPoison(p, m, magicNumber);
         }
     }
 }

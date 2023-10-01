@@ -23,6 +23,8 @@ public class Logy extends AnimatorCard {
         SetUpgrade(0, 8, 0);
 
         SetAffinity_Teal(2);
+
+        SetCardPreview(EschaMalier.DATA::IsCard).SetGroupType(player.discardPile.type);
     }
 
     @Override

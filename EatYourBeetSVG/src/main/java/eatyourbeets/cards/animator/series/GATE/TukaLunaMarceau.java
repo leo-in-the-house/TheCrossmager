@@ -3,12 +3,11 @@ package eatyourbeets.cards.animator.series.GATE;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
-import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class TukaLunaMarceau extends AnimatorCard
 {
@@ -20,11 +19,10 @@ public class TukaLunaMarceau extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 3, 1);
-        SetUpgrade(0, 0, 1);
+        Initialize(0, 2, 2);
+        SetUpgrade(0, 2, 1);
 
         SetAffinity_Green(1);
-        SetAffinity_White(1);
     }
 
     @Override
@@ -34,18 +32,10 @@ public class TukaLunaMarceau extends AnimatorCard
     }
 
     @Override
-    public void triggerOnAffinitySeal(boolean reshuffle)
-    {
-        super.triggerOnAffinitySeal(reshuffle);
-
-        CombatStats.Affinities.AddAffinitySealUses(1);
-    }
-
-    @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
-        GameActions.Bottom.GainInspiration(magicNumber);
+
     }
 }

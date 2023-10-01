@@ -20,8 +20,8 @@ public class InverseOrigami extends AnimatorCard
         super(DATA);
 
         Initialize(1, 0);
-        SetAffinity_White(1, 0, 2);
-        SetAffinity_Blue(1, 0, 2);
+        SetAffinity_White(1, 0, 1);
+        SetAffinity_Blue(1, 0, 1);
         SetAffinity_Black(1);
     }
 

@@ -1,14 +1,16 @@
 package eatyourbeets.cards.animator.series.GATE;
 
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.base.Affinity;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
-import eatyourbeets.powers.animator.PinaCoLadaPower;
+import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class PinaCoLada extends AnimatorCard
 {
@@ -20,28 +22,51 @@ public class PinaCoLada extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 0, 4);
-        SetCostUpgrade(-1);
+        Initialize(0, 0, 2);
+        SetUpgrade(0, 0, 1);
 
-        SetAffinity_White(2);
-        SetAffinityRequirement(Affinity.White, 3);
-    }
-
-    @Override
-    protected void Refresh(AbstractMonster enemy)
-    {
-        super.Refresh(enemy);
-
-        SetPlayable(CheckSpecialCondition(false));
+        SetAffinity_White(1);
+        SetAffinity_Pink(1);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        if (CheckSpecialCondition(false))
+        GameActions.Bottom.StackPower(new PinaCoLadaPower(p, magicNumber));
+    }
+
+    public static class PinaCoLadaPower extends AnimatorPower
+    {
+        public static final String POWER_ID = CreateFullID(PinaCoLadaPower.class);
+
+        public PinaCoLadaPower(AbstractCreature owner, int amount)
         {
-            GameActions.Bottom.StackPower(new PinaCoLadaPower(p, 1));
+            super(owner, POWER_ID);
+
+            Initialize(amount);
+        }
+
+        public void atStartOfTurn()
+        {
+            super.atStartOfTurn();
+
+            ResetAmount();
+        }
+
+        @Override
+        public void onUseCard(AbstractCard card, UseCardAction action)
+        {
+            super.onUseCard(card, action);
+
+            if (card.type == CardType.ATTACK && amount > 0 && GameUtilities.CanPlayTwice(card))
+            {
+                GameActions.Top.PlayCopy(card, (AbstractMonster)((action.target == null) ? null : action.target));
+                this.amount -= 1;
+                updateDescription();
+                flash();
+            }
         }
     }
+
 }

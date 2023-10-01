@@ -29,8 +29,8 @@ public class OrigamiTobiichi extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 0, 50, 0);
-        SetUpgrade(0, 0, 50);
+        Initialize(0, 0, 20, 0);
+        SetUpgrade(0, 0, 20);
 
         SetAffinity_White(1);
         SetAffinity_Blue(1);

@@ -1,16 +1,15 @@
 package eatyourbeets.cards.animator.series.GATE;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
+import eatyourbeets.cards.base.AnimatorCard;
+import eatyourbeets.cards.base.CardUseInfo;
+import eatyourbeets.cards.base.EYBAttackType;
+import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.AttackEffects;
-import eatyourbeets.powers.PowerHelper;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.JUtils;
-import eatyourbeets.utilities.TargetHelper;
+import eatyourbeets.utilities.GameUtilities;
 
 public class ShunyaKengun extends AnimatorCard
 {
@@ -22,25 +21,10 @@ public class ShunyaKengun extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(7, 0, 2, 3);
-        SetUpgrade(2, 0, 0, 0);
+        Initialize(9, 0, 5);
+        SetUpgrade(3, 0, 1);
 
-        SetAffinity_Red(1);
-        SetAffinity_Green(1, 1, 0);
-
-        SetAffinityRequirement(Affinity.Red, 2);
-        SetAffinityRequirement(Affinity.Green, 2);
-
-        SetCardPreview(ShunyaKengun::Filter);
-    }
-
-    @Override
-    public void triggerWhenDrawn()
-    {
-        super.triggerWhenDrawn();
-
-        GameActions.Bottom.StackPower(TargetHelper.RandomEnemy(), PowerHelper.LockOn, 1).IgnoreArtifact(true);
-        GameActions.Bottom.Flash(this);
+        SetAffinity_Pink(1);
     }
 
     @Override
@@ -48,18 +32,20 @@ public class ShunyaKengun extends AnimatorCard
     {
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.GUNSHOT).SetSoundPitch(0.9f, 1f);
-        GameActions.Bottom.Draw(1)
-        .SetFilter(ShunyaKengun::Filter, false);
-    }
 
-    private static boolean Filter(AbstractCard card)
-    {
-        if (card.type != CardType.ATTACK)
-        {
-            return false;
+        AbstractCard last = GameUtilities.GetLastCardPlayed(true);
+
+        if (CheckSpecialCondition(false)) {
+            GameActions.Bottom.GainSupportDamage(magicNumber);
         }
-
-        final EYBCard c = JUtils.SafeCast(card, EYBCard.class);
-        return c != null && c.attackType == EYBAttackType.Ranged;
     }
+
+    @Override
+    public boolean CheckSpecialCondition(boolean tryUse)
+    {
+        AbstractCard last = GameUtilities.GetLastCardPlayed(true);
+
+        return last != null && last.type == CardType.ATTACK && super.CheckSpecialCondition(tryUse);
+    }
+
 }

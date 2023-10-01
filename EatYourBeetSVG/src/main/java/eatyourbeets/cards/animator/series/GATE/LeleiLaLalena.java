@@ -5,8 +5,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.Frost;
 import eatyourbeets.cards.animator.tokens.AffinityToken;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class LeleiLaLalena extends AnimatorCard
 {
@@ -19,33 +19,30 @@ public class LeleiLaLalena extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 0, 1);
+        Initialize(0, 0, 2);
 
         SetAffinity_Blue(1);
+    }
 
-        SetEvokeOrbCount(1);
+    @Override
+    public boolean cardPlayable(AbstractMonster m)
+    {
+        if (super.cardPlayable(m))
+        {
+            return player.hand.getAttacks().size() > 0;
+        }
 
-        SetAffinityRequirement(Affinity.Blue, 2);
+        return false;
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.GainBlue(1);
-
-        if (CheckSpecialCondition(false))
-        {
-            GameActions.Bottom.ObtainAffinityToken(Affinity.General, upgraded);
-        }
-    }
-
-    @Override
-    public void OnLateUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
-    {
         GameActions.Bottom.DiscardFromHand(name, 1, !upgraded)
-        .ShowEffect(!upgraded, !upgraded)
-        .SetOptions(false, false, false)
-        .AddCallback(() -> GameActions.Bottom.ChannelOrbs(Frost::new, magicNumber));
+                .ShowEffect(!upgraded, !upgraded)
+                .SetFilter(card -> card.type == CardType.ATTACK)
+                .SetOptions(false, false, false)
+                .AddCallback(() -> GameActions.Bottom.ChannelOrbs(Frost::new, magicNumber));
     }
 }

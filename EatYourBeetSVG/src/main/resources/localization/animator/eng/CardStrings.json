@@ -534,7 +534,7 @@
 		"animator:Meruru":
 		{
 			"FLAVOR_TEXT": "'I’m the princess around here!  But... well, not that I’m complaining, but my life does lack a certain excitement.'",
-			"DESCRIPTION": "Add !M! {0-Cost} {Powers} to your draw pile. || Whenever you create a card, that card costs 0 to play.",
+			"DESCRIPTION": "Add !M! {0-Cost} {Powers} to your discard pile. || Whenever you create a card, that card costs 0 to play.",
 			"EXTENDED_DESCRIPTION": ["Whenever you create a card, that card costs 0 to play."],
 			"NAME": "Merurulince Arls"
 		},
@@ -592,7 +592,7 @@
 		"animator:Totori":
 		{
 			"FLAVOR_TEXT": "'What should I do... What am I saying, I’m an adventurer!  I have to go on more adventures!  Hehe, I think I can finally go on adventures for myself and no one else!'",
-			"DESCRIPTION": "Add a copy of a random non-{Hindrance} card in your master deck on top of your draw pile.  It costs !S! less. || {Reload}: Repeat.",
+			"DESCRIPTION": "Add a copy of a random card without {Exhaust} nor {Purge} in your master deck on top of your draw pile.  It costs !S! less. || {Reload}: Repeat.",
 			"NAME": "Totooria Helmold"
 		},
 		"animator:Viorate":
@@ -968,7 +968,7 @@
 		"animator:Berserker":
 		{
 			"FLAVOR_TEXT": "'Berserker can't lose to anyone, because he's the strongest in the world!' -Illyasviel von Einzbern",
-			"DESCRIPTION": "If the enemy dies or loses its [Block]: Gain !M! [L].",
+			"DESCRIPTION": "On Exhaust: Gain !M! [L].",
 			"NAME": "Berserker"
 		},
 		"animator:Caster":
@@ -998,7 +998,7 @@
 		"animator:Illya":
 		{
 			"FLAVOR_TEXT": "'You said an older brother protects his younger sister, right?  ...Yeah. I'm the older sister. So I have to protect my younger brother.'",
-			"DESCRIPTION": "Play the {Attack} with the highest damage from your draw pile. Take !M! [DD].",
+			"DESCRIPTION": "Play and Exhaust the {Attack} with the highest damage from your draw pile. Take !M! [DD].",
 			"NAME": "Illyasviel"
 		},
 		"animator:Illya_Prisma":
@@ -1054,7 +1054,7 @@
 		"animator:Saber":
 		{
 			"FLAVOR_TEXT": "'I ask of you, are you my master?'",
-			"DESCRIPTION": "Cooldown !S!: Purge, then add {Excalibur} to your hand.|| Reduce this card's Cooldown by 1 for every [L] you have.",
+			"DESCRIPTION": "Cooldown !S!: Purge, then add {Excalibur} to your hand. || Reduce this card's Cooldown by 1 for every [L] you have.",
 			"NAME": "Saber"
 		},
 		"animator:Saber_Excalibur":
@@ -1090,7 +1090,7 @@
 		{
 			"FLAVOR_TEXT": "'You humans don't make any sense to me. You throw away your lives for nothing.'",
 			"DESCRIPTION": "Whenever you {Seal} a card: Channel [Dark]. || Once per turn, pay !M! [E]: {Seal} a card in your discard pile.",
-			"EXTENDED_DESCRIPTION": ["Pay 2 [E] to #Seal a card in your discard pile. || #yChannel #b{1} Dark whenever you #ySeal a card."],
+			"EXTENDED_DESCRIPTION": ["Pay 2 [E] to #ySeal a card in your discard pile. || #yChannel #b{1} Dark whenever you #ySeal a card."],
 			"NAME": "Envy"
 		},
 		"animator:Father":
@@ -1168,78 +1168,78 @@
 	{
 		"animator:Arpeggio":
 		{
-			"DESCRIPTION": "The next !S! times you Seal a {[W] Token}: Gain [E]. || Once per combat, pay !M! [E]: Gain 1 [Orb_S] and Channel 1 [Earth].",
-			"EXTENDED_DESCRIPTION": ["Pay #b{0} [E]: Gain [Orb_S], #yChannel [Earth]. || The next #b{1} time(s) you #ySeal an [W] #yToken(s), gain [E]."],
-			"NAME": "Arpeggio"
+			"DESCRIPTION": "Can only be played if you have at least !M! cards in hand and all other cards in your hand are {Attacks}. || Once every two turns: Add 1 [Orb_S].",
+			"EXTENDED_DESCRIPTION": ["Once every two turns: Add #b{0} [Orb_S]."],
+			"NAME": "Arpeggio El Lalena"
 		},
 		"animator:Bozes":
 		{
-			"DESCRIPTION": "Motivate !M!. || This turn, whenever you Seal a card in hand, gain 1 [Support Damage] and <DRW>.",
-			"EXTENDED_DESCRIPTION": ["This turn, whenever you #ySeal a card in hand, gain #b{0} [Support Damage] and <DRW>."],
-			"NAME": "Bozes"
+			"DESCRIPTION": "This turn, when you play an {Attack}: Gain 1 [Strength].",
+			"EXTENDED_DESCRIPTION": ["This turn, when you play an #yAttack: #yGain #b{0} #yStrength."],
+			"NAME": "Bozes Co Palesti"
 		},
 		"animator:CatoElAltestan":
 		{
-			"DESCRIPTION": "<ST>. Boost [B]. || Fetch !M! [B] card and give it +1 [Intellect] scaling. || !A! [B]: Apply !S! [Freezing].",
-			"NAME": "Cato El Altestan",
-			"UPGRADE_DESCRIPTION": "<ST>. Boost [B]. || Fetch !M! [B] cards and give them +1 [Intellect] scaling. || !A! [B]: Apply !S! [Freezing]."
+			"DESCRIPTION": "Fetch an {Attack} from your draw pile and {Retain} it.  It gains [B], its damage type becomes {Elemental}, and it gains +!M! [Intellect] scaling.",
+			"NAME": "Cato El Altestan"
 		},
 		"animator:ItamiYouji":
 		{
-			"DESCRIPTION": "Attack 1 additional time for each card played this turn (max 10). || !A! [M]: Gain !S! [Support Damage].",
+			"DESCRIPTION": "Draw up to your hand size. || Attack an extra time for each {Attack} in your hand. || Retain all {Attacks} in your hand.",
 			"NAME": "Itami Youji"
 		},
 		"animator:Kuribayashi":
 		{
-			"DESCRIPTION": "Apply !M! [Vulnerable]. Retain 1 {Attack}. || !A! [R]: Deal !S! [DD].",
-			"EXTENDED_DESCRIPTION": ["At the end of turn, Retain #b{0} #yAttack(s)."],
-			"NAME": "Kuribayashi"
+			"DESCRIPTION": "Apply !M! [Vulnerable].",
+			"NAME": "Shino Kuribayashi"
 		},
 		"animator:LeleiLaLalena":
 		{
-			"DESCRIPTION": "Gain [B]. Discard a random card to {Channel} !M! [Frost]. || !A! [B]: Obtain {[W] Token}.",
+			"DESCRIPTION": "Discard a random {Attack} to {Channel} !M! [Frost].",
 			"NAME": "Lelei La Lalena",
-			"UPGRADE_DESCRIPTION": "Gain [B]. Discard a card to {Channel} !M! [Frost]. || !A! [B]: Obtain {[W] Token}."
+			"UPGRADE_DESCRIPTION": "Discard an {Attack} to {Channel} !M! [Frost]."
 		},
 		"animator:MariKurokawa":
 		{
-			"DESCRIPTION": "Recover !M! [HP]. || If you haven't played an {Attack} this turn: Gain !S! [Block] and discard !K! random {Attacks}.",
-			"NAME": "Kurokawa"
+			"DESCRIPTION": "Discard all {Attacks} in your hand.  Gain !M! [THP] for each card discarded.",
+			"NAME": "Mari Kurokawa"
 		},
 		"animator:MoltSolAugustus":
 		{
-			"DESCRIPTION": "Whenever you seal a [R] card: Gain !M! [A_Seal] and !M! [INS]. || Once per turn, pay 3 [R]: Add !S! {Imperial Archers} to your draw pile.",
-			"EXTENDED_DESCRIPTION": ["Pay #b{0} [R] to add #b{0} #yImperial #yArchers to your draw pile. || Whenever you seal a [R] card, gain #b{1} [A_Seal] and #b{1} [INS]."],
+			"DESCRIPTION": "Once per turn, pay [E]: Add {Imperial Archers} to your draw pile.",
+			"UPGRADE_DESCRIPTION": "Once per turn, pay [E]: Add {Imperial Archers+} to your draw pile.",
+			"EXTENDED_DESCRIPTION": ["Pay 1 #yEnergy to add #b{0} #yImperial #yArchers to your draw pile."],
 			"NAME": "Molt Sol Augustus"
 		},
 		"animator:MoltSolAugustus_ImperialArchers":
 		{
-			"DESCRIPTION": "Gain !M! [Support Damage]. || When drawn: Deal !S! damage to a random enemy 3 times.",
+			"DESCRIPTION": "",
 			"NAME": "Imperial Archers"
 		},
 		"animator:PinaCoLada":
 		{
-			"DESCRIPTION": "Use !A! [L] to play this. || The first {0-Cost} card you play each turn is played twice.",
+			"DESCRIPTION": "The first !M! {Attacks} you play each turn is played an extra time.",
+			"EXTENDED_DESCRIPTION": ["The first #b{0} #yAttacks you play each turn is played an extra time."],
 			"NAME": "Pina Co Lada"
 		},
 		"animator:RoryMercury":
 		{
-			"DESCRIPTION": "Give this card {~Haste}. || <slm>. If this hits an enemy with [Vulnerable]: Gain !M! [INS].",
+			"DESCRIPTION": "Draw an {Attack} for each enemy this card hits.",
 			"NAME": "Rory Mercury"
 		},
 		"animator:ShunyaKengun":
 		{
-			"DESCRIPTION": "Draw 1 [~Ranged] {Attack}. || When drawn: Apply 1 [~Lock-On] to a random enemy, ignoring [Artifact].",
-			"NAME": "Kengun"
+			"DESCRIPTION": "Gain !M! [Vigor].",
+			"NAME": "Shunya Kengun"
 		},
 		"animator:TukaLunaMarceau":
 		{
-			"DESCRIPTION": "Gain !M! [INS]. || When Sealed: Gain 1 [A_Seal].",
-			"NAME": "Tuka"
+			"DESCRIPTION": "If the last card you played was an {Attack}: Gain !M! [Support Damage].",
+			"NAME": "Tuka Luna Marceau"
 		},
 		"animator:Tyuule":
 		{
-			"DESCRIPTION": "Increase the {Common Debuffs} of each enemy by 1. || X [G]: Apply !M! [Poison].",
+			"DESCRIPTION": "Increase the {Common Debuffs} on the enemy by X, where X is the number of {Attacks} in your hand.",
 			"NAME": "Tyuule"
 		},
 		"animator:YaoHaDucy":
@@ -2758,7 +2758,7 @@
 		},
 		"animator:Giselle":
 		{
-			"DESCRIPTION": "Apply !M! [Burning] to ALL enemies. || At the start of each combat: Channel !S! [Fire].",
+			"DESCRIPTION": "Starter: Discard all cards in your hand that are not {Attack}.  Double [Burning] on ALL enemies, then gain !M! [E]. || At the start of each combat: Channel !S! [Fire].",
 			"NAME": "Giselle"
 		},
 		"animator:Hero":

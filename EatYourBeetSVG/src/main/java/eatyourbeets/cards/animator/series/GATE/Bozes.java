@@ -1,34 +1,37 @@
 package eatyourbeets.cards.animator.series.GATE;
 
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
+import eatyourbeets.cards.base.AnimatorCard;
+import eatyourbeets.cards.base.CardUseInfo;
+import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.AttackEffects;
-import eatyourbeets.interfaces.subscribers.OnAffinitySealedSubscriber;
 import eatyourbeets.powers.AnimatorPower;
-import eatyourbeets.powers.CombatStats;
-import eatyourbeets.powers.animator.SupportDamagePower;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Bozes extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Bozes.class)
-            .SetAttack(2, CardRarity.UNCOMMON)
+            .SetAttack(3, CardRarity.UNCOMMON)
             .SetSeriesFromClassPackage();
 
     public Bozes()
     {
         super(DATA);
 
-        Initialize(7, 0, 2);
-        SetUpgrade(0, 0, 1);
+        Initialize(7, 0, 1);
+        SetUpgrade(0, 0, 0);
 
-        SetAffinity_Red(2);
+        SetCostUpgrade(-1);
+
         SetAffinity_White(2);
+        SetAffinity_Red(1);
 
         SetExhaust(true);
+        SetEthereal(true);
     }
 
     @Override
@@ -36,11 +39,10 @@ public class Bozes extends AnimatorCard
     {
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_VERTICAL);
-        GameActions.Bottom.Motivate(magicNumber);
         GameActions.Bottom.StackPower(new BozesPower(p, 1));
     }
 
-    public class BozesPower extends AnimatorPower implements OnAffinitySealedSubscriber
+    public class BozesPower extends AnimatorPower
     {
         public BozesPower(AbstractCreature owner, int amount)
         {
@@ -50,28 +52,13 @@ public class Bozes extends AnimatorCard
         }
 
         @Override
-        public void onInitialApplication()
+        public void onAfterCardPlayed(AbstractCard card)
         {
-            super.onInitialApplication();
+            super.onAfterCardPlayed(card);
 
-            CombatStats.onAffinitySealed.Subscribe(this);
-        }
-
-        @Override
-        public void onRemove()
-        {
-            super.onRemove();
-
-            CombatStats.onAffinitySealed.Unsubscribe(this);
-        }
-
-        @Override
-        public void OnAffinitySealed(EYBCard card, boolean manual)
-        {
-            if (player.hand.contains(card))
+            if (card.type.equals(CardType.ATTACK))
             {
-                GameActions.Bottom.Draw(1);
-                GameActions.Bottom.StackPower(new SupportDamagePower(owner, amount));
+                GameActions.Bottom.GainStrength(amount);
                 flashWithoutSound();
             }
         }

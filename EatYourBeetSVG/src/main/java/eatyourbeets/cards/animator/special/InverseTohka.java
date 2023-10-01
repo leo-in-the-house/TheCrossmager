@@ -20,14 +20,14 @@ public class InverseTohka extends AnimatorCard
         super(DATA);
 
         Initialize(8, 0, 2, 1);
-        SetUpgrade(3, 0);
-        SetAffinity_Black(2, 0, 2);
+        SetUpgrade(4, 0);
+        SetAffinity_Black(2, 0, 1);
     }
 
     @Override
     protected void OnUpgrade()
     {
-        AddScaling(Affinity.Black, 3);
+        AddScaling(Affinity.Black, 2);
     }
 
     @Override

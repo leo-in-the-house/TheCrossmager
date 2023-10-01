@@ -22,8 +22,8 @@ public class Meruru extends AnimatorCard {
     public Meruru() {
         super(DATA);
 
-        Initialize(0, 0, 2);
-        SetUpgrade(0, 0, 2);
+        Initialize(0, 0, 1);
+        SetUpgrade(0, 0, 1);
 
         SetEthereal(true);
 
@@ -44,7 +44,7 @@ public class Meruru extends AnimatorCard {
         GameUtilities.PlayVoiceSFX(name);
 
         for (int i=0; i<magicNumber; i++) {
-            GameActions.Bottom.MakeCardInDrawPile(AbstractDungeon.returnTrulyRandomCardInCombat(CardType.POWER).makeCopy());
+            GameActions.Bottom.MakeCardInDiscardPile(AbstractDungeon.returnTrulyRandomCardInCombat(CardType.POWER).makeCopy());
         }
 
         GameActions.Bottom.StackPower(new MeruruPower(p, 1));

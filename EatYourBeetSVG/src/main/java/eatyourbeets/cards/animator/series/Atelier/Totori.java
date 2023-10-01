@@ -71,21 +71,24 @@ public class Totori extends AnimatorCard {
 
         RandomizedList<AbstractCard> possible = GetPossibleTargetsForCopy();
 
-        GameActions.Bottom.Callback(() -> CopyRandomCardOntoDrawPile(possible));
-        GameActions.Bottom.Reload(name, cards ->
+        if (possible.Size() > 0)
         {
-            for (int i = 0; i < cards.size(); i++)
+            GameActions.Bottom.Callback(() -> CopyRandomCardOntoDrawPile(possible));
+            GameActions.Bottom.Reload(name, cards ->
             {
-                CopyRandomCardOntoDrawPile(possible);
-            }
-        });
+                for (int i = 0; i < cards.size(); i++)
+                {
+                    CopyRandomCardOntoDrawPile(possible);
+                }
+            });
+        }
     }
 
     private RandomizedList<AbstractCard> GetPossibleTargetsForCopy() {
         RandomizedList<AbstractCard> possibleTargets = new RandomizedList<>();
 
         for (AbstractCard card : player.masterDeck.group) {
-            if (!GameUtilities.IsHindrance(card)) {
+            if (!card.exhaust && !card.exhaustOnUseOnce && !card.purgeOnUse && !card.hasTag(EYBCard.PURGE)) {
                 possibleTargets.Add(card);
             }
         }

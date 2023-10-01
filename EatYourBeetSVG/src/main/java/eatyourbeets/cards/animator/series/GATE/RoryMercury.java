@@ -3,14 +3,14 @@ package eatyourbeets.cards.animator.series.GATE;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.effects.AttackEffects;
-import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
+
+import java.util.LinkedList;
+import java.util.List;
 
 public class RoryMercury extends AnimatorCard
 {
@@ -20,39 +20,47 @@ public class RoryMercury extends AnimatorCard
 
     private static final CardEffectChoice choices = new CardEffectChoice();
 
+    private List<AbstractCreature> enemiesHit = new LinkedList<>();
+
     public RoryMercury()
     {
         super(DATA);
 
-        Initialize(5, 0, 4);
-        SetUpgrade(2, 0, 0);
+        Initialize(4, 0, 2);
+        SetUpgrade(0, 0, 1);
 
-        SetAffinity_Red(1, 0, 3);
-        SetAffinity_Green(1, 0, 1);
+        SetAffinity_Red(1, 0, 1);
+        SetAffinity_Black(1);
+
+        SetCardPreview(card -> card.type == CardType.ATTACK);
     }
 
     @Override
     public AbstractAttribute GetDamageInfo()
     {
-        return super.GetDamageInfo().AddMultiplier(2);
+        return super.GetDamageInfo().AddMultiplier(magicNumber);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.DealDamageToRandomEnemy(this, AttackEffects.SLASH_HEAVY).AddCallback(this::OnDamageDealt);
-        GameActions.Bottom.DealDamageToRandomEnemy(this, AttackEffects.SLASH_HEAVY).AddCallback(this::OnDamageDealt);
 
-        GameActions.Bottom.ModifyAllInstances(uuid)
-        .AddCallback(c -> GameUtilities.SetCardTag(c, HASTE, true));
+        for (int i=0; i<magicNumber; i++) {
+            GameActions.Bottom.DealDamageToRandomEnemy(this, AttackEffects.SLASH_HEAVY).AddCallback(this::OnDamageDealt);
+        }
+
+        GameActions.Last.Callback(c ->{
+            enemiesHit.clear();
+        });
     }
 
     protected void OnDamageDealt(AbstractCreature target)
     {
-        if (GameUtilities.GetPower(target, VulnerablePower.POWER_ID) != null && CombatStats.TryActivateSemiLimited(cardID))
-        {
-            GameActions.Bottom.GainInspiration(magicNumber);
+        if (!enemiesHit.contains(target)) {
+            enemiesHit.add(target);
+            GameActions.Top.Draw(1)
+             .SetFilter(card -> card.type == CardType.ATTACK, false);
         }
     }
 }

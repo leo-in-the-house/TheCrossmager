@@ -1,37 +1,52 @@
 package eatyourbeets.cards.animator.series.GATE;
 
+import com.badlogic.gdx.graphics.Color;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.animator.tokens.AffinityToken;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
-import eatyourbeets.cards.base.EYBCard;
 import eatyourbeets.cards.base.EYBCardData;
-import eatyourbeets.interfaces.subscribers.OnAffinitySealedSubscriber;
-import eatyourbeets.orbs.animator.Earth;
-import eatyourbeets.powers.AnimatorClickablePower;
-import eatyourbeets.powers.CombatStats;
-import eatyourbeets.powers.PowerTriggerConditionType;
+import eatyourbeets.powers.AnimatorPower;
+import eatyourbeets.utilities.ColoredString;
+import eatyourbeets.utilities.Colors;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Arpeggio extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Arpeggio.class)
             .SetPower(1, CardRarity.UNCOMMON)
             .SetSeriesFromClassPackage();
-    private static final int POWER_ENERGY_COST = 2;
 
     public Arpeggio()
     {
         super(DATA);
 
-        Initialize(0, 0, POWER_ENERGY_COST, 3);
+        Initialize(0, 0, 5);
+        SetUpgrade(0, 0, -2);
 
-        SetAffinity_Blue(2);
+        SetAffinity_Blue(1);
+        SetAffinity_Yellow(1);
+    }
 
-        SetDelayed(true);
+    @Override
+    public boolean cardPlayable(AbstractMonster m)
+    {
+        if (super.cardPlayable(m))
+        {
+            for (AbstractCard card : player.hand.group) {
+                if (!card.uuid.equals(uuid) && card.type != CardType.ATTACK) {
+                    return false;
+                }
+            }
+
+            return player.hand.size() >= magicNumber;
+        }
+
+        return false;
     }
 
     @Override
@@ -47,14 +62,13 @@ public class Arpeggio extends AnimatorCard
         GameActions.Bottom.StackPower(new ArpeggioPower(p, secondaryValue));
     }
 
-    public static class ArpeggioPower extends AnimatorClickablePower implements OnAffinitySealedSubscriber
+    public static class ArpeggioPower extends AnimatorPower
     {
+        protected int charge = 0;
+
         public ArpeggioPower(AbstractCreature owner, int amount)
         {
-            super(owner, Arpeggio.DATA, PowerTriggerConditionType.Energy, Arpeggio.POWER_ENERGY_COST);
-
-            triggerCondition.SetUses(1, false, true);
-            canBeZero = true;
+            super(owner, Arpeggio.DATA);
 
             Initialize(amount);
         }
@@ -64,7 +78,6 @@ public class Arpeggio extends AnimatorCard
         {
             super.onInitialApplication();
 
-            CombatStats.onAffinitySealed.Subscribe(this);
         }
 
         @Override
@@ -72,33 +85,32 @@ public class Arpeggio extends AnimatorCard
         {
             super.onRemove();
 
-            CombatStats.onAffinitySealed.Unsubscribe(this);
         }
 
         @Override
-        public String GetUpdatedDescription()
+        public void updateDescription()
         {
-            return FormatDescription(0, triggerCondition.requiredAmount, amount);
+            this.description = FormatDescription(0, amount);
         }
 
         @Override
-        public void OnAffinitySealed(EYBCard card, boolean manual)
+        protected ColoredString GetSecondaryAmount(Color c)
         {
-            if (amount > 0 && card instanceof AffinityToken)
+            return new ColoredString(charge, Colors.Lerp(Color.LIGHT_GRAY, Settings.PURPLE_COLOR, charge, c.a));
+        }
+
+        public void atStartOfTurnPostDraw() {
+            super.atStartOfTurnPostDraw();
+
+            if (amount > 0 && charge == 0)
             {
-                GameActions.Bottom.GainEnergy(1);
-                reducePower(1);
+                GameActions.Bottom.GainOrbSlots(amount);
+                charge = 1;
                 flashWithoutSound();
             }
-        }
-
-        @Override
-        public void OnUse(AbstractMonster m)
-        {
-            super.OnUse(m);
-
-            GameActions.Bottom.GainOrbSlots(1);
-            GameActions.Bottom.ChannelOrbs(Earth::new, 1);
+            else {
+                charge--;
+            }
         }
     }
 }

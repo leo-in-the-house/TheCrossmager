@@ -1,73 +1,50 @@
 package eatyourbeets.cards.animator.series.GATE;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.base.Affinity;
-import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.cards.base.CardUseInfo;
-import eatyourbeets.cards.base.EYBCardData;
-import eatyourbeets.interfaces.delegates.FuncT1;
+import eatyourbeets.cards.base.*;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
 public class CatoElAltestan extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(CatoElAltestan.class)
-            .SetSkill(1, CardRarity.UNCOMMON)
+            .SetSkill(2, CardRarity.UNCOMMON)
             .SetSeriesFromClassPackage();
 
     public CatoElAltestan()
     {
         super(DATA);
 
-        Initialize(0, 0, 1, 2);
-        SetUpgrade(0, 0, 1, 0);
+        Initialize(0, 4, 1);
+        SetUpgrade(0, 6, 2);
 
         SetAffinity_Blue(2);
 
         SetExhaust(true);
-
-        SetAffinityRequirement(Affinity.Blue, 2);
-        SetCardPreview((FuncT1<Boolean, AbstractCard>) GameUtilities::HasBlueAffinity);
-    }
-
-    @Override
-    public void OnDrag(AbstractMonster m)
-    {
-        super.OnDrag(m);
-
-        if (m != null && CheckAffinity(Affinity.Blue))
-        {
-            GameUtilities.GetIntent(m).AddFreezing();
-        }
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        if (info.TryActivateStarter())
-        {
-            GameActions.Bottom.GainBlue(1, true);
-        }
 
         GameActions.Bottom.FetchFromPile(name, magicNumber, player.drawPile)
         .SetOptions(false, true)
-        .SetFilter(GameUtilities::HasBlueAffinity)
+        .SetFilter(card -> card.type == CardType.ATTACK)
         .AddCallback(cards ->
         {
             for (AbstractCard c : cards)
             {
-                GameActions.Bottom.IncreaseScaling(c, Affinity.Blue, 1);
+                GameActions.Top.IncreaseScaling(c, Affinity.Blue, magicNumber);
+                GameActions.Top.Callback(() -> {
+                    if (c instanceof AnimatorCard) {
+                        ((AnimatorCard) c).AddScaling(Affinity.Blue, 1);
+                        ((AnimatorCard) c).SetAttackType(EYBAttackType.Elemental);
+                    }
+                });
             }
         });
-
-        if (CheckSpecialCondition(false))
-        {
-            GameActions.Bottom.ApplyFreezing(player, m, secondaryValue);
-        }
     }
 }

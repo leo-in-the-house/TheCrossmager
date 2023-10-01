@@ -25,7 +25,7 @@ public abstract class AnimatorRelic extends EYBRelic
         final AnimatorDungeonData data = GR.Animator.Dungeon;
         if (isAnimator)
         {
-            data.RemoveRelic(PenNib.ID);
+            /*data.RemoveRelic(PenNib.ID);
             data.RemoveRelic(Kunai.ID);
             data.RemoveRelic(StrikeDummy.ID);
             data.RemoveRelic(SneckoEye.ID);
@@ -41,19 +41,42 @@ public abstract class AnimatorRelic extends EYBRelic
             if (GameUtilities.GetAscensionLevel() >= 14)
             {
                 data.RemoveRelic(PrismaticShard.ID);
-            }
+            }*/
 
             data.AddRelic(MarkOfPain.ID, AbstractRelic.RelicTier.BOSS);
+            data.AddRelic(HoveringKite.ID, AbstractRelic.RelicTier.BOSS);
+            data.AddRelic(Inserter.ID, AbstractRelic.RelicTier.BOSS);
+            data.AddRelic(NuclearBattery.ID, AbstractRelic.RelicTier.BOSS);
+            data.AddRelic(RunicCube.ID, AbstractRelic.RelicTier.BOSS);
+            data.AddRelic(VioletLotus.ID, AbstractRelic.RelicTier.BOSS);
+            data.AddRelic(WristBlade.ID, AbstractRelic.RelicTier.BOSS);
             data.AddRelic(RunicCapacitor.ID, AbstractRelic.RelicTier.SHOP);
             data.AddRelic(TwistedFunnel.ID, AbstractRelic.RelicTier.SHOP);
             data.AddRelic(Brimstone.ID, AbstractRelic.RelicTier.SHOP);
+            data.AddRelic(Melange.ID, AbstractRelic.RelicTier.SHOP);
             data.AddRelic(DataDisk.ID, AbstractRelic.RelicTier.SHOP);
             data.AddRelic(SacredBark.ID, AbstractRelic.RelicTier.SHOP);
             data.AddRelic(CloakClasp.ID, AbstractRelic.RelicTier.RARE);
             data.AddRelic(CharonsAshes.ID, AbstractRelic.RelicTier.RARE);
+            data.AddRelic(BurningBlood.ID, AbstractRelic.RelicTier.RARE);
             data.AddRelic(ChampionsBelt.ID, AbstractRelic.RelicTier.RARE);
+            data.AddRelic(GoldenEye.ID, AbstractRelic.RelicTier.RARE);
+            data.AddRelic(MagicFlower.ID, AbstractRelic.RelicTier.RARE);
+            data.AddRelic(EmotionChip.ID, AbstractRelic.RelicTier.RARE);
+            data.AddRelic(Tingsha.ID, AbstractRelic.RelicTier.RARE);
+            data.AddRelic(ToughBandages.ID, AbstractRelic.RelicTier.RARE);
+            data.AddRelic(PureWater.ID, AbstractRelic.RelicTier.RARE);
+            data.AddRelic(CrackedCore.ID, AbstractRelic.RelicTier.UNCOMMON);
             data.AddRelic(PaperCrane.ID, AbstractRelic.RelicTier.UNCOMMON);
+            data.AddRelic(SelfFormingClay.ID, AbstractRelic.RelicTier.UNCOMMON);
+            data.AddRelic(SymbioticVirus.ID, AbstractRelic.RelicTier.UNCOMMON);
+            data.AddRelic(TeardropLocket.ID, AbstractRelic.RelicTier.UNCOMMON);
+            data.AddRelic(TheSpecimen.ID, AbstractRelic.RelicTier.UNCOMMON);
             data.AddRelic(PaperFrog.ID, AbstractRelic.RelicTier.UNCOMMON);
+            data.AddRelic(Duality.ID, AbstractRelic.RelicTier.UNCOMMON);
+            data.AddRelic(GoldPlatedCables.ID, AbstractRelic.RelicTier.UNCOMMON);
+            data.AddRelic(RedSkull.ID, AbstractRelic.RelicTier.COMMON);
+            data.AddRelic(SneckoSkull.ID, AbstractRelic.RelicTier.COMMON);
 
             AbstractMissingPiece.RefreshDescription();
         }

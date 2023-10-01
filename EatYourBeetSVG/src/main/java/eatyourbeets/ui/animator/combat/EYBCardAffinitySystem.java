@@ -498,7 +498,7 @@ public class EYBCardAffinitySystem extends GUIElement implements OnStartOfTurnSu
             {
                 if (GameUtilities.CanSeal(hoveredCard))
                 {
-                    GameActions.Bottom.SealAffinities(hoveredCard, true);
+                    GameActions.Bottom.SealAffinities(hoveredCard, false);
                 }
                 else
                 {

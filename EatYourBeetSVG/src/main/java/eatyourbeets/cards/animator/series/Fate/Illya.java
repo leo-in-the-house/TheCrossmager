@@ -16,7 +16,7 @@ import eatyourbeets.utilities.RotatingList;
 public class Illya extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Illya.class)
-            .SetSkill(1, CardRarity.UNCOMMON)
+            .SetSkill(0, CardRarity.UNCOMMON)
             .SetSeriesFromClassPackage()
             .PostInitialize(data ->
             {
@@ -46,7 +46,8 @@ public class Illya extends AnimatorCard
         if (card != null)
         {
             GameActions.Bottom.TakeDamageAtEndOfTurn(magicNumber);
-            GameActions.Bottom.PlayCard(card, p.drawPile, m);
+            GameActions.Bottom.PlayCard(card, p.drawPile, m)
+                    .SetExhaust(true);
         }
     }
 

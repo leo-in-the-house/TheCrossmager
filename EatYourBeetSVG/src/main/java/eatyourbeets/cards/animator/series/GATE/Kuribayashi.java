@@ -1,15 +1,12 @@
 package eatyourbeets.cards.animator.series.GATE;
 
-import com.megacrit.cardcrawl.actions.unique.RetainCardsAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
+import eatyourbeets.cards.base.AnimatorCard;
+import eatyourbeets.cards.base.CardUseInfo;
+import eatyourbeets.cards.base.EYBAttackType;
+import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.AttackEffects;
-import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
@@ -23,13 +20,11 @@ public class Kuribayashi extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(8, 0, 2, 11);
-        SetUpgrade(2, 0, 0);
+        Initialize(9, 0, 3);
+        SetUpgrade(0, 0, 0);
+        SetCostUpgrade(-1);
 
-        SetAffinity_Red(1);
-        SetAffinity_Green(1, 0, 1);
-
-        SetAffinityRequirement(Affinity.Red, 2);
+        SetAffinity_Red(2);
     }
 
     @Override
@@ -44,41 +39,5 @@ public class Kuribayashi extends AnimatorCard
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.GUNSHOT).SetSoundPitch(0.6f, 0.8f);
         GameActions.Bottom.ApplyVulnerable(p, m, magicNumber);
-        GameActions.Bottom.StackPower(new KuribayashiPower(p, 1));
-
-        if (CheckSpecialCondition(false))
-        {
-            GameActions.Bottom.DealDamageAtEndOfTurn(p, m, secondaryValue, AttackEffects.GUNSHOT);
-        }
-    }
-
-    public static class KuribayashiPower extends AnimatorPower
-    {
-        public KuribayashiPower(AbstractCreature owner, int amount)
-        {
-            super(owner, Kuribayashi.DATA);
-
-            Initialize(amount);
-        }
-
-        @Override
-        public void atEndOfTurn(boolean isPlayer)
-        {
-            super.atEndOfTurn(isPlayer);
-
-            GameActions.Bottom.SelectFromHand(name, amount, false)
-            .SetOptions(true, true, true)
-            .SetFilter(c -> c.type == CardType.ATTACK && GameUtilities.CanRetain(c))
-            .SetMessage(RetainCardsAction.TEXT[0])
-            .AddCallback(cards ->
-            {
-                for (AbstractCard c : cards)
-                {
-                    GameUtilities.Retain(c);
-                }
-            });
-            RemovePower();
-            flash();
-        }
     }
 }
