@@ -1,5 +1,6 @@
 package eatyourbeets.cards.animator.series.GATE;
 
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
@@ -26,16 +27,21 @@ public class TukaLunaMarceau extends AnimatorCard
     }
 
     @Override
-    protected void OnUpgrade()
-    {
-        SetInnate(true);
-    }
-
-    @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
 
+        if (CheckSpecialCondition(false)) {
+            GameActions.Bottom.GainSupportDamage(magicNumber);
+        }
+    }
+
+    @Override
+    public boolean CheckSpecialCondition(boolean tryUse)
+    {
+        AbstractCard last = GameUtilities.GetLastCardPlayed(this, true);
+
+        return last != null && last.type == CardType.ATTACK;
     }
 }

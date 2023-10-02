@@ -59,12 +59,12 @@ public class Arpeggio extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.StackPower(new ArpeggioPower(p, secondaryValue));
+        GameActions.Bottom.StackPower(new ArpeggioPower(p, 1));
     }
 
     public static class ArpeggioPower extends AnimatorPower
     {
-        protected int charge = 0;
+        protected int charge = 1;
 
         public ArpeggioPower(AbstractCreature owner, int amount)
         {
@@ -77,7 +77,6 @@ public class Arpeggio extends AnimatorCard
         public void onInitialApplication()
         {
             super.onInitialApplication();
-
         }
 
         @Override
@@ -102,7 +101,7 @@ public class Arpeggio extends AnimatorCard
         public void atStartOfTurnPostDraw() {
             super.atStartOfTurnPostDraw();
 
-            if (amount > 0 && charge == 0)
+            if (charge <= 0)
             {
                 GameActions.Bottom.GainOrbSlots(amount);
                 charge = 1;

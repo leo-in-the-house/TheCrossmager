@@ -1,6 +1,5 @@
 package eatyourbeets.cards.animator.series.GATE;
 
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
@@ -33,19 +32,7 @@ public class ShunyaKengun extends AnimatorCard
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.GUNSHOT).SetSoundPitch(0.9f, 1f);
 
-        AbstractCard last = GameUtilities.GetLastCardPlayed(true);
-
-        if (CheckSpecialCondition(false)) {
-            GameActions.Bottom.GainSupportDamage(magicNumber);
-        }
-    }
-
-    @Override
-    public boolean CheckSpecialCondition(boolean tryUse)
-    {
-        AbstractCard last = GameUtilities.GetLastCardPlayed(true);
-
-        return last != null && last.type == CardType.ATTACK && super.CheckSpecialCondition(tryUse);
+        GameActions.Bottom.GainVigor(magicNumber);
     }
 
 }

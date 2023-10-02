@@ -1185,7 +1185,8 @@
 		},
 		"animator:ItamiYouji":
 		{
-			"DESCRIPTION": "Draw up to your hand size. || Attack an extra time for each {Attack} in your hand. || Retain all {Attacks} in your hand.",
+			"FLAVOR_TEXT": "'Did you know? If a colony of insects gets rid of the laziest one, another one will just start being lazy instead?'",
+			"DESCRIPTION": "Draw up to your max hand size. || Attack an extra time for each {Attack} in your hand. || Retain all {Attacks} in your hand.",
 			"NAME": "Itami Youji"
 		},
 		"animator:Kuribayashi":
@@ -1195,19 +1196,20 @@
 		},
 		"animator:LeleiLaLalena":
 		{
+			"FLAVOR_TEXT": "'Someone who can be deceived by others will be deceived again and again.'",
 			"DESCRIPTION": "Discard a random {Attack} to {Channel} !M! [Frost].",
 			"NAME": "Lelei La Lalena",
 			"UPGRADE_DESCRIPTION": "Discard an {Attack} to {Channel} !M! [Frost]."
 		},
 		"animator:MariKurokawa":
 		{
+			"FLAVOR_TEXT": "'People can't live for the future without accepting reality.'",
 			"DESCRIPTION": "Discard all {Attacks} in your hand.  Gain !M! [THP] for each card discarded.",
 			"NAME": "Mari Kurokawa"
 		},
 		"animator:MoltSolAugustus":
 		{
-			"DESCRIPTION": "Up to 3 times per turn, pay [E]: Add {Imperial Archers} to your draw pile.",
-			"UPGRADE_DESCRIPTION": "Up to 3 times per turn, pay [E]: Add {Imperial Archers+} to your draw pile.",
+			"DESCRIPTION": "Up to 3 times per turn, pay [E]: Add {Imperial Archers}{+} to your draw pile.",
 			"EXTENDED_DESCRIPTION": ["Pay 1 #yEnergy to add #b{0} #yImperial #yArchers to your draw pile."],
 			"NAME": "Molt Sol Augustus"
 		},
@@ -1224,7 +1226,8 @@
 		},
 		"animator:RoryMercury":
 		{
-			"DESCRIPTION": "Draw an {Attack} for each enemy this card hits.",
+			"FLAVOR_TEXT": "'Ruling over death means ruling over life.  Death is the climax of life.  To have the best death, you must honor life.'",
+			"DESCRIPTION": "Draw an {Attack} for each enemy this card hits. || If this only hit one enemy, Apply [Vulnerable] to it.",
 			"NAME": "Rory Mercury"
 		},
 		"animator:ShunyaKengun":
@@ -1244,12 +1247,13 @@
 		},
 		"animator:YaoHaDucy":
 		{
-			"DESCRIPTION": "If the enemy has no [Artifact]: Apply !M! [Shackles]. || When Sealed: Gain !S! [Block].",
+			"FLAVOR_TEXT": "'Revenge is a ritual that restores one's spirit after it has been ravaged by the anger and hatred of loss.  That is the only way to heal one's soul and stand up again to face reality.'",
+			"DESCRIPTION": "Apply !M! [Shackles].",
 			"NAME": "Yao Ha Ducy"
 		},
 		"animator:ZorzalElCaesar":
 		{
-			"DESCRIPTION": "Gain [Insanity] or [Pestilence] randomly once for each enemy. || On Discard: Add !M! {Imperial Archers} to you draw pile, then shuffle this back to your draw pile.",
+			"DESCRIPTION": "Gain [Insanity] or [Pestilence] randomly once for each enemy. || <SLM>. On Discard: Add !M! {Imperial Archers}{+} to your draw pile, then shuffle this back to your draw pile.",
 			"NAME": "Zorzal El Caesar"
 		}
 	},

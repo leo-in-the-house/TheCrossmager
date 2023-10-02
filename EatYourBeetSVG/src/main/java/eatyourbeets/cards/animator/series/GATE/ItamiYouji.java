@@ -1,5 +1,6 @@
 package eatyourbeets.cards.animator.series.GATE;
 
+import basemod.BaseMod;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -33,7 +34,7 @@ public class ItamiYouji extends AnimatorCard
     {
         GameUtilities.PlayVoiceSFX(name);
 
-        int amountToDraw = Math.max(0, player.gameHandSize - player.hand.size());
+        int amountToDraw = Math.max(0, BaseMod.MAX_HAND_SIZE - player.hand.size());
 
         GameActions.Bottom.DealDamage(this, m, AttackEffects.GUNSHOT).SetSoundPitch(1.3f, 1.5f);
 

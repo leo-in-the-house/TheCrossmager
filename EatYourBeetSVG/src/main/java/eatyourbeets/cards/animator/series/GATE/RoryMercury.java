@@ -8,6 +8,7 @@ import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
+import eatyourbeets.utilities.TargetHelper;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -47,6 +48,13 @@ public class RoryMercury extends AnimatorCard
         for (int i=0; i<magicNumber; i++) {
             GameActions.Bottom.DealDamageToRandomEnemy(this, AttackEffects.SLASH_HEAVY).AddCallback(this::OnDamageDealt);
         }
+
+        GameActions.Bottom.Callback(c -> {
+           if (enemiesHit.size() == 1) {
+               AbstractCreature enemy = enemiesHit.get(0);
+               GameActions.Top.ApplyVulnerable(TargetHelper.Normal(enemy), 1);
+           }
+        });
 
         GameActions.Last.Callback(c ->{
             enemiesHit.clear();

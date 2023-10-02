@@ -13,7 +13,7 @@ import eatyourbeets.utilities.GameUtilities;
 public class MariKurokawa extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(MariKurokawa.class)
-            .SetSkill(1, CardRarity.COMMON, EYBCardTarget.None)
+            .SetSkill(2, CardRarity.UNCOMMON, EYBCardTarget.None)
 
             .SetSeriesFromClassPackage();
     public static final int DISCARD_AMOUNT = 2;

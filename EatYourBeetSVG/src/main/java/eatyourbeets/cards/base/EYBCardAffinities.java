@@ -111,18 +111,18 @@ public class EYBCardAffinities
 
     public EYBCardAffinity AddStar(int level)
     {
-        return SetStar((Star == null ? 0 : Star.level) + level);
+        return SetStar(Math.min(2, (Star == null ? 0 : Star.level) + level));
     }
 
     public EYBCardAffinity SetStar(int level)
     {
         if (Star != null)
         {
-            Star.level = level;
+            Star.level = Math.min(2, level);
         }
         else
         {
-            Star = new EYBCardAffinity(Affinity.Star, level);
+            Star = new EYBCardAffinity(Affinity.Star, Math.min(2, level));
         }
 
         return Star;
@@ -156,7 +156,7 @@ public class EYBCardAffinities
     {
         for (EYBCardAffinity item : other.List)
         {
-            Add(item.type, item.level);
+            Add(item.type, Math.min(2, item.level));
         }
 
         return this;
@@ -174,6 +174,12 @@ public class EYBCardAffinities
             if (a.type == affinity)
             {
                 a.level += level;
+
+                //Affinities cannot exceed 2
+                if (a.level > 2) {
+                    a.level = 2;
+                }
+
                 Refresh();
                 return a;
             }
@@ -199,7 +205,7 @@ public class EYBCardAffinities
             result = eybCardAffinity;
             if (result.type == affinity)
             {
-                result.level = level;
+                result.level = Math.min(2, level);
                 Refresh();
                 return result;
             }

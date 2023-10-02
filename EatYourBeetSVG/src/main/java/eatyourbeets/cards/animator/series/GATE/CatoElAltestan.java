@@ -10,7 +10,7 @@ import eatyourbeets.utilities.GameUtilities;
 public class CatoElAltestan extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(CatoElAltestan.class)
-            .SetSkill(2, CardRarity.UNCOMMON)
+            .SetSkill(2, CardRarity.UNCOMMON, EYBCardTarget.None)
             .SetSeriesFromClassPackage();
 
     public CatoElAltestan()
@@ -39,9 +39,9 @@ public class CatoElAltestan extends AnimatorCard
             {
                 GameActions.Top.IncreaseScaling(c, Affinity.Blue, magicNumber);
                 GameActions.Top.Callback(() -> {
-                    if (c instanceof AnimatorCard) {
-                        ((AnimatorCard) c).AddScaling(Affinity.Blue, 1);
-                        ((AnimatorCard) c).SetAttackType(EYBAttackType.Elemental);
+                    if (c instanceof EYBCard) {
+                        GameUtilities.AddAffinityToCard(c, Affinity.Blue, 1);
+                        GameUtilities.SetAttackType(c, EYBAttackType.Elemental);
                     }
                 });
             }

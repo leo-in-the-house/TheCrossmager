@@ -972,6 +972,18 @@ public class GameUtilities
         return intents;
     }
 
+    public static void AddAffinityToCard(AbstractCard card, Affinity affinity, int amount) {
+        if (card instanceof EYBCard) {
+            ((EYBCard) card).affinities.Add(affinity, amount);
+        }
+    }
+
+    public static void SetAttackType(AbstractCard card, EYBAttackType attackType) {
+        if (card instanceof EYBCard) {
+            ((EYBCard) card).SetAttackType(attackType);
+        }
+    }
+
     public static int GetTotalCardsPlayed(AbstractCard ignoreLast, boolean currentTurn)
     {
         final ArrayList<AbstractCard> cards = currentTurn
@@ -982,7 +994,18 @@ public class GameUtilities
 
     public static AbstractCard GetLastCardPlayed(boolean currentTurn)
     {
-        return GetLastCardPlayed(currentTurn, 0);
+        return GetLastCardPlayed(null, currentTurn);
+    }
+
+    public static AbstractCard GetLastCardPlayed(AbstractCard source, boolean currentTurn)
+    {
+        AbstractCard lastCardPlayed = GetLastCardPlayed(currentTurn, 0);
+
+        if (lastCardPlayed != null && source != null && lastCardPlayed.uuid.equals(source.uuid)) {
+            return GetLastCardPlayed(currentTurn, 1);
+        }
+
+        return lastCardPlayed;
     }
 
     public static AbstractCard GetLastCardPlayed(boolean currentTurn, int offset)
@@ -1927,6 +1950,7 @@ public class GameUtilities
         if (CanRetain(card))
         {
             card.retain = true;
+            GameUtilities.RefreshHandLayout();
             return true;
         }
 

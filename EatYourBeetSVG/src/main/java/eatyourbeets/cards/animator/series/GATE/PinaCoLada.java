@@ -38,11 +38,9 @@ public class PinaCoLada extends AnimatorCard
 
     public static class PinaCoLadaPower extends AnimatorPower
     {
-        public static final String POWER_ID = CreateFullID(PinaCoLadaPower.class);
-
         public PinaCoLadaPower(AbstractCreature owner, int amount)
         {
-            super(owner, POWER_ID);
+            super(owner, PinaCoLada.DATA);
 
             Initialize(amount);
         }

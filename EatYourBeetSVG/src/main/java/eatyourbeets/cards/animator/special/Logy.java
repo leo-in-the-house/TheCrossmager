@@ -1,5 +1,6 @@
 package eatyourbeets.cards.animator.special;
 
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.series.Atelier.EschaMalier;
@@ -24,7 +25,7 @@ public class Logy extends AnimatorCard {
 
         SetAffinity_Teal(2);
 
-        SetCardPreview(EschaMalier.DATA::IsCard).SetGroupType(player.discardPile.type);
+        SetCardPreview(EschaMalier.DATA::IsCard).SetGroupType(CardGroup.CardGroupType.DISCARD_PILE);
     }
 
     @Override
