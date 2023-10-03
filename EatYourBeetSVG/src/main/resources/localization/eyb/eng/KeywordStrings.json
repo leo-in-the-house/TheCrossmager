@@ -330,6 +330,12 @@
 		"NAMES": ["resistance"],
 		"PROPER_NAME": "Resistance"
 	},
+	"Ricochet":
+	{
+		"DESCRIPTION": "Reduce a card's #yRicochet by #b1 for every turn that it is in the Exhaust pile. If it is at #b0 while in your Exhaust pile, activate this effect instead.",
+		"NAMES": ["ricochet"],
+		"PROPER_NAME": "Ricochet"
+	},
 	"Semi-Limited":
 	{
 		"DESCRIPTION": "This effect can only trigger once per turn, across all copies of this card.",

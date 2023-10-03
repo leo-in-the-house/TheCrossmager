@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.interfaces.subscribers.OnStartOfTurnPostDrawSubscriber;
 import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.cards.CardQueueItem;
 import com.megacrit.cardcrawl.cards.green.Tactician;
@@ -40,7 +41,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public abstract class EYBCard extends EYBCardBase
+public abstract class EYBCard extends EYBCardBase implements OnStartOfTurnPostDrawSubscriber
 {
     private static final Map<String, EYBCardData> staticCardData = new HashMap<>();
 
@@ -285,6 +286,10 @@ public abstract class EYBCard extends EYBCardBase
                     .AddCondition(AbstractCard::hasEnoughEnergy);
         }
 
+        if (cooldown != null && cooldown.canProgressOnDraw)
+        {
+            cooldown.ProgressCooldownAndTrigger(null);
+        }
     }
 
     @Override
@@ -801,6 +806,12 @@ public abstract class EYBCard extends EYBCardBase
         isMultiUpgrade = multiUpgrade;
     }
 
+    public EYBCardCooldown SetRicochet(int baseCooldown, int cooldownUpgrade, ActionT1<AbstractMonster> onCooldownCompleted)
+    {
+        this.cooldown = new EYBCardCooldown(this, baseCooldown, cooldownUpgrade, onCooldownCompleted);
+        return this.cooldown;
+    }
+
     public void AddScaling(Affinity affinity, int amount)
     {
         affinities.Get(affinity, true).scaling += amount;
@@ -1072,13 +1083,32 @@ public abstract class EYBCard extends EYBCardBase
 
     public EYBCardCooldown SetCooldown(int baseCooldown, int cooldownUpgrade, ActionT1<AbstractMonster> onCooldownCompleted)
     {
-        return this.cooldown = new EYBCardCooldown(this, baseCooldown, cooldownUpgrade, onCooldownCompleted);
+        this.cooldown = new EYBCardCooldown(this, baseCooldown, cooldownUpgrade, onCooldownCompleted);
+        return this.cooldown;
+    }
+
+    public EYBCardCooldown SetCooldown(int baseCooldown, int cooldownUpgrade, ActionT1<AbstractMonster> onCooldownCompleted, boolean canProgressOnManualDiscard, boolean canProgressFromExhaustPile, boolean canProgressOnDraw)
+    {
+        this.cooldown = new EYBCardCooldown(this, baseCooldown, cooldownUpgrade, onCooldownCompleted, canProgressOnManualDiscard, canProgressFromExhaustPile, canProgressOnDraw);
+        if (canProgressFromExhaustPile) {
+            CombatStats.onStartOfTurnPostDraw.Subscribe(this);
+        }
+        return this.cooldown;
+    }
+
+    @Override
+    public void OnStartOfTurnPostDraw()
+    {
+        if (cooldown != null && cooldown.canProgressFromExhaustPile && player != null && player.exhaustPile.contains(this))
+        {
+            cooldown.ProgressCooldownAndTrigger(null);
+        }
     }
 
     @Override
     public void triggerOnManualDiscard()
     {
-        if (cooldown != null)
+        if (cooldown != null && cooldown.canProgressOnManualDiscard)
         {
             cooldown.ProgressCooldown(false);
         }

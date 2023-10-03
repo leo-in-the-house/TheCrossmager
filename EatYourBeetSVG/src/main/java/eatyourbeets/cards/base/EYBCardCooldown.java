@@ -2,7 +2,6 @@ package eatyourbeets.cards.base;
 
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.interfaces.delegates.ActionT1;
@@ -14,18 +13,31 @@ public class EYBCardCooldown
     private final static Color COOLDOWN_INCOMPLETE_COLOR = Settings.GREEN_TEXT_COLOR.cpy().lerp(Settings.CREAM_COLOR, 0.5f);
     private final ActionT1<AbstractMonster> onCooldownCompleted;
     private final EYBCard card;
+    public final boolean canProgressOnManualDiscard;
+    public final boolean canProgressFromExhaustPile;
+    public final boolean canProgressOnDraw;
 
     public EYBCardCooldown(EYBCard card, int baseCooldown, int cooldownUpgrade, ActionT1<AbstractMonster> onCooldownCompleted)
     {
+        this(card,baseCooldown,cooldownUpgrade,onCooldownCompleted,true,false,false);
+    }
+
+
+    public EYBCardCooldown(EYBCard card, int baseCooldown, int cooldownUpgrade, ActionT1<AbstractMonster> onCooldownCompleted, boolean canProgressOnManualDiscard, boolean canProgressFromExhaustPile, boolean canProgressOnDraw)
+    {
+
         if (card.baseSecondaryValue != 0 || card.secondaryValue != 0)
         {
             throw new RuntimeException("Do not modify secondaryValue if you are implementing AnimatorCardCooldown.");
         }
-        
+
         card.baseSecondaryValue = card.secondaryValue = baseCooldown;
         card.upgrade_secondaryValue = cooldownUpgrade;
         this.onCooldownCompleted = onCooldownCompleted;
         this.card = card;
+        this.canProgressOnManualDiscard = canProgressOnManualDiscard;
+        this.canProgressFromExhaustPile = canProgressFromExhaustPile;
+        this.canProgressOnDraw = canProgressOnDraw;
     }
 
     public ColoredString GetSecondaryValueString()

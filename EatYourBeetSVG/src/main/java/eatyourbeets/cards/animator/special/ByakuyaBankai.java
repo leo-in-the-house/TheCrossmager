@@ -15,7 +15,9 @@ import eatyourbeets.resources.GR;
 import eatyourbeets.utilities.GameActions;
 
 public class ByakuyaBankai extends AnimatorCard {
-    public static final EYBCardData DATA = Register(ByakuyaBankai.class).SetAttack(-1, CardRarity.SPECIAL, EYBAttackType.Ranged, EYBCardTarget.ALL).SetSeries(CardSeries.Bleach);
+    public static final EYBCardData DATA = Register(ByakuyaBankai.class)
+            .SetAttack(-1, CardRarity.SPECIAL, EYBAttackType.Ranged, EYBCardTarget.ALL)
+            .SetSeries(CardSeries.Bleach);
 
     public ByakuyaBankai() {
         super(DATA);
