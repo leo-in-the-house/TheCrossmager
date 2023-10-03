@@ -1195,7 +1195,7 @@
 		"animator:Kuribayashi":
 		{
 			"FLAVOR_TEXT": "'Drop your weapons, or suffer the same fate as your friends!'",
-			"DESCRIPTION": "Apply !M! [Vulnerable].",
+			"DESCRIPTION": "Apply !M! [Weak].",
 			"NAME": "Shino Kuribayashi"
 		},
 		"animator:LeleiLaLalena":

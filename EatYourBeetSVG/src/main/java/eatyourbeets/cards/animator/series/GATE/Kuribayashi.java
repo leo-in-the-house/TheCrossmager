@@ -38,6 +38,6 @@ public class Kuribayashi extends AnimatorCard
     {
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.GUNSHOT).SetSoundPitch(0.6f, 0.8f);
-        GameActions.Bottom.ApplyVulnerable(p, m, magicNumber);
+        GameActions.Bottom.ApplyWeak(p, m, magicNumber);
     }
 }
