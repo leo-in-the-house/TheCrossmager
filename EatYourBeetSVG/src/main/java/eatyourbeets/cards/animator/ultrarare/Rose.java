@@ -18,12 +18,12 @@ public class Rose extends AnimatorCard_UltraRare
     {
         super(DATA);
 
-        Initialize(7, 0, 2, 25);
+        Initialize(7, 0, 2, 40);
         SetUpgrade(7, 0, 2, 0);
 
-        SetAffinity_Red(2);
-        SetAffinity_Green(2);
-        SetAffinity_Blue(2);
+        SetAffinity_Red(2, 0, 2);
+        SetAffinity_Green(2, 0, 2);
+        SetAffinity_Blue(2, 0, 2);
     }
 
     @Override

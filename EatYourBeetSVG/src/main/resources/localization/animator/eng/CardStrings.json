@@ -2829,7 +2829,7 @@
 		"animator:Rose":
 		{
 			"FLAVOR_TEXT": "'Hybrid railgun, Supersonic Buster with the greatest firepower!'",
-			"DESCRIPTION": "<DRW-M>. {Reload}: Attack 1 additional time. || If this card kills an enemy, Boost 3 [R][G][B], then deal !S! damage to ALL enemies.",
+			"DESCRIPTION": "<DRW-M>. {Reload}: Attack 1 additional time. || If this card kills an enemy, deal !S! damage to ALL enemies.",
 			"NAME": "Rose"
 		},
 		"animator:SeriousSaitama":

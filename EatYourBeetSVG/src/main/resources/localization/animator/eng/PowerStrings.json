@@ -385,6 +385,11 @@
 		"DESCRIPTIONS": ["On death, ALL characters gain #b{0} #yStrength. Once per turn, when the owner deals unblocked damage, add #b1 #yPain to the draw pile."],
 		"NAME": "Unnamed Doll"
 	},
+	"animator:VigorPower":
+	{
+		"DESCRIPTIONS": ["Your next #yAttack deals an additional #b{0} damage."],
+		"NAME": "VigorPower"
+	},
 	"animator:VitalityPower":
 	{
 		"DESCRIPTIONS": ["Whenever you are attacked this turn, gain #b{0} [THP]."],

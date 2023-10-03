@@ -390,6 +390,12 @@
 		"NAMES": ["temporary hp", "temp. hp"],
 		"PROPER_NAME": "Temporary HP"
 	},
+	"Vigor":
+	{
+		"DESCRIPTION": "Your next #yAttack deals additional damage.",
+		"NAMES": ["vigor"],
+		"PROPER_NAME": "Vigor"
+	},
 	"Vitality":
 	{
 		"DESCRIPTION": "At the start of each turn, #yRecover #b1 [MHP].",

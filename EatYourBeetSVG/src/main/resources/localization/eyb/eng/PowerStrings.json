@@ -180,5 +180,10 @@
 	{
 		"DESCRIPTIONS": ["At the end of turn, gain #b{0} charge(s).  You can pay #b{1} #ycharges to enter #yDivinity #yStance."],
 		"NAME": "Supercharge"
+	},
+	"eyb:VigorPower":
+	{
+		"DESCRIPTIONS": ["Your next #yAttack deals an additional #b{0} damage."],
+		"NAME": "VigorPower"
 	}
 }

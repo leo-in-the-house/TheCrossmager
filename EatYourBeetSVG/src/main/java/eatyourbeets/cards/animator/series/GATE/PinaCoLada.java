@@ -23,7 +23,7 @@ public class PinaCoLada extends AnimatorCard
         super(DATA);
 
         Initialize(0, 0, 2);
-        SetUpgrade(0, 0, 1);
+        SetUpgrade(0, 0, 2);
 
         SetAffinity_White(1);
         SetAffinity_Pink(1);

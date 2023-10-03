@@ -3,7 +3,6 @@ package eatyourbeets.powers.common;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 import eatyourbeets.effects.SFX;
 import eatyourbeets.powers.CommonPower;
 import eatyourbeets.utilities.GameActions;
