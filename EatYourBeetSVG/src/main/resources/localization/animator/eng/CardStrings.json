@@ -837,7 +837,7 @@
 		"animator:YoshinoHimekawa":
 		{
 			"FLAVOR_TEXT": "'I'm not Yoshinon, I'm Yoshino. Yoshinon is my best friend.'",
-			"DESCRIPTION": "Increase the amount on all [Frost] by !M! this combat. || When drawn with {Haste}: Add {Zadkiel} to your draw pile.",
+			"DESCRIPTION": "Increase the amount on all [Frost] by !M! this combat. || When drawn with {Haste}: Add {Zadkiel} to your draw pile, then discard this card.",
 			"NAME": "Yoshino Himekawa"
 		},
 		"animator:Zadkiel":
@@ -933,7 +933,7 @@
 		"animator:Raven":
 		{
 			"FLAVOR_TEXT": "'This life that they saved was not just my own, so I could not afford to stand back.'",
-			"DESCRIPTION": "If the enemy is attacking: Apply !M! [Weak].",
+			"DESCRIPTION": "If the enemy is attacking: Apply !M! [Weak] to ALL enemies.",
 			"NAME": "Raven"
 		},
 		"animator:Rena":

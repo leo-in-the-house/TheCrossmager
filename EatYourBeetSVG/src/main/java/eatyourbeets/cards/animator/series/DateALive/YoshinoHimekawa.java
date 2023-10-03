@@ -41,7 +41,7 @@ public class YoshinoHimekawa extends AnimatorCard
         if (this.hasTag(HASTE))
         {
             GameActions.Top.Discard(this, player.hand).ShowEffect(true, true)
-                    .AddCallback(() -> GameActions.Top.MakeCardInDiscardPile(new Zadkiel()).SetUpgrade(upgraded, false))
+                    .AddCallback(() -> GameActions.Top.MakeCardInDrawPile(new Zadkiel()).SetUpgrade(upgraded, false))
                     .SetDuration(0.15f, true);
         }
     }

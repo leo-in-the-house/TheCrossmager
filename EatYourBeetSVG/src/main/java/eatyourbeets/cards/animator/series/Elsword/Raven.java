@@ -8,6 +8,7 @@ import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
+import eatyourbeets.utilities.TargetHelper;
 
 public class Raven extends AnimatorCard
 {
@@ -20,7 +21,7 @@ public class Raven extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(9, 0, 2);
+        Initialize(9, 0, 1);
         SetUpgrade(3, 0, 1);
 
         SetAffinity_Red(1);
@@ -46,7 +47,7 @@ public class Raven extends AnimatorCard
 
         if (GameUtilities.IsAttacking(m.intent))
         {
-            GameActions.Bottom.ApplyWeak(p, m, magicNumber);
+            GameActions.Bottom.ApplyWeak(TargetHelper.Enemies(), magicNumber);
         }
     }
 }

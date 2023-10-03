@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import eatyourbeets.powers.CommonPower;
+import eatyourbeets.utilities.GameActions;
 
 public class VigorPower extends CommonPower {
     public static final String POWER_ID = CreateFullID(VigorPower.class);
@@ -28,7 +29,7 @@ public class VigorPower extends CommonPower {
     public void onUseCard(AbstractCard card, UseCardAction action) {
         if (card.type == AbstractCard.CardType.ATTACK) {
             flash();
-            RemovePower();
+            RemovePower(GameActions.Top);
         }
     }
 }
