@@ -1168,18 +1168,21 @@
 	{
 		"animator:Arpeggio":
 		{
+			"FLAVOR_TEXT": "'No-no-no-no-no!  That's one thing that can never ever happen!  Never, ever ever ever ever ever ever ever ever EVER EVER EVER!!!  If my magic encyclopedia that I copied by hand night after night after night were to go down in price...'",
 			"DESCRIPTION": "Can only be played if you have at least !M! cards in hand and all other cards in your hand are {Attacks}. || Once every two turns: Add 1 [Orb_S].",
 			"EXTENDED_DESCRIPTION": ["Once every two turns: Add #b{0} [Orb_S]."],
 			"NAME": "Arpeggio El Lalena"
 		},
 		"animator:Bozes":
 		{
+			"FLAVOR_TEXT": "'I am acting commander Bozes, here on behalf of the Order of the Rose!  I demand to see Princess Pina right now!'",
 			"DESCRIPTION": "This turn, when you play an {Attack}: Gain 1 [Strength].",
 			"EXTENDED_DESCRIPTION": ["This turn, when you play an #yAttack: #yGain #b{0} #yStrength."],
 			"NAME": "Bozes Co Palesti"
 		},
 		"animator:CatoElAltestan":
 		{
+			"FLAVOR_TEXT": "'Why is there a dragon here anyways?  Most peculiar, fifty years sooner than I expected...'",
 			"DESCRIPTION": "Fetch an {Attack} from your draw pile and {Retain} it.  It gains [B], its damage type becomes {Elemental}, and it gains +!M! [Intellect] scaling.",
 			"NAME": "Cato El Altestan"
 		},
@@ -1191,12 +1194,13 @@
 		},
 		"animator:Kuribayashi":
 		{
+			"FLAVOR_TEXT": "'Drop your weapons, or suffer the same fate as your friends!'",
 			"DESCRIPTION": "Apply !M! [Vulnerable].",
 			"NAME": "Shino Kuribayashi"
 		},
 		"animator:LeleiLaLalena":
 		{
-			"FLAVOR_TEXT": "'Someone who can be deceived by others will be deceived again and again.'",
+			"FLAVOR_TEXT": "'No, ma'am, they aren't using any magic.  Um, those are weapons they call rifles.'",
 			"DESCRIPTION": "Discard a random {Attack} to {Channel} !M! [Frost].",
 			"NAME": "Lelei La Lalena",
 			"UPGRADE_DESCRIPTION": "Discard an {Attack} to {Channel} !M! [Frost]."
@@ -1209,17 +1213,20 @@
 		},
 		"animator:MoltSolAugustus":
 		{
+			"FLAVOR_TEXT": "'Make it so!  Have Godu Rino Gwaban and all the allied kingdoms rally to us!  It's time to retake Arnus Hill!'",
 			"DESCRIPTION": "Up to 3 times per turn, pay [E]: Add {Imperial Archers}{+} to your draw pile.",
 			"EXTENDED_DESCRIPTION": ["Pay 1 #yEnergy to add #b{0} #yImperial #yArchers to your draw pile."],
 			"NAME": "Molt Sol Augustus"
 		},
 		"animator:MoltSolAugustus_ImperialArchers":
 		{
+			"FLAVOR_TEXT": "'Retreat is not an option, gentlemen.  For the realm, we must strike back.' - Lord Duran",
 			"DESCRIPTION": "Apply [Weak] and [Vulnerable] to the enemy.",
 			"NAME": "Imperial Archers"
 		},
 		"animator:PinaCoLada":
 		{
+			"FLAVOR_TEXT": "'Send a message to all ministers and generals to all imperial camps!  They are to report here at once!'",
 			"DESCRIPTION": "The first !M! {Attacks} you play each turn is played an extra time.",
 			"EXTENDED_DESCRIPTION": ["The first #b{0} #yAttacks you play each turn is played an extra time."],
 			"NAME": "Pina Co Lada"
@@ -1232,16 +1239,19 @@
 		},
 		"animator:ShunyaKengun":
 		{
+			"FLAVOR_TEXT": "'What is the hold-up?!  Jade Palace is going to be taken before we can do anything to help!'",
 			"DESCRIPTION": "Gain !M! [Vigor].",
 			"NAME": "Shunya Kengun"
 		},
 		"animator:TukaLunaMarceau":
 		{
+			"FLAVOR_TEXT": "'My father is dead!  It should have been me instead of him!  He should never have died!  My father is gone and IT'S ALL MY FAULT!!!'",
 			"DESCRIPTION": "If the last card you played was an {Attack}: Gain !M! [Support Damage].",
 			"NAME": "Tuka Luna Marceau"
 		},
 		"animator:Tyuule":
 		{
+			"FLAVOR_TEXT": "'It's quite simple - you'll inform the remaining citizens that your imperial army has repelled Japan.  You mustn't let them know that this was a defeat.'",
 			"DESCRIPTION": "Increase the {Common Debuffs} on the enemy by X, where X is the number of {Attacks} in your hand.",
 			"NAME": "Tyuule"
 		},
@@ -1253,6 +1263,7 @@
 		},
 		"animator:ZorzalElCaesar":
 		{
+			"FLAVOR_TEXT": "'I won't bother asking how you got in here, but it's a serious crime to attack a member of the royal family.  A very serious one.'",
 			"DESCRIPTION": "Gain [Insanity] or [Pestilence] randomly once for each enemy. || <SLM>. On Discard: Add !M! {Imperial Archers}{+} to your draw pile, then shuffle this back to your draw pile.",
 			"NAME": "Zorzal El Caesar"
 		}

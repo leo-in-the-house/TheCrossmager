@@ -42,6 +42,7 @@ import com.megacrit.cardcrawl.stances.NeutralStance;
 import com.megacrit.cardcrawl.ui.FtueTip;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
+import eatyourbeets.actions.EYBAction;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.cards.base.modifiers.CostModifiers;
 import eatyourbeets.effects.SFX;
@@ -999,13 +1000,11 @@ public class GameUtilities
 
     public static AbstractCard GetLastCardPlayed(AbstractCard source, boolean currentTurn)
     {
-        AbstractCard lastCardPlayed = GetLastCardPlayed(currentTurn, 0);
-
-        if (lastCardPlayed != null && source != null && lastCardPlayed.uuid.equals(source.uuid)) {
+        if (source != null && EYBAction.CurrentCard == source) {
             return GetLastCardPlayed(currentTurn, 1);
         }
 
-        return lastCardPlayed;
+       return GetLastCardPlayed(currentTurn, 0);
     }
 
     public static AbstractCard GetLastCardPlayed(boolean currentTurn, int offset)
