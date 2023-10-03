@@ -28,12 +28,6 @@ public class Kuribayashi extends AnimatorCard
     }
 
     @Override
-    protected void OnUpgrade()
-    {
-        SetRetainOnce(true);
-    }
-
-    @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
