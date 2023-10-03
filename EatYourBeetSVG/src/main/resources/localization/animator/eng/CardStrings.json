@@ -1321,6 +1321,19 @@
 			"EXTENDED_DESCRIPTION": ["Whenever you play the first #b{0} #yAttacks each turn: Randomly #yChannel #yLightning or #yDark."],
 			"NAME": "Oz"
 		},
+		"animator:Freminet":
+		{
+			"FLAVOR_TEXT": "'Wherever the tide takes me, so long as the light of the hearth still shines, I'll always have a home to return to...'",
+			"DESCRIPTION": "On Start of Turn: If this card is in your exhaust pile when you have at least 3 different types of {Orbs}, draw a card from your discard pile and return this card to your draw pile.",
+			"UPGRADE_DESCRIPTION": "On Start of Turn: If this card is in your exhaust pile when you have at least 3 different types of {Orbs}, draw a card from your discard pile, gain [E], and return this card to your draw pile.",
+			"NAME": "Freminet"
+		},
+		"animator:Furina":
+		{
+			"FLAVOR_TEXT": "'You had best stop and consider... do you really have the noble qualities and etiquette necessary to communicate with a god?  All it takes is a flick of my finger for me to know everything about you!'",
+			"DESCRIPTION": "On {Seal}: Gain [Regeneration] and [Artifact] for each type of Orb. || Channel [Water] and trigger it !M! times for each X.",
+			"NAME": "Furina"
+		},
 		"animator:Ganyu":
 		{
 			"FLAVOR_TEXT": "'You have a last-minute job for me? Okay, uh... Sorry, please don't try and explain it all verbally... Write it down, leave a note here. I'll get to it as soon as possible!'",
@@ -1346,17 +1359,48 @@
 			"DESCRIPTION": "{Ricochet} 4. || At end of turn in exhaust pile: progress this card’s {Ricochet} for each type of {Orb}.  Then, this card gains 1 {Attack} for each type of {Orb}.",
 			"NAME": "Keqing"
 		},
-		"animator:Noelle":
+		"animator:Nahida":
 		{
-			"FLAVOR_TEXT": "'Breakfast is served. I will be on hand the whole time. Should you find that anything is not to your taste, please, do not hesitate to let me know.'",
-			"DESCRIPTION": "Channel [Earth].",
-			"NAME": "Noelle"
+			"FLAVOR_TEXT": "'The gods gave humans barely enough knowledge for them to fill their stomachs. Yet, they used it to craft tools, write books, and build cities, and now they've set their sights on the stars and the abyss... With every moment that goes by, they're creating brand-new knowledge, so I never want to take my eyes off them.'",
+			"DESCRIPTION": "This can only be played if you have !M! or more types of {Orbs}. || Gain {Deva Form}.",
+			"NAME": "Nahida"
 		},
 		"animator:Nilou":
 		{
 			"FLAVOR_TEXT": "'Sometimes, you can convey more with dance than words. If you don't know what to say, then just dance.'",
 			"DESCRIPTION": "Gain [Blur] for each type of Orb.",
 			"NAME": "Nilou"
+		},
+		"animator:Noelle":
+		{
+			"FLAVOR_TEXT": "'Breakfast is served. I will be on hand the whole time. Should you find that anything is not to your taste, please, do not hesitate to let me know.'",
+			"DESCRIPTION": "Channel [Earth].",
+			"NAME": "Noelle"
+		},
+		"animator:RaidenShogun":
+		{
+			"FLAVOR_TEXT": "'Thunder's roar and lightning's flash. So ephemeral. This is why reaching Eternity is desirable. ...Actually, this is why reaching Eternity is necessary.'",
+			"DESCRIPTION": "<LIM>.  When Drawn: Gain [Orb_S]. || Channel [Lightning] [Dark] [Frost] [Aether] [Chaos] [Plasma]. This cannot Channel more Orbs than you have [Orb_S].",
+			"NAME": "Raiden Shogun"
+		},
+		"animator:Tartaglia":
+		{
+			"FLAVOR_TEXT": "'The skeletal-white snowscape devours life without leaving any trace. It is the invisible enemy we fight against each day.'",
+			"DESCRIPTION": "If you have at least !M! types of Orbs: Enter <MS>, then Exhaust this card.",
+			"NAME": "Tartaglia"
+		},
+		"animator:Venti":
+		{
+			"FLAVOR_TEXT": "'I have decided to write a song about you! What are you giving me that look for? Can't afford it? Don't be preposterous, the price for you, my friend, is precisely zero Mora!'",
+			"DESCRIPTION": "Channel [Aether] [Random Orb]. || !A! [B]: Gain [Block] again for each type of {Orb} channeled this combat.",
+			"NAME": "Venti"
+		},
+		"animator:Zhongli":
+		{
+			"FLAVOR_TEXT": "'Contracts cannot be used to define friendship, nor measure sentiment. So just what can we use to measure the weight of our emotions? Do you know the answer, friend?'",
+			"DESCRIPTION": "Gain !S! [Orb_S]. || Once per turn: Pay [E] to Channel [Earth]. || Whenever you Evoke [Earth]: Remove ALL {Debuffs} on yourself.",
+			"EXTENDED_DESCRIPTION": ["#b{0} times per turn: #yEnergy to #yChannel #yEarth. || Whenever you #yEvoke #yEarth: Remove ALL #yDebuffs on yourself."],
+			"NAME": "Zhongli"
 		}
 	},
 

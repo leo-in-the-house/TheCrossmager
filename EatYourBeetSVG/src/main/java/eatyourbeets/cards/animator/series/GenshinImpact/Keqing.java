@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.DieDieDieEffect;
+import eatyourbeets.cards.animator.special.Ganyu;
 import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBAttackType;
@@ -12,6 +13,8 @@ import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.cards.base.modifiers.DamageModifiers;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.interfaces.subscribers.OnStartOfTurnSubscriber;
+import eatyourbeets.powers.CombatStats;
+import eatyourbeets.ui.common.EYBCardPopupActions;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
 import eatyourbeets.utilities.GameUtilities;
@@ -20,7 +23,12 @@ public class Keqing extends AnimatorCard implements OnStartOfTurnSubscriber
 {
     public static final EYBCardData DATA = Register(Keqing.class)
             .SetAttack(2, CardRarity.UNCOMMON, EYBAttackType.Piercing)
-            .SetSeriesFromClassPackage();
+            .SetSeriesFromClassPackage()
+            .PostInitialize(data ->
+            {
+                data.AddPopupAction(new EYBCardPopupActions.GenshinImpact_Ganyu(4, Ganyu.DATA));
+                data.AddPreview(new Ganyu(), false);
+            });
 
     public Keqing()
     {
@@ -46,7 +54,7 @@ public class Keqing extends AnimatorCard implements OnStartOfTurnSubscriber
     @Override
     public void OnStartOfTurn()
     {
-        if (type == CardType.ATTACK && player.exhaustPile.contains(this))
+        if (player.exhaustPile.contains(this))
         {
             GameEffects.List.ShowCopy(this, Settings.WIDTH * 0.75f, Settings.HEIGHT * 0.4f);
 
@@ -73,7 +81,15 @@ public class Keqing extends AnimatorCard implements OnStartOfTurnSubscriber
 
     protected void OnCooldownCompleted(AbstractMonster m)
     {
-        GameActions.Bottom.MoveCard(this, player.exhaustPile, player.drawPile)
+        GameActions.Bottom.MoveCard(this, player.exhaustPile, player.hand)
                 .ShowEffect(true, false);
+    }
+
+    @Override
+    public void triggerWhenCreated(boolean startOfBattle)
+    {
+        super.triggerWhenCreated(startOfBattle);
+
+        CombatStats.onStartOfTurn.Subscribe(this);
     }
 }

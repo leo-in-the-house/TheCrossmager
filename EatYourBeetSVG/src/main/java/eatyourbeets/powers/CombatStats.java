@@ -27,7 +27,6 @@ import com.megacrit.cardcrawl.stances.AbstractStance;
 import eatyourbeets.actions.EYBAction;
 import eatyourbeets.actions.special.HasteAction;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.characters.EYBPlayerCharacter;
 import eatyourbeets.interfaces.listeners.OnCardResetListener;
 import eatyourbeets.interfaces.subscribers.*;
@@ -123,6 +122,7 @@ public class CombatStats extends EYBPower implements InvisiblePower
     private static final Map<String, Object> combatData = new HashMap<>();
     private static final Map<String, Object> turnData = new HashMap<>();
     private static final ArrayList<AbstractGameAction> cachedActions = new ArrayList<>();
+    private static final Map<String, Integer> orbTypesChanneledThisCombat = new HashMap<>();
     private static final ArrayList<AbstractOrb> orbsEvokedThisCombat = new ArrayList<>();
     private static final ArrayList<AbstractOrb> orbsEvokedThisTurn = new ArrayList<>();
     private static final Map<Integer, ArrayList<AbstractCard>> cardsPlayedThisCombat = new HashMap<>();
@@ -221,6 +221,7 @@ public class CombatStats extends EYBPower implements InvisiblePower
         turnCount = 0;
         cardsDrawnThisTurn = 0;
         canActivateStarter = true;
+        orbTypesChanneledThisCombat.clear();
         orbsEvokedThisCombat.clear();
         orbsEvokedThisTurn.clear();
         cardsPlayedThisCombat.clear();
@@ -804,6 +805,17 @@ public class CombatStats extends EYBPower implements InvisiblePower
         return cardsPlayedThisCombat.computeIfAbsent(turn, k -> new ArrayList<>());
     }
 
+
+    public static int OrbTypesChanneledThisCombat()
+    {
+        return orbTypesChanneledThisCombat.size();
+    }
+
+    public static Map<String, Integer> OrbTypesChanneledThisCombatByOrb()
+    {
+        return orbTypesChanneledThisCombat;
+    }
+
     public static List<AbstractCard> SynergiesThisCombat()
     {
         return synergiesThisCombat;
@@ -900,6 +912,8 @@ public class CombatStats extends EYBPower implements InvisiblePower
             {
                 p.OnChannelOrb(orb);
             }
+
+            orbTypesChanneledThisCombat.put(orb.ID, 1);
         }
     }
 

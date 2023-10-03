@@ -90,6 +90,12 @@
 		"NAMES": ["demon form", "demon_form"],
 		"PROPER_NAME": "Demon Form"
 	},
+	"Deva Form":
+	{
+		"DESCRIPTION": "Gain #yEnergy at the start of each turn, then increase this value by 1.",
+		"NAMES": ["deva form", "deva_form"],
+		"PROPER_NAME": "Deva Form"
+	},
 	"Discard":
 	{
 		"DESCRIPTION": "",
@@ -332,7 +338,7 @@
 	},
 	"Ricochet":
 	{
-		"DESCRIPTION": "Reduce a card's #yRicochet by #b1 for every turn that it is in the Exhaust pile. If it is at #b0 while in your Exhaust pile, activate this effect instead.",
+		"DESCRIPTION": "Reduce a card's #yRicochet by #b1 for every turn that it is in the Exhaust pile. If it is at #b0 while in your Exhaust pile, move the card to your hand.",
 		"NAMES": ["ricochet"],
 		"PROPER_NAME": "Ricochet"
 	},

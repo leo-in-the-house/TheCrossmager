@@ -249,6 +249,9 @@
 			"Create Chim.",
 			"If you have {0}, pay {1} gold to obtain #yChim. NL You can only perform this action at #yRest #ySites.",
 
+			"Qixing's Secretary.",
+			"Heal #b{0} [HP] and obtain #yGanyu. NL You can only perform this action at #yRest #ySites if you do not have #yGanyu.",
+
 			"Obtain card. Gain #b{0} [Vulnerable].",
 			"Obtain {0} and start your next combat with #b{1} [Vulnerable]. NL You can only perform this action at #yRest #ySites.",
 			

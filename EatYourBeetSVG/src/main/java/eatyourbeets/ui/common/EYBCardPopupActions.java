@@ -118,6 +118,37 @@ public class EYBCardPopupActions
         }
     }
 
+
+    public static class GenshinImpact_Ganyu extends EYBCardPopupAction
+    {
+        protected final int HEALING_AMOUNT;
+        protected final EYBCardData TARGET1;
+
+        public GenshinImpact_Ganyu(int healing, EYBCardData targetCard)
+        {
+            HEALING_AMOUNT = healing;
+            TARGET1 = targetCard;
+
+            SetText(specialActions.HealHPGanyu(), terms.Obtain, specialActions.HealHPGanyu_D(String.valueOf(HEALING_AMOUNT)));
+        }
+
+        @Override
+        public boolean CanExecute(AbstractCard card)
+        {
+            return IsRestRoom() && HasCard(card) && !HasCard(TARGET1);
+        }
+
+        @Override
+        public void Execute()
+        {
+            final EYBCard card = TARGET1.MakeCopy(false);
+            Obtain(card);
+            Heal(HEALING_AMOUNT);
+            SFX.Play(SFX.ATTACK_MAGIC_FAST_3, 0.4f);
+            Complete();
+        }
+    }
+
     public static class HitsugiNoChaika_Tooru extends EYBCardPopupAction
     {
         protected final int HP_LOSS;

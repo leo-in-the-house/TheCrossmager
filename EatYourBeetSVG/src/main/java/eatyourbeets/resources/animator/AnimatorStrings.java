@@ -495,6 +495,20 @@ public class AnimatorStrings
         }
 
 
+        public final String T_HealHP_Ganyu_F1 = Strings.TEXT[INDEX++];
+
+        public final String T_HealHP_Ganyu_F2 = Strings.TEXT[INDEX++];
+
+        public final String HealHPGanyu()
+        {
+            return JUtils.Format(T_HealHP_Ganyu_F1);
+        }
+
+        public final String HealHPGanyu_D(String cardName)
+        {
+            return JUtils.Format(T_HealHP_Ganyu_F2, cardName);
+        }
+
         public final String T_Obtain_GainVulnerable_F1 = Strings.TEXT[INDEX++];
         public final String D_Obtain_GainVulnerable_F2 = Strings.TEXT[INDEX++];
 

@@ -1,108 +1,77 @@
 package eatyourbeets.cards.animator.series.GenshinImpact;
 
-import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.cards.base.CardEffectChoice;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
-import eatyourbeets.interfaces.subscribers.OnStartOfTurnPostDrawSubscriber;
+import eatyourbeets.cards.base.attributes.AbstractAttribute;
+import eatyourbeets.cards.base.attributes.TempHPAttribute;
 import eatyourbeets.orbs.animator.Earth;
 import eatyourbeets.powers.AnimatorClickablePower;
-import eatyourbeets.powers.CombatStats;
 import eatyourbeets.powers.PowerTriggerConditionType;
-import eatyourbeets.powers.common.EndurancePower;
-import eatyourbeets.utilities.ColoredString;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.JUtils;
+import eatyourbeets.utilities.ListSelection;
 
 public class Zhongli extends AnimatorCard
 {
-    public static final EYBCardData DATA = Register(Zhongli.class).SetPower(3, CardRarity.RARE).SetMaxCopies(2).SetSeriesFromClassPackage().SetMultiformData(2);
-    private static final int POWER_ENERGY_COST = 2;
+    public static final EYBCardData DATA = Register(Zhongli.class)
+            .SetPower(2, CardRarity.RARE)
+            .SetSeriesFromClassPackage();
+    private static final int POWER_ENERGY_COST = 1;
 
     public Zhongli()
     {
         super(DATA);
 
-        Initialize(0, 0, 2, 5);
-        SetUpgrade(0, 0, 0);
-        SetAffinity_Orange(2, 0, 0);
-        SetDelayed(true);
+        Initialize(0, 0, 3, 1);
+        SetUpgrade(0, 0, 4, 1);
+
+        SetAffinity_Brown(2);
+        SetAffinity_Black(1);
+
+        SetEthereal(true);
     }
 
     @Override
-    protected void OnUpgrade()
+    public AbstractAttribute GetSpecialInfo()
     {
-        if (auxiliaryData.form == 0) {
-            SetDelayed(false);
-            SetInnate(true);
-        }
-        else {
-            SetDelayed(true);
-        }
+        return (magicNumber > 0) ? TempHPAttribute.Instance.SetCard(this, true) : null;
     }
-
-    @Override
-    public int SetForm(Integer form, int timesUpgraded) {
-        if (timesUpgraded > 0) {
-            SetDelayed(form == 1);
-            SetInnate(form != 1);
-        }
-        return super.SetForm(form, timesUpgraded);
-    };
-
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.StackPower(new ZhongliPower(p, this, this.magicNumber, this.secondaryValue));
+        GameActions.Bottom.GainTemporaryHP(magicNumber);
+        GameActions.Bottom.GainOrbSlots(secondaryValue);
+        GameActions.Bottom.StackPower(new ZhongliPower(p, 1));
     }
 
-    public static class ZhongliPower extends AnimatorClickablePower implements OnStartOfTurnPostDrawSubscriber
+    public static class ZhongliPower extends AnimatorClickablePower
     {
-        private static final CardEffectChoice choices = new CardEffectChoice();
-
-        private final Zhongli zhongli;
-        public int gainAmount = 0;
-        public int secondaryValue;
-
-        public ZhongliPower(AbstractPlayer owner, Zhongli zhongli, int amount, int secondaryValue)
+        public ZhongliPower(AbstractPlayer owner, int amount)
         {
             super(owner, Zhongli.DATA, PowerTriggerConditionType.Energy, POWER_ENERGY_COST);
 
-            this.amount = amount;
-            this.zhongli = zhongli;
-            this.secondaryValue = secondaryValue;
-            this.triggerCondition.SetOneUsePerPower(true);
-
-            updateDescription();
+            this.triggerCondition.SetUses(amount, false, true);
+            canBeZero = true;
+            Initialize(amount);
         }
 
         @Override
         public void OnUse(AbstractMonster m)
         {
             GameActions.Bottom.ChannelOrb(new Earth());
-
-            if (choices.TryInitialize(this.zhongli))
-            {
-                choices.AddEffect( JUtils.Format(DATA.Strings.EXTENDED_DESCRIPTION[1],amount), (c,p,mo) -> {GameActions.Bottom.GainEndurance(amount, true);});
-                choices.AddEffect( JUtils.Format(DATA.Strings.EXTENDED_DESCRIPTION[2],amount), (c,p,mo) -> {
-                    gainAmount += amount;
-                    CombatStats.onStartOfTurnPostDraw.Subscribe(this);
-                });
-            }
-            choices.Select(1, m);
         }
 
         @Override
         public String GetUpdatedDescription()
         {
-            return FormatDescription(0, amount, GetBlockAmount());
+            return FormatDescription(0, amount);
         }
 
         @Override
@@ -113,25 +82,8 @@ public class Zhongli extends AnimatorCard
             Earth earthOrb = JUtils.SafeCast(orb, Earth.class);
 
             if (earthOrb != null) {
-                GameActions.Bottom.GainBlock(GetBlockAmount());
+                GameActions.Bottom.RemoveDebuffs(player, ListSelection.Default(1), player.powers.size());
             }
-        }
-
-        @Override
-        public void OnStartOfTurnPostDraw() {
-            GameActions.Bottom.GainEndurance(gainAmount, true);
-            CombatStats.onStartOfTurnPostDraw.Unsubscribe(this);
-            gainAmount = 0;
-        }
-
-        @Override
-        protected ColoredString GetSecondaryAmount(Color c)
-        {
-            return new ColoredString(GetBlockAmount(), Color.WHITE, c.a);
-        }
-
-        private int GetBlockAmount() {
-            return secondaryValue + Math.max(0,GameUtilities.GetPowerAmount(EndurancePower.POWER_ID));
         }
     }
 }
