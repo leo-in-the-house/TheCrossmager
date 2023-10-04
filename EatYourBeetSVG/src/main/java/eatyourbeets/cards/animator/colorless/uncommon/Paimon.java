@@ -20,6 +20,8 @@ public class Paimon extends AnimatorCard {
         SetUpgrade(0, 0, 0);
         SetCostUpgrade(-1);
 
+        SetAffinity_Green(1);
+
         SetExhaust(true);
         SetEthereal(true);
     }
