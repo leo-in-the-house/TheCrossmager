@@ -324,6 +324,12 @@
 		"NAMES": ["recover", "recovered", "recovering"],
 		"PROPER_NAME": "Recover"
 	},
+	"Regeneration":
+	{
+		"DESCRIPTION": "Restores [HP] at the end of each turn.",
+		"NAMES": ["regeneration"],
+		"PROPER_NAME": "Regeneration"
+	},
 	"Reload":
 	{
 		"DESCRIPTION": "Discard any number of cards, activate this effect that many times.",

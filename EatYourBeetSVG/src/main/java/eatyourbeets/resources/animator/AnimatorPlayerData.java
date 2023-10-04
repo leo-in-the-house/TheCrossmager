@@ -284,6 +284,7 @@ public class AnimatorPlayerData
         add.Invoke(new Loadout_MadokaMagica(), 0);
         add.Invoke(new Loadout_TouhouProject(), 0);
         add.Invoke(new Loadout_Atelier(), 0);
+        add.Invoke(new Loadout_GenshinImpact(), 0);
         //add.Invoke(new Loadout_LogHorizon(), 7);
 
         for (AnimatorLoadout loadout : BaseLoadouts)

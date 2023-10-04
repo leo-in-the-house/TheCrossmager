@@ -3,6 +3,7 @@ package eatyourbeets.cards.animator.series.AngelBeats;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
@@ -19,7 +20,7 @@ import eatyourbeets.utilities.GameUtilities;
 public class AyatoNaoi extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(AyatoNaoi.class)
-            .SetSkill(1, CardRarity.RARE, EYBCardTarget.None)
+            .SetSkill(2, CardRarity.RARE, EYBCardTarget.None)
             .SetSeriesFromClassPackage();
 
     public AyatoNaoi()
@@ -29,15 +30,19 @@ public class AyatoNaoi extends AnimatorCard
         Initialize(0, 0, 2, 0);
         SetUpgrade(0, 0, 0, 0);
 
-        SetAffinity_Black(2);
+        SetAffinity_Black(2, 0, 2);
 
         SetEthereal(true);
+        SetExhaust(true);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
+
+        GameActions.Bottom.GainBlock(block);
+
         //Put this last to be more player-friendly aka dark orbs won't kill an enemy that might have contributed
         //to the above effect's damage
         for (int i = 0; i < magicNumber; i++)
@@ -45,26 +50,37 @@ public class AyatoNaoi extends AnimatorCard
             GameActions.Bottom.ChannelOrb(new Dark());
         }
 
-        GameActions.Bottom.Callback(() ->
-        {
-            GameActions.Top.Add(new VFXAction(new OfferingEffect(), Settings.FAST_MODE ? 0.1F : 0.5F));
-            for (AbstractMonster mo : GameUtilities.GetEnemies(true))
-            {
-                int totalDamage = 0;
-                totalDamage += GameUtilities.GetIntent(mo).GetDamage(true);
 
-                if (upgraded) {
-                    totalDamage *= 2;
-                }
+        int numEthereal = 0;
 
-                if (totalDamage > 0)
-                {
-                    int[] newMultiDamage = DamageInfo.createDamageMatrix(totalDamage, true);
-
-                    DamageInfo damageInfo = new DamageInfo(player, totalDamage, DamageInfo.DamageType.HP_LOSS);
-                    GameActions.Top.Add(new DamageAction(mo, damageInfo, AbstractGameAction.AttackEffect.NONE, true));
-                }
+        for (AbstractCard card : player.hand.group) {
+            if (card.isEthereal) {
+                numEthereal++;
             }
-        });
+        }
+
+        for (int i=0; i<numEthereal; i++) {
+            GameActions.Bottom.Callback(() ->
+            {
+                GameActions.Top.Add(new VFXAction(new OfferingEffect(), Settings.FAST_MODE ? 0.1F : 0.5F));
+                for (AbstractMonster mo : GameUtilities.GetEnemies(true))
+                {
+                    int totalDamage = 0;
+                    totalDamage += GameUtilities.GetIntent(mo).GetDamage(true);
+
+                    if (upgraded) {
+                        totalDamage *= 2;
+                    }
+
+                    if (totalDamage > 0)
+                    {
+                        int[] newMultiDamage = DamageInfo.createDamageMatrix(totalDamage, true);
+
+                        DamageInfo damageInfo = new DamageInfo(player, totalDamage, DamageInfo.DamageType.HP_LOSS);
+                        GameActions.Top.Add(new DamageAction(mo, damageInfo, AbstractGameAction.AttackEffect.NONE, true));
+                    }
+                }
+            });
+        }
     }
 }

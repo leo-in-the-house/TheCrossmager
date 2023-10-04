@@ -1,8 +1,6 @@
 package eatyourbeets.cards.animator.series.AngelBeats;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
@@ -10,7 +8,9 @@ import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBAttackType;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
+import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class YuriNakamura extends AnimatorCard
 {
@@ -21,12 +21,14 @@ public class YuriNakamura extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(5, 0, 2, 0);
-        SetUpgrade(3, 0);
+        Initialize(7, 0, 2, 0);
+        SetUpgrade(2, 0, 1, 0);
 
-        SetAffinity_Red(2);
+        SetAffinity_Red(2, 0, 2);
+        SetAffinity_Green(2, 0, 2);
 
         SetExhaust(true);
+        SetEthereal(true);
 
     }
 
@@ -49,9 +51,9 @@ public class YuriNakamura extends AnimatorCard
     {
         GameUtilities.PlayVoiceSFX(name);
 
-        GameActions.Bottom.DealDamage(this, m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
-        GameActions.Bottom.DealDamage(this, m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
-        GameActions.Bottom.DealDamage(this, m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
+        GameActions.Bottom.DealDamage(this, m, AttackEffects.GUNSHOT);
+        GameActions.Bottom.DealDamage(this, m, AttackEffects.GUNSHOT);
+        GameActions.Bottom.DealDamage(this, m, AttackEffects.GUNSHOT);
 
         GameActions.Bottom.SelectFromPile(name, 1, p.exhaustPile)
         .SetOptions(false, true,  true)

@@ -4,20 +4,18 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import eatyourbeets.cards.animator.ultrarare.Azami;
 import eatyourbeets.cards.animator.ultrarare.Cthulhu;
 import eatyourbeets.cards.animator.ultrarare.HolyGrail;
 import eatyourbeets.cards.animator.ultrarare.SummoningRitual;
-import eatyourbeets.interfaces.markers.Hidden;
 import eatyourbeets.resources.GR;
 import eatyourbeets.resources.animator.misc.AnimatorLoadout;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public abstract class AnimatorCard_UltraRare extends AnimatorCard implements Hidden
+public abstract class AnimatorCard_UltraRare extends AnimatorCard
 {
     private static final Map<String, AnimatorCard_UltraRare> cards = new HashMap<>();
     private static final Color RENDER_COLOR = new Color(0.4f, 0.4f, 0.4f, 1);

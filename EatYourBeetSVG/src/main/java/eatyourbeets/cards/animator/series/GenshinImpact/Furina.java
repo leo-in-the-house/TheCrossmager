@@ -25,7 +25,6 @@ public class Furina extends AnimatorCard implements OnAffinitySealedSubscriber {
         SetExhaust(true);
 
         SetAffinity_Blue(2);
-        SetAffinity_Teal(1);
         SetMultiDamage(true);
     }
 

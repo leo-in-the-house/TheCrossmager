@@ -45,16 +45,16 @@ public class GirlDeMo extends AnimatorCard
         GameUtilities.PlayVoiceSFX(name);
 
         ArrayList<Pair<ActionT1<Integer>, Integer>> pairs = new ArrayList<>();
-        pairs.add(new Pair<>(GameActions.Bottom::GainRed, CombatStats.Affinities.GetAffinityLevel(Affinity.Red)));
-        pairs.add(new Pair<>(GameActions.Bottom::GainGreen, CombatStats.Affinities.GetAffinityLevel(Affinity.Green)));
-        pairs.add(new Pair<>(GameActions.Bottom::GainBlue, CombatStats.Affinities.GetAffinityLevel(Affinity.Blue)));
-        pairs.add(new Pair<>(GameActions.Bottom::GainBlack, CombatStats.Affinities.GetAffinityLevel(Affinity.Black)));
-        pairs.add(new Pair<>(GameActions.Bottom::GainWhite, CombatStats.Affinities.GetAffinityLevel(Affinity.White)));
-        pairs.add(new Pair<>(GameActions.Bottom::GainTeal, CombatStats.Affinities.GetAffinityLevel(Affinity.Teal)));
-        pairs.add(new Pair<>(GameActions.Bottom::GainYellow, CombatStats.Affinities.GetAffinityLevel(Affinity.Yellow)));
-        pairs.add(new Pair<>(GameActions.Bottom::GainPink, CombatStats.Affinities.GetAffinityLevel(Affinity.Pink)));
-        pairs.add(new Pair<>(GameActions.Bottom::GainBrown, CombatStats.Affinities.GetAffinityLevel(Affinity.Brown)));
-        pairs.add(new Pair<>(GameActions.Bottom::GainViolet, CombatStats.Affinities.GetAffinityLevel(Affinity.Violet)));
+        pairs.add(new Pair<>(GameActions.Bottom::GainRed, 2 * CombatStats.Affinities.GetAffinityLevel(Affinity.Red)));
+        pairs.add(new Pair<>(GameActions.Bottom::GainGreen, 2 * CombatStats.Affinities.GetAffinityLevel(Affinity.Green)));
+        pairs.add(new Pair<>(GameActions.Bottom::GainBlue, 2 * CombatStats.Affinities.GetAffinityLevel(Affinity.Blue)));
+        pairs.add(new Pair<>(GameActions.Bottom::GainBlack, 2 * CombatStats.Affinities.GetAffinityLevel(Affinity.Black)));
+        pairs.add(new Pair<>(GameActions.Bottom::GainWhite, 2 * CombatStats.Affinities.GetAffinityLevel(Affinity.White)));
+        pairs.add(new Pair<>(GameActions.Bottom::GainTeal, 2 * CombatStats.Affinities.GetAffinityLevel(Affinity.Teal)));
+        pairs.add(new Pair<>(GameActions.Bottom::GainYellow, 2 * CombatStats.Affinities.GetAffinityLevel(Affinity.Yellow)));
+        pairs.add(new Pair<>(GameActions.Bottom::GainPink, 2 * CombatStats.Affinities.GetAffinityLevel(Affinity.Pink)));
+        pairs.add(new Pair<>(GameActions.Bottom::GainBrown, 2 * CombatStats.Affinities.GetAffinityLevel(Affinity.Brown)));
+        pairs.add(new Pair<>(GameActions.Bottom::GainViolet, 2 * CombatStats.Affinities.GetAffinityLevel(Affinity.Violet)));
         pairs.sort(Comparator.comparingInt(Pair::getValue));
 
         int amount = pairs.get(9).getValue();

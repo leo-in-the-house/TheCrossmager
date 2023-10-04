@@ -16,16 +16,12 @@ public class Loadout_GATE extends AnimatorLoadout
     @Override
     public void AddStarterCards()
     {
-        AddStarterCard(MariKurokawa.DATA, 6);
-        AddStarterCard(YaoHaDucy.DATA, 6);
-        AddStarterCard(Kuribayashi.DATA, 7);
+        AddStarterCard(MariKurokawa.DATA, 5);
+        AddStarterCard(YaoHaDucy.DATA, 7);
+        AddStarterCard(Kuribayashi.DATA, 6);
         AddStarterCard(ShunyaKengun.DATA, 7);
-        AddStarterCard(TukaLunaMarceau.DATA, 8);
-
-        AddStarterCard(RoryMercury.DATA, 8);
-        AddStarterCard(Bozes.DATA, 11);
+        AddStarterCard(TukaLunaMarceau.DATA, 5);
         AddStarterCard(Tyuule.DATA, 5);
-        AddStarterCard(LeleiLaLalena.DATA, 8);
     }
 
     @Override

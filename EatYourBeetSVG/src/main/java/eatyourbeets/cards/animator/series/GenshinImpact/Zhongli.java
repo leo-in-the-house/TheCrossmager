@@ -82,7 +82,7 @@ public class Zhongli extends AnimatorCard
             Earth earthOrb = JUtils.SafeCast(orb, Earth.class);
 
             if (earthOrb != null) {
-                GameActions.Bottom.RemoveDebuffs(player, ListSelection.Default(1), player.powers.size());
+                GameActions.Bottom.RemoveDebuffs(player, ListSelection.Default(0), player.powers.size());
             }
         }
     }

@@ -393,8 +393,7 @@
 		"animator:AyatoNaoi":
 		{
 			"FLAVOR_TEXT": "'Are you going to defy me?  I'm God. I am GOD!'",
-			"DESCRIPTION": "Channel !M! [Dark]. || ALL enemies lose HP equal to their Attack damage.",
-			"UPGRADE_DESCRIPTION": "Channel !M! [Dark]. || ALL enemies lose HP equal to twice their Attack damage.",
+			"DESCRIPTION": "Channel !M! [Dark]. || ALL enemies lose HP equal to their Attack damage for each Ethereal card in your hand.",
 			"NAME": "Ayato Naoi"
 		},
 		"animator:Chaa":
@@ -412,13 +411,13 @@
 		"animator:EriShiina":
 		{
 			"FLAVOR_TEXT": "'Ever since that day, I keep running it over and over in that head, how I could have lost to that noobie!'",
-			"DESCRIPTION": "On Exhaust: Add !M! {Throwing-Knives} to your hand.",
+			"DESCRIPTION": "Add !M! [T-Knife] to your hand. || On Exhaust: Add !M! [T-Knife] to your hand.",
 			"NAME": "Eri Shiina"
 		},
 		"animator:GirlDeMo":
 		{
 			"FLAVOR_TEXT": "'I'll keep singing for everyone, even when I'm wetting myself! I'll show you what I've got!'",
-			"DESCRIPTION": "Double your highest amounts among all of your stats.",
+			"DESCRIPTION": "Triple your highest amounts among all of your stats.",
 			"NAME": "Girls Dead Monster"
 		},
 		"animator:Godan":
@@ -436,7 +435,7 @@
 		"animator:KanadeTachibana":
 		{
 			"FLAVOR_TEXT": "'Please let me believe in everything you believed in. Let me believe that life is great.'",
-			"DESCRIPTION": "Fetch up to !M! cards from your discard pile. They gain {Ethereal} and cost 1 less.",
+			"DESCRIPTION": "Fetch up to !M! {Ethereal} cards from your exhaust pile. They cost 1 less.",
 			"EXTENDED_DESCRIPTION": ["Choose cards to put into your hand."],
 			"NAME": "Kanade Tachibana"
 		},
@@ -449,7 +448,7 @@
 		"animator:Noda":
 		{
 			"FLAVOR_TEXT": "'You jerk!  You're the one who insulted Yurippe and refused to enlist in the Battlefront!'",
-			"DESCRIPTION": "Exhaust this card unless you have an {Ethereal} card in your hand.",
+			"DESCRIPTION": "Exhaust this card unless you have at least 2 {Ethereal} cards in your exhaust pile.",
 			"NAME": "Noda"
 		},
 		"animator:Strike_AngelBeats":
@@ -460,7 +459,7 @@
 		"animator:Yui":
 		{
 			"FLAVOR_TEXT": "'Even death can't cure idiocy!'",
-			"DESCRIPTION": "Motivate !S!.  Add a {Girls Dead Monster} to your draw pile.",
+			"DESCRIPTION": "Motivate !S!.  Add a {Girls Dead Monster} to your draw pile. || Costs 1 less for every 5 {Ethereal} cards in your exhaust pile.",
 			"NAME": "Yui"
 		},
 		"animator:YuriNakamura":
@@ -479,7 +478,7 @@
 		"animator:YuzuruOtonashi":
 		{
 			"FLAVOR_TEXT": "'There’s nothing false about the lives we endured! Everyone lived to their fullest! We’ve carved those memories into ourselves!'",
-			"DESCRIPTION": "This card has [P] and [O] scaling equal to the number of {Ethereal} cards in your hand.",
+			"DESCRIPTION": "This card gains [P] and [O] scaling for every 3 {Ethereal} cards in your exhaust pile.",
 			"NAME": "Yuzuru Otonashi"
 		}
 	},
@@ -1318,7 +1317,7 @@
 		{
 			"FLAVOR_TEXT": "'I understand, mein Fraulein! In this traveler, Fraulein has found one who will never forsake her.'",
 			"DESCRIPTION": "Whenever you play the first !M! Attack(s) each turn: Randomly Channel [Lightning] or [Dark].",
-			"EXTENDED_DESCRIPTION": ["Whenever you play the first #b{0} #yAttacks each turn: Randomly #yChannel #yLightning or #yDark."],
+			"EXTENDED_DESCRIPTION": ["On the next #b{0} #yAttacks you play this turn: Randomly #yChannel #yLightning or #yDark."],
 			"NAME": "Oz"
 		},
 		"animator:Freminet":
@@ -1368,7 +1367,7 @@
 		"animator:Nilou":
 		{
 			"FLAVOR_TEXT": "'Sometimes, you can convey more with dance than words. If you don't know what to say, then just dance.'",
-			"DESCRIPTION": "Gain [Blur] for each type of Orb.",
+			"DESCRIPTION": "Gain [~Blur] for each type of Orb.",
 			"NAME": "Nilou"
 		},
 		"animator:Noelle":
@@ -2989,6 +2988,24 @@
 			"EXTENDED_DESCRIPTION": ["<HIDDEN>"],
 			"NAME": "Summoning Ritual"
 		},
+		"animator:Traveler":
+		{
+			"FLAVOR_TEXT": "'The keeper is fading away; the creator has not yet come. But the world shall burn no more, for you shall ascend.' -Anonymous",
+			"DESCRIPTION": "When obtained: Choose between Aether or Lumine and permanently change this to that form.  Then, add 5 different {Genshin Impact} series cards to your deck.",
+			"NAME": "Traveler"
+		},
+		"animator:Traveler_Aether":
+		{
+			"FLAVOR_TEXT": "'Pro tip. While we're in Fontaine, if someone ever picks a fight with you, you should never fight back unless there are witnesses around.'",
+			"DESCRIPTION": "<LIM>. When Drawn: Channel [Aether]. || {Evoke} all of your {Orbs} twice, then {Channel} them again.",
+			"NAME": "Aether"
+		},
+		"animator:Traveler_Lumine":
+		{
+			"FLAVOR_TEXT": "'Liyue's cuisine is very different from that of Mondstadt... For example, you can hardly find spicy fried dishes anywhere in Mondstadt...'",
+			"DESCRIPTION": "<LIM>. When Drawn: Channel [Plasma]. || Gain [Orb_S] and [Focus]. ",
+			"NAME": "Lumine"
+		},
 		"animator:Truth":
 		{
 			"FLAVOR_TEXT": "'I am all, and I am one.  So, of course, this also means that I am you.'",
@@ -3013,4 +3030,4 @@
 			"NAME": "Yuyuko Saigyouji"
 		}
 	}
-},
+}

@@ -16,7 +16,7 @@ public class YuzuruOtonashi extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 7, 0, 0);
+        Initialize(0, 4, 0, 0);
         SetUpgrade(0, 4, 0, 0);
 
         SetAffinity_Pink(1);
@@ -30,14 +30,18 @@ public class YuzuruOtonashi extends AnimatorCard
 
         int numEthereal = 0;
 
-        for (AbstractCard card : player.hand.group) {
+        for (AbstractCard card : player.exhaustPile.group) {
             if (card.isEthereal) {
                 numEthereal++;
             }
         }
 
-        GameActions.Bottom.SetScaling(this, Affinity.Pink, numEthereal);
-        GameActions.Bottom.SetScaling(this, Affinity.Brown, numEthereal);
+        int scalingAmount = numEthereal / 3;
+
+        if (scalingAmount > 0) {
+            GameActions.Bottom.SetScaling(this, Affinity.Pink, scalingAmount);
+            GameActions.Bottom.SetScaling(this, Affinity.Brown, scalingAmount);
+        }
     }
 
     @Override

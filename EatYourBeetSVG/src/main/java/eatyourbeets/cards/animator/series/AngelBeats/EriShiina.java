@@ -26,7 +26,7 @@ public class EriShiina extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(7, 0, 2, 0);
+        Initialize(5, 0, 2, 0);
         SetUpgrade(2, 0, 1, 0);
 
         SetAffinity_Green(1, 0, 1);
@@ -49,6 +49,8 @@ public class EriShiina extends AnimatorCard
 
         GameActions.Bottom.DealDamage(this, m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
         GameActions.Bottom.DealDamage(this, m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
+
+        GameActions.Bottom.CreateThrowingKnives(magicNumber);
     }
 
     @Override

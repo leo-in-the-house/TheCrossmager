@@ -1,9 +1,11 @@
 package eatyourbeets.cards.animator.series.AngelBeats;
 
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.special.GirlDeMo;
 import eatyourbeets.cards.base.AnimatorCard;
+import eatyourbeets.cards.base.modifiers.CostModifiers;
 import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
@@ -36,6 +38,31 @@ public class Yui extends AnimatorCard
     protected void OnUpgrade()
     {
         SetRetain(true);
+    }
+
+
+    @Override
+    public void Refresh(AbstractMonster enemy) {
+        super.Refresh(enemy);
+        RefreshCost();
+    }
+
+    public void RefreshCost()
+    {
+        int numEthereal = 0;
+
+        for (AbstractCard card : player.exhaustPile.group) {
+            if (card.isEthereal) {
+                numEthereal++;
+            }
+        }
+
+        if (numEthereal >= 5) {
+            CostModifiers.For(this).Add("Yui", -1 * (numEthereal / 5));
+        }
+        else {
+            CostModifiers.For(this).Remove("Yui");
+        }
     }
 
     @Override

@@ -12,7 +12,7 @@ import eatyourbeets.utilities.GameUtilities;
 public class Noda extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Noda.class)
-            .SetAttack(1, CardRarity.COMMON, EYBAttackType.Normal, EYBCardTarget.ALL)
+            .SetAttack(0, CardRarity.COMMON, EYBAttackType.Normal, EYBCardTarget.ALL)
             .SetSeriesFromClassPackage();
 
     public Noda()
@@ -40,16 +40,15 @@ public class Noda extends AnimatorCard
             GameActions.Bottom.DealDamageToAll(this, AbstractGameAction.AttackEffect.SLASH_HEAVY);
         }
 
-        boolean hasEthereal = false;
+        int numEthereal = 0;
 
-        for (AbstractCard card : player.hand.group) {
+        for (AbstractCard card : player.exhaustPile.group) {
             if (card.isEthereal) {
-                hasEthereal = true;
-                break;
+                numEthereal++;
             }
         }
 
-        if (!hasEthereal)
+        if (numEthereal < 2)
         {
             GameActions.Last.Exhaust(this);
         }

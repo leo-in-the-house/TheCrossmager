@@ -149,6 +149,7 @@ public class CardTooltips
     public EYBCardTooltip Intangible = FindByID(null, "~Intangible");
     public EYBCardTooltip Artifact = FindByID(null, "Artifact");
     public EYBCardTooltip Shackles = FindByID(null, "Shackles");
+    public EYBCardTooltip Regeneration = FindByID(null, "Regeneration");
     public EYBCardTooltip LockOn = FindByID(null, "~Lock-On");
     public EYBCardTooltip Lightning = FindByID(null, "Lightning");
     public EYBCardTooltip Plasma = FindByID(null, "Plasma");
@@ -456,6 +457,7 @@ public class CardTooltips
         LoadFromPower(Withering, new WitheringPower(FakeCharacter.Instance, 0));
         LoadFromPower(SummoningSickness, new SummoningSicknessPower(FakeCharacter.Instance, 0));
         LoadFromPower(Mark, new MarkedPower(FakeCharacter.Instance));
+        LoadFromPower(Regeneration, new RegenPower(FakeCharacter.Instance, 0));
 
         //These use AbstractDungeon.player
         LoadFromPower(Weak, new WeakPower(null, 0, false)).SetIconSizeMulti(1f, 0.9f);
