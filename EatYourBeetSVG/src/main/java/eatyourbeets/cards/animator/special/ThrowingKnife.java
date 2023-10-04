@@ -2,15 +2,11 @@ package eatyourbeets.cards.animator.special;
 
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.cards.base.CardUseInfo;
-import eatyourbeets.cards.base.EYBAttackType;
-import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.cards.base.*;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.effects.VFX;
 import eatyourbeets.powers.CombatStats;
@@ -121,7 +117,12 @@ public class ThrowingKnife extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        if (m == null || GameUtilities.IsDeadOrEscaped(m))
+        if (this.attackTarget == EYBCardTarget.ALL) {
+            int[] multiDamage = DamageInfo.createDamageMatrix(damage, true);
+            GameActions.Bottom.DealDamageToAll(multiDamage, DamageInfo.DamageType.NORMAL, AttackEffects.NONE)
+                    .SetDamageEffect(this::OnDamage);
+        }
+        else if (m == null || GameUtilities.IsDeadOrEscaped(m))
         {
             GameActions.Bottom.DealDamageToRandomEnemy(this, AttackEffects.NONE)
             .SetDamageEffect(this::OnDamage);
@@ -131,6 +132,10 @@ public class ThrowingKnife extends AnimatorCard
             GameActions.Bottom.DealDamage(this, m, AttackEffects.NONE)
             .SetDamageEffect(this::OnDamage);
         }
+    }
+
+    protected float OnDamage(AbstractCreature abstractCreature, Boolean aBoolean) {
+        return OnDamage(abstractCreature);
     }
 
     protected float OnDamage(AbstractCreature target)

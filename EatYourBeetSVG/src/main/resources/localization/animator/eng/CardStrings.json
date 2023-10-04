@@ -182,7 +182,7 @@
 		"animator:Yoimiya":
 		{
 			"FLAVOR_TEXT": "'Now's the best time to test our fireworks out, though I'm sure they'll look good whether they explode in the sky or on the ground... Hehe, just kidding. I'll pay attention to safety.'",
-			"DESCRIPTION": "For the rest of combat: [T-Knife] you create deals damage to ALL enemies. || Obtain a [T-Knife](+) for each Orb. ",
+			"DESCRIPTION": "For the rest of combat: [T-Knife] you create deals damage to ALL enemies. || Obtain a [T-Knife]{+} for each Orb. ",
 			"EXTENDED_DESCRIPTION": ["#yThrowing #yKnives you create deals damage to ALL enemies."],
 			"NAME": "Yoimiya Naganohara"
 		}

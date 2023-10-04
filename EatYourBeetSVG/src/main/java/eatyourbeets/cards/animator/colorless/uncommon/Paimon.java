@@ -10,7 +10,8 @@ import eatyourbeets.utilities.GameUtilities;
 public class Paimon extends AnimatorCard {
     public static final EYBCardData DATA = Register(Paimon.class)
             .SetSkill(2, CardRarity.COMMON, EYBCardTarget.None)
-            .SetSeriesFromClassPackage();
+            .SetColor(CardColor.COLORLESS)
+            .SetSeries(CardSeries.GenshinImpact);
 
     public Paimon() {
         super(DATA);
@@ -33,7 +34,7 @@ public class Paimon extends AnimatorCard {
             if (card instanceof AnimatorCard) {
                 AnimatorCard animatorCard = (AnimatorCard) card;
 
-                if (animatorCard.series.equals(CardSeries.GenshinImpact)) {
+                if (animatorCard.series != null && animatorCard.series.equals(CardSeries.GenshinImpact)) {
                     numGenshinImpactCards++;
                 }
             }

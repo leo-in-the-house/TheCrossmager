@@ -15,7 +15,7 @@ import eatyourbeets.utilities.GameUtilities;
 
 public class Yoimiya extends AnimatorCard {
     public static final EYBCardData DATA = Register(Yoimiya.class)
-            .SetAttack(1, CardRarity.UNCOMMON, EYBAttackType.Ranged, EYBCardTarget.Random)
+            .SetAttack(1, CardRarity.RARE, EYBAttackType.Ranged, EYBCardTarget.Random)
             .SetColor(CardColor.COLORLESS)
             .SetSeries(CardSeries.GenshinImpact);
 

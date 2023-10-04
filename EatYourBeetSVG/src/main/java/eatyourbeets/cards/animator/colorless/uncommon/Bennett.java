@@ -21,6 +21,9 @@ public class Bennett extends AnimatorCard {
 
         Initialize(15, 0, 5, 5);
         SetUpgrade(4, 0, 0);
+
+        SetAffinity_Red(1);
+        SetAffinity_White(1);
     }
 
     @Override
