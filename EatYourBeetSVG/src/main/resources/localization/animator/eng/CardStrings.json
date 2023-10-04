@@ -459,7 +459,7 @@
 		"animator:Yui":
 		{
 			"FLAVOR_TEXT": "'Even death can't cure idiocy!'",
-			"DESCRIPTION": "Motivate !S!.  Add a {Girls Dead Monster} to your draw pile. || Costs 1 less for every 5 {Ethereal} cards in your exhaust pile.",
+			"DESCRIPTION": "Motivate !S!.  Add a {Girls Dead Monster} to your draw pile. || Costs 1 less for every 3 {Ethereal} cards in your exhaust pile.",
 			"NAME": "Yui"
 		},
 		"animator:YuriNakamura":

@@ -27,8 +27,8 @@ public class AyatoNaoi extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 0, 2, 0);
-        SetUpgrade(0, 0, 0, 0);
+        Initialize(0, 6, 1, 0);
+        SetUpgrade(0, 6, 1, 0);
 
         SetAffinity_Black(2, 0, 2);
 

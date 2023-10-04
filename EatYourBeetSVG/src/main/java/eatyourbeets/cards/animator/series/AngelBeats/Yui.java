@@ -57,8 +57,8 @@ public class Yui extends AnimatorCard
             }
         }
 
-        if (numEthereal >= 5) {
-            CostModifiers.For(this).Add("Yui", -1 * (numEthereal / 5));
+        if (numEthereal >= 3) {
+            CostModifiers.For(this).Set("Yui", -1 * (numEthereal / 3));
         }
         else {
             CostModifiers.For(this).Remove("Yui");

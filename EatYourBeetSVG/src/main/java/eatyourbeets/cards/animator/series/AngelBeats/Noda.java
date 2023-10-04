@@ -23,6 +23,8 @@ public class Noda extends AnimatorCard
         SetUpgrade(2, 0, 0, 0);
 
         SetAffinity_Black(1);
+
+        SetEthereal(true);
     }
 
     @Override
