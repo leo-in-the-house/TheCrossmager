@@ -84,6 +84,13 @@
 
 	"COLORLESS:RARE":
 	{
+		"animator:AyakaKamisato":
+		{
+			"FLAVOR_TEXT": "'Today, as in the past, I aspire to be somebody whom everyone can trust. But what motivates me is no longer the responsibilities I shoulder, or the expectations of other people. Rather, it is the fact that you are this kind of person, too.'",
+			"DESCRIPTION": "If you would gain [Block] this turn, instead apply that much [Freezing] to ALL enemies. || Channel [Frost] [Water].  Trigger them !M! times.",
+			"EXTENDED_DESCRIPTION": ["If you would gain #yBlock this turn, instead apply that much #yFreezing to ALL enemies."],
+			"NAME": "Ayaka Kamisato"
+		},
 		"animator:GiftBox":
 		{
 			"DESCRIPTION": "<LIM>. Gain !S! [Gold]. || Discard all cards. Add !M! random card(s) to your hand.",
@@ -115,6 +122,13 @@
 			"DESCRIPTION": "The enemy gains !S! [Strength] and dies after a certain number of turns (Hover the enemy to check). || <LIM>. Gain Max [HP] equal to half the number of turns.",
 			"EXTENDED_DESCRIPTION": ["Gain {0} Max [HP]. || ", "The enemy gains !S! [Strength] and dies after !M! turn(s)."],
 			"NAME": "Light Yagami"
+		},
+		"animator:KokomiSangonomiya":
+		{
+			"FLAVOR_TEXT": "'Respect must be given to the will of every creature. Each fish in the ocean swims in its own direction.'",
+			"DESCRIPTION": "Channel !M! [Water]. || [Water] reflects unblocked attack damage.",
+			"EXTENDED_DESCRIPTION": ["#yWater reflects unblocked attack damage."],
+			"NAME": "Kokomi Sangonomiya"
 		},
 		"animator:KotoriKanbe":
 		{
@@ -164,11 +178,24 @@
 		{
 			"DESCRIPTION": "Gain !M! of each [W]. || Give a card in your hand +!S! [M] scaling.",
 			"NAME": "Type 95"
+		},
+		"animator:Yoimiya":
+		{
+			"FLAVOR_TEXT": "'Now's the best time to test our fireworks out, though I'm sure they'll look good whether they explode in the sky or on the ground... Hehe, just kidding. I'll pay attention to safety.'",
+			"DESCRIPTION": "For the rest of combat: [T-Knife] you create deals damage to ALL enemies. || Obtain a [T-Knife](+) for each Orb. ",
+			"EXTENDED_DESCRIPTION": ["#yThrowing #yKnives you create deals damage to ALL enemies."],
+			"NAME": "Yoimiya Naganohara"
 		}
 	},
 
 	"COLORLESS:UNCOMMON":
 	{
+		"animator:Bennett":
+		{
+			"FLAVOR_TEXT": "'I'm the leader of Benny's Adventure Team — a rising star in the Mondstadt Adventurers' Guild! ...Where are the others? Ah, haha, they're all on leave right now!'",
+			"DESCRIPTION": "If below or at 30% [HP]: Gain !M! [Vigor].  If above 30% [HP]: Take !S! [DD].",
+			"NAME": "Bennett"
+		},
 		"animator:Canti":
 		{
 			"DESCRIPTION": "Deal additional damage equal to the enemy's current attack damage.",
@@ -257,6 +284,12 @@
 		{
 			"DESCRIPTION": "Cycle !M! card(s). Motivate !S!. || Whenever you Seal another card in hand: Raise this card's Motivate amount by 1.",
 			"NAME": "Nonon Jakuzure"
+		},
+		"animator:Paimon":
+		{
+			"FLAVOR_TEXT": "'Morning! Are we going out for some tasty food today?'",
+			"DESCRIPTION": "Heal [HP] for each {Genshin Impact} card in your master deck.",
+			"NAME": "Paimon"
 		},
 		"animator:QuestionMark":
 		{
