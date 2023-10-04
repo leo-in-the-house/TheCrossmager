@@ -8,7 +8,7 @@
 	},
 	"Affinity Seal":
 	{
-		"DESCRIPTION": "#ySealing a card transfers all its [A_Gen] to your [A_Gen] pool. Once per turn, #pRight-Click a card to manually #ySeal and reshuffle it.",
+		"DESCRIPTION": "#ySealing a card transfers all its [A_Gen] to your [A_Gen] pool. Once per turn, #pRight-Click a card to manually #ySeal it.",
 		"NAMES": ["seal", "seals", "sealing", "sealed", "unseal", "unsealed"],
 		"PROPER_NAME": "Sealed Affinity"
 	},

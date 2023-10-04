@@ -175,11 +175,6 @@ public class EYBCardAffinities
             {
                 a.level += level;
 
-                //Affinities cannot exceed 2
-                if (a.level > 2) {
-                    a.level = 2;
-                }
-
                 Refresh();
                 return a;
             }
@@ -205,7 +200,7 @@ public class EYBCardAffinities
             result = eybCardAffinity;
             if (result.type == affinity)
             {
-                result.level = Math.min(2, level);
+                result.level = level;
                 Refresh();
                 return result;
             }
