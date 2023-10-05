@@ -17,8 +17,8 @@ public class Dori extends AnimatorCard {
     public Dori() {
         super(DATA);
 
-        Initialize(0, 0, 9);
-        SetUpgrade(0, 0, 4);
+        Initialize(0, 0, 10);
+        SetUpgrade(0, 0, 5);
 
         SetAffinity_Yellow(1);
 
