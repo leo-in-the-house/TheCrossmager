@@ -25,6 +25,8 @@ public class TK extends AnimatorCard {
         SetAffinity_Green(1, 0, 2);
 
         SetAffinityRequirement(Affinity.Green, 4);
+
+        SetEthereal(true);
     }
 
     @Override
