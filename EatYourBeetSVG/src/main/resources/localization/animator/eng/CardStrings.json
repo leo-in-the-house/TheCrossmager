@@ -426,7 +426,7 @@
 		"animator:AyatoNaoi":
 		{
 			"FLAVOR_TEXT": "'Are you going to defy me?  I'm God. I am GOD!'",
-			"DESCRIPTION": "Channel !M! [Dark]. || ALL enemies lose HP equal to their Attack damage for each Ethereal card in your hand.",
+			"DESCRIPTION": "Channel !M! [Dark]. || ALL enemies lose HP equal to their Attack damage for each Ethereal card in your exhaust pile.",
 			"NAME": "Ayato Naoi"
 		},
 		"animator:Chaa":
@@ -521,7 +521,7 @@
 		"animator:AyeshaAltugle":
 		{
 			"FLAVOR_TEXT": "'Look, it’s so pretty, just like that day.  You liked those flowers, didn’t you, Nio?'",
-			"DESCRIPTION": "The next time you create a card: Gain !S! [THP].",
+			"DESCRIPTION": "The next time you create a card this turn: Gain !S! [THP].",
 			"EXTENDED_DESCRIPTION": ["The next time you create a card, gain #b{0} #yTemp. #yHP."],
 			"NAME": "Ayesha Altugle"
 		},
@@ -807,7 +807,7 @@
 		"animator:MikuIzayoi":
 		{
 			"FLAVOR_TEXT": "'You kept our promise. If it's you, there's no problem. Only you... I can trust.'",
-			"DESCRIPTION": "On Discard: Increase the [Block] for all cards in your hand by 1.",
+			"DESCRIPTION": "On Discard: Increase the [Block] for all cards in your hand by 2.",
 			"NAME": "Miku Izayoi"
 		},
 		"animator:MioTakamiya":

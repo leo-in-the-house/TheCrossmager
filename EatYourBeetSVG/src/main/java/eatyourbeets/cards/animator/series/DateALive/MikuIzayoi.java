@@ -21,8 +21,10 @@ public class MikuIzayoi extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 9, 1);
-        SetUpgrade(0, 0, 1);
+        Initialize(0, 9, 2);
+        SetUpgrade(0, 0, 0);
+
+        SetEthereal(true);
 
         SetAffinity_Yellow(1);
     }
@@ -31,6 +33,7 @@ public class MikuIzayoi extends AnimatorCard
     protected void OnUpgrade() {
         super.OnUpgrade();
 
+        SetEthereal(false);
         SetHaste(true);
     }
 

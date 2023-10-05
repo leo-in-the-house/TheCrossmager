@@ -13,7 +13,7 @@ import eatyourbeets.utilities.GameUtilities;
 
 public class Fischl extends AnimatorCard {
     public static final EYBCardData DATA = Register(Fischl.class).SetAttack(1, CardRarity.UNCOMMON, EYBAttackType.Elemental).SetSeriesFromClassPackage()
-            .PostInitialize(data -> data.AddPreview(new Fischl_Oz(), false));
+            .PostInitialize(data -> data.AddPreview(new Fischl_Oz(), true));
 
     public Fischl() {
         super(DATA);

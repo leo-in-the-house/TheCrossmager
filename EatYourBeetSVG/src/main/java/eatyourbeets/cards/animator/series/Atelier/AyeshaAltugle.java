@@ -72,6 +72,17 @@ public class AyeshaAltugle extends AnimatorCard {
         }
 
         @Override
+        public void atEndOfTurn(boolean isPlayer)
+        {
+            super.atEndOfTurn(isPlayer);
+
+            SetEnabled(false);
+            RemovePower();
+            flash();
+        }
+
+
+        @Override
         public void OnCardCreated(AbstractCard card, boolean startOfBattle) {
             if (enabled && !startOfBattle) {
                 GameActions.Bottom.GainTemporaryHP(amount);

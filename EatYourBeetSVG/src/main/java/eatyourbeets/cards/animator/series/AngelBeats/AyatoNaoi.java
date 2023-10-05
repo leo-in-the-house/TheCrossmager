@@ -20,7 +20,7 @@ import eatyourbeets.utilities.GameUtilities;
 public class AyatoNaoi extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(AyatoNaoi.class)
-            .SetSkill(2, CardRarity.RARE, EYBCardTarget.None)
+            .SetSkill(3, CardRarity.RARE, EYBCardTarget.None)
             .SetSeriesFromClassPackage();
 
     public AyatoNaoi()
@@ -28,15 +28,15 @@ public class AyatoNaoi extends AnimatorCard
         super(DATA);
 
         Initialize(0, 6, 1, 0);
-        SetUpgrade(0, 6, 1, 0);
+        SetUpgrade(0, 6, 0, 0);
+        SetCostUpgrade(-1);
 
         SetAffinity_Black(2, 0, 2);
 
-        SetEthereal(true);
         SetExhaust(true);
     }
 
-    @Override
+        @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
@@ -53,7 +53,7 @@ public class AyatoNaoi extends AnimatorCard
 
         int numEthereal = 0;
 
-        for (AbstractCard card : player.hand.group) {
+        for (AbstractCard card : player.exhaustPile.group) {
             if (card.isEthereal) {
                 numEthereal++;
             }

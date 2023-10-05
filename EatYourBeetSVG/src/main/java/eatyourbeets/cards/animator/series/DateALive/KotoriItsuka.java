@@ -56,6 +56,9 @@ public class KotoriItsuka extends AnimatorCard
         }
 
         GameActions.Bottom.LoseBlock(player.currentBlock);
-        GameActions.Bottom.ApplyBurning(TargetHelper.Normal(m), amount_burning);
+
+        if (amount_burning > 0) {
+            GameActions.Bottom.ApplyBurning(TargetHelper.Normal(m), amount_burning);
+        }
     }
 }

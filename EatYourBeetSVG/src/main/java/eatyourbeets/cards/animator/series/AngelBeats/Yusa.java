@@ -30,6 +30,8 @@ public class Yusa extends AnimatorCard
     {
         GameUtilities.PlayVoiceSFX(name);
 
+        GameActions.Bottom.GainBlock(block);
+
         GameActions.Bottom.Scry(magicNumber);
     }
 }

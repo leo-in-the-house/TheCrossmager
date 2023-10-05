@@ -21,6 +21,8 @@ public class Nilou extends AnimatorCard {
         SetUpgrade(0, 8, 0);
 
         SetEthereal(true);
+
+        SetAffinity_Green(2);
     }
 
     @Override
@@ -29,6 +31,10 @@ public class Nilou extends AnimatorCard {
 
         GameActions.Bottom.GainBlock(block);
 
-        GameActions.Bottom.GainBlur(GameUtilities.GetUniqueOrbsCount());
+        int uniqueOrbsCount = GameUtilities.GetUniqueOrbsCount();
+
+        if (uniqueOrbsCount > 0) {
+            GameActions.Bottom.GainBlur(uniqueOrbsCount);
+        }
     }
 }

@@ -40,20 +40,6 @@ public class Archer extends AnimatorCard
         GameActions.Bottom.StackPower(new ArcherPower(p, magicNumber));
     }
 
-    @Override
-    public boolean CheckSpecialCondition(boolean tryUse)
-    {
-        for (AbstractMonster m : GameUtilities.GetEnemies(true))
-        {
-            if (GameUtilities.GetDebuffsCount(m.powers) < secondaryValue)
-            {
-                return false;
-            }
-        }
-
-        return true;
-    }
-
     public class ArcherPower extends AnimatorPower
     {
         public ArcherPower(AbstractCreature owner, int amount)

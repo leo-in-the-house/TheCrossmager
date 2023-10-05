@@ -16,7 +16,7 @@ import eatyourbeets.utilities.*;
 
 public class Totori extends AnimatorCard {
     public static final EYBCardData DATA = Register(Totori.class)
-            .SetAttack(3, CardRarity.RARE, EYBAttackType.Ranged, EYBCardTarget.ALL)
+            .SetAttack(2, CardRarity.RARE, EYBAttackType.Ranged, EYBCardTarget.ALL)
             .SetSeriesFromClassPackage()
             .PostInitialize(data ->
             {

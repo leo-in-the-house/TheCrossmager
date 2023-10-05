@@ -24,11 +24,11 @@ public class UryuuIshida extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(8, 0, 0, 0);
+        Initialize(7, 0, 0, 0);
         SetUpgrade(4, 0, 0);
 
-        SetAffinity_Blue(1);
-        SetAffinity_Teal(1);
+        SetAffinity_Blue(1, 0, 1);
+        SetAffinity_Teal(1, 0, 1);
     }
 
     @Override
