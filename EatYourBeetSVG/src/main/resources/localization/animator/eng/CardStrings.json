@@ -492,7 +492,7 @@
 		"animator:TK":
 		{
 			"FLAVOR_TEXT": "'Hey, yo! Check this out! It's a Moonwalk... It's a Moonwalk... Head-spin!'",
-			"DESCRIPTION": "If you have at least !M! {Ethereal} cards in your exhaust pile: Gain [Blur]. || !A! [G]: All {Attacks} in your draw pile that cost 1 or more cost 1 less and gain {Ethereal}.",
+			"DESCRIPTION": "If you have at least !M! {Ethereal} cards in your exhaust pile: Gain [~Blur]. || !A! [G]: All {Attacks} in your draw pile that cost 1 or more cost 1 less and gain {Ethereal}.",
 			"NAME": "TK"
 		},
 		"animator:Yui":
