@@ -41,7 +41,7 @@ public class TK extends AnimatorCard {
             }
         }
 
-        if (numEtherealInExhaust > 2) {
+        if (numEtherealInExhaust >= 2) {
             GameActions.Bottom.GainBlur(1);
         }
 
