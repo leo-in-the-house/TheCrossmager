@@ -20,7 +20,7 @@ public class HuTao extends AnimatorCard
         super(DATA);
 
         Initialize(0, 0, 2, 0);
-        SetUpgrade(0, 0, 0, 0);
+        SetUpgrade(0, 0, 1, 0);
 
         SetAffinity_Black(1);
 

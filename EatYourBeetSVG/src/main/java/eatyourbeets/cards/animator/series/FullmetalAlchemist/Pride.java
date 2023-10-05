@@ -19,7 +19,7 @@ import java.util.ArrayList;
 public class Pride extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Pride.class)
-            .SetSkill(2, CardRarity.UNCOMMON, EYBCardTarget.Normal)
+            .SetSkill(2, CardRarity.UNCOMMON, EYBCardTarget.None)
             
             .SetSeriesFromClassPackage();
 

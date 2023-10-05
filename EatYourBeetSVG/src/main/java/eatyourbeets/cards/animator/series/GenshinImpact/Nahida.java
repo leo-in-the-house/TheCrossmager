@@ -36,7 +36,7 @@ public class Nahida extends AnimatorCard {
     @Override
     public boolean cardPlayable(AbstractMonster m) {
         if (super.cardPlayable(m)) {
-            return GameUtilities.GetUniqueOrbsCount() >= secondaryValue;
+            return GameUtilities.GetUniqueOrbsCount() >= magicNumber;
         }
 
         return false;
