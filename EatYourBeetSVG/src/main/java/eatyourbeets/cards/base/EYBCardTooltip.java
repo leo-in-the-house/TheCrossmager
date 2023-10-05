@@ -227,16 +227,16 @@ public class EYBCardTooltip
         tooltips.clear();
         card.GenerateDynamicTooltips(tooltips);
 
+        if (card.GetFlavorText() != null) {
+            tooltips.add(card.GetFlavorText());
+        }
+
         for (EYBCardTooltip tip : card.tooltips)
         {
             if (tip.canRender && !tooltips.contains(tip))
             {
                 tooltips.add(tip);
             }
-        }
-
-        if (card.GetFlavorText() != null) {
-            tooltips.add(card.GetFlavorText());
         }
 
         final boolean alt = Gdx.input.isKeyPressed(Input.Keys.ALT_LEFT) || Gdx.input.isKeyPressed(Input.Keys.ALT_RIGHT);

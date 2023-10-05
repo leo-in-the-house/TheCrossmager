@@ -1202,7 +1202,7 @@ public abstract class EYBCard extends EYBCardBase implements OnStartOfTurnPostDr
         if (flavorText == null) {
             return null;
         }
-        return new EYBCardTooltip(null, Arrays.stream(flavorText.split(" ")).map(string -> "#g"+string).reduce("", (str1, str2) -> str1 + " " + str2));
+        return new EYBCardTooltip(name, Arrays.stream(flavorText.split(" ")).map(string -> "#g"+string).reduce("", (str1, str2) -> str1 + " " + str2));
     }
 
     @Override

@@ -10,7 +10,7 @@ import eatyourbeets.utilities.GameUtilities;
 
 public class LisaMinci extends AnimatorCard {
     public static final EYBCardData DATA = Register(LisaMinci.class)
-            .SetSkill(2, CardRarity.UNCOMMON, EYBCardTarget.Self)
+            .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.Self)
             .SetColor(CardColor.COLORLESS)
             .SetSeries(CardSeries.GenshinImpact);
 

@@ -24,8 +24,8 @@ public class Freminet extends AnimatorCard implements OnStartOfTurnSubscriber {
         Initialize(0, 5, 0);
         SetUpgrade(0, 0, 0);
 
-        SetAffinity_Blue(1);
-        SetAffinity_Teal(1);
+        SetAffinity_Blue(1, 0, 1);
+        SetAffinity_Teal(1, 0, 1);
 
         SetExhaust(true);
     }

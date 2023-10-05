@@ -26,8 +26,8 @@ public class RaidenShogun extends AnimatorCard {
         SetUpgrade(0, 0, 0);
         SetCostUpgrade(-1);
 
-        SetAffinity_Yellow(2);
-        SetAffinity_Pink(2);
+        SetAffinity_Yellow(2, 0, 1);
+        SetAffinity_Pink(2, 0, 1);
 
         SetEthereal(true);
     }

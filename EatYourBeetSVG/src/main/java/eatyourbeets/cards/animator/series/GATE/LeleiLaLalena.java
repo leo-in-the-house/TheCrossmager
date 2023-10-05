@@ -11,7 +11,7 @@ import eatyourbeets.utilities.GameUtilities;
 public class LeleiLaLalena extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(LeleiLaLalena.class)
-            .SetSkill(0, CardRarity.UNCOMMON, EYBCardTarget.None)
+            .SetSkill(0, CardRarity.COMMON, EYBCardTarget.None)
             .SetSeriesFromClassPackage()
             .PostInitialize(data -> data.AddPreview(AffinityToken.GetCard(Affinity.General), false));
 
