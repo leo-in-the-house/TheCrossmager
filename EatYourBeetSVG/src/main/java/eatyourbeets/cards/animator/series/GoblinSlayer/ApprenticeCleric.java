@@ -11,7 +11,7 @@ import eatyourbeets.utilities.GameActions;
 public class ApprenticeCleric extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(ApprenticeCleric.class)
-            .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None)
+            .SetSkill(1, CardRarity.COMMON, EYBCardTarget.None)
             .SetSeriesFromClassPackage();
 
     public ApprenticeCleric()

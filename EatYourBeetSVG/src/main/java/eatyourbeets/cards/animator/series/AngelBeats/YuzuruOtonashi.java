@@ -1,6 +1,7 @@
 package eatyourbeets.cards.animator.series.AngelBeats;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.stances.CalmStance;
 import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -16,11 +17,19 @@ public class YuzuruOtonashi extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 4, 0, 0);
+        Initialize(0, 3, 0, 0);
         SetUpgrade(0, 4, 0, 0);
 
         SetAffinity_Pink(1);
         SetAffinity_Brown(1);
+    }
+
+
+    @Override
+    public void triggerOnExhaust() {
+        super.triggerOnExhaust();
+
+        GameActions.Top.ChangeStance(CalmStance.STANCE_ID);
     }
 
     @Override
@@ -36,11 +45,11 @@ public class YuzuruOtonashi extends AnimatorCard
             }
         }
 
-        int scalingAmount = numEthereal / 3;
+        int scalingAmount = numEthereal;
 
         if (scalingAmount > 0) {
-            GameActions.Bottom.SetScaling(this, Affinity.Pink, scalingAmount);
-            GameActions.Bottom.SetScaling(this, Affinity.Brown, scalingAmount);
+            SetScaling(Affinity.Pink, scalingAmount);
+            SetScaling(Affinity.Brown, scalingAmount);
         }
     }
 

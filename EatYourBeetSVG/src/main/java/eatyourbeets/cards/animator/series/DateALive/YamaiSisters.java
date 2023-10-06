@@ -20,7 +20,7 @@ public class YamaiSisters extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(2, 2);
+        Initialize(2, 1);
         SetUpgrade(2, 1);
 
         SetAffinity_Red(1);

@@ -517,7 +517,7 @@
 		"animator:YuzuruOtonashi":
 		{
 			"FLAVOR_TEXT": "'There’s nothing false about the lives we endured! Everyone lived to their fullest! We’ve carved those memories into ourselves!'",
-			"DESCRIPTION": "This card gains [P] and [O] scaling for every 3 {Ethereal} cards in your exhaust pile.",
+			"DESCRIPTION": "This card gains [P] and [O] scaling for each {Ethereal} card in your exhaust pile. || On Exhaust: Enter <CS>.",
 			"NAME": "Yuzuru Otonashi"
 		}
 	},
@@ -989,7 +989,7 @@
 		"animator:Rena":
 		{
 			"FLAVOR_TEXT": "'This is the will of Eldrasil... Yes, there's nothing to be afraid of.'",
-			"DESCRIPTION": "When Discarded: Gain [G] and [~Blur].",
+			"DESCRIPTION": "Enter <CS>. || When Discarded: Gain [G] and [~Blur].",
 			"NAME": "Rena"
 		}
 	},

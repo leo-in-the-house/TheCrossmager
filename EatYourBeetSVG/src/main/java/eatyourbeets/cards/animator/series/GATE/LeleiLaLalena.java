@@ -3,8 +3,10 @@ package eatyourbeets.cards.animator.series.GATE;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.Frost;
-import eatyourbeets.cards.animator.tokens.AffinityToken;
-import eatyourbeets.cards.base.*;
+import eatyourbeets.cards.base.AnimatorCard;
+import eatyourbeets.cards.base.CardUseInfo;
+import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
@@ -12,9 +14,7 @@ public class LeleiLaLalena extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(LeleiLaLalena.class)
             .SetSkill(0, CardRarity.COMMON, EYBCardTarget.None)
-            .SetSeriesFromClassPackage()
-            .PostInitialize(data -> data.AddPreview(AffinityToken.GetCard(Affinity.General), false));
-
+            .SetSeriesFromClassPackage();
     public LeleiLaLalena()
     {
         super(DATA);

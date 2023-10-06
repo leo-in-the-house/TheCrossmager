@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.Frost;
 import eatyourbeets.cards.base.*;
+import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
@@ -21,6 +22,16 @@ public class KaeyaAlberich extends AnimatorCard {
 
         SetAffinity_Blue(1);
     }
+
+    public AbstractAttribute GetBlockInfo()
+    {
+        if (GameUtilities.InGame()) {
+            return super.GetBlockInfo().AddMultiplier(1+player.filledOrbCount());
+        }
+
+        return super.GetBlockInfo().AddMultiplier(1);
+    }
+
 
     @Override
     public void triggerOnManualDiscard()
