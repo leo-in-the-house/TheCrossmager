@@ -1,14 +1,15 @@
 package eatyourbeets.cards.animator.series.Elsword;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.animator.special.*;
+import eatyourbeets.cards.animator.special.OrbCore_Chaos;
+import eatyourbeets.cards.animator.special.OrbCore_Dark;
+import eatyourbeets.cards.animator.special.OrbCore_Fire;
+import eatyourbeets.cards.animator.special.OrbCore_Frost;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.utilities.JUtils;
 
 import java.util.ArrayList;
 
@@ -60,35 +61,18 @@ public class Add extends AnimatorCard
 
             if (GameUtilities.HasAffinity(c, Affinity.Red))
             {
-                GameActions.Bottom.MakeCardInHand(new OrbCore_Fire());
+                GameActions.Top.MakeCardInHand(new OrbCore_Fire());
             }
             if (GameUtilities.HasAffinity(c, Affinity.Green))
             {
-                GameActions.Bottom.MakeCardInHand(new OrbCore_Frost());
+                GameActions.Top.MakeCardInHand(new OrbCore_Frost());
             }
             if (GameUtilities.HasAffinity(c, Affinity.Blue))
             {
-                GameActions.Bottom.MakeCardInHand(new OrbCore_Chaos());
+                GameActions.Top.MakeCardInHand(new OrbCore_Chaos());
             }
-        }
-    }
 
-    private void OrbChosen(CardGroup cardGroup, ArrayList<AbstractCard> chosen)
-    {
-        if (cardGroup != null && chosen != null && chosen.size() == 1)
-        {
-            switch (cardGroup.type)
-            {
-                case DRAW_PILE:
-                case HAND:
-                case DISCARD_PILE:
-                    GameActions.Bottom.MakeCard(chosen.get(0), cardGroup);
-                    break;
-
-                default:
-                    JUtils.LogWarning(this, "Invalid card group type: " + cardGroup.type);
-                    break;
-            }
+            GameActions.Top.SealAffinities(c, false);
         }
     }
 }

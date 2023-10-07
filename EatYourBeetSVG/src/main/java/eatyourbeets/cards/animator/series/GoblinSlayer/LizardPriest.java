@@ -3,9 +3,9 @@ package eatyourbeets.cards.animator.series.GoblinSlayer;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.orbs.animator.Earth;
+import eatyourbeets.stances.CalmStance;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class LizardPriest extends AnimatorCard
 {
@@ -17,17 +17,10 @@ public class LizardPriest extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 7, 0, 3);
-        SetUpgrade(0, 2, 0, 0);
+        Initialize(0, 6, 0, 0);
+        SetUpgrade(0, 4, 0, 0);
 
-        SetAffinity_Red(1, 0, 0);
-        SetAffinity_White(2, 0, 0);
-    }
-
-    @Override
-    protected float GetInitialBlock()
-    {
-        return super.GetInitialBlock() + (GameUtilities.HasOrb(Earth.ORB_ID) ? secondaryValue : 0);
+        SetAffinity_Brown(1, 0, 0);
     }
 
     @Override
@@ -35,7 +28,6 @@ public class LizardPriest extends AnimatorCard
     {
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
-        GameActions.Bottom.GainAffinity(Affinity.Red, 1, upgraded);
-        GameActions.Bottom.GainAffinity(Affinity.White, 1, upgraded);
+        GameActions.Bottom.ChangeStance(CalmStance.STANCE_ID);
     }
 }

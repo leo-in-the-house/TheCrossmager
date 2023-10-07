@@ -1446,43 +1446,48 @@
 	{
 		"animator:ApprenticeCleric":
 		{
-			"DESCRIPTION": "Seal 1 [R] or [G] card in draw pile, discard it and give it +!M! [Blessing] scaling. || <slm>. When Drawn: Recover !S! [HP] per [Blessing].",
+			"DESCRIPTION": "To play this card: {Exhaust} and {Seal} a random {Hindrance} from your draw pile.",
 			"NAME": "Apprentice Cleric"
 		},
 		"animator:CowGirl":
 		{
-			"DESCRIPTION": "Gain !S! {Temp. [M]}. || When Sealed: Gain !S! {Temp.} [Strength] [Dexterity] [Focus].",
+			"DESCRIPTION": "When drawn: Add a random {Goblin} to either your draw or discard pile. || Draw !M! cards, then increase their affinity levels to 2.",
 			"NAME": "Cow Girl"
 		},
 		"animator:DwarfShaman":
 		{
-			"DESCRIPTION": "Channel 1 [Earth]. || !A! [R] [B]: Upgrade 1 card and gain 1 [A_Seal].",
+			"DESCRIPTION": "If you have a {Hindrance} in your hand: Gain !M! Temp. [Thorns].",
 			"NAME": "Dwarf Shaman"
+		},
+		"animator:Fighter":
+		{
+			"DESCRIPTION": "Add !M! random {Goblins} to your draw pile.",
+			"NAME": "Fighter"
 		},
 		"animator:GoblinSlayer":
 		{
-			"DESCRIPTION": "Exhaust every Status in hand and discard pile. For each, give {Goblin Slayer} +!S! damage this combat. || {WARNING}: Goblins.",
+			"DESCRIPTION": "Exhaust every {Hindrance} in hand and discard pile. For each, give {Goblin Slayer} +!S! damage this combat. || {WARNING}: Goblins.",
 			"NAME": "Goblin Slayer"
 		},
 		"animator:GuildGirl":
 		{
-			"DESCRIPTION": "Once per turn, when you play a [S] card: Cycle 1 card. || Whenever a non-minion enemy dies: Gain !M! [Gold] (Does not stack).",
-			"EXTENDED_DESCRIPTION": ["#b{0} time(s) this turn, when you play a [S] card, Cycle #b1 card. Whenever a non-minion enemy dies, gain #b{1} #yGold."],
+			"DESCRIPTION": "At start of turn: Cycle 1 card.",
+			"EXTENDED_DESCRIPTION": ["At start of turn: Cycle #b{0} cards."],
 			"NAME": "Guild Girl"
 		},
 		"animator:HeavyWarrior":
 		{
-			"DESCRIPTION": "Unplayable unless you pay !A! [R], or have another High-Cost card in hand. || If the enemy is an Elite or Boss: Motivate 1.",
+			"DESCRIPTION": "Unplayable unless you have at least !M! {Hindrance} in hand. || On Discard: Gain [R][W].",
 			"NAME": "Heavy Warrior"
 		},
 		"animator:HighElfArcher":
 		{
-			"DESCRIPTION": "If the enemy has no [Artifact]: Apply !M! [~Lock-On]. || !A! [G]: Deal [DD] equal to damage dealt.",
+			"DESCRIPTION": "If you have a {Hindrance} in your exhaust pile: Draw a card.",
 			"NAME": "High Elf Archer"
 		},
 		"animator:LizardPriest":
 		{
-			"DESCRIPTION": "Gain|Boost [L] [R]. || If you have [Earth]: Gain !S! additional [Block].",
+			"DESCRIPTION": "Enter <CS>.",
 			"NAME": "Lizard Priest"
 		},
 		"animator:NobleFencer":

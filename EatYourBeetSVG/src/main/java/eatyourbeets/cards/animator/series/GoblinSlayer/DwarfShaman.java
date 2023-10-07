@@ -1,53 +1,51 @@
 package eatyourbeets.cards.animator.series.GoblinSlayer;
 
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.effects.AttackEffects;
-import eatyourbeets.effects.VFX;
-import eatyourbeets.orbs.animator.Earth;
-import eatyourbeets.powers.CombatStats;
+import eatyourbeets.cards.base.AnimatorCard;
+import eatyourbeets.cards.base.CardUseInfo;
+import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameEffects;
+import eatyourbeets.utilities.GameUtilities;
 
 public class DwarfShaman extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(DwarfShaman.class)
-            .SetAttack(1, CardRarity.COMMON, EYBAttackType.Elemental)
+            .SetSkill(2, CardRarity.COMMON, EYBCardTarget.None)
             .SetSeriesFromClassPackage();
 
     public DwarfShaman()
     {
         super(DATA);
 
-        Initialize(2, 0);
-        SetUpgrade(4, 0);
+        Initialize(0, 8, 6);
+        SetUpgrade(0, 5, 3);
 
-        SetAffinity_Blue(1, 0, 2);
-        SetAffinity_Red(1);
-
-        SetAffinityRequirement(Affinity.Red, 1);
-        SetAffinityRequirement(Affinity.Blue, 1);
-        SetEvokeOrbCount(1);
+        SetAffinity_Brown(2);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.DealDamage(this, m, AttackEffects.NONE).SetVFX(true, false)
-        .SetDamageEffect(c -> GameEffects.List.Add(VFX.ThrowRock(player.hb, c.hb, 0.4f)).duration).SetRealtime(true);
-        GameActions.Bottom.ChannelOrb(new Earth());
+        GameActions.Bottom.GainBlock(block);
+        if (CheckSpecialCondition(false)) {
+            GameActions.Bottom.GainTemporaryThorns(magicNumber);
+        }
     }
 
+
     @Override
-    public void OnLateUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
+    public boolean CheckSpecialCondition(boolean tryUse)
     {
-        if (CheckSpecialCondition(false))
-        {
-            GameActions.Bottom.UpgradeFromHand(name, 1, false);
-            CombatStats.Affinities.AddAffinitySealUses(1);
+        for (AbstractCard card : player.hand.group) {
+            if (GameUtilities.IsHindrance(card)) {
+                return true;
+            }
         }
+
+        return false;
     }
 }

@@ -1,10 +1,10 @@
 package eatyourbeets.cards.animator.series.GoblinSlayer;
 
 import com.badlogic.gdx.graphics.Color;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.effects.SFX;
 import eatyourbeets.effects.VFX;
@@ -22,12 +22,10 @@ public class HighElfArcher extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(3, 0, 1);
-        SetUpgrade(1, 0, 1);
+        Initialize(3, 0, 0);
+        SetUpgrade(3, 0, 0);
 
-        SetAffinity_Green(1, 0, 1);
-
-        SetAffinityRequirement(Affinity.Green, 1);
+        SetAffinity_Green(1, 0, 0);
     }
 
     @Override
@@ -38,14 +36,21 @@ public class HighElfArcher extends AnimatorCard
         GameActions.Bottom.DealDamage(this, m, AttackEffects.NONE)
         .SetDamageEffect(c -> GameEffects.List.Add(VFX.ThrowDagger(c.hb, 0.15f).SetColor(Color.TAN)).duration * 0.5f);
 
-        if (!GameUtilities.HasArtifact(m))
-        {
-            GameActions.Bottom.ApplyLockOn(player, m, magicNumber);
+        if (CheckSpecialCondition(false)) {
+            GameActions.Bottom.Draw(1);
+        }
+    }
+
+
+    @Override
+    public boolean CheckSpecialCondition(boolean tryUse)
+    {
+        for (AbstractCard card : player.exhaustPile.group) {
+            if (GameUtilities.IsHindrance(card)) {
+                return true;
+            }
         }
 
-        if (CheckSpecialCondition(false))
-        {
-            GameActions.Bottom.DealDamageAtEndOfTurn(p, m, damage);
-        }
+        return false;
     }
 }

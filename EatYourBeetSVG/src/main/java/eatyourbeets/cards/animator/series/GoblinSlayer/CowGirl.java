@@ -1,14 +1,12 @@
 package eatyourbeets.cards.animator.series.GoblinSlayer;
 
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import eatyourbeets.actions.animator.CreateRandomGoblins;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.cards.base.attributes.AbstractAttribute;
-import eatyourbeets.cards.base.attributes.HPAttribute;
-import eatyourbeets.cards.base.attributes.MixedHPAttribute;
-import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class CowGirl extends AnimatorCard
 {
@@ -20,21 +18,10 @@ public class CowGirl extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 0, 2, 1);
-        SetUpgrade(0, 0, 0, 0);
+        Initialize(0, 0, 2);
+        SetUpgrade(0, 0, 0);
 
-        SetAffinity_Red(1);
-
-        SetExhaust(true);
-    }
-
-    @Override
-    public void triggerOnAffinitySeal(boolean reshuffle)
-    {
-        super.triggerOnAffinitySeal(reshuffle);
-
-        GameActions.Bottom.GainTemporaryStats(secondaryValue, secondaryValue, secondaryValue);
-        GameActions.Bottom.ShowCopy(this);
+        SetAffinity_Brown(1);
     }
 
     @Override
@@ -44,18 +31,34 @@ public class CowGirl extends AnimatorCard
     }
 
     @Override
-    public AbstractAttribute GetSpecialInfo()
-    {
-        return upgraded
-             ? MixedHPAttribute.Instance.SetCard(this, true)
-             : HPAttribute.Instance.SetCard(this, true);
+    public void triggerWhenDrawn() {
+        super.triggerWhenDrawn();
+
+        if (rng.randomBoolean())
+        {
+            GameActions.Top.MakeCardInDiscardPile(CreateRandomGoblins.GetRandomGoblin(rng));
+        }
+        else {
+            GameActions.Top.MakeCardInDrawPile(CreateRandomGoblins.GetRandomGoblin(rng));
+        }
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.Heal(magicNumber).Overheal(upgraded);
-        CombatStats.Affinities.AddTempAffinity(Affinity.Star, secondaryValue);
+        GameActions.Bottom.Draw(magicNumber)
+            .AddCallback(cards -> {
+                for (AbstractCard card : cards) {
+                    if (card instanceof AnimatorCard) {
+                        AnimatorCard animatorCard = (AnimatorCard) card;
+                        for (EYBCardAffinity affinity : animatorCard.affinities.List) {
+                            if (affinity.level == 1) {
+                                GameUtilities.AddAffinityToCard(card, affinity.type, 1);
+                            }
+                        }
+                    }
+                }
+            });
     }
 }

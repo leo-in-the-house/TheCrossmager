@@ -1,7 +1,6 @@
 package eatyourbeets.cards.animator.series.GoblinSlayer;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.actions.animator.CreateRandomGoblins;
@@ -10,13 +9,13 @@ import eatyourbeets.cards.animator.status.GoblinKing;
 import eatyourbeets.cards.animator.status.GoblinShaman;
 import eatyourbeets.cards.animator.status.GoblinSoldier;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.modifiers.DamageModifiers;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 import java.util.ArrayList;
 
@@ -37,13 +36,12 @@ public class GoblinSlayer extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(3, 4, 0, 3);
-        SetUpgrade(1, 3, 0, 0);
+        Initialize(1, 0, 0, 3);
+        SetUpgrade(0, 0, 0, 3);
 
-        SetAffinity_Red(1);
-        SetAffinity_Blue(1);
-        SetAffinity_Green(1);
-        SetAffinity_Star(0, 0, 1);
+        SetAffinity_Red(1, 0, 1);
+        SetAffinity_Green(1, 0, 1);
+        SetAffinity_Violet(1, 0, 1);
 
         SetRetain(true);
     }
@@ -77,16 +75,15 @@ public class GoblinSlayer extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.GainBlock(block);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_VERTICAL);
 
         GameActions.Bottom.MoveCards(p.hand, p.exhaustPile)
-        .SetFilter(c -> c.type == CardType.STATUS)
+        .SetFilter(GameUtilities::IsHindrance)
         .ShowEffect(true, true, 0.25f)
         .AddCallback(this::IncreaseDamage);
 
         GameActions.Bottom.MoveCards(p.discardPile, p.exhaustPile)
-        .SetFilter(c -> c.type == CardType.STATUS)
+        .SetFilter(GameUtilities::IsHindrance)
         .ShowEffect(true, true, 0.12f)
         .AddCallback(this::IncreaseDamage);
     }

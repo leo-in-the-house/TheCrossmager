@@ -1,16 +1,16 @@
 package eatyourbeets.cards.animator.series.GoblinSlayer;
 
 import com.badlogic.gdx.graphics.Color;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.base.Affinity;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.effects.VFX;
-import eatyourbeets.utilities.*;
+import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class HeavyWarrior extends AnimatorCard
 {
@@ -22,51 +22,55 @@ public class HeavyWarrior extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(30, 0);
+        Initialize(30, 0, 2);
+        SetUpgrade(5, 0);
 
-        SetAffinity_Red(2, 0, 8);
-        SetAffinity_Green(1, 0, 0);
+        SetAffinity_Red(2, 0, 4);
+        SetAffinity_White(2, 0, 4);
 
-        SetExhaust(true);
-
-        SetAffinityRequirement(Affinity.Red, 3);
+        SetLoyal(true);
     }
 
     @Override
     protected void OnUpgrade()
     {
-        SetExhaust(false);
+        SetRetain(true);
     }
 
     @Override
-    protected void Refresh(AbstractMonster enemy)
+    public boolean cardPlayable(AbstractMonster m)
     {
-        super.Refresh(enemy);
+        if (super.cardPlayable(m)) {
+            int numHindrances = 0;
 
-        SetPlayable(CheckSpecialCondition(false));
+            for (AbstractCard card : player.hand.group) {
+                if (GameUtilities.IsHindrance(card)) {
+                    numHindrances++;
+                }
+            }
+
+            return numHindrances > magicNumber;
+        }
+
+        return false;
+    }
+
+    @Override
+    public void triggerOnManualDiscard()
+    {
+        super.triggerOnManualDiscard();
+
+        GameActions.Top.GainRed(1);
+        GameActions.Top.GainWhite(1);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        if (CheckSpecialCondition(false))
-        {
-            GameActions.Bottom.VFX(VFX.VerticalImpact(m.hb).SetColor(Color.LIGHT_GRAY));
-            GameActions.Bottom.DealDamage(this, m, AttackEffects.BLUNT_HEAVY)
-            .SetVFXColor(Color.DARK_GRAY);
 
-            if (m.type == AbstractMonster.EnemyType.ELITE || m.type == AbstractMonster.EnemyType.BOSS)
-            {
-                GameActions.Bottom.Motivate(1);
-            }
-        }
-    }
-
-    @Override
-    public boolean CheckSpecialCondition(boolean tryUse)
-    {
-        boolean canPlayWithoutAffinity = JUtils.Any(player.hand.group, c -> c.uuid != uuid && GameUtilities.IsHighCost(c));
-        return canPlayWithoutAffinity || super.CheckSpecialCondition(tryUse);
+        GameActions.Bottom.VFX(VFX.VerticalImpact(m.hb).SetColor(Color.LIGHT_GRAY));
+        GameActions.Bottom.DealDamage(this, m, AttackEffects.BLUNT_HEAVY)
+                .SetVFXColor(Color.DARK_GRAY);
     }
 }
