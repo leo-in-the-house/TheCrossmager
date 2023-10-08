@@ -4,6 +4,10 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.actions.animator.CreateRandomGoblins;
+import eatyourbeets.cards.animator.status.GoblinChampion;
+import eatyourbeets.cards.animator.status.GoblinKing;
+import eatyourbeets.cards.animator.status.GoblinShaman;
+import eatyourbeets.cards.animator.status.GoblinSoldier;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
@@ -12,7 +16,14 @@ public class CowGirl extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(CowGirl.class)
             .SetSkill(0, CardRarity.UNCOMMON, EYBCardTarget.None)
-            .SetSeriesFromClassPackage();
+            .SetSeriesFromClassPackage()
+            .PostInitialize(data ->
+            {
+                data.AddPreview(new GoblinSoldier(), false);
+                data.AddPreview(new GoblinShaman(), false);
+                data.AddPreview(new GoblinChampion(), false);
+                data.AddPreview(new GoblinKing(), false);
+            });
 
     public CowGirl()
     {

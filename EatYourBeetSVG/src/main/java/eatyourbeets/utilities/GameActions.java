@@ -943,6 +943,12 @@ public final class GameActions
         .SetUpgrade(upgraded, false);
     }
 
+
+    public ModifyAffinityLevel SealAffinities(AbstractCard card)
+    {
+        return SealAffinities(card, false);
+    }
+
     public ModifyAffinityLevel SealAffinities(AbstractCard card, boolean reshuffle)
     {
         return (ModifyAffinityLevel)Add(new ModifyAffinityLevel(card, null, 0, false))

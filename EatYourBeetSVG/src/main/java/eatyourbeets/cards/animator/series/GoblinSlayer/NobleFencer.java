@@ -1,22 +1,23 @@
 package eatyourbeets.cards.animator.series.GoblinSlayer;
 
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.orbs.Lightning;
-import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.interfaces.subscribers.OnAffinitySealedSubscriber;
+import eatyourbeets.cards.base.AnimatorCard;
+import eatyourbeets.cards.base.CardUseInfo;
+import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.powers.AnimatorPower;
-import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
 public class NobleFencer extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(NobleFencer.class)
-            .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None)
+            .SetSkill(2, CardRarity.UNCOMMON, EYBCardTarget.None)
             
             .SetSeriesFromClassPackage();
 
@@ -24,31 +25,17 @@ public class NobleFencer extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 5);
-        SetUpgrade(0, 2);
+        Initialize(0, 5, 2);
+        SetUpgrade(0, 2, 1);
 
-        SetAffinity_Green(1, 0, 0);
-        SetAffinity_Blue(2, 0, 1);
-
-        SetExhaust(true);
+        SetAffinity_Yellow(1);
+        SetAffinity_Violet(1);
     }
 
     @Override
     protected void OnUpgrade()
     {
-        SetRetainOnce(true);
-    }
-
-    @Override
-    public void OnDrag(AbstractMonster m)
-    {
-        super.OnDrag(m);
-
-        final AbstractOrb orb = GameUtilities.GetFirstOrb(Lightning.ORB_ID);
-        if (orb != null)
-        {
-            orb.showEvokeValue();
-        }
+        SetRetain(true);
     }
 
     @Override
@@ -56,12 +43,13 @@ public class NobleFencer extends AnimatorCard
     {
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
-        GameActions.Bottom.EvokeOrb(1)
-        .SetFilter(o -> Lightning.ORB_ID.equals(o.ID));
+
+        GameActions.Bottom.ChannelOrbs(Lightning::new, magicNumber);
+
         GameActions.Bottom.StackPower(new NobleFencerPower(p, 1));
     }
 
-    public class NobleFencerPower extends AnimatorPower implements OnAffinitySealedSubscriber
+    public class NobleFencerPower extends AnimatorPower
     {
         public NobleFencerPower(AbstractCreature owner, int amount)
         {
@@ -71,28 +59,22 @@ public class NobleFencer extends AnimatorCard
         }
 
         @Override
-        public void onInitialApplication()
+        public void atEndOfTurn(boolean isPlayer)
         {
-            super.onInitialApplication();
+            super.atEndOfTurn(isPlayer);
 
-            CombatStats.onAffinitySealed.Subscribe(this);
-        }
+            int numHindrances = 0;
 
-        @Override
-        public void onRemove()
-        {
-            super.onRemove();
+            for (AbstractCard card : player.hand.group) {
+                if (GameUtilities.IsHindrance(card)) {
+                    numHindrances++;
 
-            CombatStats.onAffinitySealed.Unsubscribe(this);
-        }
+                    GameActions.Bottom.Exhaust(card);
+                }
+            }
 
-        @Override
-        public void OnAffinitySealed(EYBCard card, boolean manual)
-        {
-            if (player.hand.contains(card))
-            {
-                GameActions.Bottom.ChannelOrb(new Lightning());
-                flashWithoutSound();
+            if (numHindrances > 0) {
+                EvokeAllLightning(numHindrances);
             }
         }
 
@@ -102,6 +84,14 @@ public class NobleFencer extends AnimatorCard
             super.atStartOfTurn();
 
             RemovePower();
+        }
+
+        private void EvokeAllLightning(int times) {
+            for (AbstractOrb orb : player.orbs) {
+                if (orb.ID.equals(Lightning.ORB_ID)) {
+                    GameActions.Bottom.EvokeOrb(times, orb);
+                }
+            }
         }
     }
 }

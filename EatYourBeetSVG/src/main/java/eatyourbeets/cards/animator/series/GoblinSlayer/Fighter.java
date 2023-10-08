@@ -4,6 +4,10 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.actions.animator.CreateRandomGoblins;
+import eatyourbeets.cards.animator.status.GoblinChampion;
+import eatyourbeets.cards.animator.status.GoblinKing;
+import eatyourbeets.cards.animator.status.GoblinShaman;
+import eatyourbeets.cards.animator.status.GoblinSoldier;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
@@ -11,7 +15,14 @@ import eatyourbeets.utilities.GameUtilities;
 public class Fighter extends AnimatorCard {
     public static final EYBCardData DATA = Register(Fighter.class)
             .SetAttack(0, CardRarity.COMMON, EYBAttackType.Normal, EYBCardTarget.ALL)
-            .SetSeriesFromClassPackage();
+            .SetSeriesFromClassPackage()
+            .PostInitialize(data ->
+            {
+                data.AddPreview(new GoblinSoldier(), false);
+                data.AddPreview(new GoblinShaman(), false);
+                data.AddPreview(new GoblinChampion(), false);
+                data.AddPreview(new GoblinKing(), false);
+            });
 
     public Fighter() {
         super(DATA);

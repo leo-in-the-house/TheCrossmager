@@ -1,13 +1,10 @@
 package eatyourbeets.cards.animator.series.GoblinSlayer;
 
 import com.badlogic.gdx.graphics.Color;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.status.Status_Wound;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
@@ -19,7 +16,6 @@ public class Spearman extends AnimatorCard
             .SetSeriesFromClassPackage()
             .PostInitialize(data ->
             {
-                data.AddPreview(new Witch(), true);
                 data.AddPreview(new Status_Wound(), false);
             });
 
@@ -29,15 +25,10 @@ public class Spearman extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(10, 0);
-        SetUpgrade(3, 0);
+        Initialize(12, 0);
+        SetUpgrade(4, 0);
 
         SetAffinity_Red(1);
-        SetAffinity_Green(1);
-
-        SetCardPreview(Witch.DATA::IsCard);
-
-        SetAffinityRequirement(Affinity.Red, 1);
     }
 
     @Override
@@ -45,35 +36,6 @@ public class Spearman extends AnimatorCard
     {
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SPEAR).SetVFXColor(Color.LIGHT_GRAY).SetSoundPitch(0.75f, 0.85f);
-        GameActions.Bottom.GainGreen(1, true);
-        GameActions.Bottom.GainRed(1, true);
         GameActions.Bottom.MakeCardInHand(new Status_Wound());
-
-        if (CheckSpecialCondition(false))
-        {
-            GameActions.Bottom.Draw(1)
-            .SetFilter(Witch.DATA::IsCard, false)
-            .AddCallback(cards ->
-            {
-                for (AbstractCard c : cards)
-                {
-                    GameUtilities.Retain(c);
-                }
-            });
-        }
-    }
-
-    @Override
-    public boolean CheckSpecialCondition(boolean tryUse)
-    {
-        for (AbstractCard c : player.drawPile.group)
-        {
-            if (Witch.DATA.IsCard(c))
-            {
-                return super.CheckSpecialCondition(tryUse);
-            }
-        }
-
-        return false;
     }
 }

@@ -1,44 +1,52 @@
 package eatyourbeets.cards.animator.series.GoblinSlayer;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
-import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.base.*;
+import eatyourbeets.actions.animator.CreateRandomGoblins;
+import eatyourbeets.cards.animator.status.*;
+import eatyourbeets.cards.base.AnimatorCard;
+import eatyourbeets.cards.base.CardUseInfo;
+import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.cards.base.attributes.TempHPAttribute;
-import eatyourbeets.monsters.EnemyIntent;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.TargetHelper;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Priestess extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Priestess.class)
             .SetSkill(1, CardRarity.COMMON, EYBCardTarget.ALL)
-            .SetSeriesFromClassPackage();
+            .SetSeriesFromClassPackage()
+            .PostInitialize(data ->
+            {
+                data.AddPreview(new Status_Dazed(), false);
+                data.AddPreview(new GoblinSoldier(), false);
+                data.AddPreview(new GoblinShaman(), false);
+                data.AddPreview(new GoblinChampion(), false);
+                data.AddPreview(new GoblinKing(), false);
+            });
 
     public Priestess()
     {
         super(DATA);
 
-        Initialize(0, 0, 2, 1);
-        SetUpgrade(0, 0, 2);
+        Initialize(0, 0, 7, 4);
+        SetUpgrade(0, 0, 4);
 
-        SetAffinity_Blue(1);
         SetAffinity_White(1);
-
-        SetAffinityRequirement(Affinity.White, 1);
     }
 
-    @Override
-    public void OnDrag(AbstractMonster m)
-    {
-        super.OnDrag(m);
 
-        for (EnemyIntent intent : GameUtilities.GetIntents())
-        {
-            intent.AddWeak();
+    @Override
+    public void triggerWhenDrawn() {
+        super.triggerWhenDrawn();
+
+        if (CheckSpecialConditionLimited(false)) {
+            for (int i=0; i<secondaryValue; i++) {
+                GameActions.Top.MakeCardInDiscardPile(CreateRandomGoblins.GetRandomGoblin(rng));
+            }
         }
     }
 
@@ -53,33 +61,13 @@ public class Priestess extends AnimatorCard
     {
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainTemporaryHP(magicNumber);
-        GameActions.Bottom.ApplyWeak(TargetHelper.Enemies(), 1);
 
-        if (CheckSpecialCondition(false))
-        {
-            GameActions.Bottom.ExhaustFromPile(name, 1, p.drawPile, p.hand, p.discardPile)
-            .ShowEffect(true, true)
-            .SetOptions(true, true)
-            .SetFilter(GameUtilities::IsHindrance);
-        }
-    }
-
-    @Override
-    public boolean CheckSpecialCondition(boolean tryUse)
-    {
-        return (HasHindrances(player.drawPile) || HasHindrances(player.hand) || HasHindrances(player.discardPile)) && super.CheckSpecialCondition(tryUse);
-    }
-
-    protected boolean HasHindrances(CardGroup group)
-    {
-        for (AbstractCard c : group.group)
-        {
-            if (GameUtilities.IsHindrance(c))
-            {
-                return true;
+        for (AbstractCard card : player.hand.group) {
+            if (GameUtilities.IsHindrance(card)) {
+                GameActions.Bottom.ReplaceCard(uuid, new Status_Dazed());
             }
         }
-
-        return false;
     }
+
+
 }

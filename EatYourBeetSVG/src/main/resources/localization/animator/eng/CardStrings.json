@@ -1492,28 +1492,28 @@
 		},
 		"animator:NobleFencer":
 		{
-			"DESCRIPTION": "Evoke your first [Lightning]. || This turn, whenever you Seal a card in hand, Channel 1 [Lightning].",
-			"EXTENDED_DESCRIPTION": ["When you manually #ySeal a card, Channel #b1 [Lightning]."],
+			"DESCRIPTION": "Channel !M! [Lightning]. || At the end of this turn: {Exhaust} all {Hindrance} in your hand.  {Evoke} ALL your [Lightning] for each card exhausted.",
+			"EXTENDED_DESCRIPTION": ["At the end of this turn: #yExhaust all #yHindrance in your hand.  #yEvoke ALL your #yLightning #b{0} times for each card exhausted."],
 			"NAME": "Noble Fencer"
 		},
 		"animator:Priestess":
 		{
-			"DESCRIPTION": "Apply 1 [Weak] to ALL enemies. || !A! [L]: Exhaust a random Hindrance from anywhere.",
+			"DESCRIPTION": "Transform all {Hindrances} in your hand to {Dazed}. || <LIM>. When drawn: Add !S! random {Goblins} to your discard pile.",
 			"NAME": "Priestess"
 		},
 		"animator:Spearman":
 		{
-			"DESCRIPTION": "Boost [G] [R]. Receive a {Wound}. || !A! [R]: Draw {Witch} and Retain it.",
+			"DESCRIPTION": "Add {Wound} to your hand.",
 			"NAME": "Spearman"
 		},
 		"animator:SwordMaiden":
 		{
-			"DESCRIPTION": "Recover !S! [HP]. || Remove your rightmost {Debuff}.",
+			"DESCRIPTION": "Remove your rightmost {Debuff}. || !A! [W][P]: {Discard} and {Seal} any number of {Hindrances} in your draw pile.",
 			"NAME": "Sword Maiden"
 		},
 		"animator:Witch":
 		{
-			"DESCRIPTION": "Evoke your leftmost [Fire] or [Dark] to gain [E]. || Played after {Spearman}: Enter any Stance.",
+			"DESCRIPTION": "{Discard} a {Hindrance} to enter any {Stance}. || Played after {Spearman}: Gain !M! [E].",
 			"NAME": "Witch"
 		}
 	},
@@ -2962,7 +2962,7 @@
 		},
 		"animator:Hero":
 		{
-			"DESCRIPTION": "<DRW-M>. || <LIM>. If this card kills an enemy, 40% chance to obtain a {Relic} at the end of combat.",
+			"DESCRIPTION": "On End of turn: Retain this card if you have at least !S! {Hindrances} in your exhaust pile plus your discard pile. || <LIM>. If this card kills an enemy, !M!% chance to obtain a {Relic} at the end of combat.",
 			"NAME": "'Hero'"
 		},
 		"animator:HiiragiTenri":

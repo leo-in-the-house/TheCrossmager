@@ -24,6 +24,7 @@ public class GuildGirl extends AnimatorCard
         SetCostUpgrade(-1);
 
         SetAffinity_Yellow(1);
+        SetAffinity_Pink(1);
     }
 
     @Override

@@ -2,19 +2,14 @@ package eatyourbeets.cards.animator.series.GoblinSlayer;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.orbs.AbstractOrb;
-import com.megacrit.cardcrawl.orbs.Dark;
 import com.megacrit.cardcrawl.stances.NeutralStance;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.effects.GenericEffects.GenericEffect_EnterStance;
-import eatyourbeets.orbs.animator.Fire;
 import eatyourbeets.stances.AgilityStance;
-import eatyourbeets.stances.WrathStance;
 import eatyourbeets.stances.IntellectStance;
+import eatyourbeets.stances.WrathStance;
 import eatyourbeets.utilities.GameActions;
-
-import java.util.ArrayList;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Witch extends AnimatorCard
 {
@@ -28,25 +23,11 @@ public class Witch extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 10);
-        SetUpgrade(0, 3);
+        Initialize(0, 9);
+        SetUpgrade(0, 4);
 
-        SetAffinity_Blue(2, 0, 1);
-        SetAffinity_Black(1, 0, 1);
-
-        SetFading(true);
-    }
-
-    @Override
-    public void OnDrag(AbstractMonster m)
-    {
-        super.OnDrag(m);
-
-        final AbstractOrb orb = GetLeftmostOrb();
-        if (orb != null)
-        {
-            orb.showEvokeValue();
-        }
+        SetAffinity_Blue(1, 0, 1);
+        SetAffinity_Pink(1, 0, 1);
     }
 
     @Override
@@ -55,54 +36,27 @@ public class Witch extends AnimatorCard
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
 
-        if (CheckSpecialCondition(false))
-        {
-            GameActions.Bottom.GainEnergy(1);
-        }
+        GameActions.Bottom.DiscardFromHand(name, 1, false)
+                .SetFilter(GameUtilities::IsHindrance)
+                .SetOptions(true, true, true)
+                .AddCallback(cards -> {
+                    if (cards.size() > 0) {
+                        if (choices.TryInitialize(this))
+                        {
+                            choices.AddEffect(new GenericEffect_EnterStance(WrathStance.STANCE_ID));
+                            choices.AddEffect(new GenericEffect_EnterStance(AgilityStance.STANCE_ID));
+                            choices.Initialize(this);
+                            choices.AddEffect(new GenericEffect_EnterStance(IntellectStance.STANCE_ID));
+                            choices.AddEffect(new GenericEffect_EnterStance(NeutralStance.STANCE_ID));
+                        }
+
+                        choices.Select(1, m);
+                    }
+                });
 
         if (Spearman.DATA.IsCard(info.PreviousCard))
         {
-            if (choices.TryInitialize(new Spearman()))
-            {
-                choices.AddEffect(new GenericEffect_EnterStance(WrathStance.STANCE_ID));
-                choices.AddEffect(new GenericEffect_EnterStance(AgilityStance.STANCE_ID));
-                choices.Initialize(this);
-                choices.AddEffect(new GenericEffect_EnterStance(IntellectStance.STANCE_ID));
-                choices.AddEffect(new GenericEffect_EnterStance(NeutralStance.STANCE_ID));
-            }
-
-            choices.Select(1, m);
+            GameActions.Bottom.GainEnergy(1);
         }
-    }
-
-    @Override
-    public boolean CheckSpecialCondition(boolean tryUse)
-    {
-        final AbstractOrb orb = GetLeftmostOrb();
-        if (orb == null)
-        {
-            return false;
-        }
-        else if (tryUse)
-        {
-            GameActions.Bottom.EvokeOrb(1, orb);
-        }
-
-        return true;
-    }
-
-    private static AbstractOrb GetLeftmostOrb()
-    {
-        final ArrayList<AbstractOrb> orbs = player.orbs;
-        for (int i = player.maxOrbs - 1; i >= 0; i--)
-        {
-            AbstractOrb orb = orbs.get(i);
-            if (orb != null && (Dark.ORB_ID.equals(orb.ID) || Fire.ORB_ID.equals(orb.ID)))
-            {
-                return orb;
-            }
-        }
-
-        return null;
     }
 }

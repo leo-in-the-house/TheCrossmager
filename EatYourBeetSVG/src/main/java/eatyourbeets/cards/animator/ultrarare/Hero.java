@@ -1,7 +1,6 @@
 package eatyourbeets.cards.animator.ultrarare;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -14,7 +13,7 @@ import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.Mathf;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Hero extends AnimatorCard_UltraRare
 {
@@ -27,12 +26,40 @@ public class Hero extends AnimatorCard_UltraRare
     {
         super(DATA);
 
-        Initialize(8, 0, 2);
-        SetUpgrade(4, 0, 0);
+        Initialize(8, 0, 40, 9);
+        SetUpgrade(2, 0, 10);
 
-        SetAffinity_Red(1);
-        SetAffinity_Green(1);
+        SetAffinity_Red(1, 0, 1);
+        SetAffinity_Green(1, 0, 1);
         SetAffinity_White(2, 0, 2);
+    }
+
+
+    @Override
+    public void triggerOnEndOfTurnForPlayingCard()
+    {
+        super.triggerOnEndOfTurnForPlayingCard();
+
+        if (player.hand.contains(this))
+        {
+            int numHindrances = 0;
+
+            for (AbstractCard card : player.exhaustPile.group) {
+                if (GameUtilities.IsHindrance(card)) {
+                    numHindrances++;
+                }
+            }
+            for (AbstractCard card : player.discardPile.group) {
+                if (GameUtilities.IsHindrance(card)) {
+                    numHindrances++;
+                }
+            }
+
+            if (numHindrances >= secondaryValue) {
+                GameActions.Bottom.Flash(this);
+                GameUtilities.Retain(this);
+            }
+        }
     }
 
     @Override
@@ -51,15 +78,15 @@ public class Hero extends AnimatorCard_UltraRare
                 }
 
                 final Random rng = new Random(Settings.seed + (AbstractDungeon.actNum * 17) + (AbstractDungeon.floorNum * 23));
-                if (rng.randomBoolean(0.4f + (Mathf.Pow(2, deckInstance.misc) * 0.025f)))
+                if (rng.randomBoolean(magicNumber / 100f))
                 {
                     final AbstractRelic.RelicTier tier;
                     final int roll = rng.random(0, 99);
-                    if (roll < 50)
+                    if (roll < 70)
                     {
                         tier = AbstractRelic.RelicTier.COMMON;
                     }
-                    else if (roll < 82)
+                    else if (roll < 92)
                     {
                         tier = AbstractRelic.RelicTier.UNCOMMON;
                     }
@@ -77,6 +104,5 @@ public class Hero extends AnimatorCard_UltraRare
                 }
             }
         });
-        GameActions.Bottom.Draw(magicNumber);
     }
 }
