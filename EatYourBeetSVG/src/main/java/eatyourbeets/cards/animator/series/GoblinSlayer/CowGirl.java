@@ -12,6 +12,9 @@ import eatyourbeets.cards.base.*;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class CowGirl extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(CowGirl.class)
@@ -60,13 +63,19 @@ public class CowGirl extends AnimatorCard
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.Draw(magicNumber)
             .AddCallback(cards -> {
+
                 for (AbstractCard card : cards) {
                     if (card instanceof AnimatorCard) {
+                        //Do this to avoid concurrent modification
+                        List<Affinity> affinitiesToModify = new LinkedList<>();
                         AnimatorCard animatorCard = (AnimatorCard) card;
                         for (EYBCardAffinity affinity : animatorCard.affinities.List) {
                             if (affinity.level == 1) {
-                                GameUtilities.AddAffinityToCard(card, affinity.type, 1);
+                                affinitiesToModify.add(affinity.type);
                             }
+                        }
+                        for (Affinity affinity : affinitiesToModify) {
+                            GameUtilities.AddAffinityToCard(animatorCard, affinity, 1);
                         }
                     }
                 }

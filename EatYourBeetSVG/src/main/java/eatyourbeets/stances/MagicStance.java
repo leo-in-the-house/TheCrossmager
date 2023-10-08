@@ -16,6 +16,7 @@ import eatyourbeets.utilities.GameUtilities;
 public class MagicStance extends EYBStance
 {
     public static final String STANCE_ID = CreateFullID(MagicStance.class);
+    public static final String NAME = "Magic Stance";
 
     public static boolean IsActive()
     {

@@ -59,10 +59,11 @@ public abstract class EYBStance extends AbstractStance
         classicTooltips.put(NeutralStance.STANCE_ID, GR.Tooltips.NeutralStance);
 
         affinityTooltips.clear();
-        affinityTooltips.put(ForceStance.STANCE_ID, GR.Tooltips.RedStance);
-        affinityTooltips.put(AgilityStance.STANCE_ID, GR.Tooltips.GreenStance);
-        affinityTooltips.put(IntellectStance.STANCE_ID, GR.Tooltips.BlueStance);
-        affinityTooltips.put(CorruptionStance.STANCE_ID, GR.Tooltips.DarkStance);
+        affinityTooltips.put(WrathStance.STANCE_ID, GR.Tooltips.WrathStance);
+        affinityTooltips.put(CalmStance.STANCE_ID, GR.Tooltips.CalmStance);
+        affinityTooltips.put(TranceStance.STANCE_ID, GR.Tooltips.TranceStance);
+        affinityTooltips.put(MagicStance.STANCE_ID, GR.Tooltips.MagicStance);
+        affinityTooltips.put(DivinityStance.STANCE_ID, GR.Tooltips.DivinityStance);
 
         for (String key : affinityTooltips.keySet())
         {

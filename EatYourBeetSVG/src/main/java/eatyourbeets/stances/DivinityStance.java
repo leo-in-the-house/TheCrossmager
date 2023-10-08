@@ -18,6 +18,7 @@ import eatyourbeets.utilities.GameUtilities;
 public class DivinityStance extends EYBStance
 {
     public static final String STANCE_ID = CreateFullID(DivinityStance.class);
+    public static final String NAME = "Divinity Stance";
 
     public static boolean IsActive()
     {

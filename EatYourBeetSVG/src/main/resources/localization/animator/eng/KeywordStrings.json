@@ -213,7 +213,6 @@
 		"NAMES": ["[a_star] scaling"],
 		"PROPER_NAME": "[A_Star] Scaling"
 	},
-	
 	"Boost":
 	{
 		"DESCRIPTION": "Gain the specified [A_Gen], and reduce the cost of upgrading its [A_Gen] power by #b1 until end of turn (does not stack).",

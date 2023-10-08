@@ -11,13 +11,14 @@ import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.cards.base.attributes.TempHPAttribute;
+import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
 public class Priestess extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Priestess.class)
-            .SetSkill(1, CardRarity.COMMON, EYBCardTarget.ALL)
+            .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.ALL)
             .SetSeriesFromClassPackage()
             .PostInitialize(data ->
             {
@@ -27,6 +28,7 @@ public class Priestess extends AnimatorCard
                 data.AddPreview(new GoblinChampion(), false);
                 data.AddPreview(new GoblinKing(), false);
             });
+
 
     public Priestess()
     {
@@ -43,7 +45,7 @@ public class Priestess extends AnimatorCard
     public void triggerWhenDrawn() {
         super.triggerWhenDrawn();
 
-        if (CheckSpecialConditionLimited(false)) {
+        if (CombatStats.TryActivateLimited(cardID)) {
             for (int i=0; i<secondaryValue; i++) {
                 GameActions.Top.MakeCardInDiscardPile(CreateRandomGoblins.GetRandomGoblin(rng));
             }
@@ -64,10 +66,8 @@ public class Priestess extends AnimatorCard
 
         for (AbstractCard card : player.hand.group) {
             if (GameUtilities.IsHindrance(card)) {
-                GameActions.Bottom.ReplaceCard(uuid, new Status_Dazed());
+                GameActions.Bottom.ReplaceCard(card.uuid, new Status_Dazed());
             }
         }
     }
-
-
 }

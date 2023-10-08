@@ -81,7 +81,7 @@
 	},
 	"Divinity Stance":
 	{
-		"DESCRIPTION": "Upon entering: Gain [E][E][E].  Triples damage dealt. Leave this stance at the end of your next turn.",
+		"DESCRIPTION": "Upon entering: Gain [E][E][E].  Triples damage dealt.  Leave this stance at the end of your next turn.",
 		"NAMES": ["[divinity stance] stance", "[Divinity Stance] Stance", "divinity stance"],
 		"PROPER_NAME": "Divinity Stance"
 	},

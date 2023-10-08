@@ -40,6 +40,7 @@ public class GenericEffect_EnterStance extends GenericEffect
             .replace(GR.Tooltips.TranceStance.title, "[Trance Stance]")
             .replace(GR.Tooltips.MagicStance.title, "[Magic Stance]")
             .replace(GR.Tooltips.CalmStance.title, "[Calm Stance]")
+            .replace(GR.Tooltips.NeutralStance.title, "[Neutral Stance]")
             .replace(GR.Tooltips.DivinityStance.title, "[Divinity Stance]");
         }
         else

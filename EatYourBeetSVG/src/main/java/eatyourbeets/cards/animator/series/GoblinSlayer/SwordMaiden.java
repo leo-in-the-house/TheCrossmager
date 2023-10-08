@@ -33,7 +33,6 @@ public class SwordMaiden extends AnimatorCard
 
         SetAffinityRequirement(Affinity.White, 3);
         SetAffinityRequirement(Affinity.Pink, 3);
-
     }
 
     @Override
@@ -62,7 +61,8 @@ public class SwordMaiden extends AnimatorCard
                     .SetOptions(false, true)
                     .AddCallback(cards -> {
                         for (AbstractCard card : cards) {
-                            GameActions.Top.Discard(card, player.discardPile);
+                            GameActions.Top.Discard(card, player.drawPile)
+                                    .ShowEffect(true, true);
                             GameActions.Top.SealAffinities(card);
                         }
                     });

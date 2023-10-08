@@ -266,7 +266,7 @@
 	},
 	"Neutral Stance":
 	{
-		"DESCRIPTION": "",
+		"DESCRIPTION": "The default stance- no effects.",
 		"NAMES": ["neutral stance"],
 		"PROPER_NAME": "Neutral Stance"
 	},

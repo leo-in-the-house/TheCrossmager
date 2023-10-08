@@ -16,6 +16,7 @@ import eatyourbeets.utilities.GameUtilities;
 public class CalmStance extends EYBStance
 {
     public static final String STANCE_ID = CreateFullID(CalmStance.class);
+    public static final String NAME = "Calm Stance";
 
     public static boolean IsActive()
     {

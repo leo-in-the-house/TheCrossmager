@@ -1508,12 +1508,12 @@
 		},
 		"animator:SwordMaiden":
 		{
-			"DESCRIPTION": "Remove your rightmost {Debuff}. || !A! [W][P]: {Discard} and {Seal} any number of {Hindrances} in your draw pile.",
+			"DESCRIPTION": "Remove your rightmost {Debuff}. || !A! [L][P]: {Discard} and {Seal} any number of {Hindrances} in your draw pile.",
 			"NAME": "Sword Maiden"
 		},
 		"animator:Witch":
 		{
-			"DESCRIPTION": "{Discard} a {Hindrance} to enter any {Stance}. || Played after {Spearman}: Gain !M! [E].",
+			"DESCRIPTION": "{Discard} a {Hindrance} to enter any {Stance} except <DS>.",
 			"NAME": "Witch"
 		}
 	},

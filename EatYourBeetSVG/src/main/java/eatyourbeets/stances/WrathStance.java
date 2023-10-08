@@ -16,6 +16,7 @@ import eatyourbeets.utilities.GameUtilities;
 public class WrathStance extends EYBStance
 {
     public static final String STANCE_ID = CreateFullID(WrathStance.class);
+    public static final String NAME = "Wrath Stance";
 
     public static boolean IsActive()
     {
