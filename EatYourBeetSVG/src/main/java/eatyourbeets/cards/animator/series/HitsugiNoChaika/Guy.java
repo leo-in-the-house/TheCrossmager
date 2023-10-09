@@ -1,10 +1,9 @@
-package eatyourbeets.cards_beta;
+package eatyourbeets.cards.animator.series.HitsugiNoChaika;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.interfaces.markers.Hidden;
-import eatyourbeets.utilities.CardSelection;
 import eatyourbeets.utilities.GameActions;
 
 public class Guy extends AnimatorCard implements Hidden
@@ -17,24 +16,17 @@ public class Guy extends AnimatorCard implements Hidden
     {
         super(DATA);
 
-        Initialize(0, 0, 1, 2);
+        Initialize(0, 0, 1);
         SetUpgrade(0, 0, 1);
 
-        SetAffinity_Black(1);
+        SetAffinity_Violet(1);
     }
 
     @Override
-    public void OnLateUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
+    public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameActions.Bottom.Draw(magicNumber);
-        GameActions.Bottom.DiscardFromHand(name, magicNumber, false)
+        GameActions.Bottom.DiscardFromHand(name, 1, false)
         .SetOptions(false, false, true);
-
-        if (info.IsSynergizing)
-        {
-            GameActions.Bottom.MoveCards(p.drawPile, p.discardPile, secondaryValue)
-            .ShowEffect(true, true)
-            .SetOrigin(CardSelection.Top);
-        }
     }
 }

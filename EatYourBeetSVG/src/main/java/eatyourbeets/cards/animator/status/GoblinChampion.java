@@ -23,7 +23,7 @@ public class GoblinChampion extends AnimatorCard
         SetEndOfTurnPlay(true);
 
         SetAffinity_Red(1);
-        SetAffinity_Black(1);
+        SetAffinity_Violet(1);
     }
 
     @Override

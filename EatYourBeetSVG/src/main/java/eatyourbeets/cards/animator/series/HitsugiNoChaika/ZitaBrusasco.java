@@ -6,30 +6,28 @@ import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.orbs.Frost;
 import com.megacrit.cardcrawl.orbs.Lightning;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
-import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class ZitaBrusasco extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(ZitaBrusasco.class)
-            .SetSkill(1, CardRarity.COMMON, EYBCardTarget.None)
+            .SetSkill(0, CardRarity.COMMON, EYBCardTarget.None)
             .SetSeriesFromClassPackage();
 
     public ZitaBrusasco()
     {
         super(DATA);
 
-        Initialize(0, 3);
-        SetUpgrade(0, 2);
+        Initialize(0, 0, 2);
+        SetUpgrade(0, 0, 2);
 
-        SetAffinity_White(1, 1, 0);
-        SetAffinity_Blue(1, 1, 1);
+        SetAffinity_Blue(1, 0, 0);
 
-        SetEvokeOrbCount(1);
+        SetCooldown(1, 0, this::OnCooldownCompleted);
     }
 
     @Override
@@ -38,31 +36,23 @@ public class ZitaBrusasco extends AnimatorCard
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
 
-        if (info.TryActivateStarter())
-        {
-            CombatStats.Affinities.AddAffinitySealUses(1);
-        }
-
-        GameActions.Bottom.ChannelOrb(CheckSpecialCondition(false) ? new Frost() : new Lightning());
+        cooldown.ProgressCooldownAndTrigger(m);
     }
 
-    @Override
-    public boolean CheckSpecialCondition(boolean tryUse)
+    protected void OnCooldownCompleted(AbstractMonster m)
     {
-        int frost = 0;
-        int lightning = 0;
-        for (AbstractOrb orb : player.orbs)
-        {
-            if (Frost.ORB_ID.equals(orb.ID))
-            {
-                frost += 1;
-            }
-            else if (Lightning.ORB_ID.equals(orb.ID))
-            {
-                lightning += 1;
-            }
-        }
+        GameActions.Bottom.ChannelOrb(new Lightning())
+            .AddCallback(orbs -> {
+                for (AbstractOrb orb : orbs) {
+                    GameActions.Top.TriggerOrbPassive(orb, magicNumber);
+                }
+            });
 
-        return frost <= lightning;
+        GameActions.Bottom.ChannelOrb(new Frost())
+            .AddCallback(orbs -> {
+                for (AbstractOrb orb : orbs) {
+                    GameActions.Top.TriggerOrbPassive(orb, magicNumber);
+                }
+            });
     }
 }

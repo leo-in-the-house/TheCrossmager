@@ -36,10 +36,14 @@ public class Furina extends AnimatorCard implements OnAffinitySealedSubscriber {
 
     @Override
     public void OnAffinitySealed(EYBCard card, boolean manual) {
-        int amount = GameUtilities.GetUniqueOrbsCount();
+        if (card.uuid.equals(uuid)) {
+            int amount = GameUtilities.GetUniqueOrbsCount();
 
-        GameActions.Bottom.StackPower(new RegenPower(player, amount));
-        GameActions.Bottom.GainArtifact(amount);
+            if (amount > 0) {
+                GameActions.Bottom.StackPower(new RegenPower(player, amount));
+                GameActions.Bottom.GainArtifact(amount);
+            }
+        }
     }
 
     @Override

@@ -28,31 +28,22 @@ public class Viivi extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(3, 0, 3);
-        SetUpgrade(1, 0, 0);
+        Initialize(3, 0, 3, 2);
+        SetUpgrade(1, 0, 0, 1);
 
-        SetAffinity_Green(1, 1, 0);
-        SetAffinity_White(1);
+        SetAffinity_Green(1, 0, 0);
     }
 
     @Override
     protected void OnUpgrade()
     {
-        upgradedDamage = true;
+        SetHaste(true);
     }
 
     @Override
     public AbstractAttribute GetDamageInfo()
     {
         return super.GetDamageInfo().AddMultiplier(magicNumber);
-    }
-
-    @Override
-    public void triggerOnManualDiscard()
-    {
-        super.triggerOnManualDiscard();
-
-        GameActions.Bottom.CreateThrowingKnives(1);
     }
 
     @Override
@@ -67,8 +58,7 @@ public class Viivi extends AnimatorCard
 
         if (info.TryActivateStarter())
         {
-            GameActions.Bottom.GainGreen(1);
-            GameActions.Bottom.Draw(1);
+            GameActions.Bottom.CreateThrowingKnives(secondaryValue);
         }
     }
 }

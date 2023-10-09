@@ -2,40 +2,28 @@ package eatyourbeets.cards.animator.series.HitsugiNoChaika;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.base.Affinity;
-import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.cards.base.CardUseInfo;
-import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.cards.base.*;
+import eatyourbeets.cards.base.modifiers.CostModifiers;
 import eatyourbeets.effects.AttackEffects;
-import eatyourbeets.resources.GR;
-import eatyourbeets.stances.WrathStance;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 
 public class Nikolay extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Nikolay.class)
-            .SetAttack(2, CardRarity.COMMON)
-            .SetSeriesFromClassPackage()
-            .ModifyRewards((data, rewards) ->
-            {
-                final int copies = data.GetTotalCopies(player.masterDeck);
-                if (copies > 0 && copies < data.MaxCopies)
-                {
-                    GR.Common.Dungeon.TryReplaceFirstCardReward(rewards, copies < 2 ? 0.12f : 0.08f, true, data);
-                }
-            });
+            .SetAttack(3, CardRarity.COMMON, EYBAttackType.Normal, EYBCardTarget.ALL)
+            .SetSeriesFromClassPackage();
 
     public Nikolay()
     {
         super(DATA);
 
-        Initialize(11, 0, 4);
-        SetUpgrade(2, 0);
+        Initialize(14, 0, 1);
+        SetUpgrade(10, 0, 1);
 
-        SetAffinity_Red(1, 1, 0);
-        SetAffinity_Green(1);
+        SetAffinity_Red(2, 0, 0);
+        SetAffinity_Yellow(1);
     }
 
     @Override
@@ -43,25 +31,21 @@ public class Nikolay extends AnimatorCard
     {
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_HEAVY);
-        GameActions.Bottom.GainAffinity(Affinity.Red);
-        GameActions.Bottom.ModifyAllCopies(cardID)
-        .AddCallback(c ->
-        {
-            if (uuid != c.uuid)
-            {
-                GameActions.Bottom.Motivate(c, 1);
-            }
-        });
 
-        if (CheckSpecialCondition(false))
-        {
-            GameActions.Bottom.GainBlock(magicNumber);
-        }
+        GameActions.Bottom.DiscardFromHand(name, 1, false)
+           .SetOptions(true, true, true)
+           .AddCallback(cards -> {
+               if (cards.size() > 0) {
+                   GameActions.Top.ModifyAllCopies(cardID)
+                           .AddCallback(c ->
+                           {
+                               if (uuid != c.uuid)
+                               {
+                                   CostModifiers.For(c).Add(-magicNumber);
+                               }
+                           });
+               }
+           });
     }
 
-    @Override
-    public boolean CheckSpecialCondition(boolean tryUse)
-    {
-        return WrathStance.IsActive();
-    }
 }

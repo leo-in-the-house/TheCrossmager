@@ -67,7 +67,9 @@ public class Totori extends AnimatorCard {
             }
         });
         GameActions.Bottom.WaitRealtime(0.35f);
-        GameActions.Bottom.DealDamageToAll(this, AttackEffects.NONE);
+        for (int i=0; i<magicNumber; i++) {
+            GameActions.Bottom.DealDamageToAll(this, AttackEffects.NONE);
+        }
 
         RandomizedList<AbstractCard> possible = GetPossibleTargetsForCopy();
 

@@ -3,54 +3,49 @@ package eatyourbeets.cards.animator.series.HitsugiNoChaika;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.cards.base.modifiers.DamageModifiers;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class ChaikaBohdan extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(ChaikaBohdan.class)
-            .SetAttack(1, CardRarity.COMMON)
+            .SetAttack(2, CardRarity.COMMON)
             .SetSeriesFromClassPackage();
 
     public ChaikaBohdan()
     {
         super(DATA);
 
-        Initialize(8, 0, 2);
-        SetUpgrade(0, 0, 1);
+        Initialize(15, 0, 4);
+        SetUpgrade(5, 0, 3);
 
-        SetAffinity_Red(1, 0, 1);
-        SetAffinity_Green(1, 0, 1);
-
-        SetRetainOnce(true);
-    }
-
-    @Override
-    public void triggerOnEndOfTurnForPlayingCard()
-    {
-        super.triggerOnEndOfTurnForPlayingCard();
-
-        if (player.hand.contains(this))
-        {
-            GameActions.Bottom.Flash(this);
-            GameActions.Bottom.GainBlock(magicNumber);
-        }
+        SetAffinity_Red(2, 0, 0);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_HORIZONTAL);
-        GameActions.Bottom.GainGreen(1, upgraded);
+
+        GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_DIAGONAL);
+        GameActions.Bottom.DiscardFromHand(name, 1, false)
+            .SetOptions(true, true, true)
+            .AddCallback(cards -> {
+                if (cards.size() > 0) {
+                    GameActions.Top.ModifyAllCopies(cardID)
+                        .AddCallback(c ->
+                        {
+                            if (uuid != c.uuid)
+                            {
+                                DamageModifiers.For(c).Add(magicNumber);
+                            }
+                        });
+                }
+            });
     }
 
-    @Override
-    public void OnLateUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
-    {
-        GameActions.Bottom.Cycle(name, 1);
-    }
 }

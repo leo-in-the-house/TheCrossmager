@@ -1572,8 +1572,8 @@
 		},
 		"animator:ChaikaBohdan":
 		{
-			"DESCRIPTION": "Gain|Boost [G]. Cycle 1 card. || If in hand at the end of turn: Gain !M! [Block].",
-			"NAME": "Chaika Bohdan"
+			"DESCRIPTION": "You may discard up to 3 cards.  For each card discarded, increase this card’s future attack by !M!.",
+			"NAME": "Chaika Bogdan"
 		},
 		"animator:ChaikaTrabant":
 		{
@@ -1587,7 +1587,7 @@
 		},
 		"animator:ClaudiaDodge":
 		{
-			"DESCRIPTION": "Apply !M! [~Lock-On]. Reload: Trigger your next orb. || <SLM>. When Drawn: Add 1 {Dazed} to your hand.",
+			"DESCRIPTION": "Channel [Random Orb]. || Reload: Trigger it twice.",
 			"NAME": "Claudia Dodge"
 		},
 		"animator:Fredrika":
@@ -1598,12 +1598,12 @@
 		},
 		"animator:Gillette":
 		{
-			"DESCRIPTION": "Next turn: Gain [E]. || <SLM>. When Discarded: Apply [Weak] to ALL enemies.",
+			"DESCRIPTION": "On Discard: Apply [Weak] to ALL enemies.",
 			"NAME": "Gillette"
 		},
 		"animator:Guy":
 		{
-			"DESCRIPTION": "<DRW-M>, then discard !M! card(s). || On Synergy: Discard the top 2 cards of your draw pile.",
+			"DESCRIPTION": "Draw !M! card(s), then discard a card.",
 			"NAME": "Guy"
 		},
 		"animator:Layla":
@@ -1614,22 +1614,22 @@
 		},
 		"animator:MattheusCallaway":
 		{
-			"DESCRIPTION": "If you discarded a card this turn: Gain !M! additional [Block]. || <LIM>. If all your orb slots are full: Gain 1 [Orb_S] and Channel [Earth].",
+			"DESCRIPTION": "If you discarded a card this turn: Gain !M! additional [Block].",
 			"NAME": "Mattheus Callaway"
 		},
 		"animator:Nikolay":
 		{
-			"DESCRIPTION": "Gain [R]. Motivate all other copies of this card. || <WS>: Gain !M! [Block].",
+			"DESCRIPTION": "Discard a card to reduce the cost of ALL copies of this card by !M!.",
 			"NAME": "Nikolay"
 		},
 		"animator:Viivi":
 		{
-			"DESCRIPTION": "<ST>. Gain [G] and <DRW>. || When Discarded: Add 1 [T-Knife] to your hand.",
+			"DESCRIPTION": "<ST>.  Add !S! [T-Knife] to your hand.",
 			"NAME": "Viivi"
 		},
 		"animator:ZitaBrusasco":
 		{
-			"DESCRIPTION": "<ST>: Gain 1 [S]. || If you have less [Lightning] than [Frost]: Channel [Lightning]. Otherwise: Channel [Frost].",
+			"DESCRIPTION": "Cooldown !S!: Channel [Lightning] [Frost], then trigger them !M! times.",
 			"NAME": "Zita Brusasco"
 		}
 	},
@@ -2896,12 +2896,12 @@
 		},
 		"animator:GoblinKing":
 		{
-			"DESCRIPTION": "Boost [D]. At the end of your turn: Shuffle 3 random Goblins into your draw pile.",
+			"DESCRIPTION": "Boost [V]. At the end of your turn: Shuffle 3 random Goblins into your draw pile.",
 			"NAME": "Goblin King"
 		},
 		"animator:GoblinShaman":
 		{
-			"DESCRIPTION": "When you draw this, draw another card. At the end of your turn: Gain 1 [Frail] and 1 [D].",
+			"DESCRIPTION": "When you draw this, draw another card. At the end of your turn: Gain 1 [Frail] and 1 [V].",
 			"NAME": "Goblin Shaman"
 		},
 		"animator:GoblinSoldier":
@@ -2977,7 +2977,7 @@
 		"animator:Hero":
 		{
 			"FLAVOR_TEXT": "'Yeah, I've been saving that line for a special occasion!  What do you think?'",
-			"DESCRIPTION": "End of Turn: Retain this if you have at least !S! {Hindrances} in your exhaust plus your discard pile. || <LIM>. If this kills an enemy, !M!% chance to obtain a {Relic} at the end of combat.",
+			"DESCRIPTION": "End of Turn: Retain this if you have at least !S! {Hindrances} in your exhaust and discard pile. || <LIM>. If this kills an enemy, !M!% chance to obtain a {Relic} at the end of combat.",
 			"NAME": "Hero"
 		},
 		"animator:HiiragiTenri":

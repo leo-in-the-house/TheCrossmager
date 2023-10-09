@@ -7,10 +7,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.stances.NeutralStance;
-import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.cards.base.CardUseInfo;
-import eatyourbeets.cards.base.EYBAttackType;
-import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.cards.base.*;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
@@ -25,10 +22,20 @@ public class UryuuIshida extends AnimatorCard
         super(DATA);
 
         Initialize(7, 0, 0, 0);
-        SetUpgrade(4, 0, 0);
+        SetUpgrade(2, 0, 0);
 
-        SetAffinity_Blue(1, 0, 1);
-        SetAffinity_Teal(1, 0, 1);
+        SetAffinity_Blue(1, 0, 2);
+        SetAffinity_Teal(1, 0, 2);
+
+    }
+
+    @Override
+    protected void OnUpgrade()
+    {
+        super.OnUpgrade();
+
+        AddScaling(Affinity.Blue, 1);
+        AddScaling(Affinity.Teal, 1);
     }
 
     @Override

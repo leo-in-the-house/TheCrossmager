@@ -54,7 +54,7 @@ public class KaeyaAlberich extends AnimatorCard {
 
         GameActions.Bottom.GainBlock(block);
 
-        for (int i=0; i<GameUtilities.GetUniqueOrbsCount(); i++) {
+        for (int i=0; i<player.filledOrbCount(); i++) {
             GameActions.Bottom.GainBlock(block);
         }
     }
