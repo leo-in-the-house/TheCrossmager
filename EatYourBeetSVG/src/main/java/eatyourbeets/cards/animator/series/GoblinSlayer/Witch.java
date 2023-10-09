@@ -16,8 +16,7 @@ public class Witch extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Witch.class)
             .SetSkill(2, CardRarity.UNCOMMON, EYBCardTarget.ALL)
-            .SetSeriesFromClassPackage()
-            .PostInitialize(data -> data.AddPreview(new Spearman(), true));
+            .SetSeriesFromClassPackage();
     private static final CardEffectChoice choices = new CardEffectChoice();
 
     public Witch()

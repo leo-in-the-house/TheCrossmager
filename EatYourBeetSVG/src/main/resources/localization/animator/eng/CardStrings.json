@@ -1452,7 +1452,7 @@
 		},
 		"animator:CowGirl":
 		{
-			"FLAVOR_TEXT": "'It's the same thing every day: Goblins usually move around at night and return to their nests every morning.  So, at dawn, he checks our land to see if he can find any footprints.'",
+			"FLAVOR_TEXT": "'I won't just run away, no!  You're going to lose your home a second time!  And, besides, even if we escape, the farm will be completely destroyed!  Even if we came back, well, there would be nothing...  You know...'",
 			"DESCRIPTION": "When drawn: Add a {Goblin} to either your draw pile or hand at random. || Draw !M! cards, then increase their affinity levels to 2.",
 			"NAME": "Cow Girl"
 		},
