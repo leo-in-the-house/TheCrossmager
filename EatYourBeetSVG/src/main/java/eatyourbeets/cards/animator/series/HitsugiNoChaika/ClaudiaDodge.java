@@ -2,13 +2,12 @@ package eatyourbeets.cards.animator.series.HitsugiNoChaika;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.animator.status.Status_Dazed;
+import com.megacrit.cardcrawl.orbs.Lightning;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
-import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class ClaudiaDodge extends AnimatorCard
 {
@@ -20,39 +19,33 @@ public class ClaudiaDodge extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 8, 2);
-        SetUpgrade(0, 0, 3);
+        Initialize(0, 0);
+        SetUpgrade(0, 0);
+        SetCostUpgrade(-1);
 
-        SetAffinity_Blue(1, 0, 1);
+        SetAffinity_Blue(1);
         SetAffinity_Green(1);
-        SetAffinity_Red(1);
 
-        SetExhaust(true);
-    }
-
-    @Override
-    public void triggerWhenDrawn()
-    {
-        super.triggerWhenDrawn();
-
-        if (CombatStats.TryActivateSemiLimited(cardID))
-        {
-            GameActions.Bottom.MakeCardInHand(new Status_Dazed());
-            GameActions.Bottom.Flash(this);
-        }
+        SetEthereal(true);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.ApplyLockOn(p, m, magicNumber);
-        GameActions.Bottom.Reload(name, cards ->
-        {
-            if (cards.size() > 0)
-            {
-                GameActions.Bottom.TriggerOrbPassive(cards.size());
-            }
-        });
+        GameActions.Bottom.ChannelOrb(new Lightning())
+            .AddCallback(orbs -> {
+                if (orbs.size() > 0) {
+                    GameActions.Top.Reload(name, cards ->
+                    {
+                        if (cards.size() > 0)
+                        {
+                            GameActions.Bottom.TriggerOrbPassive(orbs.get(0), cards.size());
+                            GameActions.Bottom.TriggerOrbPassive(orbs.get(0), cards.size());
+                        }
+                    });
+                }
+            });
+
     }
 }

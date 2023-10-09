@@ -1536,20 +1536,19 @@
 	{
 		"animator:AcuraAkari":
 		{
-			"DESCRIPTION": "Discard !M! card(s) to obtain !M! [T-Knife]. || <AS> or !A! [D]: Gain !S! {Temp}. [Envenom].",
-			"NAME": "Akari",
-			"UPGRADE_DESCRIPTION": "Discard 1 or !M! cards to obtain 1 or !M! [T-Knife]. || <AS> or !A! [D]: Gain !S! {Temp}. [Envenom]."
+			"DESCRIPTION": "Discard !M! cards to obtain !M! [T-Knife]. || On Discard: Obtain [T-Knife].",
+			"NAME": "Akari Acura"
 		},
 		"animator:AcuraShin":
 		{
-			"DESCRIPTION": "All {0-Cost} {Attacks} deal !M! additional damage. || Twice per combat, discard 1 card: Gain !S! {Temp}. [Envenom].",
-			"EXTENDED_DESCRIPTION": ["Discard #b1 card: Gain #b{0} temporary #yEnvenom. || All #y0-Cost #yAttacks deal #b{1} additional damage."],
-			"NAME": "Shin"
+			"DESCRIPTION": "Whenever you discard a card: Gain !M! {Temp.} {Envenom}. || Twice per turn, cycle a card.",
+			"EXTENDED_DESCRIPTION": ["Whenever you #ydiscard a card: Gain #b{0} temporary #yEnvenom. || Twice per turn: #yCycle a card."],
+			"NAME": "Shin Acura"
 		},
 		"animator:AcuraTooru":
 		{
-			"DESCRIPTION": "Obtain !S! [T-Knife], then Upgrade all [T-Knife] in hand. || <LIM>. When Sealed: Obtain [G] or {[R] Token}.",
-			"NAME": "Tooru"
+			"DESCRIPTION": "Obtain 3 [T-Knife]. || On Discard: Gain !S! [Block].",
+			"NAME": "Tooru Acura"
 		},
 		"animator:AcuraTooru_Dragoon":
 		{
@@ -1580,10 +1579,10 @@
 			"DESCRIPTION": "Gain [B]. When drawn: Deal this card's damage to ALL enemies with [~Lock-On]. || When Discarded or Sealed: Apply !M! [~Lock-On].",
 			"NAME": "Chaika Trabant"
 		},
-		"animator:ChaikaGaz":
+		"animator:ChaikaKamaz":
 		{
-			"DESCRIPTION": "Gain !M! [D], then, if you have !S! or more [D]: Channel [Dark] and Exhaust. || <LIM>. When Sealed: Obtain [B] or {[D] Token}.",
-			"NAME": "Chaika Gaz"
+			"DESCRIPTION": "Whenever you discard a card: Obtain a random {Common}.",
+			"NAME": "Chaika Kamaz"
 		},
 		"animator:ClaudiaDodge":
 		{
@@ -1592,8 +1591,8 @@
 		},
 		"animator:Fredrika":
 		{
-			"DESCRIPTION": "<ST>. Gain !K! additional [Block] for each enemy. || When Discarded: Return this to your hand, then choose a different form this turn.",
-			"EXTENDED_DESCRIPTION": ["Gain 1 {Temp.} [M].", "Gain !K! [R] [G] and [Metallicize].", "Gain !S! [Counter-Attack]."],
+			"DESCRIPTION": "On Discard: Return this card to your hand, then transform it.",
+			"EXTENDED_DESCRIPTION": ["", "Gain !M! [Metallicize].", "Apply !M! [Weak] [Vulnerable]."],
 			"NAME": "Fredrika"
 		},
 		"animator:Gillette":

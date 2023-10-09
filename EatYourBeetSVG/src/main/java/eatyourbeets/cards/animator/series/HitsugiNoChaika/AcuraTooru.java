@@ -1,24 +1,23 @@
 package eatyourbeets.cards.animator.series.HitsugiNoChaika;
 
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
-import com.megacrit.cardcrawl.cards.CardGroup;
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.special.AcuraTooru_Dragoon;
 import eatyourbeets.cards.animator.special.ThrowingKnife;
-import eatyourbeets.cards.animator.tokens.AffinityToken;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.powers.CombatStats;
+import eatyourbeets.effects.AttackEffects;
+import eatyourbeets.effects.VFX;
 import eatyourbeets.ui.common.EYBCardPopupActions;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameEffects;
+import eatyourbeets.utilities.GameUtilities;
 
 public class AcuraTooru extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(AcuraTooru.class)
-            .SetSkill(2, CardRarity.UNCOMMON, EYBCardTarget.None)
-            .SetSeries(CardSeries.HitsugiNoChaika)
+            .SetAttack(2, CardRarity.UNCOMMON, EYBAttackType.Normal, EYBCardTarget.Normal)
+            .SetSeriesFromClassPackage()
             .PostInitialize(data ->
             {
                 data.AddPopupAction(new EYBCardPopupActions.HitsugiNoChaika_Tooru(6, Fredrika.DATA, AcuraTooru_Dragoon.DATA));
@@ -33,56 +32,31 @@ public class AcuraTooru extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 5, 0, 1);
-        SetUpgrade(0, 0, 0, 1);
+        Initialize(4, 0, 2, 3);
+        SetUpgrade(2, 0, 0, 2);
 
         SetAffinity_Green(1, 0, 1);
-        SetAffinity_Red(1);
+        SetAffinity_Black(1);
     }
 
     @Override
-    public void triggerOnAffinitySeal(boolean reshuffle)
+    public void triggerOnManualDiscard()
     {
-        super.triggerOnAffinitySeal(reshuffle);
+        super.triggerOnManualDiscard();
 
-        if (CombatStats.TryActivateLimited(cardID))
-        {
-            final CardGroup group = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-            group.group.add(AffinityToken.GetCopy(Affinity.Red, false));
-            group.group.add(AffinityToken.GetCopy(Affinity.Green, false));
-            GameActions.Bottom.SelectFromPile(name, 1, group)
-            .SetOptions(false, false)
-            .AddCallback(cards2 ->
-            {
-                for (AbstractCard c : cards2)
-                {
-                    GameActions.Bottom.MakeCardInHand(c);
-                }
-            });
-        }
+        GameActions.Top.GainBlock(secondaryValue);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.GainBlock(block);
-        GameActions.Bottom.CreateThrowingKnives(secondaryValue);
-    }
 
-    @Override
-    public void OnLateUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
-    {
-        GameActions.Bottom.Callback(() ->
-        {
-            for (AbstractCard c : player.hand.group)
-            {
-                if (ThrowingKnife.DATA.IsCard(c) && c.canUpgrade())
-                {
-                    c.upgrade();
-                    c.flash();
-                }
-            }
-        });
+        for (int i=0; i<magicNumber; i++) {
+            GameActions.Bottom.DealDamage(this, m, AttackEffects.NONE)
+               .SetDamageEffect(c -> GameEffects.List.Add(VFX.ThrowDagger(c.hb, 0.15f).SetColor(Color.GREEN)).duration * 0.5f);
+        }
+
+        GameActions.Bottom.CreateThrowingKnives(3);
     }
 }

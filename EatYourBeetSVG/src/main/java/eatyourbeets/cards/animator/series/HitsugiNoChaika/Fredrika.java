@@ -13,7 +13,6 @@ import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.effects.VFX;
 import eatyourbeets.interfaces.subscribers.OnEndOfTurnLastSubscriber;
 import eatyourbeets.powers.CombatStats;
-import eatyourbeets.powers.common.CounterAttackPower;
 import eatyourbeets.utilities.*;
 
 public class Fredrika extends AnimatorCard implements OnEndOfTurnLastSubscriber
@@ -52,10 +51,10 @@ public class Fredrika extends AnimatorCard implements OnEndOfTurnLastSubscriber
     {
         super(DATA);
 
-        Initialize(7, 3, 2, 4);
-        SetUpgrade(2, 2, 1);
+        Initialize(8, 9, 2, 4);
+        SetUpgrade(4, 4, 0, 4);
 
-        SetAffinity_Star(1);
+        SetAffinity_Pink(1);
 
         SetAttackType(EYBAttackType.Normal);
     }
@@ -88,13 +87,6 @@ public class Fredrika extends AnimatorCard implements OnEndOfTurnLastSubscriber
     public AbstractAttribute GetBlockInfo()
     {
         return (currentForm == Form.Default || currentForm == Form.Dominica) ? super.GetBlockInfo() : null;
-    }
-
-    @Override
-    protected float GetInitialBlock()
-    {
-        return super.GetInitialBlock() +
-        ((currentForm == Form.Default && CombatStats.CanActivatedStarter()) ? (GameUtilities.GetEnemies(true).size() * SPECIAL) : 0);
     }
 
     @Override
@@ -147,15 +139,14 @@ public class Fredrika extends AnimatorCard implements OnEndOfTurnLastSubscriber
             case Cat:
             {
                 GameActions.Bottom.GainTemporaryHP(magicNumber);
-                CombatStats.Affinities.AddTempAffinity(Affinity.Star, 1);
                 break;
             }
 
             case Dominica:
             {
-                GameActions.Bottom.GainBlock(block);
                 GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_HEAVY);
-                GameActions.Bottom.StackPower(new CounterAttackPower(p, secondaryValue));
+                GameActions.Bottom.ApplyWeak(TargetHelper.Normal(m), magicNumber);
+                GameActions.Bottom.ApplyVulnerable(TargetHelper.Normal(m), magicNumber);
                 break;
             }
 
@@ -168,9 +159,7 @@ public class Fredrika extends AnimatorCard implements OnEndOfTurnLastSubscriber
                     .SetDamageEffect(enemy -> GameEffects.List.Add(VFX.Claw(enemy.hb, Color.WHITE, Color.VIOLET).FlipX(flipVfx ^= true).SetScale(1.4f)).duration);
                 }
 
-                GameActions.Bottom.GainRed(SPECIAL);
-                GameActions.Bottom.GainGreen(SPECIAL);
-                GameActions.Bottom.GainMetallicize(SPECIAL);
+                GameActions.Bottom.GainMetallicize(magicNumber);
                 break;
             }
         }
@@ -206,6 +195,9 @@ public class Fredrika extends AnimatorCard implements OnEndOfTurnLastSubscriber
                 this.target = CardTarget.SELF;
                 this.cost = 1;
 
+                affinities.Clear();
+                SetAffinity_Pink(1);
+
                 break;
             }
 
@@ -217,6 +209,9 @@ public class Fredrika extends AnimatorCard implements OnEndOfTurnLastSubscriber
                 this.type = CardType.SKILL;
                 this.target = CardTarget.NONE;
                 this.cost = 0;
+
+                affinities.Clear();
+                SetAffinity_Star(1);
 
                 break;
             }
@@ -230,6 +225,10 @@ public class Fredrika extends AnimatorCard implements OnEndOfTurnLastSubscriber
                 this.target = CardTarget.SELF_AND_ENEMY;
                 this.cost = 2;
 
+                affinities.Clear();
+                SetAffinity_Blue(1);
+                SetAffinity_Black(1);
+
                 break;
             }
 
@@ -241,6 +240,10 @@ public class Fredrika extends AnimatorCard implements OnEndOfTurnLastSubscriber
                 this.type = CardType.ATTACK;
                 this.target = CardTarget.ENEMY;
                 this.cost = 1;
+
+                affinities.Clear();
+                SetAffinity_Red(1);
+                SetAffinity_Green(1);
 
                 break;
             }
