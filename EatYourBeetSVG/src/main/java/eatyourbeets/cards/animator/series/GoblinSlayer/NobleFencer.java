@@ -25,8 +25,8 @@ public class NobleFencer extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 5, 2);
-        SetUpgrade(0, 2, 1);
+        Initialize(0, 0, 2);
+        SetUpgrade(0, 0, 1);
 
         SetAffinity_Yellow(1);
         SetAffinity_Violet(1);
@@ -42,7 +42,6 @@ public class NobleFencer extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.GainBlock(block);
 
         GameActions.Bottom.ChannelOrbs(Lightning::new, magicNumber);
 
