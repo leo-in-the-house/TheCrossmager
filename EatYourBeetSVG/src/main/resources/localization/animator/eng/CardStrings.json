@@ -1471,7 +1471,7 @@
 		"animator:GoblinSlayer":
 		{
 			"FLAVOR_TEXT": "'But in the end, the only good goblins are the ones who never shove their faces to the light of day!'",
-			"DESCRIPTION": "Exhaust every {Hindrance} in hand and discard pile. For each, give {Goblin Slayer} +!S! damage this combat. || {WARNING}: Goblins.",
+			"DESCRIPTION": "Exhaust every {Hindrance} in hand and discard pile. || Deal +!S! additional damage for each {Hindrance} in your exhaust pile. || {WARNING}: Goblins.",
 			"NAME": "Goblin Slayer"
 		},
 		"animator:GuildGirl":

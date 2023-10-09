@@ -11,13 +11,10 @@ import eatyourbeets.cards.animator.status.GoblinSoldier;
 import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
-import eatyourbeets.cards.base.modifiers.DamageModifiers;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
-
-import java.util.ArrayList;
 
 public class GoblinSlayer extends AnimatorCard
 {
@@ -36,14 +33,30 @@ public class GoblinSlayer extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(1, 0, 0, 3);
-        SetUpgrade(0, 0, 0, 3);
+        Initialize(1, 0, 0, 2);
+        SetUpgrade(0, 0, 0, 2);
 
         SetAffinity_Red(1, 0, 1);
         SetAffinity_Green(1, 0, 1);
         SetAffinity_Violet(1, 0, 1);
 
         SetRetain(true);
+    }
+
+    @Override
+    protected float GetInitialDamage()
+    {
+        int additionalDamage = 0;
+
+        if (GameUtilities.InGame()) {
+            for (AbstractCard card : player.exhaustPile.group) {
+                if (GameUtilities.IsHindrance(card)) {
+                    additionalDamage += secondaryValue;
+                }
+            }
+        }
+
+        return super.GetInitialDamage() + additionalDamage;
     }
 
     @Override
@@ -75,26 +88,32 @@ public class GoblinSlayer extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_VERTICAL);
 
         GameActions.Bottom.MoveCards(p.hand, p.exhaustPile)
         .SetFilter(GameUtilities::IsHindrance)
         .ShowEffect(true, true, 0.25f)
-        .AddCallback(this::IncreaseDamage);
+        .AddCallback(cards -> {
+            GameActions.Top.MoveCards(p.discardPile, p.exhaustPile)
+            .SetFilter(GameUtilities::IsHindrance)
+            .ShowEffect(true, true, 0.12f)
+            .AddCallback(cards2 ->
+            {
+                /*
+                    The callback for MoveCards triggers before the cards are actually moved,
+                    as the actual transfer is done individually for each card in a series
+                    of GameActions in the same thread as the Complete() call.
+                    Therefore, we have to create a separate callback in order to do a damage update
+                    to take into account the exhausted cards.
 
-        GameActions.Bottom.MoveCards(p.discardPile, p.exhaustPile)
-        .SetFilter(GameUtilities::IsHindrance)
-        .ShowEffect(true, true, 0.12f)
-        .AddCallback(this::IncreaseDamage);
-    }
+                    Otherwise, Goblin Slayer will exhaust goblins, but the exhausted goblins
+                    won't actually be in the exhaust pile and will not count towards his damage.
+                */
 
-    protected void IncreaseDamage(ArrayList<AbstractCard> cards)
-    {
-        final int bonus = cards.size() * secondaryValue;
-        if (bonus > 0)
-        {
-            GameActions.Bottom.ModifyAllCopies(cardID)
-            .AddCallback(bonus, (mod, c) -> DamageModifiers.For(c).Add(mod));
-        }
+                GameActions.Last.Callback(dummy -> {
+                    Refresh(m);
+                    GameActions.Top.DealDamage(this, m, AttackEffects.SLASH_VERTICAL);
+                });
+            });
+        });
     }
 }
