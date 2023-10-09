@@ -10,6 +10,7 @@ import eatyourbeets.cards.animator.status.GoblinShaman;
 import eatyourbeets.cards.animator.status.GoblinSoldier;
 import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
+import eatyourbeets.cards.base.EYBAttackType;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.powers.CombatStats;
@@ -19,7 +20,7 @@ import eatyourbeets.utilities.GameUtilities;
 public class GoblinSlayer extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(GoblinSlayer.class)
-            .SetAttack(1, CardRarity.RARE)
+            .SetAttack(1, CardRarity.RARE, EYBAttackType.Normal)
             .SetSeriesFromClassPackage()
             .PostInitialize(data ->
             {

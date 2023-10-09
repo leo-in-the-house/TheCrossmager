@@ -30,6 +30,8 @@ public class CatoElAltestan extends AnimatorCard
     {
         GameUtilities.PlayVoiceSFX(name);
 
+        GameActions.Bottom.GainBlock(block);
+
         GameActions.Bottom.FetchFromPile(name, magicNumber, player.drawPile)
         .SetOptions(false, true)
         .SetFilter(card -> card.type == CardType.ATTACK)
