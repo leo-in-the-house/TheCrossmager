@@ -19,7 +19,7 @@ import eatyourbeets.utilities.ListSelection;
 public class Zhongli extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Zhongli.class)
-            .SetPower(2, CardRarity.RARE)
+            .SetPower(3, CardRarity.RARE)
             .SetSeriesFromClassPackage();
     private static final int POWER_ENERGY_COST = 1;
 

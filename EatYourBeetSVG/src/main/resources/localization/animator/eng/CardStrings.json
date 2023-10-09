@@ -1484,7 +1484,7 @@
 		"animator:HeavyWarrior":
 		{
 			"FLAVOR_TEXT": "'No, that's a big boy.  A Goblin Champion.  ...Ain't that two of 'em?  Nice, I was getting a little bored with all the small fries!  I may actually break a sweat this time around!'",
-			"DESCRIPTION": "Unplayable unless you have at least !M! {Hindrance} in hand. || On Discard: Gain [R][W].",
+			"DESCRIPTION": "Unplayable unless you have at least !M! {Hindrance} in hand. || On Discard: Gain [R][L].",
 			"NAME": "Heavy Warrior"
 		},
 		"animator:HighElfArcher":
@@ -2977,8 +2977,8 @@
 		"animator:Hero":
 		{
 			"FLAVOR_TEXT": "'Yeah, I've been saving that line for a special occasion!  What do you think?'",
-			"DESCRIPTION": "On End of Turn: Retain this card if you have at least !S! {Hindrances} in your exhaust pile plus your discard pile. || <LIM>. If this card kills an enemy, !M!% chance to obtain a {Relic} at the end of combat.",
-			"NAME": "'Hero'"
+			"DESCRIPTION": "End of Turn: Retain this if you have at least !S! {Hindrances} in your exhaust plus your discard pile. || <LIM>. If this kills an enemy, !M!% chance to obtain a {Relic} at the end of combat.",
+			"NAME": "Hero"
 		},
 		"animator:HiiragiTenri":
 		{

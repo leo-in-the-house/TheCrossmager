@@ -16,7 +16,7 @@ import eatyourbeets.utilities.GameUtilities;
 
 public class SophieNeuenmuller extends AnimatorCard {
     public static final EYBCardData DATA = Register(SophieNeuenmuller.class)
-            .SetAttack(1, CardRarity.RARE, EYBAttackType.Elemental)
+            .SetAttack(2, CardRarity.RARE, EYBAttackType.Elemental)
             .SetSeriesFromClassPackage();
     static
     {

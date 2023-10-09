@@ -25,17 +25,16 @@ public class Meruru extends AnimatorCard {
         Initialize(0, 0, 1);
         SetUpgrade(0, 0, 1);
 
-        SetEthereal(true);
-
         SetAffinity_Yellow(1);
         SetAffinity_Blue(1);
         SetAffinity_Pink(1);
+
+        SetEthereal(true);
     }
 
     @Override
-    protected void SetUpgrade(int damage, int block) {
-        super.SetUpgrade(damage, block);
-
+    protected void OnUpgrade()
+    {
         SetEthereal(false);
     }
 
