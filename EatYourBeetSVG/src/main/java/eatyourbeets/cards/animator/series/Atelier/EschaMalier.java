@@ -23,7 +23,7 @@ public class EschaMalier extends AnimatorCard {
     public EschaMalier() {
         super(DATA);
 
-        Initialize(0, 2, 0);
+        Initialize(0, 3, 0);
         SetUpgrade(0, 3, 0);
 
         SetAffinity_White(1);
