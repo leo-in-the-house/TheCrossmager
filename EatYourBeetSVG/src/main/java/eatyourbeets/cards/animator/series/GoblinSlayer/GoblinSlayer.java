@@ -54,6 +54,18 @@ public class GoblinSlayer extends AnimatorCard
                     additionalDamage += secondaryValue;
                 }
             }
+
+            for (AbstractCard card : player.discardPile.group) {
+                if (GameUtilities.IsHindrance(card)) {
+                    additionalDamage += secondaryValue;
+                }
+            }
+
+            for (AbstractCard card : player.hand.group) {
+                if (GameUtilities.IsHindrance(card)) {
+                    additionalDamage += secondaryValue;
+                }
+            }
         }
 
         return super.GetInitialDamage() + additionalDamage;
@@ -98,21 +110,7 @@ public class GoblinSlayer extends AnimatorCard
             .ShowEffect(true, true, 0.12f)
             .AddCallback(cards2 ->
             {
-                /*
-                    The callback for MoveCards triggers before the cards are actually moved,
-                    as the actual transfer is done individually for each card in a series
-                    of GameActions in the same thread as the Complete() call.
-                    Therefore, we have to create a separate callback in order to do a damage update
-                    to take into account the exhausted cards.
-
-                    Otherwise, Goblin Slayer will exhaust goblins, but the exhausted goblins
-                    won't actually be in the exhaust pile and will not count towards his damage.
-                */
-
-                GameActions.Last.Callback(dummy -> {
-                    Refresh(m);
-                    GameActions.Top.DealDamage(this, m, AttackEffects.SLASH_VERTICAL);
-                });
+                GameActions.Top.DealDamage(this, m, AttackEffects.SLASH_VERTICAL);
             });
         });
     }

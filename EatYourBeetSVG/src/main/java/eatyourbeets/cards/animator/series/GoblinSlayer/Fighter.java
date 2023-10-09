@@ -30,6 +30,8 @@ public class Fighter extends AnimatorCard {
         Initialize(10, 0, 2);
         SetUpgrade(3, 0, 0);
 
+        SetAffinity_Red(1);
+
         SetFading(true);
     }
 
