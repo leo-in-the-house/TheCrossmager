@@ -61,7 +61,7 @@ public class SwordMaiden extends AnimatorCard
                     .SetOptions(false, true)
                     .AddCallback(cards -> {
                         for (AbstractCard card : cards) {
-                            GameActions.Top.Discard(card, player.drawPile)
+                            GameActions.Top.Exhaust(card, player.drawPile)
                                     .ShowEffect(true, true);
                             GameActions.Top.SealAffinities(card);
                         }

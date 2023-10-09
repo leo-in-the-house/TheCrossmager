@@ -1521,7 +1521,7 @@
 		"animator:SwordMaiden":
 		{
 			"FLAVOR_TEXT": "'I can still see, you know- just a little.  It's blurry, but I can make out the shape of your body, like a shadow.  It's how I perceive the world: suggestions of forms, outlines of people who seem like they might slip away at any moment.'",
-			"DESCRIPTION": "Remove your rightmost {Debuff}. || !A! [L][P]: {Discard} and {Seal} any number of {Hindrances} in your draw pile.",
+			"DESCRIPTION": "Remove your rightmost {Debuff}. || !A! [L][P]: {Exhaust} and {Seal} any number of {Hindrances} in your draw pile.",
 			"NAME": "Sword Maiden"
 		},
 		"animator:Witch":
