@@ -41,7 +41,7 @@ public class CowGirl extends AnimatorCard
     @Override
     protected void OnUpgrade()
     {
-        SetRetainOnce(true);
+        SetRetain(true);
     }
 
     @Override
@@ -50,7 +50,7 @@ public class CowGirl extends AnimatorCard
 
         if (rng.randomBoolean())
         {
-            GameActions.Top.MakeCardInDiscardPile(CreateRandomGoblins.GetRandomGoblin(rng));
+            GameActions.Top.MakeCardInHand(CreateRandomGoblins.GetRandomGoblin(rng));
         }
         else {
             GameActions.Top.MakeCardInDrawPile(CreateRandomGoblins.GetRandomGoblin(rng));

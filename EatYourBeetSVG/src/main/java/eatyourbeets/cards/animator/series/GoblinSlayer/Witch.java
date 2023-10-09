@@ -37,7 +37,7 @@ public class Witch extends AnimatorCard
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
 
-        GameActions.Bottom.DiscardFromHand(name, 1, false)
+        GameActions.Bottom.ExhaustFromHand(name, 1, false)
                 .SetFilter(GameUtilities::IsHindrance)
                 .SetOptions(true, true, true)
                 .AddCallback(cards -> {

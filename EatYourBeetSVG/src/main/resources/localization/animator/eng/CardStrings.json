@@ -1446,74 +1446,88 @@
 	{
 		"animator:ApprenticeCleric":
 		{
+			"FLAVOR_TEXT": "'Chief of justice, lord of the sword, ward of the scale, may your forces manifest!'",
 			"DESCRIPTION": "To play this card: {Exhaust} and {Seal} a random {Hindrance} from your draw pile.",
 			"NAME": "Apprentice Cleric"
 		},
 		"animator:CowGirl":
 		{
-			"DESCRIPTION": "When drawn: Add a random {Goblin} to either your draw or discard pile. || Draw !M! cards, then increase their affinity levels to 2.",
+			"FLAVOR_TEXT": "'It's the same thing every day: Goblins usually move around at night and return to their nests every morning.  So, at dawn, he checks our land to see if he can find any footprints.'",
+			"DESCRIPTION": "When drawn: Add a {Goblin} to either your draw pile or hand at random. || Draw !M! cards, then increase their affinity levels to 2.",
 			"NAME": "Cow Girl"
 		},
 		"animator:DwarfShaman":
 		{
+			"FLAVOR_TEXT": "'You fool!  We're in the realm of the humans now!  Your fancy long-ears talk isn't going to help you!'",
 			"DESCRIPTION": "If you have a {Hindrance} in your hand: Gain !M! Temp. [Thorns].",
 			"NAME": "Dwarf Shaman"
 		},
 		"animator:Fighter":
 		{
+			"FLAVOR_TEXT": "'Even if that idiot can't cut them all down, I'll kill them with my bare hands!  I've got you covered!'",
 			"DESCRIPTION": "Add !M! random {Goblins} to your draw pile.",
 			"NAME": "Fighter"
 		},
 		"animator:GoblinSlayer":
 		{
+			"FLAVOR_TEXT": "'But in the end, the only good goblins are the ones who never shove their faces to the light of day!'",
 			"DESCRIPTION": "Exhaust every {Hindrance} in hand and discard pile. For each, give {Goblin Slayer} +!S! damage this combat. || {WARNING}: Goblins.",
 			"NAME": "Goblin Slayer"
 		},
 		"animator:GuildGirl":
 		{
-			"DESCRIPTION": "At start of turn: Cycle 1 card.",
-			"EXTENDED_DESCRIPTION": ["At start of turn: Cycle #b{0} cards."],
+			"FLAVOR_TEXT": "'Now, there are 10 ranks for adventurers: platinum is the highest rank.  Following that is gold.  However, the highest rank people you encounter in the field are the silvers.'",
+			"DESCRIPTION": "At start of turn: Draw 1 card, then discard 1 card.  Exhaust the discarded card if it is a {Hindrance}.",
+			"EXTENDED_DESCRIPTION": ["At start of turn: Draw #b{0} cards, then discard #b{0} cards.  Exhaust any discarded #yHindrances."],
 			"NAME": "Guild Girl"
 		},
 		"animator:HeavyWarrior":
 		{
+			"FLAVOR_TEXT": "'No, that's a big boy.  A Goblin Champion.  ...Ain't that two of 'em?  Nice, I was getting a little bored with all the small fries!  I may actually break a sweat this time around!'",
 			"DESCRIPTION": "Unplayable unless you have at least !M! {Hindrance} in hand. || On Discard: Gain [R][W].",
 			"NAME": "Heavy Warrior"
 		},
 		"animator:HighElfArcher":
 		{
+			"FLAVOR_TEXT": "'Thanks, and I guess I owe you a favor, dwarf!  Consider that my expression of elven gratitude, and don't let it go to your head!'",
 			"DESCRIPTION": "If you have a {Hindrance} in your exhaust pile: Draw a card.",
 			"NAME": "High Elf Archer"
 		},
 		"animator:LizardPriest":
 		{
+			"FLAVOR_TEXT": "'If wiping out the subterranean scourge would also protect that exquisite ambrosia, count me in!'",
 			"DESCRIPTION": "Enter <CS>.",
 			"NAME": "Lizard Priest"
 		},
 		"animator:NobleFencer":
 		{
+			"FLAVOR_TEXT": "'That... sound!  That taunt!  It kills me!  They take whatever they want!  EVERYTHING!  IT'S NOT FAIR!  It's happening all over again and it's my fault!  We're gonna be killed here... just like... my friends!  I believed that if I could get my sword back, then maybe I could...!'",
 			"DESCRIPTION": "Channel !M! [Lightning]. || At the end of this turn: {Exhaust} all {Hindrance} in your hand.  {Evoke} ALL your [Lightning] for each card exhausted.",
 			"EXTENDED_DESCRIPTION": ["At the end of this turn: #yExhaust all #yHindrance in your hand.  #yEvoke ALL your #yLightning #b{0} times for each card exhausted."],
 			"NAME": "Noble Fencer"
 		},
 		"animator:Priestess":
 		{
-			"DESCRIPTION": "Transform all {Hindrances} in your hand to {Dazed}. || <LIM>. When drawn: Add !S! random {Goblins} to your discard pile.",
+			"FLAVOR_TEXT": "'Everyone here tonight, they all helped!  Remember that in the future!  People are kind!  What I'm saying is, it's not about luck, y'know?'",
+			"DESCRIPTION": "Transform all {Hindrances} in your hand to {Dazed}. || <LIM>. When drawn: Add !S! random {Goblins} to your hand.",
 			"NAME": "Priestess"
 		},
 		"animator:Spearman":
 		{
+			"FLAVOR_TEXT": "'Listen!  I don't think you understand how this works!  This guild hall is for adventurers, and everyone here falls under that banner!  Which means, we don't do anything as a favor!  So put up a quest, and offer up a reward!'",
 			"DESCRIPTION": "Add {Wound} to your hand.",
 			"NAME": "Spearman"
 		},
 		"animator:SwordMaiden":
 		{
+			"FLAVOR_TEXT": "'I can still see, you know- just a little.  It's blurry, but I can make out the shape of your body, like a shadow.  It's how I perceive the world: suggestions of forms, outlines of people who seem like they might slip away at any moment.'",
 			"DESCRIPTION": "Remove your rightmost {Debuff}. || !A! [L][P]: {Discard} and {Seal} any number of {Hindrances} in your draw pile.",
 			"NAME": "Sword Maiden"
 		},
 		"animator:Witch":
 		{
-			"DESCRIPTION": "{Discard} a {Hindrance} to enter any {Stance} except <DS>.",
+			"FLAVOR_TEXT": "'The thing is, dear, your friend asked a 'strange' favor of me... once upon a time...'",
+			"DESCRIPTION": "{Exhaust} a {Hindrance} to enter any {Stance} except <DS>.",
 			"NAME": "Witch"
 		}
 	},
@@ -2962,7 +2976,8 @@
 		},
 		"animator:Hero":
 		{
-			"DESCRIPTION": "On End of turn: Retain this card if you have at least !S! {Hindrances} in your exhaust pile plus your discard pile. || <LIM>. If this card kills an enemy, !M!% chance to obtain a {Relic} at the end of combat.",
+			"FLAVOR_TEXT": "'Yeah, I've been saving that line for a special occasion!  What do you think?'",
+			"DESCRIPTION": "On End of Turn: Retain this card if you have at least !S! {Hindrances} in your exhaust pile plus your discard pile. || <LIM>. If this card kills an enemy, !M!% chance to obtain a {Relic} at the end of combat.",
 			"NAME": "'Hero'"
 		},
 		"animator:HiiragiTenri":

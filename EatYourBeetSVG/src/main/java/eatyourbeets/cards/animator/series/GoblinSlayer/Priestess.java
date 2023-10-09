@@ -34,7 +34,7 @@ public class Priestess extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 0, 7, 4);
+        Initialize(0, 0, 7, 3);
         SetUpgrade(0, 0, 4);
 
         SetAffinity_White(1);
@@ -47,7 +47,7 @@ public class Priestess extends AnimatorCard
 
         if (CombatStats.TryActivateLimited(cardID)) {
             for (int i=0; i<secondaryValue; i++) {
-                GameActions.Top.MakeCardInDiscardPile(CreateRandomGoblins.GetRandomGoblin(rng));
+                GameActions.Top.MakeCardInHand(CreateRandomGoblins.GetRandomGoblin(rng));
             }
         }
     }

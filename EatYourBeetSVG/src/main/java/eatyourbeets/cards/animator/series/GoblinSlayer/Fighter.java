@@ -27,7 +27,7 @@ public class Fighter extends AnimatorCard {
     public Fighter() {
         super(DATA);
 
-        Initialize(9, 0, 2);
+        Initialize(10, 0, 2);
         SetUpgrade(3, 0, 0);
 
         SetFading(true);

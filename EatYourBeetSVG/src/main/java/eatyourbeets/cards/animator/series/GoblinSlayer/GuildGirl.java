@@ -1,5 +1,6 @@
 package eatyourbeets.cards.animator.series.GoblinSlayer;
 
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -54,7 +55,17 @@ public class GuildGirl extends AnimatorCard
         {
             super.atStartOfTurnPostDraw();
 
-            GameActions.Bottom.Cycle(name, 1);
+            GameActions.Bottom.Draw(amount)
+                .AddCallback(drawnCards -> {
+                    GameActions.Bottom.DiscardFromHand(name, amount, false)
+                        .AddCallback(cards -> {
+                            for (AbstractCard card : cards) {
+                                if (GameUtilities.IsHindrance(card)) {
+                                    GameActions.Top.Exhaust(card, player.hand);
+                                }
+                            }
+                        });
+                });
             flashWithoutSound();
         }
     }
