@@ -3,10 +3,9 @@ package eatyourbeets.cards.animator.series.HitsugiNoChaika;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.interfaces.markers.Hidden;
 import eatyourbeets.utilities.GameActions;
 
-public class Guy extends AnimatorCard implements Hidden
+public class Guy extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Guy.class)
             .SetSkill(0, CardRarity.COMMON, EYBCardTarget.None)

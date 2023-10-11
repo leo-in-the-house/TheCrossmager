@@ -1557,16 +1557,8 @@
 		},
 		"animator:ArthurGaz":
 		{
-			"DESCRIPTION": "Choose an {Effect} at the start of the next !M! turns. || Set your [HP] to 1 until end of combat, then gain 1 [THP] for every !S! [HP] you lost.",
-			"EXTENDED_DESCRIPTION":
-			[
-				"At the start of turn, choose and activate an #yEffect.",
-				"Enter <CS>. || Add {Void+} to your discard pile.",
-				"Gain !M! [Block] and !S! [M]. || Discard a random {Attack}.",
-				"Draw !M! cards. || Move !S! cards to your draw pile.",
-				"Gain !M! [Metallicize]. || Take [DD] equal to your [Metallicize].",
-				"Gain !M! [E]. || Increase the cost of a random card by 1."
-			],
+			"DESCRIPTION": "Choose a {Chaika Clone} in your master deck.  Obtain a 0-Cost copy of it. || When Obtained: Also add a random {Chaika Clone} to your master deck.",
+			"UPGRADE_DESCRIPTION": "Choose a {Chaika Clone} in your master deck.  Obtain a 0-Cost copy of it. || When Obtained: Also add a random upgraded {Chaika Clone} to your master deck.",
 			"NAME": "Arthur Gaz"
 		},
 		"animator:ChaikaBohdan":
@@ -1576,7 +1568,7 @@
 		},
 		"animator:ChaikaTrabant":
 		{
-			"DESCRIPTION": "Gain [B]. When drawn: Deal this card's damage to ALL enemies with [~Lock-On]. || When Discarded or Sealed: Apply !M! [~Lock-On].",
+			"DESCRIPTION": "Deal damage next turn. || Whenever you discard a card when this is in your hand, apply [Weak] or [Vulnerable] randomly to ALL enemies.",
 			"NAME": "Chaika Trabant"
 		},
 		"animator:ChaikaKamaz":
@@ -1624,7 +1616,7 @@
 		"animator:Viivi":
 		{
 			"DESCRIPTION": "<ST>.  Add !S! [T-Knife] to your hand.",
-			"NAME": "Viivi"
+			"NAME": "Viivi Holopainen"
 		},
 		"animator:ZitaBrusasco":
 		{
@@ -3007,8 +2999,8 @@
 		},
 		"animator:NivaLada":
 		{
-			"DESCRIPTION": "Cooldown !S!: Change this card's form. || Whenever you Exhaust or discard a card, reduce this card's Cooldown by 1.",
-			"EXTENDED_DESCRIPTION": ["<slm>. While in your discard pile: Draw 2 cards at the start of each turn."],
+			"DESCRIPTION": "Cooldown !S!: Change this card's form. || Whenever you exhaust or discard a card while this is in your hand, reduce this card’s Cooldown by 1.",
+			"EXTENDED_DESCRIPTION": ["Start of Turn while this is in your discard pile: Draw !M! Cards."],
 			"NAME": "Niva Lada"
 		},
 		"animator:PamelaIbis":

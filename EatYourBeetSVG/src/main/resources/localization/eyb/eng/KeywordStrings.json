@@ -24,6 +24,12 @@
 		"NAMES": ["burning"],
 		"PROPER_NAME": "Burning"
 	},
+	"Chaika Clone":
+	{
+		"DESCRIPTION": "Chaika Trabant, Chaika Kamaz, Chaika Bogdan, Viivi Holopainen, Fredrika, Layla.",
+		"NAMES": ["chaika clone"],
+		"PROPER_NAME": "Chaika Clone"
+	},
 	"Chaos":
 	{
 		"DESCRIPTION": "Orb: Changes into [Random Orb] when you play an #yAttack. Permanently retains its last form at the end of turn.",

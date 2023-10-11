@@ -38,13 +38,13 @@ public class NivaLada extends AnimatorCard_UltraRare implements OnAfterCardExhau
     {
         super(DATA);
 
-        Initialize(0, 0);
+        Initialize(300, 0, 1);
+        SetUpgrade(0, 0, 1);
 
-        SetAffinity_Blue(2);
-        SetAffinity_White(1);
+        SetAffinity_Blue(1);
         SetAffinity_Black(1);
 
-        SetCooldown(14, 0, this::OnCooldownCompleted);
+        SetCooldown(14, -4, this::OnCooldownCompleted);
         SetAttackType(EYBAttackType.Elemental);
     }
 
@@ -52,13 +52,6 @@ public class NivaLada extends AnimatorCard_UltraRare implements OnAfterCardExhau
     public AbstractAttribute GetSpecialInfo()
     {
         return inBattle ? SpecialAttribute.Instance.SetCard(this).SetText(cooldown.GetSecondaryValueString()) : null;
-    }
-
-    @Override
-    protected void OnUpgrade()
-    {
-        SetHaste(true);
-        SetInnate(true);
     }
 
     @Override
@@ -103,7 +96,7 @@ public class NivaLada extends AnimatorCard_UltraRare implements OnAfterCardExhau
         if (type == CardType.ATTACK && player.discardPile.contains(this) && CombatStats.TryActivateSemiLimited(cardID))
         {
             GameEffects.List.ShowCopy(this, Settings.WIDTH * 0.75f, Settings.HEIGHT * 0.4f);
-            GameActions.Bottom.Draw(2);
+            GameActions.Bottom.Draw(magicNumber);
         }
     }
 

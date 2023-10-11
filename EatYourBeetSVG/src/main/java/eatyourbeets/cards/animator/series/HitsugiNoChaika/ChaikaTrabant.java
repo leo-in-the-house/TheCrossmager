@@ -1,96 +1,84 @@
 package eatyourbeets.cards.animator.series.HitsugiNoChaika;
 
-import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.LockOnPower;
-import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.cards.base.CardUseInfo;
-import eatyourbeets.cards.base.EYBAttackType;
-import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.cards.base.*;
 import eatyourbeets.effects.AttackEffects;
-import eatyourbeets.effects.VFX;
-import eatyourbeets.utilities.*;
+import eatyourbeets.interfaces.subscribers.OnAfterCardDiscardedSubscriber;
+import eatyourbeets.powers.CombatStats;
+import eatyourbeets.resources.GR;
+import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameEffects;
+import eatyourbeets.utilities.GameUtilities;
+import eatyourbeets.utilities.TargetHelper;
 
-public class ChaikaTrabant extends AnimatorCard
+public class ChaikaTrabant extends AnimatorCard implements OnAfterCardDiscardedSubscriber
 {
     public static final EYBCardData DATA = Register(ChaikaTrabant.class)
-            .SetAttack(2, CardRarity.RARE, EYBAttackType.Elemental)
+            .SetAttack(2, CardRarity.RARE, EYBAttackType.Elemental, EYBCardTarget.ALL)
             .SetSeriesFromClassPackage();
 
     public ChaikaTrabant()
     {
         super(DATA);
 
-        Initialize(12, 0, 2);
-        SetUpgrade(2, 0, 1);
+        Initialize(23, 0, 0);
+        SetUpgrade(6, 0, 0);
 
-        SetAffinity_Blue(2, 0, 2);
-        SetAffinity_White(1);
+        SetAffinity_Blue(1, 0, 1);
+        SetAffinity_Teal(1, 0, 1);
     }
 
     @Override
-    public void triggerWhenDrawn()
+    protected void OnUpgrade()
     {
-        super.triggerWhenDrawn();
+        super.OnUpgrade();
 
-        GameActions.Last.Callback(() ->
-        {
-            boolean flash = true;
-            for (AbstractMonster m : GameUtilities.GetEnemies(true))
-            {
-                if (m.hasPower(LockOnPower.POWER_ID))
-                {
-                    if (flash)
-                    {
-                        GameActions.Bottom.Flash(this);
-                        flash = false;
-                    }
+        AddScaling(Affinity.Blue, 1);
+        AddScaling(Affinity.Teal, 1);
+    }
 
-                    calculateCardDamage(m);
-                    GameActions.Bottom.DealDamage(this, m, AttackEffects.FIRE)
-                    .SetDamageEffect(c -> GameEffects.List.Add(VFX.SmallLaser(player.hb, c.hb, Color.WHITE)).duration * 0.3f);
+    @Override
+    public void triggerWhenCreated(boolean startOfBattle)
+    {
+        super.triggerWhenCreated(startOfBattle);
+
+        CombatStats.onAfterCardDiscarded.Subscribe(this);
+    }
+
+    @Override
+    public void OnAfterCardDiscarded()
+    {
+        for (AbstractMonster enemy : GameUtilities.GetEnemies(true)) {
+            if (enemy != null) {
+                if (rng.randomBoolean()) {
+                    GameActions.Top.ApplyWeak(TargetHelper.Normal(enemy), 1);
+                }
+                else {
+                    GameActions.Top.ApplyVulnerable(TargetHelper.Normal(enemy), 1);
                 }
             }
-        });
-    }
-
-    @Override
-    public void triggerOnManualDiscard()
-    {
-        super.triggerOnManualDiscard();
-
-        ApplyLockOn();
-    }
-
-    @Override
-    public void triggerOnAffinitySeal(boolean reshuffle)
-    {
-        super.triggerOnAffinitySeal(reshuffle);
-
-        ApplyLockOn();
+        }
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.GainBlue(1);
-        GameActions.Bottom.DealDamage(this, m, AttackEffects.FIRE)
-        .SetDamageEffect(c -> GameEffects.List.Add(VFX.SmallLaser(player.hb, c.hb, Color.WHITE)).duration * 0.3f);
+        ChaikaTrabant other = (ChaikaTrabant) makeStatEquivalentCopy();
+        other.tags.remove(GR.Enums.CardTags.IGNORE_PEN_NIB);
+        CombatStats.onStartOfTurnPostDraw.Subscribe(other);
     }
 
-    private void ApplyLockOn()
+    @Override
+    public void OnStartOfTurnPostDraw()
     {
-        GameActions.Bottom.SelectCreature(this)
-        .AutoSelectSingleTarget(true)
-        .AddCallback(c ->
+        GameEffects.Queue.ShowCardBriefly(makeStatEquivalentCopy());
+        CombatStats.onStartOfTurnPostDraw.Unsubscribe(this);
+
+        GameActions.Bottom.Callback(() ->
         {
-            if (GameUtilities.IsValidTarget(c))
-            {
-                GameActions.Bottom.ApplyLockOn(player, c, magicNumber);
-            }
+            GameActions.Bottom.DealDamageToAll(this, AttackEffects.FIRE);
         });
     }
 }
