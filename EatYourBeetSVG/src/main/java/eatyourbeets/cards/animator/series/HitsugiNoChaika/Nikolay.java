@@ -30,7 +30,7 @@ public class Nikolay extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_HEAVY);
+        GameActions.Bottom.DealDamageToAll(this, AttackEffects.SLASH_HEAVY);
 
         GameActions.Bottom.DiscardFromHand(name, 1, false)
            .SetOptions(true, true, true)

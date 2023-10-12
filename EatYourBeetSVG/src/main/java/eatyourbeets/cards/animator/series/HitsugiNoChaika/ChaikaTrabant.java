@@ -1,5 +1,6 @@
 package eatyourbeets.cards.animator.series.HitsugiNoChaika;
 
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
@@ -49,13 +50,15 @@ public class ChaikaTrabant extends AnimatorCard implements OnAfterCardDiscardedS
     @Override
     public void OnAfterCardDiscarded()
     {
-        for (AbstractMonster enemy : GameUtilities.GetEnemies(true)) {
-            if (enemy != null) {
-                if (rng.randomBoolean()) {
-                    GameActions.Top.ApplyWeak(TargetHelper.Normal(enemy), 1);
-                }
-                else {
-                    GameActions.Top.ApplyVulnerable(TargetHelper.Normal(enemy), 1);
+        if (player.hand.contains(this)) {
+            for (AbstractMonster enemy : GameUtilities.GetEnemies(true)) {
+                if (enemy != null) {
+                    if (rng.randomBoolean()) {
+                        GameActions.Top.ApplyWeak(TargetHelper.Normal(enemy), 1);
+                    }
+                    else {
+                        GameActions.Top.ApplyVulnerable(TargetHelper.Normal(enemy), 1);
+                    }
                 }
             }
         }
@@ -78,7 +81,8 @@ public class ChaikaTrabant extends AnimatorCard implements OnAfterCardDiscardedS
 
         GameActions.Bottom.Callback(() ->
         {
-            GameActions.Bottom.DealDamageToAll(this, AttackEffects.FIRE);
+            final int[] damageMatrix = DamageInfo.createDamageMatrix(damage, true);
+            GameActions.Top.DealDamageToAll(damageMatrix, DamageInfo.DamageType.NORMAL, AttackEffects.FIRE);
         });
     }
 }

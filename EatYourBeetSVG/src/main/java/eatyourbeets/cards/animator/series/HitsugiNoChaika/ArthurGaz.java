@@ -82,7 +82,12 @@ public class ArthurGaz extends AnimatorCard implements OnAddToDeckListener
 
         for (AbstractCard card : player.masterDeck.group) {
             if (IsChaikaClone(card)) {
-                group.addToBottom(card.makeCopy());
+                AbstractCard copy = card.makeCopy();
+
+                if (card.upgraded) {
+                    copy.upgrade();
+                }
+                group.addToBottom(copy);
             }
         }
 

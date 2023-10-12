@@ -58,11 +58,9 @@ public class Viivi extends AnimatorCard
 
         if (info.TryActivateStarter())
         {
-            GameActions.Bottom.CreateThrowingKnives(secondaryValue)
-                    .AddCallback(cards -> {
-                        GameActions.Top.Cycle(name, 1)
-                         .SetFilter(ThrowingKnife.DATA::IsCard);
-                    });
+            GameActions.Bottom.CreateThrowingKnives(secondaryValue);
+            GameActions.Bottom.Cycle(name, 1)
+                    .SetFilter(ThrowingKnife.DATA::IsCard);
         }
     }
 }

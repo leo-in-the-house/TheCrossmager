@@ -20,9 +20,8 @@ public class LeonardoStola extends AnimatorCard {
     public LeonardoStola() {
         super(DATA);
 
-        Initialize(0, 0, 0);
-        SetUpgrade(0, 0, 0);
-        SetCostUpgrade(-1);
+        Initialize(0, 0, 2);
+        SetUpgrade(0, 0, 2);
 
         SetAffinity_Green(1);
         SetAffinity_Pink(1);
@@ -32,7 +31,7 @@ public class LeonardoStola extends AnimatorCard {
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info) {
         GameUtilities.PlayVoiceSFX(name);
 
-        GameActions.Bottom.StackPower(new LeonardoStolaPower(p, 1));
+        GameActions.Bottom.StackPower(new LeonardoStolaPower(p, magicNumber));
     }
 
     public static class LeonardoStolaPower extends AnimatorPower implements OnAfterCardDiscardedSubscriber {

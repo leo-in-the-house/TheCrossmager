@@ -5,7 +5,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
-import eatyourbeets.cards.base.modifiers.DamageModifiers;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
@@ -32,17 +31,14 @@ public class ChaikaBohdan extends AnimatorCard
         GameUtilities.PlayVoiceSFX(name);
 
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_DIAGONAL);
-        GameActions.Bottom.DiscardFromHand(name, 1, false)
+        GameActions.Bottom.DiscardFromHand(name, 3, false)
             .SetOptions(true, true, true)
             .AddCallback(cards -> {
                 if (cards.size() > 0) {
                     GameActions.Top.ModifyAllCopies(cardID)
                         .AddCallback(c ->
                         {
-                            if (uuid != c.uuid)
-                            {
-                                DamageModifiers.For(c).Add(magicNumber);
-                            }
+                            GameUtilities.ModifyDamage(this, damage + (magicNumber * cards.size()), false);
                         });
                 }
             });

@@ -1620,7 +1620,7 @@
 		"animator:LeonardoStola":
 		{
 			"FLAVOR_TEXT": "We're the Gilette Squad of the Kliemann Agency, here on orders of the six Allied nations!'",
-			"DESCRIPTION": "The first 2 times each turn you discard a card: draw a card.",
+			"DESCRIPTION": "The first !M! times each turn you discard a card: draw a card.",
 			"EXTENDED_DESCRIPTION": ["The next #b{0} times this turn you discard a card: draw a card."],
 			"NAME": "Leonardo Stola"
 		},
@@ -3025,7 +3025,7 @@
 		"animator:NivaLada":
 		{
 			"FLAVOR_TEXT": "'Combat detected.  Activation conditions met.  Begin test procedure.  Unlocking 3 of 6 protected spell levels.  Functional mode now engaged.'",
-			"DESCRIPTION": "Cooldown !S!: Change this card's form. || Whenever you exhaust or discard a card while this is in your hand, reduce this card’s Cooldown by 1.",
+			"DESCRIPTION": "Cooldown !S!: Change ** this card's form. || Whenever you exhaust or discard a card while this is in your hand, reduce this card’s Cooldown by 1.",
 			"EXTENDED_DESCRIPTION": ["Start of Turn while this is in your discard pile: Draw !M! Cards."],
 			"NAME": "Niva Lada"
 		},

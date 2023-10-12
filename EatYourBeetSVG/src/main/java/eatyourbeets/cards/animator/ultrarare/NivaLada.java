@@ -2,7 +2,6 @@ package eatyourbeets.cards.animator.ultrarare;
 
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
@@ -10,7 +9,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.ExplosionSmallEffect;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
-import eatyourbeets.cards.base.attributes.SpecialAttribute;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.effects.vfx.megacritCopy.LaserBeamEffect2;
 import eatyourbeets.interfaces.subscribers.OnAfterCardDiscardedSubscriber;
@@ -19,6 +17,7 @@ import eatyourbeets.interfaces.subscribers.OnStartOfTurnSubscriber;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
+import eatyourbeets.utilities.GameUtilities;
 
 public class NivaLada extends AnimatorCard_UltraRare implements OnAfterCardExhaustedSubscriber, OnAfterCardDiscardedSubscriber, OnStartOfTurnSubscriber
 {
@@ -38,7 +37,7 @@ public class NivaLada extends AnimatorCard_UltraRare implements OnAfterCardExhau
     {
         super(DATA);
 
-        Initialize(300, 0, 1);
+        Initialize(999, 0, 1);
         SetUpgrade(0, 0, 1);
 
         SetAffinity_Blue(1);
@@ -46,12 +45,6 @@ public class NivaLada extends AnimatorCard_UltraRare implements OnAfterCardExhau
 
         SetCooldown(14, -4, this::OnCooldownCompleted);
         SetAttackType(EYBAttackType.Elemental);
-    }
-
-    @Override
-    public AbstractAttribute GetSpecialInfo()
-    {
-        return inBattle ? SpecialAttribute.Instance.SetCard(this).SetText(cooldown.GetSecondaryValueString()) : null;
     }
 
     @Override
@@ -63,13 +56,17 @@ public class NivaLada extends AnimatorCard_UltraRare implements OnAfterCardExhau
     @Override
     public void OnAfterCardExhausted(AbstractCard card)
     {
-        GameActions.Bottom.Callback(this::OnExhaustOrDiscard);
+        if (player.hand.contains(this)) {
+            GameActions.Bottom.Callback(this::OnExhaustOrDiscard);
+        }
     }
 
     @Override
     public void OnAfterCardDiscarded()
     {
-        GameActions.Bottom.Callback(this::OnExhaustOrDiscard);
+        if (player.hand.contains(this)) {
+            GameActions.Bottom.Callback(this::OnExhaustOrDiscard);
+        }
     }
 
     @Override
@@ -77,7 +74,7 @@ public class NivaLada extends AnimatorCard_UltraRare implements OnAfterCardExhau
     {
         if (type == CardType.ATTACK)
         {
-            GameUtilities.PlayVoiceSFX("Niva Lada_Gundr");
+            GameUtilities.PlayVoiceSFX(name);
             GameActions.Bottom.VFX(new LaserBeamEffect2(player.hb.cX, player.hb.cY), 0.1f);
             GameActions.Bottom.VFX(new ExplosionSmallEffect(m.hb.cX + MathUtils.random(-0.05f, 0.05f), m.hb.cY + MathUtils.random(-0.05f, 0.05f)), 0.1f);
             GameActions.Bottom.VFX(new ExplosionSmallEffect(m.hb.cX + MathUtils.random(-0.05f, 0.05f), m.hb.cY + MathUtils.random(-0.05f, 0.05f)), 0.1f);

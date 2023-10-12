@@ -138,14 +138,14 @@ public class Fredrika extends AnimatorCard implements OnEndOfTurnLastSubscriber
 
             case Cat:
             {
-                GameUtilities.PlayVoiceSFX("Fredrika_Cat");
+                GameUtilities.PlayVoiceSFX(name);
                 GameActions.Bottom.GainTemporaryHP(magicNumber);
                 break;
             }
 
             case Dominica:
             {
-                GameUtilities.PlayVoiceSFX("Fredrika_Dominica");
+                GameUtilities.PlayVoiceSFX(name);
                 GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_HEAVY);
                 GameActions.Bottom.ApplyWeak(TargetHelper.Normal(m), magicNumber);
                 GameActions.Bottom.ApplyVulnerable(TargetHelper.Normal(m), magicNumber);
@@ -154,7 +154,7 @@ public class Fredrika extends AnimatorCard implements OnEndOfTurnLastSubscriber
 
             case Dragoon:
             {
-                GameUtilities.PlayVoiceSFX("Fredrika_Dragoon");
+                GameUtilities.PlayVoiceSFX(name);
                 for (int i = 0; i < 2; i++)
                 {
                     GameActions.Bottom.DealDamage(this, m, AttackEffects.NONE)
