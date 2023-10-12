@@ -19,8 +19,8 @@ public class Nikolay extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(14, 0, 1);
-        SetUpgrade(10, 0, 1);
+        Initialize(17, 0, 1);
+        SetUpgrade(8, 0, 1);
 
         SetAffinity_Red(2, 0, 0);
         SetAffinity_Yellow(1);
