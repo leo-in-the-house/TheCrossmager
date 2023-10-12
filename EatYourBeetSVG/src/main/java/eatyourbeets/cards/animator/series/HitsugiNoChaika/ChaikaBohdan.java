@@ -21,7 +21,7 @@ public class ChaikaBohdan extends AnimatorCard
         super(DATA);
 
         Initialize(15, 0, 4);
-        SetUpgrade(5, 0, 0);
+        SetUpgrade(6, 0, 0);
 
         SetAffinity_Red(2, 0, 0);
     }
