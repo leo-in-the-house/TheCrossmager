@@ -26,7 +26,6 @@ public class ArthurGaz extends AnimatorCard implements OnAddToDeckListener
                 data.AddPreview(new ChaikaKamaz(), true);
                 data.AddPreview(new ChaikaBohdan(), true);
                 data.AddPreview(new Viivi(), true);
-                data.AddPreview(new Fredrika(), true);
                 data.AddPreview(new Layla(), true);
             });
 
@@ -59,7 +58,6 @@ public class ArthurGaz extends AnimatorCard implements OnAddToDeckListener
         cards.Add(new ChaikaKamaz());
         cards.Add(new ChaikaBohdan());
         cards.Add(new Viivi());
-        cards.Add(new Fredrika());
         cards.Add(new Layla());
 
         AbstractCard chaikaClone = cards.Retrieve(rng);
@@ -109,7 +107,6 @@ public class ArthurGaz extends AnimatorCard implements OnAddToDeckListener
                 ChaikaBohdan.DATA.ID.equals(card.cardID) ||
                 ChaikaKamaz.DATA.ID.equals(card.cardID) ||
                 Viivi.DATA.ID.equals(card.cardID) ||
-                Fredrika.DATA.ID.equals(card.cardID) ||
                 Layla.DATA.ID.equals(card.cardID);
     }
 
