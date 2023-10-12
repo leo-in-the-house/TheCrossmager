@@ -28,8 +28,8 @@ public class Viivi extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(3, 0, 3, 2);
-        SetUpgrade(1, 0, 0, 1);
+        Initialize(3, 0, 3, 3);
+        SetUpgrade(1, 0, 0, 0);
 
         SetAffinity_Green(1, 0, 1);
     }
