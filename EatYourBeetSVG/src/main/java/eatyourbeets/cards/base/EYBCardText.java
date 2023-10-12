@@ -190,8 +190,12 @@ public class EYBCardText
             offset_y -= RenderBadge(sb, BADGES.Autoplay.Texture(), offset_y, alpha, null);
         }
 
-        //TODO: Add Loyal and Protagonist
+        //TODO: Add Protagonist
 
+        if (card.hasTag(GR.Enums.CardTags.LOYAL))
+        {
+            offset_y -= RenderBadge(sb, BADGES.Loyal.Texture(), offset_y, alpha, null);
+        }
 
         if (card.hasTag(EYBCard.HASTE))
         {

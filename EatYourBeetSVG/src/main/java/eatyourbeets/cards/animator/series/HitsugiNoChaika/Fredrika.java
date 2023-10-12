@@ -86,7 +86,7 @@ public class Fredrika extends AnimatorCard implements OnEndOfTurnLastSubscriber
     @Override
     public AbstractAttribute GetBlockInfo()
     {
-        return (currentForm == Form.Default || currentForm == Form.Dominica) ? super.GetBlockInfo() : null;
+        return (currentForm == Form.Default) ? super.GetBlockInfo() : null;
     }
 
     @Override

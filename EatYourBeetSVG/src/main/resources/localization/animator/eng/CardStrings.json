@@ -1545,7 +1545,7 @@
 		"animator:AcuraAkari":
 		{
 			"FLAVOR_TEXT": "'...And just when you get off your lazy butt, I find you picking up some pretty girl instead!  Am I really not enough for you?  For you to sneak off and have breakfast with a tender young thing like her... I hope you're happy!'",
-			"DESCRIPTION": "Discard !M! cards to obtain !M! [T-Knife]. || On Discard: Obtain [T-Knife].",
+			"DESCRIPTION": "Discard up to !M! cards to obtain that many [T-Knife]. || On Discard: Obtain [T-Knife].",
 			"NAME": "Akari Acura"
 		},
 		"animator:AcuraShin":

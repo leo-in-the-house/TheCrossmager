@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
+import eatyourbeets.cards.base.EYBAttackType;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
@@ -12,7 +13,7 @@ import eatyourbeets.utilities.GameUtilities;
 public class ChaikaBohdan extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(ChaikaBohdan.class)
-            .SetAttack(2, CardRarity.COMMON)
+            .SetAttack(2, CardRarity.COMMON, EYBAttackType.Normal)
             .SetSeriesFromClassPackage();
 
     public ChaikaBohdan()

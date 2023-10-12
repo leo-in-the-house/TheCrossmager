@@ -46,6 +46,7 @@ public class CatoElAltestan extends AnimatorCard
                         GameUtilities.SetAttackType(c, EYBAttackType.Elemental);
                     }
                 });
+                GameUtilities.Retain(c);
             }
         });
     }

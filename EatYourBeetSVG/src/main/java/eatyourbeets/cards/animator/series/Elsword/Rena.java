@@ -13,7 +13,7 @@ import eatyourbeets.utilities.GameActions;
 public class Rena extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Rena.class)
-            .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.Normal)
+            .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None)
             .SetSeriesFromClassPackage();
 
     public Rena()

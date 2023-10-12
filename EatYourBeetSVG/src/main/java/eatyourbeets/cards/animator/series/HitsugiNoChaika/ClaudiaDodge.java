@@ -2,7 +2,6 @@ package eatyourbeets.cards.animator.series.HitsugiNoChaika;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.orbs.Lightning;
 import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
@@ -34,7 +33,7 @@ public class ClaudiaDodge extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.ChannelOrb(new Lightning())
+        GameActions.Bottom.ChannelRandomOrb(1)
             .AddCallback(orbs -> {
                 if (orbs.size() > 0) {
                     GameActions.Top.Reload(name, cards ->

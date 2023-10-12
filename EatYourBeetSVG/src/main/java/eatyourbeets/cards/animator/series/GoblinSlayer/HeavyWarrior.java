@@ -49,7 +49,7 @@ public class HeavyWarrior extends AnimatorCard
                 }
             }
 
-            return numHindrances > magicNumber;
+            return numHindrances >= magicNumber;
         }
 
         return false;

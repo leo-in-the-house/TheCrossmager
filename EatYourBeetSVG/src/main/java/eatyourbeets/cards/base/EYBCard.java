@@ -574,7 +574,12 @@ public abstract class EYBCard extends EYBCardBase implements OnStartOfTurnPostDr
             dynamicTooltips.add(GR.Tooltips.Autoplay);
         }
 
-        //TODO: Add Loyal and Protagonist
+        if (hasTag(GR.Enums.CardTags.LOYAL))
+        {
+            dynamicTooltips.add(GR.Tooltips.Loyal);
+        }
+
+        //TODO: Add Protagonist
         if (affinities.HasStar())
         {
             dynamicTooltips.add(GR.Tooltips.Affinity_Star);

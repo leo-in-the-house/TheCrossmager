@@ -2,8 +2,8 @@ package eatyourbeets.cards.animator.series.DateALive;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.combat.DieDieDieEffect;
 import eatyourbeets.cards.base.*;
+import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
@@ -25,9 +25,22 @@ public class KurumiTokisaki extends AnimatorCard
         SetAffinity_Violet(1);
         SetAffinity_Green(1);
 
+        SetDelayed(true);
         SetEthereal(true);
         SetAutoplayed(true);
         
+    }
+
+    @Override
+    public AbstractAttribute GetDamageInfo()
+    {
+        return super.GetDamageInfo().AddMultiplier(magicNumber);
+    }
+
+    @Override
+    public AbstractAttribute GetBlockInfo()
+    {
+        return super.GetBlockInfo().AddMultiplier(magicNumber);
     }
 
     @Override
@@ -40,8 +53,13 @@ public class KurumiTokisaki extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.GainBlock(block);
-        GameActions.Bottom.DealDamageToAll(this, AttackEffects.GUNSHOT);
+        for (int i=0; i<magicNumber; i++) {
+            GameActions.Bottom.GainBlock(block);
+        }
+
+        for (int i=0; i<magicNumber; i++) {
+            GameActions.Bottom.DealDamageToAll(this, AttackEffects.GUNSHOT);
+        }
 
         GameActions.Bottom.GainBlur(magicNumber);
 
