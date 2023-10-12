@@ -26,7 +26,7 @@
 	},
 	"Chaika Clone":
 	{
-		"DESCRIPTION": "Chaika Trabant, Chaika Kamaz, Chaika Bogdan, Viivi Holopainen, Fredrika, Layla.",
+		"DESCRIPTION": "Chaika Trabant, Chaika Kamaz, Chaika Bogdan, Viivi Holopainen, Fredrika, Layla",
 		"NAMES": ["chaika clone"],
 		"PROPER_NAME": "Chaika Clone"
 	},
@@ -398,7 +398,7 @@
 	},
 	"Supercharge":
 	{
-		"DESCRIPTION": "Gain charges each turn.  You can pay #b10 charges to enter #yDivinity #yStance",
+		"DESCRIPTION": "Gain charges each turn.  You can pay #b10 charges to enter #yDivinity #yStance.",
 		"NAMES": ["supercharge"],
 		"PROPER_NAME": "Supercharge"
 	},

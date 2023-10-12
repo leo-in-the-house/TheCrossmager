@@ -26,13 +26,6 @@ public class Loadout_HitsugiNoChaika extends AnimatorLoadout
         AddStarterCard(Nikolay.DATA, 7);
         AddStarterCard(ChaikaBohdan.DATA, 10);
 
-        AddStarterCard(AcuraTooru.DATA, 10);
-        //AddStarterCard(Fredrika.DATA, 14);
-        AddStarterCard(Layla.DATA, 10);
-        AddStarterCard(ClaudiaDodge.DATA, 8);
-        AddStarterCard(AcuraAkari.DATA, 7);
-        AddStarterCard(ChaikaKamaz.DATA, 4);
-
         AddStarterCard(ChaikaTrabant.DATA, 20);
     }
 

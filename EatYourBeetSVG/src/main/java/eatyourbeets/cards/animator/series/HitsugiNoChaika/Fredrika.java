@@ -126,11 +126,11 @@ public class Fredrika extends AnimatorCard implements OnEndOfTurnLastSubscriber
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
-        GameUtilities.PlayVoiceSFX(name);
         switch (currentForm)
         {
             case Default:
             {
+                GameUtilities.PlayVoiceSFX(name);
                 info.TryActivateStarter();
                 GameActions.Bottom.GainBlock(block);
                 break;
@@ -138,12 +138,14 @@ public class Fredrika extends AnimatorCard implements OnEndOfTurnLastSubscriber
 
             case Cat:
             {
+                GameUtilities.PlayVoiceSFX("Fredrika_Cat");
                 GameActions.Bottom.GainTemporaryHP(magicNumber);
                 break;
             }
 
             case Dominica:
             {
+                GameUtilities.PlayVoiceSFX("Fredrika_Dominica");
                 GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_HEAVY);
                 GameActions.Bottom.ApplyWeak(TargetHelper.Normal(m), magicNumber);
                 GameActions.Bottom.ApplyVulnerable(TargetHelper.Normal(m), magicNumber);
@@ -152,6 +154,7 @@ public class Fredrika extends AnimatorCard implements OnEndOfTurnLastSubscriber
 
             case Dragoon:
             {
+                GameUtilities.PlayVoiceSFX("Fredrika_Dragoon");
                 for (int i = 0; i < 2; i++)
                 {
                     GameActions.Bottom.DealDamage(this, m, AttackEffects.NONE)

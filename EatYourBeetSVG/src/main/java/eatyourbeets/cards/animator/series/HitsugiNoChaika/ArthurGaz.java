@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
+import eatyourbeets.cards.animator.colorless.uncommon.ChaikaKamaz;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.interfaces.listeners.OnAddToDeckListener;
 import eatyourbeets.utilities.GameActions;
@@ -47,7 +48,6 @@ public class ArthurGaz extends AnimatorCard implements OnAddToDeckListener
     protected void OnUpgrade()
     {
         SetInnate(true);
-        SetEthereal(false);
     }
 
     @Override
@@ -62,7 +62,13 @@ public class ArthurGaz extends AnimatorCard implements OnAddToDeckListener
         cards.Add(new Fredrika());
         cards.Add(new Layla());
 
-        AbstractDungeon.topLevelEffectsQueue.add(new ShowCardAndObtainEffect(cards.Retrieve(rng), (float) Settings.WIDTH / 3.0F, (float) Settings.HEIGHT / 2.0F, false));
+        AbstractCard chaikaClone = cards.Retrieve(rng);
+
+        if (upgraded) {
+            chaikaClone.upgrade();
+        }
+
+        AbstractDungeon.topLevelEffectsQueue.add(new ShowCardAndObtainEffect(chaikaClone, (float) Settings.WIDTH / 3.0F, (float) Settings.HEIGHT / 2.0F, false));
 
         return true;
     }

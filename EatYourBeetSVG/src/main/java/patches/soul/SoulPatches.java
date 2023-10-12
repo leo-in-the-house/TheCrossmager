@@ -5,7 +5,6 @@ import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.cards.Soul;
 import com.megacrit.cardcrawl.cards.SoulGroup;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -15,6 +14,7 @@ import eatyourbeets.interfaces.subscribers.OnAddedToDrawPileSubscriber;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.resources.GR;
 import eatyourbeets.utilities.GameEffects;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.ListSelection;
 import javassist.CannotCompileException;
 import javassist.expr.ExprEditor;
@@ -75,6 +75,7 @@ public class SoulPatches
             {
                 SFX.Play(SFX.CARD_BURN, 0.8f, 1.2f, 0.5f);
                 GameEffects.TopLevelQueue.Add(new CardPoofEffect(card.current_x, card.current_y));
+                GameUtilities.PlayVoiceSFX(card.name);
                 return SpireReturn.Return();
             }
 

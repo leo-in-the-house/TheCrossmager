@@ -7,9 +7,9 @@ import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBAttackType;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.AttackEffects;
+import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.utilities.TargetHelper;
 
 public class Gillette extends AnimatorCard
 {
@@ -32,7 +32,9 @@ public class Gillette extends AnimatorCard
     {
         super.triggerOnManualDiscard();
 
-        GameActions.Bottom.ApplyWeak(TargetHelper.Enemies(), magicNumber);
+        if (CombatStats.TryActivateSemiLimited(cardID)) {
+            GameActions.Bottom.GainEnergyNextTurn(1);
+        }
     }
 
     @Override

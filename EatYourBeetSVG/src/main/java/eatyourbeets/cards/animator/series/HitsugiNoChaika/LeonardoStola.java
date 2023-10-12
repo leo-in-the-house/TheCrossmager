@@ -2,7 +2,6 @@ package eatyourbeets.cards.animator.series.HitsugiNoChaika;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
@@ -13,40 +12,34 @@ import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
-public class ChaikaKamaz extends AnimatorCard {
-    public static final EYBCardData DATA = Register(ChaikaKamaz.class)
+public class LeonardoStola extends AnimatorCard {
+    public static final EYBCardData DATA = Register(LeonardoStola.class)
             .SetPower(1, CardRarity.UNCOMMON)
             .SetSeriesFromClassPackage();
 
-    public ChaikaKamaz() {
+    public LeonardoStola() {
         super(DATA);
 
         Initialize(0, 0, 0);
         SetUpgrade(0, 0, 0);
+        SetCostUpgrade(-1);
 
-        SetAffinity_Black(1);
-        SetAffinity_Violet(1);
-    }
-
-    @Override
-    protected void OnUpgrade()
-    {
-        SetInnate(true);
+        SetAffinity_Green(1);
+        SetAffinity_Pink(1);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info) {
         GameUtilities.PlayVoiceSFX(name);
 
-        GameActions.Bottom.StackPower(new ChaikaKamazPower(p, 1));
+        GameActions.Bottom.StackPower(new LeonardoStolaPower(p, 1));
     }
 
-    public static class ChaikaKamazPower extends AnimatorPower implements OnAfterCardDiscardedSubscriber {
-        public ChaikaKamazPower(AbstractCreature owner, int amount) {
-            super(owner, ChaikaKamaz.DATA);
+    public static class LeonardoStolaPower extends AnimatorPower implements OnAfterCardDiscardedSubscriber {
+        public LeonardoStolaPower(AbstractCreature owner, int amount) {
+            super(owner, LeonardoStola.DATA);
             Initialize(amount);
         }
-
 
         @Override
         public void onInitialApplication()
@@ -55,7 +48,6 @@ public class ChaikaKamaz extends AnimatorCard {
 
             CombatStats.onAfterCardDiscarded.Subscribe(this);
         }
-
 
         @Override
         public void onRemove()
@@ -67,7 +59,19 @@ public class ChaikaKamaz extends AnimatorCard {
 
         @Override
         public void OnAfterCardDiscarded() {
-            GameActions.Bottom.MakeCardInHand( AbstractDungeon.getCard(CardRarity.UNCOMMON).makeCopy());
+            if (this.amount > 0) {
+                GameActions.Bottom.Draw(1);
+                this.amount -= 1;
+                updateDescription();
+                flash();
+            }
+        }
+
+        public void atStartOfTurn()
+        {
+            super.atStartOfTurn();
+
+            ResetAmount();
         }
 
         @Override

@@ -25,7 +25,7 @@ public class AcuraTooru_Dragoon extends AnimatorCard
         SetUpgrade(1, 0, 2);
 
         SetAffinity_Green(1, 0, 1);
-        SetAffinity_Black(1);
+        SetAffinity_Black(1, 0, 1);
     }
 
     @Override

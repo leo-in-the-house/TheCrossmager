@@ -75,9 +75,9 @@ public class NivaLada extends AnimatorCard_UltraRare implements OnAfterCardExhau
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
-        GameUtilities.PlayVoiceSFX(name);
         if (type == CardType.ATTACK)
         {
+            GameUtilities.PlayVoiceSFX("Niva Lada_Gundr");
             GameActions.Bottom.VFX(new LaserBeamEffect2(player.hb.cX, player.hb.cY), 0.1f);
             GameActions.Bottom.VFX(new ExplosionSmallEffect(m.hb.cX + MathUtils.random(-0.05f, 0.05f), m.hb.cY + MathUtils.random(-0.05f, 0.05f)), 0.1f);
             GameActions.Bottom.VFX(new ExplosionSmallEffect(m.hb.cX + MathUtils.random(-0.05f, 0.05f), m.hb.cY + MathUtils.random(-0.05f, 0.05f)), 0.1f);
@@ -86,6 +86,7 @@ public class NivaLada extends AnimatorCard_UltraRare implements OnAfterCardExhau
         }
         else
         {
+            GameUtilities.PlayVoiceSFX(name);
             GameActions.Bottom.Callback(m, (m1, __) -> cooldown.ProgressCooldownAndTrigger(m1));
         }
     }

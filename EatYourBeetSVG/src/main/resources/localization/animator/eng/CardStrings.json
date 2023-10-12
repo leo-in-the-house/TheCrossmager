@@ -201,6 +201,14 @@
 			"DESCRIPTION": "Deal additional damage equal to the enemy's current attack damage.",
 			"NAME": "Canti"
 		},
+		"animator:ChaikaKamaz":
+		{
+			"FLAVOR_TEXT": "'How foolish they are!  No matter, they are nothing but father's playthings after all!  My only interest is...'",
+			"DESCRIPTION": "Whenever you discard a card: Obtain a random {Common}.",
+			"UPGRADE_DESCRIPTION": "Whenever you discard a card: Obtain a random upgraded {Common}.",
+			"EXTENDED_DESCRIPTION": ["Whenever you discard a card: Obtain #b{0} #yCommons.", "Whenever you discard a card: Obtain #b{0} upgraded #yCommons."],
+			"NAME": "Chaika Kamaz"
+		},
 		"animator:Cirno":
 		{
 			"DESCRIPTION": "Apply !M! [Freezing] to ALL enemies. || When Exhausted, Channel 1 [Frost].",
@@ -1536,90 +1544,107 @@
 	{
 		"animator:AcuraAkari":
 		{
+			"FLAVOR_TEXT": "'...And just when you get off your lazy butt, I find you picking up some pretty girl instead!  Am I really not enough for you?  For you to sneak off and have breakfast with a tender young thing like her... I hope you're happy!'",
 			"DESCRIPTION": "Discard !M! cards to obtain !M! [T-Knife]. || On Discard: Obtain [T-Knife].",
 			"NAME": "Akari Acura"
 		},
 		"animator:AcuraShin":
 		{
+			"FLAVOR_TEXT": "'You're not cut out to be a saboteur.  Someday, you'll see, but you better hope you figure it out before it's too late.'",
 			"DESCRIPTION": "Whenever you discard a card: Gain !M! {Temp.} {Envenom}. || Twice per turn, cycle a card.",
 			"EXTENDED_DESCRIPTION": ["Whenever you #ydiscard a card: Gain #b{0} temporary #yEnvenom. || Twice per turn: #yCycle a card."],
 			"NAME": "Shin Acura"
 		},
 		"animator:AcuraTooru":
 		{
+			"FLAVOR_TEXT": "'Was there ever any doubt?  I chose you to be my employer.  Nothing else matters to me, regardless of who or what you might turn out to be.'",
 			"DESCRIPTION": "Obtain 3 [T-Knife]. || On Discard: Gain !S! [Block].",
 			"NAME": "Tooru Acura"
 		},
 		"animator:AcuraTooru_Dragoon":
 		{
-			"DESCRIPTION": "Boost [G]. || Play the top {Strike} of your draw pile and Exhaust it.",
+			"FLAVOR_TEXT": "'Frederika, let's go.  I'm gonna kill Gaz.'",
+			"DESCRIPTION": "Reload: Gain !M! [Plated Armor].",
 			"NAME": "Dragoon C. Tooru"
 		},
 		"animator:ArthurGaz":
 		{
+			"FLAVOR_TEXT": "'I have no daughter.  The word 'Chaika' is mere a term for the system designed for my resurrection.'",
 			"DESCRIPTION": "Choose a {Chaika Clone} in your master deck.  Obtain a 0-Cost copy of it. || When Obtained: Also add a random {Chaika Clone} to your master deck.",
 			"UPGRADE_DESCRIPTION": "Choose a {Chaika Clone} in your master deck.  Obtain a 0-Cost copy of it. || When Obtained: Also add a random upgraded {Chaika Clone} to your master deck.",
 			"NAME": "Arthur Gaz"
 		},
 		"animator:ChaikaBohdan":
 		{
+			"FLAVOR_TEXT": "'First, we bring together father remains.  Second, kill them all.  Heroes who killing father, kill them all!  Many people running away!  Not protect father!  Kill them all!'",
 			"DESCRIPTION": "You may discard up to 3 cards.  For each card discarded, increase this card’s future attack by !M!.",
-			"NAME": "Chaika Bogdan"
+			"NAME": "Chaika Bohdan"
 		},
 		"animator:ChaikaTrabant":
 		{
+			"FLAVOR_TEXT": "'Me... just want... just want finding pieces... father's gathering everywhere.  Putting father back together.  Only wish- for me.  Father rest happy.  Chaika's job.'",
 			"DESCRIPTION": "Deal damage next turn. || Whenever you discard a card when this is in your hand, apply [Weak] or [Vulnerable] randomly to ALL enemies.",
 			"NAME": "Chaika Trabant"
 		},
-		"animator:ChaikaKamaz":
-		{
-			"DESCRIPTION": "Whenever you discard a card: Obtain a random {Common}.",
-			"NAME": "Chaika Kamaz"
-		},
 		"animator:ClaudiaDodge":
 		{
+			"FLAVOR_TEXT": "'Well, I may not look like it, but I used to be a famous hero, so I got more combat experience than you.'",
 			"DESCRIPTION": "Channel [Random Orb]. || Reload: Trigger it twice.",
 			"NAME": "Claudia Dodge"
 		},
 		"animator:Fredrika":
 		{
+			"FLAVOR_TEXT": "'I wanted to make sure I never forget what Dominica looked like.  She was the one person who gave me purpose.  And, until her final breath, that was the only thing she yearned for.'",
 			"DESCRIPTION": "On Discard: Return this card to your hand, then transform it.",
 			"EXTENDED_DESCRIPTION": ["", "Gain !M! [Metallicize].", "Apply !M! [Weak] [Vulnerable]."],
 			"NAME": "Fredrika"
 		},
 		"animator:Gillette":
 		{
-			"DESCRIPTION": "On Discard: Apply [Weak] to ALL enemies.",
-			"NAME": "Gillette"
+			"FLAVOR_TEXT": "'By my power as a cavalier, I, Alberic Gilette, declare war on you!'",
+			"DESCRIPTION": "<SLM>. On Discard: Gain [E] next turn.",
+			"NAME": "Alberic Gillette"
 		},
 		"animator:Guy":
 		{
+			"FLAVOR_TEXT": "'All humans are incomplete.  No matter how they desire magic power, they will never have the ability to use it at will.  It completely defies their physical forms, and the amount of psychofuel they can employ is limited.  Then, answer me this: how do they achieve perfection?'",
 			"DESCRIPTION": "Draw !M! card(s), then discard a card.",
 			"NAME": "Guy"
 		},
 		"animator:Layla":
 		{
-			"DESCRIPTION": "For !M! turns: Apply !S! [Poison] to the enemy at the start of its turn. || !A! [B]: Apply 1 [Freezing] to ALL enemies with [Poison].",
-			"EXTENDED_DESCRIPTION": ["At the start of turn: Apply #b{0} [Poison]."],
+			"FLAVOR_TEXT": "'Just like you, I awakened as Chaika somewhere along the line.  Though, now it was so long ago, I don't remember what triggered it.  Overwhelmed with violent anger and feelings I couldn't understand, I decided to start walking, thinking of nothing but my mission to find the remains.'",
+			"DESCRIPTION": "Reload: Apply !M! [Poison] to a random enemy.",
 			"NAME": "Layla"
+		},
+		"animator:LeonardoStola":
+		{
+			"FLAVOR_TEXT": "We're the Gilette Squad of the Kliemann Agency, here on orders of the six Allied nations!'",
+			"DESCRIPTION": "The first 2 times each turn you discard a card: draw a card.",
+			"EXTENDED_DESCRIPTION": ["The next #b{0} times this turn you discard a card: draw a card."],
+			"NAME": "Leonardo Stola"
 		},
 		"animator:MattheusCallaway":
 		{
+			"FLAVOR_TEXT": "'Greetings, your highness.  It is an honor to make your acquaintance.  I am vice captain Mattheus Callaway of the Kliemann Agency.'",
 			"DESCRIPTION": "If you discarded a card this turn: Gain !M! additional [Block].",
 			"NAME": "Mattheus Callaway"
 		},
 		"animator:Nikolay":
 		{
+			"FLAVOR_TEXT": "'Don't hold back, Viivi!  If you do, he'll kill you!'",
 			"DESCRIPTION": "Discard a card to reduce the cost of ALL copies of this card by !M!.",
-			"NAME": "Nikolay"
+			"NAME": "Nikolay Autotor"
 		},
 		"animator:Viivi":
 		{
-			"DESCRIPTION": "<ST>.  Add !S! [T-Knife] to your hand.",
+			"FLAVOR_TEXT": "'Shut up!  I'm not the forbidden emperor's daughter!'",
+			"DESCRIPTION": "<ST>.  Add !S! [T-Knife] to your hand, then Cycle a [T-Knife].",
 			"NAME": "Viivi Holopainen"
 		},
 		"animator:ZitaBrusasco":
 		{
+			"FLAVOR_TEXT": "'Oh, Viivi, please try to be reasonable.  I know you're eager to help Sir Gilette, but we have to act carefully.'",
 			"DESCRIPTION": "Cooldown !S!: Channel [Lightning] [Frost], then trigger them !M! times.",
 			"NAME": "Zita Brusasco"
 		}
@@ -2999,6 +3024,7 @@
 		},
 		"animator:NivaLada":
 		{
+			"FLAVOR_TEXT": "'Combat detected.  Activation conditions met.  Begin test procedure.  Unlocking 3 of 6 protected spell levels.  Functional mode now engaged.'",
 			"DESCRIPTION": "Cooldown !S!: Change this card's form. || Whenever you exhaust or discard a card while this is in your hand, reduce this card’s Cooldown by 1.",
 			"EXTENDED_DESCRIPTION": ["Start of Turn while this is in your discard pile: Draw !M! Cards."],
 			"NAME": "Niva Lada"

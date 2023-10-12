@@ -15,7 +15,7 @@ import eatyourbeets.utilities.TargetHelper;
 public class ChaikaTrabant extends AnimatorCard implements OnAfterCardDiscardedSubscriber
 {
     public static final EYBCardData DATA = Register(ChaikaTrabant.class)
-            .SetAttack(2, CardRarity.RARE, EYBAttackType.Elemental, EYBCardTarget.ALL)
+            .SetAttack(1, CardRarity.RARE, EYBAttackType.Elemental, EYBCardTarget.ALL)
             .SetSeriesFromClassPackage();
 
     public ChaikaTrabant()
