@@ -37,6 +37,7 @@ public class Add extends AnimatorCard
         SetRetain(true);
         SetAffinity_Teal(1);
         SetAffinity_Violet(1);
+        SetAffinity_Red(1);
 
         SetCostUpgrade(-1);
 

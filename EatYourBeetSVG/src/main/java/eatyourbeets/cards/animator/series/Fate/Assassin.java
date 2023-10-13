@@ -25,7 +25,7 @@ public class Assassin extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(3, 0, 3, 4);
+        Initialize(4, 0, 3, 3);
         SetUpgrade(1, 0);
 
         SetRetain(true);

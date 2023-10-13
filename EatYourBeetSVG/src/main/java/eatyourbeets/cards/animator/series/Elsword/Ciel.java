@@ -32,8 +32,7 @@ public class Ciel extends AnimatorCard
         Initialize(0, 5, 12);
         SetUpgrade(0, 2, 4);
 
-        SetAffinity_Green(1, 0, 0);
-        SetAffinity_Black(1, 0, 0);
+        SetAffinity_Green(2, 0, 0);
     }
 
     @Override

@@ -2,14 +2,15 @@ package eatyourbeets.cards.animator.series.Elsword;
 
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.cards.animator.special.OrbCore;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.animator.tokens.AffinityToken;
-import eatyourbeets.cards.base.*;
+import eatyourbeets.cards.animator.special.OrbCore;
+import eatyourbeets.cards.base.AnimatorCard;
+import eatyourbeets.cards.base.CardUseInfo;
+import eatyourbeets.cards.base.EYBCard;
+import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.effects.SFX;
 import eatyourbeets.effects.VFX;
@@ -18,15 +19,13 @@ import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Eve extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Eve.class)
             .SetPower(3, CardRarity.RARE)
-            
-            .SetSeriesFromClassPackage()
-            .PostInitialize(data -> data.AddPreview(AffinityToken.GetCard(Affinity.General), false));
-
+            .SetSeriesFromClassPackage();
     public Eve()
     {
         super(DATA);
@@ -35,6 +34,7 @@ public class Eve extends AnimatorCard
         SetUpgrade(0, 0, 10);
 
         SetAffinity_Teal(2);
+        SetAffinity_Blue(1);
     }
 
     @Override
@@ -56,7 +56,7 @@ public class Eve extends AnimatorCard
 
     public static class EvePower extends AnimatorPower implements OnAffinitySealedSubscriber
     {
-        protected static int amountToIncrease = 4;
+        protected static int amountToIncrease = 5;
         public EvePower(AbstractCreature owner, int amount)
         {
             super(owner, Eve.DATA);

@@ -22,10 +22,10 @@ public class Ara extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(5, 0, 2);
+        Initialize(5, 0, 2, 2);
         SetUpgrade(2, 0, 0);
 
-        SetAffinity_Yellow(1);
+        SetAffinity_Green(1);
 
         SetAffinityRequirement(Affinity.Green, 2);
     }
@@ -49,7 +49,7 @@ public class Ara extends AnimatorCard
     {
         if (CheckSpecialCondition(false))
         {
-            GameActions.Bottom.GainAffinity(Affinity.Red);
+            GameActions.Bottom.GainAffinity(Affinity.Red, secondaryValue, true);
         }
     }
 }

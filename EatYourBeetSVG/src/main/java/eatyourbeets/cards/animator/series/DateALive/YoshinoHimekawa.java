@@ -5,10 +5,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.Frost;
 import eatyourbeets.actions.animator.ApplyAmountToOrbs;
 import eatyourbeets.cards.animator.special.Zadkiel;
-import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.cards.base.CardUseInfo;
-import eatyourbeets.cards.base.EYBCardData;
-import eatyourbeets.cards.base.EYBCardTarget;
+import eatyourbeets.cards.base.*;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
@@ -26,13 +23,22 @@ public class YoshinoHimekawa extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 3, 1, 0);
-        SetUpgrade(0, 2, 1);
+        Initialize(0, 4, 1, 0);
+        SetUpgrade(0, 0, 1);
 
         SetHaste(true);
 
         SetAffinity_Green(1, 0, 1);
         SetAffinity_Blue(1, 0, 1);
+    }
+
+    @Override
+    protected void OnUpgrade()
+    {
+        super.OnUpgrade();
+
+        AddScaling(Affinity.Green, 1);
+        AddScaling(Affinity.Blue, 1);
     }
 
     @Override

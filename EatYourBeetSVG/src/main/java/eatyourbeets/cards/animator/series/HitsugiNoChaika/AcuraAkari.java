@@ -12,7 +12,7 @@ import eatyourbeets.utilities.GameActions;
 public class AcuraAkari extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(AcuraAkari.class)
-            .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None)
+            .SetSkill(0, CardRarity.UNCOMMON, EYBCardTarget.None)
             .SetSeriesFromClassPackage()
             .PostInitialize(data ->
             {
@@ -27,8 +27,7 @@ public class AcuraAkari extends AnimatorCard
         super(DATA);
 
         Initialize(0, 0, 2, 0);
-        SetUpgrade(0, 0, 0);
-        SetCostUpgrade(-1);
+        SetUpgrade(0, 0, 2);
 
         SetAffinity_Green(1);
         SetAffinity_Black(1);

@@ -28,7 +28,7 @@ public class Lancer extends AnimatorCard
         SetAffinity_Red(1);
         SetAffinity_Green(1);
 
-        SetAffinityRequirement(Affinity.White, 7);
+        SetAffinityRequirement(Affinity.White, 5);
     }
 
     @Override

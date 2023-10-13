@@ -2,7 +2,6 @@ package eatyourbeets.cards.animator.series.DateALive;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.cards.base.modifiers.CostModifiers;
 import eatyourbeets.utilities.GameActions;
@@ -68,7 +67,7 @@ public class ReineMurasame extends AnimatorCard
 
         if (CheckSpecialCondition(false) && stacks > 0)
         {
-            GameActions.Bottom.StackPower(new DrawCardNextTurnPower(p, stacks));
+            GameActions.Bottom.GainEnergyNextTurn(stacks);
         }
     }
 }

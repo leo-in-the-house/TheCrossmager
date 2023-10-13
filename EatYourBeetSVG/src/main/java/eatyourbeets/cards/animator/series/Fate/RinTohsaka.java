@@ -25,8 +25,8 @@ public class RinTohsaka extends AnimatorCard
 
         SetAffinity_Blue(1, 0, 1);
 
-        SetAffinityRequirement(Affinity.White, 4);
-        SetAffinityRequirement(Affinity.Black, 4);
+        SetAffinityRequirement(Affinity.White, 3);
+        SetAffinityRequirement(Affinity.Black, 3);
     }
 
     @Override

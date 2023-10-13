@@ -22,8 +22,8 @@ public class Noah extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(9, 0, 1, 7);
-        SetUpgrade(2, 0, 0);
+        Initialize(10, 0, 1, 7);
+        SetUpgrade(0, 0, 0);
 
         SetAffinity_Blue(1, 0, 3);
         SetAffinity_Black(1);
@@ -36,6 +36,7 @@ public class Noah extends AnimatorCard
     {
         super.OnUpgrade();
 
+        SetLoyal(true);
         AddScaling(curAffinity, 2);
     }
 

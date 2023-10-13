@@ -22,7 +22,7 @@ public class TohkaYatogami extends AnimatorCard
             .PostInitialize(data ->
             {
                 data.AddPopupAction(new EYBCardPopupActions.DAL_Inversion(InverseTohka.DATA));
-                data.AddPreview(new InverseTohka(), false);
+                data.AddPreview(new InverseTohka(), true);
                 data.AddPreview(new Curse_Depression(), false);
             });
 
@@ -34,7 +34,7 @@ public class TohkaYatogami extends AnimatorCard
 
         Initialize(10, 0, 2, 10);
 
-        SetAffinity_Black(1);
+        SetAffinity_Black(1, 0, 1);
         SetAffinity_Brown(1);
     }
 

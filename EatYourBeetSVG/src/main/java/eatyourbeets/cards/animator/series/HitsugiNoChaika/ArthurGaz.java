@@ -39,8 +39,8 @@ public class ArthurGaz extends AnimatorCard implements OnAddToDeckListener
         SetAffinity_Teal(1);
         SetAffinity_Violet(1);
 
+        SetRetain(true);
         SetExhaust(true);
-        SetEthereal(true);
     }
 
     @Override

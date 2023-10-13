@@ -866,7 +866,7 @@
 		"animator:ReineMurasame":
 		{
 			"FLAVOR_TEXT": "'I dare say that I will never be able to go beyond him in my heart. He will always be my first and last lover.'",
-			"DESCRIPTION": "Add X copies of {Shido Itsuka} to your draw pile.  {Motivate} them. || !A! [B]: Draw X cards next turn.",
+			"DESCRIPTION": "Add X copies of {Shido Itsuka} to your draw pile.  {Motivate} them. || !A! [B]: Gain X [E] next turn.",
 			"NAME": "Reine Murasame"
 		},
 		"animator:ShidoItsuka":
@@ -929,7 +929,7 @@
 		"animator:Ara":
 		{
 			"FLAVOR_TEXT": "'I must end the cycle of tragedy so no one else suffers.'",
-			"DESCRIPTION": "!A! [G]: Gain [R].",
+			"DESCRIPTION": "!A! [G]: Boost !S! [R].",
 			"NAME": "Ara"
 		},
 		"animator:Chung":
@@ -965,8 +965,8 @@
 		"animator:Eve":
 		{
 			"FLAVOR_TEXT": "'I will show you the endless potential of the Nasod.'",
-			"DESCRIPTION": "Obtain {Orb Core}. || Whenever you {Seal} a [R], [G], or [B] card: deal !M! damage to a random enemy, then increase this amount by 4.",
-			"EXTENDED_DESCRIPTION": ["Whenever you #ySeal a #yRed, #yGreen, or #yBlue card: deal #b{0} damage to a random enemy, then increase this amount by 4."],
+			"DESCRIPTION": "Obtain {Orb Core}. || Whenever you {Seal} a [R], [G], or [B] card: Deal !M! damage to a random enemy, then increase this amount by 5.",
+			"EXTENDED_DESCRIPTION": ["Whenever you #ySeal a #yRed, #yGreen, or #yBlue card: Deal #b{0} damage to a random enemy, then increase this amount by 5."],
 			"NAME": "Eve"
 		},
 		"animator:Laby":
