@@ -16,11 +16,13 @@ public class Azekura extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 18, 5);
+        Initialize(0, 18, 4);
         SetUpgrade(0, 12, 0);
 
         SetAffinity_Red(2);
         SetAffinity_Blue(1);
+
+        SetEthereal(true);
     }
 
     @Override

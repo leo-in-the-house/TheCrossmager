@@ -827,7 +827,7 @@
 		"animator:MioTakamiya":
 		{
 			"FLAVOR_TEXT": "'I'll never let you go. I'll absolutely won't make a mistake anymore. So... please wait! Shin!'",
-			"DESCRIPTION": "Start of Combat: Enter <TS>, Gain Blur !M! and Shuffle !S! {0-Cost} {Shido Itsuka}’s into your draw pile. || <TS>: Gain [G] for every 2 [Block].",
+			"DESCRIPTION": "Start of Combat: Enter <TS>, Gain [~Blur] !M! and Shuffle !S! {0-Cost} {Shido Itsuka}’s into your draw pile. || <TS>: Gain [G] for every 2 [Block].",
 			"NAME": "Mio Takamiya"
 		},
 		"animator:Mayuri":
@@ -1733,7 +1733,7 @@
 		"animator:Togame":
 		{
 			"FLAVOR_TEXT": "'Specifically, I'm the army general director in support of critical tasks under direct control of Yanari Shogun of the Owari Shogunate: the strategian Togame!'",
-			"DESCRIPTION": "{Seal} !M! card(s) in your hand. || If you {Sealed} a {Hindrance}, Obtain {[D] Token}{+}.  Otherwise, Obtain {[P] Token}{+}.",
+			"DESCRIPTION": "{Seal} !M! card(s) in your hand. || If you {Seal} a {Hindrance}, Obtain {[D] Token}{+}.  If you {Seal} a Non-{Hindrance}, Obtain {[P] Token}{+}.",
 			"NAME": "Togame"
 		},
 		"animator:TsurugaMeisai":

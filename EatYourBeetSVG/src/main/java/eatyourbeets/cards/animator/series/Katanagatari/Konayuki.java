@@ -1,6 +1,5 @@
 package eatyourbeets.cards.animator.series.Katanagatari;
 
-import com.megacrit.cardcrawl.cards.status.Wound;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
@@ -16,8 +15,7 @@ public class Konayuki extends AnimatorCard
     public static final EYBCardData DATA = Register(Konayuki.class)
             .SetSkill(1, CardRarity.COMMON, EYBCardTarget.None)
             
-            .SetSeriesFromClassPackage()
-            .PostInitialize(data -> data.AddPreview(GetClassCard(Wound.ID), false));
+            .SetSeriesFromClassPackage();
 
     public Konayuki()
     {

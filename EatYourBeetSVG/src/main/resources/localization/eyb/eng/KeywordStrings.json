@@ -422,7 +422,7 @@
 	},
 	"Threshold Bonus":
 	{
-		"DESCRIPTION": "The bonus power obtained by manually paying a certain amount of affinity.  For [R], this is [Strength], for [G], this is [Dexterity], etc.",
+		"DESCRIPTION": "The bonus power obtained by manually paying a certain amount of affinity.  For [A_Red], this is [Strength], for [A_Green], this is [Dexterity], etc.",
 		"NAMES": ["threshold bonus"],
 		"PROPER_NAME": "Threshold Bonus"
 	},
