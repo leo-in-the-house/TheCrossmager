@@ -33,14 +33,18 @@ public class Hitei extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.StackPower(new HiteiPower(p, magicNumber));
+        GameActions.Bottom.StackPower(new HiteiPower(p, 1, magicNumber));
     }
 
     public static class HiteiPower extends AnimatorPower
     {
-        public HiteiPower(AbstractPlayer owner, int amount)
+        int numChoices = 0;
+
+        public HiteiPower(AbstractPlayer owner, int amount, int numChoices)
         {
             super(owner, Hitei.DATA);
+
+            this.numChoices = Math.max(this.numChoices, numChoices);
 
             Initialize(amount);
         }
@@ -54,7 +58,7 @@ public class Hitei extends AnimatorCard
             {
                 final CardGroup group = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
                 final RandomizedList<AbstractCard> pile;
-                if (player.drawPile.size() < amount)
+                if (player.drawPile.size() < numChoices)
                 {
                     group.group.addAll(player.drawPile.group);
                     pile = new RandomizedList<>(player.discardPile.group);
@@ -64,7 +68,7 @@ public class Hitei extends AnimatorCard
                     pile = new RandomizedList<>(player.drawPile.group);
                 }
 
-                while (group.size() < amount && pile.Size() > 0)
+                while (group.size() < numChoices && pile.Size() > 0)
                 {
                     group.addToTop(pile.Retrieve(rng));
                 }
@@ -83,9 +87,15 @@ public class Hitei extends AnimatorCard
                     });
                 }
             });
-            GameActions.Bottom.Draw(1);
+            GameActions.Bottom.Draw(amount);
 
             this.flash();
+        }
+
+        @Override
+        public void updateDescription()
+        {
+            description = FormatDescription(0, amount, numChoices);
         }
     }
 }

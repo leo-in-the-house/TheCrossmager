@@ -1689,7 +1689,7 @@
 		{
 			"FLAVOR_TEXT": "'Please look at this as the ceremony that heralds a thousand years of prosperity for the Yanari Shogunate.'",
 			"DESCRIPTION": "Start of Turn: {Seal} and {Exhaust} 1 of !M! cards in your draw pile, then draw a card.",
-			"EXTENDED_DESCRIPTION": ["Start of Turn: #yExhaust #b1 of #b{2} cards in your draw pile, then draw a card."],
+			"EXTENDED_DESCRIPTION": ["Start of Turn: #yExhaust #b1 of #b{1} cards in your draw pile, then draw #b{0} cards."],
 			"NAME": "Princess Hitei"
 		},
 		"animator:Konayuki":
