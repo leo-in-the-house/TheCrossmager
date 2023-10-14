@@ -592,7 +592,7 @@
 		"animator:Meruru":
 		{
 			"FLAVOR_TEXT": "'I’m the princess around here!  But... well, not that I’m complaining, but my life does lack a certain excitement.'",
-			"DESCRIPTION": "Add !M! {0-Cost} {Powers} to your discard pile. || Whenever you create a card, that card costs 0 to play.",
+			"DESCRIPTION": "Add !M! random {Powers} to your discard pile, they cost 0. || Whenever you create a card, that card costs 0 to play.",
 			"EXTENDED_DESCRIPTION": ["Whenever you create a card, that card costs 0 to play."],
 			"NAME": "Merurulince Arls"
 		},
@@ -1654,88 +1654,104 @@
 	{
 		"animator:Azekura":
 		{
+			"FLAVOR_TEXT": "'To hurt others, you must be prepared to be hurt yourself.  I steal from others. so I have the resolve to be stolen from.  The same goes for the resolve to kill.'",
 			"DESCRIPTION": "When Sealed: Gain !M! [Plated Armor].",
 			"NAME": "Kanara Azekura"
 		},
 		"animator:Biyorigo":
 		{
+			"FLAVOR_TEXT": "'Human recognized.'",
 			"DESCRIPTION": "End of Turn: Gain !M! [Metallicize] for each [A_Seal] card in your hand. || On Seal: Gain [Artifact].",
 			"EXTENDED_DESCRIPTION": ["End of Turn: Gain #b{0} #yMetallize for each #ySealed card in your hand."],
 			"NAME": "Biyorigo"
 		},
 		"animator:Emonzaemon":
 		{
+			"FLAVOR_TEXT": "'I died once- not physically, but mentally died.  But one person denied me that death.'",
 			"DESCRIPTION": "When Sealed: Transform this card into {Entou Jyuu}.",
 			"NAME": "Emonzaemon"
 		},
 		"animator:Emonzaemon_EntouJyuu":
 		{
+			"FLAVOR_TEXT": "'Now then, Strategian.  What will be YOUR dying words?'",
 			"DESCRIPTION": "Gain [A_Seal]. || Whenever you {Seal} a card: Deal !M! damage to a random enemy.",
 			"EXTENDED_DESCRIPTION": ["Whenever you #ySeal a card: Deal #b{0} damage to a random enemy."],
 			"NAME": "Entou Jyuu"
 		},
 		"animator:HigakiRinne":
 		{
+			"FLAVOR_TEXT": "'People look past my own existance and see a perception of their own memories.  Even with me here, we don't really exist.  That's what a holy man is.'",
 			"DESCRIPTION": "Behaves erratically...",
 			"NAME": "Higaki Rinne",
 			"UPGRADE_DESCRIPTION": "Behaves very erratically..."
 		},
 		"animator:Hitei":
 		{
-			"DESCRIPTION": "Start of Turn: {Seal} and {Exhaust} 1 of !M! cards in your draw pile.",
-			"EXTENDED_DESCRIPTION": ["Start of Turn: #yExhaust #b1 of #b{2} cards in your draw pile."],
+			"FLAVOR_TEXT": "'Please look at this as the ceremony that heralds a thousand years of prosperity for the Yanari Shogunate.'",
+			"DESCRIPTION": "Start of Turn: {Seal} and {Exhaust} 1 of !M! cards in your draw pile, then draw a card.",
+			"EXTENDED_DESCRIPTION": ["Start of Turn: #yExhaust #b1 of #b{2} cards in your draw pile, then draw a card."],
 			"NAME": "Princess Hitei"
 		},
 		"animator:Konayuki":
 		{
+			"FLAVOR_TEXT": "'Togame!  Shichika!  Thanks for playing with me!  It was really fun!'",
 			"DESCRIPTION": "Gain [A_Seal] and !M! [R].",
 			"NAME": "Konayuki Itezora"
 		},
 		"animator:ManiwaKyouken":
 		{
-			"DESCRIPTION": "Draw and {Seal} a card.  If that card has [A_Seal], gain !M! [A_Seal].",
+			"FLAVOR_TEXT": "'Shirisagi, Koumori, Kuizame, Chouchou, Mitsubachi, Kamakiri... you've gone and brazenly killed my friends, Miss Strategian!  Thanks to you, the Maniwa Corps are a total mess!'",
+			"DESCRIPTION": "Draw a card and {Seal} it.",
 			"NAME": "Kyouken Maniwa"
 		},
 		"animator:ManiwaHouou":
 		{
+			"FLAVOR_TEXT": "'If you listen to what I have to say, I will cut off my left arm for you.  You can have the arm of one of the 12 Maniwa Corps heads, and in your words, the effective leader, just for listening to what I have to say.'",
 			"DESCRIPTION": "The next !M! time(s) you {Seal} a card: Gain the {Threshold Bonus} of the card you sealed.",
 			"EXTENDED_DESCRIPTION": ["The next #b{0} times you #ySeal a card: Gain the #yThreshold #yBonus of the card you sealed."],
 			"NAME": "Houou Maniwa"
 		},
 		"animator:Nanami":
 		{
+			"FLAVOR_TEXT": "'Well, I've gotten my present now, so 'hasten to do good'... or maybe 'hasten to do bad'?'",
 			"DESCRIPTION": "{Counter}{+} the enemy intent.",
 			"NAME": "Nanami Yasuri"
 		},
 		"animator:Shichika":
 		{
+			"FLAVOR_TEXT": "'It's not that I want money or that I've been lured in by Shikizaki's swords, and I don't have a shred of obligation to help the Shogunate either.  I've just decided I want to help you.'",
 			"DESCRIPTION": "Choose 1: Enter <TS> and Gain [Burst], or Enter <WS> and Obtain {Kyoutouryuu}.",
 			"EXTENDED_DESCRIPTION": ["Enter <WS>. Obtain {{0}}.", "Enter <TS>. Gain [Burst]."],
 			"NAME": "Shichika Yasuri"
 		},
 		"animator:Shichika_Kyotouryuu":
 		{
+			"FLAVOR_TEXT": "'Kyotouryuu men don't have any skill whatsoever with a sword!  We're not swordsmen who don't use swords!  We're swordsmen who CAN'T use them!'",
 			"DESCRIPTION": "Remove the enemy's [Block]. || This card attacks an additional time for each [A_Seal] card in your discard pile.",
 			"NAME": "Kyotouryuu"
 		},
 		"animator:Togame":
 		{
-			"DESCRIPTION": "Draw !M! cards, then {Seal} a card. || If you {Sealed} a {Hindrance}, Obtain {[D] Token}{+}.  Otherwise, Obtain {[P] Token}{+}.",
+			"FLAVOR_TEXT": "'Specifically, I'm the army general director in support of critical tasks under direct control of Yanari Shogun of the Owari Shogunate: the strategian Togame!'",
+			"DESCRIPTION": "{Seal} !M! card(s) in your hand. || If you {Sealed} a {Hindrance}, Obtain {[D] Token}{+}.  Otherwise, Obtain {[P] Token}{+}.",
 			"NAME": "Togame"
 		},
 		"animator:TsurugaMeisai":
 		{
+			"FLAVOR_TEXT": "'Meisai Tsuruga was the name of the previous priest here, and I merely took up that name for the sake of convenience.  Thus, it's hard to answer if I'm 'really' Meisai Tsuruga.'",
 			"DESCRIPTION": "{Imitate} and {Seal} a {Low-Cost} {Attack} in your hand.",
 			"UPGRADE_DESCRIPTION": "{Imitate} and {Seal} an {Attack} in your hand.",
 			"NAME": "Meisai Tsuruga"
 		},
 		"animator:UneriGinkaku":
 		{
+			"FLAVOR_TEXT": "'Everyone ran from the desert, abandoning their homeland.  Perhaps, if I wasn't the last one, I'd have been able to leave Inaba too.'",
 			"DESCRIPTION": "Can only be played if this card has [A_Seal].",
 			"NAME": "Uneri Ginkaku"
 		},
 		"animator:ZankiKiguchi":
 		{
+			"FLAVOR_TEXT": "'Slay your heart's demon with your heart.  For this comes the name 'Zanki'.  Henceforth, I myself will be the proof.'",
 			"DESCRIPTION": "{Seal} this card when played.",
 			"NAME": "Zanki Kiguchi"
 		}
@@ -3049,6 +3065,7 @@
 		},
 		"animator:ShikizakiKiki":
 		{
+			"FLAVOR_TEXT": "'If you want to get better with a sword, the first thing you have to do is kill.  A swordsman is still only halfway to maturity after killing 300 people.'",
 			"DESCRIPTION": "Start of Turn: Gain [A_Seal]. || Once per turn, pay !S! [E]: Copy all cards with [A_Seal] in your hand.  Gain [E] for each card copied this way.",
 			"EXTENDED_DESCRIPTION": ["Gain #ySeal at start of turn.  Pay #b{0} #yEnergy: Copy all cards with #ySeal in your hand. Gain #yEnergy for each card copied this way."],
 			"NAME": "Shikizaki Kiki"

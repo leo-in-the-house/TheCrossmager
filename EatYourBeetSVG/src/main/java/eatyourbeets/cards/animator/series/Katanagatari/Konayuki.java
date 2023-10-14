@@ -23,8 +23,8 @@ public class Konayuki extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 6, 4);
-        SetUpgrade(0, 4, 3);
+        Initialize(0, 6, 3);
+        SetUpgrade(0, 5, 2);
 
         SetAffinity_Red(2);
     }

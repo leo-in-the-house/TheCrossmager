@@ -26,7 +26,7 @@ public class Hitei extends AnimatorCard
         SetUpgrade(0, 0, 2);
 
         SetAffinity_Pink(1);
-        SetAffinity_Violet(1);
+        SetAffinity_Brown(1);
     }
 
     @Override
@@ -50,42 +50,40 @@ public class Hitei extends AnimatorCard
         {
             super.atStartOfTurn();
 
-            for (int i = 0; i < amount; i++)
+            GameActions.Bottom.Callback(() ->
             {
-                GameActions.Bottom.Callback(() ->
+                final CardGroup group = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+                final RandomizedList<AbstractCard> pile;
+                if (player.drawPile.size() < amount)
                 {
-                    final CardGroup group = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-                    final RandomizedList<AbstractCard> pile;
-                    if (player.drawPile.size() < amount)
-                    {
-                        group.group.addAll(player.drawPile.group);
-                        pile = new RandomizedList<>(player.discardPile.group);
-                    }
-                    else
-                    {
-                        pile = new RandomizedList<>(player.drawPile.group);
-                    }
+                    group.group.addAll(player.drawPile.group);
+                    pile = new RandomizedList<>(player.discardPile.group);
+                }
+                else
+                {
+                    pile = new RandomizedList<>(player.drawPile.group);
+                }
 
-                    while (group.size() < amount && pile.Size() > 0)
-                    {
-                        group.addToTop(pile.Retrieve(rng));
-                    }
+                while (group.size() < amount && pile.Size() > 0)
+                {
+                    group.addToTop(pile.Retrieve(rng));
+                }
 
-                    if (group.size() >= 0)
+                if (group.size() >= 0)
+                {
+                    GameActions.Top.ExhaustFromPile(name, 1, group)
+                    .ShowEffect(true, true)
+                    .SetOptions(false, false)
+                    .AddCallback(cards ->
                     {
-                        GameActions.Top.ExhaustFromPile(name, 1, group)
-                        .ShowEffect(true, true)
-                        .SetOptions(false, false)
-                        .AddCallback(cards ->
+                        for (AbstractCard c : cards)
                         {
-                            for (AbstractCard c : cards)
-                            {
-                                GameActions.Bottom.SealAffinities(c, false);
-                            }
-                        });
-                    }
-                });
-            }
+                            GameActions.Bottom.SealAffinities(c, false);
+                        }
+                    });
+                }
+            });
+            GameActions.Bottom.Draw(1);
 
             this.flash();
         }

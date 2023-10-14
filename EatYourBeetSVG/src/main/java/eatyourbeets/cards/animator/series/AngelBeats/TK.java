@@ -1,28 +1,26 @@
 package eatyourbeets.cards.animator.series.AngelBeats;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.base.Affinity;
-import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.cards.base.CardUseInfo;
-import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.cards.base.*;
 import eatyourbeets.cards.base.modifiers.CostModifiers;
+import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
 public class TK extends AnimatorCard {
-    public static final EYBCardData DATA = Register(TK.class).SetAttack(1, CardRarity.UNCOMMON)
+    public static final EYBCardData DATA = Register(TK.class)
+            .SetAttack(2, CardRarity.UNCOMMON, EYBAttackType.Ranged)
             .SetSeriesFromClassPackage();
 
     public TK() {
         super(DATA);
 
-        Initialize(6, 0, 2);
-        SetUpgrade(4, 0, 0);
+        Initialize(10, 0, 2);
+        SetUpgrade(8, 0, 0);
 
-        SetAffinity_Green(1, 0, 2);
+        SetAffinity_Green(2, 0, 2);
 
         SetAffinityRequirement(Affinity.Green, 4);
 
@@ -33,7 +31,7 @@ public class TK extends AnimatorCard {
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info) {
         GameUtilities.PlayVoiceSFX(name);
 
-        GameActions.Bottom.DealDamage(this, m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
+        GameActions.Bottom.DealDamage(this, m, AttackEffects.GUNSHOT);
 
         int numEtherealInExhaust = 0;
 

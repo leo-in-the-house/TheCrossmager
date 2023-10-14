@@ -30,31 +30,29 @@ public class Togame extends AnimatorCard
 
         SetAffinity_Pink(1);
 
-        SetExhaust(true);
+        SetEthereal(true);
     }
 
     @Override
-    public void OnLateUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
-    {
-        GameActions.Bottom.Draw(magicNumber)
-        .AddCallback(cardsDrawn -> {
-            GameActions.Top.SelectFromHand(name, 1, false)
-                    .SetFilter(card -> !GameUtilities.IsSealed(card))
-                    .SetMessage(GR.Common.Strings.HandSelection.Seal)
-                    .SetOptions(false, false, false)
-                    .AddCallback(cards ->
-                    {
-                        for (AbstractCard c : cards)
-                        {
-                            if (GameUtilities.IsHindrance(c)) {
-                                GameActions.Top.ObtainAffinityToken(Affinity.Black, upgraded);
-                            } else {
-                                GameActions.Top.ObtainAffinityToken(Affinity.Pink, upgraded);
-                            }
+    public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info) {
+        GameUtilities.PlayVoiceSFX(name);
 
-                            GameActions.Top.SealAffinities(c);
-                        }
-                    });
+        GameActions.Bottom.SelectFromHand(name, magicNumber, false)
+        .SetMessage(GR.Common.Strings.HandSelection.Seal)
+        .SetOptions(false, false, false)
+        .AddCallback(cards ->
+        {
+            for (AbstractCard c : cards) {
+                if (!GameUtilities.IsSealed(c)) {
+                    if (GameUtilities.IsHindrance(c)) {
+                        GameActions.Top.ObtainAffinityToken(Affinity.Black, upgraded);
+                    } else {
+                        GameActions.Top.ObtainAffinityToken(Affinity.Pink, upgraded);
+                    }
+                }
+
+                GameActions.Top.SealAffinities(c);
+            }
         });
     }
 }
