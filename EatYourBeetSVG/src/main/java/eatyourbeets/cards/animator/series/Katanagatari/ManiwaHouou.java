@@ -1,32 +1,32 @@
 package eatyourbeets.cards.animator.series.Katanagatari;
 
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.cards.base.CardSeries;
-import eatyourbeets.cards.base.CardUseInfo;
-import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.cards.base.*;
+import eatyourbeets.interfaces.subscribers.OnAffinitySealedSubscriber;
 import eatyourbeets.powers.AnimatorPower;
+import eatyourbeets.powers.CombatStats;
+import eatyourbeets.powers.PowerHelper;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class ManiwaHouou extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(ManiwaHouou.class)
             .SetPower(1, CardRarity.RARE)
-            .SetSeries(CardSeries.Katanagatari);
+            .SetSeriesFromClassPackage();
 
     public ManiwaHouou()
     {
         super(DATA);
 
         Initialize(0, 0, 2);
-        SetCostUpgrade(-1);
+        SetUpgrade(0, 0, 2);
 
-        SetAffinity_Green(1);
-        SetAffinity_Black(1);
+        SetAffinity_Violet(1);
+
+        SetEthereal(true);
     }
 
     @Override
@@ -36,7 +36,7 @@ public class ManiwaHouou extends AnimatorCard
         GameActions.Bottom.StackPower(new ManiwaHououPower(p, magicNumber));
     }
 
-    public static class ManiwaHououPower extends AnimatorPower
+    public static class ManiwaHououPower extends AnimatorPower implements OnAffinitySealedSubscriber
     {
         public ManiwaHououPower(AbstractCreature owner, int amount)
         {
@@ -46,33 +46,36 @@ public class ManiwaHouou extends AnimatorCard
         }
 
         @Override
-        protected void onAmountChanged(int previousAmount, int difference)
+        public void onInitialApplication()
         {
-            GameActions.Bottom.GainStrength(difference).IgnoreArtifact(true);
-            GameActions.Bottom.GainDexterity(difference).IgnoreArtifact(true);
+            super.onInitialApplication();
 
-            super.onAmountChanged(previousAmount, difference);
+            CombatStats.onAffinitySealed.Subscribe(this);
         }
 
         @Override
-        public void wasHPLost(DamageInfo info, int damageAmount)
+        public void onRemove()
         {
-            if (info.owner != null && info.owner != this.owner && info.type == DamageInfo.DamageType.NORMAL && damageAmount > 0)
-            {
-                GameActions.Bottom.Callback(() ->
-                {
-                    if (amount > 0)
-                    {
-                        GameActions.Bottom.ApplyPoison(owner, owner, amount);
-                        reducePower(1);
+            super.onRemove();
 
-                        if (amount <= 0)
-                        {
-                            RemovePower();
-                        }
-                    }
-                });
-                flash();
+            CombatStats.onAffinitySealed.Unsubscribe(this);
+        }
+
+        @Override
+        public void OnAffinitySealed(EYBCard card, boolean manual)
+        {
+            for (EYBCardAffinity affinity : card.affinities.List) {
+                PowerHelper bonusPower = affinity.type.GetPower().GetThresholdBonusPower();
+                int affinityAmount = affinity.level;
+
+                if (bonusPower != null && affinityAmount > 0) {
+                    GameActions.Bottom.ApplyPower(bonusPower.Create(player, player, affinityAmount));
+                }
+            }
+
+            this.amount -= 1;
+            if (this.amount <= 0) {
+                RemovePower();
             }
         }
     }

@@ -21,36 +21,31 @@ public class TsurugaMeisai extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 8);
-        SetUpgrade(0, 3);
+        Initialize(0, 0);
+        SetUpgrade(0, 0);
 
-        SetAffinity_Red(1);
-        SetAffinity_White(1);
-        SetAffinity_Green(0, 0, 1);
+        SetAffinity_Black(1);
 
         SetExhaust(true);
+        SetEthereal(true);
     }
 
     @Override
-    public void OnLateUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
+    public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
+
         GameActions.Bottom.SelectFromHand(name, 1, false)
+        .SetFilter(card -> (upgraded || GameUtilities.IsLowCost(card)) && card.type == CardType.ATTACK)
         .SetOptions(true, true, true)
         .SetMessage(GR.Common.Strings.HandSelection.Copy)
-        .SetFilter(c -> GameUtilities.IsLowCost(c) && c.type == CardType.ATTACK)
         .AddCallback(cards ->
         {
             for (AbstractCard c : cards)
             {
-                GameActions.Bottom.MakeCardInDrawPile(GameUtilities.Imitate(c))
-                .AddCallback(card ->
-                {
-                    if (upgraded)
-                    {
-                        GameUtilities.SetCardTag(card, HASTE, true);
-                    }
-                });
+                GameActions.Top.MakeCardInHand(GameUtilities.Imitate(c));
+                GameActions.Top.SealAffinities(c);
             }
         });
     }

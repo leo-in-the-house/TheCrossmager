@@ -427,8 +427,8 @@
 		"animator:AngelAlter":
 		{
 			"FLAVOR_TEXT": "'Guard Skill: Hand Sonic.'",
-			"DESCRIPTION": "On Exhaust:  Gain !M! [R], !M! [B] and !M! [V]. Add a copy of this card to your draw pile, and double the amounts gained.",
-			"UPGRADE_DESCRIPTION": "On Exhaust:  Gain !M! [R], !M! [B] and !M! [V].  Add a copy of this card to your draw pile, and triple the amounts gained.",
+			"DESCRIPTION": "On Exhaust:  Gain !M! [R], !M! [B] and !M! [V]. Add a copy of this card to your discard pile, and double the amounts gained.",
+			"UPGRADE_DESCRIPTION": "On Exhaust:  Gain !M! [R], !M! [B] and !M! [V].  Add a copy of this card to your discard pile, and triple the amounts gained.",
 			"NAME": "Angel Alter"
 		},
 		"animator:AyatoNaoi":
@@ -1310,7 +1310,7 @@
 		"animator:Tyuule":
 		{
 			"FLAVOR_TEXT": "'It's quite simple - you'll inform the remaining citizens that your imperial army has repelled Japan.  You mustn't let them know that this was a defeat.'",
-			"DESCRIPTION": "Increase the {Common Debuffs} on the enemy by X, where X is the number of {Attacks} in your hand.",
+			"DESCRIPTION": "Increase the {Common Debuffs} on ALL enemies by X, where X is the number of {Attacks} in your hand.",
 			"NAME": "Tyuule"
 		},
 		"animator:YaoHaDucy":
@@ -1654,24 +1654,24 @@
 	{
 		"animator:Azekura":
 		{
-			"DESCRIPTION": "Gain !M! [Plated Armor], then reduce amount by 1 for all copies. || !A! [R]: If not paid: Draw 1 less card next turn.",
-			"NAME": "Azekura"
+			"DESCRIPTION": "When Sealed: Gain !M! [Plated Armor].",
+			"NAME": "Kanara Azekura"
 		},
 		"animator:Biyorigo":
 		{
-			"DESCRIPTION": "Sealing [R] cards also grants !M! [Metallicize]. || Once|Twice per combat, pay [E]: Gain [Artifact].",
-			"EXTENDED_DESCRIPTION": ["Pay [E] to gain [Artifact]. || #ySealing [R] cards also grants #b{0} [Metallicize] (Max #b{1}^ per Seal)."],
+			"DESCRIPTION": "End of Turn: Gain !M! [Metallicize] for each [A_Seal] card in your hand. || On Seal: Gain [Artifact].",
+			"EXTENDED_DESCRIPTION": ["End of Turn: Gain #b{0} #yMetallize for each #ySealed card in your hand."],
 			"NAME": "Biyorigo"
 		},
 		"animator:Emonzaemon":
 		{
-			"DESCRIPTION": "<LIM>. If this is your third attack in a row: Add {Entou Jyuu} to your draw pile.",
+			"DESCRIPTION": "When Sealed: Transform this card into {Entou Jyuu}.",
 			"NAME": "Emonzaemon"
 		},
 		"animator:Emonzaemon_EntouJyuu":
 		{
-			"DESCRIPTION": "Gain !M! [G]. || Your first 2 {Attacks} each turn deal !S! additional damage.",
-			"EXTENDED_DESCRIPTION": ["Your first #b2 #yAttacks each turn deal #b{0} additional damage."],
+			"DESCRIPTION": "Gain [A_Seal]. || Whenever you {Seal} a card: Deal !M! damage to a random enemy.",
+			"EXTENDED_DESCRIPTION": ["Whenever you #ySeal a card: Deal #b{0} damage to a random enemy."],
 			"NAME": "Entou Jyuu"
 		},
 		"animator:HigakiRinne":
@@ -1682,61 +1682,61 @@
 		},
 		"animator:Hitei":
 		{
-			"DESCRIPTION": "At the start of each turn: Seal and Exhaust 1 of !M! cards in your draw pile. || Once per turn, take !S! damage: <DRW>.",
-			"EXTENDED_DESCRIPTION": ["Take #b{0} damage: Draw #b{1} card(s). || At the start of each turn, #yExhaust #b1 of #b{2} cards in your draw pile."],
-			"NAME": "Hitei"
+			"DESCRIPTION": "Start of Turn: {Seal} and {Exhaust} 1 of !M! cards in your draw pile.",
+			"EXTENDED_DESCRIPTION": ["Start of Turn: #yExhaust #b1 of #b{2} cards in your draw pile."],
+			"NAME": "Princess Hitei"
 		},
 		"animator:Konayuki":
 		{
-			"DESCRIPTION": "Gain !M! [R]. Add 1 {Wound} to your draw pile. || !A! [R] or when Sealed: Apply [Vulnerable] to a random enemy, ignoring [Artifact].",
-			"NAME": "Konayuki"
+			"DESCRIPTION": "Gain [A_Seal] and !M! [R].",
+			"NAME": "Konayuki Itezora"
 		},
 		"animator:ManiwaKyouken":
 		{
-			"DESCRIPTION": "Draw !M! card(s). Discard cards equal to twice your [E]. || !A! [D]: Raise this cost by 1. Else: Exhaust this.",
-			"NAME": "Maniwa Kyouken"
+			"DESCRIPTION": "Draw and {Seal} a card.  If that card has [A_Seal], gain !M! [A_Seal].",
+			"NAME": "Kyouken Maniwa"
 		},
 		"animator:ManiwaHouou":
 		{
-			"DESCRIPTION": "Have +!M! [Strength] and [Dexterity]. || If you take unblocked {Attack} damage: Gain !M! [Poison] and reduce this power by 1.",
-			"EXTENDED_DESCRIPTION": ["Have #b+{0} [Strength] and [Dexterity]. If you take unblocked #yAttack damage: Gain #b{0} [Poison] and reduce this power by #b1."],
-			"NAME": "Maniwa Houou"
+			"DESCRIPTION": "The next !M! time(s) you {Seal} a card: Gain the {Threshold Bonus} of the card you sealed.",
+			"EXTENDED_DESCRIPTION": ["The next #b{0} times you #ySeal a card: Gain the #yThreshold #yBonus of the card you sealed."],
+			"NAME": "Houou Maniwa"
 		},
 		"animator:Nanami":
 		{
-			"DESCRIPTION": "{Counter}{+} the enemy intent (Hover the enemy to check).",
-			"NAME": "Nanami"
+			"DESCRIPTION": "{Counter}{+} the enemy intent.",
+			"NAME": "Nanami Yasuri"
 		},
 		"animator:Shichika":
 		{
-			"DESCRIPTION": "Choose 1: Enter <AS> and gain !M! [Counter-Attack]; Enter <WS> and obtain {Kyotouryuu}.",
-			"EXTENDED_DESCRIPTION": ["Enter <WS>. Obtain {{0}}.", "Enter <AS>. Gain {0} [Counter-Attack]."],
-			"NAME": "Shichika"
+			"DESCRIPTION": "Choose 1: Enter <TS> and Gain [Burst], or Enter <WS> and Obtain {Kyoutouryuu}.",
+			"EXTENDED_DESCRIPTION": ["Enter <WS>. Obtain {{0}}.", "Enter <TS>. Gain [Burst]."],
+			"NAME": "Shichika Yasuri"
 		},
 		"animator:Shichika_Kyotouryuu":
 		{
-			"DESCRIPTION": "Remove the enemy's [Block].",
+			"DESCRIPTION": "Remove the enemy's [Block]. || This card attacks an additional time for each [A_Seal] card in your discard pile.",
 			"NAME": "Kyotouryuu"
 		},
 		"animator:Togame":
 		{
-			"DESCRIPTION": "<DRW-2>. || Exhaust 1 card. If it was a Hindrance or Unplayable: Gain !M! [E]. Otherwise: Obtain [B] or {[D] Token}{+}.",
+			"DESCRIPTION": "Draw !M! cards, then {Seal} a card. || If you {Sealed} a {Hindrance}, Obtain {[D] Token}{+}.  Otherwise, Obtain {[P] Token}{+}.",
 			"NAME": "Togame"
 		},
 		"animator:TsurugaMeisai":
 		{
-			"DESCRIPTION": "Imitate a Low-Cost {Attack} and add it to your draw pile.",
-			"NAME": "Meisai",
-			"UPGRADE_DESCRIPTION": "Imitate a Low-Cost {Attack}, give it {~Haste} and add it to your draw pile."
+			"DESCRIPTION": "{Imitate} and {Seal} a {Low-Cost} {Attack} in your hand.",
+			"UPGRADE_DESCRIPTION": "{Imitate} and {Seal} an {Attack} in your hand.",
+			"NAME": "Meisai Tsuruga"
 		},
 		"animator:UneriGinkaku":
 		{
-			"DESCRIPTION": "Unplayable if you {Attacked} this turn. || When Drawn: Gain !M! [Counter-Attack].",
+			"DESCRIPTION": "Can only be played if this card has [A_Seal].",
 			"NAME": "Uneri Ginkaku"
 		},
 		"animator:ZankiKiguchi":
 		{
-			"DESCRIPTION": "Gain !M! Temp. [Strength]. || !A! [M]: Exit your Stance to gain 1 [E] and !S! [INS].",
+			"DESCRIPTION": "{Seal} this card when played.",
 			"NAME": "Zanki Kiguchi"
 		}
 	},
@@ -3049,8 +3049,8 @@
 		},
 		"animator:ShikizakiKiki":
 		{
-			"DESCRIPTION": "Whenever you play an {Attack}: Gain [INS]. || Once per turn, pay !S! [E]: Raise Damage and [Block] of all cards in hand by !M!.",
-			"EXTENDED_DESCRIPTION": ["Pay #b{0} [E]: Raise Damage and [Block] of all cards in hand by #b{1}. || Whenever you play an {Attack}: Gain #b{2} [INS]."],
+			"DESCRIPTION": "Start of Turn: Gain [A_Seal]. || Once per turn, pay !S! [E]: Copy all cards with [A_Seal] in your hand.  Gain [E] for each card copied this way.",
+			"EXTENDED_DESCRIPTION": ["Gain #ySeal at start of turn.  Pay #b{0} #yEnergy: Copy all cards with #ySeal in your hand. Gain #yEnergy for each card copied this way."],
 			"NAME": "Shikizaki Kiki"
 		},
 		"animator:SirTouchMe":

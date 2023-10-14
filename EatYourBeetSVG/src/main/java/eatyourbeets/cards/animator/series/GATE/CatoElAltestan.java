@@ -32,7 +32,7 @@ public class CatoElAltestan extends AnimatorCard
 
         GameActions.Bottom.GainBlock(block);
 
-        GameActions.Bottom.FetchFromPile(name, magicNumber, player.drawPile)
+        GameActions.Bottom.FetchFromPile(name, 1, player.drawPile)
         .SetOptions(false, true)
         .SetFilter(card -> card.type == CardType.ATTACK)
         .AddCallback(cards ->

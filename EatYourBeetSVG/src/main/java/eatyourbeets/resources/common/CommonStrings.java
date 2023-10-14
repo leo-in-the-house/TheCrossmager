@@ -41,6 +41,7 @@ public class CommonStrings
         public final String GenericBuff = Strings.TEXT[1];
         public final String Copy = Strings.TEXT[2];
         public final String Activate = Strings.TEXT[3];
+        public final String Seal = Strings.TEXT[4];
         public final String Discard = DiscardAction.TEXT[0];
         public final String Exhaust = ExhaustAction.TEXT[0];
         public final String Obtain = CardRewardScreen.TEXT[1];

@@ -36,7 +36,7 @@ public class AngelAlter extends AnimatorCard_UltraRare
 
         AbstractCard copy = this.makeCopy();
 
-        GameActions.Bottom.MakeCardInDrawPile(copy)
+        GameActions.Bottom.MakeCardInDiscardPile(copy)
         .SetUpgrade(upgraded, true)
         .AddCallback(c -> {
             c.baseMagicNumber = Math.min(this.magicNumber, 999);
@@ -47,7 +47,7 @@ public class AngelAlter extends AnimatorCard_UltraRare
                 magicNumberIncrease *= this.magicNumber;
             }
 
-            GameUtilities.IncreaseMagicNumber(c, magicNumberIncrease, false);
+            GameUtilities.IncreaseMagicNumber(c, Math.min(magicNumberIncrease, 999), false);
         });
     }
 }

@@ -131,6 +131,7 @@ public class CardTooltips
     public EYBCardTooltip Envenom = FindByID(null, "Envenom");
     public EYBCardTooltip NoxiousFumes = FindByID(null, "Noxious Fumes");
     public EYBCardTooltip Vigor = FindByID(null, "Vigor");
+    public EYBCardTooltip Burst = FindByID(null, "Burst");
     public EYBCardTooltip Ritual = FindByID(null, "Ritual");
     public EYBCardTooltip TempHP = FindByID(null, "Temporary HP");
     public EYBCardTooltip MultiHP = FindByID(null, "Multi HP");
@@ -438,6 +439,7 @@ public class CardTooltips
         LoadFromPower(Envenom, new EnvenomPower(FakeCharacter.Instance, 0));
         LoadFromPower(NoxiousFumes, new NoxiousFumesPower(FakeCharacter.Instance, 0));
         LoadFromPower(Vigor, new VigorPower(FakeCharacter.Instance, 0));
+        LoadFromPower(Burst, new BurstPower(FakeCharacter.Instance, 0));
         LoadFromPower(Ritual, new RitualPower(FakeCharacter.Instance, 0, true));
         LoadFromPower(Thorns, new ThornsPower(FakeCharacter.Instance, 0));
         LoadFromPower(Duplication, new DuplicationPower(FakeCharacter.Instance, 0));

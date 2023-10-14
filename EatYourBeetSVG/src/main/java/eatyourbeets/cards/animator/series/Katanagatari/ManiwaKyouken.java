@@ -1,17 +1,18 @@
 package eatyourbeets.cards.animator.series.Katanagatari;
 
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.cards.base.attributes.AbstractAttribute;
+import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class ManiwaKyouken extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(ManiwaKyouken.class)
-            .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None)
+            .SetSkill(0, CardRarity.COMMON, EYBCardTarget.None)
             
             .SetSeries(CardSeries.Katanagatari);
 
@@ -19,11 +20,10 @@ public class ManiwaKyouken extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 1, 2, 2);
-        SetUpgrade(0, 0, 0, 1);
+        Initialize(0, 0, 2);
+        SetUpgrade(0, 0, 0);
 
-        SetAffinity_Green(1);
-        SetAffinity_Black(1, 0, 2);
+        SetAffinity_Violet(1);
 
         SetAffinityRequirement(Affinity.Black, 1);
     }
@@ -31,26 +31,25 @@ public class ManiwaKyouken extends AnimatorCard
     @Override
     protected void OnUpgrade()
     {
-        SetHaste(true);
-        this.upgradedBlock = true;
-    }
-
-    @Override
-    public AbstractAttribute GetBlockInfo()
-    {
-        return super.GetBlockInfo().AddMultiplier(secondaryValue);
+        SetRetain(true);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        for (int i = 0; i < secondaryValue; i++)
-        {
-            GameActions.Bottom.GainBlock(block).SetVFX(true, true);
-        }
 
-        GameActions.Bottom.Draw(magicNumber);
+        GameActions.Bottom.Draw(1)
+            .AddCallback(cards -> {
+                for (AbstractCard card : cards) {
+
+                    if (GameUtilities.IsSealed(card)) {
+                        CombatStats.Affinities.AddAffinitySealUses(magicNumber);
+                    }
+
+                    GameActions.Top.SealAffinities(card);
+                }
+            });
     }
 
     @Override

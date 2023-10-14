@@ -39,10 +39,7 @@ public class Nikolay extends AnimatorCard
                    GameActions.Top.ModifyAllCopies(cardID)
                            .AddCallback(c ->
                            {
-                               if (uuid != c.uuid)
-                               {
-                                   CostModifiers.For(c).Add(-magicNumber);
-                               }
+                               CostModifiers.For(c).Add(-magicNumber);
                            });
                }
            });

@@ -1,66 +1,46 @@
 package eatyourbeets.cards.animator.series.Katanagatari;
 
 import com.badlogic.gdx.graphics.Color;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.AnimatedSlashEffect;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.effects.SFX;
-import eatyourbeets.powers.common.CounterAttackPower;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
+import eatyourbeets.utilities.GameUtilities;
 
 public class UneriGinkaku extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(UneriGinkaku.class)
-            .SetAttack(1, CardRarity.COMMON)
+            .SetAttack(2, CardRarity.COMMON)
             .SetSeriesFromClassPackage();
 
     public UneriGinkaku()
     {
         super(DATA);
 
-        Initialize(13, 0, 3);
-        SetUpgrade(4, 0, 0);
+        Initialize(22, 0, 0);
+        SetUpgrade(8, 0, 0);
 
-        SetAffinity_Green(2, 0, 9);
+        SetAffinity_Green(2, 0, 0);
 
         SetEthereal(true);
     }
 
     @Override
-    protected void Refresh(AbstractMonster enemy)
+    public boolean cardPlayable(AbstractMonster m)
     {
-        super.Refresh(enemy);
-
-        boolean unplayable = false;
-        for (AbstractCard card : AbstractDungeon.actionManager.cardsPlayedThisTurn)
+        if (super.cardPlayable(m))
         {
-            if (card.type == CardType.ATTACK)
-            {
-                unplayable = !IsStarter();
-                break;
-            }
+            return GameUtilities.IsSealed(this);
         }
 
-        SetUnplayable(unplayable);
-    }
-
-    @Override
-    public void triggerWhenDrawn()
-    {
-        super.triggerWhenDrawn();
-
-        GameActions.Bottom.StackPower(new CounterAttackPower(player, magicNumber));
-        GameActions.Bottom.Flash(this);
+        return false;
     }
 
     @Override

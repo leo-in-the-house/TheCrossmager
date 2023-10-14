@@ -24,6 +24,12 @@
 		"NAMES": ["burning"],
 		"PROPER_NAME": "Burning"
 	},
+	"Burst":
+	{
+		"DESCRIPTION": "Your next #ySkills are played twice.",
+		"NAMES": ["burst"],
+		"PROPER_NAME": "Burst"
+	},
 	"Chaika Clone":
 	{
 		"DESCRIPTION": "Chaika Trabant, Chaika Kamaz, Chaika Bogdan, Viivi Holopainen, Layla",
@@ -413,6 +419,12 @@
 		"DESCRIPTION": "Temporary HP lasts until end of combat.",
 		"NAMES": ["temporary hp", "temp. hp"],
 		"PROPER_NAME": "Temporary HP"
+	},
+	"Threshold Bonus":
+	{
+		"DESCRIPTION": "The bonus power obtained by manually paying a certain amount of affinity.  For [R], this is [Strength], for [G], this is [Dexterity], etc.",
+		"NAMES": ["threshold bonus"],
+		"PROPER_NAME": "Threshold Bonus"
 	},
 	"Vigor":
 	{

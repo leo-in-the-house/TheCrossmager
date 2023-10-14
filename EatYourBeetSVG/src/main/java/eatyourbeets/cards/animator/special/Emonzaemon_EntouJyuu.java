@@ -1,98 +1,79 @@
 package eatyourbeets.cards.animator.special;
 
-import com.badlogic.gdx.graphics.Color;
-import com.megacrit.cardcrawl.actions.utility.UseCardAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.series.Katanagatari.Emonzaemon;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
+import eatyourbeets.cards.base.EYBCard;
 import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.effects.AttackEffects;
+import eatyourbeets.interfaces.subscribers.OnAffinitySealedSubscriber;
 import eatyourbeets.powers.AnimatorPower;
-import eatyourbeets.utilities.ColoredString;
+import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Emonzaemon_EntouJyuu extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Emonzaemon_EntouJyuu.class)
-            .SetPower(1, CardRarity.SPECIAL)
+            .SetPower(2, CardRarity.SPECIAL)
             .SetSeries(Emonzaemon.DATA.Series);
-    public static final int BONUS_DAMAGE = 2;
 
     public Emonzaemon_EntouJyuu()
     {
         super(DATA);
 
-        Initialize(0, 0, 3, BONUS_DAMAGE);
-        SetUpgrade(0, 0, 1);
+        Initialize(0, 0, 10);
+        SetUpgrade(0, 0, 5);
 
         SetAffinity_Red(1);
-        SetAffinity_Green(1);
+        SetAffinity_Teal(1);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.GainGreen(magicNumber);
-        GameActions.Bottom.StackPower(new Emonzaemon_EntouJyuuPower(p, secondaryValue));
+        CombatStats.Affinities.AddAffinitySealUses(1);
+        GameActions.Bottom.StackPower(new Emonzaemon_EntouJyuuPower(p, magicNumber));
     }
 
-    public class Emonzaemon_EntouJyuuPower extends AnimatorPower
+    public class Emonzaemon_EntouJyuuPower extends AnimatorPower implements OnAffinitySealedSubscriber
     {
-        private int attacks;
-
         public Emonzaemon_EntouJyuuPower(AbstractCreature owner, int amount)
         {
             super(owner, Emonzaemon_EntouJyuu.DATA);
-
-            this.attacks = 2;
 
             Initialize(amount);
         }
 
         @Override
-        public void atStartOfTurn()
+        public void onInitialApplication()
         {
-            super.atStartOfTurn();
+            super.onInitialApplication();
 
-            SetEnabled(true);
-            attacks = 2;
+            CombatStats.onAffinitySealed.Subscribe(this);
         }
 
         @Override
-        public void onAfterUseCard(AbstractCard card, UseCardAction action)
+        public void onRemove()
         {
-            super.onAfterUseCard(card, action);
+            super.onRemove();
 
-            if (attacks > 0 && card.type == CardType.ATTACK)
-            {
-                this.flashWithoutSound();
-                attacks -= 1;
+            CombatStats.onAffinitySealed.Unsubscribe(this);
+        }
 
-                if (attacks <= 0)
-                {
-                    SetEnabled(false);
-                }
+        @Override
+        public void OnAffinitySealed(EYBCard card, boolean manual)
+        {
+            AbstractMonster m = GameUtilities.GetRandomEnemy(true);
+            if (m != null) {
+                GameActions.Bottom.DealDamage(player, m, amount, DamageInfo.DamageType.THORNS, AttackEffects.GUNSHOT);
             }
         }
 
-        @Override
-        public float atDamageGive(float damage, DamageInfo.DamageType type, AbstractCard card)
-        {
-            return super.atDamageGive(damage, type, card) + ((enabled && (card != null && card.type == CardType.ATTACK && type == DamageInfo.DamageType.NORMAL)) ? amount : 0);
-        }
-
-        @Override
-        protected ColoredString GetSecondaryAmount(Color c)
-        {
-            return new ColoredString(attacks, Settings.CREAM_COLOR, c.a);
-        }
     }
 }

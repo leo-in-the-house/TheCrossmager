@@ -651,6 +651,11 @@ public final class GameActions
         return GainAffinity(YellowThresholdPower.AFFINITY_TYPE, amount, retain);
     }
 
+    public ApplyPower GainBurst(int amount)
+    {
+        return StackPower(new BurstPower(player, amount));
+    }
+
     public ApplyPower GainDexterity(int amount)
     {
         return StackPower(new DexterityPower(player, amount));

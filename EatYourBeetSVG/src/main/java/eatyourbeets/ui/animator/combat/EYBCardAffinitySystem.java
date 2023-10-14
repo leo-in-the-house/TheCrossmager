@@ -361,6 +361,8 @@ public class EYBCardAffinitySystem extends GUIElement implements OnStartOfTurnSu
             CurrentAffinities.Set(Affinity.Sealed, seal - 1);
         }
 
+        CombatStats.OnAffinitySealed(affinities, reshuffle);
+
         affinities.sealed = true;
         SFX.Play(SFX.RELIC_ACTIVATION, 0.75f, 0.85f, reshuffle ? 0.95f : 0.75f);
 
@@ -393,8 +395,6 @@ public class EYBCardAffinitySystem extends GUIElement implements OnStartOfTurnSu
 
             GetRow(a).Seal(affinities, reshuffle);
         }
-
-        CombatStats.OnAffinitySealed(affinities, reshuffle);
     }
 
     // ====================== //

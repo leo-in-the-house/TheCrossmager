@@ -122,7 +122,7 @@ public class EYBCardAffinityRow extends GUIElement
             vfxTimer = 0.75f;
 
             final int remainingUses = System.GetRemainingSealUses();
-            if (remainingUses < 3)
+            if (remainingUses < 999)
             {
                 amount = (Mathf.Clamp(remainingUses + amount, 0, 3));
                 System.CurrentAffinities.Set(Type, amount);

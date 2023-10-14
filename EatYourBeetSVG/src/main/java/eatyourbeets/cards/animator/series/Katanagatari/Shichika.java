@@ -1,24 +1,21 @@
 package eatyourbeets.cards.animator.series.Katanagatari;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.special.Shichika_Kyotouryuu;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.effects.GenericEffects.GenericEffect;
-import eatyourbeets.powers.common.CounterAttackPower;
-import eatyourbeets.stances.AgilityStance;
+import eatyourbeets.stances.TranceStance;
 import eatyourbeets.stances.WrathStance;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.JUtils;
 
 public class Shichika extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Shichika.class)
             .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None)
-            
             .SetSeriesFromClassPackage()
             .PostInitialize(data -> data.AddPreview(new Shichika_Kyotouryuu(), false));
 
@@ -28,19 +25,13 @@ public class Shichika extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 2, 3);
+        Initialize(0, 0);
 
-        SetAffinity_Red(1, 1, 2);
+        SetAffinity_Red(1, 1, 0);
         SetAffinity_Green(1, 1, 0);
 
         SetDelayed(true);
         SetExhaust(true);
-    }
-
-    @Override
-    protected void OnUpgrade()
-    {
-        SetDelayed(false);
     }
 
     @Override
@@ -95,8 +86,8 @@ public class Shichika extends AnimatorCard
         @Override
         public void Use(EYBCard card, AbstractPlayer p, AbstractMonster m)
         {
-            GameActions.Bottom.ChangeStance(AgilityStance.STANCE_ID);
-            GameActions.Bottom.StackPower(new CounterAttackPower(p, shichika.magicNumber));
+            GameActions.Bottom.ChangeStance(TranceStance.STANCE_ID);
+            GameActions.Bottom.GainBurst(1);
         }
     }
 }

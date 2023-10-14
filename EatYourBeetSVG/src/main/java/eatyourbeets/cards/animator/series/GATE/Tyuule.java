@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.powers.PowerHelper;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
@@ -14,7 +15,7 @@ import eatyourbeets.utilities.TargetHelper;
 public class Tyuule extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Tyuule.class)
-            .SetSkill(1, CardRarity.COMMON)
+            .SetSkill(1, CardRarity.COMMON, EYBCardTarget.None)
             
             .SetSeriesFromClassPackage();
 
