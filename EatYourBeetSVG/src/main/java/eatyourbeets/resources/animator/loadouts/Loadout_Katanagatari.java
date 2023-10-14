@@ -17,18 +17,11 @@ public class Loadout_Katanagatari extends AnimatorLoadout
     public void AddStarterCards()
     {
         AddStarterCard(TsurugaMeisai.DATA, 6);
-        AddStarterCard(Konayuki.DATA, 8);
-        AddStarterCard(ZankiKiguchi.DATA, 5);
+        AddStarterCard(Konayuki.DATA, 5);
+        AddStarterCard(ZankiKiguchi.DATA, 6);
         AddStarterCard(UneriGinkaku.DATA, 7);
-        AddStarterCard(Azekura.DATA, 9);
-        AddStarterCard(Emonzaemon.DATA, 8);
-
-        AddStarterCard(Togame.DATA, 8);
-        AddStarterCard(Nanami.DATA, 12);
-        AddStarterCard(ManiwaKyouken.DATA, 8);
-        AddStarterCard(Shichika.DATA, 15);
-
-        AddStarterCard(HigakiRinne.DATA, 20);
+        AddStarterCard(Azekura.DATA, 7);
+        AddStarterCard(ManiwaKyouken.DATA, 5);
     }
 
     @Override
