@@ -49,15 +49,14 @@ public class KotoriItsuka extends AnimatorCard
             GameActions.Bottom.DealDamage(this, m, AbstractGameAction.AttackEffect.FIRE);
         }
 
-        int amount_burning = player.currentBlock;
+        int amount_burning = (int) Math.ceil(player.currentBlock / 2f);
 
-        if (!upgraded) {
-            amount_burning /= 2;
+        if (upgraded) {
+            amount_burning *= 2;
         }
 
-        GameActions.Bottom.LoseBlock(player.currentBlock);
-
         if (amount_burning > 0) {
+            GameActions.Bottom.LoseBlock(amount_burning);
             GameActions.Bottom.ApplyBurning(TargetHelper.Normal(m), amount_burning);
         }
     }
