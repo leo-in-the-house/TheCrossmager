@@ -5,7 +5,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.special.Megumin_Explosion;
 import eatyourbeets.cards.animator.tokens.AffinityToken;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.effects.SFX;
 import eatyourbeets.utilities.CardSelection;
 import eatyourbeets.utilities.GameActions;
@@ -14,7 +13,7 @@ import eatyourbeets.utilities.GameUtilities;
 public class Megumin extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Megumin.class)
-            .SetSkill(X_COST, CardRarity.UNCOMMON, EYBCardTarget.None)
+            .SetSkill(X_COST, CardRarity.RARE, EYBCardTarget.None)
             
             .SetSeriesFromClassPackage()
             .PostInitialize(data ->

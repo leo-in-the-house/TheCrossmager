@@ -606,7 +606,7 @@
 		"animator:Plachta":
 		{
 			"FLAVOR_TEXT": "'I may have lost my memories, but I am confident my knowledge of alchemy exceeds yours.'",
-			"DESCRIPTION": "{~Unique}. || The next !M! times you create a card: gain [Duplication].",
+			"DESCRIPTION": "{~Unique}. || Permanently upgrade {Sophie Neuenmuller}. || The next !M! times you create a card: gain [Duplication].",
 			"EXTENDED_DESCRIPTION": ["The next #b{0} #ytimes you create a card, gain #yDuplication."],
 			"NAME": "Plachta"
 		},
@@ -638,7 +638,7 @@
 		"animator:SophieNeuenmuller":
 		{
 			"FLAVOR_TEXT": "'Was mastery of alchemy really your goal, Luard?  That’s wrong, isn’t it?  Your real goal... your real dream... was to use alchemy to bring people happiness!  You need to remember, Luard!'",
-			"DESCRIPTION": "{~Unique}. || Gain !M! [Plated Armor].  Channel [Random Orb]. || Limited: Permanently upgrade this card, Obtain {Plachta}, and shuffle this back to your draw pile.",
+			"DESCRIPTION": "{~Unique}. || Gain !M! [Plated Armor].  Channel [Random Orb]. || Limited: Obtain {Plachta} and shuffle this back to your draw pile.",
 			"NAME": "Sophie Neuenmuller"
 		},
 		"animator:SuelleMalen":
@@ -1838,7 +1838,7 @@
 		"animator:Verdia":
 		{
 			"DESCRIPTION": "<DRW-M>. Apply !S! [Vulnerable]. || When Discarded: Gain 1 [Plated Armor].",
-			"NAME": "Verdia"
+			"NAME": "Beldia"
 		},
 		"animator:Wiz":
 		{

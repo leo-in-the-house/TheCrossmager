@@ -13,7 +13,7 @@ import eatyourbeets.utilities.GameActions;
 public class YunYun extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(YunYun.class)
-            .SetAttack(0, CardRarity.UNCOMMON, EYBAttackType.Elemental, EYBCardTarget.ALL)
+            .SetAttack(0, CardRarity.COMMON, EYBAttackType.Elemental, EYBCardTarget.ALL)
             .SetSeriesFromClassPackage();
 
     public YunYun()

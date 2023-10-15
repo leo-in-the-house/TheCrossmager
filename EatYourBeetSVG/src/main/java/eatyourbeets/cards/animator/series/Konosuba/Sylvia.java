@@ -15,7 +15,7 @@ import eatyourbeets.utilities.GameEffects;
 public class Sylvia extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Sylvia.class)
-            .SetSkill(1, CardRarity.COMMON, EYBCardTarget.None)
+            .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None)
             .SetSeriesFromClassPackage()
             .PostInitialize(data ->
             {

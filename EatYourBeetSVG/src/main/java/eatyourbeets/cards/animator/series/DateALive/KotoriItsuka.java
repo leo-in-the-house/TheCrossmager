@@ -57,7 +57,7 @@ public class KotoriItsuka extends AnimatorCard
             if (upgraded) {
                 amount_burning *= 2;
             }
-            
+
             GameActions.Bottom.ApplyBurning(TargetHelper.Normal(m), amount_burning);
         }
     }

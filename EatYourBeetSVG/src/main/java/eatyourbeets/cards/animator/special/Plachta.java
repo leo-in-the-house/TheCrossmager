@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import eatyourbeets.cards.animator.series.Atelier.SophieNeuenmuller;
 import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardSeries;
 import eatyourbeets.cards.base.CardUseInfo;
@@ -14,10 +15,18 @@ import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
+import java.util.UUID;
+
 public class Plachta extends AnimatorCard {
     public static final EYBCardData DATA = Register(Plachta.class)
             .SetPower(1, CardRarity.SPECIAL)
             .SetSeries(CardSeries.Atelier);
+    static
+    {
+        DATA.AddPreview(new SophieNeuenmuller(), false);
+    }
+
+    private UUID linkedUUID;
 
     public Plachta() {
         super(DATA);
@@ -30,9 +39,17 @@ public class Plachta extends AnimatorCard {
         SetAffinity_Blue(1);
     }
 
+    public void setLinkedUUID(UUID linkedUUID) {
+        this.linkedUUID = linkedUUID;
+    }
+
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info) {
         GameUtilities.PlayVoiceSFX(name);
+
+        GameActions.Bottom.ModifyAllInstances(linkedUUID, AbstractCard::upgrade)
+                .IncludeMasterDeck(true)
+                .IsCancellable(false);
 
         GameActions.Bottom.StackPower(new PlachtaPower(p, magicNumber));
     }

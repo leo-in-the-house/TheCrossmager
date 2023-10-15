@@ -1,6 +1,5 @@
 package eatyourbeets.cards.animator.series.Atelier;
 
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.special.Plachta;
@@ -46,14 +45,14 @@ public class SophieNeuenmuller extends AnimatorCard {
         GameActions.Bottom.ChannelRandomOrb(1);
 
         if (CombatStats.TryActivateLimited(cardID)) {
-            GameActions.Bottom.ModifyAllInstances(uuid, AbstractCard::upgrade)
-            .IncludeMasterDeck(true)
-            .IsCancellable(false);
-
             GameActions.Bottom.MakeCardInHand(new Plachta())
             .AddCallback(card -> {
                 for (int i=0; i<(timesUpgraded - 1); i++) {
                     card.upgrade();
+                }
+
+                if (card instanceof Plachta) {
+                    ((Plachta) card).setLinkedUUID(uuid);
                 }
             });
 
