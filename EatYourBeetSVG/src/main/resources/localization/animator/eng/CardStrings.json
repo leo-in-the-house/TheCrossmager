@@ -606,7 +606,7 @@
 		"animator:Plachta":
 		{
 			"FLAVOR_TEXT": "'I may have lost my memories, but I am confident my knowledge of alchemy exceeds yours.'",
-			"DESCRIPTION": "{~Unique}. || Permanently upgrade {Sophie Neuenmuller}. || The next !M! times you create a card: gain [Duplication].",
+			"DESCRIPTION": "{~Unique}. || <LIM>. Permanently upgrade {Sophie Neuenmuller}. || The next !M! times you create a card: gain [Duplication].",
 			"EXTENDED_DESCRIPTION": ["The next #b{0} #ytimes you create a card, gain #yDuplication."],
 			"NAME": "Plachta"
 		},

@@ -48,7 +48,7 @@ public class Plachta extends AnimatorCard {
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info) {
         GameUtilities.PlayVoiceSFX(name);
 
-        if (linkedUUID != null) {
+        if (linkedUUID != null && CombatStats.TryActivateLimited(cardID)) {
             GameActions.Bottom.ModifyAllInstances(linkedUUID, AbstractCard::upgrade)
                     .IncludeMasterDeck(true)
                     .IsCancellable(false);
