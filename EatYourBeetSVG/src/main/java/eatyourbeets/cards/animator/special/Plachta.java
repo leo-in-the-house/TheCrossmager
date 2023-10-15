@@ -9,6 +9,7 @@ import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardSeries;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.effects.SFX;
 import eatyourbeets.interfaces.subscribers.OnCardCreatedSubscriber;
 import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.powers.CombatStats;
@@ -47,9 +48,12 @@ public class Plachta extends AnimatorCard {
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info) {
         GameUtilities.PlayVoiceSFX(name);
 
-        GameActions.Bottom.ModifyAllInstances(linkedUUID, AbstractCard::upgrade)
-                .IncludeMasterDeck(true)
-                .IsCancellable(false);
+        if (linkedUUID != null) {
+            GameActions.Bottom.ModifyAllInstances(linkedUUID, AbstractCard::upgrade)
+                    .IncludeMasterDeck(true)
+                    .IsCancellable(false);
+            GameActions.Bottom.SFX(SFX.CARD_UPGRADE, 0.5f, 0.6f).SetDuration(0.25f, true);
+        }
 
         GameActions.Bottom.StackPower(new PlachtaPower(p, magicNumber));
     }
