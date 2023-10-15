@@ -17,7 +17,7 @@ public class Shichika extends AnimatorCard
     public static final EYBCardData DATA = Register(Shichika.class)
             .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None)
             .SetSeriesFromClassPackage()
-            .PostInitialize(data -> data.AddPreview(new Shichika_Kyotouryuu(), false));
+            .PostInitialize(data -> data.AddPreview(new Shichika_Kyotouryuu(), true));
 
     private static final CardEffectChoice choices = new CardEffectChoice();
 

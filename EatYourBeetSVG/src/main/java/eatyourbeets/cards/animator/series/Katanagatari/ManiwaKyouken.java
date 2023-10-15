@@ -22,8 +22,6 @@ public class ManiwaKyouken extends AnimatorCard
         SetUpgrade(0, 0, 0);
 
         SetAffinity_Violet(1);
-
-        SetAffinityRequirement(Affinity.Black, 1);
     }
 
     @Override

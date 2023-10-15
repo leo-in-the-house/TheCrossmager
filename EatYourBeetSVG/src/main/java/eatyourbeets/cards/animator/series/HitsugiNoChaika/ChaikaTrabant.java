@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.interfaces.subscribers.OnAfterCardDiscardedSubscriber;
+import eatyourbeets.interfaces.subscribers.OnStartOfTurnPostDrawSubscriber;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.resources.GR;
 import eatyourbeets.utilities.GameActions;
@@ -12,7 +13,7 @@ import eatyourbeets.utilities.GameEffects;
 import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.TargetHelper;
 
-public class ChaikaTrabant extends AnimatorCard implements OnAfterCardDiscardedSubscriber
+public class ChaikaTrabant extends AnimatorCard implements OnAfterCardDiscardedSubscriber, OnStartOfTurnPostDrawSubscriber
 {
     public static final EYBCardData DATA = Register(ChaikaTrabant.class)
             .SetAttack(1, CardRarity.RARE, EYBAttackType.Elemental, EYBCardTarget.ALL)
@@ -75,6 +76,7 @@ public class ChaikaTrabant extends AnimatorCard implements OnAfterCardDiscardedS
     @Override
     public void OnStartOfTurnPostDraw()
     {
+        applyPowers();
         GameEffects.Queue.ShowCardBriefly(makeStatEquivalentCopy());
 
         GameActions.Bottom.DealDamageToAll(this, AttackEffects.FIRE);

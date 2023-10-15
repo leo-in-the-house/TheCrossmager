@@ -26,6 +26,8 @@ public class Plachta extends AnimatorCard {
         SetUpgrade(0, 0, 1);
 
         SetUnique(true, true);
+
+        SetAffinity_Blue(1);
     }
 
     @Override

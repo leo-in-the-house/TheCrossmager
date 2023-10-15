@@ -807,8 +807,8 @@
 		"animator:KotoriItsuka":
 		{
 			"FLAVOR_TEXT": "'The white me, is the weak me. If it wasn't the black, strong me, today would be impossible.'",
-			"DESCRIPTION": "Remove all of your [Block].  Apply half that much [Burning] on the enemy.",
-			"UPGRADE_DESCRIPTION": "Remove all of your [Block].  Apply that much [Burning] on the enemy.",
+			"DESCRIPTION": "Half your [Block], rounded down.  Apply that much [Burning] on the enemy.",
+			"UPGRADE_DESCRIPTION": "Half your [Block], rounded down.  Apply twice that much [Burning] on the enemy.",
 			"NAME": "Kotori Itsuka"
 		},
 		"animator:KurumiTokisaki":

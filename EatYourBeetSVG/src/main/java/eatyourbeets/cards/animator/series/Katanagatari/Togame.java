@@ -39,7 +39,7 @@ public class Togame extends AnimatorCard
 
         GameActions.Bottom.SelectFromHand(name, magicNumber, false)
         .SetMessage(GR.Common.Strings.HandSelection.Seal)
-        .SetOptions(false, false, false)
+        .SetOptions(true, true, true)
         .AddCallback(cards ->
         {
             for (AbstractCard c : cards) {
