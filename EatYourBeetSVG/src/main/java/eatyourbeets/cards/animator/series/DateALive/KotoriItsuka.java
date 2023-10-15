@@ -51,12 +51,13 @@ public class KotoriItsuka extends AnimatorCard
 
         int amount_burning = (int) Math.ceil(player.currentBlock / 2f);
 
-        if (upgraded) {
-            amount_burning *= 2;
-        }
-
         if (amount_burning > 0) {
             GameActions.Bottom.LoseBlock(amount_burning);
+
+            if (upgraded) {
+                amount_burning *= 2;
+            }
+            
             GameActions.Bottom.ApplyBurning(TargetHelper.Normal(m), amount_burning);
         }
     }
