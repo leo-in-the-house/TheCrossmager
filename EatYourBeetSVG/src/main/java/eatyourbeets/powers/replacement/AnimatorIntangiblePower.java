@@ -10,6 +10,7 @@ import eatyourbeets.powers.CombatStats;
 import eatyourbeets.resources.GR;
 import eatyourbeets.utilities.GameActions;
 
+//Unused
 public class AnimatorIntangiblePower extends IntangiblePlayerPower implements OnModifyDamageFirstSubscriber, CloneablePowerInterface
 {
     public AnimatorIntangiblePower(AbstractCreature owner, int amount)

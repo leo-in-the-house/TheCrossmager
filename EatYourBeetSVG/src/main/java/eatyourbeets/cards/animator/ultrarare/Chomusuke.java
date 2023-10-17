@@ -12,6 +12,8 @@ import eatyourbeets.utilities.GameEffects;
 import eatyourbeets.utilities.GameUtilities;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 public class Chomusuke extends AnimatorCard_UltraRare implements OnAddToDeckListener
 {
@@ -35,16 +37,20 @@ public class Chomusuke extends AnimatorCard_UltraRare implements OnAddToDeckList
     public boolean OnAddToDeck()
     {
         CardGroup konosubaCards = GetKonosubaCards();
+        List<AbstractCard> cardsToRemove = new LinkedList<>();
 
         for (AbstractCard card : player.masterDeck.group) {
             if (card.rarity == CardRarity.BASIC) {
-
-                card.untip();
-                card.unhover();
-                player.masterDeck.removeCard(card);
-
-                GameEffects.TopLevelList.ShowAndObtain(konosubaCards.getRandomCard(rng).makeCopy());
+                cardsToRemove.add(card);
             }
+        }
+
+        for (AbstractCard card : cardsToRemove) {
+            card.untip();
+            card.unhover();
+            player.masterDeck.removeCard(card);
+
+            GameEffects.TopLevelList.ShowAndObtain(konosubaCards.getRandomCard(rng).makeCopy());
         }
 
         return true;

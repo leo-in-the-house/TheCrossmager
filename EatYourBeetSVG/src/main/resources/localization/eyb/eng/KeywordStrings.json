@@ -506,7 +506,7 @@
 	},
 	"~Intangible":
 	{
-		"DESCRIPTION": "Reduces incoming damage and [HP] Loss by #b50%. Reduces outgoing #yAttack damage by #b50%.",
+		"DESCRIPTION": "Reduces all incoming damage to 1.",
 		"NAMES": ["~intangible"],
 		"PROPER_NAME": "Intangible"
 	},

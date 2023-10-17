@@ -45,15 +45,10 @@ public class Destroyer extends AnimatorCard
     }
 
     @Override
-    protected void OnUpgrade()
-    {
-        SetRetainOnce(true);
-    }
-    @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.StackPower(new DestroyerPower(p, magicNumber,1, secondaryValue));
+        GameActions.Bottom.StackPower(new DestroyerPower(p, magicNumber,secondaryValue, 1));
     }
 
     public static class DestroyerPower extends AnimatorClickablePower

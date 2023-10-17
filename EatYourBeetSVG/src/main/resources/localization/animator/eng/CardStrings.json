@@ -458,7 +458,7 @@
 		"animator:GirlDeMo":
 		{
 			"FLAVOR_TEXT": "'I'll keep singing for everyone, even when I'm wetting myself! I'll show you what I've got!'",
-			"DESCRIPTION": "Triple your highest amounts among all of your stats.",
+			"DESCRIPTION": "Triple your highest amounts among all of your attributes.",
 			"NAME": "Girls Dead Monster"
 		},
 		"animator:Godan":
@@ -1791,8 +1791,8 @@
 		},
 		"animator:Eris":
 		{
-			"DESCRIPTION": "Lose no [HP] this turn. || If the last card you played was a {Konosuba} card: gain !M! [E] and draw a card.",
-			"EXTENDED_DESCRIPTION": ["Lose no #yHP this turn."],
+			"DESCRIPTION": "Take no damage this turn. || If the last card you played was a {Konosuba} card: gain !M! [E] and draw a card.",
+			"EXTENDED_DESCRIPTION": ["Take no damage this turn."],
 			"NAME": "Eris"
 		},
 		"animator:Hans":
@@ -1803,7 +1803,7 @@
 		},
 		"animator:Iris":
 		{
-			"DESCRIPTION": "Channel !M! [Lightning]. || !A! [W][Y]: Enter <DS>.",
+			"DESCRIPTION": "Channel !M! [Lightning]. || <LIM>. !A! [W][Y]: Enter <DS>.",
 			"NAME": "Iris"
 		},
 		"animator:Kazuma":
@@ -1828,7 +1828,7 @@
 		},
 		"animator:Sylvia":
 		{
-			"DESCRIPTION": "{Seal} a card in your hand.  Apply [Constricted] equal to the total amount of all affinities sealed.",
+			"DESCRIPTION": "{Seal} a card in your hand.  Apply [Constricted] to a random enemy equal to the total amount of all affinities sealed.",
 			"NAME": "Sylvia"
 		},
 		"animator:Sylvia_Chimera":

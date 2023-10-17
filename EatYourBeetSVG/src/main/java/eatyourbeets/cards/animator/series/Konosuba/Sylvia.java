@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.special.Sylvia_Chimera;
 import eatyourbeets.cards.base.*;
+import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.resources.GR;
 import eatyourbeets.ui.common.EYBCardPopupActions;
@@ -15,7 +16,7 @@ import eatyourbeets.utilities.TargetHelper;
 public class Sylvia extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Sylvia.class)
-            .SetAttack(1, CardRarity.UNCOMMON)
+            .SetAttack(1, CardRarity.UNCOMMON, EYBAttackType.Normal, EYBCardTarget.ALL)
             .SetSeriesFromClassPackage()
             .PostInitialize(data ->
             {
@@ -35,10 +36,20 @@ public class Sylvia extends AnimatorCard
     }
 
     @Override
+    public AbstractAttribute GetDamageInfo()
+    {
+        return super.GetDamageInfo().AddMultiplier(magicNumber);
+    }
+
+    @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.DealDamageToAll(this, AttackEffects.CLAW);
+
+        for (int i=0; i<magicNumber; i++) {
+            GameActions.Bottom.DealDamageToAll(this, AttackEffects.SLASH_DIAGONAL);
+        }
+
         GameActions.Bottom.SelectFromHand(name, 1, false)
             .SetMessage(GR.Common.Strings.HandSelection.Seal)
             .AddCallback(cards ->
@@ -54,7 +65,7 @@ public class Sylvia extends AnimatorCard
                     }
 
                     if (totalAffinity > 0) {
-                        GameActions.Top.ApplyConstricted(TargetHelper.Normal(m), totalAffinity);
+                        GameActions.Top.ApplyConstricted(TargetHelper.RandomEnemy(), totalAffinity);
                         GameActions.Top.SealAffinities(card);
                     }
                 }

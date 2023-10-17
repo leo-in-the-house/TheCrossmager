@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
+import eatyourbeets.resources.GR;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
@@ -23,26 +24,6 @@ public class Wiz extends AnimatorCard
 
         SetAffinity_Blue(1);
         SetAffinity_Black(1);
-
-        SetPurge(true);
-    }
-
-
-    @Override
-    protected void Refresh(AbstractMonster enemy)
-    {
-        super.Refresh(enemy);
-
-        int count = 0;
-        for (AbstractCard c : player.hand.group)
-        {
-            if (c.uuid != uuid)
-            {
-                count += 1;
-            }
-        }
-
-        SetUnplayable(count < 1);
     }
 
     @Override
@@ -51,7 +32,7 @@ public class Wiz extends AnimatorCard
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.FetchFromPile(name, 1, p.exhaustPile)
         .SetOptions(false, true)
-        .SetMessage(cardData.Strings.EXTENDED_DESCRIPTION[0])
+        .SetMessage(GR.Common.Strings.HandSelection.Obtain)
         .AddCallback(cards -> {
             boolean konosubaCardFetched = false;
 
@@ -66,7 +47,8 @@ public class Wiz extends AnimatorCard
             }
 
             if (!konosubaCardFetched) {
-                GameActions.Last.Purge(uuid);
+                GameActions.Last.Purge(uuid)
+                  .ShowEffect(true);
             }
         });
     }

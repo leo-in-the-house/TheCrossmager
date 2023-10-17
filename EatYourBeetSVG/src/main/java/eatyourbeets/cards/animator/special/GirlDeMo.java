@@ -4,13 +4,15 @@ import basemod.Pair;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.interfaces.delegates.ActionT1;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.LinkedList;
+import java.util.List;
 
 public class GirlDeMo extends AnimatorCard
 {
@@ -57,19 +59,26 @@ public class GirlDeMo extends AnimatorCard
         pairs.add(new Pair<>(GameActions.Bottom::GainViolet, CombatStats.Affinities.GetAffinityLevel(Affinity.Violet)));
         pairs.sort(Comparator.comparingInt(Pair::getValue));
 
-        int amount = pairs.get(9).getValue() * 2;
+        List<Pair<ActionT1<Integer>, Integer>> pairsToInvoke = new LinkedList<>();
+
+        int amount = pairs.get(9).getValue();
+        int gainAmount = amount * 2;
         if (amount > 0)
         {
-            pairs.get(9).getKey().Invoke(amount);
+            pairsToInvoke.add(pairs.get(9));
 
             for (int i = 8; i >= 0; i--) {
                 if (pairs.get(i).getValue().equals(amount))
                 {
-                    pairs.get(i).getKey().Invoke(amount);
+                    pairsToInvoke.add(pairs.get(i));
                 }
                 else {
                     break;
                 }
+            }
+
+            for (Pair<ActionT1<Integer>, Integer> pair : pairsToInvoke) {
+                pair.getKey().Invoke(gainAmount);
             }
         }
     }

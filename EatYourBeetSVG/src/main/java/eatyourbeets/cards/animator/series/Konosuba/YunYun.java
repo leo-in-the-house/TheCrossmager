@@ -53,7 +53,7 @@ public class YunYun extends AnimatorCard
         int konosubaCards = 0;
         for (AbstractCard c : player.hand.group)
         {
-            if (c != this && c instanceof AnimatorCard && ((AnimatorCard) c).series.Equals(CardSeries.Konosuba))
+            if (c != null && c != this && c instanceof AnimatorCard && ((AnimatorCard) c).series.Equals(CardSeries.Konosuba))
             {
                 konosubaCards += 1;
             }

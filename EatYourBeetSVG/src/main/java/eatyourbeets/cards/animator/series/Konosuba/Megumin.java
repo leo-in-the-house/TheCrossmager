@@ -3,7 +3,10 @@ package eatyourbeets.cards.animator.series.Konosuba;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.special.Megumin_Explosion;
-import eatyourbeets.cards.base.*;
+import eatyourbeets.cards.base.AnimatorCard;
+import eatyourbeets.cards.base.CardUseInfo;
+import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.effects.SFX;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
@@ -49,9 +52,12 @@ public class Megumin extends AnimatorCard
             card.upgrade();
         }
 
-        card.setLinkedUUID(uuid);
-
         GameActions.Bottom.SFX(SFX.ANIMATOR_MEGUMIN_CHARGE, 0.95f, 1.05f);
-        GameActions.Bottom.MakeCardInDrawPile(card);
+        GameActions.Bottom.MakeCardInDrawPile(card)
+                .AddCallback(c -> {
+                        if (c instanceof Megumin_Explosion) {
+                            ((Megumin_Explosion) c).setLinkedUUID(uuid);
+                        }
+                });
     }
 }

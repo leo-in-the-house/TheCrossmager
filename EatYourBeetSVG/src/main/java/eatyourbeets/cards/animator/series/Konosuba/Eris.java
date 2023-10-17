@@ -1,6 +1,7 @@
 package eatyourbeets.cards.animator.series.Konosuba;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -13,7 +14,7 @@ import eatyourbeets.utilities.GameUtilities;
 public class Eris extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Eris.class)
-            .SetSkill(2, CardRarity.RARE, EYBCardTarget.None)
+            .SetSkill(4, CardRarity.RARE, EYBCardTarget.None)
             .SetSeriesFromClassPackage();
 
     public Eris()
@@ -75,7 +76,7 @@ public class Eris extends AnimatorCard
         }
 
         @Override
-        public int onLoseHp(int damageAmount)
+        public float atDamageFinalReceive(float damage, DamageInfo.DamageType type)
         {
             return 0;
         }

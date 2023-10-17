@@ -714,7 +714,7 @@ public final class GameActions
 
     public ApplyPower GainIntangible(int amount)
     {
-        return StackPower(new AnimatorIntangiblePower(player, amount));
+        return StackPower(new IntangiblePlayerPower(player, amount));
     }
 
     public ApplyAffinityPower GainBlue(int amount)
