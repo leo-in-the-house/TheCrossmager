@@ -1,11 +1,13 @@
 package eatyourbeets.cards.animator.series.Konosuba;
 
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.base.*;
+import eatyourbeets.cards.base.AnimatorCard;
+import eatyourbeets.cards.base.CardUseInfo;
+import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Kazuma extends AnimatorCard
 {
@@ -18,11 +20,9 @@ public class Kazuma extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 6, 2);
-        SetUpgrade(0, 3, 0);
+        Initialize(0, 8, 0);
+        SetUpgrade(0, 4, 0);
 
-        SetAffinity_Red(1);
-        SetAffinity_Green(1);
         SetAffinity_White(1);
     }
 
@@ -31,18 +31,6 @@ public class Kazuma extends AnimatorCard
     {
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
-        GameActions.Bottom.Draw(1)
-        .AddCallback(cards ->
-        {
-           for (AbstractCard c : cards)
-           {
-               if (GameUtilities.IsSealed(c))
-               {
-                   GameActions.Bottom.GainTemporaryHP(magicNumber);
-                   GameActions.Bottom.GainWhite(1);
-                   return;
-               }
-           }
-        });
+        GameActions.Bottom.Cycle(name,1);
     }
 }

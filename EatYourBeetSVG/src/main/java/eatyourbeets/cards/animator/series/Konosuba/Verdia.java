@@ -19,20 +19,11 @@ public class Verdia extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 14, 2, 2);
-        SetUpgrade(0, 2, 1, 0);
+        Initialize(0, 12, 4);
+        SetUpgrade(0, 8, 2);
 
-        SetAffinity_Red(2);
         SetAffinity_Black(2);
-        SetAffinity_Blue(1);
-    }
-
-    @Override
-    public void triggerOnManualDiscard()
-    {
-        super.triggerOnManualDiscard();
-
-        GameActions.Bottom.GainPlatedArmor(1);
+        SetAffinity_Brown(1);
     }
 
     @Override
@@ -40,7 +31,6 @@ public class Verdia extends AnimatorCard
     {
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
-        GameActions.Bottom.Draw(magicNumber);
-        GameActions.Bottom.ApplyVulnerable(p, m, secondaryValue);
+        GameActions.Bottom.GainPlatedArmor(magicNumber);
     }
 }

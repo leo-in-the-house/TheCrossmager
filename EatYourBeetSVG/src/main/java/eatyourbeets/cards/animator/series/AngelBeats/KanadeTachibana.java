@@ -38,7 +38,7 @@ public class KanadeTachibana extends AnimatorCard
     {
         GameUtilities.PlayVoiceSFX(name);
 
-        GameActions.Top.FetchFromPile(name, magicNumber, p.exhaustPile)
+        GameActions.Bottom.FetchFromPile(name, magicNumber, p.exhaustPile)
         .SetFilter(card -> card.isEthereal)
         .SetOptions(false, true)
         .SetMessage(cardData.Strings.EXTENDED_DESCRIPTION[0])

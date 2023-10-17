@@ -23,6 +23,7 @@ public class KaeyaAlberich extends AnimatorCard {
         SetAffinity_Blue(1);
     }
 
+    @Override
     public AbstractAttribute GetBlockInfo()
     {
         if (GameUtilities.InGame()) {

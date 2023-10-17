@@ -2,10 +2,8 @@ package eatyourbeets.cards.animator.series.Konosuba;
 
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.events.shrines.Transmogrifier;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBAttackType;
 import eatyourbeets.cards.base.EYBCardData;
@@ -14,6 +12,7 @@ import eatyourbeets.effects.SFX;
 import eatyourbeets.effects.VFX;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Vanir extends AnimatorCard
 {
@@ -25,28 +24,10 @@ public class Vanir extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(12, 0, 3);
-        SetUpgrade(1, 0, -1);
+        Initialize(15, 0, 3);
+        SetUpgrade(3, 0, -1);
 
-        SetAffinity_Blue(0, 0, 1);
-        SetAffinity_Star(1, 0, 0);
-    }
-
-    @Override
-    public void triggerOnExhaust()
-    {
-        super.triggerOnExhaust();
-
-        GameActions.Bottom.SelectFromPile(name, 1, player.drawPile)
-        .SetOptions(false, true)
-        .SetMessage(Transmogrifier.OPTIONS[2])
-        .AddCallback(cards ->
-        {
-            if (cards.size() > 0)
-            {
-                GameActions.Top.ReplaceCard(cards.get(0).uuid, makeCopy()).SetUpgrade(upgraded);
-            }
-        });
+        SetAffinity_Black(0, 0, 1);
     }
 
     @Override
@@ -63,7 +44,7 @@ public class Vanir extends AnimatorCard
         else
         {
             GameActions.Bottom.Wait(0.25f);
-            GameActions.Bottom.DealDamage(this, m, AttackEffects.SMASH);
+            GameActions.Bottom.DealDamage(this, m, AttackEffects.FIRE);
         }
 
         GameActions.Bottom.ModifyAllInstances(uuid, c -> c.baseDamage = Math.max(0, c.baseDamage - c.magicNumber));

@@ -1761,19 +1761,20 @@
 	{
 		"animator:Aqua":
 		{
-			"DESCRIPTION": "Gain|Boost [L]. <DRW>. || Becomes useless for the rest of combat.",
+			"DESCRIPTION": "Fetch a {Konosuba} card from your discard pile. || Becomes useless for the rest of combat.",
+			"UPGRADE_DESCRIPTION": "Channel [Water].  Fetch a {Konosuba} card from your discard pile. || Becomes useless for the rest of combat.",
 			"EXTENDED_DESCRIPTION": [""],
 			"NAME": "Aqua"
 		},
 		"animator:Chris":
 		{
-			"DESCRIPTION": "{~Steal} !M! [Gold]. || Discard 1 {Skill} to gain !S! [Block].",
+			"DESCRIPTION": "{Gain} !M! [Gold].",
 			"NAME": "Chris"
 		},
 		"animator:Darkness":
 		{
-			"DESCRIPTION": "Gain !M! [Plated Armor]. || The next time you take unblocked damage: Add 1 {Adrenaline} to your draw pile.",
-			"EXTENDED_DESCRIPTION": ["The next #b{0} time(s) you take unblocked damage, add #b1 #yAdrenaline to your draw pile."],
+			"DESCRIPTION": "Gain !M! [Plated Armor]. || The next time you take unblocked damage: Add 1 {Adrenaline}{+} to your draw pile.",
+			"EXTENDED_DESCRIPTION": ["The next #b{0} times you take unblocked damage, add #b1 #yAdrenaline to your draw pile.", "The next #b{0} times you take unblocked damage, add #b1 #yupgraded #yAdrenaline to your draw pile."],
 			"NAME": "Darkness"
 		},
 		"animator:Darkness_Adrenaline":
@@ -1784,71 +1785,76 @@
 		},
 		"animator:Destroyer":
 		{
-			"DESCRIPTION": "At the end of your next !M! turns: Deal !S! damage and apply !K! [Burning] to ALL enemies. || Once|Twice per turn, pay [E]: Extend duration by 1 turn.",
-			"EXTENDED_DESCRIPTION": ["Pay 1 [E] to extend duration by #b1 turn. || At the end of each turn, deal #b{0} damage and apply #b{1} [Burning] to ALL enemies."],
+			"DESCRIPTION": "At the end of your next !M! turns: Deal !S! damage and apply a number of random effects. || Once per turn, pay [E]: Extend duration by 1 turn.",
+			"EXTENDED_DESCRIPTION": ["Pay 1 [E] to extend duration by #b1 turn. || At the end of each turn, deal #b{0} damage and apply a number of random effects."],
 			"NAME": "Destroyer"
 		},
 		"animator:Eris":
 		{
-			"DESCRIPTION": "Boost [L]. Add !M! {Miracles} to your draw pile. || For 1 turn, survive damage with 1 [HP] and lose Max [HP] equal to remaining damage.",
-			"EXTENDED_DESCRIPTION": ["Survive lethal damage with 1 [HP] and lose Max [HP] equal to remaining damage."],
+			"DESCRIPTION": "Lose no [HP] this turn. || If the last card you played was a {Konosuba} card: gain !M! [E] and draw a card.",
+			"EXTENDED_DESCRIPTION": ["Lose no #yHP this turn."],
 			"NAME": "Eris"
 		},
 		"animator:Hans":
 		{
-			"DESCRIPTION": "Add !S! {Slimed}{+} to your draw pile. At the end of each turn: Apply !M! [Poison] to !M! random enemies. || Whenever you play a {Status}: Recover !S! [HP].",
-			"EXTENDED_DESCRIPTION": ["At the end of turn, apply #b{0} [Poison] to #b{1} random enemies. Whenever you play a #yStatus, #yRecover #b{2} [HP]."],
+			"DESCRIPTION": "Add !S! {Slimed} to your draw pile. || At the end of each turn: Apply !M! [Poison] to ALL enemies.",
+			"EXTENDED_DESCRIPTION": ["At the end of turn, apply #b{0} [Poison] to ALL enemies."],
 			"NAME": "Hans"
+		},
+		"animator:Iris":
+		{
+			"DESCRIPTION": "Channel !M! [Lightning]. || !A! [W][Y]: Enter <DS>.",
+			"NAME": "Iris"
 		},
 		"animator:Kazuma":
 		{
-			"DESCRIPTION": "<DRW>. || If you drew a [A_Seal] card: Gain [L] and !M! [THP].",
+			"DESCRIPTION": "Cycle a card.",
 			"NAME": "Kazuma"
 		},
 		"animator:Megumin":
 		{
-			"DESCRIPTION": "Gain X-!M! [M]. || Add 1 {Explosion} to the bottom|middle of your draw pile and Upgrade it X times.",
+			"DESCRIPTION": "Add {Explosion} to your draw pile.  Upgrade it once for each time this card is upgraded, then upgrade it X times.",
 			"NAME": "Megumin"
 		},
 		"animator:Megumin_Explosion":
 		{
-			"DESCRIPTION": "Deals 50% additional damage against single enemies.",
+			"DESCRIPTION": "<LIM>.  Permanently upgrade {Megumin}.",
 			"NAME": "Explosion"
 		},
 		"animator:Mitsurugi":
 		{
-			"DESCRIPTION": "Gain|Boost [R]. Can only deal damage if the enemy is attacking. || When Exhausted: Obtain [R] or {[L] Token}.",
+			"DESCRIPTION": "If the enemy is attacking: Enter <WS>.",
 			"NAME": "Mitsurugi"
 		},
 		"animator:Sylvia":
 		{
-			"DESCRIPTION": "Seal !M! random cards in draw pile. Lose 1 [M]. || When discarded: Obtain 1 random {[W] Token}.",
+			"DESCRIPTION": "{Seal} a card in your hand.  Apply [Constricted] equal to the total amount of all affinities sealed.",
 			"NAME": "Sylvia"
 		},
 		"animator:Sylvia_Chimera":
 		{
-			"DESCRIPTION": "Gain !S! [Plated Armor]. Apply !M! [Poison]. || Seal and discard the top !K! cards in your draw pile. Lose all [W].",
+			"DESCRIPTION": "Choose 2 cards to play for free against a random target: {Sylvia}, {Hans}, {Beldia}.",
+			"UPGRADE_DESCRIPTION": "Choose 2 upgraded cards to play for free against a random target: {Sylvia}, {Hans}, {Beldia}.",
 			"NAME": "Chimera"
 		},
 		"animator:Vanir":
 		{
-			"DESCRIPTION": "Decrease this card's damage by !M! this combat. || When Exhausted: Choose a card in draw pile and turn it into a new copy of this card.",
+			"DESCRIPTION": "Decrease this card's damage by !M! this combat.",
 			"NAME": "Vanir"
 		},
 		"animator:Verdia":
 		{
-			"DESCRIPTION": "<DRW-M>. Apply !S! [Vulnerable]. || When Discarded: Gain 1 [Plated Armor].",
+			"DESCRIPTION": "Gain !M! [Plated Armor].",
 			"NAME": "Beldia"
 		},
 		"animator:Wiz":
 		{
-			"DESCRIPTION": "Exhaust 1 random card. Add 1 {Apparition} to your draw pile. || Once this combat, pay !S! [L]: Fetch 1 of !K! cards from your Exhaust pile.",
-			"EXTENDED_DESCRIPTION": ["Pay #b{0} [L]: #yFetch #b1 of #b{1} random cards from your #yExhaust pile (You must have at least #b{1} cards in #yExhaust pile)."],
+			"DESCRIPTION": "Fetch a card from your exhaust pile.  It costs 0 to play. || If it is not a {Konosuba} card, {Purge} this card.",
 			"NAME": "Wiz"
 		},
 		"animator:YunYun":
 		{
-			"DESCRIPTION": "Costs 1 more for each other {Attack} in hand. || !A! [B]: {Channel} 1 [Lightning].",
+			"DESCRIPTION": "This card costs 1 less for each other {Konosuba} card in your hand.",
 			"NAME": "YunYun"
 		}
 	},
@@ -2987,7 +2993,7 @@
 		},
 		"animator:Chomusuke":
 		{
-			"DESCRIPTION": "<DRW>. || <slm>. On Exhaust: Gain [E][E] and return this to your hand.",
+			"DESCRIPTION": "Transform all {Basic} cards in your master deck into random {Konosuba} cards. || Gain !M! [E].  Draw !S! cards from your discard pile.",
 			"NAME": "Chomusuke"
 		},
 		"animator:Cthulhu":

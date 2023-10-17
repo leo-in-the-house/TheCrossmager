@@ -752,6 +752,10 @@ public final class GameActions
         return StackPower(new DuplicationPower(player, amount));
     }
 
+    public ApplyPower GainFlameBarrier(int amount)
+    {
+        return StackPower(new FlameBarrierPower(player, amount));
+    }
 
     public ApplyPower GainPestilence(int amount)
     {

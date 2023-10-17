@@ -23,11 +23,11 @@ public class Darkness extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 0, 2);
+        Initialize(0, 0, 2, 2);
         SetUpgrade(0, 0, 1);
 
-        SetAffinity_Red(1, 1, 0);
-        SetAffinity_White(1, 1, 0);
+        SetAffinity_White(1, 0, 0);
+        SetAffinity_Black(1, 0, 0);
     }
 
     @Override
@@ -35,14 +35,17 @@ public class Darkness extends AnimatorCard
     {
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.StackPower(new PlatedArmorPower(p, magicNumber));
-        GameActions.Bottom.StackPower(new DarknessPower(p, 1));
+        GameActions.Bottom.StackPower(new DarknessPower(p, secondaryValue, upgraded));
     }
 
     public static class DarknessPower extends AnimatorPower
     {
-        public DarknessPower(AbstractPlayer owner, int amount)
+        final private boolean upgraded;
+
+        public DarknessPower(AbstractPlayer owner, int amount, boolean upgraded)
         {
             super(owner, Darkness.DATA);
+            this.upgraded = upgraded;
 
             Initialize(amount);
         }
@@ -54,13 +57,24 @@ public class Darkness extends AnimatorCard
 
             if (amount > 0 && info.type != DamageInfo.DamageType.HP_LOSS && damageAmount > 0)
             {
-                GameActions.Bottom.MakeCardInDrawPile(new Darkness_Adrenaline());
+                GameActions.Bottom.MakeCardInDrawPile(new Darkness_Adrenaline())
+                        .SetUpgrade(upgraded, true);
                 if ((amount -= 1) <= 0)
                 {
                     RemovePower();
                 }
 
                 this.flash();
+            }
+        }
+
+        @Override
+        public void updateDescription() {
+            if (upgraded) {
+                description = FormatDescription(1, amount);
+            }
+            else {
+                description = FormatDescription(0, amount);
             }
         }
     }

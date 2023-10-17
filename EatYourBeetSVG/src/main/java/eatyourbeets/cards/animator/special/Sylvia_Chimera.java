@@ -1,45 +1,50 @@
 package eatyourbeets.cards.animator.special;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import eatyourbeets.cards.animator.series.Konosuba.Hans;
 import eatyourbeets.cards.animator.series.Konosuba.Sylvia;
-import eatyourbeets.cards.base.Affinity;
+import eatyourbeets.cards.animator.series.Konosuba.Verdia;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.effects.AttackEffects;
-import eatyourbeets.powers.CombatStats;
-import eatyourbeets.utilities.CardSelection;
-import eatyourbeets.utilities.ColoredString;
+import eatyourbeets.resources.GR;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Sylvia_Chimera extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Sylvia_Chimera.class)
             .SetAttack(2, CardRarity.SPECIAL)
             .SetSeries(Sylvia.DATA.Series)
-            ;
+            .PostInitialize(data ->
+            {
+                data.AddPreview(new Sylvia(), true);
+                data.AddPreview(new Hans(), true);
+                data.AddPreview(new Verdia(), true);
+            });
     public static final int SEAL_AMOUNT = 6;
 
     public Sylvia_Chimera()
     {
         super(DATA);
 
-        Initialize(12, 6, 4, 2);
-        SetUpgrade(4, 2, 0, 0);
+        Initialize(6, 12, 2);
+        SetUpgrade(0, 0, 0);
 
-        SetAffinity_Star(2, 0, 3);
+        SetAffinity_Star(1, 0, 1);
 
-        SetRetainOnce(true);
+        SetAutoplayed(true);
     }
 
     @Override
-    public ColoredString GetSpecialVariableString()
+    public AbstractAttribute GetDamageInfo()
     {
-        return super.GetSpecialVariableString(SEAL_AMOUNT);
+        return super.GetDamageInfo().AddMultiplier(magicNumber);
     }
 
     @Override
@@ -47,22 +52,43 @@ public class Sylvia_Chimera extends AnimatorCard
     {
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
-        GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_HEAVY);
 
-        GameActions.Bottom.ApplyPoison(player, m, magicNumber);
-        GameActions.Bottom.GainPlatedArmor(secondaryValue);
+        for (int i=0; i<magicNumber; i++) {
+            GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_HEAVY);
+        }
 
-        GameActions.Bottom.MoveCards(p.drawPile, p.discardPile, SEAL_AMOUNT)
-        .ShowEffect(true, true)
-        .SetOrigin(CardSelection.Top)
-        .AddCallback(cards ->
-        {
-            for (AbstractCard c : cards)
-            {
-                GameActions.Bottom.SealAffinities(c, false);
-            }
+        CardGroup group = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
 
-            GameActions.Bottom.Callback(() -> CombatStats.Affinities.UseAffinity(Affinity.Star, 99));
-        });
+        Sylvia sylvia = new Sylvia();
+
+        if (upgraded) {
+            sylvia.upgrade();
+        }
+
+        Hans hans = new Hans();
+
+        if (upgraded) {
+            hans.upgrade();
+        }
+
+        Verdia beldia = new Verdia();
+
+        if (upgraded) {
+            beldia.upgrade();
+        }
+
+        group.addToBottom(sylvia);
+        group.addToBottom(hans);
+        group.addToBottom(beldia);
+
+        GameActions.Bottom.SelectFromPile(name, 2, group)
+           .SetMessage(GR.Common.Strings.HandSelection.Activate)
+           .SetOptions(false, false, false)
+            .AddCallback(cards -> {
+                for (AbstractCard card : cards) {
+                    GameActions.Top.PlayCopy(card, GameUtilities.GetRandomEnemy(true));
+                }
+            });
+
     }
 }

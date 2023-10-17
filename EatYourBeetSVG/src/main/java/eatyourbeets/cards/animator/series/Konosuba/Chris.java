@@ -1,13 +1,13 @@
 package eatyourbeets.cards.animator.series.Konosuba;
 
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import eatyourbeets.cards.animator.special.Ganyu;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.cards.base.CardSeries;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.AttackEffects;
+import eatyourbeets.ui.common.EYBCardPopupActions;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
@@ -15,37 +15,28 @@ public class Chris extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Chris.class)
             .SetAttack(0, CardRarity.COMMON)
-            .SetSeries(CardSeries.Konosuba);
+            .SetSeriesFromClassPackage()
+            .PostInitialize(data ->
+            {
+                data.AddPopupAction(new EYBCardPopupActions.Konosuba_Eris(300, Ganyu.DATA));
+                data.AddPreview(new Eris(), false);
+            });;
 
     public Chris()
     {
         super(DATA);
 
-        Initialize(3, 0, 5, 4);
+        Initialize(3, 0, 5, 0);
         SetUpgrade(3, 0, 0, 0);
 
-        SetAffinity_Green(1);
+        SetAffinity_Yellow(1);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.DealDamage(this, m, AttackEffects.DAGGER).StealGold(magicNumber);
-    }
-
-    @Override
-    public void OnLateUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
-    {
-        GameActions.Bottom.DiscardFromHand(name, 1, false)
-        .SetOptions(true, true, true)
-        .SetFilter(c -> c.type == CardType.SKILL)
-        .AddCallback(cards ->
-        {
-            for (AbstractCard c : cards)
-            {
-                GameActions.Bottom.GainBlock(secondaryValue);
-            }
-        });
+        GameActions.Bottom.DealDamage(this, m, AttackEffects.DAGGER);
+        GameActions.Bottom.GainGold(magicNumber);
     }
 }

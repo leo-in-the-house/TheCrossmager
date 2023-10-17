@@ -2,15 +2,15 @@ package eatyourbeets.cards.animator.series.Konosuba;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.RainbowCardEffect;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
-import eatyourbeets.cards.base.attributes.HPAttribute;
-import eatyourbeets.cards.base.attributes.MixedHPAttribute;
+import eatyourbeets.cards.base.attributes.TempHPAttribute;
+import eatyourbeets.orbs.animator.Water;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Aqua extends AnimatorCard
 {
@@ -34,10 +34,8 @@ public class Aqua extends AnimatorCard
         Initialize(0, 0, 2, 2);
         SetUpgrade(0, 0, 0, 0);
 
-        SetAffinity_White(2);
-        SetAffinity_Blue(1);
+        SetAffinity_Blue(2);
 
-        SetHealing(true);
         SetTransformed(transformed);
     }
 
@@ -50,9 +48,7 @@ public class Aqua extends AnimatorCard
     @Override
     public AbstractAttribute GetSpecialInfo()
     {
-        return transformed ? null : upgraded
-             ? MixedHPAttribute.Instance.SetCard(this, true)
-             : HPAttribute.Instance.SetCard(this, true);
+        return transformed ? null : TempHPAttribute.Instance.SetCard(this, true);
     }
 
     @Override
@@ -61,9 +57,15 @@ public class Aqua extends AnimatorCard
         GameUtilities.PlayVoiceSFX(name);
         if (!transformed)
         {
-            GameActions.Bottom.GainWhite(1, upgraded);
-            GameActions.Bottom.Heal(magicNumber).Overheal(upgraded);
-            GameActions.Bottom.Draw(1);
+            GameActions.Bottom.GainTemporaryHP(magicNumber);
+            if (upgraded) {
+                GameActions.Bottom.ChannelOrb(new Water());
+            }
+
+            GameActions.Bottom.FetchFromPile(name, 1, player.discardPile)
+                 .SetOptions(false, false)
+                 .SetFilter(card -> card instanceof AnimatorCard && ((AnimatorCard) card).series.equals(CardSeries.Konosuba));
+
             GameActions.Bottom.Callback(() -> SetTransformed(true));
         }
         else
@@ -111,12 +113,16 @@ public class Aqua extends AnimatorCard
             LoadImage("2");
             cardText.OverrideDescription(cardData.Strings.EXTENDED_DESCRIPTION[0], true);
             type = CardType.STATUS;
+            affinities.Clear();
+            SetAffinity_Blue(1);
         }
         else
         {
             LoadImage(null);
             cardText.OverrideDescription(null, true);
             type = CardType.SKILL;
+            affinities.Clear();
+            SetAffinity_Blue(2);
         }
     }
 }

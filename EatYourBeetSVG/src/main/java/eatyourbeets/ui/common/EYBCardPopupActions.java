@@ -149,6 +149,36 @@ public class EYBCardPopupActions
         }
     }
 
+    public static class Konosuba_Eris extends EYBCardPopupAction
+    {
+        protected final int GOLD_AMOUNT;
+        protected final EYBCardData TARGET1;
+
+        public Konosuba_Eris(int goldAmount, EYBCardData targetCard)
+        {
+            GOLD_AMOUNT = goldAmount;
+            TARGET1 = targetCard;
+
+            SetText(specialActions.PayGoldEris(), terms.Obtain, specialActions.PayGoldEris_D(String.valueOf(GOLD_AMOUNT)));
+        }
+
+        @Override
+        public boolean CanExecute(AbstractCard card)
+        {
+            return IsRestRoom() && HasCard(card) && HasGold(GOLD_AMOUNT);
+        }
+
+        @Override
+        public void Execute()
+        {
+            if (Replace(card, TARGET1, card.upgraded) != null) {
+                LoseGold(GOLD_AMOUNT);
+                SFX.Play(SFX.GOLD_JINGLE, 0.4f);
+                Complete();
+            }
+        }
+    }
+
     public static class HitsugiNoChaika_Tooru extends EYBCardPopupAction
     {
         protected final int HP_LOSS;

@@ -1,32 +1,28 @@
 package eatyourbeets.cards.animator.series.Konosuba;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.orbs.Lightning;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.cards.base.modifiers.CostModifiers;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class YunYun extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(YunYun.class)
-            .SetAttack(0, CardRarity.COMMON, EYBAttackType.Elemental, EYBCardTarget.ALL)
+            .SetAttack(2, CardRarity.COMMON, EYBAttackType.Elemental, EYBCardTarget.ALL)
             .SetSeriesFromClassPackage();
 
     public YunYun()
     {
         super(DATA);
 
-        Initialize(9, 0);
-        SetUpgrade(3, 0);
+        Initialize(10, 0);
+        SetUpgrade(8, 0);
 
-        SetAffinity_Blue(1, 0, 1);
-        SetAffinity_White(1, 0, 1);
-
-        SetAffinityRequirement(Affinity.Blue, 1);
+        SetAffinity_Yellow(2);
     }
 
     @Override
@@ -50,24 +46,19 @@ public class YunYun extends AnimatorCard
     {
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamageToAll(this, AttackEffects.LIGHTNING);
-
-        if (TryUseAffinity(Affinity.Blue))
-        {
-            GameActions.Bottom.ChannelOrb(new Lightning());
-        }
     }
 
     public void RefreshCost()
     {
-        int attacks = 0;
+        int konosubaCards = 0;
         for (AbstractCard c : player.hand.group)
         {
-            if (c != this && c.type == CardType.ATTACK)
+            if (c != this && c instanceof AnimatorCard && ((AnimatorCard) c).series.Equals(CardSeries.Konosuba))
             {
-                attacks += 1;
+                konosubaCards += 1;
             }
         }
 
-        CostModifiers.For(this).Set(attacks);
+        CostModifiers.For(this).Set(-konosubaCards);
     }
 }

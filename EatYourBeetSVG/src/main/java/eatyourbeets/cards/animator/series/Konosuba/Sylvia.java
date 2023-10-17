@@ -1,25 +1,25 @@
 package eatyourbeets.cards.animator.series.Konosuba;
 
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.special.Sylvia_Chimera;
-import eatyourbeets.cards.animator.tokens.AffinityToken;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.powers.CombatStats;
+import eatyourbeets.effects.AttackEffects;
+import eatyourbeets.resources.GR;
 import eatyourbeets.ui.common.EYBCardPopupActions;
-import eatyourbeets.utilities.CardSelection;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameEffects;
+import eatyourbeets.utilities.GameUtilities;
+import eatyourbeets.utilities.TargetHelper;
 
 public class Sylvia extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Sylvia.class)
-            .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None)
+            .SetAttack(1, CardRarity.UNCOMMON)
             .SetSeriesFromClassPackage()
             .PostInitialize(data ->
             {
-                data.AddPopupAction(new EYBCardPopupActions.Konosuba_Sylvia(4, Hans.DATA, Verdia.DATA, Sylvia_Chimera.DATA));
+                data.AddPopupAction(new EYBCardPopupActions.Konosuba_Sylvia(8, Hans.DATA, Verdia.DATA, Sylvia_Chimera.DATA));
                 data.AddPreview(new Sylvia_Chimera(), true);
             });
 
@@ -27,43 +27,37 @@ public class Sylvia extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 5, 2, 3);
-        SetUpgrade(0, 3, 0, 0);
+        Initialize(5, 0, 2, 3);
+        SetUpgrade(3, 0, 0, 0);
 
-        SetAffinity_Red(1);
-        SetAffinity_Black(1);
-        SetAffinity_Star(0, 0, 1);
-    }
-
-    @Override
-    protected void OnUpgrade()
-    {
-        SetRetainOnce(true);
-    }
-
-    @Override
-    public void triggerOnManualDiscard()
-    {
-        super.triggerOnManualDiscard();
-
-        final Affinity a = GameUtilities.GetRandomElement(Affinity.Basic());
-        GameActions.Bottom.MakeCardInHand(AffinityToken.GetCopy(a, false));
+        SetAffinity_Pink(1, 0, 1);
+        SetAffinity_Green(1, 0, 1);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.GainBlock(block);
-        GameActions.Bottom.SealAffinities(p.drawPile, magicNumber, false)
-        .SetSelection(CardSelection.Random)
-        .AddCallback(cards ->
-        {
-            if (cards.size() > 0)
+        GameActions.Bottom.DealDamageToAll(this, AttackEffects.CLAW);
+        GameActions.Bottom.SelectFromHand(name, 1, false)
+            .SetMessage(GR.Common.Strings.HandSelection.Seal)
+            .AddCallback(cards ->
             {
-                GameEffects.List.ShowCopies(cards);
-            }
-        });
-        GameActions.Bottom.Callback(() -> CombatStats.Affinities.UseAffinity(Affinity.Star, 1));
+                for (AbstractCard card : cards)
+                {
+                    int totalAffinity = 0;
+
+                    for (EYBCardAffinity affinity : GameUtilities.GetAffinities(card).List) {
+                        if (affinity.type != Affinity.Sealed) {
+                            totalAffinity += affinity.level;
+                        }
+                    }
+
+                    if (totalAffinity > 0) {
+                        GameActions.Top.ApplyConstricted(TargetHelper.Normal(m), totalAffinity);
+                        GameActions.Top.SealAffinities(card);
+                    }
+                }
+            });
     }
 }
