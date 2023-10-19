@@ -62,10 +62,5 @@ public abstract class ImprovedDefend extends ImprovedBasicCard
     {
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
-
-        if (magicNumber > 0)
-        {
-            GameActions.Bottom.GainAffinity(affinity, magicNumber, upgraded);
-        }
     }
 }

@@ -66,10 +66,5 @@ public abstract class ImprovedStrike extends ImprovedBasicCard
     {
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_DIAGONAL);
-
-        if (magicNumber > 0)
-        {
-            GameActions.Bottom.GainAffinity(affinity, magicNumber, upgraded);
-        }
     }
 }

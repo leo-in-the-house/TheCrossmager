@@ -15,111 +15,111 @@
 
 		"animator:Strike_Red":
 		{
-			"DESCRIPTION": "Gain|Boost [R].",
+			"DESCRIPTION": "",
 			"NAME": "Improved Strike"
 		},
 		"animator:Defend_Red":
 		{
-			"DESCRIPTION": "Gain|Boost [R].",
+			"DESCRIPTION": "",
 			"NAME": "Improved Defend"
 		},
 
 		"animator:Strike_Green":
 		{
-			"DESCRIPTION": "Gain|Boost [G].",
+			"DESCRIPTION": "",
 			"NAME": "Improved Strike"
 		},
 		"animator:Defend_Green":
 		{
-			"DESCRIPTION": "Gain|Boost [G].",
+			"DESCRIPTION": "",
 			"NAME": "Improved Defend"
 		},
 
 		"animator:Strike_Blue":
 		{
-			"DESCRIPTION": "Gain|Boost [B].",
+			"DESCRIPTION": "",
 			"NAME": "Improved Strike"
 		},
 		"animator:Defend_Blue":
 		{
-			"DESCRIPTION": "Gain|Boost [B].",
+			"DESCRIPTION": "",
 			"NAME": "Improved Defend"
 		},
 
 		"animator:Strike_Light":
 		{
-			"DESCRIPTION": "Gain|Boost [L].",
+			"DESCRIPTION": "",
 			"NAME": "Improved Strike"
 		},
 		"animator:Defend_Light":
 		{
-			"DESCRIPTION": "Gain|Boost [L].",
+			"DESCRIPTION": "",
 			"NAME": "Improved Defend"
 		},
 
 		"animator:Strike_Dark":
 		{
-			"DESCRIPTION": "Gain|Boost [D].",
+			"DESCRIPTION": "",
 			"NAME": "Improved Strike"
 		},
 		"animator:Defend_Dark":
 		{
-			"DESCRIPTION": "Gain|Boost [D].",
+			"DESCRIPTION": "",
 			"NAME": "Improved Defend"
 		},
 
 		"animator:Strike_Yellow":
 		{
-			"DESCRIPTION": "Gain|Boost [Y].",
+			"DESCRIPTION": "",
 			"NAME": "Improved Strike"
 		},
 		"animator:Defend_Yellow":
 		{
-			"DESCRIPTION": "Gain|Boost [Y].",
+			"DESCRIPTION": "",
 			"NAME": "Improved Defend"
 		},
 
 		"animator:Strike_Brown":
 		{
-			"DESCRIPTION": "Gain|Boost [B].",
+			"DESCRIPTION": "",
 			"NAME": "Improved Strike"
 		},
 		"animator:Defend_Brown":
 		{
-			"DESCRIPTION": "Gain|Boost [B].",
+			"DESCRIPTION": "",
 			"NAME": "Improved Defend"
 		},
 
 		"animator:Strike_Pink":
 		{
-			"DESCRIPTION": "Gain|Boost [P].",
+			"DESCRIPTION": "",
 			"NAME": "Improved Strike"
 		},
 		"animator:Defend_Pink":
 		{
-			"DESCRIPTION": "Gain|Boost [P].",
+			"DESCRIPTION": "",
 			"NAME": "Improved Defend"
 		},
 
 		"animator:Strike_Teal":
 		{
-			"DESCRIPTION": "Gain|Boost [T].",
+			"DESCRIPTION": "",
 			"NAME": "Improved Strike"
 		},
 		"animator:Defend_Teal":
 		{
-			"DESCRIPTION": "Gain|Boost [T].",
+			"DESCRIPTION": "",
 			"NAME": "Improved Defend"
 		},
 
 		"animator:Strike_Violet":
 		{
-			"DESCRIPTION": "Gain|Boost [V].",
+			"DESCRIPTION": "",
 			"NAME": "Improved Strike"
 		},
 		"animator:Defend_Violet":
 		{
-			"DESCRIPTION": "Gain|Boost [V].",
+			"DESCRIPTION": "",
 			"NAME": "Improved Defend"
 		},
 
