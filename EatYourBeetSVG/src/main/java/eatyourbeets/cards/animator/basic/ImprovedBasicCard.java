@@ -2,7 +2,6 @@ package eatyourbeets.cards.animator.basic;
 
 import eatyourbeets.cards.base.Affinity;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.resources.GR;
 import eatyourbeets.utilities.AdvancedTexture;
@@ -17,7 +16,7 @@ public abstract class ImprovedBasicCard extends AnimatorCard
     {
         super(data);
 
-        InitializeAffinity(affinity, 1, 0, affinity == Affinity.Star ? 0 : 1);
+        InitializeAffinity(affinity, 1, 0, 0);
 
         this.affinity = affinity;
         this.cropPortrait = false;
