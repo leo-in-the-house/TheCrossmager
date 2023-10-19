@@ -24,6 +24,8 @@ public class Dust extends AnimatorCard {
 
         SetAffinity_Red(1, 0, 1);
         SetAffinity_Violet(1, 0, 1);
+
+        SetEthereal(true);
     }
 
     @Override
