@@ -1761,6 +1761,7 @@
 	{
 		"animator:Aqua":
 		{
+			"FLAVOR_TEXT": "'I'm the goddess Aqua!  When a young person dies in Japan, it's my job to guide them to the afterlife!'",
 			"DESCRIPTION": "Fetch a {Konosuba} card from your discard pile. || Becomes useless for the rest of combat.",
 			"UPGRADE_DESCRIPTION": "Channel [Water].  Fetch a {Konosuba} card from your discard pile. || Becomes useless for the rest of combat.",
 			"EXTENDED_DESCRIPTION": [""],
@@ -1768,92 +1769,115 @@
 		},
 		"animator:Chris":
 		{
+			"FLAVOR_TEXT": "'If you're lucky, you might get my magic dagger- it's worth more than 400 Eris!  But, if you're unlucky, you might get... these old rocks!'",
 			"DESCRIPTION": "{Gain} !M! [Gold].",
 			"NAME": "Chris"
 		},
 		"animator:Darkness":
 		{
+			"FLAVOR_TEXT": "'Even though I wield a two-handed sword, please do not expect too much of me.  I am far too clumsy and my attacks rarely hit their mark.  However, I MAKE AN IMPENETRABLE WALL!'",
 			"DESCRIPTION": "Gain !M! [Plated Armor]. || The next time you take unblocked damage: Add 1 {Adrenaline}{+} to your draw pile.",
 			"EXTENDED_DESCRIPTION": ["The next #b{0} times you take unblocked damage, add #b1 #yAdrenaline to your draw pile.", "The next #b{0} times you take unblocked damage, add #b1 #yupgraded #yAdrenaline to your draw pile."],
 			"NAME": "Darkness"
 		},
 		"animator:Darkness_Adrenaline":
 		{
+			"FLAVOR_TEXT": "'It's shameful... filthy...'",
 			"DESCRIPTION": "Gain [E]. <DRW-M>.",
 			"NAME": "Adrenaline",
 			"UPGRADE_DESCRIPTION": "Gain [E] [E]. <DRW-M>."
 		},
 		"animator:Destroyer":
 		{
+			"FLAVOR_TEXT": "'Oh my god!  The kingdom's fallen!  Everyone's dead!!!  ...This thing works as ordered though, so hey!  Nice job, me!' - Head Researcher",
 			"DESCRIPTION": "At the end of your next !M! turns: Deal !S! damage and apply a number of random effects. || Once per turn, pay [E]: Extend duration by 1 turn.",
 			"EXTENDED_DESCRIPTION": ["Pay 1 [E] to extend duration by #b1 turn. || At the end of each turn, deal #b{0} damage and apply a number of random effects."],
 			"NAME": "Destroyer"
 		},
+		"animator:Dust":
+		{
+			"FLAVOR_TEXT": "'Where else can a guy party like a rockstar for cheap!  This is our chance to repay this town for all it's given us!'",
+			"DESCRIPTION": "Exhaust an {Uncommon} to add a random {Uncommon} {Power} to your draw pile.",
+			"NAME": "Dust"
+		},
 		"animator:Eris":
 		{
+			"FLAVOR_TEXT": "'OK, OK!  You win!  I'll make an exception this time!  I'll open the gate for him right away!'",
 			"DESCRIPTION": "Take no damage this turn. || If the last card you played was a {Konosuba} card: gain !M! [E] and draw a card.",
 			"EXTENDED_DESCRIPTION": ["Take no damage this turn."],
 			"NAME": "Eris"
 		},
 		"animator:Hans":
 		{
+			"FLAVOR_TEXT": "'So what's your next move, Wiz?  Will you try and stop me?'",
 			"DESCRIPTION": "Add !S! {Slimed} to your draw pile. || At the end of each turn: Apply !M! [Poison] to ALL enemies.",
 			"EXTENDED_DESCRIPTION": ["At the end of turn, apply #b{0} [Poison] to ALL enemies."],
 			"NAME": "Hans"
 		},
 		"animator:Iris":
 		{
+			"FLAVOR_TEXT": "'Jeez, Kazuma, you really are a child!  Saying something like that just because you can't win...'",
 			"DESCRIPTION": "Channel !M! [Lightning]. || <LIM>. !A! [W][Y]: Enter <DS>.",
 			"NAME": "Iris"
 		},
 		"animator:Kazuma":
 		{
+			"FLAVOR_TEXT": "'I lost my life in a tragic car accident.  But then the Goddess of Fate led and reincarnated my soul and body in another world.'",
 			"DESCRIPTION": "Cycle a card.",
-			"NAME": "Kazuma"
+			"NAME": "Kazuma Satou"
 		},
 		"animator:Megumin":
 		{
+			"FLAVOR_TEXT": "'Explosion is the strongest spell, and the more powerful the spell, the more time it takes to conjure.  Keep that frog busy until I am done with my preparations.'",
 			"DESCRIPTION": "Add {Explosion} to your draw pile.  Upgrade it once for each time this card is upgraded, then upgrade it X times.",
 			"NAME": "Megumin"
 		},
 		"animator:Megumin_Explosion":
 		{
+			"FLAVOR_TEXT": "'From the boundary of righteousness, come, o-justice!  As an intangible distortion!  Dance!  Dance!  DANCE!  Transform my torrent of power into a destructive force, one without equal!  Return all of creation to cinders, and rise from the abyss!  Grant your humble servant the most powerful attack ever known!  Grant your humble servant the ultimate attack spell!  EXPLOSION!!!'",
 			"DESCRIPTION": "<LIM>.  Permanently upgrade {Megumin}.",
 			"NAME": "Explosion"
 		},
 		"animator:Mitsurugi":
 		{
+			"FLAVOR_TEXT": "'If we don't deal with this now, it will ravage this land, and kill everything in its path!  We're the only ones who can stop it, and stop it we shall!'",
 			"DESCRIPTION": "If the enemy is attacking: Enter <WS>.",
-			"NAME": "Mitsurugi"
+			"NAME": "Kyouya Mitsurugi"
 		},
 		"animator:Sylvia":
 		{
+			"FLAVOR_TEXT": "'Are you sure you're the courageous Mitsurugi?  I thought Gram, the magic sword, would be bigger.'",
 			"DESCRIPTION": "{Seal} a card in your hand.  Apply [Constricted] to a random enemy equal to the total amount of all affinities sealed.",
 			"NAME": "Sylvia"
 		},
 		"animator:Sylvia_Chimera":
 		{
+			"FLAVOR_TEXT": "'Somehow, I managed to keep my soul from passing on...  And now, I will crush you all!'",
 			"DESCRIPTION": "Choose 2 cards to play for free against a random target: {Sylvia}, {Hans}, {Beldia}.",
 			"UPGRADE_DESCRIPTION": "Choose 2 upgraded cards to play for free against a random target: {Sylvia}, {Hans}, {Beldia}.",
 			"NAME": "Chimera"
 		},
 		"animator:Vanir":
 		{
+			"FLAVOR_TEXT": "'The Duke of Hell, a Commander of Evil, and one of the Devil King's generals.  I am he who sees all in this world.'",
 			"DESCRIPTION": "Decrease this card's damage by !M! this combat.",
 			"NAME": "Vanir"
 		},
 		"animator:Verdia":
 		{
+			"FLAVOR_TEXT": "'No matter!  My minions always fight the rabble for me!'",
 			"DESCRIPTION": "Gain !M! [Plated Armor].",
 			"NAME": "Beldia"
 		},
 		"animator:Wiz":
 		{
+			"FLAVOR_TEXT": "'I maintain the magic barrier that protects the Devil King's castle, is all!  I've never hurt everyone, so I could barely be considered a general!  In fact, I'm so harmless, no one's even bothered to put a bounty on me!'",
 			"DESCRIPTION": "Fetch a card from your exhaust pile.  It costs 0 to play. || If it is not a {Konosuba} card, {Purge} this card.",
 			"NAME": "Wiz"
 		},
 		"animator:YunYun":
 		{
+			"FLAVOR_TEXT": "'Um, I- I think you have the wrong idea!  I only stepped in, cause if I let a toad kill my rival, I'd look like a fool!'",
 			"DESCRIPTION": "This card costs 1 less for each other {Konosuba} card in your hand.",
 			"NAME": "YunYun"
 		}
@@ -2993,6 +3017,7 @@
 		},
 		"animator:Chomusuke":
 		{
+			"FLAVOR_TEXT": "'I promise she won't cause anyone any trouble...' -Megumin",
 			"DESCRIPTION": "Transform all {Basic} cards in your master deck into random {Konosuba} cards. || Gain !M! [E].  Draw !S! cards from your discard pile.",
 			"NAME": "Chomusuke"
 		},
