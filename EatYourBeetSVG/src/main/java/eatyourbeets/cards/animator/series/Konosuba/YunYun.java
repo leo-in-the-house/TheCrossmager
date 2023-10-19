@@ -50,15 +50,17 @@ public class YunYun extends AnimatorCard
 
     public void RefreshCost()
     {
-        int konosubaCards = 0;
-        for (AbstractCard c : player.hand.group)
-        {
-            if (c != null && c != this && c instanceof AnimatorCard && ((AnimatorCard) c).series.Equals(CardSeries.Konosuba))
+        if (GameUtilities.InGame() && player != null && player.hand != null) {
+            int konosubaCards = 0;
+            for (AbstractCard c : player.hand.group)
             {
-                konosubaCards += 1;
+                if (c != this && c instanceof AnimatorCard && ((AnimatorCard) c).series.Equals(CardSeries.Konosuba))
+                {
+                    konosubaCards += 1;
+                }
             }
-        }
 
-        CostModifiers.For(this).Set(-konosubaCards);
+            CostModifiers.For(this).Set(-konosubaCards);
+        }
     }
 }
