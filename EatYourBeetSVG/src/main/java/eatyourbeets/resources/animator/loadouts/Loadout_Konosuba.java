@@ -19,11 +19,11 @@ public class Loadout_Konosuba extends AnimatorLoadout
     @Override
     public void AddStarterCards()
     {
-        AddStarterCard(Mitsurugi.DATA, 8);
+        AddStarterCard(Mitsurugi.DATA, 7);
         AddStarterCard(Kazuma.DATA, 5);
         AddStarterCard(Verdia.DATA, 6);
         AddStarterCard(Vanir.DATA, 8);
-        AddStarterCard(Chris.DATA, 7);
+        AddStarterCard(Chris.DATA, 8);
         AddStarterCard(YunYun.DATA, 7);
     }
 

@@ -54,8 +54,8 @@ public abstract class ImprovedStrike extends ImprovedBasicCard
         }
         else
         {
-            Initialize(6, 0, 1);
-            SetUpgrade(2, 0);
+            Initialize(6, 0);
+            SetUpgrade(3, 0);
         }
 
         SetTag(CardTags.STARTER_STRIKE, true);
