@@ -26,7 +26,11 @@ public abstract class ImprovedStrike extends ImprovedBasicCard
             list.add(Strike_Blue.DATA);
             list.add(Strike_Light.DATA);
             list.add(Strike_Dark.DATA);
-            list.add(Strike_Star.DATA);
+            list.add(Strike_Brown.DATA);
+            list.add(Strike_Pink.DATA);
+            list.add(Strike_Teal.DATA);
+            list.add(Strike_Violet.DATA);
+            list.add(Strike_Yellow.DATA);
         }
 
         return list;
@@ -45,7 +49,7 @@ public abstract class ImprovedStrike extends ImprovedBasicCard
 
         if (affinity == Affinity.Star)
         {
-            Initialize(7, 0);
+            Initialize(5, 0);
             SetUpgrade(3, 0);
         }
         else

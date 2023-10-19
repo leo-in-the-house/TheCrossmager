@@ -22,7 +22,11 @@ public abstract class ImprovedDefend extends ImprovedBasicCard
             list.add(Defend_Blue.DATA);
             list.add(Defend_Light.DATA);
             list.add(Defend_Dark.DATA);
-            list.add(Defend_Star.DATA);
+            list.add(Defend_Yellow.DATA);
+            list.add(Defend_Teal.DATA);
+            list.add(Defend_Brown.DATA);
+            list.add(Defend_Pink.DATA);
+            list.add(Defend_Violet.DATA);
         }
 
         return list;
@@ -41,7 +45,7 @@ public abstract class ImprovedDefend extends ImprovedBasicCard
 
         if (affinity == Affinity.Star)
         {
-            Initialize(0, 6);
+            Initialize(0, 4);
             SetUpgrade(0, 3);
         }
         else
