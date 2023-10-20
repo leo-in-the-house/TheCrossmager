@@ -20,7 +20,7 @@ public class Dust extends AnimatorCard {
         super(DATA);
 
         Initialize(0, 4, 0);
-        SetUpgrade(0, 4, 0);
+        SetUpgrade(0, 1, 0);
 
         SetAffinity_Red(1, 0, 1);
         SetAffinity_Violet(1, 0, 1);
@@ -44,7 +44,8 @@ public class Dust extends AnimatorCard {
                 AbstractCard cardToCreate = AbstractDungeon.getCardFromPool(CardRarity.UNCOMMON, CardType.POWER, true);
 
                 if (cardToCreate != null) {
-                    GameActions.Top.MakeCardInDrawPile(cardToCreate.makeCopy());
+                    GameActions.Top.MakeCardInDrawPile(cardToCreate.makeCopy())
+                            .SetUpgrade(upgraded, true);
                 }
             }
         });

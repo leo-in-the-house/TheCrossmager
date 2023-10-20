@@ -17,7 +17,7 @@ public class TK extends AnimatorCard {
     public TK() {
         super(DATA);
 
-        Initialize(10, 0, 2);
+        Initialize(12, 0, 2);
         SetUpgrade(8, 0, 0);
 
         SetAffinity_Green(2, 0, 2);
@@ -32,18 +32,6 @@ public class TK extends AnimatorCard {
         GameUtilities.PlayVoiceSFX(name);
 
         GameActions.Bottom.DealDamage(this, m, AttackEffects.GUNSHOT);
-
-        int numEtherealInExhaust = 0;
-
-        for (AbstractCard card : player.exhaustPile.group) {
-            if (card.isEthereal) {
-                numEtherealInExhaust++;
-            }
-        }
-
-        if (numEtherealInExhaust >= 2) {
-            GameActions.Bottom.GainBlur(1);
-        }
 
         if (CheckSpecialCondition(false)) {
             for (AbstractCard card : player.drawPile.group) {

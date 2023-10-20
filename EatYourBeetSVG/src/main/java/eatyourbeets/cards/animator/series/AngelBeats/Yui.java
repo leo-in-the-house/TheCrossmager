@@ -15,7 +15,7 @@ import eatyourbeets.utilities.GameActions;
 public class Yui extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Yui.class)
-            .SetSkill(2, CardRarity.UNCOMMON, EYBCardTarget.None)
+            .SetSkill(2, CardRarity.RARE, EYBCardTarget.None)
             .SetSeriesFromClassPackage();
     static
     {
@@ -28,7 +28,7 @@ public class Yui extends AnimatorCard
 
         Initialize(0, 0, 1, 2);
 
-        SetAffinity_Yellow(1);
+        SetAffinity_Yellow(2);
         SetAffinity_White(1);
 
         SetExhaust(true);

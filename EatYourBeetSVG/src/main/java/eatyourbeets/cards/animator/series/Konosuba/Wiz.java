@@ -37,12 +37,9 @@ public class Wiz extends AnimatorCard
             boolean konosubaCardFetched = false;
 
             for (AbstractCard card : cards) {
-                if (card.costForTurn >= 0) {
-                    GameUtilities.ModifyCostForCombat(card, 0, false);
-                }
-
                 if (GameUtilities.IsSeries(card, CardSeries.Konosuba)) {
                     konosubaCardFetched = true;
+                    break;
                 }
             }
 

@@ -528,6 +528,12 @@
 			"DESCRIPTION": "If the enemy intends to attack, this card attacks a second time.",
 			"NAME": "Hideki Hinata"
 		},
+		"animator:Hisako":
+		{
+			"FLAVOR_TEXT": "'For a short while, we got to enjoy the youth we never had.  I think our time here will have been worth it if we were just supposed to have fun.  And isn't that what life's about?'",
+			"DESCRIPTION": "Can only be played if you have an {Ethereal} card in your hand.",
+			"NAME": "Hisako"
+		},
 		"animator:KanadeTachibana":
 		{
 			"FLAVOR_TEXT": "'Please let me believe in everything you believed in. Let me believe that life is great.'",
@@ -541,11 +547,24 @@
 			"DESCRIPTION": "Put !M! {Dazed} on top of your draw pile.",
 			"NAME": "Masami Iwasawa"
 		},
+		"animator:MiyukiIrie":
+		{
+			"FLAVOR_TEXT": "'No, this is the first time I've said 'Yeah' today...'",
+			"DESCRIPTION": "Gain !S! [Y]. || On Exhaust: Play this card.",
+			"NAME": "Miyuki Irie"
+		},
 		"animator:Noda":
 		{
 			"FLAVOR_TEXT": "'You jerk!  You're the one who insulted Yurippe and refused to enlist in the Battlefront!'",
 			"DESCRIPTION": "Exhaust this card unless you have at least 2 {Ethereal} cards in your exhaust pile.",
 			"NAME": "Noda"
+		},
+		"animator:ShioriSekine":
+		{
+			"FLAVOR_TEXT": "'...And that's how our band got to become known as 'Girls Dead Monster'!'",
+			"DESCRIPTION": "When Obtained: Also obtain {Miyuki Irie}. || At the start of your turn, Gain !M! [Block]. Then, {Seal} and {Exhaust} a random {Ethereal} card in your hand to gain an additional !M! [Block].",
+			"EXTENDED_DESCRIPTION": ["Start of Turn: Gain #b{0} #yBlock. Then, #ySeal and #yExhaust a random #yEthereal card in your hand to gain an additional #b{0} #yBlock."],
+			"NAME": "Shiori Sekine"
 		},
 		"animator:Strike_AngelBeats":
 		{
@@ -555,7 +574,7 @@
 		"animator:TK":
 		{
 			"FLAVOR_TEXT": "'Hey, yo! Check this out! It's a Moonwalk... It's a Moonwalk... Head-spin!'",
-			"DESCRIPTION": "If you have at least !M! {Ethereal} cards in your exhaust pile: Gain [~Blur]. || !A! [G]: All {Attacks} in your draw pile that cost 1 or more cost 1 less and gain {Ethereal}.",
+			"DESCRIPTION": "!A! [G]: All {Attacks} in your draw pile that cost 1 or more cost 1 less and gain {Ethereal}.",
 			"NAME": "TK"
 		},
 		"animator:Yui":
@@ -966,7 +985,7 @@
 		"animator:Add":
 		{
 			"FLAVOR_TEXT": "'Yes, Success! This powerful release of energy ignoring the laws of physics, that can't be taken by anyone!'",
-			"DESCRIPTION": "Seal and Exhaust !M! card(s) anywhere.  Obtain {Orb Core} based on its affinities: ** [R] -> {Fire Core} ** [G] -> {Frost Core} ** [B] -> {Chaos Core}. || Obtain {Dark Core}.",
+			"DESCRIPTION": "Exhaust !M! card(s) anywhere.  Obtain {Orb Core} based on its affinities: ** [R] -> {Fire Core} ** [G] -> {Frost Core} ** [B] -> {Chaos Core}. || Obtain {Dark Core}.",
 			"NAME": "Add"
 		},
 		"animator:Ain":
@@ -1852,7 +1871,7 @@
 		"animator:Dust":
 		{
 			"FLAVOR_TEXT": "'Where else can a guy party like a rockstar for cheap!  This is our chance to repay this town for all it's given us!'",
-			"DESCRIPTION": "Exhaust an {Uncommon} to add a random {Uncommon} {Power} to your draw pile.",
+			"DESCRIPTION": "Exhaust an {Uncommon} to add a random {Uncommon} {Power}{+} to your draw pile.",
 			"NAME": "Dust"
 		},
 		"animator:Eris":
@@ -1927,7 +1946,7 @@
 		"animator:Wiz":
 		{
 			"FLAVOR_TEXT": "'I maintain the magic barrier that protects the Devil King's castle, is all!  I've never hurt everyone, so I could barely be considered a general!  In fact, I'm so harmless, no one's even bothered to put a bounty on me!'",
-			"DESCRIPTION": "Fetch a card from your exhaust pile.  It costs 0 to play. || If it is not a {Konosuba} card, {Purge} this card.",
+			"DESCRIPTION": "Fetch a card from your exhaust pile.  || If it is not a {Konosuba} card, {Purge} this card.",
 			"NAME": "Wiz"
 		},
 		"animator:YunYun":

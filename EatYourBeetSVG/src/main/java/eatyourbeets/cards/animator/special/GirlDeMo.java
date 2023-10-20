@@ -17,7 +17,7 @@ import java.util.List;
 public class GirlDeMo extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(GirlDeMo.class)
-            .SetSkill(2, CardRarity.SPECIAL, EYBCardTarget.None)
+            .SetSkill(0, CardRarity.SPECIAL, EYBCardTarget.None)
             .SetSeries(CardSeries.AngelBeats);
 
     public GirlDeMo()
@@ -31,7 +31,7 @@ public class GirlDeMo extends AnimatorCard
         SetAffinity_White(1);
         SetAffinity_Black(1);
 
-        SetEthereal(true);
+        SetRetain(true);
         SetExhaust(true);
     }
 
