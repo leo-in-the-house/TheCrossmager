@@ -11,7 +11,7 @@ import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
 public class Iris extends AnimatorCard {
-    public static final EYBCardData DATA = Register(Iris.class).SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None)
+    public static final EYBCardData DATA = Register(Iris.class).SetSkill(2, CardRarity.UNCOMMON, EYBCardTarget.None)
             .SetSeriesFromClassPackage();
 
     public Iris() {

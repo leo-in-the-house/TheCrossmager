@@ -1762,8 +1762,8 @@
 		"animator:ManiwaHouou":
 		{
 			"FLAVOR_TEXT": "'If you listen to what I have to say, I will cut off my left arm for you.  You can have the arm of one of the 12 Maniwa Corps heads, and in your words, the effective leader, just for listening to what I have to say.'",
-			"DESCRIPTION": "The next !M! time(s) you {Seal} a card: Gain the {Threshold Bonus} of the card you sealed.",
-			"EXTENDED_DESCRIPTION": ["The next #b{0} times you #ySeal a card: Gain the #yThreshold #yBonus of the card you sealed."],
+			"DESCRIPTION": "The next !M! time(s) you {Seal} a non-{Star} card: Gain the {Threshold Bonus} of the card you sealed.",
+			"EXTENDED_DESCRIPTION": ["The next #b{0} times you #ySeal a non-#yStar card: Gain the #yThreshold #yBonus of the card you sealed."],
 			"NAME": "Houou Maniwa"
 		},
 		"animator:Nanami":
@@ -1831,7 +1831,7 @@
 		"animator:Darkness":
 		{
 			"FLAVOR_TEXT": "'Even though I wield a two-handed sword, please do not expect too much of me.  I am far too clumsy and my attacks rarely hit their mark.  However, I MAKE AN IMPENETRABLE WALL!'",
-			"DESCRIPTION": "Gain !M! [Plated Armor]. || The next time you take unblocked damage: Add 1 {Adrenaline}{+} to your draw pile.",
+			"DESCRIPTION": "Gain !M! [Plated Armor]. || The next !S! times you take unblocked damage: Add 1 {Adrenaline}{+} to your draw pile.",
 			"EXTENDED_DESCRIPTION": ["The next #b{0} times you take unblocked damage, add #b1 #yAdrenaline to your draw pile.", "The next #b{0} times you take unblocked damage, add #b1 #yupgraded #yAdrenaline to your draw pile."],
 			"NAME": "Darkness"
 		},
@@ -1845,8 +1845,8 @@
 		"animator:Destroyer":
 		{
 			"FLAVOR_TEXT": "'Oh my god!  The kingdom's fallen!  Everyone's dead!!!  ...This thing works as ordered though, so hey!  Nice job, me!' - Head Researcher",
-			"DESCRIPTION": "At the end of your next !M! turns: Deal !S! damage and apply a number of random effects. || Once per turn, pay [E]: Extend duration by 1 turn.",
-			"EXTENDED_DESCRIPTION": ["Pay 1 [E] to extend duration by #b1 turn. || At the end of each turn, deal #b{0} damage and apply a number of random effects."],
+			"DESCRIPTION": "At the end of your next !M! turns: Deal !S! damage to ALL enemies and apply a number of random effects. || Once per turn, pay [E]: Extend duration by 1 turn.",
+			"EXTENDED_DESCRIPTION": ["Pay 1 [E] to extend duration by #b1 turn. || At the end of each turn, deal #b{0} damage to ALL enemies and apply a number of random effects."],
 			"NAME": "Destroyer"
 		},
 		"animator:Dust":
@@ -1872,7 +1872,7 @@
 		"animator:Iris":
 		{
 			"FLAVOR_TEXT": "'Jeez, Kazuma, you really are a child!  Saying something like that just because you can't win...'",
-			"DESCRIPTION": "Channel !M! [Lightning]. || <LIM>. !A! [W][Y]: Enter <DS>.",
+			"DESCRIPTION": "Channel !M! [Lightning]. || <LIM>. !A! [L][Y]: Enter <DS>.",
 			"NAME": "Iris"
 		},
 		"animator:Kazuma":
@@ -1884,13 +1884,13 @@
 		"animator:Megumin":
 		{
 			"FLAVOR_TEXT": "'Explosion is the strongest spell, and the more powerful the spell, the more time it takes to conjure.  Keep that frog busy until I am done with my preparations.'",
-			"DESCRIPTION": "Add {Explosion} to your draw pile.  Upgrade it once for each time this card is upgraded, then upgrade it X times.",
+			"DESCRIPTION": "{~Unique}. || Add {Explosion} to your draw pile.  Upgrade it once for each time this card is upgraded, then upgrade it X times.",
 			"NAME": "Megumin"
 		},
 		"animator:Megumin_Explosion":
 		{
 			"FLAVOR_TEXT": "'From the boundary of righteousness, come, o-justice!  As an intangible distortion!  Dance!  Dance!  DANCE!  Transform my torrent of power into a destructive force, one without equal!  Return all of creation to cinders, and rise from the abyss!  Grant your humble servant the most powerful attack ever known!  Grant your humble servant the ultimate attack spell!  EXPLOSION!!!'",
-			"DESCRIPTION": "<LIM>.  Permanently upgrade {Megumin}.",
+			"DESCRIPTION": "{~Unique}. || <LIM>.  Permanently upgrade {Megumin}.",
 			"NAME": "Explosion"
 		},
 		"animator:Mitsurugi":

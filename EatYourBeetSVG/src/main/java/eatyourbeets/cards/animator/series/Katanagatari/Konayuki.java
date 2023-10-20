@@ -13,7 +13,7 @@ import eatyourbeets.utilities.GameUtilities;
 public class Konayuki extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Konayuki.class)
-            .SetSkill(1, CardRarity.COMMON, EYBCardTarget.None)
+            .SetSkill(2, CardRarity.COMMON, EYBCardTarget.None)
             
             .SetSeriesFromClassPackage();
 

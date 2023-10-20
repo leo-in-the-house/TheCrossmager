@@ -450,6 +450,11 @@ public class GameUtilities
         return card instanceof AnimatorCard ? ((AnimatorCard)card).series : null;
     }
 
+    public static boolean IsSeries(AbstractCard card, CardSeries series)
+    {
+        return card instanceof AnimatorCard ? ((AnimatorCard)card).series != null && ((AnimatorCard)card).series.ID == series.ID : false;
+    }
+
     public static boolean HasArtifact(AbstractCreature creature)
     {
         return creature.hasPower(ArtifactPower.POWER_ID) || creature.hasPower(TemporaryArtifactPower.POWER_ID);

@@ -64,7 +64,7 @@ public class Aqua extends AnimatorCard
 
             GameActions.Bottom.FetchFromPile(name, 1, player.discardPile)
                  .SetOptions(false, false)
-                 .SetFilter(card -> card instanceof AnimatorCard && ((AnimatorCard) card).series.equals(CardSeries.Konosuba));
+                 .SetFilter(card -> GameUtilities.IsSeries(card, CardSeries.Konosuba));
 
             GameActions.Bottom.Callback(() -> SetTransformed(true));
         }

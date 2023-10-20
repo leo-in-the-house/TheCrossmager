@@ -18,7 +18,7 @@ public class Chris extends AnimatorCard
             .SetSeriesFromClassPackage()
             .PostInitialize(data ->
             {
-                data.AddPopupAction(new EYBCardPopupActions.Konosuba_Eris(300, Ganyu.DATA));
+                data.AddPopupAction(new EYBCardPopupActions.Konosuba_Eris(300, Eris.DATA));
                 data.AddPreview(new Eris(), false);
             });;
 

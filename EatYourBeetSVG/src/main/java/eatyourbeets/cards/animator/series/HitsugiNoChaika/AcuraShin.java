@@ -49,7 +49,7 @@ public class AcuraShin extends AnimatorCard
     {
         public AcuraShinPower(AbstractCreature owner, int amount)
         {
-            super(owner, AcuraShin.DATA, PowerTriggerConditionType.Discard, 1);
+            super(owner, AcuraShin.DATA, PowerTriggerConditionType.None, 0);
 
             triggerCondition.SetUses(2, true, true);
 
@@ -81,7 +81,7 @@ public class AcuraShin extends AnimatorCard
         @Override
         public void OnUse(AbstractMonster m)
         {
-            GameActions.Bottom.Cycle(name, 1);
+            GameActions.Top.Cycle(name, 1).DrawInstantly(true);
         }
 
         @Override

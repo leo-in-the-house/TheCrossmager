@@ -27,7 +27,7 @@ public class Vanir extends AnimatorCard
         Initialize(15, 0, 3);
         SetUpgrade(3, 0, -1);
 
-        SetAffinity_Black(0, 0, 1);
+        SetAffinity_Black(1, 0, 1);
     }
 
     @Override

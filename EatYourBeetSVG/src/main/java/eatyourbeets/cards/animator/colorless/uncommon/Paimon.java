@@ -36,7 +36,7 @@ public class Paimon extends AnimatorCard {
             if (card instanceof AnimatorCard) {
                 AnimatorCard animatorCard = (AnimatorCard) card;
 
-                if (animatorCard.series != null && animatorCard.series.equals(CardSeries.GenshinImpact)) {
+                if (GameUtilities.IsSeries(card, CardSeries.GenshinImpact)) {
                     numGenshinImpactCards++;
                 }
             }

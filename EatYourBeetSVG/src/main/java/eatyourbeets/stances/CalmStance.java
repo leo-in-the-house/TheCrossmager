@@ -57,7 +57,7 @@ public class CalmStance extends EYBStance
     {
         super.onExitStance();
 
-        GameActions.Top.GainEnergy(ENERGY_GAIN_AMOUNT);
+        GameActions.Bottom.GainEnergy(ENERGY_GAIN_AMOUNT);
 
         this.stopIdleSfx();
     }

@@ -57,7 +57,7 @@ public class Eris extends AnimatorCard
     {
         AbstractCard last = GameUtilities.GetLastCardPlayed(this, true);
 
-        return last instanceof AnimatorCard && ((AnimatorCard) last).series.equals(CardSeries.Konosuba);
+        return GameUtilities.IsSeries(last, CardSeries.Konosuba);
     }
 
     public static class ErisPower extends AnimatorPower

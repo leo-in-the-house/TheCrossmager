@@ -41,7 +41,7 @@ public class Wiz extends AnimatorCard
                     GameUtilities.ModifyCostForCombat(card, 0, false);
                 }
 
-                if (card instanceof AnimatorCard && ((AnimatorCard) card).series.equals(CardSeries.Konosuba)) {
+                if (GameUtilities.IsSeries(card, CardSeries.Konosuba)) {
                     konosubaCardFetched = true;
                 }
             }

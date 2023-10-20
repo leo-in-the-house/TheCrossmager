@@ -64,12 +64,16 @@ public class ManiwaHouou extends AnimatorCard
         @Override
         public void OnAffinitySealed(EYBCard card, boolean manual)
         {
+            if (GameUtilities.HasAffinity(card, Affinity.Star)) {
+                return;
+            }
+
             for (EYBCardAffinity affinity : card.affinities.List) {
                 PowerHelper bonusPower = affinity.type.GetPower().GetThresholdBonusPower();
                 int affinityAmount = affinity.level;
 
                 if (bonusPower != null && affinityAmount > 0) {
-                    GameActions.Bottom.ApplyPower(bonusPower.Create(player, player, affinityAmount));
+                    GameActions.Bottom.StackPower(bonusPower.Create(player, player, affinityAmount));
                 }
             }
 

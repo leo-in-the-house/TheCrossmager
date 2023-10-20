@@ -54,10 +54,7 @@ public class DivinityStance extends EYBStance
         sfxId = CardCrawlGame.sound.playAndLoop(SFX.STANCE_LOOP_DIVINITY);
         AbstractDungeon.effectsQueue.add(new BorderFlashEffect(Color.GOLD, true));
 
-        if (TryApplyStance(STANCE_ID))
-        {
-            GameActions.Top.GainEnergy(ENERGY_GAIN_AMOUNT);
-        }
+        GameActions.Bottom.GainEnergy(ENERGY_GAIN_AMOUNT);
     }
 
     @Override

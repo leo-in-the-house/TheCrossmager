@@ -3,6 +3,7 @@ package eatyourbeets.cards.animator.series.Konosuba;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
+import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
@@ -11,7 +12,7 @@ import eatyourbeets.utilities.GameActions;
 public class Verdia extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Verdia.class)
-            .SetSkill(3, CardRarity.COMMON)
+            .SetSkill(3, CardRarity.COMMON, EYBCardTarget.None)
             
             .SetSeriesFromClassPackage();
 

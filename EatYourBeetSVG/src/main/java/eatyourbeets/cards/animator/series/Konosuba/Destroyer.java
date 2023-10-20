@@ -37,7 +37,7 @@ public class Destroyer extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 0, 3, 20);
+        Initialize(0, 0, 3, 30);
         SetCostUpgrade(-1);
 
         SetAffinity_Teal(2);
