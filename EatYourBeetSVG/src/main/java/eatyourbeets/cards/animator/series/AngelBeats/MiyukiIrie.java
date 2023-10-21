@@ -1,4 +1,4 @@
-package eatyourbeets.cards.animator.special;
+package eatyourbeets.cards.animator.series.AngelBeats;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -9,7 +9,7 @@ import eatyourbeets.utilities.GameUtilities;
 
 public class MiyukiIrie extends AnimatorCard {
     public static final EYBCardData DATA = Register(MiyukiIrie.class)
-            .SetSkill(1, CardRarity.SPECIAL, EYBCardTarget.None)
+            .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None)
             .SetSeries(CardSeries.AngelBeats);
 
     public MiyukiIrie() {

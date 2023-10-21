@@ -4,24 +4,17 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.animator.special.MiyukiIrie;
 import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
-import eatyourbeets.interfaces.listeners.OnAddToDeckListener;
 import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameEffects;
 import eatyourbeets.utilities.GameUtilities;
 
-public class ShioriSekine extends AnimatorCard implements OnAddToDeckListener {
+public class ShioriSekine extends AnimatorCard {
     public static final EYBCardData DATA = Register(ShioriSekine.class)
             .SetPower(1, CardRarity.UNCOMMON)
             .SetSeriesFromClassPackage();
-    static
-    {
-        DATA.AddPreview(new MiyukiIrie(), true);
-    }
 
     public ShioriSekine() {
         super(DATA);
@@ -32,14 +25,7 @@ public class ShioriSekine extends AnimatorCard implements OnAddToDeckListener {
         SetAffinity_Yellow(2);
 
         SetAutoplayed(true);
-    }
-
-    @Override
-    public boolean OnAddToDeck()
-    {
-        GameEffects.TopLevelQueue.ShowAndObtain(new MiyukiIrie());
-
-        return true;
+        SetEthereal(true);
     }
 
     @Override
@@ -66,7 +52,7 @@ public class ShioriSekine extends AnimatorCard implements OnAddToDeckListener {
             .AddCallback(cards -> {
                 for (AbstractCard card : cards)
                 {
-                    GameActions.Top.GainBlock(amount);
+                    GameActions.Top.GainTemporaryHP(amount);
                     GameActions.Top.SealAffinities(card, false);
                 }
             });

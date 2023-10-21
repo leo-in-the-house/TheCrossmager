@@ -72,6 +72,7 @@ import eatyourbeets.powers.affinity.animatorClassic.CorruptionPower;
 import eatyourbeets.powers.affinity.animatorClassic.ForcePower;
 import eatyourbeets.powers.affinity.animatorClassic.IntellectPower;
 import eatyourbeets.powers.animator.EarthenThornsPower;
+import eatyourbeets.powers.animator.EnchantedArmorPlayerPower;
 import eatyourbeets.powers.animator.SupportDamagePower;
 import eatyourbeets.powers.common.EnergizedPower;
 import eatyourbeets.powers.common.VigorPower;
@@ -666,6 +667,11 @@ public final class GameActions
         return StackPower(source, new DexterityPower(target, amount));
     }
 
+    public ApplyPower GainEnchantedArmor(int amount)
+    {
+        return StackPower(new EnchantedArmorPlayerPower(player, amount));
+    }
+
     public GainEnergyAction GainEnergy(int amount)
     {
         return Add(new GainEnergyAction(amount));
@@ -807,6 +813,11 @@ public final class GameActions
     public ApplyPower GainTemporaryArtifact(int amount)
     {
         return StackPower(new TemporaryArtifactPower(player, amount));
+    }
+
+    public ApplyPower GainTemporaryEnchantedArmor(int amount)
+    {
+        return StackPower(new TemporaryEnchantedArmorPower(player, amount));
     }
 
     public GainTemporaryHP GainTemporaryHP(int amount)

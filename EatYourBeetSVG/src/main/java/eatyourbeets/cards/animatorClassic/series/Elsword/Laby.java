@@ -3,13 +3,11 @@ package eatyourbeets.cards.animatorClassic.series.Elsword;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorClassicCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.cards.base.attributes.TempHPAttribute;
 import eatyourbeets.monsters.EnemyIntent;
-import eatyourbeets.powers.animator.EnchantedArmorPower;
 import eatyourbeets.powers.animatorClassic.LabyPower;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
@@ -47,7 +45,7 @@ public class Laby extends AnimatorClassicCard
     {
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainTemporaryHP(magicNumber);
-        GameActions.Bottom.StackPower(new EnchantedArmorPower(p, secondaryValue));
+        GameActions.Bottom.GainEnchantedArmor(secondaryValue);
         GameActions.Bottom.StackPower(new LabyPower(p, 1, upgraded));
     }
 }

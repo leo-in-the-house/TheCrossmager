@@ -531,7 +531,7 @@
 		"animator:Hisako":
 		{
 			"FLAVOR_TEXT": "'For a short while, we got to enjoy the youth we never had.  I think our time here will have been worth it if we were just supposed to have fun.  And isn't that what life's about?'",
-			"DESCRIPTION": "Can only be played if you have an {Ethereal} card in your hand.",
+			"DESCRIPTION": "Can only be played if you have another {Ethereal} card in your hand.",
 			"NAME": "Hisako"
 		},
 		"animator:KanadeTachibana":
@@ -562,8 +562,8 @@
 		"animator:ShioriSekine":
 		{
 			"FLAVOR_TEXT": "'...And that's how our band got to become known as 'Girls Dead Monster'!'",
-			"DESCRIPTION": "When Obtained: Also obtain {Miyuki Irie}. || At the start of your turn, Gain !M! [Block]. Then, {Seal} and {Exhaust} a random {Ethereal} card in your hand to gain an additional !M! [Block].",
-			"EXTENDED_DESCRIPTION": ["Start of Turn: Gain #b{0} #yBlock. Then, #ySeal and #yExhaust a random #yEthereal card in your hand to gain an additional #b{0} #yBlock."],
+			"DESCRIPTION": "At the start of your turn, Gain !M! [Block]. Then, {Seal} and {Exhaust} a random {Ethereal} card in your hand to gain !M! [THP].",
+			"EXTENDED_DESCRIPTION": ["Start of Turn: Gain #b{0} #yBlock. Then, #ySeal and #yExhaust a random #yEthereal card in your hand to gain #b{0} #yTemp. #yHP."],
 			"NAME": "Shiori Sekine"
 		},
 		"animator:Strike_AngelBeats":
@@ -1972,13 +1972,12 @@
 		},
 		"animator:IsuzuTonan":
 		{
-			"DESCRIPTION": "For !M! turn(s): Whenever an {Attack} Synergizes, play a random lower cost {Attack} from your draw pile.",
-			"EXTENDED_DESCRIPTION": ["For #b{0} turn(s), whenever an #yAttack #ySynergizes: Play a random lower cost #yAttack from your draw pile."],
+			"DESCRIPTION": "Gain [E] for each card in your hand.",
 			"NAME": "Isuzu Tonan"
 		},
 		"animator:Krusty":
 		{
-			"DESCRIPTION": "When drawn: {Autoplay}. || Increase this card [R] scaling by !M!.",
+			"DESCRIPTION": "Double this card’s attack.",
 			"NAME": "Krusty"
 		},
 		"animator:Marielle":
@@ -1988,18 +1987,18 @@
 		},
 		"animator:HousakiMinori":
 		{
-			"DESCRIPTION": "Cooldown !S!: Gain !M! [Enchanted Armor]. || <SLM>. Synergy or Discard: Shuffle this card into your draw pile.",
+			"DESCRIPTION": "Gain !M! Temp. [Enchanted Armor].",
 			"NAME": "Minori Housaki"
 		},
 		"animator:HousakiTohya":
 		{
-			"DESCRIPTION": " Apply !M! [Vulnerable]. || Draw {Minori Housaki}. || !A! [W]: Gain [E]",
+			"DESCRIPTION": "Apply !M! [Vulnerable].",
 			"NAME": "Tohya Housaki"
 		},
 		"animator:Naotsugu":
 		{
-			"DESCRIPTION": "Play the lowest [Block] card with [Block] lower than unblocked damage dealt. || [R] Stance: Play ALL eligible cards instead.",
-			"NAME": "Naotsugu"
+			"DESCRIPTION": "Draw the bottom card of your draw pile.",
+			"NAME": "Naotsugu Hasegawa"
 		},
 		"animator:Nyanta":
 		{
@@ -2018,9 +2017,8 @@
 		},
 		"animator:Serara":
 		{
-			"DESCRIPTION": "If an enemy intends to attack: Gain [R] and give a random card +2 [R] scaling (does not stack).",
-			"NAME": "Serara",
-			"UPGRADE_DESCRIPTION": "If an enemy intends to attack: Gain [R] and give a card +2 [R] scaling (does not stack)."
+			"DESCRIPTION": "Exhaust !M! random Hindrance(s) in your draw pile.",
+			"NAME": "Serara"
 		},
 		"animator:Shiroe":
 		{

@@ -1,4 +1,4 @@
-package eatyourbeets.cards_beta.LogHorizon;
+package eatyourbeets.cards.animator.series.LogHorizon;
 
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;

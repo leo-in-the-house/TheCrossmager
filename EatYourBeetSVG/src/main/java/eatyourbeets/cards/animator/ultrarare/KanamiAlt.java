@@ -1,4 +1,4 @@
-package eatyourbeets.cards_beta.special;
+package eatyourbeets.cards.animator.ultrarare;
 
 import com.badlogic.gdx.graphics.Color;
 import eatyourbeets.cards.base.*;

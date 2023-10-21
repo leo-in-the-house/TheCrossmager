@@ -1,4 +1,4 @@
-package eatyourbeets.cards_beta.special;
+package eatyourbeets.cards.animator.ultrarare;
 
 import eatyourbeets.effects.AttackEffects;
 import com.megacrit.cardcrawl.cards.AbstractCard;

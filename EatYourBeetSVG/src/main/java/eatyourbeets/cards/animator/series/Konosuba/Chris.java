@@ -2,7 +2,6 @@ package eatyourbeets.cards.animator.series.Konosuba;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.animator.special.Ganyu;
 import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
@@ -26,7 +25,7 @@ public class Chris extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(3, 0, 5, 0);
+        Initialize(3, 0, 3, 0);
         SetUpgrade(3, 0, 0, 0);
 
         SetAffinity_Yellow(1);

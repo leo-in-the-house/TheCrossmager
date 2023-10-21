@@ -1,4 +1,4 @@
-package eatyourbeets.cards_beta.LogHorizon;
+package eatyourbeets.cards.animator.series.LogHorizon;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;

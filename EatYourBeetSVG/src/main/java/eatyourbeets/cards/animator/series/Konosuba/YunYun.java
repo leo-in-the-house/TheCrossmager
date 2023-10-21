@@ -12,7 +12,7 @@ import eatyourbeets.utilities.GameUtilities;
 public class YunYun extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(YunYun.class)
-            .SetAttack(3, CardRarity.COMMON, EYBAttackType.Elemental, EYBCardTarget.ALL)
+            .SetAttack(2, CardRarity.COMMON, EYBAttackType.Elemental, EYBCardTarget.ALL)
             .SetSeriesFromClassPackage();
 
     public YunYun()
@@ -54,7 +54,7 @@ public class YunYun extends AnimatorCard
             int konosubaCards = 0;
             for (AbstractCard c : player.hand.group)
             {
-                if (GameUtilities.IsSeries(c, CardSeries.Konosuba))
+                if (GameUtilities.IsSeries(c, CardSeries.Konosuba) && !c.uuid.equals(this.uuid))
                 {
                     konosubaCards += 1;
                 }

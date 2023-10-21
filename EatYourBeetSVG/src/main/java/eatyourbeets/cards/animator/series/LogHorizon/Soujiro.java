@@ -1,10 +1,9 @@
-package eatyourbeets.cards_beta.LogHorizon;
+package eatyourbeets.cards.animator.series.LogHorizon;
 
 import eatyourbeets.cards.base.*;
 import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.effects.AttackEffects;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;

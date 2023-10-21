@@ -470,7 +470,7 @@
 	},
 	"~Delayed":
 	{
-		"DESCRIPTION": "The first time this is shuffled into your draw pile, place it on the bottom half.",
+		"DESCRIPTION": "When this is shuffled into your draw pile, place it on the bottom half.",
 		"NAMES": ["~delayed"],
 		"PROPER_NAME": "Delayed"
 	},

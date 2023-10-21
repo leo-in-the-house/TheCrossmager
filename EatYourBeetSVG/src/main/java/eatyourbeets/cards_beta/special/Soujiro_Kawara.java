@@ -2,7 +2,7 @@ package eatyourbeets.cards_beta.special;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards_beta.LogHorizon.Soujiro;
+import eatyourbeets.cards.animator.series.LogHorizon.Soujiro;
 import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
@@ -10,7 +10,6 @@ import eatyourbeets.cards.base.EYBAttackType;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class Soujiro_Kawara extends AnimatorCard
 {

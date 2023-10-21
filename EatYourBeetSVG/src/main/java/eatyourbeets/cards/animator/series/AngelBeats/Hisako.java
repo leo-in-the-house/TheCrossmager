@@ -18,10 +18,12 @@ public class Hisako extends AnimatorCard {
     public Hisako() {
         super(DATA);
 
-        Initialize(0, 4, 0);
+        Initialize(0, 5, 0);
         SetUpgrade(0, 3, 0);
 
         SetAffinity_Yellow(2);
+
+        SetEthereal(true);
     }
 
 
@@ -33,7 +35,7 @@ public class Hisako extends AnimatorCard {
             boolean hasEthereal = false;
 
             for (AbstractCard card : player.hand.group) {
-                if (card.isEthereal) {
+                if (card.isEthereal && !card.uuid.equals(this.uuid)) {
                     hasEthereal = true;
                     break;
                 }

@@ -1,4 +1,4 @@
-package eatyourbeets.cards_beta.LogHorizon;
+package eatyourbeets.cards.animator.series.LogHorizon;
 
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.effects.AttackEffects;

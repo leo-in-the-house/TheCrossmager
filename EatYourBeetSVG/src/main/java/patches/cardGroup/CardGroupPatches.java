@@ -97,7 +97,6 @@ public class CardGroupPatches
             final AbstractCard c = cards.get(i);
             if (c.hasTag(GR.Enums.CardTags.DELAYED))
             {
-                c.tags.remove(GR.Enums.CardTags.DELAYED);
                 c.isInnate = false;
                 delayedCards.add(c);
                 cards.remove(i);

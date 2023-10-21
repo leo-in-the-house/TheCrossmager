@@ -4,7 +4,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
@@ -12,8 +11,8 @@ import eatyourbeets.cards.base.attributes.TempHPAttribute;
 import eatyourbeets.effects.SFX;
 import eatyourbeets.monsters.EnemyIntent;
 import eatyourbeets.powers.AnimatorPower;
-import eatyourbeets.powers.animator.EnchantedArmorPlayerPower;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.TargetHelper;
 
 public class Laby extends AnimatorCard
@@ -65,7 +64,7 @@ public class Laby extends AnimatorCard
     {
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainTemporaryHP(magicNumber);
-        GameActions.Bottom.StackPower(new EnchantedArmorPlayerPower(p, secondaryValue));
+        GameActions.Bottom.GainEnchantedArmor(secondaryValue);
         GameActions.Bottom.StackPower(new LabyPower(p, 1));
     }
 

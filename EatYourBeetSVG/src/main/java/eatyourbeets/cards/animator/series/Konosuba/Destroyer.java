@@ -179,7 +179,7 @@ public class Destroyer extends AnimatorCard
                     GameActions.Top.DrawNextTurn(2);
                     break;
                 case 18:
-                    GameActions.Top.GainDuplication(1);
+                    GameActions.Top.GainMalleable(2);
                     break;
                 case 19:
                     GameActions.Top.GainFlameBarrier(4);

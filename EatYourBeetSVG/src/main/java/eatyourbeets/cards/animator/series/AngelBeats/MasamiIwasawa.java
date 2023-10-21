@@ -21,10 +21,12 @@ public class MasamiIwasawa extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 20, 2, 0);
+        Initialize(0, 21, 2, 0);
         SetUpgrade(0, 8, 0, 0);
 
         SetAffinity_Yellow(2);
+
+        SetEthereal(true);
     }
 
     @Override
