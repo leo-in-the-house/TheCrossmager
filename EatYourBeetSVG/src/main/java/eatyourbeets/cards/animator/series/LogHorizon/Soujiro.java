@@ -1,19 +1,21 @@
 package eatyourbeets.cards.animator.series.LogHorizon;
 
-import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.effects.AttackEffects;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards_beta.special.Soujiro_Hisako;
-import eatyourbeets.cards_beta.special.Soujiro_Isami;
-import eatyourbeets.cards_beta.special.Soujiro_Kawara;
-import eatyourbeets.cards_beta.special.Soujiro_Nazuna;
-import eatyourbeets.powers.CombatStats;
+import eatyourbeets.cards.animator.special.Soujiro_Isami;
+import eatyourbeets.cards.animator.special.Soujiro_Kawara;
+import eatyourbeets.cards.animator.special.Soujiro_Kurinon;
+import eatyourbeets.cards.animator.special.Soujiro_Nazuna;
+import eatyourbeets.cards.base.AnimatorCard;
+import eatyourbeets.cards.base.CardUseInfo;
+import eatyourbeets.cards.base.EYBAttackType;
+import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.cards.base.attributes.AbstractAttribute;
+import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 import java.util.ArrayList;
 
@@ -21,7 +23,6 @@ public class Soujiro extends AnimatorCard
 {
     private static final ArrayList<AbstractCard> cardPool = new ArrayList<>();
     private static final CardGroup cardChoices = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-    private static final CardGroup upgradedCardChoices = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
 
     public static final EYBCardData DATA = Register(Soujiro.class)
             .SetAttack(3, CardRarity.RARE, EYBAttackType.Normal)
@@ -30,7 +31,7 @@ public class Soujiro extends AnimatorCard
             {
                 cardPool.add(new Soujiro_Isami());
                 cardPool.add(new Soujiro_Kawara());
-                cardPool.add(new Soujiro_Hisako());
+                cardPool.add(new Soujiro_Kurinon());
                 cardPool.add(new Soujiro_Nazuna());
                 for (AbstractCard c : cardPool)
                 {
@@ -42,61 +43,51 @@ public class Soujiro extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(10, 0, 4);
-        SetUpgrade(2, 0, 1);
+        Initialize(8, 0, 2);
+        SetUpgrade(0, 0, 0);
 
         SetAffinity_Green(2, 0, 2);
+        SetAffinity_Red(1);
+
+        SetDelayed(true);
+        SetRetain(true);
     }
 
     @Override
-    public void triggerWhenDrawn()
+    public AbstractAttribute GetDamageInfo()
     {
-        super.triggerWhenDrawn();
+        return super.GetDamageInfo().AddMultiplier(magicNumber);
+    }
 
-        if (CombatStats.TryActivateLimited(cardID))
-        {
-            cardChoices.clear();
-            upgradedCardChoices.clear();
-            for (AbstractCard c : cardPool)
-            {
-                cardChoices.group.add(c.makeCopy());
-                c = c.makeCopy();
-                c.upgrade();
-                upgradedCardChoices.group.add(c);
+    @Override
+    public boolean cardPlayable(AbstractMonster m) {
+        if (super.cardPlayable(m)) {
+            return player.drawPile.size() == 0;
+        }
+
+        return false;
+    }
+
+    @Override
+    public void triggerWhenCreated(boolean startOfBattle)
+    {
+        super.triggerWhenCreated(startOfBattle);
+
+        if (startOfBattle) {
+            for (AbstractCard card : cardPool) {
+                GameActions.Bottom.MakeCardInDrawPile(card.makeCopy())
+                .SetUpgrade(upgraded, true);
             }
         }
-
-        if (cardChoices.size() > 0)
-        {
-            GameActions.Last.Callback(() ->
-            {
-                GameActions.Bottom.Flash(this)
-                .SetDuration(Settings.ACTION_DUR_MED, true);
-                GameActions.Bottom.SelectFromPile(name, 1, upgraded ? upgradedCardChoices : cardChoices)
-                .SetOptions(false, false)
-                .AddCallback(cards ->
-                {
-                    for (AbstractCard c : cards)
-                    {
-                        GameActions.Bottom.MakeCardInHand(c);
-                        upgradedCardChoices.removeCard(c.cardID);
-                        cardChoices.removeCard(c.cardID);
-                    }
-                });
-            });
-        }
-    }
-
-    @Override
-    protected float GetInitialDamage()
-    {
-        return super.GetInitialDamage() + (magicNumber * GetPlayerAffinity(Affinity.General));
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_HEAVY);
+
+        for (int i=0; i<magicNumber; i++) {
+            GameActions.Bottom.DealDamageToAll(this, AttackEffects.SLASH_HEAVY);
+        }
     }
 }

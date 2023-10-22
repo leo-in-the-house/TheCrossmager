@@ -1,85 +1,70 @@
 package eatyourbeets.cards.animator.series.LogHorizon;
 
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.orbs.Dark;
 import com.megacrit.cardcrawl.orbs.Frost;
 import com.megacrit.cardcrawl.orbs.Lightning;
+import com.megacrit.cardcrawl.orbs.Plasma;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.cards.effects.GenericEffects.GenericEffect_ChannelOrb;
-import eatyourbeets.orbs.animator.Fire;
-import eatyourbeets.powers.CombatStats;
-import eatyourbeets.resources.GR;
+import eatyourbeets.effects.AttackEffects;
+import eatyourbeets.orbs.animator.*;
 import eatyourbeets.utilities.GameActions;
-
-import java.util.HashSet;
+import eatyourbeets.utilities.GameUtilities;
+import eatyourbeets.utilities.RandomizedList;
 
 public class RundelhausCode extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(RundelhausCode.class)
-            .SetAttack(2, CardRarity.UNCOMMON, EYBAttackType.Elemental, EYBCardTarget.Normal)
+            .SetAttack(1, CardRarity.UNCOMMON, EYBAttackType.Elemental, EYBCardTarget.ALL)
             .SetSeries(CardSeries.LogHorizon);
-
-    private static final HashSet<AbstractCard> buffs = new HashSet<>();
-    private static final CardEffectChoice choices = new CardEffectChoice();
 
     public RundelhausCode()
     {
         super(DATA);
 
-        Initialize(7, 0, 1);
-        SetUpgrade(0, 0, 1);
+        Initialize(11, 0, 3);
+        SetUpgrade(8, 0);
 
-        SetAffinity_Blue(2, 0, 1);
-        SetAffinity_White(1);
+        SetAffinity_Red(1, 0, 1);
+        SetAffinity_Blue(1, 0, 1);
 
-        SetAffinityRequirement(Affinity.General, 3);
+        SetDelayed(true);
+        SetExhaust(true);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.DealDamage(this, m, AttackEffects.LIGHTNING);
-        GameActions.Bottom.GainBlue(1);
-    }
 
-    @Override
-    public void OnLateUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
-    {
-        if (!CombatStats.GetCombatData(cardID + "_buffs", false))
-        {
-            CombatStats.SetCombatData(cardID + "_buffs", true);
-            buffs.clear();
-        }
+        GameActions.Bottom.DealDamageToAll(this, AttackEffects.LIGHTNING);
 
-        GameActions.Bottom.SelectFromHand(name, magicNumber, true)
-        .SetOptions(true, false, true)
-        .SetMessage(GR.Common.Strings.HandSelection.GenericBuff)
-        .SetFilter(c -> c instanceof EYBCard && !GameUtilities.IsHindrance(c) && !buffs.contains(c) && (c.baseDamage >= 0 || c.baseBlock >= 0))
-        .AddCallback(cards ->
-        {
-            for (AbstractCard c : cards)
-            {
-                ((EYBCard)c).AddScaling(Affinity.Blue, 2);
-                buffs.add(c);
-                c.flash();
-            }
-        });
+        int numEmptyOrbs = GameUtilities.GetEmptyOrbCount();
 
-        if (CheckAffinity(Affinity.General))
-        {
+        for (int i=0; i<numEmptyOrbs; i++) {
+            CardEffectChoice choices = new CardEffectChoice();
+            RandomizedList<GenericEffect_ChannelOrb> potentialChoices = new RandomizedList<>();
+            potentialChoices.Add(new GenericEffect_ChannelOrb(new Fire()));
+            potentialChoices.Add(new GenericEffect_ChannelOrb(new Lightning()));
+            potentialChoices.Add(new GenericEffect_ChannelOrb(new Frost()));
+            potentialChoices.Add(new GenericEffect_ChannelOrb(new Aether()));
+            potentialChoices.Add(new GenericEffect_ChannelOrb(new Earth()));
+            potentialChoices.Add(new GenericEffect_ChannelOrb(new Water()));
+            potentialChoices.Add(new GenericEffect_ChannelOrb(new Dark()));
+            potentialChoices.Add(new GenericEffect_ChannelOrb(new Chaos()));
+            potentialChoices.Add(new GenericEffect_ChannelOrb(new Plasma()));
+
             if (choices.TryInitialize(this))
             {
-                choices.AddEffect(new GenericEffect_ChannelOrb(new Fire()));
-                choices.AddEffect(new GenericEffect_ChannelOrb(new Lightning()));
-                choices.AddEffect(new GenericEffect_ChannelOrb(new Frost()));
+                for (int j=0; j<magicNumber; j++) {
+                    choices.AddEffect(potentialChoices.Retrieve(rng, true));
+                }
             }
 
             choices.Select(GameActions.Bottom, 1, null)
-            .CancellableFromPlayer(true);
+                    .CancellableFromPlayer(true);
         }
     }
 }

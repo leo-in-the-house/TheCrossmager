@@ -1,16 +1,16 @@
 package eatyourbeets.cards.animator.series.LogHorizon;
 
-import eatyourbeets.cards.base.CardUseInfo;
-import eatyourbeets.effects.AttackEffects;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.stances.NeutralStance;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
+import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBAttackType;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
+import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.TargetHelper;
 
 public class Nyanta extends AnimatorCard
@@ -23,12 +23,10 @@ public class Nyanta extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(2, 0, 3);
+        Initialize(3, 0, 1, 1);
+        SetUpgrade(2, 0, 0, 1);
 
         SetAffinity_Green(2, 0, 1);
-        SetAffinity_White(1);
-
-        SetRetain(true);
     }
 
     @Override
@@ -38,28 +36,27 @@ public class Nyanta extends AnimatorCard
     }
 
     @Override
-    protected void OnUpgrade()
-    {
-        SetHaste(true);
-    }
-
-    @Override
     protected void Refresh(AbstractMonster enemy)
     {
         super.Refresh(enemy);
 
-        if (player.stance != null && !NeutralStance.STANCE_ID.equals(player.stance.ID))
+        int numDelayedCards = 0;
+
+        for (AbstractCard card : player.drawPile.group)
         {
-            GameUtilities.IncreaseMagicNumber(this, 1, true);
+            if (GameUtilities.IsDelayed(card)) {
+                numDelayedCards += secondaryValue;
+            }
         }
+
+        GameUtilities.IncreaseMagicNumber(this, 1+numDelayedCards, true);
+
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.GainGreen(1, upgraded);
-
         for (int i = 0; i < magicNumber; i++)
         {
             GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_DIAGONAL)

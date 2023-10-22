@@ -1,20 +1,19 @@
 package eatyourbeets.cards.animator.ultrarare;
 
 import com.badlogic.gdx.graphics.Color;
-import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.effects.AttackEffects;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.vfx.combat.ViolentAttackEffect;
+import eatyourbeets.cards.base.*;
+import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.interfaces.markers.Hidden;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class KanamiAlt extends AnimatorCard_UltraRare implements Hidden
 {
     public static final EYBCardData DATA = Register(KanamiAlt.class)
-            .SetAttack(2, CardRarity.SPECIAL, EYBAttackType.Normal)
+            .SetAttack(1, CardRarity.SPECIAL, EYBAttackType.Normal, EYBCardTarget.ALL)
             .SetColor(CardColor.COLORLESS)
             .SetSeries(CardSeries.LogHorizon);
 
@@ -22,57 +21,22 @@ public class KanamiAlt extends AnimatorCard_UltraRare implements Hidden
     {
         super(DATA);
 
-        Initialize(20, 2, 10);
-        SetUpgrade(7, 0, 0);
+        Initialize(999, 0);
+        SetCostUpgrade(-1);
 
-        SetAffinity_Red(2, 0, 2);
-        SetAffinity_Green(1);
-        SetAffinity_White(1);
-    }
+        SetAffinity_Star(1);
 
-    @Override
-    protected float ModifyBlock(AbstractMonster enemy, float amount)
-    {
-        if (enemy != null && enemy.hasPower(VulnerablePower.POWER_ID))
-        {
-            amount += magicNumber;
-        }
-
-        return super.ModifyBlock(enemy, amount);
-    }
-
-    @Override
-    protected float ModifyDamage(AbstractMonster enemy, float amount)
-    {
-        if (enemy != null)
-        {
-            if (enemy.type == AbstractMonster.EnemyType.ELITE)
-            {
-                amount *= 2;
-            }
-            if (enemy.type == AbstractMonster.EnemyType.BOSS)
-            {
-                amount *= 3;
-            }
-        }
-
-        return super.ModifyDamage(enemy, amount);
+        SetDelayed(true);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.VFX(new ViolentAttackEffect(m.hb.cX, m.hb.cY, Color.RED.cpy()));
-        GameActions.Bottom.DealDamage(this, m, AttackEffects.NONE)
-        .AddCallback(block, (amount, __) ->
-        {
-            if (amount > 0)
-            {
-                GameActions.Bottom.GainRed(1);
-                GameActions.Bottom.GainGreen(1);
-                GameActions.Bottom.GainBlock(amount);
-            }
-        });
+
+        for (AbstractMonster monster : GameUtilities.GetEnemies(true)) {
+            GameActions.Bottom.VFX(new ViolentAttackEffect(monster.hb.cX, monster.hb.cY, Color.RED.cpy()));
+            GameActions.Bottom.DealDamage(this, monster, AttackEffects.NONE);
+        }
     }
 }

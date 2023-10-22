@@ -1560,6 +1560,15 @@ public class GameUtilities
         return card.type == AbstractCard.CardType.CURSE || card.type == AbstractCard.CardType.STATUS;
     }
 
+    public static boolean IsDelayed(AbstractCard card)
+    {
+        if (card instanceof EYBCard) {
+            return card.hasTag(EYBCard.DELAYED);
+        }
+
+        return false;
+    }
+
     public static boolean IsPlayable(AbstractCard card)
     {
         final boolean temp = card.freeToPlayOnce;

@@ -1,70 +1,63 @@
 package eatyourbeets.cards.animator.series.LogHorizon;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.TargetHelper;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Shiroe extends AnimatorCard
 {
-    public static final int MINIMUM_AFFINITY = 3;
     public static final EYBCardData DATA = Register(Shiroe.class)
-            .SetSkill(0, CardRarity.RARE, EYBCardTarget.None)
+            .SetSkill(1, CardRarity.RARE, EYBCardTarget.None)
             .SetSeriesFromClassPackage();
 
     public Shiroe()
     {
         super(DATA);
 
-        Initialize(0, 0, 2, 2);
-        SetUpgrade(0, 0, 0, 1);
+        Initialize(0, 0);
 
-        SetAffinity_Blue(2);
         SetAffinity_White(1);
+        SetAffinity_Pink(1);
 
         SetExhaust(true);
+    }
+
+    @Override
+    protected void OnUpgrade()
+    {
+        super.OnUpgrade();
+
+        SetInnate(true);
+        SetHaste(true);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.Cycle(name, magicNumber);
-        GameActions.Bottom.StackPower(new ShiroePower(p, secondaryValue));
+
+        GameActions.Bottom.Callback(() -> {
+            UpdateAttacksAndSkills(player.drawPile);
+            UpdateAttacksAndSkills(player.discardPile);
+            UpdateAttacksAndSkills(player.hand);
+            GameActions.Last.Callback(() -> {
+               player.drawPile.shuffle(rng);
+            });
+        });
     }
 
-    public static class ShiroePower extends AnimatorPower
-    {
-        public ShiroePower(AbstractPlayer owner, int amount)
-        {
-            super(owner, Shiroe.DATA);
-
-            this.amount = amount;
-
-            updateDescription();
-        }
-
-        @Override
-        public void onAfterCardPlayed(AbstractCard card)
-        {
-            super.onAfterCardPlayed(card);
-
-            if (card instanceof EYBCard && ((EYBCard) card).GetPlayerAffinity(Affinity.General) >= MINIMUM_AFFINITY)
-            {
-                GameActions.Bottom.ApplyConstricted(TargetHelper.Enemies(), amount);
+    private void UpdateAttacksAndSkills(CardGroup group) {
+        for (AbstractCard card : group.group) {
+            if (card.type == CardType.ATTACK && card instanceof EYBCard) {
+                ((EYBCard) card).SetDelayed(true);
             }
-        }
-
-        @Override
-        public void atEndOfTurn(boolean isPlayer)
-        {
-            super.atEndOfTurn(isPlayer);
-
-            GameActions.Bottom.RemovePower(owner, owner, this);
+            else if (card.type == CardType.SKILL) {
+                GameUtilities.Retain(card);
+            }
         }
     }
 }

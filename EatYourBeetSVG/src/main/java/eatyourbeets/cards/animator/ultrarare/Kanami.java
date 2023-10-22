@@ -1,22 +1,21 @@
 package eatyourbeets.cards.animator.ultrarare;
 
-import eatyourbeets.effects.AttackEffects;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.WhirlwindEffect;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.CardSelection;
+import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Kanami extends AnimatorCard_UltraRare
 {
     public static final EYBCardData DATA = Register(Kanami.class)
-            .SetAttack(2, CardRarity.SPECIAL, EYBAttackType.Normal, EYBCardTarget.ALL)
+            .SetAttack(1, CardRarity.SPECIAL, EYBAttackType.Normal, EYBCardTarget.ALL)
             .SetColor(CardColor.COLORLESS)
             .SetSeries(CardSeries.LogHorizon)
             .PostInitialize(data -> data.AddPreview(new KanamiAlt(), true));
@@ -25,15 +24,14 @@ public class Kanami extends AnimatorCard_UltraRare
     {
         super(DATA);
 
-        Initialize(20, 0, 2);
-        SetUpgrade(7, 0, 0);
+        Initialize(20, 0);
+        SetUpgrade(4, 0);
 
-        SetAffinity_Red(1);
+        SetAffinity_Red(2, 0, 2);
         SetAffinity_Green(2, 0, 2);
-        SetAffinity_White(1);
 
-        SetCooldown(2, 0, this::OnCooldownCompleted);
-        SetHaste(true);
+        SetCooldown(1, 0, this::OnCooldownCompleted);
+        SetDelayed(true);
     }
 
     @Override
@@ -49,14 +47,15 @@ public class Kanami extends AnimatorCard_UltraRare
             {
                 GameActions.Top.VFX(new WhirlwindEffect(), 0);
                 GameEffects.List.Add(new WhirlwindEffect());
-                GameActions.Bottom.ApplyVulnerable(player, c, magicNumber)
-                .ShowEffect(false, true);
             }
         });
-        GameActions.Last.MoveCard(this, p.drawPile)
-        .ShowEffect(true, true)
-        .SetDestination(CardSelection.Random)
-        .AddCallback(() -> cooldown.ProgressCooldownAndTrigger(null));
+
+        GameActions.Bottom.ExhaustFromPile(name, player.discardPile.size(), player.discardPile)
+           .SetOptions(false, true);
+
+        GameActions.Last.Callback(() -> {
+            cooldown.ProgressCooldownAndTrigger(null);
+        });
     }
 
     private void OnCooldownCompleted(AbstractMonster m)

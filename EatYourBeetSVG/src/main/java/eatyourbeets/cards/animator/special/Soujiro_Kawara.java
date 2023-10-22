@@ -1,42 +1,27 @@
-package eatyourbeets.cards_beta.special;
+package eatyourbeets.cards.animator.special;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.series.LogHorizon.Soujiro;
-import eatyourbeets.cards.base.AnimatorCard;
+import eatyourbeets.cards.base.*;
 import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.cards.base.CardUseInfo;
-import eatyourbeets.cards.base.EYBAttackType;
-import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
 
 public class Soujiro_Kawara extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Soujiro_Kawara.class)
-            .SetAttack(0, CardRarity.SPECIAL, EYBAttackType.Normal)
+            .SetAttack(1, CardRarity.SPECIAL, EYBAttackType.Normal)
             .SetSeries(Soujiro.DATA.Series);
 
     public Soujiro_Kawara()
     {
         super(DATA);
 
-        Initialize(5, 2, 3);
-        SetUpgrade(2, 0, 1);
+        Initialize(3, 3, 2);
+        SetUpgrade(2, 2, 0);
 
-        SetAffinity_Red(1);
-        SetAffinity_Green(1);
-    }
-
-    @Override
-    protected float ModifyBlock(AbstractMonster enemy, float amount)
-    {
-        if (enemy != null && GameUtilities.IsAttacking(enemy.intent))
-        {
-            return super.ModifyBlock(enemy, amount + magicNumber);
-        }
-
-        return super.ModifyBlock(enemy, amount);
+        SetAffinity_Green(1, 0, 1);
     }
 
     @Override
@@ -45,5 +30,12 @@ public class Soujiro_Kawara extends AnimatorCard
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.BLUNT_HEAVY);
+
+        GameActions.Bottom.ModifyAllCopies(Soujiro.DATA.ID)
+        .AddCallback(info, (info2, c) ->
+        {
+            GameActions.Top.IncreaseScaling(c, Affinity.Green, magicNumber);
+            c.flash();
+        });
     }
 }

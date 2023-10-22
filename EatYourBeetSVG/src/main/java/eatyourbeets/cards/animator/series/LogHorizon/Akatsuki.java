@@ -16,29 +16,20 @@ import eatyourbeets.utilities.GameEffects;
 public class Akatsuki extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Akatsuki.class)
-            .SetAttack(2, CardRarity.RARE, EYBAttackType.Piercing)
+            .SetAttack(1, CardRarity.RARE, EYBAttackType.Piercing)
             .SetSeriesFromClassPackage();
 
     public Akatsuki()
     {
         super(DATA);
 
-        Initialize(11, 0, 2, 4);
-        SetUpgrade(0, 0, 1);
+        Initialize(8, 0, 2);
+        SetUpgrade(4, 0, 2);
 
-        SetAffinity_Green(2, 0, 1);
-        SetAffinity_White(1);
-    }
+        SetAffinity_Green(1, 0, 1);
+        SetAffinity_Black(1, 0, 1);
 
-    @Override
-    protected float ModifyDamage(AbstractMonster enemy, float amount)
-    {
-        if (enemy != null && !GameUtilities.IsAttacking(enemy.intent))
-        {
-            amount += secondaryValue;
-        }
-
-        return super.ModifyDamage(enemy, amount);
+        SetDelayed(true);
     }
 
     @Override
@@ -54,8 +45,6 @@ public class Akatsuki extends AnimatorCard
                 .SetUpgrade(false, true)
                 .AddCallback(card ->
                 {
-                    GameUtilities.ModifyCostForCombat(card, 0, false);
-                    GameUtilities.ModifyDamage(card, 0, false);
                     card.purgeOnUse = true;
                     card.isEthereal = true;
                 });
@@ -69,5 +58,6 @@ public class Akatsuki extends AnimatorCard
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_DIAGONAL)
         .SetDamageEffect(c -> GameEffects.List.Add(new DieDieDieEffect()).duration);
+        GameActions.Bottom.CreateThrowingKnives(1);
     }
 }

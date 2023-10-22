@@ -668,7 +668,7 @@
 			"FLAVOR_TEXT": "'I’m the princess around here!  But... well, not that I’m complaining, but my life does lack a certain excitement.'",
 			"DESCRIPTION": "Add !M! random {Powers} to your discard pile, they cost 0. || Whenever you create a card, that card costs 0 to play.",
 			"EXTENDED_DESCRIPTION": ["Whenever you create a card, that card costs 0 to play."],
-			"NAME": "Merurulince Arls"
+			"NAME": "Merurulince Rede Arls"
 		},
 		"animator:Nelke":
 		{
@@ -1961,13 +1961,13 @@
 	{
 		"animator:Akatsuki":
 		{
-			"DESCRIPTION": "Deal !S! additional damage if the enemy is not attacking. || <slm>. When drawn: Create !M! {0-Cost} {0-Damage} copies of this card with {~Ethereal} and Purge.",
+			"DESCRIPTION": "Add [T-Knife] to your hand. || <slm>. When drawn: Obtain !M! copies of this card with {~Ethereal} and Purge.",
 			"NAME": "Akatsuki"
 		},
 		"animator:Henrietta":
 		{
-			"DESCRIPTION": "Any Stance: Gain [E]. || At the end of each turn: Spend !S! of your remaining Energy to enter any Stance.",
-			"EXTENDED_DESCRIPTION": ["At the end of each turn, spend 1 of your remaining Energy to enter any Stance."],
+			"DESCRIPTION": "Whenever you play a {Delayed} card: Enter any {Stance}. || Once per turn: Pay [E]: Draw a {Delayed} card.",
+			"EXTENDED_DESCRIPTION": ["Whenever you play a #yDelayed card: Enter any #yStance. #b{0} times per turn: Pay #b1 #yEnergy to draw a #yDelayed card."],
 			"NAME": "Henrietta"
 		},
 		"animator:IsuzuTonan":
@@ -2002,17 +2002,17 @@
 		},
 		"animator:Nyanta":
 		{
-			"DESCRIPTION": "Gain|Boost [G]. Apply a random {Common Debuff} on each attack. || Any Stance: Attack 1 additional time",
+			"DESCRIPTION": "Attack !S! extra times for each {Delayed} card in your draw pile. || Apply a random {Common Debuff} on each attack.",
 			"NAME": "Nyanta"
 		},
 		"animator:Rayneshia":
 		{
-			"DESCRIPTION": "<DRW-M>. Move !M! cards to your draw pile. || <LIM>. !A! [W]: Choose and add 1 of 3 {Rare} cards to your hand.",
+			"DESCRIPTION": "Add 1 of !M! {Rare}{+} cards to the bottom of your draw pile.  It gains {Delayed}.",
 			"NAME": "Rayneshia"
 		},
 		"animator:RundelhausCode":
 		{
-			"DESCRIPTION": "Gain [B]. Give !M! random card(s) +2 [B] scaling (does not stack). || !A! [W]: Choose 1: Channel [Fire], [Lightning] or [Frost].",
+			"DESCRIPTION": "For each [Orb_S]: {Channel} 1 of !M! {Orbs}.",
 			"NAME": "Rundelhaus Code"
 		},
 		"animator:Serara":
@@ -2022,39 +2022,38 @@
 		},
 		"animator:Shiroe":
 		{
-			"DESCRIPTION": "Cycle !M! cards. || All cards this turn have: 3 [W]: Apply !S! [Constricted] to ALL enemies.",
-			"EXTENDED_DESCRIPTION": ["All cards have: [W] #b3: Apply #b{0} #yConstricted to ALL enemies."],
+			"DESCRIPTION": "{Attacks} everywhere gain {Delayed}. || {Skills} everywhere gain {Retain}. || Shuffle your draw pile.",
 			"NAME": "Shiroe"
 		},
 		"animator:Soujiro":
 		{
-			"DESCRIPTION": "X [W]: Deal !M!X additional damage. || When drawn: Choose 1 of 4 cards to add to your hand, you can only choose the same card once.",
+			"DESCRIPTION": "Can only be played if your draw pile is empty. || Start of Combat: Add {Isami}{+}, {Kawara}{+}, {Kurinon}{+}, and {Nazuna}{+} to your draw pile.",
 			"NAME": "Soujiro"
 		},
 		"animator:Soujiro_Isami":
 		{
-			"DESCRIPTION": "<ST>: Boost [G].",
+			"DESCRIPTION": "All copies of {Soujiro Seta} gain +!M! Damage.",
 			"NAME": "Isami"
 		},
 		"animator:Soujiro_Kawara":
 		{
-			"DESCRIPTION": "If the enemy is attacking: Gain !M! additional [Block].",
+			"DESCRIPTION": "All copies of {Soujiro Seta} gain +!M! Green scaling.",
 			"NAME": "Kawara"
 		},
-		"animator:Soujiro_Hisako":
+		"animator:Soujiro_Kurinon":
 		{
-			"DESCRIPTION": "Evoke your first orb to Boost [B].",
-			"NAME": "Hisako"
+			"DESCRIPTION": "All copies of {Soujiro Seta} gain an extra attack, plus an extra attack for each {Special} or {Colorless} card in your hand and discard pile.",
+			"NAME": "Kurinon"
 		},
 		"animator:Soujiro_Nazuna":
 		{
-			"DESCRIPTION": "Draw 1 less card next turn.",
+			"DESCRIPTION": "All {Delayed} cards anywhere cost 0.",
 			"NAME": "Nazuna"
 		},
 		"animator:Tetora":
 		{
-			"DESCRIPTION": "Synergizes with {High Cost} cards. Requires !A! [W] to play. || Every third Synergy: Randomly gain [R], [G], [B].",
-			"EXTENDED_DESCRIPTION": ["Every third #ySynergy, randomly gain #yForce, #yAgility or #yIntellect #b{0} time(s)."],
+			"DESCRIPTION": "At the start of your turn: Gain [L] or [Y] randomly !M! time(s).",
+			"EXTENDED_DESCRIPTION": ["At the start of your turn: Gain #yWhite or #yYellow randomly #b{0} times."],
 			"NAME": "Tetra"
 		}
 	},
@@ -3133,13 +3132,13 @@
 		},
 		"animator:Kanami":
 		{
-			"DESCRIPTION": "Apply !M! [Vulnerable] to ALL enemies. Return this card to your draw pile. || Cooldown !S!: Change this card's form.",
-			"NAME": "Kanami"
+			"DESCRIPTION": "Exhaust any number of cards in your discard pile. || Cooldown !S!: Transform this card into The Human Typhoon{+}.",
+			"NAME": "Kanami Minegawa"
 		},
 		"animator:KanamiAlt":
 		{
-			"DESCRIPTION": "Deal double damage to {Elites} and triple damage to {Bosses}. || If the enemy has [Vulnerable]: Gain [R][G] and !M! [Block].",
-			"NAME": "Kanami"
+			"DESCRIPTION": "",
+			"NAME": "The Human Typhoon"
 		},
 		"animator:NivaLada":
 		{
