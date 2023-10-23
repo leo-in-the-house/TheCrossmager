@@ -11,17 +11,16 @@ public class Loadout_LogHorizon extends AnimatorLoadout
     public Loadout_LogHorizon()
     {
         super(CardSeries.LogHorizon);
-
-        IsEnabled = false;
     }
 
     @Override
     public void AddStarterCards()
     {
-        AddStarterCard(HousakiTohya.DATA, 4);
-        AddStarterCard(HousakiMinori.DATA, 4);
-        AddStarterCard(Serara.DATA, 6);
-        AddStarterCard(Marielle.DATA, 7);
+        AddStarterCard(HousakiTohya.DATA, 7);
+        AddStarterCard(HousakiMinori.DATA, 5);
+        AddStarterCard(IsuzuTonan.DATA, 6);
+        AddStarterCard(Serara.DATA, 5);
+        AddStarterCard(Krusty.DATA, 7);
         AddStarterCard(Naotsugu.DATA, 8);
     }
 
