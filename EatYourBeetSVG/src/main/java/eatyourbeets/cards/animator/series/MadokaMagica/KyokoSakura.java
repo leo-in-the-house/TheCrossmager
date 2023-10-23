@@ -17,7 +17,7 @@ import eatyourbeets.utilities.GameActions;
 public class KyokoSakura extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(KyokoSakura.class)
-            .SetAttack(1, CardRarity.COMMON, EYBAttackType.Piercing, EYBCardTarget.Random)
+            .SetAttack(1, CardRarity.UNCOMMON, EYBAttackType.Piercing, EYBCardTarget.Random)
             .SetSeriesFromClassPackage()
             .PostInitialize(data ->
             {

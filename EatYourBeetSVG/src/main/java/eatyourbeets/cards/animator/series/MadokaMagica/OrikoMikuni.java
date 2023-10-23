@@ -10,7 +10,7 @@ import eatyourbeets.utilities.GameActions;
 public class OrikoMikuni extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(OrikoMikuni.class)
-            .SetSkill(0, CardRarity.UNCOMMON, EYBCardTarget.None)
+            .SetSkill(0, CardRarity.COMMON, EYBCardTarget.None)
             
             .SetSeriesFromClassPackage()
             .ObtainableAsReward((data, deck) -> (deck.size() >= 18));

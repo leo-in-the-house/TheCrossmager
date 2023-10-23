@@ -1208,7 +1208,7 @@
 		"animator:ElricAlphonse_Alt":
 		{
 			"FLAVOR_TEXT": "'You know, I didn't ask to be this big.'",
-			"DESCRIPTION": "Gain 2 [Orb_S] and !M! [Plated Armor]. || At the start of turn, if you have an empty orb slot: Channel [Lightning].",
+			"DESCRIPTION": "Gain 2 [Orb_S] and !M! [Plated Armor]. || At the start of turn, if you have an [Orb_S]: Channel [Lightning].",
 			"EXTENDED_DESCRIPTION": ["At the start of turn, if you have an empty orb slot, #yChannel #b{0} [Lightning]."],
 			"NAME": "Armored Alphonse"
 		},
@@ -1961,97 +1961,116 @@
 	{
 		"animator:Akatsuki":
 		{
+			"FLAVOR_TEXT": "'You have saved me from the dire and most disgusting fate of being trapped in a man's body.  My code of honor requires me to pay back the debt I've incurred.  Even, if it is but a small kindness, it shall be repaid!  I will be your ninja, and serve as your bodyguard!'",
 			"DESCRIPTION": "Add [T-Knife] to your hand. || <slm>. When drawn: Obtain !M! copies of this card with {~Ethereal} and Purge.",
 			"NAME": "Akatsuki"
 		},
 		"animator:Henrietta":
 		{
+			"FLAVOR_TEXT": "'So tell me, what are you planning to do, and how are you going to do it?  We can't pledge the support of the Crescent Moon Alliance unless we know what your plan is.'",
 			"DESCRIPTION": "Whenever you play a {Delayed} card: Enter any {Stance}. || Once per turn: Pay [E]: Draw a {Delayed} card.",
 			"EXTENDED_DESCRIPTION": ["Whenever you play a #yDelayed card: Enter any #yStance. #b{0} times per turn: Pay #b1 #yEnergy to draw a #yDelayed card."],
 			"NAME": "Henrietta"
 		},
 		"animator:IsuzuTonan":
 		{
+			"FLAVOR_TEXT": "'You must be the biggest idiot I've ever met in my entire life!  You could have died, moron!  If I say 'wait', you 'wait', dummy!'",
 			"DESCRIPTION": "Gain [E] for each card in your hand.",
 			"NAME": "Isuzu Tonan"
 		},
 		"animator:Krusty":
 		{
+			"FLAVOR_TEXT": "'We're getting off at the abandoned Narushino Port.  From there, we're going to the west side of Kasumi Lake, so we have 15 miles to cover.  Then, we head north.  And as far as the goblins go... spare none of them!'",
 			"DESCRIPTION": "Double this card’s attack.",
-			"NAME": "Krusty"
+			"NAME": "Crusty"
 		},
 		"animator:Marielle":
 		{
-			"DESCRIPTION": "{Motivate} 1 card of each type in your draw pile. || Synergy: Gain !M! [THP] and Purge.",
+			"FLAVOR_TEXT": "'Look, Shiroe!  I know we've had this talk, and I know you're not a big fan of all the backfighting that goes on in the guilds... but... but, that was then, OK?  Would you think about joining Crescent Moon?'",
+			"DESCRIPTION": "Fetch a card with {Delayed} from your discard pile.  It costs 0 to play.",
 			"NAME": "Marielle"
 		},
 		"animator:HousakiMinori":
 		{
+			"FLAVOR_TEXT": "'Shiroe always had the power to make it in this world.  He didn't need anybody else.  Me?  All I could do was cry myself to sleep every night cause I couldn't hack it on my own.  So, what's changed?  I mean, that's why I lost everything in the first place, right...?'",
 			"DESCRIPTION": "Gain !M! Temp. [Enchanted Armor].",
 			"NAME": "Minori Housaki"
 		},
 		"animator:HousakiTohya":
 		{
+			"FLAVOR_TEXT": "'I've got no business asking him to come save us.  But hey... what if I... what if I could be like Shiroe?'",
 			"DESCRIPTION": "Apply !M! [Vulnerable].",
 			"NAME": "Tohya Housaki"
 		},
 		"animator:Naotsugu":
 		{
+			"FLAVOR_TEXT": "'Kick their ass!  I'm not backing down from freaks who attack people for fun!'",
 			"DESCRIPTION": "Draw the bottom card of your draw pile.",
 			"NAME": "Naotsugu Hasegawa"
 		},
 		"animator:Nyanta":
 		{
+			"FLAVOR_TEXT": "'I said you've gone too far.  And it is my duty to reign in the behavior of 'children' such as yourself.  It's time you learned to respect your elders, you understand?'",
 			"DESCRIPTION": "Attack !S! extra times for each {Delayed} card in your draw pile. || Apply a random {Common Debuff} on each attack.",
 			"NAME": "Nyanta"
 		},
 		"animator:Rayneshia":
 		{
+			"FLAVOR_TEXT": "'Take it easy, gentlemen.  My grandfather isn't around to hear your empty complements.  Anyone can be beautiful and delicate with the right baubles and beads, especially if you're not allowed to dress yourself...'",
 			"DESCRIPTION": "Add 1 of !M! {Rare}{+} cards to the bottom of your draw pile.  It gains {Delayed}.",
 			"NAME": "Rayneshia"
 		},
 		"animator:RundelhausCode":
 		{
+			"FLAVOR_TEXT": "'I've always wanted this... adventurer's life!  If I can save people who need my help, I don't care what the cost is.  I don't want the glory, I want to help people.  I want it more than anything...'",
 			"DESCRIPTION": "For each [Orb_S]: {Channel} 1 of !M! {Orbs}.",
 			"NAME": "Rundelhaus Code"
 		},
 		"animator:Serara":
 		{
+			"FLAVOR_TEXT": "'Umm... I'm Serara of Crescent Moon Alliance!  Eh... I should... thank you for coming for me!'",
 			"DESCRIPTION": "Exhaust !M! random Hindrance(s) in your draw pile.",
 			"NAME": "Serara"
 		},
 		"animator:Shiroe":
 		{
+			"FLAVOR_TEXT": "'We bear the story of those who challenge the edge of the Earth.  We are... Log Horizon.'",
 			"DESCRIPTION": "{Attacks} everywhere gain {Delayed}. || {Skills} everywhere gain {Retain}. || Shuffle your draw pile.",
 			"NAME": "Shiroe"
 		},
 		"animator:Soujiro":
 		{
+			"FLAVOR_TEXT": "'Our enemy is extremely tough, everyone.  No matter how good you've been in a raid before, we can't let them catch us off-guard.  We must consider this adversary to be stronger than anyone we've ever faced.  Don't go anywhere alone, and stay in contact.  Communication is key.'",
 			"DESCRIPTION": "Can only be played if your draw pile is empty. || Start of Combat: Add {Isami}{+}, {Kawara}{+}, {Kurinon}{+}, and {Nazuna}{+} to your draw pile.",
-			"NAME": "Soujiro"
+			"NAME": "Soujiro Seta"
 		},
 		"animator:Soujiro_Isami":
 		{
+			"FLAVOR_TEXT": "'I'm not letting Master Soujiro have all the glory!'",
 			"DESCRIPTION": "All copies of {Soujiro Seta} gain +!M! Damage.",
 			"NAME": "Isami"
 		},
 		"animator:Soujiro_Kawara":
 		{
+			"FLAVOR_TEXT": "'Hey!  Hold your horses!  He said he was gonna come to you!'",
 			"DESCRIPTION": "All copies of {Soujiro Seta} gain +!M! Green scaling.",
 			"NAME": "Kawara"
 		},
 		"animator:Soujiro_Kurinon":
 		{
+			"FLAVOR_TEXT": "'Is that your friend Minori?  She's so cute and adorable!'",
 			"DESCRIPTION": "All copies of {Soujiro Seta} gain an extra attack, plus an extra attack for each {Special} or {Colorless} card in your hand and discard pile.",
 			"NAME": "Kurinon"
 		},
 		"animator:Soujiro_Nazuna":
 		{
+			"FLAVOR_TEXT": "'Don't play the hero out there!  Be sure to use Formation Alpha if you find yourself in a fight with the subject!  OK, guys?'",
 			"DESCRIPTION": "All {Delayed} cards anywhere cost 0.",
 			"NAME": "Nazuna"
 		},
 		"animator:Tetora":
 		{
+			"FLAVOR_TEXT": "'I'm a star shining in the evening sky!  My name is Tetra, the orthodox galaxy-style starlet!  But feel free to just call me Tetra!'",
 			"DESCRIPTION": "At the start of your turn: Gain [L] or [Y] randomly !M! time(s).",
 			"EXTENDED_DESCRIPTION": ["At the start of your turn: Gain #yWhite or #yYellow randomly #b{0} times."],
 			"NAME": "Tetra"
@@ -3132,11 +3151,13 @@
 		},
 		"animator:Kanami":
 		{
-			"DESCRIPTION": "Exhaust any number of cards in your discard pile. || Cooldown !S!: Transform this card into The Human Typhoon{+}.",
+			"FLAVOR_TEXT": "'The best part of adventuring is experiencing new things.'",
+			"DESCRIPTION": "Exhaust up to !M! cards in your discard pile. || Cooldown !S!: Transform this card into The Human Typhoon{+}.",
 			"NAME": "Kanami Minegawa"
 		},
 		"animator:KanamiAlt":
 		{
+			"FLAVOR_TEXT": "''Kay then!  First, let's tackle that Nue!  Then, we'll go find Mr. Frog Man, along with Eli-Eli and Crus-Crus while we're at it!'",
 			"DESCRIPTION": "",
 			"NAME": "The Human Typhoon"
 		},

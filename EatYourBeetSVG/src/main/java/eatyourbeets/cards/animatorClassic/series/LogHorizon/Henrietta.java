@@ -4,21 +4,20 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.stances.NeutralStance;
 import eatyourbeets.cards.base.AnimatorClassicCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardEffectChoice;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.effects.GenericEffects.GenericEffect_EnterStance;
 import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.stances.AgilityStance;
-import eatyourbeets.stances.WrathStance;
 import eatyourbeets.stances.IntellectStance;
+import eatyourbeets.stances.WrathStance;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
 public class Henrietta extends AnimatorClassicCard
 {
-    public static final EYBCardData DATA = Register(Henrietta.class).SetSeriesFromClassPackage().SetPower(2, CardRarity.UNCOMMON);
+    public static final EYBCardData DATA = Register(Henrietta.class).SetSeriesFromClassPackage().SetPower(2, CardRarity.RARE);
 
     public Henrietta()
     {

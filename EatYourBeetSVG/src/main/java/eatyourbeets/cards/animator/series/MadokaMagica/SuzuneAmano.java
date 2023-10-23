@@ -13,7 +13,7 @@ import eatyourbeets.utilities.GameActions;
 public class SuzuneAmano extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(SuzuneAmano.class)
-            .SetAttack(1, CardRarity.UNCOMMON, EYBAttackType.Elemental)
+            .SetAttack(1, CardRarity.COMMON, EYBAttackType.Elemental)
             
             .SetSeriesFromClassPackage();
 

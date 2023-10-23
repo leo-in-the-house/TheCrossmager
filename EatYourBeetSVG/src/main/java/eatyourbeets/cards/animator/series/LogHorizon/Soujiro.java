@@ -8,10 +8,7 @@ import eatyourbeets.cards.animator.special.Soujiro_Isami;
 import eatyourbeets.cards.animator.special.Soujiro_Kawara;
 import eatyourbeets.cards.animator.special.Soujiro_Kurinon;
 import eatyourbeets.cards.animator.special.Soujiro_Nazuna;
-import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.cards.base.CardUseInfo;
-import eatyourbeets.cards.base.EYBAttackType;
-import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.cards.base.*;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
@@ -25,7 +22,7 @@ public class Soujiro extends AnimatorCard
     private static final CardGroup cardChoices = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
 
     public static final EYBCardData DATA = Register(Soujiro.class)
-            .SetAttack(3, CardRarity.RARE, EYBAttackType.Normal)
+            .SetAttack(3, CardRarity.RARE, EYBAttackType.Normal, EYBCardTarget.ALL)
             .SetSeriesFromClassPackage()
             .PostInitialize(data ->
             {
@@ -87,7 +84,15 @@ public class Soujiro extends AnimatorCard
         GameUtilities.PlayVoiceSFX(name);
 
         for (int i=0; i<magicNumber; i++) {
-            GameActions.Bottom.DealDamageToAll(this, AttackEffects.SLASH_HEAVY);
+            if (i%3 == 0) {
+                GameActions.Bottom.DealDamageToAll(this, AttackEffects.SLASH_HORIZONTAL);
+            }
+            else if (i%3 == 1) {
+                GameActions.Bottom.DealDamageToAll(this, AttackEffects.SLASH_VERTICAL);
+            }
+            else {
+                GameActions.Bottom.DealDamageToAll(this, AttackEffects.SLASH_HEAVY);
+            }
         }
     }
 }

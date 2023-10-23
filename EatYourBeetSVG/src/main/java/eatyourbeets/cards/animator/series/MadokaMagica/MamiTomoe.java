@@ -15,7 +15,7 @@ import eatyourbeets.utilities.GameActions;
 public class MamiTomoe extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(MamiTomoe.class)
-            .SetAttack(2, CardRarity.COMMON, EYBAttackType.Ranged)
+            .SetAttack(2, CardRarity.UNCOMMON, EYBAttackType.Ranged)
             .SetSeriesFromClassPackage()
             .PostInitialize(data ->
             {

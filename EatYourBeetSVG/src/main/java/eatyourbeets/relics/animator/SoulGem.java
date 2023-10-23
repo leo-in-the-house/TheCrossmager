@@ -1,4 +1,4 @@
-package eatyourbeets.relics.deprecated;
+package eatyourbeets.relics.animator;
 
 import eatyourbeets.relics.AnimatorRelic;
 import eatyourbeets.utilities.GameActions;
@@ -10,7 +10,7 @@ public class SoulGem extends AnimatorRelic
 
     public SoulGem()
     {
-        super(ID, RelicTier.DEPRECATED, LandingSound.HEAVY);
+        super(ID, RelicTier.RARE, LandingSound.HEAVY);
     }
 
     @Override

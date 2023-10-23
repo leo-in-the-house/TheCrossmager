@@ -24,13 +24,13 @@ public class Kanami extends AnimatorCard_UltraRare
     {
         super(DATA);
 
-        Initialize(20, 0);
+        Initialize(20, 0, 10);
         SetUpgrade(4, 0);
 
         SetAffinity_Red(2, 0, 2);
         SetAffinity_Green(2, 0, 2);
 
-        SetCooldown(1, 0, this::OnCooldownCompleted);
+        SetCooldown(2, 0, this::OnCooldownCompleted);
         SetDelayed(true);
     }
 
@@ -50,7 +50,7 @@ public class Kanami extends AnimatorCard_UltraRare
             }
         });
 
-        GameActions.Bottom.ExhaustFromPile(name, player.discardPile.size(), player.discardPile)
+        GameActions.Bottom.ExhaustFromPile(name, magicNumber, player.discardPile)
            .SetOptions(false, true);
 
         GameActions.Last.Callback(() -> {

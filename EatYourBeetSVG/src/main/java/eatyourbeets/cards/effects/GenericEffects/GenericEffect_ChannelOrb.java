@@ -52,7 +52,7 @@ public class GenericEffect_ChannelOrb extends GenericEffect
     {
         int index = orb.ID.lastIndexOf(':');
         if (index == -1) {
-            return null;
+            return CardTooltips.FindByID(null, orb.ID);
         }
         return CardTooltips.FindByID(null, orb.ID.substring(index+1));
     }

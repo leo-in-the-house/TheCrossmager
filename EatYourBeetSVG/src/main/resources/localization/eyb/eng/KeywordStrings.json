@@ -84,6 +84,12 @@
 		"NAMES": ["cycle"],
 		"PROPER_NAME": "Cycle"
 	},
+	"Dark":
+	{
+		"DESCRIPTION": "Orb: Deals damage on #yEvoke to the enemy with the lowest health.",
+		"NAMES": ["dark", "dark+"],
+		"PROPER_NAME": "Dark"
+	},
 	"Debuff":
 	{
 		"DESCRIPTION": "Power with a negative effect.",
@@ -174,6 +180,12 @@
 		"NAMES": ["freezing"],
 		"PROPER_NAME": "Freezing"
 	},
+	"Frost":
+	{
+		"DESCRIPTION": "Orb: Gains #yBlock.",
+		"NAMES": ["frost", "frost+"],
+		"PROPER_NAME": "Frost"
+	},
 	"Health":
 	{
 		"DESCRIPTION": "-",
@@ -233,6 +245,12 @@
 		"DESCRIPTION": "At the start of each turn, draw additional cards.",
 		"NAMES": ["knowledge"],
 		"PROPER_NAME": "Knowledge"
+	},
+	"Lightning":
+	{
+		"DESCRIPTION": "Orb: Deals damage to a random enemy.",
+		"NAMES": ["lightning", "lightning+"],
+		"PROPER_NAME": "Lightning"
 	},
 	"Limited":
 	{
@@ -299,6 +317,12 @@
 		"DESCRIPTION": "Whenever you apply a #yCommon #yDebuff, this deals 2 times #b{0} damage to the enemy.",
 		"NAMES": ["pestilence"],
 		"PROPER_NAME": "Pestilence"
+	},
+	"Plasma":
+	{
+		"DESCRIPTION": "Orb: Gains #yEnergy.",
+		"NAMES": ["plasma", "plasma+"],
+		"PROPER_NAME": "Plasma"
 	},
 	"Plated Armor":
 	{
@@ -471,7 +495,7 @@
 	"~Delayed":
 	{
 		"DESCRIPTION": "When this is shuffled into your draw pile, place it on the bottom half.",
-		"NAMES": ["~delayed"],
+		"NAMES": ["~delayed","delayed"],
 		"PROPER_NAME": "Delayed"
 	},
 	"~Elemental":

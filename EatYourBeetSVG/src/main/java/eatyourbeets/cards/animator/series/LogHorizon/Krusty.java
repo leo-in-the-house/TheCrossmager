@@ -19,7 +19,7 @@ public class Krusty extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(20, 0, 0);
+        Initialize(30, 0, 0);
         SetUpgrade(12, 0, 0);
 
         SetAffinity_Red(2);
