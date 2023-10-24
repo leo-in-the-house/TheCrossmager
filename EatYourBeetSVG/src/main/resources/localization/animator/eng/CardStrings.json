@@ -411,7 +411,7 @@
 		},
 		"animator:Curse_GriefSeed":
 		{
-			"DESCRIPTION": "At the start of each combat: Take !M! [DD]. || When Exhausted: Halve your {Debuffs}.",
+			"DESCRIPTION": "When Exhausted: Gain !M! [THP].",
 			"NAME": "Grief Seed"
 		},
 		"animator:Curse_Nutcracker":
@@ -2087,7 +2087,7 @@
 		},
 		"animator:FeliciaMitsuki":
 		{
-			"DESCRIPTION": "The next {Attack} you play this turn deals !M!% additional damage. || When Exhausted: Deal !S! damage to ALL enemies.",
+			"DESCRIPTION": "Exhaust !M! random {Curses} anywhere.",
 			"NAME": "Felicia Mitsuki"
 		},
 		"animator:HomuraAkemi":
@@ -2102,7 +2102,7 @@
 		},
 		"animator:IrohaTamaki":
 		{
-			"DESCRIPTION": "Halve all damage modifiers that affect this card. || !A! [L]: Give {~Haste} and {~Ethereal} to the top Hindrance in draw pile.",
+			"DESCRIPTION": "Obtain [Grief Seed], then exhaust it.",
 			"NAME": "Iroha Tamaki"
 		},
 		"animator:KyokoSakura":
@@ -2141,6 +2141,11 @@
 			"DESCRIPTION": "Give ALL enemies !M! [Strength]. || When you take unblocked {Attack} damage: Fetch this card from your Exhaust pile and give it Purge.",
 			"NAME": "Candeloro"
 		},
+		"animator:MifuyuAzusa":
+		{
+			"DESCRIPTION": "Randomize the costs of all cards in your hand this turn.",
+			"NAME": "Mifuyu Azusa"
+		},
 		"animator:NagisaMomoe":
 		{
 			"DESCRIPTION": "Randomly Channel [Frost], [Lightning] or [Fire] !M! time(s). || If you have {Charlotte} or [Grief Seed] in hand: Channel 1 additional orb.",
@@ -2156,15 +2161,9 @@
 			"DESCRIPTION": "If this kills an enemy: Return it to your hand and reduce its cost by 1. || <LIM>. Also heal !M! [HP].",
 			"NAME": "Charlotte"
 		},
-		"animator:OrikoMikuni":
-		{
-			"DESCRIPTION": "Scry !M!. <DRW>. || Take !S! [DD] for each {Non-Hindrance} you discarded.",
-			"NAME": "Oriko Mikuni"
-		},
 		"animator:SanaFutaba":
 		{
-			"DESCRIPTION": "Increase the [Block] of the next {Skill} with [Block] in your draw pile by !K!. || When Exhausted: Gain !S! [Block] for each enemy.",
-			"UPGRADE_DESCRIPTION": "Increase the [Block] of the next !M! {Skills} with [Block] in your draw pile by !K!. || When Exhausted: Gain !S! [Block] for each enemy.",
+			"DESCRIPTION": "Can only be played if you have a {Curse} in your hand or exhaust pile.",
 			"NAME": "Sana Futaba"
 		},
 		"animator:SayakaMiki":
@@ -2180,7 +2179,7 @@
 		},
 		"animator:SuzuneAmano":
 		{
-			"DESCRIPTION": "Exhaust 1 card in hand or draw pile. || When drawn: Autoplay on the lowest [HP] enemy.",
+			"DESCRIPTION": "Exhaust a card in your hand to Channel !M! [Fire].",
 			"NAME": "Suzune Amano"
 		},
 		"animator:YachiyoNanami":
@@ -2191,7 +2190,7 @@
 		},
 		"animator:YuiTsuruno":
 		{
-			"DESCRIPTION": "Choose|Retain a card: Discard !M! random card(s) except the chosen card. || If you chose a [Grief Seed]: Channel 1 [Fire].",
+			"DESCRIPTION": "Choose a card.  Exhaust a random card except the chosen card, then add [Grief Seed] to your hand.",
 			"NAME": "Yui Tsuruno"
 		}
 	},

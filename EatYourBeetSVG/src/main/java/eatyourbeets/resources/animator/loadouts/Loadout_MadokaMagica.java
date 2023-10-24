@@ -28,7 +28,6 @@ public class Loadout_MadokaMagica extends AnimatorLoadout
 
         AddStarterCard(NagisaMomoe.DATA, 10);
         AddStarterCard(SayakaMiki.DATA, 9);
-        AddStarterCard(OrikoMikuni.DATA, 10);
         AddStarterCard(SuzuneAmano.DATA, 9);
 
         AddStarterCard(HomuraAkemi.DATA, 17);

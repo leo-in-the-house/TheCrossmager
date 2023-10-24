@@ -3,16 +3,13 @@ package eatyourbeets.cards.animator.curse.special;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameEffects;
-import eatyourbeets.utilities.Mathf;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Curse_GriefSeed extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Curse_GriefSeed.class)
-            .SetCurse(1, EYBCardTarget.None, true)
+            .SetCurse(-1, EYBCardTarget.None, true)
             .SetSeries(CardSeries.MadokaMagica);
 
     public Curse_GriefSeed()
@@ -20,38 +17,23 @@ public class Curse_GriefSeed extends AnimatorCard
         super(DATA);
 
         Initialize(0, 0, 2);
+        SetUpgrade(0, 0, 1);
 
         SetAffinity_Black(1);
 
         SetEndOfTurnPlay(false);
+        SetUnplayable(true);
     }
 
     @Override
     public void triggerOnExhaust()
     {
-        GameActions.Bottom.ModifyDebuffs(player, p ->
-        {
-            final int h = Mathf.CeilToInt(Mathf.Abs(p.amount) / 2f);
-            return p.amount + (p.amount >= 0 ? -h : +h);
-        }, null, 999);
+        GameActions.Bottom.GainTemporaryHP(magicNumber);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-
-    }
-
-    @Override
-    public void triggerWhenCreated(boolean startOfBattle)
-    {
-        super.triggerWhenCreated(startOfBattle);
-
-        if (startOfBattle)
-        {
-            GameEffects.List.ShowCopy(this);
-            GameActions.Bottom.TakeDamageAtEndOfTurn(magicNumber, AttackEffects.DARK);
-        }
     }
 }

@@ -6,6 +6,7 @@ import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBAttackType;
+import eatyourbeets.orbs.animator.Fire;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
@@ -13,7 +14,7 @@ import eatyourbeets.utilities.GameActions;
 public class SuzuneAmano extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(SuzuneAmano.class)
-            .SetAttack(1, CardRarity.COMMON, EYBAttackType.Elemental)
+            .SetAttack(2, CardRarity.COMMON, EYBAttackType.Elemental)
             
             .SetSeriesFromClassPackage();
 
@@ -21,42 +22,10 @@ public class SuzuneAmano extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(7, 0);
-        SetUpgrade(3, 0);
+        Initialize(6, 0, 2);
+        SetUpgrade(8, 0);
 
-        SetAffinity_Red(2, 0, 1);
-        SetAffinity_Black(1, 0, 1);
-    }
-
-    @Override
-    public void triggerWhenDrawn()
-    {
-        super.triggerWhenDrawn();
-
-        GameActions.Delayed.Callback(() ->
-        {
-            if (!player.hand.contains(this))
-            {
-                return;
-            }
-
-            int minHealth = Integer.MAX_VALUE;
-            AbstractMonster enemy = null;
-
-            for (AbstractMonster m : GameUtilities.GetEnemies(true))
-            {
-                if (m.currentHealth < minHealth)
-                {
-                    minHealth = m.currentHealth;
-                    enemy = m;
-                }
-            }
-
-            if (enemy != null && player.hand.contains(this))
-            {
-                GameActions.Top.AutoPlay(this, player.hand, enemy);
-            }
-        });
+        SetAffinity_Red(2);
     }
 
     @Override
@@ -64,7 +33,12 @@ public class SuzuneAmano extends AnimatorCard
     {
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.FIRE);
-        GameActions.Bottom.ExhaustFromPile(name, 1, p.hand, p.drawPile)
-        .SetOptions(false, false, false);
+        GameActions.Bottom.ExhaustFromPile(name, 1, p.hand)
+        .SetOptions(false, false, false)
+            .AddCallback(cards -> {
+                if (cards.size() > 0) {
+                    GameActions.Top.ChannelOrbs(Fire::new, magicNumber);
+                }
+            });
     }
 }
