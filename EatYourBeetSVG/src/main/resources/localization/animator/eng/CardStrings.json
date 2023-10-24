@@ -1347,7 +1347,7 @@
 		{
 			"FLAVOR_TEXT": "'Make it so!  Have Godu Rino Gwaban and all the allied kingdoms rally to us!  It's time to retake Arnus Hill!'",
 			"DESCRIPTION": "Up to 3 times per turn, pay [E]: Add {Imperial Archers}{+} to your draw pile.",
-			"EXTENDED_DESCRIPTION": ["Pay 1 #yEnergy to add #b{0} #yImperial #yArchers to your draw pile."],
+			"EXTENDED_DESCRIPTION": ["Pay 1 #yEnergy to add #b{0} #yImperial #yArchers to your draw pile.","Pay 1 #yEnergy to add #b{0} #yupgraded #yImperial #yArchers to your draw pile."],
 			"NAME": "Molt Sol Augustus"
 		},
 		"animator:MoltSolAugustus_ImperialArchers":
@@ -1968,8 +1968,8 @@
 		"animator:Henrietta":
 		{
 			"FLAVOR_TEXT": "'So tell me, what are you planning to do, and how are you going to do it?  We can't pledge the support of the Crescent Moon Alliance unless we know what your plan is.'",
-			"DESCRIPTION": "Whenever you play a {Delayed} card: Enter any {Stance}. || Once per turn: Pay [E]: Draw a {Delayed} card.",
-			"EXTENDED_DESCRIPTION": ["Whenever you play a #yDelayed card: Enter any #yStance. #b{0} times per turn: Pay #b1 #yEnergy to draw a #yDelayed card."],
+			"DESCRIPTION": "Whenever you play a {Delayed} card: Enter any {Stance} except <DS>. || Once per turn: Pay [E]: Draw a {Delayed} card.",
+			"EXTENDED_DESCRIPTION": ["Whenever you play a #yDelayed card: Enter any #yStance except #yDivinity #yStance. #b{0} times per turn: Pay #b1 #yEnergy to draw a #yDelayed card."],
 			"NAME": "Henrietta"
 		},
 		"animator:IsuzuTonan":
@@ -1999,7 +1999,7 @@
 		"animator:HousakiTohya":
 		{
 			"FLAVOR_TEXT": "'I've got no business asking him to come save us.  But hey... what if I... what if I could be like Shiroe?'",
-			"DESCRIPTION": "Apply !M! [Vulnerable].",
+			"DESCRIPTION": "Apply !S! [Vulnerable].",
 			"NAME": "Tohya Housaki"
 		},
 		"animator:Naotsugu":

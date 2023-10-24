@@ -41,7 +41,14 @@ public class GoblinSlayer extends AnimatorCard
         SetAffinity_Green(1, 0, 1);
         SetAffinity_Violet(1, 0, 1);
 
+        SetDelayed(true);
         SetRetain(true);
+    }
+
+    @Override
+    protected void OnUpgrade()
+    {
+        SetDelayed(false);
     }
 
     @Override

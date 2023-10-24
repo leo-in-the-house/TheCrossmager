@@ -33,7 +33,7 @@ public class Pride extends AnimatorCard
         SetAffinity_Black(2);
 
         SetEvokeOrbCount(magicNumber);
-        SetEthereal(true);
+        SetDelayed(true);
         SetExhaust(true);
     }
 
@@ -41,7 +41,7 @@ public class Pride extends AnimatorCard
     protected void OnUpgrade() {
         super.OnUpgrade();
 
-        SetEthereal(false);
+        SetDelayed(false);
     }
 
     @Override

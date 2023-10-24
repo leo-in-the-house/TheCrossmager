@@ -4,7 +4,6 @@ import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.utility.ShakeScreenAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
@@ -16,7 +15,6 @@ import eatyourbeets.actions.animator.HigakiRinneAction;
 import eatyourbeets.cards.animator.special.ThrowingKnife;
 import eatyourbeets.cards.animator.status.Status_Slimed;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.cards.base.attributes.BlockAttribute;
 import eatyourbeets.cards.base.attributes.DamageAttribute;
@@ -26,6 +24,7 @@ import eatyourbeets.interfaces.delegates.ActionT1;
 import eatyourbeets.interfaces.listeners.OnAddToDeckListener;
 import eatyourbeets.powers.animator.HigakiRinnePower;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.JUtils;
 import eatyourbeets.utilities.WeightedList;
 
@@ -75,6 +74,8 @@ public class HigakiRinne extends AnimatorCard implements OnAddToDeckListener
 
         SetAttackType(EYBAttackType.Normal);
         SetAffinity_Star(1, 1, 1);
+
+        SetDelayed(true);
     }
 
     @Override

@@ -13,10 +13,6 @@ import eatyourbeets.utilities.GameActions;
 public class HousakiTohya extends AnimatorClassicCard
 {
     public static final EYBCardData DATA = Register(HousakiTohya.class).SetSeriesFromClassPackage().SetAttack(1, CardRarity.COMMON, EYBAttackType.Normal);
-    static
-    {
-        DATA.AddPreview(new HousakiMinori(), false);
-    }
 
     public HousakiTohya()
     {

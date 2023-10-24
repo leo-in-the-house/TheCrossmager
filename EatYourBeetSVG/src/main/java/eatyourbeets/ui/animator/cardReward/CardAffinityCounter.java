@@ -87,14 +87,16 @@ public class CardAffinityCounter extends GUIElement
     @Override
     public void Update()
     {
-        final int lv1 = AffinityGroup.GetTotal(1);
-        final int lv2 = AffinityGroup.GetTotal(2);
+        if (AffinityGroup != null) {
+            final int lv1 = AffinityGroup.GetTotal(1);
+            final int lv2 = AffinityGroup.GetTotal(2);
 
-        background_button.SetInteractable(GameEffects.IsEmpty()).Update();
-        counterWeak_text.SetText(lv1 == 0 ? "-" : lv1).Update();
-        counterNormal_text.SetText(lv2 == 0 ? "-" : lv2).Update();
-        counterPercentage_text.SetText(AffinityGroup.GetPercentageString(0)).Update();
-        affinity_image.Update();
+            background_button.SetInteractable(GameEffects.IsEmpty()).Update();
+            counterWeak_text.SetText(lv1 == 0 ? "-" : lv1).Update();
+            counterNormal_text.SetText(lv2 == 0 ? "-" : lv2).Update();
+            counterPercentage_text.SetText(AffinityGroup.GetPercentageString(0)).Update();
+            affinity_image.Update();
+        }
     }
 
     @Override

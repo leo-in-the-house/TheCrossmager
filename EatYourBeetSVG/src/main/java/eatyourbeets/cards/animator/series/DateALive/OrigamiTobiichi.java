@@ -34,6 +34,8 @@ public class OrigamiTobiichi extends AnimatorCard
 
         SetAffinity_White(1);
         SetAffinity_Blue(1);
+
+        SetDelayed(true);
     }
 
     @Override

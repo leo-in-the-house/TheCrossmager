@@ -20,8 +20,8 @@ public class HousakiMinori extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 0, 3);
-        SetUpgrade(0, 0, 3);
+        Initialize(0, 0, 4);
+        SetUpgrade(0, 0, 4);
 
         SetAffinity_White(2);
 

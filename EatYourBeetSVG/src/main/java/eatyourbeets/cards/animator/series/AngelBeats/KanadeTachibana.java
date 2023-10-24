@@ -29,6 +29,7 @@ public class KanadeTachibana extends AnimatorCard
         SetAffinity_Blue(1);
         SetAffinity_Violet(1);
 
+        SetDelayed(true);
         SetExhaust(true);
         
     }

@@ -35,17 +35,20 @@ public class MoltSolAugustus extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.StackPower(new MoltSolAugustusPower(p, 1));
+        GameActions.Bottom.StackPower(new MoltSolAugustusPower(p, 1, upgraded));
     }
 
     public static class MoltSolAugustusPower extends AnimatorClickablePower
     {
-        public MoltSolAugustusPower(AbstractCreature owner, int amount)
+        private boolean upgrade;
+
+        public MoltSolAugustusPower(AbstractCreature owner, int amount, boolean upgrade)
         {
             super(owner, MoltSolAugustus.DATA, PowerTriggerConditionType.Energy, MoltSolAugustus.ENERGY_COST);
 
             triggerCondition.SetUses(3, true, true);
             canBeZero = true;
+            this.upgrade = upgrade;
 
             Initialize(amount);
         }
@@ -53,7 +56,7 @@ public class MoltSolAugustus extends AnimatorCard
         @Override
         public String GetUpdatedDescription()
         {
-            return FormatDescription(0, amount);
+            return FormatDescription(upgrade ? 1 : 0, amount);
         }
 
         @Override
@@ -63,7 +66,8 @@ public class MoltSolAugustus extends AnimatorCard
 
             GameActions.Bottom.SFX(SFX.RELIC_DROP_FLAT);
             GameActions.Bottom.MakeCardInDrawPile(new MoltSolAugustus_ImperialArchers())
-            .SetDuration(0.1f, false);
+                    .SetUpgrade(upgrade, true)
+                    .SetDuration(0.1f, false);
             GameActions.Bottom.SFX(SFX.ANIMATOR_ARROW);
         }
     }

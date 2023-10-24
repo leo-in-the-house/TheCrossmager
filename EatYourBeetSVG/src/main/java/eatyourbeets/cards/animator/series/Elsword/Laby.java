@@ -33,12 +33,14 @@ public class Laby extends AnimatorCard
         SetAffinity_Pink(1);
         SetAffinity_Violet(1);
 
+        SetDelayed(true);
         SetEthereal(true);
     }
 
     @Override
     protected void OnUpgrade()
     {
+        SetDelayed(false);
         SetEthereal(false);
     }
 

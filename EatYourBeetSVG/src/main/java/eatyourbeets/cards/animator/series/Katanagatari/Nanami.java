@@ -30,6 +30,7 @@ public class Nanami extends AnimatorCard
         SetAffinity_Violet(1);
 
         SetAttackType(EYBAttackType.Normal);
+        SetDelayed(true);
         SetExhaust(true);
     }
 
