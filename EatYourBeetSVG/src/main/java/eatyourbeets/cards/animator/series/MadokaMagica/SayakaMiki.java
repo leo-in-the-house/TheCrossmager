@@ -33,7 +33,7 @@ public class SayakaMiki extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 3);
+        Initialize(0, 6);
         SetUpgrade(0, 3);
 
         SetAffinity_Blue(1, 0, 1);

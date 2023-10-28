@@ -350,6 +350,7 @@
 		},
 		"animator:OrikoMikuni":
 		{
+			"FLAVOR_TEXT": "'Among other 'magical girls', I am known as the 'White Magical Girl'...  I'm sure if you knew the truth, you would agree to my cause as well.'",
 			"DESCRIPTION": "At the start of your turn: {Scry} 1. || {Hindrances} you discarded this way are {Exhausted}.",
 			"EXTENDED_DESCRIPTION": ["At the start of your turn, #yScry #b{0}. #yHindrances you discarded this way are #yExhausted."],
 			"NAME": "Oriko Mikuni"
@@ -2087,118 +2088,140 @@
 	{
 		"animator:AlinaGray":
 		{
+			"FLAVOR_TEXT": "'That's all you can say?  No grazzi?  Oh well... I'm leaving this hobble and going back to my atelier!  I committed to Touka and Nemu's grandiose plans because I thought they had SOUL!  Ultimate, my goal as an artiste wasn't having tea parties in castles with girls who have the intelligence of sheep!'",
 			"DESCRIPTION": "The next !M! times you Exhaust or Purge a {Curse}: Gain [Noxious Fumes].",
 			"EXTENDED_DESCRIPTION": ["The next #b{0} times you #yExhaust or #yPurge a #yCurse, gain [Noxious Fumes]."],
 			"NAME": "Alina Gray"
 		},
 		"animator:FeliciaMitsuki":
 		{
+			"FLAVOR_TEXT": "'Listen up!  I'm gonna destroy all witches, every single one of them!  Because this could be the one... the one that killed my mom and dad back then!'",
 			"DESCRIPTION": "Exhaust !M! random {Curses} anywhere.",
 			"NAME": "Felicia Mitsuki"
 		},
 		"animator:HomuraAkemi":
 		{
+			"FLAVOR_TEXT": "'I'll do it over, no matter how many times it takes.  I'll relive it over and over again, I WILL find a way out.  The one path... that will save you from this destiny of despair!'",
 			"DESCRIPTION": "Add !M! random {Curses} to your discard pile. || Take an extra turn after this one.  End your turn.",
 			"NAME": "Homura Akemi"
 		},
 		"animator:HomuraAkemi_Homulilly":
 		{
+			"FLAVOR_TEXT": "'The Nutcracker Witch. Its nature is self-sufficiency. Its gallant form, which once split many nuts, is now useless. Without any other purpose, this witch's last wish is her own execution. However, a mere decapitation will not clear away the witch's sins. This foolish witch will forever remain in this realm, repeating the procession to her execution.' -Anonymous",
 			"DESCRIPTION": "Purge a random {Curse} in your Exhaust pile to COPY every other {Curse} in your Exhaust pile. || Below !A! [D]: {Exhaust} this card.",
 			"NAME": "Homulilly"
 		},
 		"animator:IrohaTamaki":
 		{
+			"FLAVOR_TEXT": "'If you won't give me a reason, then I won't accept the decision to break up the team.  You can keep ignoring me and treating me like I don't matter.  But nothing you do will make me leave your side right now!'",
 			"DESCRIPTION": "Obtain [Grief Seed], then Exhaust it.",
 			"NAME": "Iroha Tamaki"
 		},
 		"animator:KyokoSakura":
 		{
+			"FLAVOR_TEXT": "'Hey, God, if you're there.  My life sucked.  So, for once, please... let me have a happy dream...'",
 			"DESCRIPTION": "Apply !M! Shackles to ALL enemies.",
 			"NAME": "Kyoko Sakura"
 		},
 		"animator:KyokoSakura_Ophelia":
 		{
+			"FLAVOR_TEXT": "'The Witch of Abandonment.  She eternally wanders with hollow footsteps within the fog. She can no longer remember what the horse that always accompanies her was.' -Anonymous",
 			"DESCRIPTION": "Purge up to !M! random {Curses} in your exhaust pile: Draw a card and reduce its cost by 1 for each Purge.",
 			"NAME": "Ophelia"
 		},
 		"animator:Kyubey":
 		{
+			"FLAVOR_TEXT": "'In this planet, you call females who have yet to become adults, 'girls'.  It makes sense then, that since you'll eventually become witches (majo), you should be called... magical girls (mahou shoujo)!'",
 			"DESCRIPTION": "Gain [E] for every !S! [D]. <DRW-M>. || When Obtained: Gain a random {Curse}.",
 			"NAME": "Kyubey"
 		},
 		"animator:MadokaKaname":
 		{
+			"FLAVOR_TEXT": "'Really... I can see it all now, and I finally know.  I know all the things you've done for me, throughout all those different timelines.  All of it.  All the times you've cried, and all the times you got hurt.  That you kept fighting for me...  I'm so sorry I never knew until now...  I'm so sorry!'",
 			"DESCRIPTION": "Gain [~Intangible].  Exhaust ALL {Curses} everywhere.",
 			"UPGRADE_DESCRIPTION": "Gain [~Intangible].  Exhaust ALL {Hindrances} everywhere.",
 			"NAME": "Madoka Kaname"
 		},
 		"animator:MadokaKaname_KriemhildGretchen":
 		{
+			"FLAVOR_TEXT": "'The Witch of Misfortune. Her nature is mercy. She absorbs any life on the planet into her newly created heaven in Misfortune: her barrier. The only way to defeat this witch is to make the world free of misfortune. If there's no grief in this world, she will believe this world is already a heaven.' -Anonymous",
 			"DESCRIPTION": "At start of turn: {Exhaust} all {Hindrances} in your hand.  Then, Purge a random {Curse} in your Exhaust pile to obtain a {Miracle} and an {Uncommon}{+}.",
 			"EXTENDED_DESCRIPTION": ["At start of turn: #yExhaust all #yHindrances in your hand.  Then, #yPurge a random #yCurse in your #yExhaust pile to obtain a #yMiracle and an #yUncommon.","At start of turn: #yExhaust all #yHindrances in your hand.  Then, #yPurge a random #yCurse in your #yExhaust pile to obtain a #yMiracle and an #yupgraded #yUncommon."],
 			"NAME": "Kriemhild Gretchen"
 		},
 		"animator:MamiTomoe":
 		{
+			"FLAVOR_TEXT": "'Do you really want to stand by my side and fight from now on...?  Do you really want to stay with me...?'",
 			"DESCRIPTION": "Deal damage next turn. || On {Discard} or {Exhaust}: Draw a {0-Cost} card.",
 			"NAME": "Mami Tomoe"
 		},
 		"animator:MamiTomoe_Candeloro":
 		{
+			"FLAVOR_TEXT": "'The Dress-Up Witch. She has an inviting nature. A kind-hearted witch who dreams of ideal things. This witch can't stand being lonely, so she never lets visitors escape her barrier.' -Anonymous",
 			"DESCRIPTION": "Purge up to !M! random {Curses} in your exhaust pile: Enter and Exit <CS> for each card Purged.",
 			"NAME": "Candeloro"
 		},
 		"animator:MifuyuAzusa":
 		{
+			"FLAVOR_TEXT": "'Am I going to be continue to be crushed by this memory for the rest of my life?  Unable to confide it with anyone...?'",
 			"DESCRIPTION": "Randomize the costs of all cards in your hand this turn.",
 			"NAME": "Mifuyu Azusa"
 		},
 		"animator:NagisaMomoe":
 		{
+			"FLAVOR_TEXT": "'I won't let a Witch kill my mom!  Mom can't die, because I'm going to save her!  Mom will die only because I didn't save her with my wish!'",
 			"DESCRIPTION": "Channel [Water].  Draw !M! card(s).",
 			"NAME": "Nagisa Momoe"
 		},
 		"animator:NagisaMomoe_Charlotte":
 		{
+			"FLAVOR_TEXT": "'The Dessert Witch, with a tenacious nature. She desires everything. She will never give up. Though she is capable of creating infinite amounts of any dessert she desires, she is unable to make the cheese that she loves most. One could easily catch her off-guard with a piece of cheese.' -Anonymous",
 			"DESCRIPTION": "Unplayable. || When Exhausted: Purge this and obtain {Charlotte}{+} (Alt. form).",
 			"NAME": "Charlotte"
 		},
 		"animator:NagisaMomoe_CharlotteAlt":
 		{
+			"FLAVOR_TEXT": "'The Dessert Witch. Once dreamt of tenacity. A mysterious creature who suddenly appeared in Mami's home. Was christened 'Bebe', but it is actually the Dessert Witch who arrived from the Law of Cycles.' -Anonymous",
 			"DESCRIPTION": "<SLM>.  When drawn: Purge a random {Curse} in your exhaust pile to double Charlotte's damage. || On Kill: Heal !M! [HP], return this card to your hand, and reduce its cost by 1.",
 			"NAME": "Charlotte"
 		},
 		"animator:SanaFutaba":
 		{
+			"FLAVOR_TEXT": "'I wish for you to make me invisible.  To disappear, completely.  I don't want to face anyone.  And I don't want them to find me.'",
 			"DESCRIPTION": "Can only be played if you have a {Curse} in your hand or exhaust pile.",
 			"NAME": "Sana Futaba"
 		},
 		"animator:SayakaMiki":
 		{
+			"FLAVOR_TEXT": "'For all the happiness you wish for someone, someone else'll get cursed with equal misery.  That's how it works for magical girls, and that's how it is for me.  I was stupid... so damn stupid...'",
 			"DESCRIPTION": "Channel [Frost] [Water] next turn.",
 			"EXTENDED_DESCRIPTION": ["At the start of your next turn, #yChannel #b{0} #yFrost and #yWater."],
 			"NAME": "Sayaka Miki"
 		},
 		"animator:SayakaMiki_Oktavia":
 		{
+			"FLAVOR_TEXT": "'The mermaid witch; it is in her nature to fall in love. Looking for the feeling that moved her so long ago, she moves with the entire concert hall. Her fortune only turns under the weight of memories and no longer moves toward the future. Nothing will reach her any longer. She will come to know nothing more. She simply allows no one to disturb her minions' playing.' -Anonymous",
 			"DESCRIPTION": "Purge up to !M! random {Curses} in your exhaust pile: {Attack} once for each card Purged.",
 			"NAME": "Oktavia"
 		},
 		"animator:SuzuneAmano":
 		{
+			"FLAVOR_TEXT": "'If it means stopping the whole Magical Girl system, if it will keep people from getting caught in it, I'm fine with being 'evil'.  People can call me a murderer all they want.'",
 			"DESCRIPTION": "Exhaust a card in your hand to Channel !M! [Fire].",
 			"NAME": "Suzune Amano"
 		},
 		"animator:YachiyoNanami":
 		{
+			"FLAVOR_TEXT": "'Yeah, I've heard that rumor before.  But, I'm sure you've realized by now... there are far more witches here.  Stronger witches.  There's nothing to save you here.  You two shouldn't have come.  It's hopeless.'",
 			"DESCRIPTION": "Gain [Orb_S].  Channel [Water]. || Once per turn: Exhaust a {Curse} in your hand or draw pile to gain !M! [Block].",
 			"EXTENDED_DESCRIPTION": ["Once per turn: #yExhaust a #yCurse in your hand or draw pile to gain #b{0} #yBlock."],
 			"NAME": "Yachiyo Nanami"
 		},
 		"animator:YuiTsuruno":
 		{
+			"FLAVOR_TEXT": "'The mightiest magical girl... Tsuruno!  I'm crazy strong, so watch out!'",
 			"DESCRIPTION": "Choose a card.  Exhaust a random card except the chosen card, then add [Grief Seed] to your hand.",
-			"NAME": "Yui Tsuruno"
+			"NAME": "Tsuruno Yui"
 		}
 	},
 
@@ -3242,6 +3265,7 @@
 		},
 		"animator:Walpurgisnacht":
 		{
+			"FLAVOR_TEXT": "'The Stage-Constructing Witch.  Its nature is helplessness.  It symbolizes the fool who continously spins in circles.  It will continue to rotate aimlessly throughout the world until It completely changes the whole of this age into a drama. When the doll's usual upside-down position reaches the top part of the Witch, she completely roils the civilization on the ground in a flash through its gale-like flight.' -Anonymous",
 			"DESCRIPTION": "Twice per turn: Add a random {Power} and [Grief Seed] to your hand. || <LIM>. Whenever you defeat an {Elite} or {Boss}: Obtain a Relic you do not have: {Blue Candle}, {Darkstone Periapt}, {Du-Vu Doll}, {Soul Gem}.",
 			"EXTENDED_DESCRIPTION": ["Twice per turn: #yAdd a random #yPower and #yGrief #ySeed to your hand.  If this is an #yElite or #yBoss fight, after victory: #yObtain a #yRelic you do not have: #yBlue #yCandle, #yDarkstone #yPeriapt, #yDu-Vu #yDoll, #ySoul #yGem."],
 			"NAME": "Walpurgisnacht"
