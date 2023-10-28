@@ -29,7 +29,7 @@ public class MadokaKaname extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 0, 2, 2);
+        Initialize(0, 0);
 
         SetAffinity_White(2);
         SetAffinity_Pink(2);
@@ -51,7 +51,7 @@ public class MadokaKaname extends AnimatorCard
     {
         GameUtilities.PlayVoiceSFX(name);
 
-        GameActions.Bottom.GainIntangible(secondaryValue);
+        GameActions.Bottom.GainIntangible(1);
 
         if (!upgraded)
         {

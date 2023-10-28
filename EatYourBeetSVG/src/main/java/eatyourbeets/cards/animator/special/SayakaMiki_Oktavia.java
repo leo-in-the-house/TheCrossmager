@@ -32,9 +32,13 @@ public class SayakaMiki_Oktavia extends AnimatorCard
     @Override
     public AbstractAttribute GetDamageInfo()
     {
-        int numCursesInExhaust = player.exhaustPile.getCardsOfType(CardType.CURSE).size();
+        if (GameUtilities.InBattle()) {
+            int numCursesInExhaust = player.exhaustPile.getCardsOfType(CardType.CURSE).size();
 
-        return super.GetDamageInfo().AddMultiplier(Math.min(magicNumber, numCursesInExhaust));
+            return super.GetDamageInfo().AddMultiplier(Math.min(magicNumber, numCursesInExhaust));
+        } else {
+            return super.GetDamageInfo().AddMultiplier(1);
+        }
     }
 
     @Override

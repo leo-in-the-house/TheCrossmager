@@ -14,7 +14,7 @@ import eatyourbeets.utilities.GameEffects;
 public class Kyubey extends AnimatorCard implements OnAddToDeckListener
 {
     public static final EYBCardData DATA = Register(Kyubey.class)
-            .SetSkill(1, CardRarity.RARE, EYBCardTarget.None)
+            .SetSkill(0, CardRarity.RARE, EYBCardTarget.None)
             .SetSeriesFromClassPackage();
 
     public Kyubey()
@@ -22,7 +22,7 @@ public class Kyubey extends AnimatorCard implements OnAddToDeckListener
         super(DATA);
 
         Initialize(0, 0, 2, 4);
-        SetCostUpgrade(-1);
+        SetUpgrade(0, 0, 1, -1);
 
         SetAffinity_Star(1);
 

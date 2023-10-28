@@ -24,6 +24,9 @@ public class Nelke extends AnimatorCard {
         Initialize(0, 0, 2, 1);
         SetUpgrade(0, 0, 2, 1);
 
+        SetDelayed(true);
+        SetEthereal(true);
+
         SetAffinity_Yellow(1);
     }
 

@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.watcher.PressEndTurnButtonAction;
 import com.megacrit.cardcrawl.actions.watcher.SkipEnemiesTurnAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.TimeWarpTurnEndEffect;
@@ -56,8 +57,9 @@ public class HomuraAkemi extends AnimatorCard
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.VFX(new TimeWarpTurnEndEffect());
         GameActions.Bottom.VFX(new BorderFlashEffect(Color.VIOLET, true));
+        GameActions.Bottom.MakeCardInDiscardPile(CreateRandomCurses.GetRandomCurse(AbstractDungeon.cardRng))
+                .Repeat(magicNumber);
         GameActions.Bottom.Add(new SkipEnemiesTurnAction());
-        GameActions.Bottom.Add(new CreateRandomCurses(secondaryValue, p.discardPile));
-        GameActions.Bottom.Add(new PressEndTurnButtonAction());
+        GameActions.Last.Add(new PressEndTurnButtonAction());
     }
 }

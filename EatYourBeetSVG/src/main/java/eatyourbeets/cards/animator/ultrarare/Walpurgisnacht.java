@@ -95,9 +95,9 @@ public class Walpurgisnacht extends AnimatorCard_UltraRare
         }
 
         @Override
-        public void atStartOfTurn()
+        public void OnUse(AbstractMonster m)
         {
-            super.atStartOfTurn();
+            super.OnUse(m);
 
             GameActions.Bottom.MakeCardInHand(AbstractDungeon.returnTrulyRandomCardInCombat(CardType.POWER).makeCopy());
             GameActions.Bottom.MakeCardInHand(new Curse_GriefSeed());

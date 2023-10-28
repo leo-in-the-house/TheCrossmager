@@ -17,7 +17,7 @@ import eatyourbeets.utilities.GameUtilities;
 public class AlinaGray extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(AlinaGray.class)
-            .SetSkill(2, CardRarity.RARE, EYBCardTarget.ALL)
+            .SetPower(2, CardRarity.RARE)
             
             .SetSeriesFromClassPackage();
 
@@ -113,6 +113,12 @@ public class AlinaGray extends AnimatorCard
                 GameActions.Bottom.StackPower(owner, new NoxiousFumesPower(owner, 1));
                 flashWithoutSound();
                 reducePower(1);
+
+                if (amount <= 0) {
+                    SetEnabled(false);
+                    RemovePower();
+                    flash();
+                }
             }
         }
 

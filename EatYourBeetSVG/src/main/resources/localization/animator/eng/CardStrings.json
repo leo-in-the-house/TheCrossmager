@@ -348,6 +348,12 @@
 			"DESCRIPTION": "Cycle !M! card(s). Motivate !S!. || Whenever you Seal another card in hand: Raise this card's Motivate amount by 1.",
 			"NAME": "Nonon Jakuzure"
 		},
+		"animator:OrikoMikuni":
+		{
+			"DESCRIPTION": "At the start of your turn: {Scry} 1. || {Hindrances} you discarded this way are {Exhausted}.",
+			"EXTENDED_DESCRIPTION": ["At the start of your turn, #yScry #b{0}. #yHindrances you discarded this way are #yExhausted."],
+			"NAME": "Oriko Mikuni"
+		},
 		"animator:Paimon":
 		{
 			"FLAVOR_TEXT": "'Morning! Are we going out for some tasty food today?'",
@@ -2081,7 +2087,7 @@
 	{
 		"animator:AlinaGray":
 		{
-			"DESCRIPTION": "Whenever you Exhaust or Purge a {Curse}: Gain [Noxious Fumes].",
+			"DESCRIPTION": "The next !M! times you Exhaust or Purge a {Curse}: Gain [Noxious Fumes].",
 			"EXTENDED_DESCRIPTION": ["The next #b{0} times you #yExhaust or #yPurge a #yCurse, gain [Noxious Fumes]."],
 			"NAME": "Alina Gray"
 		},
@@ -2097,12 +2103,12 @@
 		},
 		"animator:HomuraAkemi_Homulilly":
 		{
-			"DESCRIPTION": "Purge a random {Curse} in your exhaust pile to add a copy of every other {Curse} in your exhaust pile into your exhaust pile. || Below !A! [D]: {Exhaust} this card.",
+			"DESCRIPTION": "Purge a random {Curse} in your Exhaust pile to COPY every other {Curse} in your Exhaust pile. || Below !A! [D]: {Exhaust} this card.",
 			"NAME": "Homulilly"
 		},
 		"animator:IrohaTamaki":
 		{
-			"DESCRIPTION": "Obtain [Grief Seed], then exhaust it.",
+			"DESCRIPTION": "Obtain [Grief Seed], then Exhaust it.",
 			"NAME": "Iroha Tamaki"
 		},
 		"animator:KyokoSakura":
@@ -2159,7 +2165,7 @@
 		},
 		"animator:NagisaMomoe_CharlotteAlt":
 		{
-			"DESCRIPTION": "<SLM>.  When drawn: Exhaust a random {Curse} in your exhaust pile to double this card’s damage. || If this card kills an enemy: Heal !M! [HP], return this card to your hand, and reduce its cost by 1.",
+			"DESCRIPTION": "<SLM>.  When drawn: Purge a random {Curse} in your exhaust pile to double Charlotte's damage. || On Kill: Heal !M! [HP], return this card to your hand, and reduce its cost by 1.",
 			"NAME": "Charlotte"
 		},
 		"animator:SanaFutaba":

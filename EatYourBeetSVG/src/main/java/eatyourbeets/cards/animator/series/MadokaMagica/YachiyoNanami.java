@@ -24,6 +24,8 @@ public class YachiyoNanami extends AnimatorCard
         Initialize(0, 0, 8);
         SetUpgrade(0, 0, 8);
 
+        SetEthereal(true);
+
         SetAffinity_Blue(2);
         SetAffinity_White(1);
     }
@@ -34,7 +36,7 @@ public class YachiyoNanami extends AnimatorCard
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainOrbSlots(1);
         GameActions.Bottom.ChannelOrb(new Water());
-        GameActions.Bottom.StackPower(new YachiyoNanamiPower(p, 1));
+        GameActions.Bottom.StackPower(new YachiyoNanamiPower(p, magicNumber));
     }
 
     public static class YachiyoNanamiPower extends AnimatorClickablePower

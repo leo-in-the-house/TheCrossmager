@@ -33,12 +33,13 @@ public class MamiTomoe extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(9, 0, 0);
+        Initialize(11, 0, 0);
         SetUpgrade(3, 0, 0);
 
         SetAffinity_Yellow(1, 0, 1);
         SetAffinity_White(1);
 
+        SetFading(true);
         SetMultiDamage(true);
     }
 

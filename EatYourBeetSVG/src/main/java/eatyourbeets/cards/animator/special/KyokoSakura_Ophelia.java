@@ -15,7 +15,7 @@ import eatyourbeets.utilities.GameUtilities;
 public class KyokoSakura_Ophelia extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(KyokoSakura_Ophelia.class)
-            .SetSkill(2, CardRarity.SPECIAL, EYBCardTarget.None)
+            .SetSkill(3, CardRarity.SPECIAL, EYBCardTarget.None)
             .SetSeries(KyokoSakura.DATA.Series);
 
     public KyokoSakura_Ophelia()

@@ -36,8 +36,8 @@ public class SayakaMiki extends AnimatorCard
         Initialize(0, 3);
         SetUpgrade(0, 3);
 
-        SetAffinity_Blue(1);
-        SetAffinity_White(1);
+        SetAffinity_Blue(1, 0, 1);
+        SetAffinity_White(1, 0, 1);
 
         SetEthereal(true);
     }

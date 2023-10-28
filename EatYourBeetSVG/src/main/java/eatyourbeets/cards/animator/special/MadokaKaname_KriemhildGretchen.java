@@ -1,5 +1,6 @@
 package eatyourbeets.cards.animator.special;
 
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -25,8 +26,8 @@ public class MadokaKaname_KriemhildGretchen extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 0, 2, 5);
-        SetUpgrade(0, 12, 0, 2);
+        Initialize(0, 0);
+        SetUpgrade(0, 12);
 
         SetAffinity_White(1);
         SetAffinity_Black(2);
@@ -47,7 +48,7 @@ public class MadokaKaname_KriemhildGretchen extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.StackPower(new MadokaKaname_KriemhildGretchenPower(p, secondaryValue, upgraded));
+        GameActions.Bottom.StackPower(new MadokaKaname_KriemhildGretchenPower(p, 1, upgraded));
     }
 
     public static class MadokaKaname_KriemhildGretchenPower extends AnimatorPower
@@ -70,26 +71,32 @@ public class MadokaKaname_KriemhildGretchen extends AnimatorCard
         }
 
         @Override
-        public void atStartOfTurn()
+        public void atStartOfTurnPostDraw()
         {
-            super.atStartOfTurn();
+            super.atStartOfTurnPostDraw();
 
-            GameActions.Bottom.ExhaustFromHand(name, 999, true)
-                .SetFilter(card -> card.type == CardType.CURSE)
-                .AddCallback(cards -> {
+            GameActions.Bottom.Callback(() -> {
+                for (AbstractCard card : player.hand.group) {
+                    if (GameUtilities.IsHindrance(card)) {
+                        GameActions.Bottom.Exhaust(card);
+                    }
+                }
+
+                GameActions.Last.Callback(() -> {
                     GameActions.Top.PurgeFromPile(name, 1, player.exhaustPile)
-                        .SetFilter(card -> card.type == CardType.CURSE)
-                        .SetOptions(true, true)
-                        .AddCallback(purgedCards -> {
-                            int numCardsPurged = purgedCards.size();
+                            .SetFilter(card -> card.type == CardType.CURSE)
+                            .SetOptions(true, true)
+                            .AddCallback(purgedCards -> {
+                                int numCardsPurged = purgedCards.size();
 
-                            if (numCardsPurged > 0) {
-                                GameActions.Top.MakeCardInHand(new Special_Miracle());
-                                GameActions.Top.MakeCardInHand(AbstractDungeon.getCard(CardRarity.UNCOMMON, rng))
-                                        .SetUpgrade(upgraded, true);
-                            }
-                        });
+                                if (numCardsPurged > 0) {
+                                    GameActions.Top.MakeCardInHand(new Special_Miracle());
+                                    GameActions.Top.MakeCardInHand(AbstractDungeon.getCard(CardRarity.UNCOMMON, rng))
+                                            .SetUpgrade(upgraded, true);
+                                }
+                            });
                 });
+            });
         }
     }
 }
