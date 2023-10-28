@@ -6,18 +6,15 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.curse.special.Curse_GriefSeed;
 import eatyourbeets.cards.animator.special.KyokoSakura_Ophelia;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.effects.AttackEffects;
-import eatyourbeets.orbs.animator.Fire;
-import eatyourbeets.resources.GR;
 import eatyourbeets.ui.common.EYBCardPopupActions;
-import eatyourbeets.utilities.CardSelection;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class KyokoSakura extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(KyokoSakura.class)
-            .SetAttack(1, CardRarity.UNCOMMON, EYBAttackType.Piercing, EYBCardTarget.Random)
+            .SetAttack(2, CardRarity.UNCOMMON, EYBAttackType.Piercing, EYBCardTarget.ALL)
             .SetSeriesFromClassPackage()
             .PostInitialize(data ->
             {
@@ -30,40 +27,21 @@ public class KyokoSakura extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(11, 0, 1);
-        SetUpgrade(3, 0);
+        Initialize(6, 0, 4);
+        SetUpgrade(2, 0, 2);
 
-        SetAffinity_Red(1, 1, 0);
-        SetAffinity_Blue(1);
-
-        SetAffinityRequirement(Affinity.Red, 1);
+        SetAffinity_Red(1, 0, 1);
+        SetAffinity_Pink(1);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.DealDamageToRandomEnemy(this, AttackEffects.SPEAR).SetVFXColor(Color.RED);
-        GameActions.Bottom.Draw(magicNumber);
+        GameActions.Bottom.DealDamageToAll(this, AttackEffects.SPEAR).SetVFXColor(Color.RED);
 
-        if (CheckSpecialCondition(false))
-        {
-            GameActions.Bottom.ChannelOrb(new Fire());
+        for (AbstractMonster enemy : GameUtilities.GetEnemies(true)) {
+            GameActions.Bottom.ReduceStrength(enemy, magicNumber, true);
         }
-    }
-
-    @Override
-    public void OnLateUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
-    {
-        GameActions.Bottom.SelectFromHand(name, 1, false)
-        .SetMessage(GR.Common.Strings.HandSelection.MoveToDrawPile)
-        .AddCallback(cards ->
-        {
-            for (int i = cards.size() - 1; i >= 0; i--)
-            {
-                GameActions.Top.MoveCard(cards.get(i), player.hand, player.drawPile)
-                .SetDestination(CardSelection.Top);
-            }
-        });
     }
 }

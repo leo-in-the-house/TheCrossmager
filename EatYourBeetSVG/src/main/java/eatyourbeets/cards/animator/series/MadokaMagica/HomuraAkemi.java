@@ -1,20 +1,25 @@
 package eatyourbeets.cards.animator.series.MadokaMagica;
 
+import com.badlogic.gdx.graphics.Color;
+import com.megacrit.cardcrawl.actions.watcher.PressEndTurnButtonAction;
+import com.megacrit.cardcrawl.actions.watcher.SkipEnemiesTurnAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.NoDrawPower;
+import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
+import com.megacrit.cardcrawl.vfx.combat.TimeWarpTurnEndEffect;
+import eatyourbeets.actions.animator.CreateRandomCurses;
 import eatyourbeets.cards.animator.curse.special.Curse_GriefSeed;
 import eatyourbeets.cards.animator.special.HomuraAkemi_Homulilly;
 import eatyourbeets.cards.animator.tokens.AffinityToken;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.ui.common.EYBCardPopupActions;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class HomuraAkemi extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(HomuraAkemi.class)
-            .SetSkill(1, CardRarity.RARE, EYBCardTarget.None)
+            .SetSkill(2, CardRarity.RARE, EYBCardTarget.None)
             .SetSeriesFromClassPackage()
             .PostInitialize(data ->
             {
@@ -28,27 +33,31 @@ public class HomuraAkemi extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 5, 2);
-        SetUpgrade(0, 3, 0);
+        Initialize(0, 0, 3);
+        SetUpgrade(0, 0, 0);
 
-        SetAffinity_Blue(2, 0, 1);
-        SetAffinity_Black(1, 0, 1);
+        SetAffinity_Teal(1, 1, 0);
+        SetAffinity_Black(1, 1, 0);
 
         SetExhaust(true);
+    }
+
+    @Override
+    protected void OnUpgrade()
+    {
+        super.OnUpgrade();
+
+        SetRetain(true);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.GainBlock(block);
-
-        if (info.IsStarter)
-        {
-            GameActions.Bottom.ObtainAffinityToken(Affinity.Blue, false);
-        }
-
-        GameActions.Bottom.ReboundCards(magicNumber);
-        GameActions.Bottom.StackPower(new NoDrawPower(p));
+        GameActions.Bottom.VFX(new TimeWarpTurnEndEffect());
+        GameActions.Bottom.VFX(new BorderFlashEffect(Color.VIOLET, true));
+        GameActions.Bottom.Add(new SkipEnemiesTurnAction());
+        GameActions.Bottom.Add(new CreateRandomCurses(secondaryValue, p.discardPile));
+        GameActions.Bottom.Add(new PressEndTurnButtonAction());
     }
 }

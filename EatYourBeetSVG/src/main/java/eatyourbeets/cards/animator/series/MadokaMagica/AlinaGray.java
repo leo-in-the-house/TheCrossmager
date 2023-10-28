@@ -1,24 +1,23 @@
 package eatyourbeets.cards.animator.series.MadokaMagica;
 
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.powers.NoxiousFumesPower;
-import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.cards.base.CardUseInfo;
-import eatyourbeets.cards.base.EYBCardData;
-import eatyourbeets.cards.base.EYBCardTarget;
+import eatyourbeets.cards.base.*;
+import eatyourbeets.interfaces.subscribers.OnAfterCardExhaustedSubscriber;
+import eatyourbeets.interfaces.subscribers.OnAfterCardPurgedSubscriber;
 import eatyourbeets.powers.AnimatorPower;
-import eatyourbeets.powers.PowerHelper;
+import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.TargetHelper;
+import eatyourbeets.utilities.GameUtilities;
 
 public class AlinaGray extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(AlinaGray.class)
-            .SetSkill(1, CardRarity.RARE, EYBCardTarget.ALL)
+            .SetSkill(2, CardRarity.RARE, EYBCardTarget.ALL)
             
             .SetSeriesFromClassPackage();
 
@@ -26,41 +25,95 @@ public class AlinaGray extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 0, 1, 3);
-        SetUpgrade(0, 0, 0, 2);
+        Initialize(0, 0, 3, 0);
+        SetUpgrade(0, 6, 1, 0);
 
-        SetAffinity_Blue(1, 1, 0);
-        SetAffinity_Green(1);
-        SetAffinity_Black(1);
+        SetAffinity_Violet(2);
+        SetAffinity_Blue(1);
 
-        SetExhaust(true);
+        SetEthereal(true);
     }
 
     @Override
-    public void OnLateUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
+    protected void OnUpgrade()
     {
-        GameActions.Bottom.DiscardFromHand(name, 1, false)
-        .SetOptions(true, true, true)
-        .SetFilter(GameUtilities::IsHindrance)
-        .AddCallback(cards ->
-        {
-            if (cards.size() > 0)
-            {
-                GameActions.Bottom.Draw(1);
-                GameActions.Bottom.StackPower(TargetHelper.Enemies(), PowerHelper.Poison, secondaryValue);
-                GameActions.Bottom.StackPower(TargetHelper.Enemies(), PowerHelper.Shackles, secondaryValue);
-            }
-        });
+        super.OnUpgrade();
+
+        AddScaling(Affinity.Violet, 1);
+        AddScaling(Affinity.Blue, 1);
+    }
+
+    @Override
+    public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
+    {
+        GameUtilities.PlayVoiceSFX(name);
+
+        if (upgraded) {
+            GameActions.Bottom.GainBlock(block);
+        }
+
         GameActions.Bottom.StackPower(new AlinaGrayPower(p, magicNumber));
     }
 
-    public static class AlinaGrayPower extends AnimatorPower
+    public static class AlinaGrayPower extends AnimatorPower implements OnAfterCardExhaustedSubscriber, OnAfterCardPurgedSubscriber
     {
         public AlinaGrayPower(AbstractCreature owner, int amount)
         {
             super(owner, AlinaGray.DATA);
 
-            Initialize(amount, PowerType.BUFF, true);
+            Initialize(amount);
+        }
+
+        @Override
+        public void onInitialApplication()
+        {
+            super.onInitialApplication();
+
+            CombatStats.onAfterCardExhausted.Subscribe(this);
+            CombatStats.onAfterCardPurged.Subscribe(this);
+        }
+
+        @Override
+        public void onRemove()
+        {
+            super.onRemove();
+
+            CombatStats.onAfterCardExhausted.Unsubscribe(this);
+            CombatStats.onAfterCardPurged.Unsubscribe(this);
+        }
+
+        @Override
+        public void OnAfterCardExhausted(AbstractCard card)
+        {
+            if (GameUtilities.IsDeadOrEscaped(owner))
+            {
+                CombatStats.onAfterCardExhausted.Unsubscribe(this);
+                CombatStats.onAfterCardPurged.Unsubscribe(this);
+                return;
+            }
+
+            if (card.type == CardType.CURSE) {
+                GameActions.Bottom.StackPower(owner, new NoxiousFumesPower(owner, 1));
+                flashWithoutSound();
+                reducePower(1);
+            }
+        }
+
+        @Override
+        public void OnAfterCardPurged(AbstractCard card)
+        {
+            if (GameUtilities.IsDeadOrEscaped(owner))
+            {
+                CombatStats.onAfterCardExhausted.Unsubscribe(this);
+                CombatStats.onAfterCardPurged.Unsubscribe(this);
+                return;
+            }
+
+            if (card.type == CardType.CURSE) {
+                GameActions.Bottom.StackPower(owner, new NoxiousFumesPower(owner, 1));
+                flashWithoutSound();
+                reducePower(1);
+            }
         }
 
         @Override
@@ -73,17 +126,6 @@ public class AlinaGray extends AnimatorCard
         public void onChannel(AbstractOrb orb)
         {
             super.onChannel(orb);
-
-            GameActions.Bottom.StackPower(owner, new NoxiousFumesPower(owner, 1));
-            flashWithoutSound();
-        }
-
-        @Override
-        public void atEndOfTurn(boolean isPlayer)
-        {
-            super.atEndOfTurn(isPlayer);
-
-            ReducePower(1);
         }
     }
 }

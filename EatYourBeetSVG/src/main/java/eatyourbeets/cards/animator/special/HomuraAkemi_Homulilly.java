@@ -4,63 +4,55 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.series.MadokaMagica.HomuraAkemi;
-import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.cards.base.CardUseInfo;
-import eatyourbeets.cards.base.EYBCardData;
-import eatyourbeets.cards.base.EYBCardTarget;
+import eatyourbeets.cards.base.*;
+import eatyourbeets.cards.base.attributes.AbstractAttribute;
+import eatyourbeets.cards.base.attributes.TempHPAttribute;
 import eatyourbeets.utilities.GameActions;
-
-import java.util.HashSet;
 
 public class HomuraAkemi_Homulilly extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(HomuraAkemi_Homulilly.class)
-            .SetSkill(2, CardRarity.SPECIAL, EYBCardTarget.None)
+            .SetSkill(3, CardRarity.SPECIAL, EYBCardTarget.None)
             .SetSeries(HomuraAkemi.DATA.Series);
 
     public HomuraAkemi_Homulilly()
     {
         super(DATA);
 
-        Initialize(0, 4, 3, 3);
-        SetUpgrade(0, 2, 1, 1);
+        Initialize(0, 0, 26);
+        SetUpgrade(0, 0, 12);
 
-        SetAffinity_Black(2, 0, 3);
-        SetAffinity_Red(1);
+        SetAffinity_Teal(2);
+        SetAffinity_Black(2);
 
-        SetExhaust(true);
+        SetAffinityRequirement(Affinity.Black, 6);
     }
 
     @Override
-    public void OnLateUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
+    public AbstractAttribute GetSpecialInfo()
     {
-        GameActions.Bottom.GainBlock(block);
-        GameActions.Bottom.GainBlack(secondaryValue);
-        GameActions.Bottom.Cycle(name, secondaryValue);
-        GameActions.Bottom.Callback(() ->
-        {
-            final HashSet<String> cards = new HashSet<>();
-            for (AbstractCard c : player.exhaustPile.group)
-            {
-                if (c.type == CardType.CURSE && !cards.contains(c.cardID))
-                {
-                    GameActions.Top.MakeCardInHand(c.makeStatEquivalentCopy());
-                    cards.add(c.cardID);
-                }
-            }
+        return TempHPAttribute.Instance.SetCard(this, true);
+    }
 
-            GameActions.Last.Callback(() ->
-            {
-                int tempHP = 0;
-                for (AbstractCard c : player.hand.group)
-                {
-                    if (c.type == CardType.CURSE)
-                    {
-                        tempHP += magicNumber;
+    @Override
+    public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
+    {
+        GameActions.Bottom.GainTemporaryHP(magicNumber);
+        GameActions.Bottom.PurgeFromPile(name, 1, player.exhaustPile)
+            .SetFilter(card -> card.type == CardType.CURSE)
+            .SetOptions(true, true)
+            .AddCallback(cards -> {
+                int numCardsPurged = cards.size();
+
+                if (numCardsPurged > 0) {
+                    for (AbstractCard card : player.exhaustPile.getCardsOfType(CardType.CURSE).group) {
+                        GameActions.Top.MakeCard(card.makeCopy(), player.exhaustPile);
                     }
                 }
-                GameActions.Bottom.GainTemporaryHP(tempHP);
             });
-        });
+
+        if (!CheckSpecialCondition(false)) {
+            GameActions.Last.Exhaust(this);
+        }
     }
 }

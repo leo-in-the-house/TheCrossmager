@@ -1,77 +1,57 @@
 package eatyourbeets.cards.animator.special;
 
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.stances.NeutralStance;
 import eatyourbeets.cards.animator.series.MadokaMagica.MamiTomoe;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
-import eatyourbeets.interfaces.subscribers.OnLoseHPSubscriber;
-import eatyourbeets.monsters.EnemyIntent;
-import eatyourbeets.powers.CombatStats;
-import eatyourbeets.powers.PowerHelper;
+import eatyourbeets.stances.CalmStance;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.TargetHelper;
 
-public class MamiTomoe_Candeloro extends AnimatorCard implements OnLoseHPSubscriber
+public class MamiTomoe_Candeloro extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(MamiTomoe_Candeloro.class)
-            .SetSkill(2, CardRarity.SPECIAL, EYBCardTarget.ALL)
+            .SetSkill(3, CardRarity.SPECIAL, EYBCardTarget.None)
             .SetSeries(MamiTomoe.DATA.Series);
 
     public MamiTomoe_Candeloro()
     {
         super(DATA);
 
-        Initialize(0, 20, 1);
-        SetUpgrade(0, 6, 0);
+        Initialize(0, 0, 4);
+        SetUpgrade(0, 0, 3);
 
-        SetAffinity_Black(2);
-        SetAffinity_White(2);
-        SetAffinity_Star(0, 0, 1);
+        SetAffinity_Yellow(2);
+        SetAffinity_Black(1);
 
-        SetRetainOnce(true);
         SetExhaust(true);
+        SetRetain(true);
     }
 
     @Override
-    public void OnDrag(AbstractMonster m)
+    protected void OnUpgrade()
     {
-        super.OnDrag(m);
+        super.OnUpgrade();
 
-        for (EnemyIntent intent : GameUtilities.GetIntents())
-        {
-            intent.AddStrength(magicNumber);
-        }
-    }
-
-    @Override
-    public void OnLoseHP(DamageInfo info, int amount)
-    {
-        if (player.exhaustPile.contains(this) && info.type == DamageInfo.DamageType.NORMAL && amount > 0)
-        {
-            SetExhaust(false);
-            SetPurge(true, true);
-            GameActions.Top.MoveCard(this, player.exhaustPile, player.hand).ShowEffect(true, true);
-        }
+        SetInnate(true);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
-        GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.GainBlock(block);
-        GameActions.Bottom.StackPower(TargetHelper.Enemies(), PowerHelper.Strength, magicNumber);
-    }
+        GameActions.Bottom.PurgeFromPile(name, magicNumber, player.exhaustPile)
+            .SetFilter(card -> card.type == CardType.CURSE)
+            .SetOptions(true, true)
+            .AddCallback(cards -> {
+                int numCardsPurged = cards.size();
 
-    @Override
-    public void triggerWhenCreated(boolean startOfBattle)
-    {
-        super.triggerWhenCreated(startOfBattle);
-
-        CombatStats.onLoseHP.Subscribe(this);
+                for (int i=0; i<numCardsPurged; i++) {
+                    GameActions.Top.ChangeStance(CalmStance.STANCE_ID);
+                    GameActions.Top.ChangeStance(NeutralStance.STANCE_ID);
+                }
+            });
     }
 }

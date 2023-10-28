@@ -6,13 +6,15 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.Frost;
 import eatyourbeets.cards.animator.curse.special.Curse_GriefSeed;
 import eatyourbeets.cards.animator.special.SayakaMiki_Oktavia;
-import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.cards.base.attributes.AbstractAttribute;
-import eatyourbeets.cards.base.attributes.TempHPAttribute;
+import eatyourbeets.cards.base.AnimatorCard;
+import eatyourbeets.cards.base.CardUseInfo;
+import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.cards.base.EYBCardTarget;
+import eatyourbeets.orbs.animator.Water;
 import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.ui.common.EYBCardPopupActions;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class SayakaMiki extends AnimatorCard
 {
@@ -31,36 +33,29 @@ public class SayakaMiki extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 0, 2, 4);
-        SetUpgrade(0, 0, 2);
+        Initialize(0, 3);
+        SetUpgrade(0, 3);
 
-        SetAffinity_Green(1, 1, 0);
-        SetAffinity_Blue(2);
+        SetAffinity_Blue(1);
+        SetAffinity_White(1);
 
-        SetAffinityRequirement(Affinity.White, 1);
+        SetEthereal(true);
     }
 
     @Override
-    public AbstractAttribute GetSpecialInfo()
+    protected void OnUpgrade()
     {
-        return TempHPAttribute.Instance.SetCard(this, true);
+        super.OnUpgrade();
+
+        SetEthereal(false);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.GainTemporaryHP(magicNumber);
+        GameActions.Bottom.GainBlock(block);
         GameActions.Bottom.StackPower(new SayakaMikiPower(p, 1)).ShowEffect(false, false);
-
-        if (CheckSpecialCondition(false))
-        {
-            GameActions.Bottom.RecoverHP(secondaryValue);
-        }
-        else
-        {
-            GameActions.Bottom.GainWhite(1, true);
-        }
     }
 
     @Override
@@ -84,6 +79,7 @@ public class SayakaMiki extends AnimatorCard
             super.atStartOfTurn();
 
             GameActions.Bottom.ChannelOrbs(Frost::new, amount);
+            GameActions.Bottom.ChannelOrbs(Water::new, amount);
             RemovePower();
         }
     }

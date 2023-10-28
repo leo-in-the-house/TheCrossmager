@@ -20,6 +20,7 @@ public class NagisaMomoe_Charlotte extends AnimatorCard
         Initialize(0, 0);
         SetUpgrade(0, 0);
 
+        SetAffinity_Blue(1);
         SetAffinity_Black(1);
 
         SetUnplayable(true);

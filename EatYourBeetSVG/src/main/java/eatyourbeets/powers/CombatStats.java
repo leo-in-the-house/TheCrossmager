@@ -92,6 +92,7 @@ public class CombatStats extends EYBPower implements InvisiblePower
     public static final GameEvent<OnAfterCardDiscardedSubscriber> onAfterCardDiscarded = RegisterEvent(new GameEvent<>());
     public static final GameEvent<OnAfterCardDrawnSubscriber> onAfterCardDrawn = RegisterEvent(new GameEvent<>());
     public static final GameEvent<OnAfterCardExhaustedSubscriber> onAfterCardExhausted = RegisterEvent(new GameEvent<>());
+    public static final GameEvent<OnAfterCardPurgedSubscriber> onAfterCardPurged = RegisterEvent(new GameEvent<>());
     public static final GameEvent<OnTryUsingCardSubscriber> onTryUsingCard = RegisterEvent(new GameEvent<>());
     public static final GameEvent<OnPlayCardSubscriber> onPlayCard = RegisterEvent(new GameEvent<>());
     public static final GameEvent<OnAfterCardPlayedSubscriber> onAfterCardPlayed = RegisterEvent(new GameEvent<>());
@@ -431,6 +432,11 @@ public class CombatStats extends EYBPower implements InvisiblePower
         if (!PurgedCards.contains(card))
         {
             PurgedCards.group.add(card);
+        }
+
+        for (OnAfterCardPurgedSubscriber p : onAfterCardPurged.GetSubscribers())
+        {
+            p.OnAfterCardPurged(card);
         }
     }
 

@@ -1,28 +1,23 @@
 package eatyourbeets.cards.animator.series.MadokaMagica;
 
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.orbs.Frost;
-import com.megacrit.cardcrawl.orbs.Lightning;
 import eatyourbeets.cards.animator.curse.special.Curse_GriefSeed;
 import eatyourbeets.cards.animator.special.NagisaMomoe_Charlotte;
 import eatyourbeets.cards.animator.special.NagisaMomoe_CharlotteAlt;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
-import eatyourbeets.orbs.animator.Fire;
+import eatyourbeets.orbs.animator.Water;
 import eatyourbeets.ui.common.EYBCardPopupActions;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class NagisaMomoe extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(NagisaMomoe.class)
-            .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None)
-            
+            .SetSkill(0, CardRarity.UNCOMMON, EYBCardTarget.None)
             .SetSeriesFromClassPackage()
             .PostInitialize(data ->
             {
@@ -39,7 +34,7 @@ public class NagisaMomoe extends AnimatorCard
         Initialize(0, 0, 1);
         SetUpgrade(0, 0, 1);
 
-        SetAffinity_Star(1);
+        SetAffinity_Blue(1);
 
         SetExhaust(true);
     }
@@ -48,29 +43,7 @@ public class NagisaMomoe extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.ChannelOrbs(() ->
-        {
-            switch (rng.random(2))
-            {
-                case 0: return new Lightning();
-                case 1: return new Frost();
-                case 2: return new Fire();
-                default: throw new RuntimeException("Invalid case");
-            }
-        }, magicNumber + (CheckSpecialCondition(false) ? 1 : 0));
-    }
-
-    @Override
-    public boolean CheckSpecialCondition(boolean tryUse)
-    {
-        for (AbstractCard c : player.hand.group)
-        {
-            if (NagisaMomoe_Charlotte.DATA.IsCard(c) || NagisaMomoe_CharlotteAlt.DATA.IsCard(c) || Curse_GriefSeed.DATA.IsCard(c))
-            {
-                return true;
-            }
-        }
-
-        return false;
+        GameActions.Bottom.ChannelOrb(new Water());
+        GameActions.Bottom.Draw(magicNumber);
     }
 }

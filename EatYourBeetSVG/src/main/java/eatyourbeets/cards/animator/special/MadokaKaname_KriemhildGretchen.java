@@ -1,74 +1,95 @@
 package eatyourbeets.cards.animator.special;
 
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.orbs.AbstractOrb;
-import com.megacrit.cardcrawl.orbs.Dark;
 import eatyourbeets.cards.animator.series.MadokaMagica.MadokaKaname;
+import eatyourbeets.cards.base.Affinity;
 import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class MadokaKaname_KriemhildGretchen extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(MadokaKaname_KriemhildGretchen.class)
             .SetPower(2, CardRarity.SPECIAL)
-            .SetSeries(MadokaKaname.DATA.Series);
+            .SetSeries(MadokaKaname.DATA.Series)
+            .PostInitialize(data -> data.AddPreview(new Special_Miracle(), false));
+
 
     public MadokaKaname_KriemhildGretchen()
     {
         super(DATA);
 
         Initialize(0, 0, 2, 5);
-        SetUpgrade(0, 0, 0, 2);
+        SetUpgrade(0, 12, 0, 2);
 
-        SetAffinity_Black(2);
         SetAffinity_White(1);
+        SetAffinity_Black(2);
 
         SetEthereal(true);
+    }
+
+    @Override
+    protected void OnUpgrade()
+    {
+        super.OnUpgrade();
+
+        AddScaling(Affinity.White, 1);
+        AddScaling(Affinity.Black, 1);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.ChannelOrbs(Dark::new, magicNumber);
-        GameActions.Bottom.StackPower(new MadokaKaname_KriemhildGretchenPower(p, secondaryValue));
+        GameActions.Bottom.StackPower(new MadokaKaname_KriemhildGretchenPower(p, secondaryValue, upgraded));
     }
 
     public static class MadokaKaname_KriemhildGretchenPower extends AnimatorPower
     {
-        public MadokaKaname_KriemhildGretchenPower(AbstractCreature owner, int amount)
+        private boolean upgraded;
+
+        public MadokaKaname_KriemhildGretchenPower(AbstractCreature owner, int amount, boolean upgraded)
         {
             super(owner, MadokaKaname_KriemhildGretchen.DATA);
+
+            this.upgraded = upgraded;
 
             Initialize(amount);
         }
 
         @Override
-        public void onExhaust(AbstractCard card)
+        public void updateDescription()
         {
-            super.onExhaust(card);
+            description = FormatDescription(upgraded ? 1 : 0, amount);
+        }
 
-            if (card.type == CardType.CURSE)
-            {
-                GameActions.Bottom.GainTemporaryHP(amount);
+        @Override
+        public void atStartOfTurn()
+        {
+            super.atStartOfTurn();
 
-                for (AbstractOrb orb : player.orbs)
-                {
-                    if (orb != null && Dark.ORB_ID.equals(orb.ID))
-                    {
-                        GameActions.Bottom.TriggerOrbPassive(orb, 1);
-                    }
-                }
+            GameActions.Bottom.ExhaustFromHand(name, 999, true)
+                .SetFilter(card -> card.type == CardType.CURSE)
+                .AddCallback(cards -> {
+                    GameActions.Top.PurgeFromPile(name, 1, player.exhaustPile)
+                        .SetFilter(card -> card.type == CardType.CURSE)
+                        .SetOptions(true, true)
+                        .AddCallback(purgedCards -> {
+                            int numCardsPurged = purgedCards.size();
 
-                flashWithoutSound();
-            }
+                            if (numCardsPurged > 0) {
+                                GameActions.Top.MakeCardInHand(new Special_Miracle());
+                                GameActions.Top.MakeCardInHand(AbstractDungeon.getCard(CardRarity.UNCOMMON, rng))
+                                        .SetUpgrade(upgraded, true);
+                            }
+                        });
+                });
         }
     }
 }

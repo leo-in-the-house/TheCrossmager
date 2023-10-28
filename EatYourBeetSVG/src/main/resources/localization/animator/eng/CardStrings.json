@@ -2081,8 +2081,8 @@
 	{
 		"animator:AlinaGray":
 		{
-			"DESCRIPTION": "Cycle 1 {Hindrance} to apply !S! [Poison] and [Shackles] to ALL enemies. || For !M! turn(s): Whenever you Channel an Orb: Gain 1 [Noxious Fumes].",
-			"EXTENDED_DESCRIPTION": ["For #b{0} turn(s), whenever you #yChannel an orb, gain #b1 [Noxious Fumes]."],
+			"DESCRIPTION": "Whenever you Exhaust or Purge a {Curse}: Gain [Noxious Fumes].",
+			"EXTENDED_DESCRIPTION": ["The next #b{0} times you #yExhaust or #yPurge a #yCurse, gain [Noxious Fumes]."],
 			"NAME": "Alina Gray"
 		},
 		"animator:FeliciaMitsuki":
@@ -2092,12 +2092,12 @@
 		},
 		"animator:HomuraAkemi":
 		{
-			"DESCRIPTION": "<ST>. Obtain {[B] Token}. || Put the next !M! cards you play this turn on top of your draw pile. You can't draw additional cards this turn.",
+			"DESCRIPTION": "Add !M! random {Curses} to your discard pile. || Take an extra turn after this one.  End your turn.",
 			"NAME": "Homura Akemi"
 		},
 		"animator:HomuraAkemi_Homulilly":
 		{
-			"DESCRIPTION": "Gain !S! [D]. Cycle !S! cards. || Add a copy of every unique {Curse} in your Exhaust pile to your hand. Gain !M! [THP] for each {Curse} in hand.",
+			"DESCRIPTION": "Purge a random {Curse} in your exhaust pile to add a copy of every other {Curse} in your exhaust pile into your exhaust pile. || Below !A! [D]: {Exhaust} this card.",
 			"NAME": "Homulilly"
 		},
 		"animator:IrohaTamaki":
@@ -2107,38 +2107,39 @@
 		},
 		"animator:KyokoSakura":
 		{
-			"DESCRIPTION": "<DRW-M>. Put 1 card on top of your draw pile. || !A! [R]: Channel [Fire].",
+			"DESCRIPTION": "Apply !M! Shackles to ALL enemies.",
 			"NAME": "Kyoko Sakura"
 		},
 		"animator:KyokoSakura_Ophelia":
 		{
-			"DESCRIPTION": "Channel !S! [Fire]. <DRW-M>, then raise this number by 1. || If your hand is full after playing this card: Motivate 2 and Exhaust.",
+			"DESCRIPTION": "Purge up to !M! random {Curses} in your exhaust pile: Draw a card and reduce its cost by 1 for each Purge.",
 			"NAME": "Ophelia"
 		},
 		"animator:Kyubey":
 		{
-			"DESCRIPTION": "Gain [E] [E]. <DRW-M>. || When obtained: Also obtain a random {Curse}.",
+			"DESCRIPTION": "Gain [E] for every !S! [D]. <DRW-M>. || When Obtained: Gain a random {Curse}.",
 			"NAME": "Kyubey"
 		},
 		"animator:MadokaKaname":
 		{
-			"DESCRIPTION": "Gain !M! {Temp.} [Artifact]. Obtain {[L] Token}{+}. || <LIM>. !A! [L]: Gain !S! [~Intangible]. Exhaust ALL {Curses}.",
+			"DESCRIPTION": "Gain [~Intangible].  Exhaust ALL {Curses} everywhere.",
+			"UPGRADE_DESCRIPTION": "Gain [~Intangible].  Exhaust ALL {Hindrances} everywhere.",
 			"NAME": "Madoka Kaname"
 		},
 		"animator:MadokaKaname_KriemhildGretchen":
 		{
-			"DESCRIPTION": "Channel !M! [Dark]. || Whenever a {Curse} is Exhausted: Gain !S! [THP] and trigger all [Dark].",
-			"EXTENDED_DESCRIPTION": ["Whenever a #yCurse is #yExhausted, gain #b{0} [THP] and trigger all [Dark]."],
+			"DESCRIPTION": "At start of turn: {Exhaust} all {Hindrances} in your hand.  Then, Purge a random {Curse} in your Exhaust pile to obtain a {Miracle} and an {Uncommon}{+}.",
+			"EXTENDED_DESCRIPTION": ["At start of turn: #yExhaust all #yHindrances in your hand.  Then, #yPurge a random #yCurse in your #yExhaust pile to obtain a #yMiracle and an #yUncommon.","At start of turn: #yExhaust all #yHindrances in your hand.  Then, #yPurge a random #yCurse in your #yExhaust pile to obtain a #yMiracle and an #yupgraded #yUncommon."],
 			"NAME": "Kriemhild Gretchen"
 		},
 		"animator:MamiTomoe":
 		{
-			"DESCRIPTION": "Draw !M! {0-Cost} card(s). || <SLM>. When discarded or Exhausted: Obtain {[L] Token}.",
+			"DESCRIPTION": "Deal damage next turn. || On {Discard} or {Exhaust}: Draw a {0-Cost} card.",
 			"NAME": "Mami Tomoe"
 		},
 		"animator:MamiTomoe_Candeloro":
 		{
-			"DESCRIPTION": "Give ALL enemies !M! [Strength]. || When you take unblocked {Attack} damage: Fetch this card from your Exhaust pile and give it Purge.",
+			"DESCRIPTION": "Purge up to !M! random {Curses} in your exhaust pile: Enter and Exit <CS> for each card Purged.",
 			"NAME": "Candeloro"
 		},
 		"animator:MifuyuAzusa":
@@ -2148,7 +2149,7 @@
 		},
 		"animator:NagisaMomoe":
 		{
-			"DESCRIPTION": "Randomly Channel [Frost], [Lightning] or [Fire] !M! time(s). || If you have {Charlotte} or [Grief Seed] in hand: Channel 1 additional orb.",
+			"DESCRIPTION": "Channel [Water].  Draw !M! card(s).",
 			"NAME": "Nagisa Momoe"
 		},
 		"animator:NagisaMomoe_Charlotte":
@@ -2158,7 +2159,7 @@
 		},
 		"animator:NagisaMomoe_CharlotteAlt":
 		{
-			"DESCRIPTION": "If this kills an enemy: Return it to your hand and reduce its cost by 1. || <LIM>. Also heal !M! [HP].",
+			"DESCRIPTION": "<SLM>.  When drawn: Exhaust a random {Curse} in your exhaust pile to double this card’s damage. || If this card kills an enemy: Heal !M! [HP], return this card to your hand, and reduce its cost by 1.",
 			"NAME": "Charlotte"
 		},
 		"animator:SanaFutaba":
@@ -2168,13 +2169,13 @@
 		},
 		"animator:SayakaMiki":
 		{
-			"DESCRIPTION": "Next turn: Channel [Frost]. || !A! <L>: Recover !S! [HP]. Else: Boost [L].",
-			"EXTENDED_DESCRIPTION": ["At the start of turn, #yChannel #b{0} [Frost]."],
+			"DESCRIPTION": "Channel [Frost] [Water] next turn.",
+			"EXTENDED_DESCRIPTION": ["At the start of your next turn, #yChannel #b{0} #yFrost and #yWater."],
 			"NAME": "Sayaka Miki"
 		},
 		"animator:SayakaMiki_Oktavia":
 		{
-			"DESCRIPTION": "Recover !M! [HP]. Retain your hand. Draw !S! less cards next turn. || !A! [D]: Fetch all [Grief Seed] from draw and discard pile.",
+			"DESCRIPTION": "Purge up to !M! random {Curses} in your exhaust pile: {Attack} once for each card Purged.",
 			"NAME": "Oktavia"
 		},
 		"animator:SuzuneAmano":
@@ -2184,8 +2185,8 @@
 		},
 		"animator:YachiyoNanami":
 		{
-			"DESCRIPTION": "Gain 1 [Orb_S]. Channel [Frost]. || Once per turn: Evoke your leftmost orb to gain !M! [THP]. If it is [Frost]: Deal !S! damage and apply [Vulnerable] instead.",
-			"EXTENDED_DESCRIPTION": ["#yEvoke your leftmost orb to gain #b{0} [THP]. If it is [Frost], deal #b{1} damage and apply [Vulnerable] instead."],
+			"DESCRIPTION": "Gain [Orb_S].  Channel [Water]. || Once per turn: Exhaust a {Curse} in your hand or draw pile to gain !M! [Block].",
+			"EXTENDED_DESCRIPTION": ["Once per turn: #yExhaust a #yCurse in your hand or draw pile to gain #b{0} #yBlock."],
 			"NAME": "Yachiyo Nanami"
 		},
 		"animator:YuiTsuruno":
@@ -3235,8 +3236,8 @@
 		},
 		"animator:Walpurgisnacht":
 		{
-			"DESCRIPTION": "Next turn: Gain !M! [E]. || Whenever you play a card which is not [B] or [D]: Add 1 random Upgraded [B] or [D] card to your hand.",
-			"EXTENDED_DESCRIPTION": ["Whenever you play a card which is not [B] or [D], add 1 random #yUpgraded [B] or [D] card(s) to your hand."],
+			"DESCRIPTION": "Twice per turn: Add a random {Power} and [Grief Seed] to your hand. || <LIM>. Whenever you defeat an {Elite} or {Boss}: Obtain a Relic you do not have: {Blue Candle}, {Darkstone Periapt}, {Du-Vu Doll}, {Soul Gem}.",
+			"EXTENDED_DESCRIPTION": ["Twice per turn: #yAdd a random #yPower and #yGrief #ySeed to your hand.  If this is an #yElite or #yBoss fight, after victory: #yObtain a #yRelic you do not have: #yBlue #yCandle, #yDarkstone #yPeriapt, #yDu-Vu #yDoll, #ySoul #yGem."],
 			"NAME": "Walpurgisnacht"
 		},
 		"animator:YuyukoSaigyouji":

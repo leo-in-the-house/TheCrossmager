@@ -1,16 +1,23 @@
 package eatyourbeets.cards.animator.ultrarare;
 
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.helpers.CardLibrary;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.base.*;
-import eatyourbeets.effects.SFX;
-import eatyourbeets.powers.AnimatorPower;
-import eatyourbeets.resources.GR;
-import eatyourbeets.resources.animator.misc.AnimatorLoadout;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.relics.BlueCandle;
+import com.megacrit.cardcrawl.relics.DarkstonePeriapt;
+import com.megacrit.cardcrawl.relics.DuVuDoll;
+import eatyourbeets.cards.animator.curse.special.Curse_GriefSeed;
+import eatyourbeets.cards.base.AnimatorCard_UltraRare;
+import eatyourbeets.cards.base.CardSeries;
+import eatyourbeets.cards.base.CardUseInfo;
+import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.powers.AnimatorClickablePower;
+import eatyourbeets.powers.CombatStats;
+import eatyourbeets.powers.PowerTriggerConditionType;
+import eatyourbeets.relics.animator.SoulGem;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.RandomizedList;
 
 public class Walpurgisnacht extends AnimatorCard_UltraRare
@@ -24,8 +31,8 @@ public class Walpurgisnacht extends AnimatorCard_UltraRare
     {
         super(DATA);
 
-        Initialize(0, 0, 3);
-        SetUpgrade(0, 0, 1);
+        Initialize(0, 0);
+        SetCostUpgrade(-1);
 
         SetAffinity_Blue(2);
         SetAffinity_Black(2);
@@ -43,74 +50,59 @@ public class Walpurgisnacht extends AnimatorCard_UltraRare
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.GainEnergyNextTurn(magicNumber);
         GameActions.Bottom.StackPower(new WalpurgisnachtPower(p, 1));
+
+        if (GameUtilities.InEliteOrBossRoom() && CombatStats.TryActivateLimited(cardID)) {
+            AbstractRelic relicToGrant = null;
+
+            RandomizedList<AbstractRelic> possibleRelics = new RandomizedList<>();
+
+            if (!player.hasRelic(BlueCandle.ID)) {
+                possibleRelics.Add(new BlueCandle());
+            }
+
+            if (!player.hasRelic(DarkstonePeriapt.ID)) {
+                possibleRelics.Add(new DarkstonePeriapt());
+            }
+
+            if (!player.hasRelic(DuVuDoll.ID)) {
+                possibleRelics.Add(new DuVuDoll());
+            }
+
+            if (!player.hasRelic(SoulGem.ID)) {
+                possibleRelics.Add(new SoulGem());
+            }
+
+            if (possibleRelics.Size() > 0) {
+                relicToGrant = possibleRelics.Retrieve(rng);
+            }
+
+            if (relicToGrant != null) {
+                AbstractDungeon.getCurrRoom().addRelicToRewards(relicToGrant);
+            }
+        }
     }
 
-    public static class WalpurgisnachtPower extends AnimatorPower
+    public static class WalpurgisnachtPower extends AnimatorClickablePower
     {
-        private final RandomizedList<AbstractCard> cardPool = new RandomizedList<>();
-
         public WalpurgisnachtPower(AbstractPlayer owner, int amount)
         {
-            super(owner, Walpurgisnacht.DATA);
+            super(owner, Walpurgisnacht.DATA, PowerTriggerConditionType.None, 0);
+
+            triggerCondition.SetUses(2, true, true);
 
             Initialize(amount);
         }
 
         @Override
-        public void playApplyPowerSfx()
+        public void atStartOfTurn()
         {
-            SFX.Play(SFX.ORB_DARK_EVOKE, 0.45f, 0.55f, 0.95f);
-        }
+            super.atStartOfTurn();
 
-        @Override
-        public void onAfterCardPlayed(AbstractCard usedCard)
-        {
-            super.onAfterCardPlayed(usedCard);
+            GameActions.Bottom.MakeCardInHand(AbstractDungeon.returnTrulyRandomCardInCombat(CardType.POWER).makeCopy());
+            GameActions.Bottom.MakeCardInHand(new Curse_GriefSeed());
 
-            final EYBCardAffinities a = GameUtilities.GetAffinities(usedCard);
-            if (a != null && a.GetLevel(Affinity.Blue, true) <= 0 && a.GetLevel(Affinity.Black, true) <= 0)
-            {
-                for (int i = 0; i < amount; i++)
-                {
-                    GameActions.Bottom.MakeCardInHand(GetCardPool().Retrieve(rng).makeCopy())
-                    .SetUpgrade(true, false);
-                }
-
-                flash();
-            }
-        }
-
-        protected RandomizedList<AbstractCard> GetCardPool()
-        {
-            final boolean betaSeries = GR.Animator.Dungeon.HasBetaSeries;
-            final RandomizedList<AbstractCard> randomCards = new RandomizedList<>();
-            for (AbstractCard c : CardLibrary.getAllCards())
-            {
-                if (GameUtilities.IsObtainableInCombat(c))
-                {
-                    final EYBCardAffinities b = GameUtilities.GetAffinities(c);
-                    if (b != null && (b.GetLevel(Affinity.Blue, true) > 0 || b.GetLevel(Affinity.Black, true) > 0))
-                    {
-                        if (!betaSeries && c instanceof AnimatorCard)
-                        {
-                            final AnimatorCard c2 = (AnimatorCard) c;
-                            final AnimatorLoadout loadout = GR.Animator.Data.GetLoadout(c2.series);
-                            if (loadout == null || !loadout.IsBeta)
-                            {
-                                cardPool.Add(c);
-                            }
-                        }
-                        else
-                        {
-                            cardPool.Add(c);
-                        }
-                    }
-                }
-            }
-
-            return cardPool;
+            flash();
         }
     }
 }

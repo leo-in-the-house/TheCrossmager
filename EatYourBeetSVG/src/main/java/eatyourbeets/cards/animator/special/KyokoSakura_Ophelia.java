@@ -1,59 +1,53 @@
 package eatyourbeets.cards.animator.special;
 
-import basemod.BaseMod;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.series.MadokaMagica.KyokoSakura;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
-import eatyourbeets.cards.base.EYBAttackType;
 import eatyourbeets.cards.base.EYBCardData;
-import eatyourbeets.effects.AttackEffects;
-import eatyourbeets.orbs.animator.Fire;
+import eatyourbeets.cards.base.EYBCardTarget;
+import eatyourbeets.cards.base.modifiers.CostModifiers;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameEffects;
+import eatyourbeets.utilities.GameUtilities;
 
 public class KyokoSakura_Ophelia extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(KyokoSakura_Ophelia.class)
-            .SetAttack(2, CardRarity.SPECIAL, EYBAttackType.Elemental)
+            .SetSkill(2, CardRarity.SPECIAL, EYBCardTarget.None)
             .SetSeries(KyokoSakura.DATA.Series);
 
     public KyokoSakura_Ophelia()
     {
         super(DATA);
 
-        Initialize(8, 0, 1, 2);
-        SetUpgrade(0, 0, 1);
+        Initialize(0, 25, 3, 0);
+        SetUpgrade(0, 12, 0);
 
-        SetAffinity_Black(1);
-        SetAffinity_Red(2);
-        SetAffinity_Blue(0, 0, 2);
+        SetAffinity_Red(2, 0, 1);
+        SetAffinity_Black(1, 0, 1);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.DealDamage(this, m, AttackEffects.FIRE);
-        GameActions.Bottom.ChannelOrbs(Fire::new, secondaryValue);
-    }
+        GameActions.Bottom.GainBlock(block);
+        GameActions.Bottom.PurgeFromPile(name, magicNumber, player.exhaustPile)
+            .SetFilter(card -> card.type == CardType.CURSE)
+            .SetOptions(true, true)
+            .AddCallback(cards -> {
+                int numCardsPurged = cards.size();
 
-    @Override
-    public void OnLateUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
-    {
-        GameActions.Bottom.Draw(magicNumber);
-        GameActions.Bottom.ModifyAllInstances(uuid).AddCallback(c -> GameUtilities.IncreaseMagicNumber(c, 1, false));
-        GameActions.Last.Callback(() ->
-        {
-            if (player.hand.size() >= BaseMod.MAX_HAND_SIZE)
-            {
-                GameActions.Bottom.Wait(GameEffects.List.ShowCopy(this, Settings.WIDTH * 0.75f, Settings.HEIGHT * 0.5f).duration * 0.35f);
-                GameActions.Bottom.Motivate(2);
-                GameActions.Top.Exhaust(this);
-            }
-        });
+                if (numCardsPurged > 0) {
+                    GameActions.Top.Draw(numCardsPurged)
+                    .AddCallback(cardsDrawn -> {
+                        for (AbstractCard cardDrawn : cardsDrawn) {
+                            CostModifiers.For(cardDrawn).Add(-1);
+                        }
+                    });
+                }
+            });
     }
 }

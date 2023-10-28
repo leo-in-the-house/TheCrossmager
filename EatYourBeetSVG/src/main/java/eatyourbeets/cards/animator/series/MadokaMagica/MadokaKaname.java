@@ -1,21 +1,21 @@
 package eatyourbeets.cards.animator.series.MadokaMagica;
 
-import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import eatyourbeets.cards.animator.curse.special.Curse_GriefSeed;
 import eatyourbeets.cards.animator.special.MadokaKaname_KriemhildGretchen;
-import eatyourbeets.cards.animator.tokens.AffinityToken;
-import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
+import eatyourbeets.cards.base.AnimatorCard;
+import eatyourbeets.cards.base.CardUseInfo;
+import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.ui.common.EYBCardPopupActions;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class MadokaKaname extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(MadokaKaname.class)
-            .SetSkill(2, CardRarity.RARE, EYBCardTarget.None)
+            .SetSkill(4, CardRarity.RARE, EYBCardTarget.None)
             
             .SetSeriesFromClassPackage()
             .PostInitialize(data ->
@@ -23,7 +23,6 @@ public class MadokaKaname extends AnimatorCard
                 data.AddPopupAction(new EYBCardPopupActions.MadokaMagica_Witch(MadokaKaname_KriemhildGretchen.DATA));
                 data.AddPreview(new MadokaKaname_KriemhildGretchen(), true);
                 data.AddPreview(new Curse_GriefSeed(), false);
-                data.AddPreview(AffinityToken.GetCard(Affinity.White), true);
             });
 
     public MadokaKaname()
@@ -32,40 +31,40 @@ public class MadokaKaname extends AnimatorCard
 
         Initialize(0, 0, 2, 2);
 
-        SetAffinity_Blue(1);
         SetAffinity_White(2);
+        SetAffinity_Pink(2);
 
-        SetAffinityRequirement(Affinity.White, 6);
+        SetExhaust(true);
+        SetDelayed(true);
     }
 
     @Override
     protected void OnUpgrade()
     {
-        SetHaste(true);
+        super.OnUpgrade();
+
+        SetDelayed(false);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.GainTemporaryArtifact(magicNumber);
-        GameActions.Bottom.ObtainAffinityToken(Affinity.White, upgraded)
-        .AddCallback(c -> GameActions.Bottom.Motivate(c, 1));
 
-        if (CheckSpecialCondition(false))
+        GameActions.Bottom.GainIntangible(secondaryValue);
+
+        if (!upgraded)
         {
-            GameActions.Bottom.GainIntangible(secondaryValue);
-            GameActions.Bottom.VFX(new BorderFlashEffect(Color.PINK, true));
             GameActions.Bottom.ExhaustFromPile(name, 999, p.drawPile, p.hand, p.discardPile)
-            .ShowEffect(true, true)
-            .SetOptions(true, true)
-            .SetFilter(c -> c.type == CardType.CURSE);
+                .ShowEffect(true, true)
+                .SetOptions(true, true)
+                .SetFilter(c -> c.type == CardType.CURSE);
         }
-    }
-
-    @Override
-    public boolean CheckSpecialCondition(boolean tryUse)
-    {
-        return super.CheckSpecialConditionLimited(tryUse, super::CheckSpecialCondition);
+        else {
+            GameActions.Bottom.ExhaustFromPile(name, 999, p.drawPile, p.hand, p.discardPile)
+                .ShowEffect(true, true)
+                .SetOptions(true, true)
+                .SetFilter(GameUtilities::IsHindrance);
+        }
     }
 }

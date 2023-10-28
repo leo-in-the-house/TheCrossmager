@@ -5,14 +5,16 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.series.MadokaMagica.NagisaMomoe;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBAttackType;
 import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.cards.base.modifiers.DamageModifiers;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.effects.VFX;
+import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
+import eatyourbeets.utilities.GameUtilities;
 
 public class NagisaMomoe_CharlotteAlt extends AnimatorCard
 {
@@ -24,20 +26,41 @@ public class NagisaMomoe_CharlotteAlt extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(13, 0, 4);
-        SetUpgrade(2, 0);
+        Initialize(30, 0, 6);
+        SetUpgrade(12, 0);
 
-        SetAffinity_Black(2, 0, 1);
-        SetAffinity_Red(1, 1, 0);
-        SetAffinity_Blue(1, 1, 0);
+        SetAffinity_Blue(2, 0, 1);
+        SetAffinity_Black(1, 0, 1);
 
         SetRetain(true);
+    }
+
+
+    @Override
+    public void triggerWhenDrawn() {
+        super.triggerWhenDrawn();
+
+        if (CombatStats.TryActivateSemiLimited(cardID)) {
+            GameActions.Bottom.PurgeFromPile(name, 1, player.exhaustPile)
+                .SetFilter(card -> card.type == CardType.CURSE)
+                .SetOptions(true, true)
+                .AddCallback(cards -> {
+                    if (cards.size() > 0) {
+                        GameActions.Top.ModifyAllInstances(uuid, c ->
+                        {
+                            DamageModifiers.For(c).Add(damage);
+                            c.flash();
+                        });
+                    }
+                });
+        }
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
+
         GameActions.Bottom.DealDamage(this, m, AttackEffects.BITE)
         .SetDamageEffect(e ->
         {
@@ -48,10 +71,7 @@ public class NagisaMomoe_CharlotteAlt extends AnimatorCard
         {
             if (GameUtilities.IsFatal(enemy, true))
             {
-                if (info2.TryActivateLimited())
-                {
-                    GameActions.Top.Heal(magicNumber);
-                }
+                GameActions.Top.Heal(magicNumber);
                 GameUtilities.ModifyCostForCombat(this, -1, true);
                 GameActions.Delayed.MoveCard(this, player.hand)
                 .ShowEffect(false, false);
