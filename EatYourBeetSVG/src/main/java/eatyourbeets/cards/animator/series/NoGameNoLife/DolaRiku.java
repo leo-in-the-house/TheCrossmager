@@ -12,7 +12,7 @@ import eatyourbeets.utilities.JUtils;
 public class DolaRiku extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(DolaRiku.class)
-            .SetSkill(1, CardRarity.COMMON, EYBCardTarget.None)
+            .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None)
             .SetSeriesFromClassPackage();
 
     private final CardPreview discardPilePreview;
