@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.special.AcuraTooru_Dragoon;
 import eatyourbeets.cards.animator.special.ThrowingKnife;
 import eatyourbeets.cards.base.*;
+import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.effects.VFX;
 import eatyourbeets.ui.common.EYBCardPopupActions;
@@ -45,6 +46,12 @@ public class AcuraTooru extends AnimatorCard
         super.triggerOnManualDiscard();
 
         GameActions.Top.GainBlock(secondaryValue);
+    }
+
+    @Override
+    public AbstractAttribute GetDamageInfo()
+    {
+        return super.GetDamageInfo().AddMultiplier(magicNumber);
     }
 
     @Override

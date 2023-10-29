@@ -32,7 +32,7 @@ public class Tartaglia extends AnimatorCard {
 
         GameActions.Bottom.GainBlock(block);
 
-        if (GameUtilities.GetUniqueOrbsCount() >= 3) {
+        if (GameUtilities.GetUniqueOrbsCount() >= magicNumber) {
             GameActions.Bottom.ChangeStance(MagicStance.STANCE_ID);
             GameActions.Last.Exhaust(this);
         }

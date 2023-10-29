@@ -19,7 +19,7 @@ import eatyourbeets.utilities.GameUtilities;
 public class NagisaMomoe_CharlotteAlt extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(NagisaMomoe_CharlotteAlt.class)
-            .SetAttack(2, CardRarity.SPECIAL, EYBAttackType.Normal)
+            .SetAttack(3, CardRarity.SPECIAL, EYBAttackType.Normal)
             .SetSeries(NagisaMomoe.DATA.Series);
 
     public NagisaMomoe_CharlotteAlt()

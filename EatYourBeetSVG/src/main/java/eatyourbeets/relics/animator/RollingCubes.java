@@ -1,7 +1,6 @@
 package eatyourbeets.relics.animator;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rewards.RewardItem;
@@ -9,7 +8,6 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
 import com.megacrit.cardcrawl.rooms.MonsterRoomElite;
 import eatyourbeets.cards.animator.colorless.uncommon.QuestionMark;
-import eatyourbeets.cards.base.Affinity;
 import eatyourbeets.relics.AnimatorRelic;
 import eatyourbeets.resources.GR;
 import eatyourbeets.utilities.FieldInfo;
@@ -79,7 +77,7 @@ public class RollingCubes extends AnimatorRelic
         return counter > 0 && AbstractDungeon.floorNum != lastRerollFloor;
     }
 
-    public ArrayList<AbstractCard> Reroll(RewardItem rewardItem, Affinity affinity)
+    public ArrayList<AbstractCard> Reroll(RewardItem rewardItem)
     {
         SetCounter(counter - 1);
         lastRerollFloor = AbstractDungeon.floorNum;
@@ -88,7 +86,7 @@ public class RollingCubes extends AnimatorRelic
         fakeRewardItem.cards.clear();
         fakeRewardItem.cards.addAll(rewardItem.cards);
 
-        final ArrayList<AbstractCard> pool = GameUtilities.GetAvailableCards(GenericCondition.FromT2((a, c) -> GameUtilities.HasAffinity(c, a), affinity));
+        final ArrayList<AbstractCard> pool = GameUtilities.GetAvailableCards(GenericCondition.FromT2((a, c) -> GameUtilities.IsSeries(c, GR.Animator.Data.SelectedLoadout.Series), null));
         final ArrayList<AbstractCard> replacement = new ArrayList<>();
         for (AbstractCard c : rewardItem.cards)
         {

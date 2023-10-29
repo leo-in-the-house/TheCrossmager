@@ -22,6 +22,7 @@ public class MifuyuAzusa extends AnimatorCard {
 
         SetAffinity_Pink(1);
 
+        SetHaste(true);
         SetExhaust(true);
     }
 

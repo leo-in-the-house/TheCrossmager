@@ -9,7 +9,7 @@ import eatyourbeets.utilities.GameActions;
 public class NagisaMomoe_Charlotte extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(NagisaMomoe_Charlotte.class)
-            .SetCurse(-2, EYBCardTarget.None, true)
+            .SetCurse(2, EYBCardTarget.None, true)
             .SetSeries(NagisaMomoe.DATA.Series)
             .PostInitialize(data -> data.AddPreview(new NagisaMomoe_CharlotteAlt(), true));
 
@@ -18,12 +18,12 @@ public class NagisaMomoe_Charlotte extends AnimatorCard
         super(DATA);
 
         Initialize(0, 0);
-        SetUpgrade(0, 0);
+        SetCostUpgrade(-1);
 
         SetAffinity_Blue(1);
         SetAffinity_Black(1);
 
-        SetUnplayable(true);
+        SetAutoplayed(true);
     }
 
     @Override
@@ -31,13 +31,6 @@ public class NagisaMomoe_Charlotte extends AnimatorCard
     {
         super.triggerOnExhaust();
 
-        GameActions.Last.Purge(this)
-        .AddCallback(purged ->
-        {
-            if (purged)
-            {
-                GameActions.Bottom.MakeCardInHand(new NagisaMomoe_CharlotteAlt()).SetUpgrade(upgraded, false);
-            }
-        });
+        GameActions.Bottom.MakeCardInDrawPile(new NagisaMomoe_CharlotteAlt()).SetUpgrade(upgraded, false);
     }
 }

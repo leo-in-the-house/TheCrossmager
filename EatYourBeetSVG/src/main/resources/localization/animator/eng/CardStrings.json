@@ -2176,7 +2176,7 @@
 		"animator:NagisaMomoe_Charlotte":
 		{
 			"FLAVOR_TEXT": "'The Dessert Witch, with a tenacious nature. She desires everything. She will never give up. Though she is capable of creating infinite amounts of any dessert she desires, she is unable to make the cheese that she loves most. One could easily catch her off-guard with a piece of cheese.' -Anonymous",
-			"DESCRIPTION": "Unplayable. || When Exhausted: Purge this and obtain {Charlotte}{+} (Alt. form).",
+			"DESCRIPTION": "Unplayable. || When Exhausted: Obtain {Charlotte}{+} (Alt. form).",
 			"NAME": "Charlotte"
 		},
 		"animator:NagisaMomoe_CharlotteAlt":

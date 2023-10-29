@@ -16,8 +16,8 @@ public class SoulGem extends AnimatorRelic
     @Override
     public void atTurnStartPostDraw()
     {
-        GameActions.Bottom.ExhaustFromHand(name, 1, false)
-        .SetOptions(false, true, true)
+        GameActions.Bottom.ExhaustFromHand(name, 1, true)
+        .SetOptions(true, true, true)
         .SetFilter(GameUtilities::IsHindrance);
 
         flash();

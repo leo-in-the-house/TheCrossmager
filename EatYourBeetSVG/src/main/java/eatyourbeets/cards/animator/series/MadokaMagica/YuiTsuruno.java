@@ -49,9 +49,11 @@ public class YuiTsuruno extends AnimatorCard
                     }
                 }
 
-                GameActions.Delayed.Exhaust(toExhaust.Retrieve(rng), player.hand)
-                        .ShowEffect(true, true, 0.1f);
-                GameActions.Delayed.MakeCardInHand(new Curse_GriefSeed());
+                if (toExhaust.Size() > 0) {
+                    GameActions.Delayed.Exhaust(toExhaust.Retrieve(rng), player.hand)
+                            .ShowEffect(true, true, 0.1f);
+                    GameActions.Delayed.MakeCardInHand(new Curse_GriefSeed());
+                }
             });
     }
 }

@@ -45,7 +45,7 @@ public class YachiyoNanami extends AnimatorCard
         {
             super(owner, YachiyoNanami.DATA, PowerTriggerConditionType.Special, 0, YachiyoNanamiPower::CheckCondition, __ -> {});
 
-            triggerCondition.SetUses(1, true, true);
+            triggerCondition.SetUses(1, true, false);
 
             Initialize(amount);
         }

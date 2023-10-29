@@ -49,8 +49,8 @@ public class MamiTomoe_Candeloro extends AnimatorCard
                 int numCardsPurged = cards.size();
 
                 for (int i=0; i<numCardsPurged; i++) {
-                    GameActions.Top.ChangeStance(CalmStance.STANCE_ID);
                     GameActions.Top.ChangeStance(NeutralStance.STANCE_ID);
+                    GameActions.Top.ChangeStance(CalmStance.STANCE_ID);
                 }
             });
     }

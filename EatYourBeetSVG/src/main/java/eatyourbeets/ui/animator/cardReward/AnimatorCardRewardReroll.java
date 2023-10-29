@@ -3,7 +3,6 @@ package eatyourbeets.ui.animator.cardReward;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.relics.SpiritPoop;
@@ -11,7 +10,6 @@ import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.vfx.cardManip.ExhaustCardEffect;
 import eatyourbeets.actions.animator.HigakiRinneAction;
 import eatyourbeets.cards.animator.series.Katanagatari.HigakiRinne;
-import eatyourbeets.cards.base.Affinity;
 import eatyourbeets.effects.SFX;
 import eatyourbeets.effects.card.HideCardEffect;
 import eatyourbeets.interfaces.delegates.ActionT1;
@@ -21,7 +19,6 @@ import eatyourbeets.ui.GUIElement;
 import eatyourbeets.ui.controls.GUI_Button;
 import eatyourbeets.utilities.GameEffects;
 import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.utilities.Mathf;
 
 import java.util.ArrayList;
 
@@ -51,7 +48,16 @@ public class AnimatorCardRewardReroll extends GUIElement
 
         if (rerollButtons.isEmpty())
         {
-            final int max = Affinity.Basic().length;
+            final GUI_Button button = new GUI_Button(GR.Common.Images.HexagonalButton.Texture(), 0, 0)
+                    .SetForeground(GR.Common.Images.HexagonalButtonBorder.Texture(), Color.WHITE)
+                    .SetDimensions(AbstractCard.IMG_WIDTH * 0.55f, AbstractCard.IMG_HEIGHT * 0.175f)
+                    .SetColor(Color.GRAY)
+                    .SetText(GR.Animator.Strings.Rewards.Reroll, true)
+                    .SetOnClick(this::Reroll)
+                    .SetPosition(ScreenW(0.5f), ScreenH(0.8f));
+            rerollButtons.add(button);
+
+            /*final int max = Affinity.Basic().length;
             for (int i = 0; i < max; i++)
             {
                 final Affinity affinity = Affinity.Basic()[i];
@@ -63,7 +69,7 @@ public class AnimatorCardRewardReroll extends GUIElement
                 .SetOnClick(affinity, (a, __) -> Reroll(a))
                 .SetPosition(ScreenW(0.5f) + (AbstractCard.IMG_WIDTH * 0.6f * Mathf.GetOffsetFromCenter(i, max)), ScreenH(0.8f));
                 rerollButtons.add(button);
-            }
+            }*/
         }
     }
 
@@ -73,9 +79,9 @@ public class AnimatorCardRewardReroll extends GUIElement
         canReroll = false;
     }
 
-    public void Reroll(Affinity affinity)
+    public void Reroll()
     {
-        final ArrayList<AbstractCard> replacement = rollingCubes.Reroll(rewardItem, affinity);
+        final ArrayList<AbstractCard> replacement = rollingCubes.Reroll(rewardItem);
         if (replacement.size() > 0)
         {
             SFX.Play(SFX.CARD_SELECT);

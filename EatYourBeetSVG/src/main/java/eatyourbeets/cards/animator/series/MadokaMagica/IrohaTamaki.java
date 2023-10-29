@@ -25,7 +25,7 @@ public class IrohaTamaki extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(4, 0, 5);
+        Initialize(3, 0, 3);
         SetUpgrade(2, 0, 2);
 
         SetAffinity_White(1);
