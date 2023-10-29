@@ -1,16 +1,14 @@
 package eatyourbeets.cards.animator.series.NoGameNoLife;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
-import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class DolaCouronne extends AnimatorCard
 {
@@ -22,19 +20,10 @@ public class DolaCouronne extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 2, 6);
-        SetUpgrade(0, 3, 0);
+        Initialize(0, 11, 0);
+        SetUpgrade(0, 4, 0);
 
-        SetAffinity_Green(1);
-        SetAffinity_White(1);
-    }
-
-    @Override
-    public void triggerOnExhaust()
-    {
-        super.triggerOnExhaust();
-
-        GameActions.Bottom.Motivate(1);
+        SetAffinity_Brown(1);
     }
 
     @Override
@@ -42,30 +31,14 @@ public class DolaCouronne extends AnimatorCard
     {
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
-        GameActions.Bottom.StackPower(new DolaCouronnePower(p, magicNumber));
-    }
-
-    public static class DolaCouronnePower extends AnimatorPower
-    {
-        public DolaCouronnePower(AbstractCreature owner, int amount)
-        {
-            super(owner, DolaCouronne.DATA);
-
-            Initialize(amount);
-        }
-
-        @Override
-        public void onAfterCardPlayed(AbstractCard usedCard)
-        {
-            super.onAfterCardPlayed(usedCard);
-
-            if (enabled && usedCard.type == CardType.ATTACK)
-            {
-                GameActions.Bottom.GainBlock(amount);
-                SetEnabled(false);
-                RemovePower();
-                flash();
-            }
-        }
+        GameActions.Bottom.DiscardFromHand(name, 1, false)
+            .SetOptions(false, false, false)
+            .AddCallback(cards -> {
+               for (AbstractCard card : cards) {
+                   if (card.costForTurn == 0) {
+                       GameActions.Top.Draw(1);
+                   }
+               }
+            });
     }
 }

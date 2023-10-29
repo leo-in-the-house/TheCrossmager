@@ -20,7 +20,13 @@ public class Traveler extends AnimatorCard_UltraRare implements OnAddToDeckListe
     public static final EYBCardData DATA = Register(Traveler.class)
             .SetSkill(0, CardRarity.SPECIAL, EYBCardTarget.None)
             .SetColor(CardColor.COLORLESS)
-            .SetSeries(CardSeries.GenshinImpact);
+            .SetSeries(CardSeries.GenshinImpact)
+            .PostInitialize(data -> {
+                data.AddPreview(new Traveler_Aether(), false);
+                data.AddPreview(new Traveler_Lumine(), false);
+            });
+
+
 
     public Traveler() {
         super(DATA);

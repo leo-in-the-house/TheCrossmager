@@ -2239,9 +2239,8 @@
 		},
 		"animator:DolaCouronne":
 		{
-			"DESCRIPTION": "On the next {Attack} played: Gain !M! [Block]. || When Exhausted: Motivate 1.",
-			"EXTENDED_DESCRIPTION": ["On your next #yAttack, gain #b{0} [Block]."],
-			"NAME": "Couronne"
+			"DESCRIPTION": "Discard a card.  If you discarded a {0-Cost} card, draw a card.",
+			"NAME": "Couronne Dola"
 		},
 		"animator:DolaRiku":
 		{
@@ -2250,14 +2249,13 @@
 		},
 		"animator:DolaSchwi":
 		{
-			"DESCRIPTION": "Apply !M! [~Lock-On]. Channel [Lightning]. || Cooldown !S!: Deal !K! additional damage.",
-			"NAME": "Schwi"
+			"DESCRIPTION": "Apply [~Lock-On].",
+			"NAME": "Schwi Dola"
 		},
 		"animator:DolaStephanie":
 		{
-			"DESCRIPTION": "Reshuffle 1 card. || !A! [S]: Obtain an {[W] Token} based on that card's Affinities.",
-			"NAME": "Stephanie",
-			"UPGRADE_DESCRIPTION": "<DRW>. <DESCRIPTION>"
+			"DESCRIPTION": "Draw !M! card(s), then reshuffle a card into your draw pile.",
+			"NAME": "Stephanie Dola"
 		},
 		"animator:EmirEins":
 		{
@@ -2277,18 +2275,18 @@
 		},
 		"animator:IzunaHatsuse":
 		{
-			"DESCRIPTION": "Apply 1 [Weak]. Lose !S! {Temp.} [Strength]. || When Sealed: Change this card's form.",
-			"EXTENDED_DESCRIPTION": ["Boost [R] [G]. || Recover !M! [HP]."],
+			"DESCRIPTION": "Apply !S! Weak. || When Sealed: Change this card's form.",
+			"EXTENDED_DESCRIPTION": [""],
 			"NAME": "Izuna Hatsuse"
 		},
 		"animator:Jibril":
 		{
-			"DESCRIPTION": "Channel 1 [Dark]. || On Discard: Shuffle your orbs, then trigger your first !M! orbs.",
+			"DESCRIPTION": "Channel [Lightning] [Dark], then shuffle your orbs.",
 			"NAME": "Jibril"
 		},
 		"animator:Miko":
 		{
-			"DESCRIPTION": "Scry !M!. || !A! [L]: Gain !S! [INS]. Else: Gain !S! [L].",
+			"DESCRIPTION": "Gains 1 additional Block for each {0-Cost} card in your hand.",
 			"NAME": "Miko"
 		},
 		"animator:NinaCliffe":

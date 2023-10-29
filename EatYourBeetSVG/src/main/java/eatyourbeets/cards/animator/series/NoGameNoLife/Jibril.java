@@ -4,12 +4,13 @@ import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.Dark;
+import com.megacrit.cardcrawl.orbs.Lightning;
 import eatyourbeets.actions.orbs.ShuffleOrbs;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.effects.VFX;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Jibril extends AnimatorCard
 {
@@ -21,14 +22,12 @@ public class Jibril extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(9, 0, 2);
-        SetUpgrade(3, 0, 0);
+        Initialize(7, 0);
+        SetUpgrade(8, 0);
 
-        SetAffinity_Blue(2, 0, 2);
-        SetAffinity_White(1);
-        SetAffinity_Black(1);
+        SetAffinity_Black(2);
 
-        SetEvokeOrbCount(1);
+        SetEthereal(true);
     }
 
     @Override
@@ -37,15 +36,8 @@ public class Jibril extends AnimatorCard
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.VFX(VFX.ShockWave(p.hb, Color.VIOLET), 0.3f);
         GameActions.Bottom.DealDamageToAll(this, AttackEffects.FIRE);
+        GameActions.Bottom.ChannelOrb(new Lightning());
         GameActions.Bottom.ChannelOrb(new Dark());
-    }
-
-    @Override
-    public void triggerOnManualDiscard()
-    {
-        super.triggerOnManualDiscard();
-
         GameActions.Bottom.Add(new ShuffleOrbs(1));
-        GameActions.Bottom.TriggerOrbPassive(magicNumber).SetSequential(true);
     }
 }

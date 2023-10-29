@@ -29,10 +29,8 @@ public class IzunaHatsuse extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(3, 2, 2, 2);
-        SetUpgrade(0, 0, 1, -1);
-
-        SetAffinity_Green(1, 1, 0);
+        Initialize(3, 0, 2, 1);
+        SetUpgrade(0, 0, 1, 1);
 
         SetTransformed(transformed);
     }
@@ -55,15 +53,9 @@ public class IzunaHatsuse extends AnimatorCard
     }
 
     @Override
-    public AbstractAttribute GetBlockInfo()
-    {
-        return transformed ? null : super.GetBlockInfo();
-    }
-
-    @Override
     public AbstractAttribute GetDamageInfo()
     {
-        return transformed ? super.GetDamageInfo().AddMultiplier(2) : null;
+        return transformed ? super.GetDamageInfo().AddMultiplier(magicNumber) : null;
     }
 
     @Override
@@ -101,17 +93,22 @@ public class IzunaHatsuse extends AnimatorCard
         GameUtilities.PlayVoiceSFX(name);
         if (transformed)
         {
-            GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_HORIZONTAL);
-            GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_DIAGONAL);
-            GameActions.Bottom.RecoverHP(magicNumber);
-            GameActions.Bottom.GainAffinity(Affinity.Red, 1, true);
-            GameActions.Bottom.GainAffinity(Affinity.Green, 1, true);
+            for (int i=0; i<magicNumber; i++) {
+                if (i % 3 == 0) {
+                    GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_VERTICAL);
+                }
+                else if (i % 3 == 1) {
+                    GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_HORIZONTAL);
+                }
+                else {
+                    GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_DIAGONAL);
+                }
+            }
+            GameActions.Bottom.RecoverHP(1);
         }
         else
         {
-            GameActions.Bottom.GainBlock(block);
-            GameActions.Bottom.ApplyWeak(p, m, 1);
-            GameActions.Bottom.GainTemporaryStats(-secondaryValue, 0, 0);
+            GameActions.Bottom.ApplyWeak(p, m, secondaryValue);
         }
     }
 
@@ -143,7 +140,9 @@ public class IzunaHatsuse extends AnimatorCard
 
                 affinities.sealed = false;
                 affinities.Set(Affinity.Red, 1);
-                affinities.Set(Affinity.Black, 1);
+                affinities.Set(Affinity.White, 0);
+
+                SetFading(true);
 
                 this.type = CardType.ATTACK;
                 this.cardText.OverrideDescription(cardData.Strings.EXTENDED_DESCRIPTION[0], true);
@@ -153,7 +152,9 @@ public class IzunaHatsuse extends AnimatorCard
                 LoadImage(null);
 
                 affinities.Set(Affinity.Red, 0);
-                affinities.Set(Affinity.Black, 0);
+                affinities.Set(Affinity.White, 1);
+
+                SetHaste(true);
 
                 this.type = CardType.SKILL;
                 this.cardText.OverrideDescription(null, true);

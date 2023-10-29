@@ -1,28 +1,42 @@
 package eatyourbeets.cards.animator.series.NoGameNoLife;
 
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
+import eatyourbeets.cards.base.AnimatorCard;
+import eatyourbeets.cards.base.CardUseInfo;
+import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Miko extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Miko.class)
-            .SetSkill(2, CardRarity.COMMON, EYBCardTarget.None)
+            .SetSkill(0, CardRarity.COMMON, EYBCardTarget.None)
             .SetSeriesFromClassPackage();
 
     public Miko()
     {
         super(DATA);
 
-        Initialize(0, 12, 2, 2);
-        SetUpgrade(0, 0, 1, 1);
+        Initialize(0, 1);
+        SetUpgrade(0, 3);
 
         SetAffinity_White(1);
-        SetAffinity_Red(1);
+    }
 
-        SetAffinityRequirement(Affinity.White, 1);
+    @Override
+    protected float GetInitialBlock()
+    {
+        int numZeroCostCards = 0;
+
+        for (AbstractCard card : player.hand.group) {
+            if (card.costForTurn == 0) {
+                numZeroCostCards++;
+            }
+        }
+        return super.GetInitialBlock() + numZeroCostCards;
     }
 
     @Override
@@ -30,15 +44,5 @@ public class Miko extends AnimatorCard
     {
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
-        GameActions.Bottom.Scry(magicNumber);
-
-        if (CheckSpecialCondition(false))
-        {
-            GameActions.Bottom.GainInspiration(secondaryValue);
-        }
-        else
-        {
-            GameActions.Bottom.GainAffinity(Affinity.White, secondaryValue, false);
-        }
     }
 }
