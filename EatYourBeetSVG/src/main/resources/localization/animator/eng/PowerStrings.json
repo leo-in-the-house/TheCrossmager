@@ -32,8 +32,8 @@
 	},
 	"animator:ChlammyZellPower":
 	{
-		"DESCRIPTIONS": ["Whenever you play alternating card types this turn, deal #b{0} damage to ALL enemies and #yCycle #b1 card. NL NL Last Type played: #y{1}."],
-		"NAME": "Kurami"
+		"DESCRIPTIONS": ["Whenever you play alternating card types this turn, copy a random {0-Cost} card in your hand. NL NL Last Type played: #y{0}."],
+		"NAME": "Chlammy Zell"
 	},
 	"animator:CursedStabsPower":
 	{

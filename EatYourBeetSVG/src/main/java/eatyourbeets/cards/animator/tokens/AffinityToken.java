@@ -84,6 +84,13 @@ public abstract class AffinityToken extends AnimatorCard
         return (AffinityToken) GetCardData(affinity).CreateNewInstance();
     }
 
+    public static AffinityToken GetRandomCard() {
+        RandomizedList<EYBCardData> options = new RandomizedList<>();
+        options.AddAll(cards);
+
+        return (AffinityToken) options.Retrieve(rng).CreateNewInstance();
+    }
+
     public static AffinityToken GetCopy(Affinity affinity, boolean upgraded)
     {
         return (AffinityToken) GetCardData(affinity).MakeCopy(upgraded);

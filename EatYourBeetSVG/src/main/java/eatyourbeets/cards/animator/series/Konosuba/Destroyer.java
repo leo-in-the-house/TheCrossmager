@@ -78,6 +78,12 @@ public class Destroyer extends AnimatorCard
         }
 
         @Override
+        public AbstractPower makeCopy()
+        {
+            return new DestroyerPower(owner, amount, triggerCondition.baseUses, damage);
+        }
+
+        @Override
         public void playApplyPowerSfx()
         {
             SFX.Play(SFX.ORB_PLASMA_CHANNEL, 0.7f);
@@ -103,12 +109,6 @@ public class Destroyer extends AnimatorCard
         {
             playApplyPowerSfx();
             IncreasePower(1);
-        }
-
-        @Override
-        public AbstractPower makeCopy()
-        {
-            return new DestroyerPower(owner, amount, triggerCondition.baseUses, damage);
         }
 
         private void TriggerRandomDestroyerEffects() {

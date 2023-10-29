@@ -1,21 +1,19 @@
 package eatyourbeets.cards.animator.special;
 
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.animator.basic.ImprovedStrike;
 import eatyourbeets.cards.base.CardUseInfo;
+import eatyourbeets.cards.base.EYBAttackType;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
+import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.utilities.RandomizedList;
 
 public class Sora_BattlePlan1 extends Sora_BattlePlan
 {
     public static final EYBCardData DATA = Register(Sora_BattlePlan1.class)
-            .SetSkill(1, CardRarity.SPECIAL, EYBCardTarget.Normal)
+            .SetAttack(0, CardRarity.SPECIAL, EYBAttackType.Ranged, EYBCardTarget.Normal)
             .SetImagePath(IMAGE_PATH)
             .SetSeries(SERIES);
 
@@ -23,21 +21,18 @@ public class Sora_BattlePlan1 extends Sora_BattlePlan
     {
         super(DATA);
 
-        Initialize(0, 0, 2, 2);
+        Initialize(3, 0, 2);
+        SetUpgrade(0, 0, 1);
+
+        SetAffinity_Red(1, 0, 1);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.ApplyVulnerable(p, m, magicNumber);
+        GameActions.Bottom.DealDamage(this, m, AttackEffects.GUNSHOT);
 
-        final RandomizedList<EYBCardData> cards = new RandomizedList<>(ImprovedStrike.GetCards());
-        for (int i = 0; i < secondaryValue; i++)
-        {
-            final AbstractCard c = cards.Retrieve(rng).MakeCopy(false);
-            GameUtilities.ModifyCostForCombat(c, 0, false);
-            GameActions.Bottom.MakeCardInHand(c);
-        }
+        GameActions.Bottom.ReduceStrength(m, 1, false);
     }
 }

@@ -1,20 +1,22 @@
 package eatyourbeets.cards.animator.special;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.animator.tokens.AffinityToken;
-import eatyourbeets.cards.base.Affinity;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
-import eatyourbeets.cards.base.EYBCardTarget;
+import eatyourbeets.powers.AnimatorClickablePower;
+import eatyourbeets.powers.PowerTriggerConditionType;
+import eatyourbeets.resources.GR;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Sora_BattlePlan3 extends Sora_BattlePlan
 {
     public static final EYBCardData DATA = Register(Sora_BattlePlan3.class)
-            .SetSkill(1, CardRarity.SPECIAL, EYBCardTarget.None)
+            .SetPower(0, CardRarity.SPECIAL)
             .SetImagePath(IMAGE_PATH)
             .SetSeries(SERIES);
 
@@ -22,30 +24,64 @@ public class Sora_BattlePlan3 extends Sora_BattlePlan
     {
         super(DATA);
 
-        Initialize(0, 0, 2);
+        Initialize(0, 0, 1);
+        SetUpgrade(0, 0, 1);
+
+        SetAffinity_Blue(1);
     }
 
     @Override
-    public void OnLateUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
+    public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
-        for (Affinity a : Affinity.Basic())
-        {
-            GameActions.Bottom.GainAffinity(a, 1, true);
-        }
-
-        SelectToken();
-        SelectToken();
+        GameUtilities.PlayVoiceSFX(name);
+        GameActions.Bottom.StackPower(new SoraBattlePlanPower(p, magicNumber));
     }
 
-    private void SelectToken()
-    {
-        GameActions.Bottom.Add(AffinityToken.SelectTokenAction(name, false, false, 1))
-        .AddCallback(cards ->
+    public static class SoraBattlePlanPower extends AnimatorClickablePower {
+        private int damage;
+
+        public SoraBattlePlanPower(AbstractCreature owner, int amount) {
+            super(owner, Sora_BattlePlan3.DATA, PowerTriggerConditionType.Energy, 1);
+
+            this.triggerCondition.SetUses(amount, true, true);
+
+            this.damage = damage;
+            Initialize(amount, PowerType.BUFF, true);
+        }
+
+        @Override
+        public String GetUpdatedDescription() {
+            return FormatDescription(0, damage);
+        }
+
+        @Override
+        protected void OnSamePowerApplied(AbstractPower power)
         {
-            for (AbstractCard c : cards)
-            {
-                GameActions.Bottom.MakeCardInHand(c);
-            }
-        });
+            super.OnSamePowerApplied(power);
+        }
+
+        @Override
+        public AbstractPower makeCopy()
+        {
+            return new SoraBattlePlanPower(owner, amount);
+        }
+
+        @Override
+        public void OnUse(AbstractMonster m)
+        {
+            playApplyPowerSfx();
+
+            GameActions.Bottom.SelectFromHand(name, 1, false)
+                .SetFilter(card -> card.costForTurn == 0)
+                .SetMessage(GR.Common.Strings.HandSelection.Activate)
+                .SetOptions(false, false, false)
+                .AddCallback(cards -> {
+                    for (AbstractCard card : cards) {
+                        for (int i=0; i<2; i++) {
+                            GameActions.Bottom.PlayCopy(card, GameUtilities.GetRandomEnemy(true));
+                        }
+                    }
+                });
+        }
     }
 }

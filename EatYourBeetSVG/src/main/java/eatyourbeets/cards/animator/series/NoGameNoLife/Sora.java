@@ -1,11 +1,8 @@
 package eatyourbeets.cards.animator.series.NoGameNoLife;
 
-import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.special.Sora_BattlePlan1;
 import eatyourbeets.cards.animator.special.Sora_BattlePlan2;
@@ -14,15 +11,16 @@ import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
-import eatyourbeets.powers.AnimatorPower;
-import eatyourbeets.utilities.CardSelection;
+import eatyourbeets.cards.base.attributes.AbstractAttribute;
+import eatyourbeets.cards.base.modifiers.CostModifiers;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.JUtils;
 
 public class Sora extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Sora.class)
-            .SetSkill(2, CardRarity.RARE, EYBCardTarget.None)
+            .SetSkill(4, CardRarity.RARE, EYBCardTarget.None)
             .SetSeriesFromClassPackage()
             .PostInitialize(data ->
             {
@@ -35,69 +33,63 @@ public class Sora extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 0);
+        Initialize(0, 4, 2);
+        SetUpgrade(0, 4, 0);
 
-        SetAffinity_Blue(2);
-        SetAffinity_White(2);
+        SetAffinity_Pink(2, 0, 2);
+        SetAffinity_Yellow(2, 0, 2);
 
         SetExhaust(true);
     }
 
     @Override
-    protected void OnUpgrade()
+    public AbstractAttribute GetBlockInfo()
     {
-        SetExhaust(false);
+        return super.GetBlockInfo().AddMultiplier(magicNumber);
+    }
+
+    @Override
+    public void triggerOnOtherCardPlayed(AbstractCard c)
+    {
+        super.triggerOnOtherCardPlayed(c);
+
+        GameActions.Bottom.Callback(this::RefreshCost);
+    }
+
+    @Override
+    public void Refresh(AbstractMonster enemy)
+    {
+        super.Refresh(enemy);
+
+        RefreshCost();
+    }
+
+    public void RefreshCost()
+    {
+        CostModifiers.For(this).Set(-1 * JUtils.Count(player.hand.group, card -> (card.costForTurn == 0)));
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.StackPower(new SoraPower(p, 1));
 
-        if (info.TryActivateLimited())
-        {
-            final CardGroup group = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-            group.group.add(new Sora_BattlePlan1());
-            group.group.add(new Sora_BattlePlan2());
-            group.group.add(new Sora_BattlePlan3());
-            GameActions.Bottom.SelectFromPile(name, 1, group)
-            .SetOptions(false, false)
-            .AddCallback(cards ->
-            {
-                for (AbstractCard card : cards)
-                {
-                    GameActions.Bottom.MakeCardInDrawPile(card)
-                    .SetDestination(CardSelection.Special((list, c, index) ->
-                    {
-                        index += rng.random(list.size() / 2);
-                        index = Math.max(0, Math.min(list.size(), list.size() - index));
-                        list.add(index, c);
-                    }, null));
-                }
-            });
-        }
-    }
-
-    public static class SoraPower extends AnimatorPower
-    {
-        public SoraPower(AbstractCreature owner, int amount)
-        {
-            super(owner, Sora.DATA);
-
-            Initialize(amount);
+        for (int i=0; i<magicNumber; i++) {
+            GameActions.Bottom.GainBlock(block);
         }
 
-        @Override
-        public void onUseCard(AbstractCard card, UseCardAction action)
+        final CardGroup group = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+        group.group.add(new Sora_BattlePlan1());
+        group.group.add(new Sora_BattlePlan2());
+        group.group.add(new Sora_BattlePlan3());
+        GameActions.Bottom.SelectFromPile(name, 1, group)
+        .SetOptions(false, false)
+        .AddCallback(cards ->
         {
-            super.onUseCard(card, action);
-
-            if (GameUtilities.IsLowCost(card) && card.type == CardType.SKILL && GameUtilities.CanPlayTwice(card))
+            for (AbstractCard card : cards)
             {
-                GameActions.Top.PlayCopy(card, JUtils.SafeCast(action.target, AbstractMonster.class));
-                ReducePower(GameActions.Top, 1);
+                GameActions.Bottom.MakeCardInHand(card);
             }
-        }
+        });
     }
 }

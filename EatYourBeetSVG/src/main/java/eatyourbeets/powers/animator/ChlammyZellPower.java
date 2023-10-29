@@ -1,9 +1,6 @@
 package eatyourbeets.powers.animator;
 
-import eatyourbeets.effects.AttackEffects;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.utilities.GameActions;
@@ -38,9 +35,8 @@ public class ChlammyZellPower extends AnimatorPower
         {
             lastType = card.type;
 
-            final int[] damage = DamageInfo.createDamageMatrix(amount, true);
-            GameActions.Bottom.DealDamageToAll(damage, DamageInfo.DamageType.THORNS, AttackEffects.SLASH_HORIZONTAL);
-            GameActions.Bottom.Cycle(name, 1);
+            GameActions.Bottom.Draw(1)
+                .SetFilter(c -> c.costForTurn == 0, false);
 
             stackPower(1);
             updateDescription();

@@ -1,6 +1,8 @@
 package eatyourbeets.cards.animator.series.NoGameNoLife;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.effects.AttackEffects;
+import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -16,7 +18,7 @@ import eatyourbeets.utilities.RandomizedList;
 public class EmirEins extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(EmirEins.class)
-            .SetSkill(0, CardRarity.UNCOMMON, EYBCardTarget.None)
+            .SetAttack(1, CardRarity.UNCOMMON, EYBAttackType.Elemental, EYBCardTarget.Normal)
             
             .SetSeriesFromClassPackage()
             .PostInitialize(data -> data.AddPreview(AffinityToken.GetCard(Affinity.General), false));
@@ -25,19 +27,10 @@ public class EmirEins extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 0, 2);
-        SetUpgrade(0, 0);
+        Initialize(6, 0, 2);
+        SetUpgrade(3, 0, 1);
 
-        SetAffinity_Red(1);
-        SetAffinity_Black(1);
-
-        SetEthereal(true);
-    }
-
-    @Override
-    protected void OnUpgrade()
-    {
-        SetEthereal(false);
+        SetAffinity_Teal(1, 0, 1);
     }
 
     @Override
@@ -45,31 +38,41 @@ public class EmirEins extends AnimatorCard
     {
         super.triggerOnAffinitySeal(reshuffle);
 
-        GameActions.Bottom.ShowCopy(this);
-        GameActions.Bottom.TakeDamageAtEndOfTurn(magicNumber);
-        GameActions.Bottom.ObtainAffinityToken(Affinity.General, false);
+        if (CombatStats.TryActivateLimited(cardID)) {
+            GameUtilities.AddAffinityToCard(this, Affinity.Red, 1);
+            GameUtilities.AddAffinityToCard(this, Affinity.Violet, 1);
+            GameActions.Top.SetScaling(this, Affinity.Violet, 1);
+            GameActions.Top.SetScaling(this, Affinity.Red, 1);
+            GameActions.Top.ShowCopy(this);
+        }
     }
 
     @Override
-    public void OnLateUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
+    public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
-        GameActions.Bottom.ExhaustFromHand(name, 1, false)
-        .SetOptions(false, false, false)
-        .AddCallback(cards ->
-        {
-            for (AbstractCard c : cards)
-            {
-                GameActions.Bottom.SelectFromPile(name, 1, GetReplacement(c, 2))
-                .SetOptions(false, false)
-                .AddCallback(cards2 ->
-                {
-                   for (AbstractCard c2 : cards2)
-                   {
-                       GameActions.Top.MakeCardInHand(c2);
-                   }
-                });
+        GameUtilities.PlayVoiceSFX(name);
+        GameActions.Bottom.DealDamage(this, m, AttackEffects.FIRE);
+
+        RandomizedList<AbstractCard> choices = new RandomizedList<>();
+
+        CardGroup cardGroup = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+
+        choices.AddAll(player.drawPile.getCardsOfType(CardType.ATTACK).group);
+
+        for (int i=0; i<magicNumber; i++) {
+            if (choices.Size() > 0) {
+                cardGroup.addToBottom(choices.Retrieve(rng, true));
             }
-        });
+        }
+
+        GameActions.Bottom.SelectFromPile(name, 1, cardGroup)
+            .SetFilter(card -> card.type == CardType.ATTACK)
+            .SetOptions(false, false, false)
+            .AddCallback(cards -> {
+               for (AbstractCard card : cards) {
+                   GameUtilities.Imitate(card);
+               }
+            });
     }
 
     private CardGroup GetReplacement(AbstractCard card, int size)

@@ -5,15 +5,13 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
-import eatyourbeets.monsters.EnemyIntent;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.utilities.TargetHelper;
 
 public class Sora_BattlePlan2 extends Sora_BattlePlan
 {
     public static final EYBCardData DATA = Register(Sora_BattlePlan2.class)
-            .SetSkill(1, CardRarity.SPECIAL, EYBCardTarget.None)
+            .SetSkill(0, CardRarity.SPECIAL, EYBCardTarget.None)
             .SetImagePath(IMAGE_PATH)
             .SetSeries(SERIES);
 
@@ -21,25 +19,17 @@ public class Sora_BattlePlan2 extends Sora_BattlePlan
     {
         super(DATA);
 
-        Initialize(0, 0, 2, 4);
-    }
+        Initialize(0, 8, 0, 0);
+        SetUpgrade(0, 3, 0, 0);
 
-    @Override
-    public void OnDrag(AbstractMonster m)
-    {
-        super.OnDrag(m);
-
-        for (EnemyIntent intent : GameUtilities.GetIntents())
-        {
-            intent.AddWeak();
-        }
+        SetAffinity_Green(1, 0, 1);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.ApplyWeak(TargetHelper.Enemies(), magicNumber);
-        GameActions.Bottom.GainTemporaryStats(0, secondaryValue, 0);
+        GameActions.Bottom.GainBlock(block);
+        GameActions.Bottom.GainDexterity(1);
     }
 }

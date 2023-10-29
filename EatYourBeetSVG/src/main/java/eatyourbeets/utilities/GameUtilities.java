@@ -1440,15 +1440,26 @@ public class GameUtilities
         }
         if (card.baseDamage >= 0)
         {
-            ModifyDamage(card, 1, false);
+            ModifyDamage(card, 0, false);
         }
         if (card.baseBlock >= 0)
         {
-            ModifyBlock(card, 1, false);
+            ModifyBlock(card, 0, false);
         }
+
+        if (card instanceof AnimatorCard) {
+            EYBCardAffinities affinities = ((AnimatorCard) card).affinities;
+
+            for (EYBCardAffinity affinity : affinities.List) {
+                if (affinity.scaling > 0) {
+                    affinity.scaling = 0;
+                }
+            }
+        }
+
         if (card.cost >= 0)
         {
-            CostModifiers.For(card).Add(-2);
+            CostModifiers.For(card).Set(0);
         }
 
         card.tags.add(EYBCard.PURGE);

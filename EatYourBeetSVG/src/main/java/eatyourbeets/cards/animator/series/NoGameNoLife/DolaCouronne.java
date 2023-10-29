@@ -36,7 +36,8 @@ public class DolaCouronne extends AnimatorCard
             .AddCallback(cards -> {
                for (AbstractCard card : cards) {
                    if (card.costForTurn == 0) {
-                       GameActions.Top.Draw(1);
+                       GameActions.Top.Draw(1)
+                          .SetFilter(c -> c.costForTurn == 0, false);
                    }
                }
             });

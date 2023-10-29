@@ -2229,23 +2229,23 @@
 	{
 		"animator:ChlammyZell":
 		{
-			"DESCRIPTION": "Gain !S! [INS]. Next turn: <DRW-M>. || <LIM>. !A! [B] [D]: Obtain {Scheme}.",
-			"NAME": "Kurami"
+			"DESCRIPTION": "Draw !M! cards. Next turn: <DRW-M>. || !A! [P] [Y]: Obtain {Scheme}.",
+			"NAME": "Chlammy Zell"
 		},
 		"animator:ChlammyZell_Scheme":
 		{
-			"DESCRIPTION": "This turn, whenever you play alternate card types: Cycle 1 card, deal !M! damage to ALL enemies, and raise this damage by 1.",
+			"DESCRIPTION": "This turn: Whenever you play alternating card types, copy a random {0-Cost} card in your hand.",
 			"NAME": "Scheme"
 		},
 		"animator:DolaCouronne":
 		{
-			"DESCRIPTION": "Discard a card.  If you discarded a {0-Cost} card, draw a card.",
+			"DESCRIPTION": "Discard a card.  If you discarded a {0-Cost} card, draw a {0-Cost} card.",
 			"NAME": "Couronne Dola"
 		},
 		"animator:DolaRiku":
 		{
-			"DESCRIPTION": "Discard 1 {Skill} to draw 1 {Attack}. || !A! [B]: Draw it from your discard pile.",
-			"NAME": "Riku"
+			"DESCRIPTION": "Exhaust a card in your hand, choose and obtain 1 of !M! cards of the same rarity, it costs 1 less this combat.",
+			"NAME": "Riku Dola"
 		},
 		"animator:DolaSchwi":
 		{
@@ -2259,18 +2259,18 @@
 		},
 		"animator:EmirEins":
 		{
-			"DESCRIPTION": "Exhaust a card. Obtain 1 of 2 random {Attacks+} of the same rarity. || When Sealed: Take !M! [DD] and Obtain {[M] Token}.",
+			"DESCRIPTION": "{Imitate} 1 of !M! {Attacks} in your draw pile. || <LIM>.  When {Sealed}: This card gains [R] and [V] Affinity and Scaling.",
 			"NAME": "Emir-Eins"
 		},
 		"animator:FielNirvalen":
 		{
-			"DESCRIPTION": "Obtain 1 {[W] Token}{+}. || Once per turn, when you shuffle your draw pile: Scry !S!.",
-			"EXTENDED_DESCRIPTION": ["Once per turn, when you shuffle your draw pile: #yScry #b{0}."],
+			"DESCRIPTION": "When you play your first {0-Cost} card each turn: Obtain a random {[W] Token}{+}. || When you play your second {0-Cost} card each turn: Gain [A_Seal].",
+			"EXTENDED_DESCRIPTION": ["When you play your first #y0-Cost card each turn: Obtain a random #yAffinity #yToken.  When you play your second #y0-Cost card each turn: Gain #ySeal.","When you play your first #y0-Cost card each turn: Obtain a random #yupgraded #yAffinity #yToken.  When you play your second #y0-Cost card each turn: Gain #ySeal."],
 			"NAME": "Fiel Nirvalen"
 		},
 		"animator:Holou":
 		{
-			"DESCRIPTION": "Shuffle all cards into your draw pile. || For every [Blessing] and [Corruption]: <DRW> and Motivate it.",
+			"DESCRIPTION": "Shuffle all {0-Cost} cards in your discard pile, hand, and exhaust pile into your draw pile.  Draw a card.",
 			"NAME": "Holou"
 		},
 		"animator:IzunaHatsuse":
@@ -2291,40 +2291,39 @@
 		},
 		"animator:NinaCliffe":
 		{
-			"DESCRIPTION": "Purge !S! {Low-Cost} cards from anywhere. At the start of your next !S! turns: Randomly play 1 of the cards you Purged.",
-			"EXTENDED_DESCRIPTION": ["At the start of your turn, play {0}."],
+			"DESCRIPTION": "Purge up to !M! {0-Cost} cards from your hand or discard pile. || At the start of each turn: play two random cards you Purged at random.",
+			"EXTENDED_DESCRIPTION": ["At the start of your turn, play 2 random cards #yPurged by this card."],
 			"NAME": "Nina Cliffe"
 		},
 		"animator:Shiro":
 		{
-			"DESCRIPTION": "Gain|Boost [B]. Motivate 1. || !A! [B]: Raise your max [E] by !S!, and reduce your draw size by 1.",
+			"DESCRIPTION": "Costs 1 less for each {0-Cost} card in your hand. || At the start of each turn: Gain !M! [E].",
 			"NAME": "Shiro"
 		},
 		"animator:Sora":
 		{
-			"DESCRIPTION": "Your next {Low-Cost} {Skill} is played twice. || <LIM>. Choose 1 of 3 {Battle Plans} to add to the top half of your draw pile.",
-			"EXTENDED_DESCRIPTION": ["Your next #yLow-Cost #ySkill is played twice."],
+			"DESCRIPTION": "Costs 1 less for each {0-Cost} card in your hand. || Choose 1 of 3 {Battle Plans}{+} to obtain.",
 			"NAME": "Sora"
 		},
 		"animator:Sora_BattlePlan1":
 		{
-			"DESCRIPTION": "Apply !M! [Vulnerable]. || Add !S! {0-Cost} {Improved Strikes} to your hand.",
+			"DESCRIPTION": "The enemy loses [Strength].",
 			"NAME": "Battle Plan"
 		},
 		"animator:Sora_BattlePlan2":
 		{
-			"DESCRIPTION": "Apply !M! Weak to ALL enemies. || Gain !S! {Temp.} [Dexterity].",
+			"DESCRIPTION": "Gain [Dexterity].",
 			"NAME": "Battle Plan"
 		},
 		"animator:Sora_BattlePlan3":
 		{
-			"DESCRIPTION": "Boost each [W]. || Choose and obtain !M! {[W] Tokens}.",
+			"DESCRIPTION": "!M! times this combat: Choose a {0-Cost} card in your hand.  Play it twice at a random enemy.",
+			"EXTENDED_DESCRIPTION": ["Choose a #y0-Cost card in your hand and play it twice at a random enemy."],
 			"NAME": "Battle Plan"
 		},
 		"animator:Tet":
 		{
-			"DESCRIPTION": "Discard !M! card(s) from your hand or draw pile. At the end of turn: Move !M! card(s) from your discard pile to the top half of your draw pile.",
-			"EXTENDED_DESCRIPTION": ["At the end of this turn, move #b{0} card(s) from your discard pile to the top half of your draw pile."],
+			"DESCRIPTION": "Fetch a card from your draw pile and reduce its cost by !M!.",
 			"NAME": "Tet"
 		}
 	},
@@ -3129,8 +3128,10 @@
 	{
 		"animator:Azriel":
 		{
-			"DESCRIPTION": "Gain 2 Flight. While you have it, you can't have more than 20 [Block] or [THP]. || When you apply a {Debuff}: Gain !M! random [W].",
-			"NAME": "Azriel"
+			"DESCRIPTION": "Gain !M! Flight. || Whenever you play a {0-Cost} card: Draw a card.",
+			"UPGRADE_DESCRIPTION": "Gain !M! Flight. || Whenever you play a {0-Cost} card: Draw a {0-Cost} card.",
+			"EXTENDED_DESCRIPTION": ["Whenever you play a #y0-Cost card: Draw a card.","Whenever you play a #y0-Cost card: Draw a #y0-Cost card."],
+			"NAME": "Azril"
 		},
 		"animator:Chomusuke":
 		{

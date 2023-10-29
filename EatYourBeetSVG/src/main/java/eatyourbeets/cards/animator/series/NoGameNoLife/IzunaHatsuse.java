@@ -29,8 +29,10 @@ public class IzunaHatsuse extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(3, 0, 2, 1);
+        Initialize(2, 0, 2, 1);
         SetUpgrade(0, 0, 1, 1);
+
+        SetAffinity_White(1);
 
         SetTransformed(transformed);
     }
@@ -49,7 +51,7 @@ public class IzunaHatsuse extends AnimatorCard
     @Override
     public AbstractAttribute GetSpecialInfo()
     {
-        return transformed ? HPAttribute.Instance.SetCardHeal(this) : null;
+        return transformed ? HPAttribute.Instance.SetCard(this, 1) : null;
     }
 
     @Override
@@ -142,7 +144,7 @@ public class IzunaHatsuse extends AnimatorCard
                 affinities.Set(Affinity.Red, 1);
                 affinities.Set(Affinity.White, 0);
 
-                SetFading(true);
+                SetExhaust(true);
 
                 this.type = CardType.ATTACK;
                 this.cardText.OverrideDescription(cardData.Strings.EXTENDED_DESCRIPTION[0], true);
@@ -154,7 +156,7 @@ public class IzunaHatsuse extends AnimatorCard
                 affinities.Set(Affinity.Red, 0);
                 affinities.Set(Affinity.White, 1);
 
-                SetHaste(true);
+                SetDelayed(true);
 
                 this.type = CardType.SKILL;
                 this.cardText.OverrideDescription(null, true);

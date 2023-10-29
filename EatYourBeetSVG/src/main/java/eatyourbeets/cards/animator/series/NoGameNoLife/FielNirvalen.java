@@ -1,19 +1,20 @@
 package eatyourbeets.cards.animator.series.NoGameNoLife;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.tokens.AffinityToken;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.cards.base.CardEffectChoice;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
-import eatyourbeets.interfaces.subscribers.OnShuffleSubscriber;
 import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
+
+import java.util.ArrayList;
 
 public class FielNirvalen extends AnimatorCard
 {
@@ -22,84 +23,58 @@ public class FielNirvalen extends AnimatorCard
             .SetSeriesFromClassPackage()
             .PostInitialize(data -> data.AddPreviews(AffinityToken.GetCards(), true));
 
-    private static final CardEffectChoice choices = new CardEffectChoice();
-
     public FielNirvalen()
     {
         super(DATA);
 
-        Initialize(0, 0, 0, 2);
+        Initialize(0, 0, 0, 0);
         SetUpgrade(0, 0, 0, 0);
 
-        SetAffinity_Blue(1);
-        SetAffinity_White(1);
-        SetAffinity_Black(1);
+        SetAffinity_Blue(2);
     }
 
     @Override
     protected void OnUpgrade()
     {
-        SetRetainOnce(true);
+        SetRetain(true);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.Add(AffinityToken.SelectTokenAction(name, upgraded, false, 1))
-        .AddCallback(cards ->
-        {
-            for (AbstractCard c : cards)
-            {
-                GameActions.Bottom.MakeCardInHand(c);
-            }
-        });
-        GameActions.Bottom.StackPower(new FielNirvalenPower(p, secondaryValue));
+        GameActions.Bottom.StackPower(new FielNirvalenPower(p, secondaryValue, upgraded));
     }
 
-    public static class FielNirvalenPower extends AnimatorPower implements OnShuffleSubscriber
+    public static class FielNirvalenPower extends AnimatorPower
     {
-        public FielNirvalenPower(AbstractCreature owner, int amount)
+        private boolean upgraded;
+
+        public FielNirvalenPower(AbstractCreature owner, int amount, boolean upgraded)
         {
             super(owner, FielNirvalen.DATA);
 
             this.amount = amount;
+            this.upgraded = upgraded;
 
             updateDescription();
         }
 
         @Override
-        public void onInitialApplication()
-        {
-            CombatStats.onShuffle.Subscribe(this);
-        }
+        public void onPlayCard(AbstractCard card, AbstractMonster m) {
+            super.onPlayCard(card, m);
 
-        @Override
-        public void onRemove()
-        {
-            CombatStats.onShuffle.Unsubscribe(this);
-        }
+            if (card.costForTurn == 0) {
 
-        @Override
-        public void atStartOfTurn()
-        {
-            enabled = true;
-        }
+                ArrayList<AbstractCard> cardsPlayed = AbstractDungeon.actionManager.cardsPlayedThisTurn;
 
-        @Override
-        public void OnShuffle(boolean triggerRelics)
-        {
-            if (!owner.powers.contains(this))
-            {
-                CombatStats.onShuffle.Unsubscribe(this);
-                return;
-            }
+                int numZeroCostsPlayed = (int) cardsPlayed.stream().filter(c -> c.costForTurn == 0).count();
 
-            if (enabled)
-            {
-                GameActions.Last.Scry(amount);
-                enabled = false;
-                flash();
+                if (numZeroCostsPlayed == 1) {
+                    GameActions.Bottom.MakeCardInHand(AffinityToken.GetRandomCard());
+                } else if (numZeroCostsPlayed == 2) {
+                    GameActions.Bottom.Callback(() -> CombatStats.Affinities.AddAffinitySealUses(1));
+                }
             }
         }
 

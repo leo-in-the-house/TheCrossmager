@@ -1,79 +1,39 @@
 package eatyourbeets.cards.animator.series.NoGameNoLife;
 
-import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.base.*;
-import eatyourbeets.ui.cards.CardPreview;
-import eatyourbeets.utilities.CardSelection;
+import eatyourbeets.actions.animator.DolaRikuAction;
+import eatyourbeets.cards.base.AnimatorCard;
+import eatyourbeets.cards.base.CardUseInfo;
+import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.JUtils;
+import eatyourbeets.utilities.GameUtilities;
 
 public class DolaRiku extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(DolaRiku.class)
-            .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None)
+            .SetSkill(2, CardRarity.UNCOMMON, EYBCardTarget.None)
             .SetSeriesFromClassPackage();
-
-    private final CardPreview discardPilePreview;
-    private final CardPreview drawPilePreview;
 
     public DolaRiku()
     {
         super(DATA);
 
         Initialize(0, 7);
-        SetUpgrade(0, 3);
+        SetUpgrade(0, 0);
 
-        SetAffinity_White(1);
-        SetAffinity_Green(1);
-
-        SetAffinityRequirement(Affinity.Blue, 2);
-
-        discardPilePreview = SetCardPreview(c -> c.type == CardType.ATTACK)
-        .SetSelection(CardSelection.Top, 1)
-        .SetGroupType(CardGroup.CardGroupType.DISCARD_PILE);
-
-        drawPilePreview = SetCardPreview(c -> c.type == CardType.ATTACK);
+        SetAffinity_Brown(1, 0, 1);
+        SetAffinity_Pink(1, 0, 1);
     }
 
     @Override
-    protected void Refresh(AbstractMonster enemy)
+    public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
-        super.Refresh(enemy);
-
-        cardPreview = CheckSpecialCondition(false) ? discardPilePreview : drawPilePreview;
-    }
-
-    @Override
-    public void OnLateUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
-    {
+        GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
-        GameActions.Bottom.DiscardFromHand(name, 1, false)
-        .SetOptions(true, true, false)
-        .SetFilter(c -> c.type == CardType.SKILL)
-        .AddCallback(cards ->
-        {
-            if (cards.size() >= 1)
-            {
-                if (CheckSpecialCondition(false))
-                {
-                    GameActions.Bottom.FetchFromPile(name, 1, player.discardPile)
-                    .ShowEffect(true, false)
-                    .SetOptions(CardSelection.Top, true)
-                    .SetFilter(c -> c.type == CardType.ATTACK);
-                }
-                else
-                {
-                    GameActions.Bottom.Draw(1).SetFilter(c -> c.type == CardType.ATTACK, false);
-                }
-            }
-        });
-    }
-
-    @Override
-    public boolean CheckSpecialCondition(boolean tryUse)
-    {
-        return JUtils.Any(player.discardPile.group, c -> c.type == CardType.ATTACK) && super.CheckSpecialCondition(tryUse);
+        GameActions.Bottom.ExhaustFromHand(name, 1, false)
+                .SetOptions(false, false, false)
+                .AddCallback(cards -> GameActions.Bottom.Add(new DolaRikuAction(cards.get(0), magicNumber)));
     }
 }

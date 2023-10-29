@@ -1,15 +1,17 @@
 package eatyourbeets.cards.animator.ultrarare;
 
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard_UltraRare;
-import eatyourbeets.utilities.GameUtilities;
+import eatyourbeets.cards.base.CardSeries;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
-import eatyourbeets.cards.base.CardSeries;
-import eatyourbeets.powers.animator.AzrielPower;
+import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.powers.replacement.PlayerFlightPower;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Azriel extends AnimatorCard_UltraRare
 {
@@ -23,24 +25,53 @@ public class Azriel extends AnimatorCard_UltraRare
         super(DATA);
 
         Initialize(0, 0, 2);
-        SetUpgrade(0, 0, 1);
+        SetUpgrade(0, 0, 0);
 
-        SetAffinity_Red(1);
-        SetAffinity_Blue(1);
-        SetAffinity_Black(1);
+        SetAffinity_Black(2);
+        SetAffinity_Pink(2);
 
         SetEthereal(true);
+        SetDelayed(true);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        if (!p.hasPower(PlayerFlightPower.POWER_ID))
+        GameActions.Bottom.StackPower(new PlayerFlightPower(p, 2));
+
+        GameActions.Bottom.StackPower(new AzrielPower(p, 1, upgraded));
+    }
+
+    public class AzrielPower extends AnimatorPower
+    {
+        boolean upgraded;
+        public AzrielPower(AbstractCreature owner, int amount, boolean upgraded)
         {
-            GameActions.Bottom.StackPower(new PlayerFlightPower(p, 2));
+            super(owner, Azriel.DATA);
+            this.upgraded = upgraded;
+
+            Initialize(amount);
         }
 
-        GameActions.Bottom.StackPower(new AzrielPower(p, magicNumber));
+        @Override
+        public void updateDescription()
+        {
+            this.description = FormatDescription(upgraded ? 1 : 0, amount);
+        }
+
+        @Override
+        public void onPlayCard(AbstractCard card, AbstractMonster m) {
+            super.onPlayCard(card, m);
+
+            if (card.costForTurn == 0) {
+                if (upgraded) {
+                    GameActions.Bottom.Draw(1)
+                        .SetFilter(c -> c.costForTurn == 0, false);
+                } else {
+                    GameActions.Bottom.Draw(1);
+                }
+            }
+        }
     }
 }

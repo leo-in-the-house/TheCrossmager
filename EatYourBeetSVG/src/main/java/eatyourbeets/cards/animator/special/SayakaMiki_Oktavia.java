@@ -45,7 +45,7 @@ public class SayakaMiki_Oktavia extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.VFX(VFX.Mindblast(p.dialogX, p.dialogY).SetColor(Color.VIOLET));
+        GameActions.Bottom.VFX(VFX.Mindblast(p.dialogX, p.dialogY).SetColor(Color.BLUE));
 
         GameActions.Bottom.PurgeFromPile(name, magicNumber, player.exhaustPile)
             .SetFilter(card -> card.type == CardType.CURSE)

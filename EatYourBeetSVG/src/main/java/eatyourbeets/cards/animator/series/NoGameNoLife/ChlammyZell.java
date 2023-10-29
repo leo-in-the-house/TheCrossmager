@@ -21,19 +21,18 @@ public class ChlammyZell extends AnimatorCard
         Initialize(0, 0, 1, 4);
         SetUpgrade(0, 0, 1, 1);
 
-        SetAffinity_Blue(1);
-        SetAffinity_Black(1);
+        SetAffinity_Pink(1);
+        SetAffinity_Violet(1);
 
-        SetAffinityRequirement(Affinity.Blue, 2);
-        SetAffinityRequirement(Affinity.Black, 2);
+        SetAffinityRequirement(Affinity.Pink, 3);
+        SetAffinityRequirement(Affinity.Violet, 3);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.GainBlock(block);
-        GameActions.Bottom.GainInspiration(secondaryValue);
+        GameActions.Bottom.Draw(magicNumber);
         GameActions.Bottom.DrawNextTurn(magicNumber);
 
         if (CheckSpecialCondition(false))

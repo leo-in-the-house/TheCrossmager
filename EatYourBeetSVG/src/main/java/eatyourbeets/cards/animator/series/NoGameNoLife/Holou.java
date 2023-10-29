@@ -1,35 +1,36 @@
 package eatyourbeets.cards.animator.series.NoGameNoLife;
 
+import com.badlogic.gdx.graphics.Color;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ShuffleAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.cards.base.attributes.TempHPAttribute;
 import eatyourbeets.effects.SFX;
-import eatyourbeets.powers.CombatStats;
+import eatyourbeets.effects.VFX;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Holou extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Holou.class)
-            .SetSkill(2, CardRarity.RARE, EYBCardTarget.None)
+            .SetAttack(3, CardRarity.RARE, EYBAttackType.Elemental, EYBCardTarget.ALL)
             .SetSeriesFromClassPackage();
 
     public Holou()
     {
         super(DATA);
 
-        Initialize(0, 0, 2);
-        SetUpgrade(0, 0, 4);
+        Initialize(7, 0, 7);
+        SetUpgrade(8, 0, 8);
 
-        SetAffinity_Blue(1);
-        SetAffinity_White(1);
-        SetAffinity_Black(1);
+        SetAffinity_White(1, 0, 2);
+        SetAffinity_Teal(1, 0, 2);
+        SetAffinity_Yellow(1, 0, 2);
 
-        SetPurge(true);
+        SetExhaust(true);
     }
 
     @Override
@@ -42,24 +43,23 @@ public class Holou extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
+
+        GameActions.Bottom.VFX(VFX.Mindblast(p.dialogX, p.dialogY).SetColor(Color.YELLOW));
+        GameActions.Bottom.DealDamageToAll(this, AbstractGameAction.AttackEffect.NONE);
         GameActions.Bottom.GainTemporaryHP(magicNumber);
+
         GameActions.Bottom.SFX(SFX.POWER_TIME_WARP, 0.5f, 0.5f);
-        GameActions.Bottom.MoveCards(p.hand, p.drawPile);
+        GameActions.Bottom.MoveCards(p.hand, p.drawPile)
+            .SetFilter(card -> card.costForTurn == 0);
         GameActions.Bottom.MoveCards(p.discardPile, p.drawPile)
-        .ShowEffect(true, false, Math.max(0.0075f, 0.09f - p.drawPile.size() * 0.01f));
+            .SetFilter(card -> card.costForTurn == 0)
+            .ShowEffect(true, false, Math.max(0.0075f, 0.09f - p.drawPile.size() * 0.01f));
+        GameActions.Bottom.MoveCards(p.exhaustPile, p.drawPile)
+                .SetFilter(card -> card.costForTurn == 0)
+                .ShowEffect(true, false, Math.max(0.0075f, 0.09f - p.drawPile.size() * 0.01f));
+
         GameActions.Bottom.Add(new ShuffleAction(p.drawPile, false));
 
-        final int amount = CombatStats.Affinities.GetPowerAmount(Affinity.White) + CombatStats.Affinities.GetPowerAmount(Affinity.Black);
-        if (amount > 0)
-        {
-            GameActions.Bottom.Draw(amount)
-            .AddCallback(cards ->
-            {
-                for (AbstractCard c : cards)
-                {
-                    GameActions.Bottom.Motivate(c, 1);
-                }
-            });
-        }
+        GameActions.Bottom.Draw(1);
     }
 }
