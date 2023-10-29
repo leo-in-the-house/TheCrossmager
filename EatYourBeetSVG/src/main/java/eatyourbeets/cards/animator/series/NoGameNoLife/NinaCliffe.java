@@ -26,7 +26,8 @@ public class NinaCliffe extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 0, 5, 0);
+        Initialize(0, 0, 3, 0);
+        SetCostUpgrade(-1);
 
         SetAffinity_Blue(1);
         SetAffinity_Pink(1);
@@ -37,7 +38,7 @@ public class NinaCliffe extends AnimatorCard
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.PurgeFromPile(name, magicNumber, p.hand, p.discardPile)
         .SetOptions(false, false)
-        .SetFilter(GameUtilities::IsLowCost)
+        .SetFilter(card -> card.costForTurn == 0)
         .AddCallback(cards ->
         {
             if (cards.size() > 0)
@@ -56,6 +57,7 @@ public class NinaCliffe extends AnimatorCard
             super(owner, NinaCliffe.DATA);
 
             this.cards = new RandomizedList<>();
+            this.cards.AddAll(cards);
 
             Initialize(this.cards.Size());
         }
@@ -63,14 +65,7 @@ public class NinaCliffe extends AnimatorCard
         @Override
         public void updateDescription()
         {
-            if (cards.Size() > 0)
-            {
-                this.description = FormatDescription(0, amount);
-            }
-            else
-            {
-                this.description = "";
-            }
+            this.description = FormatDescription(0, amount);
         }
 
         @Override

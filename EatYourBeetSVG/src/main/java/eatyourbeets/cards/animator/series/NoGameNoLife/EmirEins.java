@@ -1,18 +1,15 @@
 package eatyourbeets.cards.animator.series.NoGameNoLife;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.effects.AttackEffects;
-import eatyourbeets.powers.CombatStats;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.tokens.AffinityToken;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.resources.GR;
-import eatyourbeets.resources.animator.misc.AnimatorLoadout;
+import eatyourbeets.effects.AttackEffects;
+import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.RandomizedList;
 
 public class EmirEins extends AnimatorCard
@@ -70,69 +67,8 @@ public class EmirEins extends AnimatorCard
             .SetOptions(false, false, false)
             .AddCallback(cards -> {
                for (AbstractCard card : cards) {
-                   GameUtilities.Imitate(card);
+                   GameActions.Top.MakeCardInHand(GameUtilities.Imitate(card));
                }
             });
-    }
-
-    private CardGroup GetReplacement(AbstractCard card, int size)
-    {
-        final boolean isHindrance = GameUtilities.IsHindrance(card);
-        final CardColor color = (isHindrance || card.color == CardColor.COLORLESS) ? player.getCardColor() : card.color;
-        final CardRarity rarity;
-        switch (card.rarity)
-        {
-            case BASIC:
-            case COMMON:
-            case UNCOMMON:
-            case RARE:
-                rarity = card.rarity;
-                break;
-
-            case SPECIAL:
-                rarity = isHindrance ? CardRarity.COMMON : card.rarity;
-                break;
-
-            case CURSE:
-            default:
-                rarity = CardRarity.COMMON;
-                break;
-        }
-
-        final boolean betaSeries = GR.Animator.Dungeon.HasBetaSeries;
-        final RandomizedList<AbstractCard> randomCards = new RandomizedList<>();
-        for (AbstractCard c : CardLibrary.getAllCards())
-        {
-            if (c.type == CardType.ATTACK && (rarity == CardRarity.SPECIAL || c.rarity == rarity) && !c.cardID.equals(card.cardID)
-            && (c.color == CardColor.COLORLESS || c.color == color) && GameUtilities.IsObtainableInCombat(c))
-            {
-                if (!betaSeries && c instanceof AnimatorCard)
-                {
-                    final AnimatorCard c2 = (AnimatorCard) c;
-                    final AnimatorLoadout loadout = GR.Animator.Data.GetLoadout(c2.series);
-                    if (loadout == null || !loadout.IsBeta)
-                    {
-                        randomCards.Add(c);
-                    }
-                }
-//                else if (card instanceof EYBCard == c instanceof EYBCard)
-//                {
-//                    randomCards.Add(c);
-//                }
-            }
-        }
-
-        final CardGroup group = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-        while (group.size() < size && randomCards.Size() > 0)
-        {
-            final AbstractCard toAdd = randomCards.Retrieve(rng).makeCopy();
-            //if (card.upgraded)
-            //{
-                toAdd.upgrade();
-            //}
-            group.group.add(toAdd);
-        }
-
-        return group;
     }
 }

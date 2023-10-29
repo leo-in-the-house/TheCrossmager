@@ -63,7 +63,7 @@ public class Shiro extends AnimatorCard
     {
         public ShiroPower(AbstractCreature owner, int amount)
         {
-            super(owner, FielNirvalen.DATA);
+            super(owner, Shiro.DATA);
 
             this.amount = amount;
 

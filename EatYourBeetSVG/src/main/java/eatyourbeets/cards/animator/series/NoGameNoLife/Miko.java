@@ -32,7 +32,7 @@ public class Miko extends AnimatorCard
         int numZeroCostCards = 0;
 
         for (AbstractCard card : player.hand.group) {
-            if (card.costForTurn == 0) {
+            if (card.costForTurn == 0 && !card.uuid.equals(uuid)) {
                 numZeroCostCards++;
             }
         }

@@ -20,8 +20,8 @@ public class DolaRiku extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 7);
-        SetUpgrade(0, 0);
+        Initialize(0, 7, 2);
+        SetUpgrade(0, 0, 1);
 
         SetAffinity_Brown(1, 0, 1);
         SetAffinity_Pink(1, 0, 1);
