@@ -10,7 +10,6 @@ import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.powers.AnimatorPower;
-import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
@@ -70,10 +69,8 @@ public class FielNirvalen extends AnimatorCard
 
                 int numZeroCostsPlayed = (int) cardsPlayed.stream().filter(c -> c.costForTurn == 0).count();
 
-                if (numZeroCostsPlayed == 1) {
+                if (numZeroCostsPlayed % 2 == 0) {
                     GameActions.Bottom.MakeCardInHand(AffinityToken.GetRandomCard());
-                } else if (numZeroCostsPlayed == 2) {
-                    GameActions.Bottom.Callback(() -> CombatStats.Affinities.AddAffinitySealUses(1));
                 }
             }
         }

@@ -10,7 +10,7 @@ import eatyourbeets.utilities.GameActions;
 public class ChlammyZell extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(ChlammyZell.class)
-            .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None)
+            .SetSkill(0, CardRarity.UNCOMMON, EYBCardTarget.None)
             .SetSeriesFromClassPackage()
             .PostInitialize(data -> data.AddPreview(new ChlammyZell_Scheme(), false));
 
@@ -32,7 +32,6 @@ public class ChlammyZell extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.Draw(magicNumber);
         GameActions.Bottom.DrawNextTurn(magicNumber);
 
         if (CheckSpecialCondition(false))

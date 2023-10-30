@@ -16,12 +16,12 @@ import eatyourbeets.utilities.RandomizedList;
 
 import java.util.ArrayList;
 
-public class NinaCliffe extends AnimatorCard
+public class ThinkNirvalen extends AnimatorCard
 {
-    public static final EYBCardData DATA = Register(NinaCliffe.class)
+    public static final EYBCardData DATA = Register(ThinkNirvalen.class)
             .SetPower(1, CardRarity.UNCOMMON)
             .SetSeriesFromClassPackage();
-    public NinaCliffe()
+    public ThinkNirvalen()
     {
         super(DATA);
 
@@ -79,7 +79,7 @@ public class NinaCliffe extends AnimatorCard
 
         public NinaCliffePower(AbstractCreature owner, ArrayList<AbstractCard> cards)
         {
-            super(owner, NinaCliffe.DATA);
+            super(owner, ThinkNirvalen.DATA);
 
             this.cards = new RandomizedList<>();
             this.cards.AddAll(cards);

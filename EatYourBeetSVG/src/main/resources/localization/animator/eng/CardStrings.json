@@ -2229,103 +2229,122 @@
 	{
 		"animator:ChlammyZell":
 		{
-			"DESCRIPTION": "Draw !M! cards. Next turn: <DRW-M>. || !A! [P] [Y]: Obtain {Scheme}.",
+			"FLAVOR_TEXT": "'Just face it: you lost, so move on!  It would be wise if you didn't make the same mistakes as the fool who gave you that dress.'",
+			"DESCRIPTION": "Next turn: <DRW-M>. || !A! [P] [V]: Obtain {Scheme}.",
 			"NAME": "Chlammy Zell"
 		},
 		"animator:ChlammyZell_Scheme":
 		{
+			"FLAVOR_TEXT": "'Hahahaha... As long as they can't prove that I'm cheating, then I win!'",
 			"DESCRIPTION": "This turn: Whenever you play alternating card types, copy a random {0-Cost} card in your hand.",
 			"NAME": "Scheme"
 		},
 		"animator:DolaCouronne":
 		{
+			"FLAVOR_TEXT": "'Riku. Schwi.  You two did something truly... incredible!  You put an end to the eternal war!  And yet... why do I feel like this?  Why is it that I feel so... why do I... WHY DO I FEEL SO CHEATED?!'",
 			"DESCRIPTION": "Discard a card.  If you discarded a {0-Cost} card, draw a {0-Cost} card.",
 			"NAME": "Couronne Dola"
 		},
 		"animator:DolaRiku":
 		{
+			"FLAVOR_TEXT": "'Number one!  No matter what, you must not kill!  Number two!  You must let no one die!  Number three!  You must let no one discover you!  Number four!  No tactic is off limits!  Number five!  Those guys' rules mean nothing to us!  Number six!  Break any of these rules, and you lose!'",
 			"DESCRIPTION": "Exhaust a card in your hand, choose and obtain 1 of !M! cards of the same rarity, it costs 1 less this combat.",
 			"NAME": "Riku Dola"
 		},
 		"animator:DolaSchwi":
 		{
+			"FLAVOR_TEXT": "'My unique designation is Uber Cluster Zwei Null Sieben Peh Err Vier Funf Sieben Teh Neun!  Requesting reconnection with Einzig!  My analysis of the human heart is complete!  I request synchronous reconnection!'",
 			"DESCRIPTION": "Channel [Lightning].",
 			"NAME": "Schwi Dola"
 		},
 		"animator:DolaStephanie":
 		{
+			"FLAVOR_TEXT": "'I want to show the world that my grandfather wasn't just some old fool!  If I could become king, then I could take our territory back!  Then, I could prove to everyone that my grandfather was right!  That we can win!'",
 			"DESCRIPTION": "Draw !M! card(s), then reshuffle a card into your draw pile.",
 			"NAME": "Stephanie Dola"
 		},
 		"animator:EmirEins":
 		{
+			"FLAVOR_TEXT": "'Addendum: Ex-Machina units are synchronized in cluster, lack individual identity. Self-harm allowed by Covenants. Also, forceful contact of this unit's leg determined to be an unfortunate accident. This unit is absolved of any wrongdoing.'",
 			"DESCRIPTION": "{Imitate} 1 of !M! {Attacks} in your draw pile. || When {Sealed}: This card gains +2 [R] and [V] Scaling.",
 			"NAME": "Emir-Eins"
 		},
 		"animator:FielNirvalen":
 		{
-			"DESCRIPTION": "When you play your first {0-Cost} card each turn: Obtain a random {[W] Token}{+}. || When you play your second {0-Cost} card each turn: Gain [A_Seal].",
-			"EXTENDED_DESCRIPTION": ["When you play your first #y0-Cost card each turn: Obtain a random #yAffinity #yToken.  When you play your second #y0-Cost card each turn: Gain #ySeal.","When you play your first #y0-Cost card each turn: Obtain a random #yupgraded #yAffinity #yToken.  When you play your second #y0-Cost card each turn: Gain #ySeal."],
+			"FLAVOR_TEXT": "'Please, please I beg you!  You can do whatever you want with me!  Just don't... hurt Chlammy...'",
+			"DESCRIPTION": "When you play a {0-Cost} card when an even number of {0-Cost} cards have been played this turn: Obtain a random {[W] Token}{+}.",
+			"EXTENDED_DESCRIPTION": ["When you play your a #y0-Cost card when an even number of #y0-Cost cards have been played this turn: Obtain a random #yAffinity #yToken.","When you play your a #y0-Cost card when an even number of #y0-Cost cards have been played this turn: Obtain a random #yupgraded #yAffinity #yToken."],
 			"NAME": "Fiel Nirvalen"
 		},
 		"animator:Holou":
 		{
+			"FLAVOR_TEXT": "'Who am I? What art thou? What is a question?'",
 			"DESCRIPTION": "Shuffle all {0-Cost} cards in your discard pile, hand, and exhaust pile into your draw pile.  Draw a card.",
 			"NAME": "Holou"
 		},
 		"animator:IzunaHatsuse":
 		{
+			"FLAVOR_TEXT": "'Who said you shitheads could stop?  Thank you!  You popped out of nowhere and surprised me is all!  Please, commence the petting, peasants!  Thank you!'",
 			"DESCRIPTION": "Apply !S! Weak. || When Sealed: Change this card's form.",
 			"EXTENDED_DESCRIPTION": [""],
 			"NAME": "Izuna Hatsuse"
 		},
 		"animator:Jibril":
 		{
+			"FLAVOR_TEXT": "'Anyways, this is growing tiresome.  All I need from you is your adorable little head.  The rest of you, I'll bury in the dirt.  Because, that's exactly where scrap metal belongs!'",
 			"DESCRIPTION": "Channel [Dark], then shuffle your orbs.",
 			"NAME": "Jibril"
 		},
 		"animator:Miko":
 		{
+			"FLAVOR_TEXT": "'Who could have guessed you'd try to use a spy to contact the elves to expose our game.  Then everyone would know our secret and we wouldn't be able to win any longer.  Luckily... I had already taken that in account.'",
 			"DESCRIPTION": "Gains 1 additional Block for each other {0-Cost} card in your hand.",
 			"NAME": "Miko"
 		},
-		"animator:NinaCliffe":
-		{
-			"DESCRIPTION": "Purge !M! {0-Cost} {Attacks} or {Skills} from your hand or discard pile. || At the start of each turn: play a Purged card at random.",
-			"EXTENDED_DESCRIPTION": ["At the start of your turn, play a random card #yPurged by this card."],
-			"NAME": "Nina Cliffe"
-		},
 		"animator:Shiro":
 		{
+			"FLAVOR_TEXT": "'Now I understand.  I know what parts of you are contained in these disks.  Three: the way to win this game.  Two: the absolute faith you have in your little sister.  And the last one: everything I am to you.'",
 			"DESCRIPTION": "Costs 1 less for each {0-Cost} card in your hand. || At the start of each turn: Gain !M! [E].",
 			"EXTENDED_DESCRIPTION": ["At the start of your turn: gain #b{0} #yEnergy."],
 			"NAME": "Shiro"
 		},
 		"animator:Sora":
 		{
+			"FLAVOR_TEXT": "'I say it once more: be proud to be weak!  We are the noble weak who have, throughout history, torn out the throats of those fools who sit idly by and boast of their strength!'",
 			"DESCRIPTION": "Costs 1 less for each {0-Cost} card in your hand. || Choose 1 of 3 {Battle Plans}{+} to obtain.",
 			"NAME": "Sora"
 		},
 		"animator:Sora_BattlePlan1":
 		{
+			"FLAVOR_TEXT": "''Checkmate' doesn't mean you've simply cornered the enemy king. It's a declaration that the enemy king is yours.' -Sora",
 			"DESCRIPTION": "The enemy loses [Strength].",
 			"NAME": "Battle Plan"
 		},
 		"animator:Sora_BattlePlan2":
 		{
+			"FLAVOR_TEXT": "'One of the things Blank loves best is saying 'no' to people who think they've got an absolute advantage.' -Sora",
 			"DESCRIPTION": "Gain [Dexterity].",
 			"NAME": "Battle Plan"
 		},
 		"animator:Sora_BattlePlan3":
 		{
+			"FLAVOR_TEXT": "'In every time, in every world, the strong polish their fangs while the weak polish their wisdom.' -Sora",
 			"DESCRIPTION": "!M! times this combat: Choose a {0-Cost} card in your hand.  Play it twice at a random enemy.",
 			"EXTENDED_DESCRIPTION": ["Choose a #y0-Cost card in your hand and play it twice at a random enemy."],
 			"NAME": "Battle Plan"
 		},
 		"animator:Tet":
 		{
+			"FLAVOR_TEXT": "'This is the ideal world you've always dreamed of!  The world of games!  It's... Disboard!'",
 			"DESCRIPTION": "Fetch a card from your draw pile and reduce its cost by !M!.",
 			"NAME": "Tet"
+		},
+		"animator:ThinkNirvalen":
+		{
+			"FLAVOR_TEXT": "'You're saying those creatures that burrow in the earth like moles, created something, something more advanced than the Aka Si Anse, the culmination of elvish and spiritual magic?'",
+			"DESCRIPTION": "Purge !M! {0-Cost} {Attacks} or {Skills} from your hand or discard pile. || At the start of each turn: play a Purged card at random.",
+			"EXTENDED_DESCRIPTION": ["At the start of your turn, play a random card #yPurged by this card."],
+			"NAME": "Think Nirvalen"
 		}
 	},
 
@@ -3129,6 +3148,7 @@
 	{
 		"animator:Azriel":
 		{
+			"FLAVOR_TEXT": "'Nya!  Those mechanical myon-sters are thumbing their noses at us!  Piles of scrap!'",
 			"DESCRIPTION": "Gain !M! Flight. || Whenever you play a {0-Cost} card: Draw a card.",
 			"UPGRADE_DESCRIPTION": "Gain !M! Flight. || Whenever you play a {0-Cost} card: Draw a {0-Cost} card.",
 			"EXTENDED_DESCRIPTION": ["Whenever you play a #y0-Cost card: Draw a card.","Whenever you play a #y0-Cost card: Draw a #y0-Cost card."],

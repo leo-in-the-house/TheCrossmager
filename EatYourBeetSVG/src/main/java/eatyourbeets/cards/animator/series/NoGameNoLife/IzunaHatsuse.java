@@ -2,14 +2,13 @@ package eatyourbeets.cards.animator.series.NoGameNoLife;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
-import eatyourbeets.cards.base.attributes.HPAttribute;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class IzunaHatsuse extends AnimatorCard
 {
@@ -46,12 +45,6 @@ public class IzunaHatsuse extends AnimatorCard
         {
             GameUtilities.GetIntent(m).AddWeak();
         }
-    }
-
-    @Override
-    public AbstractAttribute GetSpecialInfo()
-    {
-        return transformed ? HPAttribute.Instance.SetCard(this, 1) : null;
     }
 
     @Override
@@ -106,7 +99,6 @@ public class IzunaHatsuse extends AnimatorCard
                     GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_DIAGONAL);
                 }
             }
-            GameActions.Bottom.RecoverHP(1);
         }
         else
         {
