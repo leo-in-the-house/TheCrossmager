@@ -18,7 +18,7 @@ public class ChlammyZell extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 0, 1, 4);
+        Initialize(0, 0, 2, 4);
         SetUpgrade(0, 0, 1, 1);
 
         SetAffinity_Pink(1);

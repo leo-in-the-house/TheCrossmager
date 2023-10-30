@@ -3,6 +3,7 @@ package eatyourbeets.cards.animator.series.NoGameNoLife;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.orbs.Lightning;
 import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBAttackType;
@@ -13,20 +14,19 @@ import eatyourbeets.effects.VFX;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
 import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.utilities.TargetHelper;
 
 public class DolaSchwi extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(DolaSchwi.class)
-            .SetAttack(0, CardRarity.COMMON, EYBAttackType.Ranged)
+            .SetAttack(1, CardRarity.COMMON, EYBAttackType.Ranged)
             .SetSeriesFromClassPackage();
 
     public DolaSchwi()
     {
         super(DATA);
 
-        Initialize(3, 0);
-        SetUpgrade(3, 0);
+        Initialize(7, 0);
+        SetCostUpgrade(-1);
 
         SetAffinity_Teal(1);
     }
@@ -45,6 +45,6 @@ public class DolaSchwi extends AnimatorCard
         .SetSoundPitch(1.7f, 1.75f)
         .SetVFXColor(Color.WHITE);
 
-        GameActions.Bottom.ApplyLockOn(TargetHelper.Normal(m), 1);
+        GameActions.Bottom.ChannelOrb(new Lightning());
     }
 }

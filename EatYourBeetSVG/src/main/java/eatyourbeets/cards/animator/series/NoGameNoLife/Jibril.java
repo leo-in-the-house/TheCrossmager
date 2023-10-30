@@ -4,7 +4,6 @@ import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.Dark;
-import com.megacrit.cardcrawl.orbs.Lightning;
 import eatyourbeets.actions.orbs.ShuffleOrbs;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.effects.AttackEffects;
@@ -22,7 +21,7 @@ public class Jibril extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(7, 0);
+        Initialize(9, 0);
         SetUpgrade(8, 0);
 
         SetAffinity_Black(2);
@@ -36,7 +35,6 @@ public class Jibril extends AnimatorCard
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.VFX(VFX.ShockWave(p.hb, Color.VIOLET), 0.3f);
         GameActions.Bottom.DealDamageToAll(this, AttackEffects.FIRE);
-        GameActions.Bottom.ChannelOrb(new Lightning());
         GameActions.Bottom.ChannelOrb(new Dark());
         GameActions.Bottom.Add(new ShuffleOrbs(1));
     }

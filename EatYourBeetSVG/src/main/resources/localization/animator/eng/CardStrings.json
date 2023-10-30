@@ -2249,7 +2249,7 @@
 		},
 		"animator:DolaSchwi":
 		{
-			"DESCRIPTION": "Apply [~Lock-On].",
+			"DESCRIPTION": "Channel [Lightning].",
 			"NAME": "Schwi Dola"
 		},
 		"animator:DolaStephanie":
@@ -2259,7 +2259,7 @@
 		},
 		"animator:EmirEins":
 		{
-			"DESCRIPTION": "{Imitate} 1 of !M! {Attacks} in your draw pile. || <LIM>.  When {Sealed}: This card gains [R] and [V] Affinity and Scaling.",
+			"DESCRIPTION": "{Imitate} 1 of !M! {Attacks} in your draw pile. || When {Sealed}: This card gains +2 [R] and [V] Scaling.",
 			"NAME": "Emir-Eins"
 		},
 		"animator:FielNirvalen":
@@ -2281,7 +2281,7 @@
 		},
 		"animator:Jibril":
 		{
-			"DESCRIPTION": "Channel [Lightning] [Dark], then shuffle your orbs.",
+			"DESCRIPTION": "Channel [Dark], then shuffle your orbs.",
 			"NAME": "Jibril"
 		},
 		"animator:Miko":
@@ -2291,8 +2291,8 @@
 		},
 		"animator:NinaCliffe":
 		{
-			"DESCRIPTION": "Purge !M! {0-Cost} cards from your hand or discard pile. || At the start of each turn: play two random cards you Purged at random.",
-			"EXTENDED_DESCRIPTION": ["At the start of your turn, play 2 random cards #yPurged by this card."],
+			"DESCRIPTION": "Purge !M! {0-Cost} {Attacks} or {Skills} from your hand or discard pile. || At the start of each turn: play a Purged card at random.",
+			"EXTENDED_DESCRIPTION": ["At the start of your turn, play a random card #yPurged by this card."],
 			"NAME": "Nina Cliffe"
 		},
 		"animator:Shiro":

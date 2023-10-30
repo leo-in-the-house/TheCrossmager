@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.tokens.AffinityToken;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.effects.AttackEffects;
-import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.RandomizedList;
@@ -35,13 +34,9 @@ public class EmirEins extends AnimatorCard
     {
         super.triggerOnAffinitySeal(reshuffle);
 
-        if (CombatStats.TryActivateLimited(cardID)) {
-            GameUtilities.AddAffinityToCard(this, Affinity.Red, 1);
-            GameUtilities.AddAffinityToCard(this, Affinity.Violet, 1);
-            GameActions.Top.SetScaling(this, Affinity.Violet, 1);
-            GameActions.Top.SetScaling(this, Affinity.Red, 1);
-            GameActions.Top.ShowCopy(this);
-        }
+        GameActions.Top.IncreaseScaling(this, Affinity.Violet, 2);
+        GameActions.Top.IncreaseScaling(this, Affinity.Red, 2);
+        GameActions.Top.ShowCopy(this);
     }
 
     @Override

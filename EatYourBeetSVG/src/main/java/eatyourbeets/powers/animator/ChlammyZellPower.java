@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.RandomizedList;
 
 public class ChlammyZellPower extends AnimatorPower
 {
@@ -23,7 +24,7 @@ public class ChlammyZellPower extends AnimatorPower
     @Override
     public void updateDescription()
     {
-        this.description = FormatDescription(0, amount, lastType);
+        this.description = FormatDescription(0, lastType.name());
     }
 
     @Override
@@ -35,10 +36,17 @@ public class ChlammyZellPower extends AnimatorPower
         {
             lastType = card.type;
 
-            GameActions.Bottom.Draw(1)
-                .SetFilter(c -> c.costForTurn == 0, false);
+            RandomizedList<AbstractCard> zeroCosts = new RandomizedList<>();
 
-            stackPower(1);
+            for (AbstractCard c : player.hand.group) {
+                if (c.costForTurn == 0) {
+                    zeroCosts.Add(c);
+                }
+            }
+
+            if (zeroCosts.Size() > 0) {
+                GameActions.Bottom.MakeCardInHand(zeroCosts.Retrieve(rng).makeCopy());
+            }
             updateDescription();
         }
     }

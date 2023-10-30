@@ -10,7 +10,6 @@ import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.powers.AnimatorPower;
-import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.RandomizedList;
@@ -32,13 +31,39 @@ public class NinaCliffe extends AnimatorCard
         SetAffinity_Blue(1);
         SetAffinity_Pink(1);
     }
+
+
+
+    @Override
+    public boolean cardPlayable(AbstractMonster m) {
+        if (super.cardPlayable(m)) {
+            int numZeroCostCards = 0;
+
+            for (AbstractCard card : player.hand.group) {
+                if (!card.uuid.equals(uuid) && (card.type == CardType.ATTACK || card.type == CardType.SKILL) && card.costForTurn == 0) {
+                    numZeroCostCards++;
+                }
+            }
+
+            for (AbstractCard card : player.discardPile.group) {
+                if (!card.uuid.equals(uuid) && (card.type == CardType.ATTACK || card.type == CardType.SKILL) && card.costForTurn == 0) {
+                    numZeroCostCards++;
+                }
+            }
+
+            return numZeroCostCards >= 3;
+        }
+
+        return false;
+    }
+
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.PurgeFromPile(name, magicNumber, p.hand, p.discardPile)
         .SetOptions(false, false)
-        .SetFilter(card -> card.costForTurn == 0)
+        .SetFilter(card -> card.costForTurn == 0 && (card.type == CardType.ATTACK || card.type == CardType.SKILL))
         .AddCallback(cards ->
         {
             if (cards.size() > 0)
@@ -86,7 +111,7 @@ public class NinaCliffe extends AnimatorCard
         {
             super.atStartOfTurnPostDraw();
 
-            for (int i = 0; i < cards.Size(); i++)
+           /* for (int i = 0; i < cards.Size(); i++)
             {
                 final AbstractCard c = cards.GetInnerList().get(i);
                 if (!CombatStats.PurgedCards.contains(c))
@@ -98,15 +123,15 @@ public class NinaCliffe extends AnimatorCard
                         return;
                     }
                 }
-            }
+            }*/
 
-            for (int i=0; i<2; i++) {
-                final AbstractCard toPlay = cards.Retrieve(rng).makeCopy();
-                toPlay.target_x = MoveCard.DEFAULT_CARD_X_LEFT;
-                toPlay.target_y = MoveCard.DEFAULT_CARD_Y;
-                GameActions.Last.PlayCard(toPlay, CombatStats.PurgedCards, null);
-                flash();
-            }
+
+            final AbstractCard toPlay = cards.Retrieve(rng, false).makeCopy();
+            toPlay.target_x = MoveCard.DEFAULT_CARD_X_LEFT;
+            toPlay.target_y = MoveCard.DEFAULT_CARD_Y;
+            GameActions.Top.PlayCopy(toPlay, GameUtilities.GetRandomEnemy(true))
+                    .SetPurge(true);
+            flash();
         }
 
         private boolean RefreshAmount()
