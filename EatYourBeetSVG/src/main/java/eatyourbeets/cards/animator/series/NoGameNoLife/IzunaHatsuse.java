@@ -28,7 +28,7 @@ public class IzunaHatsuse extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(2, 0, 2, 1);
+        Initialize(3, 0, 2, 1);
         SetUpgrade(0, 0, 1, 1);
 
         SetAffinity_White(1);

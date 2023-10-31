@@ -24,7 +24,7 @@ public class Akatsuki extends AnimatorCard
         super(DATA);
 
         Initialize(8, 0, 2);
-        SetUpgrade(4, 0, 2);
+        SetUpgrade(4, 0, 0);
 
         SetAffinity_Green(1, 0, 1);
         SetAffinity_Black(1, 0, 1);

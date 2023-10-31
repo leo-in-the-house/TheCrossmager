@@ -34,7 +34,7 @@ public class ElricAlphonse extends AnimatorCard
         Initialize(0, 0);
         SetUpgrade(0, 0);
 
-        SetExhaust(true);
+        SetFading(true);
 
         SetAffinity_Yellow(1);
     }
@@ -43,7 +43,7 @@ public class ElricAlphonse extends AnimatorCard
     protected void OnUpgrade() {
         super.OnUpgrade();
 
-        SetExhaust(false);
+        SetFading(false);
     }
 
     @Override
