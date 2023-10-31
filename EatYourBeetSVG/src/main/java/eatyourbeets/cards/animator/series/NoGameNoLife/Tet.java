@@ -35,7 +35,7 @@ public class Tet extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.FetchFromPile(name, magicNumber, player.hand, player.drawPile)
+        GameActions.Bottom.FetchFromPile(name, magicNumber, player.drawPile)
         .SetOptions(false, false)
             .AddCallback(cards -> {
                 for (AbstractCard card : cards) {

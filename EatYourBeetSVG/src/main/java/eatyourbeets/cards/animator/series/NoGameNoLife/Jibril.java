@@ -21,7 +21,7 @@ public class Jibril extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(9, 0);
+        Initialize(10, 0);
         SetUpgrade(8, 0);
 
         SetAffinity_Black(2);

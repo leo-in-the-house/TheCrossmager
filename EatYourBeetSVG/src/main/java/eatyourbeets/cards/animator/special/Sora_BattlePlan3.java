@@ -24,8 +24,8 @@ public class Sora_BattlePlan3 extends Sora_BattlePlan
     {
         super(DATA);
 
-        Initialize(0, 0, 1);
-        SetUpgrade(0, 0, 1);
+        Initialize(0, 0, 2);
+        SetUpgrade(0, 0, 2);
 
         SetAffinity_Blue(1);
     }
@@ -41,9 +41,9 @@ public class Sora_BattlePlan3 extends Sora_BattlePlan
         private int damage;
 
         public SoraBattlePlanPower(AbstractCreature owner, int amount) {
-            super(owner, Sora_BattlePlan3.DATA, PowerTriggerConditionType.Energy, 1);
+            super(owner, Sora_BattlePlan3.DATA, PowerTriggerConditionType.None, 0);
 
-            this.triggerCondition.SetUses(amount, true, true);
+            this.triggerCondition.SetUses(amount, false, true);
 
             this.damage = damage;
             Initialize(amount, PowerType.BUFF, true);

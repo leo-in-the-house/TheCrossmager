@@ -2132,7 +2132,7 @@
 		"animator:Kyubey":
 		{
 			"FLAVOR_TEXT": "'In this planet, you call females who have yet to become adults, 'girls'.  It makes sense then, that since you'll eventually become witches (majo), you should be called... magical girls (mahou shoujo)!'",
-			"DESCRIPTION": "Gain [E] for every !S! [D]. <DRW-M>. || When Obtained: Gain a random {Curse}.",
+			"DESCRIPTION": "Gain [E], plus an additional [E] for every !S! [D]. <DRW-M>. || When Obtained: Gain a random {Curse}.",
 			"NAME": "Kyubey"
 		},
 		"animator:MadokaKaname":
@@ -2317,7 +2317,7 @@
 		"animator:Sora_BattlePlan1":
 		{
 			"FLAVOR_TEXT": "''Checkmate' doesn't mean you've simply cornered the enemy king. It's a declaration that the enemy king is yours.' -Sora",
-			"DESCRIPTION": "The enemy loses [Strength].",
+			"DESCRIPTION": "Gain [Strength].",
 			"NAME": "Battle Plan"
 		},
 		"animator:Sora_BattlePlan2":
@@ -3157,7 +3157,7 @@
 		"animator:Chomusuke":
 		{
 			"FLAVOR_TEXT": "'I promise she won't cause anyone any trouble...' -Megumin",
-			"DESCRIPTION": "Transform all {Basic} cards in your master deck into random {Konosuba} cards. || Gain !M! [E].  Draw !S! cards from your discard pile.",
+			"DESCRIPTION": "When Obtained: Transform all {Basic} cards in your master deck into random {Konosuba} cards. || Gain !M! [E].  Draw !S! cards from your discard pile.",
 			"NAME": "Chomusuke"
 		},
 		"animator:Cthulhu":

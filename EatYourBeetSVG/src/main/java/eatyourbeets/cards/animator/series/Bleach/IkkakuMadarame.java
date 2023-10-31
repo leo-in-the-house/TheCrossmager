@@ -13,7 +13,7 @@ import eatyourbeets.utilities.GameActions;
 public class IkkakuMadarame extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(IkkakuMadarame.class)
-            .SetAttack(2, CardRarity.COMMON, EYBAttackType.Piercing, EYBCardTarget.ALL)
+            .SetAttack(3, CardRarity.COMMON, EYBAttackType.Piercing, EYBCardTarget.ALL)
             .SetSeriesFromClassPackage();
     static
     {

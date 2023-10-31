@@ -41,14 +41,6 @@ public class NiaHonjou extends AnimatorCard
         GameActions.Bottom.StackPower(new NiaHonjouPower(p, 1));
     }
 
-    @Override
-    public void triggerOnManualDiscard()
-    {
-        super.triggerOnManualDiscard();
-
-        GameActions.Top.Scry(secondaryValue);
-    }
-
     public static class NiaHonjouPower extends AnimatorPower
     {
         public NiaHonjouPower(AbstractPlayer owner, int amount)

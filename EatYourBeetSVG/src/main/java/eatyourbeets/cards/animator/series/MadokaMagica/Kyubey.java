@@ -21,7 +21,7 @@ public class Kyubey extends AnimatorCard implements OnAddToDeckListener
     {
         super(DATA);
 
-        Initialize(0, 0, 2, 4);
+        Initialize(0, 0, 2, 5);
         SetUpgrade(0, 0, 1, -1);
 
         SetAffinity_Star(1);
@@ -44,6 +44,8 @@ public class Kyubey extends AnimatorCard implements OnAddToDeckListener
         GameActions.Bottom.Draw(magicNumber);
 
         int energyToGain = CombatStats.Affinities.GetAffinityLevel(Affinity.Black) / secondaryValue;
+
+        GameActions.Bottom.GainEnergy(1);
 
         if (energyToGain > 0) {
             GameActions.Bottom.GainEnergy(energyToGain);

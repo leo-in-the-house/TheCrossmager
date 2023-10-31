@@ -57,8 +57,11 @@ public class HomuraAkemi extends AnimatorCard
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.VFX(new TimeWarpTurnEndEffect());
         GameActions.Bottom.VFX(new BorderFlashEffect(Color.VIOLET, true));
-        GameActions.Bottom.MakeCardInDiscardPile(CreateRandomCurses.GetRandomCurse(AbstractDungeon.cardRng))
-                .Repeat(magicNumber);
+
+        for (int i=0; i<magicNumber; i++) {
+            GameActions.Bottom.MakeCardInDiscardPile(CreateRandomCurses.GetRandomCurse(AbstractDungeon.cardRng));
+        }
+
         GameActions.Bottom.Add(new SkipEnemiesTurnAction());
         GameActions.Last.Add(new PressEndTurnButtonAction());
     }

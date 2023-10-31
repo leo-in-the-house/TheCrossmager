@@ -43,7 +43,6 @@ import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import eatyourbeets.actions.EYBAction;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.cards.base.modifiers.CostModifiers;
 import eatyourbeets.effects.SFX;
 import eatyourbeets.interfaces.delegates.ActionT1;
 import eatyourbeets.interfaces.delegates.ActionT2;
@@ -1459,7 +1458,7 @@ public class GameUtilities
 
         if (card.cost >= 0)
         {
-            CostModifiers.For(card).Set(0);
+            GameUtilities.ModifyCostForCombat(card, 0, false);
         }
 
         card.tags.add(EYBCard.PURGE);
