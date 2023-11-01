@@ -989,6 +989,10 @@ public class GameUtilities
         }
     }
 
+    public static boolean HasDamageOrBlock(AbstractCard card) {
+        return card.baseDamage > 0 || card.baseBlock > 0;
+    }
+
     public static int GetTotalCardsPlayed(AbstractCard ignoreLast, boolean currentTurn)
     {
         final ArrayList<AbstractCard> cards = currentTurn
@@ -1416,6 +1420,32 @@ public class GameUtilities
         return HasRelic(relicID)
             || CombatStats.GetCombatData(relicID, false)
             || CombatStats.GetTurnData(relicID, false);
+    }
+
+    public static boolean HasAnyScaling(AbstractCard card) {
+        if (card instanceof AnimatorCard) {
+            EYBCardAffinities affinities = ((AnimatorCard) card).affinities;
+
+            for (EYBCardAffinity affinity : affinities.List) {
+                if (affinity.scaling > 0) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
+    public static boolean HasScaling(AbstractCard card, Affinity affinity) {
+        if (card instanceof AnimatorCard) {
+            EYBCardAffinities affinities = ((AnimatorCard) card).affinities;
+
+            if (affinities.GetScaling(affinity, true) > 0) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     public static void ChangeCardName(AbstractCard card, String newName)

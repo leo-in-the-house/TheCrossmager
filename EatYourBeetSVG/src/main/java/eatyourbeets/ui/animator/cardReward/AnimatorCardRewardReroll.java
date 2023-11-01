@@ -56,20 +56,6 @@ public class AnimatorCardRewardReroll extends GUIElement
                     .SetOnClick(this::Reroll)
                     .SetPosition(ScreenW(0.5f), ScreenH(0.8f));
             rerollButtons.add(button);
-
-            /*final int max = Affinity.Basic().length;
-            for (int i = 0; i < max; i++)
-            {
-                final Affinity affinity = Affinity.Basic()[i];
-                final GUI_Button button = new GUI_Button(GR.Common.Images.HexagonalButton.Texture(), 0, 0)
-                .SetForeground(GR.Common.Images.HexagonalButtonBorder.Texture(), Color.WHITE)
-                .SetDimensions(AbstractCard.IMG_WIDTH * 0.55f, AbstractCard.IMG_HEIGHT * 0.175f)
-                .SetColor(Color.GRAY)
-                .SetText(GR.Animator.Strings.Rewards.Reroll + " [" + affinity.GetTooltip().id + "]", true)
-                .SetOnClick(affinity, (a, __) -> Reroll(a))
-                .SetPosition(ScreenW(0.5f) + (AbstractCard.IMG_WIDTH * 0.6f * Mathf.GetOffsetFromCenter(i, max)), ScreenH(0.8f));
-                rerollButtons.add(button);
-            }*/
         }
     }
 

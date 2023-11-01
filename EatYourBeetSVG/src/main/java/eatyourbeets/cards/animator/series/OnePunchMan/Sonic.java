@@ -1,73 +1,40 @@
 package eatyourbeets.cards.animator.series.OnePunchMan;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.animator.special.ThrowingKnife;
-import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.powers.AnimatorPower;
+import eatyourbeets.cards.base.AnimatorCard;
+import eatyourbeets.cards.base.CardUseInfo;
+import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Sonic extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Sonic.class)
-            .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None)
-            .SetSeriesFromClassPackage()
-            .PostInitialize(data ->
-            {
-                for (ThrowingKnife knife : ThrowingKnife.GetAllCards())
-                {
-                    data.AddPreview(knife, false);
-                }
-            });
+            .SetSkill(1, CardRarity.COMMON, EYBCardTarget.None)
+            .SetSeriesFromClassPackage();
 
     public Sonic()
     {
         super(DATA);
 
-        Initialize(0, 6, 1, 1);
-        SetCostUpgrade(-1);
+        Initialize(0, 0, 3);
+        SetUpgrade(0, 0, 2);
 
-        SetAffinity_Green(2);
-        SetAffinity_Black(1);
+        SetAffinity_Green(1);
+        SetAffinity_Violet(1);
 
-        SetAffinityRequirement(Affinity.Black, 1);
+        SetExhaust(true);
+        SetEthereal(true);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.GainBlock(block);
-        GameActions.Bottom.GainBlur(secondaryValue);
-        GameActions.Bottom.StackPower(new SonicPower(p, magicNumber));
 
-        if (CheckSpecialCondition(false))
-        {
-            GameActions.Bottom.CreateThrowingKnives(1);
-        }
-    }
-
-    public static class SonicPower extends AnimatorPower
-    {
-        public SonicPower(AbstractCreature owner, int amount)
-        {
-            super(owner, Sonic.DATA);
-
-            priority += 1;
-
-            Initialize(amount);
-        }
-
-        @Override
-        public void atStartOfTurnPostDraw()
-        {
-            super.atStartOfTurnPostDraw();
-
-            GameActions.Delayed.DiscardFromHand(name, amount, true)
-            .ShowEffect(true, true);
-            RemovePower();
-        }
+        GameActions.Bottom.GainGreen(magicNumber);
+        GameActions.Bottom.GainViolet(magicNumber);
     }
 }

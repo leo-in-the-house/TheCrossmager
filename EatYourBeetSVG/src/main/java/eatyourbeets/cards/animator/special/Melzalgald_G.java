@@ -1,13 +1,14 @@
 package eatyourbeets.cards.animator.special;
 
-import eatyourbeets.cards.base.Affinity;
-import eatyourbeets.cards.base.CardUseInfo;
-import eatyourbeets.effects.AttackEffects;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.utilities.GameUtilities;
+import eatyourbeets.cards.base.Affinity;
+import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Melzalgald_G extends MelzalgaldAlt
 {
@@ -19,21 +20,19 @@ public class Melzalgald_G extends MelzalgaldAlt
     {
         super(DATA);
 
-        SetAffinity_Green(0, 0, 2);
-
-        SetAffinityRequirement(Affinity.Star, 1);
+        SetAffinity_Green(1, 0, 1);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.GainEnergyNextTurn(1);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_HEAVY);
 
-        if (CheckSpecialCondition(false))
-        {
-            GameActions.Bottom.GainGreen(magicNumber);
+        for (AbstractCard card : player.hand.group) {
+            if (GameUtilities.HasDamageOrBlock(card)) {
+                GameActions.Bottom.IncreaseScaling(card, Affinity.Green, 1);
+            }
         }
     }
 }

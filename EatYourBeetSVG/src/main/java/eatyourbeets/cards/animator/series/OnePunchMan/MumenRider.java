@@ -1,15 +1,14 @@
 package eatyourbeets.cards.animator.series.OnePunchMan;
 
-import eatyourbeets.cards.base.CardUseInfo;
-import eatyourbeets.effects.AttackEffects;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
+import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.interfaces.subscribers.OnStartOfTurnPostDrawSubscriber;
-import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class MumenRider extends AnimatorCard implements OnStartOfTurnPostDrawSubscriber
 {
@@ -23,21 +22,14 @@ public class MumenRider extends AnimatorCard implements OnStartOfTurnPostDrawSub
     {
         super(DATA);
 
-        Initialize(2, 0, 4, 6);
-        SetUpgrade(1, 0, -1, -1);
+        Initialize(3, 0, 3);
+        SetUpgrade(2, 0, -1);
 
-        SetAffinity_Red(1);
+        SetAffinity_Green(1);
+
+        SetRicochet(3, -1, this::OnCooldownCompleted);
 
         SetExhaust(true);
-    }
-
-    @Override
-    public void triggerOnExhaust()
-    {
-        super.triggerOnExhaust();
-
-        turns = rng.random(magicNumber, secondaryValue);
-        CombatStats.onStartOfTurnPostDraw.Subscribe(this);
     }
 
     @Override
@@ -47,26 +39,9 @@ public class MumenRider extends AnimatorCard implements OnStartOfTurnPostDrawSub
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SMASH);
     }
 
-    @Override
-    public void OnLateUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
+    protected void OnCooldownCompleted(AbstractMonster m)
     {
-        GameActions.Bottom.Cycle(name, 1);
-    }
-
-    @Override
-    public void OnStartOfTurnPostDraw()
-    {
-        if (!player.exhaustPile.contains(this))
-        {
-            CombatStats.onStartOfTurnPostDraw.Unsubscribe(this);
-            return;
-        }
-
-        if ((turns -= 1) <= 0)
-        {
-            GameActions.Bottom.MoveCard(this, player.exhaustPile, player.hand)
-            .ShowEffect(true, true);
-            CombatStats.onStartOfTurnPostDraw.Unsubscribe(this);
-        }
+        GameActions.Bottom.MoveCard(this, player.exhaustPile, player.hand)
+                .ShowEffect(true, false);
     }
 }

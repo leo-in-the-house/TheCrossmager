@@ -2304,7 +2304,7 @@
 		"animator:Shiro":
 		{
 			"FLAVOR_TEXT": "'Now I understand.  I know what parts of you are contained in these disks.  Three: the way to win this game.  Two: the absolute faith you have in your little sister.  And the last one: everything I am to you.'",
-			"DESCRIPTION": "Costs 1 less for each {0-Cost} card in your hand. || At the start of each turn: Gain !M! [E].",
+			"DESCRIPTION": "Costs 1 less for each {0-Cost} card in your exhaust pile. || At the start of each turn: Gain !M! [E].",
 			"EXTENDED_DESCRIPTION": ["At the start of your turn: gain #b{0} #yEnergy."],
 			"NAME": "Shiro"
 		},
@@ -2358,70 +2358,64 @@
 		},
 		"animator:DrGenus":
 		{
-			"DESCRIPTION": "Take !M! [DD]. Fetch 1 card from your discard pile and apply 1 of 3 effects. || <LIM>. !A! [B]: Create a copy of it after !S! turns.",
-			"EXTENDED_DESCRIPTION":
-			[
-				"After #b{0} turn(s), create a copy of {1}.",
-				"Double its damage and [Block] and increase its base cost by 1.",
-				"Give it {~Ethereal} and  reduce its base cost by 1 (Minimum 1).",
-				"Seal it and modify its damage and [Block] by a random amount between -1 and 2."
-			],
+			"DESCRIPTION": "Fetch 1 card from your discard pile with damage or [Block].  Apply +2 scaling in one of !M! affinities.",
+			"EXTENDED_DESCRIPTION": ["Apply +2 scaling in [{0}]."],
 			"NAME": "Dr. Genus"
-		},
-		"animator:Genos":
-		{
-			"DESCRIPTION": "Gain and apply !M! [Burning]. || If you would take unblocked Attack damage while below 10% [HP]: Exhaust this from your draw pile to gain !S! [Block].",
-			"NAME": "Genos"
-		},
-		"animator:Geryuganshoop":
-		{
-			"DESCRIPTION": "Gain !M! [E] and add 1 {Void} to your draw pile. || Purge !S! cards in Exhaust pile to Fetch 1 Card.",
-			"NAME": "Geryuganshoop"
-		},
-		"animator:King":
-		{
-			"DESCRIPTION": "Unplayable. When Drawn: Apply 1 [Vulnerable] to !M! random enemy, ignoring [Artifact]. || When Exhausted: <DRW-M>.",
-			"NAME": "King"
-		},
-		"animator:Melzalgald":
-		{
-			"DESCRIPTION": "Recover !M! [HP]. || Add 3 {Minor Forms}{+} of this card to your hand.",
-			"NAME": "Melzalgald"
-		},
-		"animator:Melzalgald_R":
-		{
-			"DESCRIPTION": "Next turn: Gain [E]. || !A! [M]: Gain !M! [R].",
-			"NAME": "Melzalgald"
-		},
-		"animator:Melzalgald_G":
-		{
-			"DESCRIPTION": "Next turn: Gain [E]. || !A! [M]: Gain !M! [G].",
-			"NAME": "Melzalgald"
-		},
-		"animator:Melzalgald_B":
-		{
-			"DESCRIPTION": "Next turn: Gain [E]. || !A! [M]: Gain !M! [B].",
-			"NAME": "Melzalgald"
-		},
-		"animator:MetalKnight":
-		{
-			"DESCRIPTION": "Gain !M! [Metallicize], then reduce this by 1 for all copies. || Once this combat, pay [E]: Channel 1 [Plasma].",
-			"EXTENDED_DESCRIPTION": ["Pay [E]: Channel #b1 [Plasma]."],
-			"NAME": "Metal Knight"
-		},
-		"animator:MetalBat":
-		{
-			"DESCRIPTION": "Deals !M! additional damage for every 10% missing [HP]. || When Drawn: Gain 1 [R] and lose !S! [HP].",
-			"NAME": "Metal Bat"
 		},
 		"animator:Garou":
 		{
 			"DESCRIPTION": "To play this: Exhaust the top !S! cards of your draw pile. || Gain !M! {Temp.} [Strength] [Dexterity]. Boost [R] [G] [D].",
 			"NAME": "Garou"
 		},
+		"animator:Genos":
+		{
+			"DESCRIPTION": "When Sealed: Give this card +1 [R] scaling.",
+			"NAME": "Genos"
+		},
+		"animator:Geryuganshoop":
+		{
+			"DESCRIPTION": "On Entering <WS>: Gain !M! [R]. ** On Entering <TS>: Gain !M! [G]. ** On Entering <MS>: Gain !M! [B]. ** On Entering <CS>: Gain !M! [P] [Y].",
+			"EXTENDED_DESCRIPTION": ["On entering #yWrath #yStance: Gain #b{0} #yRed.  On entering #yTrance #yStance: Gain #b{0} #yGreen.  On entering #yMagic #yStance: Gain #b{0} #yBlue.  On entering #yCalm #yStance: Gain #b{0} #yPink and #yYellow."],
+			"NAME": "Geryuganshoop"
+		},
+		"animator:King":
+		{
+			"DESCRIPTION": "Unplayable. When Drawn: Increase the scaling of up to !M! random card(s) with damage or [Block] in your hand by 1.",
+			"NAME": "King"
+		},
+		"animator:Melzalgald":
+		{
+			"DESCRIPTION": "Add 3 Minor Forms{+} to your hand.",
+			"NAME": "Melzalgald"
+		},
+		"animator:Melzalgald_R":
+		{
+			"DESCRIPTION": "Give all cards in your hand with damage or [Block] +1 [R] scaling.",
+			"NAME": "Melzalgald"
+		},
+		"animator:Melzalgald_G":
+		{
+			"DESCRIPTION": "Give all cards in your hand with damage or [Block] +1 [G] scaling.",
+			"NAME": "Melzalgald"
+		},
+		"animator:Melzalgald_B":
+		{
+			"DESCRIPTION": "Give all cards in your hand with damage or [Block] +1 [B] scaling.",
+			"NAME": "Melzalgald"
+		},
+		"animator:MetalKnight":
+		{
+			"DESCRIPTION": "Discard a card with scaling to Channel [Plasma]. || On Discard or Exhaust: Gain !S! [Metallicize].",
+			"NAME": "Metal Knight"
+		},
+		"animator:MetalBat":
+		{
+			"DESCRIPTION": "Gains +!M! [D] scaling for every 10% missing [HP].",
+			"NAME": "Metal Bat"
+		},
 		"animator:MumenRider":
 		{
-			"DESCRIPTION": "Cycle 1 card. || When Exhausted: Returns to your hand after !M! to !S! turns.",
+			"DESCRIPTION": "{Ricochet} !M!.",
 			"NAME": "Mumen Rider"
 		},
 		"animator:Saitama":
@@ -2433,19 +2427,17 @@
 		},
 		"animator:SilverFang":
 		{
-			"DESCRIPTION": "Whenever you play an {Attack} while in hand: Raise [Block] by 1 until played. || !A! [G] [L]: Enter <AS>.",
+			"DESCRIPTION": "If the last card you played had scaling: Enter <TS>.",
 			"NAME": "Silver Fang"
 		},
 		"animator:Sonic":
 		{
-			"DESCRIPTION": "Gain !S! [~Blur]. || Next turn: Discard !M! random card(s). || !A! [D]: Obtain [T-Knife].",
-			"EXTENDED_DESCRIPTION": ["At the start of turn, discard #b{0} random card(s)."],
+			"DESCRIPTION": "Gain !M! [G] [V].",
 			"NAME": "Sonic"
 		},
 		"animator:Tatsumaki":
 		{
-			"DESCRIPTION": "Channel 1 [Aether]. Gain !M! {Temp.} [Focus]. || This turn, pay 1 [E]: Enter <IS>.",
-			"EXTENDED_DESCRIPTION": ["Pay 1 [E]: Enter [B] #yStance."],
+			"DESCRIPTION": "Channel !M! [Aether].  Enter <MS>.",
 			"NAME": "Tatsumaki"
 		}
 	},

@@ -2,61 +2,41 @@ package eatyourbeets.cards.animator.series.OnePunchMan;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.cards.base.CardUseInfo;
-import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.cards.base.*;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class MetalBat extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(MetalBat.class)
-            .SetAttack(1, CardRarity.COMMON)
+            .SetAttack(1, CardRarity.COMMON, EYBAttackType.Normal, EYBCardTarget.ALL)
             .SetSeriesFromClassPackage();
 
     public MetalBat()
     {
         super(DATA);
 
-        Initialize(7, 0, 2, 3);
-        SetUpgrade(0, 0, 1, 0);
+        Initialize(3, 0, 1);
+        SetUpgrade(3, 0, 1);
 
-        SetAffinity_Red(1, 1, 2);
-        SetAffinity_White(1);
-
-        SetObtainableInCombat(false);
+        SetAffinity_Black(1);
     }
 
     @Override
-    public void triggerWhenDrawn()
-    {
-        super.triggerWhenDrawn();
-
-        GameActions.Delayed.Callback(() ->
-        {
-            GameActions.Bottom.GainRed(1);
-            GameActions.Bottom.LoseHP(secondaryValue, AttackEffects.BLUNT_LIGHT).CanKill(false).IgnoreTempHP(true);
-            GameActions.Bottom.Flash(this);
-        });
-    }
-
-    @Override
-    protected float GetInitialDamage()
+    public void Refresh(AbstractMonster enemy)
     {
         int multiplier = (int)(10 * (1 - GameUtilities.GetHealthPercentage(player)));
-        if (player.currentHealth == 1)
-        {
-            multiplier += 1;
-        }
 
-        return super.GetInitialDamage() + (magicNumber * multiplier);
+        SetScaling(Affinity.Black, multiplier);
+
+        super.Refresh(enemy);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.DealDamage(this, m, AttackEffects.BLUNT_HEAVY);
+        GameActions.Bottom.DealDamageToAll(this, AttackEffects.BLUNT_HEAVY);
     }
 }

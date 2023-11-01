@@ -51,6 +51,7 @@ public class Wrath extends AnimatorCard
 
             Initialize(amount);
         }
+
         @Override
         public void onInitialApplication()
         {
@@ -66,7 +67,6 @@ public class Wrath extends AnimatorCard
 
             CombatStats.onStanceChanged.Unsubscribe(this);
         }
-
 
         @Override
         protected void onAmountChanged(int previousAmount, int difference)

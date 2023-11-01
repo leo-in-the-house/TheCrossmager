@@ -1,72 +1,52 @@
 package eatyourbeets.cards.animator.series.OnePunchMan;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.cards.base.modifiers.BlockModifiers;
-import eatyourbeets.cards.base.modifiers.CostModifiers;
-import eatyourbeets.cards.base.modifiers.DamageModifiers;
-import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.JUtils;
+import eatyourbeets.utilities.RandomizedList;
 
 public class DrGenus extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(DrGenus.class)
             .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None)
+            .SetSeriesFromClassPackage();
 
-            .SetSeriesFromClassPackage()
-            .PostInitialize(data ->
-            {
-                data.AddPreview(new DrGenus(1), false);
-                data.AddPreview(new DrGenus(2), false);
-                data.AddPreview(new DrGenus(3), false);
-            });
-
-    private final int effect;
+    private Affinity cardAffinity;
 
     public DrGenus()
     {
-        this(0);
+        this(null);
     }
 
-    private DrGenus(int effect)
+    private DrGenus(Affinity cardAffinity)
     {
         super(DATA);
 
-        Initialize(0, 0, 4, 3);
+        Initialize(0, 0, 3);
+        SetUpgrade(0, 0, 1);
 
-        if ((this.effect = effect) == 0)
+        if ((this.cardAffinity = cardAffinity) == null)
         {
-            SetAffinity_Blue(1);
-            SetAffinity_Black(1);
+            SetAffinity_Pink(1);
+            SetAffinity_Teal(1);
 
-            SetPurge(true);
-            SetEthereal(true);
-
-            SetAffinityRequirement(Affinity.Blue, 3);
+            SetExhaust(true);
         }
         else
         {
-            cardText.OverrideDescription(DATA.Strings.EXTENDED_DESCRIPTION[effect], true);
+            cardText.OverrideDescription(JUtils.Format(DATA.Strings.EXTENDED_DESCRIPTION[0], cardAffinity.GetTooltip().id), true);
         }
     }
 
     @Override
     protected void OnUpgrade()
     {
-        SetEthereal(false);
-    }
-
-    @Override
-    public EYBCardPreview GetCardPreview()
-    {
-        return effect > 0 ? null : super.GetCardPreview();
+        SetRetain(true);
     }
 
     @Override
@@ -81,15 +61,22 @@ public class DrGenus extends AnimatorCard
         {
            for (AbstractCard c : cards)
            {
-               if (CheckSpecialCondition(false))
-               {
-                   GameActions.Bottom.StackPower(new DrGenusPower(player, c, secondaryValue));
+               RandomizedList<DrGenus> cardOptions = new RandomizedList<>();
+
+               for (Affinity affinity : Affinity.Basic()) {
+                   if (affinity.ID == Affinity.Sealed.ID || affinity.ID == Affinity.Star.ID) {
+                       continue;
+                   }
+
+                   cardOptions.Add(new DrGenus(affinity));
                }
 
                final CardGroup group = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-               group.group.add(new DrGenus(1));
-               group.group.add(new DrGenus(2));
-               group.group.add(new DrGenus(3));
+
+               for (int i=0; i<magicNumber; i++) {
+                   group.addToBottom(cardOptions.Retrieve(rng, true));
+               }
+
                GameActions.Bottom.SelectFromPile(name, 1, group)
                .SetOptions(false, false)
                .CancellableFromPlayer(false)
@@ -106,89 +93,8 @@ public class DrGenus extends AnimatorCard
 
     protected void ApplyEffect(AbstractCard card)
     {
-        switch (effect)
-        {
-            case 1:
-                if (card.costForTurn >= 0)
-                {
-                    if (card.baseBlock > 0)
-                    {
-                        BlockModifiers.For(card).Add(cardID, card.baseBlock);
-                    }
-                    if (card.baseDamage > 0)
-                    {
-                        DamageModifiers.For(card).Add(cardID, card.baseDamage);
-                    }
-                    CostModifiers.For(card).Add(cardID, 1);
-                    card.flash();
-                }
-                break;
-
-            case 2:
-                card.retain = false;
-                card.selfRetain = false;
-                card.isEthereal = true;
-                if (card.costForTurn > 1)
-                {
-                    CostModifiers.For(card).Add(cardID, -1);
-                }
-                card.flash();
-                break;
-
-            case 3:
-                if (card.baseBlock > 0)
-                {
-                    BlockModifiers.For(card).Add(cardID, rng.random(-1, 2));
-                }
-                if (card.baseDamage > 0)
-                {
-                    DamageModifiers.For(card).Add(cardID, rng.random(-1, 2));
-                }
-                GameActions.Bottom.SealAffinities(card, false);
-                break;
-        }
-    }
-
-    public static class DrGenusPower extends AnimatorPower
-    {
-        private final AbstractCard card;
-
-        public DrGenusPower(AbstractCreature owner, AbstractCard card, int turns)
-        {
-            super(owner, DrGenus.DATA);
-
-            this.card = card;
-            this.ID += "_" + card.cardID;
-
-            Initialize(turns, PowerType.BUFF, true);
-        }
-
-        @Override
-        public void updateDescription()
-        {
-            this.description = FormatDescription(0, amount, JUtils.ModifyString(card.name, w -> "#y" + w));
-        }
-
-        @Override
-        public void atStartOfTurnPostDraw()
-        {
-            super.atStartOfTurnPostDraw();
-
-            ReducePower(1);
-        }
-
-        @Override
-        public void onRemove()
-        {
-            super.onRemove();
-
-            GameActions.Bottom.MakeCardInHand(card.makeStatEquivalentCopy());
-        }
-
-        @Override
-        public AbstractPower makeCopy()
-        {
-            return new DrGenusPower(owner, card, amount);
+        if (cardAffinity != null) {
+            GameActions.Bottom.IncreaseScaling(card, cardAffinity, 2);
         }
     }
 }

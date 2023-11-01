@@ -1,14 +1,15 @@
 package eatyourbeets.cards.animator.series.OnePunchMan;
 
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.TargetHelper;
+import eatyourbeets.utilities.GameUtilities;
+import eatyourbeets.utilities.RandomizedList;
 
 public class King extends AnimatorCard
 {
@@ -20,24 +21,11 @@ public class King extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 0, 2);
+        Initialize(0, 0, 1);
+        SetUpgrade(0, 0, 1);
 
-        SetAffinity_Red(1);
+        SetAffinity_Brown(1);
         SetUnplayable(true);
-    }
-
-    @Override
-    protected void OnUpgrade()
-    {
-        SetHaste(true);
-    }
-
-    @Override
-    public void triggerOnExhaust()
-    {
-        super.triggerOnExhaust();
-
-        GameActions.Bottom.Draw(magicNumber);
     }
 
     @Override
@@ -45,7 +33,20 @@ public class King extends AnimatorCard
     {
         super.triggerWhenDrawn();
 
-        GameActions.Bottom.ApplyVulnerable(TargetHelper.RandomEnemy(player, magicNumber), 1).IgnoreArtifact(true);
+        RandomizedList<AbstractCard> cards = new RandomizedList<>();
+
+        for (AbstractCard card : player.hand.group) {
+            if (GameUtilities.HasDamageOrBlock(card) && GameUtilities.HasAnyScaling(card)) {
+                cards.Add(card);
+            }
+        }
+
+        for (int i=0; i<magicNumber; i++) {
+            if (cards.Size() > 0) {
+                GameActions.Bottom.IncreaseExistingScaling(cards.Retrieve(rng, true), 1);
+            }
+        }
+
         GameActions.Bottom.Flash(this);
     }
 

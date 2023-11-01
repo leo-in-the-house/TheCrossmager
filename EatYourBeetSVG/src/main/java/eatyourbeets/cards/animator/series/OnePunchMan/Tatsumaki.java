@@ -1,18 +1,15 @@
 package eatyourbeets.cards.animator.series.OnePunchMan;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.orbs.animator.Aether;
-import eatyourbeets.powers.AnimatorClickablePower;
-import eatyourbeets.powers.PowerTriggerConditionType;
-import eatyourbeets.stances.IntellectStance;
+import eatyourbeets.stances.MagicStance;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Tatsumaki extends AnimatorCard
 {
@@ -24,12 +21,11 @@ public class Tatsumaki extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 0, 1);
-        SetUpgrade(0, 0, 1);
+        Initialize(0, 2, 1);
+        SetUpgrade(0, 4, 1);
 
-        SetAffinity_Blue(2);
-
-        SetEvokeOrbCount(1);
+        SetAffinity_Blue(1, 0, 1);
+        SetAffinity_Pink(1, 0, 1);
     }
 
     @Override
@@ -37,37 +33,6 @@ public class Tatsumaki extends AnimatorCard
     {
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.ChannelOrb(new Aether());
-        GameActions.Bottom.GainTemporaryStats(0, 0, magicNumber);
-        GameActions.Bottom.StackPower(new TatsumakiPower(p));
-    }
-
-    public static class TatsumakiPower extends AnimatorClickablePower
-    {
-        public TatsumakiPower(AbstractCreature owner)
-        {
-            super(owner, Tatsumaki.DATA, PowerTriggerConditionType.Energy, 1);
-
-            this.triggerCondition.SetUses(1, false, false);
-
-            Initialize(-1);
-        }
-
-        @Override
-        public void atEndOfTurn(boolean isPlayer)
-        {
-            super.atEndOfTurn(isPlayer);
-
-            RemovePower();
-        }
-
-        @Override
-        public void OnUse(AbstractMonster m)
-        {
-            super.OnUse(m);
-
-            GameActions.Bottom.ChangeStance(IntellectStance.STANCE_ID);
-            GameActions.Bottom.WaitRealtime(0.25f);
-            RemovePower(GameActions.Last);
-        }
+        GameActions.Bottom.ChangeStance(MagicStance.STANCE_ID);
     }
 }

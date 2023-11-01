@@ -32,8 +32,6 @@ public class ThinkNirvalen extends AnimatorCard
         SetAffinity_Pink(1);
     }
 
-
-
     @Override
     public boolean cardPlayable(AbstractMonster m) {
         if (super.cardPlayable(m)) {
@@ -68,16 +66,16 @@ public class ThinkNirvalen extends AnimatorCard
         {
             if (cards.size() > 0)
             {
-                GameActions.Bottom.StackPower(new NinaCliffePower(player, cards));
+                GameActions.Bottom.StackPower(new ThinkNirvalenPower(player, cards));
             }
         });
     }
 
-    public static class NinaCliffePower extends AnimatorPower
+    public static class ThinkNirvalenPower extends AnimatorPower
     {
         private final RandomizedList<AbstractCard> cards;
 
-        public NinaCliffePower(AbstractCreature owner, ArrayList<AbstractCard> cards)
+        public ThinkNirvalenPower(AbstractCreature owner, ArrayList<AbstractCard> cards)
         {
             super(owner, ThinkNirvalen.DATA);
 
@@ -98,7 +96,7 @@ public class ThinkNirvalen extends AnimatorCard
         {
             super.OnSamePowerApplied(power);
 
-            final NinaCliffePower other = (NinaCliffePower) power;
+            final ThinkNirvalenPower other = (ThinkNirvalenPower) power;
             if (other != null)
             {
                 this.cards.AddAll(other.cards.GetInnerList());

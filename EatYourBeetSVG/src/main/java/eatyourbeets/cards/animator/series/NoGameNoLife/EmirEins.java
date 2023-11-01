@@ -32,9 +32,9 @@ public class EmirEins extends AnimatorCard
     {
         super.triggerOnAffinitySeal(reshuffle);
 
-        GameActions.Top.IncreaseScaling(this, Affinity.Violet, 2);
-        GameActions.Top.IncreaseScaling(this, Affinity.Red, 2);
-        GameActions.Top.ShowCopy(this);
+        GameActions.Bottom.IncreaseScaling(this, Affinity.Violet, 2);
+        GameActions.Bottom.IncreaseScaling(this, Affinity.Red, 2);
+        GameActions.Bottom.ShowCopy(this);
     }
 
     @Override
