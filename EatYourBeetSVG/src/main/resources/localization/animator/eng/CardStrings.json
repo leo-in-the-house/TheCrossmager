@@ -2352,8 +2352,8 @@
 	{
 		"animator:Boros":
 		{
-			"DESCRIPTION": "Whenever you play a {Power}: Take [DD] equal to !M! times its cost, then play a copy of it. || <LIM>. Take !S! [DD]: Gain !K! [E].",
-			"EXTENDED_DESCRIPTION": ["Take #b{0} [DD]: Gain #b{1} [E]. || Whenever you play a #yPower, take [DD] equal to #b{2} time(s) its cost, then play #b{3} copy(ies) of it."],
+			"DESCRIPTION": "Adjacent colors on the affinity chart count towards scaling for that color (does not affect [A_Star] or [A_Seal] scaling).",
+			"EXTENDED_DESCRIPTION": ["Adjacent colors on the affinity chart count towards scaling for that color (does not affect #yStar or #ySeal scaling)."],
 			"NAME": "Boros"
 		},
 		"animator:DrGenus":
@@ -2364,7 +2364,7 @@
 		},
 		"animator:Garou":
 		{
-			"DESCRIPTION": "To play this: Exhaust the top !S! cards of your draw pile. || Gain !M! {Temp.} [Strength] [Dexterity]. Boost [R] [G] [D].",
+			"DESCRIPTION": "To play this: Exhaust the top !S! cards of your draw pile. || Gain stats equal to the scaling of those cards.  For each card with scaling exhausted: Gain {Temp.} [Strength] [Dexterity].",
 			"NAME": "Garou"
 		},
 		"animator:Genos":
@@ -2421,9 +2421,9 @@
 		"animator:Saitama":
 		{
 			"DESCRIPTION": "Whenever this card is played, increase its cost and change its effect for this combat.",
-			"EXTENDED_DESCRIPTION": ["<DRW-M>. Gain !S! [G].", "Prevent the next time you would lose HP.", "Gain !M! [R].", "", "Remove Intangible. Stun the enemy."],
+			"EXTENDED_DESCRIPTION": ["<DRW-M>. Gain !S! [G].", "Prevent the next time you would lose HP.", "Gain !M! [R].", "Enter <WS>.", "Remove Intangible. Stun the enemy."],
 			"NAME": "Saitama",
-			"UPGRADE_DESCRIPTION": "Motivate 1. || Whenever this card is played, increase its cost and change its effect for this combat."
+			"UPGRADE_DESCRIPTION": "Whenever this card is played, increase its cost (except the first time) and change its effect for this combat."
 		},
 		"animator:SilverFang":
 		{
@@ -3224,7 +3224,7 @@
 		},
 		"animator:SeriousSaitama":
 		{
-			"DESCRIPTION": "Apply X+!M! [Vulnerable] to ALL enemies. Gain X+!M! [R]. || If X is 2 or higher: Stun ALL enemies.",
+			"DESCRIPTION": "All cards everywhere with damage or [Block] gains X [A_Star] scaling.  Motivate them if X is 1 or higher. || If X is 2 or higher: Stun ALL enemies.",
 			"NAME": "Serious Saitama"
 		},
 		"animator:ShikizakiKiki":

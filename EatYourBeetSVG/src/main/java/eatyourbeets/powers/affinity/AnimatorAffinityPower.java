@@ -84,7 +84,27 @@ public abstract class AnimatorAffinityPower extends AbstractAffinityPower
 
     public float ApplyScaling(EYBCard card, float base)
     {
-        return base + ApplyScaling(card.affinities.GetScaling(affinity, true));
+        float scaling = base + ApplyScaling(card.affinities.GetScaling(affinity, true));
+
+        if (CombatStats.Affinities.GetUseAdjacentAffinities() && affinity.ID != Affinity.Star.ID && affinity.ID != Affinity.Sealed.ID) {
+            int prevAffinityIndex = affinity.ID - 1;
+
+            if (prevAffinityIndex >= 0) {
+                Affinity previousAffinityPower = Affinity.Basic()[prevAffinityIndex];
+
+                scaling += ApplyScaling(card.affinities.GetScaling(previousAffinityPower, true));
+            }
+
+            int nextAffinityIndex = affinity.ID + 1;
+
+            if (nextAffinityIndex < Affinity.Basic().length && Affinity.Basic()[nextAffinityIndex].ID != Affinity.Sealed.ID &&  Affinity.Basic()[nextAffinityIndex].ID != Affinity.Star.ID) {
+                Affinity nextAffinityPower = Affinity.Basic()[nextAffinityIndex];
+
+                scaling += ApplyScaling(card.affinities.GetScaling(nextAffinityPower, true));
+            }
+        }
+
+        return scaling;
     }
 
     public AbstractPlayer.PlayerClass GetPlayerClass()

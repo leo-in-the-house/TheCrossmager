@@ -34,6 +34,9 @@ public class EmirEins extends AnimatorCard
 
         GameActions.Bottom.IncreaseScaling(this, Affinity.Violet, 2);
         GameActions.Bottom.IncreaseScaling(this, Affinity.Red, 2);
+        GameActions.Bottom.Callback(() -> {
+            Refresh(null);
+        });
         GameActions.Bottom.ShowCopy(this);
     }
 

@@ -3,6 +3,7 @@ package eatyourbeets.cards.animator.series.OnePunchMan;
 import com.evacipated.cardcrawl.mod.stslib.powers.StunMonsterPower;
 import com.megacrit.cardcrawl.actions.common.PummelDamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.stances.WrathStance;
 import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -26,11 +27,11 @@ public class Saitama extends AnimatorCard
             .SetSeriesFromClassPackage()
             .PostInitialize(data ->
             {
-                data.AddPreview(new Saitama(1), false);
-                data.AddPreview(new Saitama(2), false);
-                data.AddPreview(new Saitama(3), false);
-                data.AddPreview(new Saitama(4), false);
-                data.AddPreview(new Saitama(5), false);
+                data.AddPreview(new Saitama(1), true);
+                data.AddPreview(new Saitama(2), true);
+                data.AddPreview(new Saitama(3), true);
+                data.AddPreview(new Saitama(4), true);
+                data.AddPreview(new Saitama(5), true);
             });
 
     private int stage;
@@ -51,9 +52,17 @@ public class Saitama extends AnimatorCard
         SetAffinity_White(1);
 
         SetAttackType(EYBAttackType.Normal);
-        GameUtilities.ModifyCostForCombat(this, stage, false);
+        GameUtilities.ModifyCostForCombat(this, upgraded ? Math.max(0, stage-1) : stage, false);
         this.stage = this.misc = stage;
         SetEffect(stage);
+    }
+
+    @Override
+    protected void OnUpgrade()
+    {
+        super.OnUpgrade();
+
+        SetInnate(true);
     }
 
     @Override
@@ -103,12 +112,7 @@ public class Saitama extends AnimatorCard
         {
             case 0:
             {
-                // Do Nothing / Motivate 1
-                if (upgraded)
-                {
-                    GameActions.Bottom.Motivate(1);
-                }
-
+                // Do Nothing
                 break;
             }
 
@@ -140,12 +144,13 @@ public class Saitama extends AnimatorCard
 
             case 4:
             {
-                // Deal !D! damage !M! times.
+                // Deal !D! damage !M! times and enter <WS>.
                 for (int i = 1; i < magicNumber; i++)
                 {
                     GameActions.Bottom.Add(new PummelDamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn)));
                 }
                 GameActions.Bottom.DealDamage(this, m, AttackEffects.BLUNT_HEAVY);
+                GameActions.Bottom.ChangeStance(WrathStance.STANCE_ID);
 
                 break;
             }
@@ -194,6 +199,8 @@ public class Saitama extends AnimatorCard
 
                 LoadImage(null);
 
+                SetHaste(true);
+
                 break;
             }
 
@@ -237,7 +244,7 @@ public class Saitama extends AnimatorCard
                 this.target = CardTarget.SELF;
                 this.type = CardType.SKILL;
 
-                AddScaling(Affinity.Red, 3);
+                AddScaling(Affinity.White, 3);
 
                 LoadImage("_2");
 
@@ -251,7 +258,7 @@ public class Saitama extends AnimatorCard
 
                 Initialize(6, 0, 8, 0);
                 
-                AddScaling(Affinity.Green, 1);
+                AddScaling(Affinity.Red, 1);
 
                 this.attackType = EYBAttackType.Normal;
                 this.target = CardTarget.ENEMY;
@@ -269,8 +276,7 @@ public class Saitama extends AnimatorCard
 
                 Initialize(999, 0, 0, 0);
 
-                SetScaling(Affinity.Red, 99);
-                SetScaling(Affinity.Green, 99);
+                SetScaling(Affinity.Star, 99);
 
                 this.attackType = EYBAttackType.Normal;
                 this.target = CardTarget.ENEMY;

@@ -50,6 +50,8 @@ public class EYBCardAffinitySystem extends GUIElement implements OnStartOfTurnSu
     protected boolean canUseAffinities;
     protected boolean holdingShift;
 
+    protected boolean useAdjacentAffinities;
+
     public EYBCardAffinitySystem()
     {
         canUseAffinities = true;
@@ -546,6 +548,15 @@ public class EYBCardAffinitySystem extends GUIElement implements OnStartOfTurnSu
             t.Render(sb);
         }
     }
+
+    public void SetUseAdjacentAffinities(boolean enable) {
+        this.useAdjacentAffinities = enable;
+    }
+
+    public boolean GetUseAdjacentAffinities() {
+        return this.useAdjacentAffinities;
+    }
+
 
     private void UnlockAffinities(boolean unlock)
     {

@@ -257,6 +257,11 @@ public class EYBCardText
         for (Affinity affinity : affinityMap.keySet())
         {
             final TupleT2<Integer, Float> scaling = affinityMap.get(affinity);
+
+            cs.SetColor(Colors.Cream(1));
+            cs.text = "x" + scaling.V1;
+
+            /* Don't show the actual scaling
             if (showActualScaling)
             {
                 cs.SetColor(scaling.V2 > 0 ? Colors.Green(1) : Colors.Cream(0.75f));
@@ -266,7 +271,7 @@ public class EYBCardText
             {
                 cs.SetColor(Colors.Cream(1));
                 cs.text = "x" + scaling.V1;
-            }
+            }*/
 
             offset_y += RenderScaling(sb, affinity.GetIcon(), cs, offset_y, Color.BLACK);//affinity.GetAlternateColor());
         }

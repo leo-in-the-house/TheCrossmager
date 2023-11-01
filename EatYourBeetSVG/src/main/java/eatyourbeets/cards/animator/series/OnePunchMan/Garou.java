@@ -1,14 +1,12 @@
 package eatyourbeets.cards.animator.series.OnePunchMan;
 
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.cards.base.CardUseInfo;
-import eatyourbeets.cards.base.EYBCardData;
-import eatyourbeets.cards.base.EYBCardTarget;
+import eatyourbeets.cards.base.*;
 import eatyourbeets.utilities.CardSelection;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Garou extends AnimatorCard
 {
@@ -21,11 +19,11 @@ public class Garou extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 0, 7, 3);
+        Initialize(0, 0, 7, 5);
 
-        SetAffinity_Red(2);
+        SetAffinity_Red(1);
         SetAffinity_Green(1);
-        SetAffinity_Black(1);
+        SetAffinity_Violet(1);
 
         SetExhaust(true);
     }
@@ -48,15 +46,29 @@ public class Garou extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
+
         if (p.drawPile.size() >= secondaryValue)
         {
-            GameActions.Bottom.GainRed(1, true);
-            GameActions.Bottom.GainGreen(1, true);
-            GameActions.Bottom.GainBlack(1, true);
-            GameActions.Bottom.GainTemporaryStats(magicNumber, magicNumber, 0);
-            GameActions.Bottom.MoveCards(p.drawPile, p.exhaustPile, 3)
+            GameActions.Bottom.MoveCards(p.drawPile, p.exhaustPile, secondaryValue)
             .ShowEffect(true, true)
-            .SetOrigin(CardSelection.Top);
+            .SetOrigin(CardSelection.Top)
+            .AddCallback(cards -> {
+                for (AbstractCard card : cards) {
+                    if (card instanceof AnimatorCard) {
+                        if (GameUtilities.HasAnyScaling(card)) {
+                            EYBCardAffinities affinities = ((AnimatorCard) card).affinities;
+                            GameActions.Top.GainTemporaryStats(1, 1, 0);
+
+                            for (EYBCardAffinity affinity : affinities.List) {
+                                if (affinity.scaling > 0) {
+                                    GameActions.Top.GainAffinity(affinity.type, affinity.scaling);
+                                }
+                            }
+
+                        }
+                    }
+                }
+           });
         }
     }
 }
