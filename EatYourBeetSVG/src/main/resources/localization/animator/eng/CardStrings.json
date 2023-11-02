@@ -2352,74 +2352,88 @@
 	{
 		"animator:Boros":
 		{
+			"FLAVOR_TEXT": "'I was once a traveler, exploring the universe, ravaging everything in sight.  But I was too strong.  Eventually, I found, there was none less who could face me.  I came to know the torment of utter, all-incompassing boredom.  Then one day, a great seer told me, somewhere on a faraway planet, a being exists who is my match.  One who could rekindle my passion for battle.'",
 			"DESCRIPTION": "Adjacent colors on the affinity chart count towards scaling for that color (does not affect [A_Star] or [A_Seal] scaling).",
 			"EXTENDED_DESCRIPTION": ["Adjacent colors on the affinity chart count towards scaling for that color (does not affect #yStar or #ySeal scaling)."],
 			"NAME": "Boros"
 		},
 		"animator:DrGenus":
 		{
+			"FLAVOR_TEXT": "'We'll start by activating all our traps, from the first floor, to the eighth.  If we're lucky, they will take care of the intruders.  I'm aware of what will happen to us should we fail.  Especially to me...'",
 			"DESCRIPTION": "Fetch 1 card from your discard pile with damage or [Block].  Apply +2 scaling in one of !M! affinities.",
 			"EXTENDED_DESCRIPTION": ["Apply +2 scaling in [{0}]."],
 			"NAME": "Dr. Genus"
 		},
 		"animator:Garou":
 		{
+			"FLAVOR_TEXT": "'Heroes are always late to the party, while monsters take the initiative.  They appear without warning, out of the blue.  Listen up: you're on the humans' side, while I'm on the monsters' side.'",
 			"DESCRIPTION": "To play this: Exhaust the top !S! cards of your draw pile. || Gain stats equal to the scaling of those cards.  For each card with scaling exhausted: Gain {Temp.} [Strength] [Dexterity].",
 			"NAME": "Garou"
 		},
 		"animator:Genos":
 		{
+			"FLAVOR_TEXT": "'At 19 years old, I am focused and driven.  I wander from town to town eliminating evil.  The monsters and criminal organizations I have destroyed are numerous.  But I have been unable to locate any clues on the insane cyborg, and have become increasingly frustrated and restless...'",
 			"DESCRIPTION": "When Sealed: Give this card +1 [R] scaling.",
 			"NAME": "Genos"
 		},
 		"animator:Geryuganshoop":
 		{
+			"FLAVOR_TEXT": "'All right!  Fine!  I'll notify the artillery crews of your predicament!  Don't get caught up in the barrage and die, understood?'",
 			"DESCRIPTION": "On Entering <WS>: Gain !M! [R]. ** On Entering <TS>: Gain !M! [G]. ** On Entering <MS>: Gain !M! [B]. ** On Entering <CS>: Gain !M! [P] [Y].",
 			"EXTENDED_DESCRIPTION": ["On entering #yWrath #yStance: Gain #b{0} #yRed.  On entering #yTrance #yStance: Gain #b{0} #yGreen.  On entering #yMagic #yStance: Gain #b{0} #yBlue.  On entering #yCalm #yStance: Gain #b{0} #yPink and #yYellow."],
 			"NAME": "Geryuganshoop"
 		},
 		"animator:King":
 		{
+			"FLAVOR_TEXT": "'Finally got a copy!  Heartbeat Hottie Sisters 2: Limited Edition!  Nothing like that feeling on the walk home when you buy a game you've been waiting for!  Can't wait to get back home and play it, heh, heh!'",
 			"DESCRIPTION": "Unplayable. When Drawn: Increase the scaling of up to !M! random card(s) with damage or [Block] in your hand by 1.",
 			"NAME": "King"
 		},
 		"animator:Melzalgald":
 		{
+			"FLAVOR_TEXT": "'What was that?  (Who knows?)  It flew, so we killed it.  (That is good.)  Duty to protect the ship.'",
 			"DESCRIPTION": "Add 3 Minor Forms{+} to your hand.",
 			"NAME": "Melzalgald"
 		},
 		"animator:Melzalgald_R":
 		{
+			"FLAVOR_TEXT": "'I will dispose of this one.  You handle the others.'",
 			"DESCRIPTION": "Give all cards in your hand with damage or [Block] +1 [R] scaling.",
 			"NAME": "Melzalgald"
 		},
 		"animator:Melzalgald_G":
 		{
+			"FLAVOR_TEXT": "'Very well then, I will kill those that ran away from us.'",
 			"DESCRIPTION": "Give all cards in your hand with damage or [Block] +1 [G] scaling.",
 			"NAME": "Melzalgald"
 		},
 		"animator:Melzalgald_B":
 		{
+			"FLAVOR_TEXT": "'That is good.'",
 			"DESCRIPTION": "Give all cards in your hand with damage or [Block] +1 [B] scaling.",
 			"NAME": "Melzalgald"
 		},
-		"animator:MetalKnight":
-		{
-			"DESCRIPTION": "Discard a card with scaling to Channel [Plasma]. || On Discard or Exhaust: Gain !S! [Metallicize].",
-			"NAME": "Metal Knight"
-		},
 		"animator:MetalBat":
 		{
+			"FLAVOR_TEXT": "'Put yourself together again, huh?  Huuuuuhhhhhhhhh!!!  I'm gonna keep YOU for batting practice!'",
 			"DESCRIPTION": "Gains +!M! [D] scaling for every 10% missing [HP].",
 			"NAME": "Metal Bat"
 		},
+		"animator:MetalKnight":
+		{
+			"FLAVOR_TEXT": "'What you are talking to is a remote-controlled drone.  I'm a good distance away.  Terribly sorry to disappoint you, but my life is not at stake here.'",
+			"DESCRIPTION": "Discard a card with scaling to Channel [Plasma]. || On Discard or Exhaust: Gain !S! [Metallicize].",
+			"NAME": "Metal Knight"
+		},
 		"animator:MumenRider":
 		{
+			"FLAVOR_TEXT": "'The bicycle is for justice!  Mumen Rider is here!'",
 			"DESCRIPTION": "{Ricochet} !M!.",
 			"NAME": "Mumen Rider"
 		},
 		"animator:Saitama":
 		{
+			"FLAVOR_TEXT": "'I'm a hero for fun- ...uh, I mean, a real professional hero.  And my name is Saitama.'",
 			"DESCRIPTION": "Whenever this card is played, increase its cost and change its effect for this combat.",
 			"EXTENDED_DESCRIPTION": ["<DRW-M>. Gain !S! [G].", "Prevent the next time you would lose HP.", "Gain !M! [R].", "Enter <WS>.", "Remove Intangible. Stun the enemy."],
 			"NAME": "Saitama",
@@ -2427,18 +2441,21 @@
 		},
 		"animator:SilverFang":
 		{
+			"FLAVOR_TEXT": "'Want to... give it a try!  You're both strong and look like quick learners, I bet you'll get the hang of it in no time!  What-do-ya-say?'",
 			"DESCRIPTION": "If the last card you played had scaling: Enter <TS>.",
 			"NAME": "Silver Fang"
 		},
 		"animator:Sonic":
 		{
+			"FLAVOR_TEXT": "'Now that I've found such a formidable opponent, I'm dedicating myself to training until we settle this!  Let me know your name!'",
 			"DESCRIPTION": "Gain !M! [G] [V].",
-			"NAME": "Sonic"
+			"NAME": "Speed-o'-Sound Sonic"
 		},
 		"animator:Tatsumaki":
 		{
+			"FLAVOR_TEXT": "'HOLD IT RIGHT THERE!  I have no idea how you did it, but you went in the ship on your own?!  You're just a Class-B, how dare you butt in like that!  I didn't need you, I could have handled it by yourself!  Baldy!  Baldy!  Octopus!  Boiled-Egg!  Lightbulb!  Avocado!  Ladyface!  Goblin!  Bug...'",
 			"DESCRIPTION": "Channel !M! [Aether].  Enter <MS>.",
-			"NAME": "Tatsumaki"
+			"NAME": "Tornado"
 		}
 	},
 
@@ -3224,6 +3241,7 @@
 		},
 		"animator:SeriousSaitama":
 		{
+			"FLAVOR_TEXT": "'Blah-blah-blah.  You bore me out of my mind!  ...Are you finished?'",
 			"DESCRIPTION": "All cards everywhere with damage or [Block] gains X [A_Star] scaling.  Motivate them if X is 1 or higher. || If X is 2 or higher: Stun ALL enemies.",
 			"NAME": "Serious Saitama"
 		},

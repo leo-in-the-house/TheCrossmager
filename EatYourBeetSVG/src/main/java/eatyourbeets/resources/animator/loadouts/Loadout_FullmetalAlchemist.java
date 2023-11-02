@@ -1,7 +1,6 @@
 package eatyourbeets.resources.animator.loadouts;
 
 import eatyourbeets.cards.animator.series.FullmetalAlchemist.*;
-import eatyourbeets.cards.animator.status.Crystallize;
 import eatyourbeets.cards.animator.ultrarare.Truth;
 import eatyourbeets.cards.base.CardSeries;
 import eatyourbeets.cards.base.EYBCardData;
@@ -18,19 +17,10 @@ public class Loadout_FullmetalAlchemist extends AnimatorLoadout
     public void AddStarterCards()
     {
         AddStarterCard(MaesHughes.DATA, 5);
-        AddStarterCard(Scar.DATA, 8);
+        AddStarterCard(Scar.DATA, 7);
         AddStarterCard(ElricAlphonse.DATA, 5);
-        AddStarterCard(Sloth.DATA, 7);
-        AddStarterCard(Lust.DATA, 6);
-
-        AddStarterCard(Pride.DATA, 10);
-        AddStarterCard(RoyMustang.DATA, 12);
-        AddStarterCard(ElricEdward.DATA, 5);
-
-        AddStarterCard(Father.DATA, 26);
-        AddStarterCard(Wrath.DATA, 24);
-
-        AddStarterCard(Crystallize.DATA, -3);
+        AddStarterCard(Sloth.DATA, 8);
+        AddStarterCard(Lust.DATA, 7);
     }
 
     @Override

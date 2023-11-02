@@ -26,7 +26,7 @@ public class Jibril extends AnimatorCard
 
         SetAffinity_Black(2);
 
-        SetEthereal(true);
+        SetDelayed(true);
     }
 
     @Override

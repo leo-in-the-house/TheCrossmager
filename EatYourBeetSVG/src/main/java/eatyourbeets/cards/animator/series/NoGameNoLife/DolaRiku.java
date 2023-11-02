@@ -20,13 +20,21 @@ public class DolaRiku extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 3, 3);
-        SetCostUpgrade(-1);
+        Initialize(0, 3, 2);
+        SetUpgrade(0, 0, 1);
 
         SetAffinity_Brown(1, 0, 1);
         SetAffinity_Pink(1, 0, 1);
 
-        SetFading(true);
+        SetEthereal(true);
+    }
+
+    @Override
+    protected void OnUpgrade()
+    {
+        super.OnUpgrade();
+
+        SetEthereal(false);
     }
 
     @Override
