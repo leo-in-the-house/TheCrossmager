@@ -68,7 +68,9 @@ public class MetalKnight extends AnimatorCard
             .SetFilter(GameUtilities::HasAnyScaling)
             .SetOptions(true, true, true)
             .AddCallback(cards -> {
-               GameActions.Top.ChannelOrb(new Plasma());
+                if (cards.size() > 0) {
+                    GameActions.Top.ChannelOrb(new Plasma());
+                }
             });
     }
 

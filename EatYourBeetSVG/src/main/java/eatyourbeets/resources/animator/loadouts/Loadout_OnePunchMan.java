@@ -16,20 +16,12 @@ public class Loadout_OnePunchMan extends AnimatorLoadout
     @Override
     public void AddStarterCards()
     {
-        AddStarterCard(King.DATA, 5);
-        AddStarterCard(MumenRider.DATA, 6);
-        AddStarterCard(MetalBat.DATA, 5);
-        AddStarterCard(Genos.DATA, 6);
-        AddStarterCard(SilverFang.DATA, 8);
-
-        AddStarterCard(Sonic.DATA, 10);
-        AddStarterCard(DrGenus.DATA, 10);
-        AddStarterCard(Tatsumaki.DATA, 15);
-        AddStarterCard(Melzalgald.DATA, 12);
-        AddStarterCard(MetalKnight.DATA, 15);
-
-        AddStarterCard(Saitama.DATA, 16);
-        AddStarterCard(Garou.DATA, 22);
+        AddStarterCard(King.DATA, 7);
+        AddStarterCard(MumenRider.DATA, 7);
+        AddStarterCard(MetalBat.DATA, 7);
+        AddStarterCard(Genos.DATA, 8);
+        AddStarterCard(SilverFang.DATA, 6);
+        AddStarterCard(Sonic.DATA, 5);
     }
 
     @Override

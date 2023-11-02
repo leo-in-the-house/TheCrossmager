@@ -2386,7 +2386,7 @@
 		"animator:King":
 		{
 			"FLAVOR_TEXT": "'Finally got a copy!  Heartbeat Hottie Sisters 2: Limited Edition!  Nothing like that feeling on the walk home when you buy a game you've been waiting for!  Can't wait to get back home and play it, heh, heh!'",
-			"DESCRIPTION": "Unplayable. When Drawn: Increase the scaling of up to !M! random card(s) with damage or [Block] in your hand by 1.",
+			"DESCRIPTION": "Unplayable. || When you play a card with scaling when this is in your hand, draw a card.",
 			"NAME": "King"
 		},
 		"animator:Melzalgald":
@@ -2415,7 +2415,7 @@
 		},
 		"animator:MetalBat":
 		{
-			"FLAVOR_TEXT": "'Put yourself together again, huh?  Huuuuuhhhhhhhhh!!!  I'm gonna keep YOU for batting practice!'",
+			"FLAVOR_TEXT": "'Put yourself together again, huh?  Uggggghhhhhhhhh!!!  I'm gonna keep YOU for batting practice!'",
 			"DESCRIPTION": "Gains +!M! [D] scaling for every 10% missing [HP].",
 			"NAME": "Metal Bat"
 		},

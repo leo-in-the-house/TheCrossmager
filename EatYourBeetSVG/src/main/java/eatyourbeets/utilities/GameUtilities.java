@@ -1424,7 +1424,14 @@ public class GameUtilities
 
     public static boolean HasAnyScaling(AbstractCard card) {
         if (card instanceof AnimatorCard) {
+
             EYBCardAffinities affinities = ((AnimatorCard) card).affinities;
+
+            if (affinities.Star != null) {
+                if (affinities.Star.scaling > 0) {
+                    return true;
+                }
+            }
 
             for (EYBCardAffinity affinity : affinities.List) {
                 if (affinity.scaling > 0) {

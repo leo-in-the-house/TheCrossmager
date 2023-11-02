@@ -9,7 +9,6 @@ import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.utilities.RandomizedList;
 
 public class King extends AnimatorCard
 {
@@ -21,33 +20,30 @@ public class King extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 0, 1);
-        SetUpgrade(0, 0, 1);
+        Initialize(0, 0);
+        SetUpgrade(0, 0);
 
-        SetAffinity_Brown(1);
+        SetAffinity_Brown(1, 1, 0);
         SetUnplayable(true);
+        SetEthereal(true);
+        SetDelayed(true);
+    }
+    @Override
+    protected void OnUpgrade()
+    {
+        SetDelayed(false);
     }
 
     @Override
-    public void triggerWhenDrawn()
+    public void triggerOnOtherCardPlayed(AbstractCard c)
     {
-        super.triggerWhenDrawn();
+        super.triggerOnOtherCardPlayed(c);
 
-        RandomizedList<AbstractCard> cards = new RandomizedList<>();
-
-        for (AbstractCard card : player.hand.group) {
-            if (GameUtilities.HasDamageOrBlock(card) && GameUtilities.HasAnyScaling(card)) {
-                cards.Add(card);
-            }
+        if (GameUtilities.HasAnyScaling(c))
+        {
+            GameActions.Top.Draw(1);
+            GameActions.Top.Flash(this);
         }
-
-        for (int i=0; i<magicNumber; i++) {
-            if (cards.Size() > 0) {
-                GameActions.Bottom.IncreaseExistingScaling(cards.Retrieve(rng, true), 1);
-            }
-        }
-
-        GameActions.Bottom.Flash(this);
     }
 
     @Override

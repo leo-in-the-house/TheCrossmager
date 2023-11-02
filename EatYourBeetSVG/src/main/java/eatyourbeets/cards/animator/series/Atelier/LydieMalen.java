@@ -19,7 +19,7 @@ public class LydieMalen extends AnimatorCard {
             .SetSeriesFromClassPackage();
     static
     {
-        DATA.AddPreview(new SuelleMalen(), false);
+        DATA.AddPreview(new SuelleMalen(), true);
     }
 
     public LydieMalen() {
@@ -49,6 +49,7 @@ public class LydieMalen extends AnimatorCard {
         GameActions.Bottom.ApplyVulnerable(TargetHelper.Enemies(), secondaryValue);
 
         GameActions.Bottom.MakeCardInDrawPile(new SuelleMalen())
+                .SetUpgrade(upgraded, true)
                 .SetDestination(CardSelection.Top);
 
         GameActions.Last.Exhaust(this);

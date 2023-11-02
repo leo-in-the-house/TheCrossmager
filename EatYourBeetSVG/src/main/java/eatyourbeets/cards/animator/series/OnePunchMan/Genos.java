@@ -29,7 +29,9 @@ public class Genos extends AnimatorCard
         super.triggerOnAffinitySeal(reshuffle);
 
         GameActions.Bottom.IncreaseScaling(this, Affinity.Red, 1);
-        GameActions.Bottom.ShowCopy(this);
+        GameActions.Bottom.Callback(() -> {
+            Refresh(null);
+        });
     }
 
     @Override

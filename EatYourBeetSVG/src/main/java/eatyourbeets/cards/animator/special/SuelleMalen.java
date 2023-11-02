@@ -15,7 +15,7 @@ public class SuelleMalen extends AnimatorCard {
             .SetSeries(CardSeries.Atelier);
     static
     {
-        DATA.AddPreview(new LydieMalen(), false);
+        DATA.AddPreview(new LydieMalen(), true);
     }
 
     public SuelleMalen() {
@@ -41,7 +41,8 @@ public class SuelleMalen extends AnimatorCard {
             GameActions.Bottom.DealDamageToRandomEnemy(this, AttackEffects.GUNSHOT);
         }
 
-        GameActions.Bottom.MakeCardInDrawPile(new LydieMalen());
+        GameActions.Bottom.MakeCardInDrawPile(new LydieMalen())
+                .SetUpgrade(upgraded, true);
 
         GameActions.Last.Exhaust(this);
     }

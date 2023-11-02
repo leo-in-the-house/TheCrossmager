@@ -16,7 +16,7 @@ import eatyourbeets.utilities.TargetHelper;
 public class Sylvia extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Sylvia.class)
-            .SetAttack(1, CardRarity.UNCOMMON, EYBAttackType.Normal, EYBCardTarget.ALL)
+            .SetAttack(2, CardRarity.UNCOMMON, EYBAttackType.Normal, EYBCardTarget.ALL)
             .SetSeriesFromClassPackage()
             .PostInitialize(data ->
             {
