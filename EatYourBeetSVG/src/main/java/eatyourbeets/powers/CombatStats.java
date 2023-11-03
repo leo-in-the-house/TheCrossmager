@@ -223,6 +223,7 @@ public class CombatStats extends EYBPower implements InvisiblePower
         turnCount = 0;
         cardsDrawnThisTurn = 0;
         canActivateStarter = true;
+        enableConsumingStatsWithScalingCard = true;
         orbTypesChanneledThisCombat.clear();
         orbsEvokedThisCombat.clear();
         orbsEvokedThisTurn.clear();

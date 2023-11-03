@@ -488,6 +488,8 @@ public class EYBCardAffinitySystem extends GUIElement implements OnStartOfTurnSu
             row.Initialize();
             BaseAffinities.SetRequirement(row.Type, BASE_COST);
         }
+
+        SetUseAdjacentAffinities(false);
     }
 
     public void Update()
