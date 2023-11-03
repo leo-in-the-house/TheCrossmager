@@ -24,7 +24,7 @@ public class DolaRiku extends AnimatorCard
         SetUpgrade(0, 0, 1);
 
         SetAffinity_Brown(1, 0, 1);
-        SetAffinity_Pink(1, 0, 1);
+        SetAffinity_Teal(1, 0, 1);
 
         SetEthereal(true);
     }

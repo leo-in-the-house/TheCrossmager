@@ -452,7 +452,7 @@
 	},
 	"Vigor":
 	{
-		"DESCRIPTION": "Your next #yAttack deals additional damage.",
+		"DESCRIPTION": "Your next #yAttack this turn deals additional damage.",
 		"NAMES": ["vigor"],
 		"PROPER_NAME": "Vigor"
 	},

@@ -49,7 +49,7 @@ public class Nyanta extends AnimatorCard
             }
         }
 
-        GameUtilities.IncreaseMagicNumber(this, 1+numDelayedCards, true);
+        GameUtilities.IncreaseMagicNumber(this, numDelayedCards, true);
 
     }
 

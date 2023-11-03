@@ -20,8 +20,8 @@ public class ShunyaKengun extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(9, 0, 5);
-        SetUpgrade(3, 0, 1);
+        Initialize(9, 0, 7);
+        SetUpgrade(2, 0, 2);
 
         SetAffinity_Pink(1);
     }

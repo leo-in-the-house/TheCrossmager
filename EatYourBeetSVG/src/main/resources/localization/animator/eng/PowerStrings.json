@@ -387,7 +387,7 @@
 	},
 	"animator:VigorPower":
 	{
-		"DESCRIPTIONS": ["Your next #yAttack deals an additional #b{0} damage."],
+		"DESCRIPTIONS": ["Your next #yAttack this turn deals an additional #b{0} damage."],
 		"NAME": "Vigor"
 	},
 	"animator:VitalityPower":

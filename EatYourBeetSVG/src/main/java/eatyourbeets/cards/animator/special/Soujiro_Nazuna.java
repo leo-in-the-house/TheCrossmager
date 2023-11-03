@@ -50,7 +50,7 @@ public class Soujiro_Nazuna extends AnimatorCard
 
     private void MakeDelayedCardsZeroCost(CardGroup group) {
         for (AbstractCard card : group.group) {
-            if (card instanceof EYBCard && ((EYBCard) card).hasTag(DELAYED)) {
+            if (card instanceof EYBCard && ((EYBCard) card).hasTag(DELAYED) && card.cost > 0) {
                 GameUtilities.ModifyCostForCombat(card, 0, false);
             }
         }

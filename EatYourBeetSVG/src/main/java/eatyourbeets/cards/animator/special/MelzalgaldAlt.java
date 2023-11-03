@@ -17,13 +17,12 @@ public abstract class MelzalgaldAlt extends AnimatorCard
         SetUpgrade(3, 0, 1);
 
         SetExhaust(true);
-        SetEthereal(true);
     }
 
     @Override
     protected void OnUpgrade()
     {
-        SetEthereal(false);
+        SetRetain(true);
     }
 
 

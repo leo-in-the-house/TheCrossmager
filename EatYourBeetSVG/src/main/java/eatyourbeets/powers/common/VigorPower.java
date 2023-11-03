@@ -23,14 +23,23 @@ public class VigorPower extends CommonPower {
     }
 
     @Override
-    public float atDamageGive(float damage, DamageInfo.DamageType type) {
-        return type == DamageInfo.DamageType.NORMAL ? damage + (float)this.amount : damage;
+    public float atDamageGive(float damage, DamageInfo.DamageType type, AbstractCard card) {
+        float newDamage = (type == DamageInfo.DamageType.NORMAL ? damage + (float)this.amount : damage);
+
+        return super.atDamageGive(newDamage, type, card);
     }
 
+    @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
         if (card.type == AbstractCard.CardType.ATTACK) {
             flash();
             RemovePower(GameActions.Top);
         }
+    }
+
+    @Override
+    public void atStartOfTurn()
+    {
+        RemovePower();
     }
 }
