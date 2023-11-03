@@ -34,7 +34,7 @@ public class Geryuganshoop extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.StackPower(new GeryuganshoopPower(player, magicNumber));
+        GameActions.Bottom.StackPower(new GeryuganshoopPower(player, 1));
     }
 
     public static class GeryuganshoopPower extends AnimatorPower
