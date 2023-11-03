@@ -16,7 +16,7 @@ import eatyourbeets.utilities.GameActions;
 public class NarberalGamma extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(NarberalGamma.class)
-            .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None)
+            .SetSkill(1, CardRarity.COMMON, EYBCardTarget.None)
             .SetSeriesFromClassPackage();
 
     public NarberalGamma()

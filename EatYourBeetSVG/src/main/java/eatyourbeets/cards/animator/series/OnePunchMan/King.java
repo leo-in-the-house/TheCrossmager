@@ -43,7 +43,7 @@ public class King extends AnimatorCard
         if (GameUtilities.HasAnyScaling(c))
         {
             GameActions.Top.StackPower(TargetHelper.RandomEnemy(), GameUtilities.GetRandomElement(GameUtilities.GetCommonDebuffs()), 1)
-                    .ShowEffect(false, true);
+                    .ShowEffect(true, true);
             GameActions.Top.Flash(this);
         }
     }
