@@ -284,12 +284,12 @@
 			
 			"Cards can have a combination of the following #yAffinity ( [A_Gen] ) NL colors: [A_Red], [A_Green], [A_Blue], [A_White], [A_Black]. NL NL Card #yAffinities are further distinguished in #yLV1 [A_Gen] (normal border) and #yLV2 [A_Gen] (animated border). NL NL Some #yLV1 [A_Gen] can be upgraded to #yLV2 (different border).",
 			
-			"Once per turn, you may #yRight-Click on a card to #ySeal it. #ySealing a card #yReshuffles it, removes its #yAffinities, and adds 1 point per level of each of its #yAffinities to its corresponding #yAffinity counter NL NL For example, #ySealing a card with #yLV1 [A_Red] and #yLV2 [A_Green] will give #b1 [A_Red] point and #b2 [A_Green] points.",
-			
-			"This panel shows the counter for each #yAffinity. NL NL The bottom-most counter ( [A_Seal] ) shows how many #ySeals you can perform this turn. NL NL Some card effects consume #yAffinity points.",
-			
-			"Some cards will scale with the powers shown on the right of this panel (called [A_Gen] #yPowers^). NL NL For example, an #yAttack with #bx3 [Force] scaling will deal #b3 additional damage every point of [Force]. NL NL Similarly, a #ySkill with #bx3 [Force] scaling will grant #b1 additional #yBlock for every point of [Force].",
-			
+			"Once per turn, you may #yRight-Click on a card to #ySeal it. #ySealing a card #yReshuffles it, removes its #yAffinities, and adds 1 stat point per level of each of its #yAffinities to its corresponding #yAffinity counter. NL NL For example, #ySealing a card with #yLV1 [A_Red] and #yLV2 [A_Green] will give #b1 [A_Red] point and #b2 [A_Green] points. NL NL Sealed cards revert on shuffle.",
+
+			"Some cards will scale with the powers shown on the right of this panel (called [A_Gen] #yPowers^). NL NL For example, an #yAttack with #bx3 [A_Red] scaling will deal #b3 additional damage every point of [A_Red]. NL NL Similarly, a #ySkill with #bx3 [A_Green] scaling will grant #b1 additional #yBlock for every point of [A_Green].",
+
+			"This panel shows the counter for each #yAffinity. NL NL The bottom-most counter ( [A_Seal] ) shows how many #ySeals you can perform this turn. NL NL Playing a card with scaling will reduce a stat for each color it scales in- a card with x2 [A_Red] and x1 [A_Green] scaling will reduce your [A_Red] by 1 and [A_Green] by 1 when played, to a minimum of 0.",
+
 			"While playing this character, most of the effects that deal damage during your turn or make you lose [HP] will let you survive with #b1 [HP]. NL NL Some common powers and mechanics have also been limited while not in endless mode (this is reflected on their tooltips)."
 		]
 	}

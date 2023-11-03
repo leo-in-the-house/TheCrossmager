@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -186,6 +187,31 @@ public class EYBCardAffinitySystem extends GUIElement implements OnStartOfTurnSu
         return totalUsed;
     }
 
+    public int ReduceAffinity(Affinity affinity, int amount)
+    {
+
+        int totalReduced = 0;
+        if (affinity == Affinity.Star)
+        {
+            for (Affinity a : Affinity.Basic())
+            {
+                totalReduced += UseAffinity(a, amount);
+            }
+        }
+        else
+        {
+            final int level = CurrentAffinities.GetLevel(affinity);
+            final int toReduce = Mathf.Min(level, amount);
+            if (toReduce > 0)
+            {
+                CurrentAffinities.Set(affinity, Math.max(0, level - toReduce));
+                totalReduced = toReduce;
+            }
+        }
+
+        return totalReduced;
+    }
+
     public boolean CanUseAffinities()
     {
         return canUseAffinities;
@@ -344,6 +370,23 @@ public class EYBCardAffinitySystem extends GUIElement implements OnStartOfTurnSu
         }
 
         return GetPower(affinity).ApplyScaling(card, base);
+    }
+
+    public void RestoreAffinitiesForAllCards(CardGroup group)
+    {
+        for (AbstractCard card : group.group) {
+            if (card instanceof AnimatorCard) {
+                RestoreAffinities(((AnimatorCard) card).affinities);
+            }
+        }
+    }
+
+    private void RestoreAffinities(EYBCardAffinities affinities)
+    {
+        if (affinities.sealed)
+        {
+            affinities.RestoreOriginalAffinities();
+        }
     }
 
     public void Seal(EYBCardAffinities affinities, boolean reshuffle)

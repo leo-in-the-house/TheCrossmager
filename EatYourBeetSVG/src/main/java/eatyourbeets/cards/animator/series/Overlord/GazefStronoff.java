@@ -11,7 +11,7 @@ import eatyourbeets.utilities.GameActions;
 public class GazefStronoff extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(GazefStronoff.class)
-            .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None)
+            .SetSkill(1, CardRarity.COMMON, EYBCardTarget.None)
 
             .SetSeriesFromClassPackage();
 

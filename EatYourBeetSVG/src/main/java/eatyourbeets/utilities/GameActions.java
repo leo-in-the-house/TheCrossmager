@@ -963,7 +963,6 @@ public final class GameActions
         .SetUpgrade(upgraded, false);
     }
 
-
     public ModifyAffinityLevel SealAffinities(AbstractCard card)
     {
         return SealAffinities(card, false);

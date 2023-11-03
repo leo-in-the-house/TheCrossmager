@@ -75,7 +75,9 @@ public class Biyorigo extends AnimatorCard
                 }
             }
 
-            GameActions.Bottom.GainMetallicize(metallizeMultiplier * amount);
+            if (metallizeMultiplier > 0) {
+                GameActions.Bottom.GainMetallicize(metallizeMultiplier * amount);
+            }
         }
     }
 }

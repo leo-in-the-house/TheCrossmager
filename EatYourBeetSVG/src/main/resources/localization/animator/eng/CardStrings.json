@@ -2379,8 +2379,8 @@
 		"animator:Geryuganshoop":
 		{
 			"FLAVOR_TEXT": "'All right!  Fine!  I'll notify the artillery crews of your predicament!  Don't get caught up in the barrage and die, understood?'",
-			"DESCRIPTION": "On Entering <WS>: Gain !M! [R]. ** On Entering <TS>: Gain !M! [G]. ** On Entering <MS>: Gain !M! [B]. ** On Entering <CS>: Gain !M! [P] [Y].",
-			"EXTENDED_DESCRIPTION": ["On entering #yWrath #yStance: Gain #b{0} #yRed.  On entering #yTrance #yStance: Gain #b{0} #yGreen.  On entering #yMagic #yStance: Gain #b{0} #yBlue.  On entering #yCalm #yStance: Gain #b{0} #yPink and #yYellow."],
+			"DESCRIPTION": "Playing a card with scaling will no longer reduce your affinity stats.",
+			"EXTENDED_DESCRIPTION": ["Playing a card with #yscaling will no longer reduce your #yaffinity stats."],
 			"NAME": "Geryuganshoop"
 		},
 		"animator:King":

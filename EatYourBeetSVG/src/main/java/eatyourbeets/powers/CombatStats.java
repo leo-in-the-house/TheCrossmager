@@ -137,6 +137,7 @@ public class CombatStats extends EYBPower implements InvisiblePower
     private static final String LOADOUT_BUFF_KEY = GR.Animator.CreateID("LoadoutBuff");
     private static GameActionManager.Phase currentPhase;
     private static boolean canActivateStarter;
+    private static boolean enableConsumingStatsWithScalingCard = true;
     private static int cardsDrawnThisTurn = 0;
     private static int turnCount = 0;
     private static HashMap<String, Integer> amountIncreasedOnOrbs = new HashMap<>();
@@ -450,6 +451,10 @@ public class CombatStats extends EYBPower implements InvisiblePower
 
     public static void OnShuffle(boolean triggerRelics)
     {
+        Affinities.RestoreAffinitiesForAllCards(player.drawPile);
+        Affinities.RestoreAffinitiesForAllCards(player.discardPile);
+        Affinities.RestoreAffinitiesForAllCards(player.hand);
+
         for (OnShuffleSubscriber s : onShuffle.GetSubscribers())
         {
             s.OnShuffle(triggerRelics);
@@ -616,6 +621,23 @@ public class CombatStats extends EYBPower implements InvisiblePower
         EYBAction.CurrentCard = card;
         card.OnUse(p, m, info);
         EYBAction.CurrentCard = null;
+
+        if (enableConsumingStatsWithScalingCard) {
+            //If a card with scaling is played, reduce each of that card's scaling.
+            if (card.affinities.Star != null && card.affinities.Star.scaling > 0) {
+                CombatStats.Affinities.ReduceAffinity(Affinity.Star, 1);
+            }
+
+            for (EYBCardAffinity cardAffinities : card.affinities.List) {
+                int scaling = cardAffinities.scaling;
+
+                if (scaling > 0) {
+                    Affinity affinity = cardAffinities.type;
+
+                    CombatStats.Affinities.ReduceAffinity(affinity, 1);
+                }
+            }
+        }
 
         if (info.IsSynergizing)
         {
@@ -894,6 +916,14 @@ public class CombatStats extends EYBPower implements InvisiblePower
         {
             power.priority = -2095;
         }
+    }
+
+    public static boolean isEnableConsumingStatsWithScalingCard() {
+        return enableConsumingStatsWithScalingCard;
+    }
+
+    public static void setEnableConsumingStatsWithScalingCard(boolean enableConsumingStatsWithScalingCard) {
+        CombatStats.enableConsumingStatsWithScalingCard = enableConsumingStatsWithScalingCard;
     }
 
     @Override

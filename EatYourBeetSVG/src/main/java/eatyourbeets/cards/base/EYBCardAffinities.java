@@ -13,6 +13,7 @@ public class EYBCardAffinities
 {
     private static final AdvancedTexture upgradeCircle = new AdvancedTexture(GR.Common.Images.Circle.Texture(), Settings.GREEN_RELIC_COLOR);
     private static final EYBCardAffinity Seal = new EYBCardAffinity(Affinity.Sealed);
+    private EYBCardAffinities originalAffinities;
 
     public final ArrayList<EYBCardAffinity> List = new ArrayList<>();
     public EYBCard Card;
@@ -22,7 +23,14 @@ public class EYBCardAffinities
 
     public EYBCardAffinities(EYBCard card)
     {
+        this(card, true);
+    }
+
+    public EYBCardAffinities(EYBCard card, boolean createOriginal) {
         Card = card;
+        if (createOriginal) {
+            originalAffinities = new EYBCardAffinities(card, false);
+        }
     }
 
     public void Initialize(Affinity affinity, int base, int upgrade, int scaling, int requirement)
@@ -33,11 +41,20 @@ public class EYBCardAffinities
             a.upgrade = upgrade;
             a.scaling = scaling;
             a.requirement = requirement;
+
+            if (originalAffinities != null) {
+                originalAffinities.Initialize(affinity, base, upgrade, scaling, requirement);
+            }
         }
         Refresh();
     }
 
     public void Initialize(EYBCardAffinities affinities)
+    {
+        Initialize(affinities, true);
+    }
+
+    public void Initialize(EYBCardAffinities affinities, boolean initializeOriginalAffinities)
     {
         if (affinities.Star != null)
         {
@@ -62,6 +79,11 @@ public class EYBCardAffinities
         }
 
         sealed = affinities.sealed;
+
+        if (initializeOriginalAffinities && originalAffinities != null) {
+            originalAffinities.Initialize(affinities);
+        }
+
         Refresh();
     }
 
@@ -344,6 +366,12 @@ public class EYBCardAffinities
     {
         final EYBCardAffinity a = Get(affinity == Affinity.General ? Affinity.Star : affinity);
         return a == null ? 0 : a.requirement;
+    }
+
+    public void RestoreOriginalAffinities() {
+        if (originalAffinities != null) {
+            Initialize(this.originalAffinities, false);
+        }
     }
 
     public void RenderOnCard(SpriteBatch sb, EYBCard card, boolean highlight)
