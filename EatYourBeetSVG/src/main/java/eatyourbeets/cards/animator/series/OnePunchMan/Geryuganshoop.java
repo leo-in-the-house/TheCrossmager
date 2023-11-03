@@ -27,7 +27,7 @@ public class Geryuganshoop extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 0, 2);
+        Initialize(0, 0, 3);
         SetUpgrade(0, 0, 2);
 
         SetAffinity_Pink(2);

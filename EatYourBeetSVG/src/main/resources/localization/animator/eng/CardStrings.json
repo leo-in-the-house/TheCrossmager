@@ -2386,7 +2386,7 @@
 		"animator:King":
 		{
 			"FLAVOR_TEXT": "'Finally got a copy!  Heartbeat Hottie Sisters 2: Limited Edition!  Nothing like that feeling on the walk home when you buy a game you've been waiting for!  Can't wait to get back home and play it, heh, heh!'",
-			"DESCRIPTION": "Unplayable. || When you play a card with scaling when this is in your hand, draw a card.",
+			"DESCRIPTION": "Unplayable. || When you play a card with scaling when this is in your hand, apply a {Common Debuff} on a random enemy.",
 			"NAME": "King"
 		},
 		"animator:Melzalgald":
@@ -2397,26 +2397,26 @@
 		},
 		"animator:Melzalgald_R":
 		{
-			"FLAVOR_TEXT": "'I will dispose of this one.  You handle the others.'",
+			"FLAVOR_TEXT": "'What was that?  (Who knows?)  It flew, so we killed it.  (That is good.)  Duty to protect the ship.'",
 			"DESCRIPTION": "Give all cards in your hand with damage or [Block] +1 [R] scaling.",
 			"NAME": "Melzalgald"
 		},
 		"animator:Melzalgald_G":
 		{
-			"FLAVOR_TEXT": "'Very well then, I will kill those that ran away from us.'",
+			"FLAVOR_TEXT": "'What was that?  (Who knows?)  It flew, so we killed it.  (That is good.)  Duty to protect the ship.'",
 			"DESCRIPTION": "Give all cards in your hand with damage or [Block] +1 [G] scaling.",
 			"NAME": "Melzalgald"
 		},
 		"animator:Melzalgald_B":
 		{
-			"FLAVOR_TEXT": "'That is good.'",
+			"FLAVOR_TEXT": "'What was that?  (Who knows?)  It flew, so we killed it.  (That is good.)  Duty to protect the ship.'",
 			"DESCRIPTION": "Give all cards in your hand with damage or [Block] +1 [B] scaling.",
 			"NAME": "Melzalgald"
 		},
 		"animator:MetalBat":
 		{
 			"FLAVOR_TEXT": "'Put yourself together again, huh?  Uggggghhhhhhhhh!!!  I'm gonna keep YOU for batting practice!'",
-			"DESCRIPTION": "Gains +!M! [D] scaling for every 10% missing [HP].",
+			"DESCRIPTION": "Gains +!M! [V] scaling for every 10% missing [HP].",
 			"NAME": "Metal Bat"
 		},
 		"animator:MetalKnight":

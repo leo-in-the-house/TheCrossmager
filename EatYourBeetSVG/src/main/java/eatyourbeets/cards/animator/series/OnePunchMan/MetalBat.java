@@ -20,7 +20,7 @@ public class MetalBat extends AnimatorCard
         Initialize(3, 0, 1);
         SetUpgrade(3, 0, 1);
 
-        SetAffinity_Black(1);
+        SetAffinity_Violet(1);
     }
 
     @Override
@@ -28,7 +28,7 @@ public class MetalBat extends AnimatorCard
     {
         int multiplier = (int)(10 * (1 - GameUtilities.GetHealthPercentage(player)));
 
-        SetScaling(Affinity.Black, multiplier);
+        SetScaling(Affinity.Violet, multiplier);
 
         super.Refresh(enemy);
     }

@@ -9,6 +9,7 @@ import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
+import eatyourbeets.utilities.TargetHelper;
 
 public class King extends AnimatorCard
 {
@@ -41,7 +42,8 @@ public class King extends AnimatorCard
 
         if (GameUtilities.HasAnyScaling(c))
         {
-            GameActions.Top.Draw(1);
+            GameActions.Top.StackPower(TargetHelper.RandomEnemy(), GameUtilities.GetRandomElement(GameUtilities.GetCommonDebuffs()), 1)
+                    .ShowEffect(false, true);
             GameActions.Top.Flash(this);
         }
     }
