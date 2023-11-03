@@ -184,6 +184,6 @@
 	"eyb:VigorPower":
 	{
 		"DESCRIPTIONS": ["Your next #yAttack deals an additional #b{0} damage."],
-		"NAME": "VigorPower"
+		"NAME": "Vigor"
 	}
 }

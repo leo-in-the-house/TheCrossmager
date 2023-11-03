@@ -22,6 +22,7 @@ public class VigorPower extends CommonPower {
         this.description = FormatDescription(0, amount);
     }
 
+    @Override
     public float atDamageGive(float damage, DamageInfo.DamageType type) {
         return type == DamageInfo.DamageType.NORMAL ? damage + (float)this.amount : damage;
     }
