@@ -49,7 +49,7 @@ public class Ara extends AnimatorCard
     {
         if (CheckSpecialCondition(false))
         {
-            GameActions.Bottom.GainAffinity(Affinity.Red, secondaryValue, true);
+            GameActions.Bottom.GainRed(secondaryValue);
         }
     }
 }

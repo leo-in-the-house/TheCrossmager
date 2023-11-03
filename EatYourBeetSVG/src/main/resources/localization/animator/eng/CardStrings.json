@@ -1010,7 +1010,7 @@
 		"animator:Ara":
 		{
 			"FLAVOR_TEXT": "'I must end the cycle of tragedy so no one else suffers.'",
-			"DESCRIPTION": "!A! [G]: Boost !S! [R].",
+			"DESCRIPTION": "!A! [G]: Gain !S! [R].",
 			"NAME": "Ara"
 		},
 		"animator:Chung":
@@ -1113,7 +1113,7 @@
 		"animator:Caster":
 		{
 			"FLAVOR_TEXT": "'All I know I learned directly from the goddess Hecate herself.'",
-			"DESCRIPTION": "{Boost} !M! [D].",
+			"DESCRIPTION": "{Gain} !M! [D].",
 			"NAME": "Caster"
 		},
 		"animator:EmiyaKiritsugu":
@@ -1788,8 +1788,8 @@
 		"animator:ManiwaHouou":
 		{
 			"FLAVOR_TEXT": "'If you listen to what I have to say, I will cut off my left arm for you.  You can have the arm of one of the 12 Maniwa Corps heads, and in your words, the effective leader, just for listening to what I have to say.'",
-			"DESCRIPTION": "The next !M! time(s) you {Seal} a non-{Star} card: Gain the {Threshold Bonus} of the card you sealed.",
-			"EXTENDED_DESCRIPTION": ["The next #b{0} times you #ySeal a non-#yStar card: Gain the #yThreshold #yBonus of the card you sealed."],
+			"DESCRIPTION": "The next !M! time(s) you {Seal} a non-{Star} card: Gain a unique power for each affinity on the card you sealed.",
+			"EXTENDED_DESCRIPTION": ["The next #b{0} times you #ySeal a non-#yStar card: Gain a unique power for each #yaffinity on the card you sealed."],
 			"NAME": "Houou Maniwa"
 		},
 		"animator:Nanami":
@@ -3204,7 +3204,7 @@
 		"animator:JeanneDArc":
 		{
 			"FLAVOR_TEXT": "'While they may have their flaws, there is some good in them. Losing faith in humanity is easy. Simply hating them is even easier, but continuing to love them is extremely difficult.'",
-			"DESCRIPTION": "Boost !S! [L]. || At the start of combat: Gain !M! [THP] and [Artifact].",
+			"DESCRIPTION": "Gain !S! [L]. || At the start of combat: Gain !M! [THP] and [Artifact].",
 			"NAME": "Jeanne D'Arc"
 		},
 		"animator:Kanami":

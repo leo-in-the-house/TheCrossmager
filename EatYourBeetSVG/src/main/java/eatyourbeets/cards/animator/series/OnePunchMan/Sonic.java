@@ -27,6 +27,7 @@ public class Sonic extends AnimatorCard
 
         SetExhaust(true);
         SetEthereal(true);
+        SetHaste(true);
     }
 
     @Override

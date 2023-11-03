@@ -191,10 +191,10 @@ public class Destroyer extends AnimatorCard
                     GameActions.Top.GainAffinity(Affinity.Sealed, 1);
                     break;
                 case 22:
-                    GameActions.Top.GainRandomAffinityPower(4, false);
+                    GameActions.Top.GainAffinity(Affinity.Sealed, 2);
                     break;
                 case 23:
-                    GameActions.Top.GainRandomAffinityPower(3, true);
+                    GameActions.Top.GainRandomAffinityPower(4, false);
                     break;
                 case 24:
                     final int[] damageMatrix = DamageInfo.createDamageMatrix(damage, true, false);

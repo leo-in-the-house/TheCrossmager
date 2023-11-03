@@ -22,6 +22,7 @@ public class Caster extends AnimatorCard
 
         SetAffinity_Blue(1);
 
+        SetHaste(true);
         SetExhaust(true);
     }
 
@@ -36,6 +37,6 @@ public class Caster extends AnimatorCard
     {
         GameUtilities.PlayVoiceSFX(name);
 
-        GameActions.Bottom.GainBlack(magicNumber, true);
+        GameActions.Bottom.GainBlack(magicNumber, false);
     }
 }

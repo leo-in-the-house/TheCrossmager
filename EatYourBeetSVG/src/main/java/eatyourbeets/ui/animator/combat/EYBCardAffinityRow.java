@@ -2,7 +2,6 @@ package eatyourbeets.ui.animator.combat;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.Hitbox;
 import eatyourbeets.cards.base.Affinity;
@@ -14,7 +13,6 @@ import eatyourbeets.powers.CombatStats;
 import eatyourbeets.powers.affinity.AnimatorAffinityPower;
 import eatyourbeets.resources.GR;
 import eatyourbeets.ui.GUIElement;
-import eatyourbeets.ui.controls.GUI_Button;
 import eatyourbeets.ui.controls.GUI_Image;
 import eatyourbeets.ui.controls.GUI_Label;
 import eatyourbeets.ui.hitboxes.RelativeHitbox;
@@ -39,8 +37,8 @@ public class EYBCardAffinityRow extends GUIElement
     protected final GUI_Image image_background;
     protected final GUI_Image image_affinity;
     protected final GUI_Label text_affinity;
-    protected final GUI_Image image_arrow;
-    protected final GUI_Button button_upgrade;
+    //protected final GUI_Image image_arrow;
+    //protected final GUI_Button button_upgrade;
     //protected final GUI_Label text_upgrade;
     protected final float offset_y;
     protected float vfxTimer;
@@ -66,7 +64,7 @@ public class EYBCardAffinityRow extends GUIElement
         .SetAlignment(0.5f, 0.5f)
         .SetText("-");
 
-        image_arrow = new GUI_Image(GR.Common.Images.Arrow_Right.Texture(),
+        /*image_arrow = new GUI_Image(GR.Common.Images.Arrow_Right.Texture(),
         new RelativeHitbox(hb, Scale(20), Scale(20), hb.width - Scale(12f), (offset_y * hb.height), false));
 
 //        text_upgrade = new GUI_Label(EYBFontHelper.CardIconFont_Small,
@@ -90,7 +88,7 @@ public class EYBCardAffinityRow extends GUIElement
             button_upgrade.SetOnClick(this::UpgradeAllAffinities).SetText("ALL").SetFont(null, 0.7f).SetActive(false);
             image_arrow.SetActive(false);
             //text_upgrade.SetActive(false);
-        }
+        }*/
     }
 
     public void OnStartOfTurn()
@@ -191,7 +189,7 @@ public class EYBCardAffinityRow extends GUIElement
         }
         //image_synergy.color.a = 1f;
 
-        if (Type.ID >= 0)
+      /*   if (Type.ID >= 0)
         {
             if ((button_upgrade.SetActive(Power.CanUpgrade())).isActive)
             {
@@ -207,7 +205,7 @@ public class EYBCardAffinityRow extends GUIElement
         {
             button_upgrade.SetActive(hasUpgradableAffinities);
             hasUpgradableAffinities = false;
-        }
+        }*/
 
         final boolean hovering = !draggingCard && image_background.hb.hovered && !System.hb.IsDragging();
         if (Type == Affinity.Sealed)
@@ -228,7 +226,7 @@ public class EYBCardAffinityRow extends GUIElement
 //                }
 //            }
 
-            if (button_upgrade.isActive && button_upgrade.hb.hovered && Power != null)
+            /*if (button_upgrade.isActive && button_upgrade.hb.hovered && Power != null)
             {
                 tooltip.description = GR.Animator.Strings.Affinities.UpgradeAffinityPower(UpgradeCost,
                         Type.GetTooltip().GetTitleOrIcon(),
@@ -267,7 +265,7 @@ public class EYBCardAffinityRow extends GUIElement
                         c.transparency = 0.35f;
                     }
                 }
-            }
+            }*/
         }
 
         if (Type == Affinity.Sealed || Level == BaseLevel)
@@ -288,8 +286,8 @@ public class EYBCardAffinityRow extends GUIElement
         image_background.TryUpdate();
         image_affinity.TryUpdate();
         text_affinity.TryUpdate();
-        image_arrow.TryUpdate();
-        button_upgrade.TryUpdate();
+        //image_arrow.TryUpdate();
+        //button_upgrade.TryUpdate();
         //text_upgrade.TryUpdate();
     }
 
@@ -299,14 +297,15 @@ public class EYBCardAffinityRow extends GUIElement
         image_background.TryRender(sb);
         image_affinity.TryRender(sb);
         text_affinity.TryRender(sb);
-        image_arrow.TryRender(sb);
+
+        /*image_arrow.TryRender(sb);
 
         if (Power != null)
         {
             Power.Render(sb);
         }
 
-        button_upgrade.TryRender(sb);
+        button_upgrade.TryRender(sb);*/
         //text_upgrade.TryRender(sb);
     }
 
@@ -322,13 +321,13 @@ public class EYBCardAffinityRow extends GUIElement
 
     protected void UpgradeAllAffinities()
     {
-        for (EYBCardAffinityRow row : System.Rows)
+        /*for (EYBCardAffinityRow row : System.Rows)
         {
             if (row.button_upgrade.interactable)
             {
                 row.UpgradeAffinity();
             }
-        }
+        }*/
     }
 
     protected void RefreshLevels()
