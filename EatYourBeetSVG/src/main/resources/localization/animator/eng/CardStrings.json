@@ -1391,7 +1391,7 @@
 		"animator:Tyuule":
 		{
 			"FLAVOR_TEXT": "'It's quite simple - you'll inform the remaining citizens that your imperial army has repelled Japan.  You mustn't let them know that this was a defeat.'",
-			"DESCRIPTION": "Increase the {Common Debuffs} on ALL enemies by X, where X is the number of {Attacks} in your hand.",
+			"DESCRIPTION": "Increase the {Common Debuffs} on ALL enemies by X, where X is the number of {Attacks} in your hand. || Draw a card.",
 			"NAME": "Tyuule"
 		},
 		"animator:YaoHaDucy":
@@ -2442,7 +2442,7 @@
 		"animator:SilverFang":
 		{
 			"FLAVOR_TEXT": "'Want to... give it a try!  You're both strong and look like quick learners, I bet you'll get the hang of it in no time!  What-do-ya-say?'",
-			"DESCRIPTION": "If the last card you played had scaling: Enter <TS>.",
+			"DESCRIPTION": "If the last card you played had scaling: Enter <TS> and give this card +1 [G] scaling.",
 			"NAME": "Silver Fang"
 		},
 		"animator:Sonic":

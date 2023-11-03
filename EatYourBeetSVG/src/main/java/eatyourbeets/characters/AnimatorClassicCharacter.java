@@ -3,7 +3,6 @@ package eatyourbeets.characters;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.helpers.FontHelper;
@@ -14,7 +13,7 @@ import eatyourbeets.cards.animatorClassic.basic.ImprovedDefend;
 import eatyourbeets.cards.animatorClassic.basic.ImprovedStrike;
 import eatyourbeets.cards.animatorClassic.basic.Strike;
 import eatyourbeets.effects.SFX;
-import eatyourbeets.relics.animatorClassic.LivingPicture;
+import eatyourbeets.relics.animator.RollingCubes;
 import eatyourbeets.resources.GR;
 import eatyourbeets.resources.animator.misc.AnimatorLoadout;
 import eatyourbeets.utilities.RandomizedList;
@@ -122,7 +121,7 @@ public class AnimatorClassicCharacter extends EYBPlayerCharacter
     public ArrayList<String> getStartingRelics()
     {
         final ArrayList<String> relics = new ArrayList<>();
-        relics.add(LivingPicture.ID);
+        relics.add(RollingCubes.ID);
         return relics;
     }
 

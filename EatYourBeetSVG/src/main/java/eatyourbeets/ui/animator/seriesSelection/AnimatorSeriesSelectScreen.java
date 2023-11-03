@@ -4,7 +4,6 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -19,7 +18,6 @@ import eatyourbeets.cards.base.CardSeriesComparator;
 import eatyourbeets.effects.card.ShowCardPileEffect;
 import eatyourbeets.interfaces.delegates.FuncT1;
 import eatyourbeets.relics.animator.PlotArmor;
-import eatyourbeets.relics.animator.RollingCubes;
 import eatyourbeets.resources.GR;
 import eatyourbeets.resources.animator.AnimatorStrings;
 import eatyourbeets.resources.animator.misc.AnimatorRuntimeLoadout;
@@ -54,7 +52,7 @@ public class AnimatorSeriesSelectScreen extends AbstractScreen
     public final GUI_TextBox selectionInfo;
     public final GUI_TextBox selectionAmount;
     public final GUI_TextBox previewCardsInfo;
-    public final GUI_Relic bonusRelicImage;
+    //public final GUI_Relic bonusRelicImage;
 
     public AnimatorSeriesSelectScreen()
     {
@@ -114,8 +112,8 @@ public class AnimatorSeriesSelectScreen extends AbstractScreen
         .SetFont(FontHelper.charDescFont, 1); //FontHelper.textAboveEnemyFont);
 
         final float selectionAmountSize = selectionAmount.hb.height;
-        bonusRelicImage = new GUI_Relic(new RollingCubes(), new Hitbox(selectionAmount.hb.x + (selectionAmountSize * 0.2f),
-        selectionAmount.hb.y, selectionAmountSize, selectionAmountSize));
+        //bonusRelicImage = new GUI_Relic(new RollingCubes(), new Hitbox(selectionAmount.hb.x + (selectionAmountSize * 0.2f),
+        //selectionAmount.hb.y, selectionAmountSize, selectionAmountSize));
 
         selectionInfo = new GUI_TextBox(panelTexture, new Hitbox(xPos, getY.Invoke(7f), buttonWidth, buttonHeight * 1.8f))
         .SetText(textboxStrings.CardPoolSizeRequirement(MINIMUM_CARDS, BONUS_RELIC_THRESHOLD))
@@ -152,7 +150,7 @@ public class AnimatorSeriesSelectScreen extends AbstractScreen
 
             ascensionEditor.Open();
             toggleBeta.isActive = false;
-            bonusRelicImage.isActive = false;
+            //bonusRelicImage.isActive = false;
             //togglePlotArmor.isActive = true;
             UpdateStartingDeckText();
             GameEffects.TopLevelList.Add(new AnimatorSeriesSelectEffect(this));
@@ -182,7 +180,7 @@ public class AnimatorSeriesSelectScreen extends AbstractScreen
         selectionAmount.Render(sb);
         previewCardsInfo.Render(sb);
 
-        bonusRelicImage.TryRender(sb);
+        //bonusRelicImage.TryRender(sb);
 
         if (previewCardsEffect != null)
         {
@@ -218,7 +216,7 @@ public class AnimatorSeriesSelectScreen extends AbstractScreen
         toggleBeta.SetToggle(GR.Animator.Config.DisplayBetaSeries.Get()).TryUpdate();
         //togglePlotArmor.Update();
 
-        bonusRelicImage.TryUpdate();
+        //bonusRelicImage.TryUpdate();
 
         ascensionEditor.TryUpdate();
         startingDeck.TryUpdate();
@@ -389,14 +387,14 @@ public class AnimatorSeriesSelectScreen extends AbstractScreen
     public void Proceed()
     {
         //TODO: Check card pool
-        if (bonusRelicImage.isActive)
+        /*if (bonusRelicImage.isActive)
         {
             GameEffects.TopLevelQueue.SpawnRelic(new RollingCubes(), bonusRelicImage.hb.cX, bonusRelicImage.hb.cY);
         }
         if (plotArmor.canSpawn())
         {
             GameEffects.TopLevelQueue.SpawnRelic(plotArmor.makeCopy(), bonusRelicImage.hb.cX, bonusRelicImage.hb.cY);
-        }
+        }*/
 
         SingleCardViewPopup.isViewingUpgrade = false;
         cardGrid.Clear();
@@ -424,7 +422,7 @@ public class AnimatorSeriesSelectScreen extends AbstractScreen
         }
 
         selectionAmount.SetText(totalCards + " cards selected.");
-        bonusRelicImage.SetActive(container.selectedCards.size() >= BONUS_RELIC_THRESHOLD);
+        //bonusRelicImage.SetActive(container.selectedCards.size() >= BONUS_RELIC_THRESHOLD);
 
         if (totalCards >= MINIMUM_CARDS)
         {

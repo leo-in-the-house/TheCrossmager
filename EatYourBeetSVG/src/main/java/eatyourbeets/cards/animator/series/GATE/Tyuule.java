@@ -27,8 +27,6 @@ public class Tyuule extends AnimatorCard
         SetCostUpgrade(-1);
 
         SetAffinity_Violet(1);
-
-        SetHaste(true);
     }
 
     @Override
@@ -52,5 +50,7 @@ public class Tyuule extends AnimatorCard
                 }
             }
         }
+
+        GameActions.Bottom.Draw(1);
     }
 }

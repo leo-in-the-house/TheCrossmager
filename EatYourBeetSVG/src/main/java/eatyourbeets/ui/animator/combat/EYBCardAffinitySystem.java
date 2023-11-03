@@ -43,7 +43,7 @@ public class EYBCardAffinitySystem extends GUIElement implements OnStartOfTurnSu
     protected final GUI_Image dragPanel_image;
     protected final GUI_Image draggable_icon;
     protected final GUI_Button info_button;
-    protected final GUI_Button lock_button;
+    //protected final GUI_Button lock_button;
     protected RotatingList<String> tooltipMessages;
     protected EYBCardTooltip info_tooltip;
     protected EYBCardTooltip lock_tooltip;
@@ -84,7 +84,7 @@ public class EYBCardAffinitySystem extends GUIElement implements OnStartOfTurnSu
             Rows.add(new EYBCardAffinityRow(this, type, Rows.size()));
         }
 
-        lock_button = new GUI_Button(GR.Common.Images.Panel_Elliptical_Half_H.Texture(), new RelativeHitbox(hb, 1, 1, 1.55f, -0.5f -(Rows.size() * 0.975f)))
+        /*lock_button = new GUI_Button(GR.Common.Images.Panel_Elliptical_Half_H.Texture(), new RelativeHitbox(hb, 1, 1, 1.55f, -0.5f -(Rows.size() * 0.975f)))
         .SetFont(EYBFontHelper.CardTooltipFont, 1f)
         .SetColor(new Color(0.05f, 0.05f, 0.05f, 1f))
         .SetTooltip(lock_tooltip, false);
@@ -93,7 +93,7 @@ public class EYBCardAffinitySystem extends GUIElement implements OnStartOfTurnSu
             boolean hold = GR.Animator.Config.HoldShiftToLockAffinities.Toggle(true);
             lock_tooltip.SetText(lock_tooltip.title, GR.Animator.Strings.Affinities.LockMessage(hold));
         });
-        lock_button.SetOnClick(() -> UnlockAffinities(!canUseAffinities));
+        lock_button.SetOnClick(() -> UnlockAffinities(!canUseAffinities));*/
 
         Rows.add(new EYBCardAffinityRow(this, Affinity.Sealed, Rows.size()));
     }
@@ -537,7 +537,7 @@ public class EYBCardAffinitySystem extends GUIElement implements OnStartOfTurnSu
         dragPanel_image.Update();
         draggable_icon.Update();
         info_button.ShowTooltip(!draggingCard).Update();
-        lock_button.ShowTooltip(!draggingCard).Update();
+        //lock_button.ShowTooltip(!draggingCard).Update();
 
         if (!draggingCard && GameUtilities.CanAcceptInput(true))
         {
@@ -586,7 +586,7 @@ public class EYBCardAffinitySystem extends GUIElement implements OnStartOfTurnSu
         dragPanel_image.Render(sb);
         draggable_icon.Render(sb);
         info_button.Render(sb);
-        lock_button.Render(sb);
+        //lock_button.Render(sb);
 
         for (EYBCardAffinityRow t : Rows)
         {
@@ -605,7 +605,7 @@ public class EYBCardAffinitySystem extends GUIElement implements OnStartOfTurnSu
 
     private void UnlockAffinities(boolean unlock)
     {
-        if (unlock)
+        /*if (unlock)
         {
             this.lock_button.SetText("USE").SetTextColor(new Color(0.6f, 1f, 0.6f, 1f));
             this.canUseAffinities = true;
@@ -614,7 +614,7 @@ public class EYBCardAffinitySystem extends GUIElement implements OnStartOfTurnSu
         {
             this.lock_button.SetText("LOCK").SetTextColor(new Color(1f, 0.6f, 0.6f, 1f));
             this.canUseAffinities = false;
-        }
+        }*/
 
         lock_tooltip.description = GR.Animator.Strings.Affinities.LockMessage(GR.Animator.Config.HoldShiftToLockAffinities.Get());
     }

@@ -18,7 +18,7 @@ public class SilverFang extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 10, 0);
+        Initialize(0, 8, 0);
         SetUpgrade(0, 8, 0);
 
         SetAffinity_Green(2);
@@ -33,6 +33,7 @@ public class SilverFang extends AnimatorCard
         if (CheckSpecialCondition(false))
         {
             GameActions.Bottom.ChangeStance(TranceStance.STANCE_ID);
+            GameActions.Bottom.IncreaseScaling(this, Affinity.Green, 1);
         }
     }
 
