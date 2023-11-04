@@ -2,73 +2,50 @@ package eatyourbeets.cards.animator.series.Overlord;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.orbs.animator.Earth;
+import eatyourbeets.cards.base.AnimatorCard;
+import eatyourbeets.cards.base.CardUseInfo;
+import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
+import eatyourbeets.utilities.TargetHelper;
 
 public class MareBelloFiore extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(MareBelloFiore.class)
-            .SetSkill(2, CardRarity.UNCOMMON, EYBCardTarget.None)
+            .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None)
             .SetSeriesFromClassPackage();
-    public static final int WEAK = 2;
-
-    protected boolean gainTempHP = false;
 
     public MareBelloFiore()
     {
         super(DATA);
 
-        Initialize(0, 0, 2, 2);
+        Initialize(0, 5, 6);
+        SetUpgrade(0, 2, -2);
 
-        SetAffinity_Blue(1);
         SetAffinity_Green(1);
-
-        SetAffinityRequirement(Affinity.Blue, 2);
-
-        SetExhaust(true);
     }
 
     @Override
-    protected void OnUpgrade()
-    {
-        SetExhaust(false);
-        SetFading(true);
-    }
-
-    @Override
-    public void OnDrag(AbstractMonster m)
-    {
-        super.OnDrag(m);
-
-        if (m != null)
-        {
-            GameUtilities.GetIntent(m).AddWeak();
+    public boolean cardPlayable(AbstractMonster m) {
+        if (super.cardPlayable(m)) {
+            for (AbstractMonster enemy : GameUtilities.GetEnemies(true)) {
+                if (GameUtilities.GetCommonDebuffs(TargetHelper.Normal(enemy)).size() >= magicNumber) {
+                    return true;
+                }
+            }
         }
-    }
 
-    @Override
-    protected void Refresh(AbstractMonster enemy)
-    {
-        super.Refresh(enemy);
-
-        SetAttackTarget(CheckSpecialCondition(false) ? EYBCardTarget.Normal : EYBCardTarget.None);
+        return false;
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.ChannelOrbs(Earth::new, secondaryValue);
-        GameActions.Bottom.TriggerOrbPassive(player.orbs.size())
-        .SetFilter(o -> Earth.ORB_ID.equals(o.ID))
-        .SetSequential(true);
+        GameActions.Bottom.GainBlock(block);
 
-        if (CheckSpecialCondition(false))
-        {
-            GameActions.Bottom.ApplyWeak(p, m, WEAK);
-        }
+        GameActions.Bottom.GainEnergy(1);
+        GameActions.Bottom.Draw(1);
     }
 }

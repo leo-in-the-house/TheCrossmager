@@ -1,37 +1,35 @@
 package eatyourbeets.cards.animator.series.Overlord;
 
 import com.badlogic.gdx.graphics.Color;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.ArtifactPower;
 import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.SFX;
-import eatyourbeets.orbs.animator.Chaos;
-import eatyourbeets.powers.AnimatorClickablePower;
-import eatyourbeets.powers.PowerTriggerConditionType;
+import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Ainz extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Ainz.class)
-            .SetPower(7, CardRarity.RARE)
+            .SetPower(9, CardRarity.RARE)
 
             .SetSeriesFromClassPackage();
-    public static final int CHANNEL_AMOUNT = 3;
-    public static final int POWER_ENERGY_COST = 3;
 
     public Ainz()
     {
         super(DATA);
 
-        Initialize(0, 0, POWER_ENERGY_COST, CHANNEL_AMOUNT);
-        SetCostUpgrade(-1);
+        Initialize(0, 0);
+        SetCostUpgrade(-2);
 
-        SetAffinity_Red(1);
         SetAffinity_Blue(2);
+        SetAffinity_Violet(2);
         SetAffinity_Black(2);
     }
 
@@ -58,21 +56,19 @@ public class Ainz extends AnimatorCard
         GameActions.Bottom.StackPower(new AinzPower(p, 1));
     }
 
-    public static class AinzPower extends AnimatorClickablePower
+    public static class AinzPower extends AnimatorPower
     {
         public AinzPower(AbstractPlayer owner, int amount)
         {
-            super(owner, Ainz.DATA, PowerTriggerConditionType.Energy, Ainz.POWER_ENERGY_COST);
-
-            triggerCondition.SetUses(-1, false, false);
+            super(owner, Ainz.DATA);
 
             Initialize(amount);
         }
 
         @Override
-        public String GetUpdatedDescription()
+        public void updateDescription()
         {
-            return FormatDescription(0, triggerCondition.requiredAmount, Ainz.CHANNEL_AMOUNT, amount);
+            description = FormatDescription(0, amount);
         }
 
         @Override
@@ -85,22 +81,20 @@ public class Ainz extends AnimatorCard
             GameActions.Bottom.SFX(SFX.ORB_DARK_EVOKE, 0.9f, 1.1f);
         }
 
-        @Override
-        public void onPlayCard(AbstractCard card, AbstractMonster m)
-        {
-            super.onPlayCard(card, m);
 
-            if (GameUtilities.IsHighCost(card))
+        @Override
+        public void onApplyPower(AbstractPower p, AbstractCreature target, AbstractCreature source)
+        {
+            super.onApplyPower(p, target, source);
+
+            if (GameUtilities.IsCommonDebuff(p) && source == owner && !target.hasPower(ArtifactPower.POWER_ID))
             {
-                GameActions.Bottom.GainEnergy(amount);
-                flash();
-            }
-        }
+                GameActions.Bottom.GainStrength(amount);
+                GameActions.Bottom.GainDexterity(amount);
+                GameActions.Bottom.GainFocus(amount);
 
-        @Override
-        public void OnUse(AbstractMonster m)
-        {
-            GameActions.Bottom.ChannelOrbs(Chaos::new, Ainz.CHANNEL_AMOUNT);
+                this.flash();
+            }
         }
     }
 }

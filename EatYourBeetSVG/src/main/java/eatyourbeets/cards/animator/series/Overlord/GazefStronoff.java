@@ -2,16 +2,18 @@ package eatyourbeets.cards.animator.series.Overlord;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.WeakPower;
-import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.powers.common.DeEnergizedPower;
+import eatyourbeets.cards.base.AnimatorCard;
+import eatyourbeets.cards.base.CardUseInfo;
+import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
+import eatyourbeets.utilities.TargetHelper;
 
 public class GazefStronoff extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(GazefStronoff.class)
-            .SetSkill(1, CardRarity.COMMON, EYBCardTarget.None)
+            .SetSkill(2, CardRarity.COMMON, EYBCardTarget.None)
 
             .SetSeriesFromClassPackage();
 
@@ -19,20 +21,10 @@ public class GazefStronoff extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 14, 3);
+        Initialize(0, 9);
+        SetUpgrade(0, 8);
 
-        SetAffinity_Red(1, 1, 0);
-        SetAffinity_White(1);
-
-        SetAffinityRequirement(Affinity.Red, 1);
-
-        SetEthereal(true);
-    }
-
-    @Override
-    protected void OnUpgrade()
-    {
-        SetEthereal(false);
+        SetAffinity_White(2);
     }
 
     @Override
@@ -40,21 +32,11 @@ public class GazefStronoff extends AnimatorCard
     {
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
-        GameActions.Bottom.StackPower(new DeEnergizedPower(p, 1)).ShowEffect(false, false);
 
-        if (CheckSpecialCondition(false))
-        {
-            GameActions.Bottom.RemovePower(p, p, WeakPower.POWER_ID);
-        }
-        else
-        {
-            GameActions.Bottom.GainAffinity(Affinity.Red, 1, true);
-        }
-    }
+        int numCommonDebuffs = GameUtilities.GetCommonDebuffs(TargetHelper.Enemies()).size();
 
-    @Override
-    public boolean CheckSpecialCondition(boolean tryUse)
-    {
-        return player.hasPower(WeakPower.POWER_ID) && super.CheckSpecialCondition(tryUse);
+        if (numCommonDebuffs > 0) {
+            GameActions.Bottom.GainCounterAttack(numCommonDebuffs);
+        }
     }
 }

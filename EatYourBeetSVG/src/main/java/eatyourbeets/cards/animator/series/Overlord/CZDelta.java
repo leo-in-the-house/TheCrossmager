@@ -4,29 +4,19 @@ import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.effects.SFX;
 import eatyourbeets.effects.VFX;
-import eatyourbeets.powers.CombatStats;
-import eatyourbeets.resources.GR;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
+import eatyourbeets.utilities.GameUtilities;
+import eatyourbeets.utilities.TargetHelper;
 
 public class CZDelta extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(CZDelta.class)
             .SetAttack(0, CardRarity.COMMON, EYBAttackType.Ranged, EYBCardTarget.Random)
-            
-            .SetSeriesFromClassPackage()
-            .ModifyRewards((data, rewards) ->
-            {
-                final int copies = data.GetTotalCopies(player.masterDeck);
-                if (copies > 0 && copies < data.MaxCopies)
-                {
-                    GR.Common.Dungeon.TryReplaceFirstCardReward(rewards, 0.1f, true, data);
-                }
-            });
+            .SetSeriesFromClassPackage();
 
     private static final Color VFX_COLOR = new Color(0.6f, 1f, 0.6f, 1f);
 
@@ -34,9 +24,11 @@ public class CZDelta extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(8, 0, 2);
+        Initialize(4, 0, 0);
+        SetUpgrade(2, 0, 0);
 
-        SetAffinity_Green(1, 1, 0);
+        SetAffinity_Teal(1, 0, 0);
+        SetAffinity_Brown(1, 0, 0);
     }
 
     @Override
@@ -47,30 +39,9 @@ public class CZDelta extends AnimatorCard
     }
 
     @Override
-    protected void Refresh(AbstractMonster enemy)
-    {
-        super.Refresh(enemy);
-
-        SetUnplayable(player.currentBlock < magicNumber);
-    }
-
-    @Override
-    public void triggerOnManualDiscard()
-    {
-        super.triggerOnManualDiscard();
-
-        if (CombatStats.TryActivateSemiLimited(cardID))
-        {
-            GameActions.Bottom.ModifyAllCopies(cardID)
-            .AddCallback(c -> ((CZDelta) c).SetHaste(true));
-        }
-    }
-
-    @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.LoseBlock(magicNumber);
 
         if (upgraded)
         {
@@ -94,5 +65,7 @@ public class CZDelta extends AnimatorCard
             .SetSoundPitch(1.5f, 1.55f)
             .SetVFXColor(VFX_COLOR);
         }
+
+        GameActions.Bottom.ApplyVulnerable(TargetHelper.AllCharacters(), 1);
     }
 }

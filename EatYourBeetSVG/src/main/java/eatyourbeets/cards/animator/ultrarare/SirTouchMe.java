@@ -1,21 +1,20 @@
 package eatyourbeets.cards.animator.ultrarare;
 
-import eatyourbeets.cards.base.CardUseInfo;
-import eatyourbeets.effects.AttackEffects;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.JuggernautPower;
-import eatyourbeets.cards.base.AnimatorCard_UltraRare;
-import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.cards.base.EYBCardData;
-import eatyourbeets.cards.base.CardSeries;
+import eatyourbeets.cards.base.*;
+import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
+import eatyourbeets.utilities.GameUtilities;
+import eatyourbeets.utilities.TargetHelper;
 
 public class SirTouchMe extends AnimatorCard_UltraRare
 {
     public static final EYBCardData DATA = Register(SirTouchMe.class)
-            .SetAttack(2, CardRarity.SPECIAL)
+            .SetSkill(2, CardRarity.SPECIAL, EYBCardTarget.None)
             .SetColor(CardColor.COLORLESS)
             .SetSeries(CardSeries.Overlord);
 
@@ -23,20 +22,37 @@ public class SirTouchMe extends AnimatorCard_UltraRare
     {
         super(DATA);
 
-        Initialize(4, 4, 4, 3);
-        SetUpgrade(2, 2, 2, 0);
+        Initialize(0, 3, 4);
+        SetUpgrade(0, 0, 2);
         
-        SetAffinity_Red(2, 0, 2);
+        SetAffinity_Red(2, 0, 1);
         SetAffinity_White(2, 0, 1);
+    }
+
+    @Override
+    public AbstractAttribute GetBlockInfo()
+    {
+        return super.GetBlockInfo().AddMultiplier(magicNumber);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.GainBlock(block);
-        GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_HEAVY);
-        GameActions.Bottom.StackPower(new JuggernautPower(p, magicNumber));
+
+        for (int i=0; i<magicNumber; i++) {
+            GameActions.Bottom.GainBlock(block);
+        }
+
+        int juggernautAmount = 0;
+
+        for (AbstractPower debuff : GameUtilities.GetCommonDebuffs(TargetHelper.Enemies())) {
+            juggernautAmount += debuff.amount;
+        }
+
+        if (juggernautAmount > 0) {
+            GameActions.Bottom.StackPower(new JuggernautPower(p, juggernautAmount));
+        }
     }
 
     @Override

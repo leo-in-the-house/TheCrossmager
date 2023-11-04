@@ -1,21 +1,14 @@
 package eatyourbeets.cards.animator.series.Overlord;
 
 import com.badlogic.gdx.graphics.Color;
-import com.megacrit.cardcrawl.actions.unique.PoisonLoseHpAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.PoisonPower;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.effects.VFX;
-import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Entoma extends AnimatorCard
 {
@@ -27,12 +20,11 @@ public class Entoma extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(4, 0, 2);
-        SetUpgrade(0, 0, 2);
+        Initialize(8, 0, 2);
+        SetUpgrade(3, 0, 1);
 
-        SetAffinity_Black(2, 0, 1);
-
-        SetAffinityRequirement(Affinity.Black, 3);
+        SetAffinity_Violet(1);
+        SetAffinity_Brown(1);
     }
 
     @Override
@@ -41,47 +33,6 @@ public class Entoma extends AnimatorCard
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.POISON)
         .SetDamageEffect(e -> GameEffects.List.Add(VFX.Bite(e.hb, Color.GREEN)).duration);
-        GameActions.Bottom.GainAffinity(Affinity.Black);
         GameActions.Bottom.ApplyPoison(p, m, magicNumber);
-
-        if (!m.hasPower(EntomaPower.DeriveID(cardID)) && CheckSpecialCondition(false))
-        {
-            GameActions.Bottom.ApplyPower(new EntomaPower(m, p, 1));
-        }
-    }
-
-    public static class EntomaPower extends AnimatorPower
-    {
-        public EntomaPower(AbstractCreature owner, AbstractCreature source, int amount)
-        {
-            super(owner, source, Entoma.DATA);
-
-            this.maxAmount = 1;
-
-            Initialize(amount, PowerType.DEBUFF, false);
-        }
-
-        @Override
-        public void updateDescription()
-        {
-            this.description = FormatDescription(0);
-        }
-
-        @Override
-        public void wasHPLost(DamageInfo info, int damageAmount)
-        {
-            if (AbstractDungeon.actionManager.currentAction instanceof PoisonLoseHpAction)
-            {
-                final AbstractPower p = GameUtilities.GetPower(owner, PoisonPower.POWER_ID);
-                if (p != null)
-                {
-                    p.amount += 1;
-                }
-
-                flashWithoutSound();
-            }
-
-            super.wasHPLost(info, damageAmount);
-        }
     }
 }

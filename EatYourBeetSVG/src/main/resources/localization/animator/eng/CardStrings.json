@@ -2463,55 +2463,53 @@
 	{
 		"animator:Ainz":
 		{
-			"DESCRIPTION": "Whenever you play a {High-Cost} card: Gain [E]. || Pay !M! [E]: Channel !S! [Chaos]. || When Drawn or Sealed: Motivate this.",
-			"EXTENDED_DESCRIPTION": ["Pay #b{0} [M] to #yChannel #b{1} [Chaos]. || When you play a #yHigh-Cost card, gain #b{2} [E]."],
+			"DESCRIPTION": "Whenever you apply a {Common Debuff}: Gain [Strength] [Dexterity] [Focus]. || When {Drawn} or {Sealed}: Motivate this.",
+			"EXTENDED_DESCRIPTION": ["Whenever you apply a #yCommon #yDebuff: Gain #b{0} #yStrength #yDexterity #yFocus."],
 			"NAME": "Ainz Ooal Gown"
 		},
 		"animator:Albedo":
 		{
-			"DESCRIPTION": "Gain !M! [Enchanted Armor]. Gain 1 {Temp.} [Artifact]. || At the start of next turn: Fetch 1 {Power}.",
-			"EXTENDED_DESCRIPTION": ["At the start of your turn, fetch #b{0} #yPower(s)."],
+			"DESCRIPTION": "Gain [Enchanted Armor] for each {Common Debuff} among {Common Debuffs} your enemies have.",
 			"NAME": "Albedo"
 		},
 		"animator:AuraBellaFiora":
 		{
-			"DESCRIPTION": "<ST>. Gain !M! additional [Block]. || Motivate 1 {High-Cost} card. Discard 1 card.",
+			"DESCRIPTION": "Can only be played if an enemy has at least !M! {Common Debuffs}. || Discard your hand, then draw that many cards plus one from your discard pile.",
 			"NAME": "Aura Bella Fiora"
 		},
 		"animator:Cocytus":
 		{
-			"DESCRIPTION": "Evoke your first [Frost] to gain !M! [R]. Otherwise: Channel !S! [Frost]. || !A! [B]: Apply 1 [Freezing].",
+			"DESCRIPTION": "Apply !M! [Freezing].",
 			"NAME": "Cocytus"
 		},
 		"animator:CZDelta":
 		{
-			"DESCRIPTION": "Lose !M! [Block] to play. || <SLM>. When Discarded: Give {~Haste} to all copies of this card.",
+			"DESCRIPTION": "Apply [Vulnerable] to ALL targets.",
 			"NAME": "CZ Delta"
 		},
 		"animator:Demiurge":
 		{
-			"DESCRIPTION": "Discard 1 card. || Gain [E] and [D]. The next time you draw this: Take !M! [DD].",
+			"DESCRIPTION": "Take !M! [DD] to apply !S! [Burning] on ALL enemies.",
 			"NAME": "Demiurge"
 		},
 		"animator:Entoma":
 		{
-			"DESCRIPTION": "Gain [D]. Apply !M! [Poison]. || !A! [D]: Enemy's [Poison] no longer decreases.",
-			"EXTENDED_DESCRIPTION": ["[Poison] does not decrease."],
+			"DESCRIPTION": "Apply !M! [Poison].",
 			"NAME": "Entoma"
 		},
 		"animator:Evileye":
 		{
-			"DESCRIPTION": "!A! [D] [L]: Gain 2 [E] and Exhaust. || Choose 1: Gain !K! [B]; <DRW-M>; Gain !S! [Orb_S].",
+			"DESCRIPTION": "Apply !M! of a random {Common Debuffs} on ALL enemies. || !A! [O] [B] [D]: Play a free copy of the top card in your discard pile against a random enemy. || Reload: Repeat all of the above effects.",
 			"NAME": "Evileye"
 		},
 		"animator:GazefStronoff":
 		{
-			"DESCRIPTION": "Next turn: Gain 1 less [E]. || !A! [R]: Remove [Weak]. Else: Boost [R].",
+			"DESCRIPTION": "Gain [Counter-Attack] for each {Common Debuff} on each enemy.",
 			"NAME": "Gazef Stronoff"
 		},
 		"animator:MareBelloFiore":
 		{
-			"DESCRIPTION": "Channel !M! [Earth], then trigger all [Earth]. || !A! [B]: Apply !S! Weak.",
+			"DESCRIPTION": "Can only be played if an enemy has at least !M! {Common Debuffs}. || Gain [E] and draw a card.",
 			"NAME": "Mare Bello Fiore"
 		},
 		"animator:NarberalGamma":
@@ -2522,18 +2520,18 @@
 		},
 		"animator:PandorasActor":
 		{
-			"DESCRIPTION": "At the start of each combat: Gain !M! [Block].",
+			"DESCRIPTION": "At the start of combat: Apply !M! [Weak] to ALL enemies.",
 			"NAME": "Pandora's Actor"
 		},
 		"animator:Sebas":
 		{
-			"DESCRIPTION": "Gain 1 [R] and !M! [Counter-Attack] for each enemy who intends to {Attack}. || <AS> and/or !A! [G]: Gain [E].",
-			"NAME": "Sebas"
+			"DESCRIPTION": "Deal damage equal to your current [Block] to ALL enemies with a {Common Debuff}. ",
+			"NAME": "Sebas Tian"
 		},
 		"animator:Shalltear":
 		{
-			"DESCRIPTION": "Heal !S! [HP] per [Corruption]. || When Sealed: Convert all [L] to [D].",
-			"NAME": "Shalltear"
+			"DESCRIPTION": "For each enemy with a {Common Debuff}: Apply !M! [Shackles] to that target and gain [Pestilence].",
+			"NAME": "Shalltear Bloodfallen"
 		}
 	},
 
@@ -3254,7 +3252,7 @@
 		},
 		"animator:SirTouchMe":
 		{
-			"DESCRIPTION": "Gain !M! Juggernaut. || At the start of each combat: Gain !S! [Plated Armor].",
+			"DESCRIPTION": "For each {Common Debuff} on each enemy, Gain {Juggernaut} equal to its amount.",
 			"NAME": "Sir Touch Me"
 		},
 		"animator:SummoningRitual":

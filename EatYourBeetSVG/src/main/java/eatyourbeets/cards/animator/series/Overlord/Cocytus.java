@@ -2,11 +2,7 @@ package eatyourbeets.cards.animator.series.Overlord;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.orbs.AbstractOrb;
-import com.megacrit.cardcrawl.orbs.Frost;
-import eatyourbeets.cards.base.Affinity;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.AttackEffects;
@@ -16,19 +12,17 @@ import eatyourbeets.utilities.GameUtilities;
 public class Cocytus extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Cocytus.class)
-            .SetAttack(2, CardRarity.COMMON)
+            .SetAttack(3, CardRarity.COMMON)
             .SetSeriesFromClassPackage();
 
     public Cocytus()
     {
         super(DATA);
 
-        Initialize(13, 0, 2, 1);
-        SetUpgrade(2, 0, 1, 1);
+        Initialize(8, 8, 3, 0);
+        SetUpgrade(6, 6, 0, 0);
 
-        SetAffinity_Red(2, 0, 3);
-
-        SetAffinityRequirement(Affinity.Blue, 2);
+        SetAffinity_Blue(2, 0, 0);
     }
 
     @Override
@@ -36,10 +30,9 @@ public class Cocytus extends AnimatorCard
     {
         super.OnDrag(m);
 
-        final AbstractOrb orb = GameUtilities.GetFirstOrb(Frost.ORB_ID);
-        if (orb != null)
+        if (m != null)
         {
-            orb.showEvokeValue();
+            GameUtilities.GetIntent(m).AddFreezing();
         }
     }
 
@@ -48,23 +41,7 @@ public class Cocytus extends AnimatorCard
     {
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.BLUNT_HEAVY);
-        GameActions.Bottom.EvokeOrb(1)
-        .SetFilter(o -> Frost.ORB_ID.equals(o.ID))
-        .AddCallback(orbs ->
-        {
-            if (orbs.size() > 0)
-            {
-                GameActions.Bottom.GainRed(magicNumber);
-            }
-            else
-            {
-                GameActions.Bottom.ChannelOrbs(Frost::new, secondaryValue);
-            }
-        });
-
-        if (CheckSpecialCondition(false))
-        {
-            GameActions.Bottom.ApplyFreezing(p, m, 1);
-        }
+        GameActions.Bottom.GainBlock(block);
+        GameActions.Bottom.ApplyFreezing(p, m, magicNumber);
     }
 }

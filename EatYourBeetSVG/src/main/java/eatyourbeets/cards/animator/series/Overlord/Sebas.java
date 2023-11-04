@@ -1,14 +1,17 @@
 package eatyourbeets.cards.animator.series.Overlord;
 
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.monsters.EnemyIntent;
-import eatyourbeets.powers.common.CounterAttackPower;
-import eatyourbeets.stances.AgilityStance;
+import eatyourbeets.cards.base.AnimatorCard;
+import eatyourbeets.cards.base.CardUseInfo;
+import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.cards.base.EYBCardTarget;
+import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.JUtils;
+import eatyourbeets.utilities.TargetHelper;
 
 public class Sebas extends AnimatorCard
 {
@@ -20,46 +23,23 @@ public class Sebas extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 10, 2);
-        SetUpgrade(0, 4, 0);
+        Initialize(0, 8, 0);
+        SetCostUpgrade(-1);
 
-        SetAffinity_Red(2, 0, 2);
-        SetAffinity_White(1);
-
-        SetExhaust(true);
-
-        SetAffinityRequirement(Affinity.Green, 2);
+        SetAffinity_Red(1, 0, 1);
+        SetAffinity_Brown(1, 0, 1);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.GainBlock(block);
-
-        final int counter = JUtils.Count(GameUtilities.GetIntents(), EnemyIntent::IsAttacking);
-        if (counter > 0)
+        GameActions.Bottom.GainBlock(block).AddCallback(() ->
         {
-            GameActions.Bottom.GainRed(counter);
-            GameActions.Bottom.StackPower(new CounterAttackPower(p, counter * magicNumber));
-        }
-
-        int energy = 0;
-        if (AgilityStance.IsActive())
-        {
-            energy += 1;
-        }
-        if (CheckAffinities(true))
-        {
-            energy += 1;
-        }
-
-        GameActions.Bottom.GainEnergy(energy);
-    }
-
-    @Override
-    public boolean CheckSpecialCondition(boolean tryUse)
-    {
-        return AgilityStance.IsActive() || super.CheckSpecialCondition(tryUse);
+            for (AbstractMonster enemy : JUtils.Filter(GameUtilities.GetEnemies(true), e -> (GameUtilities.GetCommonDebuffs(TargetHelper.Normal(e)).size() > 0)))
+            {
+                GameActions.Bottom.DealDamage(player, enemy, player.currentBlock, DamageInfo.DamageType.THORNS, AttackEffects.BLUNT_HEAVY);
+            }
+        });
     }
 }

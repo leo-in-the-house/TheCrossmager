@@ -8,6 +8,8 @@ import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
+import eatyourbeets.utilities.TargetHelper;
 
 public class Demiurge extends AnimatorCard
 {
@@ -19,39 +21,23 @@ public class Demiurge extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0,0,6);
-        SetUpgrade(0,0,-2);
+        Initialize(0,0,3, 2);
+        SetUpgrade(0,0,-1, 1);
 
-        SetAffinity_Blue(1);
-        SetAffinity_Black(1);
+        SetAffinity_Red(1);
+
+        SetRetain(true);
     }
 
-    @Override
-    protected void OnUpgrade()
-    {
-        SetRetainOnce(true);
-    }
 
     @Override
-    public void triggerWhenDrawn()
+    public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
-        super.triggerWhenDrawn();
+        GameUtilities.PlayVoiceSFX(name);
 
-        if (misc > 0)
-        {
-            GameActions.Bottom.TakeDamageAtEndOfTurn(misc, AttackEffects.DARK);
-            GameActions.Bottom.Flash(this);
-            misc = 0;
-        }
-    }
-
-    @Override
-    public void OnLateUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
-    {
-        GameActions.Bottom.DiscardFromHand(name, 1, false);
-        GameActions.Bottom.GainEnergy(1);
-        GameActions.Bottom.GainBlack(1);
-        GameActions.Bottom.ModifyAllInstances(uuid)
-        .AddCallback(c -> c.misc += magicNumber);
+        GameActions.Bottom.TakeDamageAtEndOfTurn(magicNumber, AttackEffects.DARK)
+             .AddCallback(power -> {
+                 GameActions.Top.ApplyBurning(TargetHelper.Enemies(), secondaryValue);
+             });
     }
 }

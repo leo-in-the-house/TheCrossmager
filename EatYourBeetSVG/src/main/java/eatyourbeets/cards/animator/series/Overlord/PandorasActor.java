@@ -3,12 +3,13 @@ package eatyourbeets.cards.animator.series.Overlord;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
+import eatyourbeets.utilities.GameUtilities;
+import eatyourbeets.utilities.TargetHelper;
 
 public class PandorasActor extends AnimatorCard
 {
@@ -20,10 +21,10 @@ public class PandorasActor extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 4, 4);
-        SetUpgrade(0, 4, 0);
+        Initialize(0, 5, 1);
+        SetUpgrade(0, 3, 1);
 
-        SetAffinity_Star(1, 0, 0);
+        SetAffinity_Black(1);
     }
 
     @Override
@@ -41,7 +42,7 @@ public class PandorasActor extends AnimatorCard
         if (startOfBattle)
         {
             GameEffects.List.ShowCopy(this);
-            GameActions.Bottom.GainBlock(magicNumber);
+            GameActions.Bottom.ApplyWeak(TargetHelper.Enemies(), magicNumber);
         }
     }
 }

@@ -657,6 +657,11 @@ public final class GameActions
         return StackPower(new BurstPower(player, amount));
     }
 
+    public ApplyPower GainCounterAttack(int amount)
+    {
+        return StackPower(new CounterAttackPower(player, amount));
+    }
+
     public ApplyPower GainDexterity(int amount)
     {
         return StackPower(new DexterityPower(player, amount));

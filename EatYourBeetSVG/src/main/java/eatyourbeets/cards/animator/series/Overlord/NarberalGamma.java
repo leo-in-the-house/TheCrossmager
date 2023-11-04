@@ -5,13 +5,12 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.Lightning;
 import com.megacrit.cardcrawl.powers.ElectroPower;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
-import eatyourbeets.powers.CombatStats;
 import eatyourbeets.powers.replacement.TemporaryElectroPower;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class NarberalGamma extends AnimatorCard
 {
@@ -23,25 +22,28 @@ public class NarberalGamma extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 0, 1);
+        Initialize(0, 0, 2);
+        SetUpgrade(0, 0, 1);
 
-        SetAffinity_Star(1);
+        SetAffinity_Yellow(1);
+        SetAffinity_Brown(1);
+    }
 
-        SetEvokeOrbCount(1);
+    @Override
+    protected void OnUpgrade() {
+        super.OnUpgrade();
+
+        SetHaste(true);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.ChannelOrb(new Lightning());
 
-        if (upgraded)
-        {
-            GameActions.Bottom.Draw(1);
-        }
+        GameActions.Bottom.ChannelOrbs(Lightning::new, magicNumber);
 
-        if (CombatStats.TryActivateSemiLimited(this.cardID) && !p.hasPower(ElectroPower.POWER_ID))
+        if (!p.hasPower(ElectroPower.POWER_ID))
         {
             GameActions.Bottom.ApplyPower(p, p, new TemporaryElectroPower(p));
         }

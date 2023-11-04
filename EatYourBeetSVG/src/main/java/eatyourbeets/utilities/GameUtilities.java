@@ -829,6 +829,23 @@ public class GameUtilities
         return GetCommonDebuffs(0);
     }
 
+    public static ArrayList<AbstractPower> GetCommonDebuffs(TargetHelper targetHelper)
+    {
+        ArrayList<AbstractPower> commonDebuffs = new ArrayList<>();
+
+        for (AbstractCreature target : targetHelper.GetTargets(true)) {
+            if (!target.isDead) {
+                for (AbstractPower power : target.powers) {
+                    if (GameUtilities.IsCommonDebuff(power)) {
+                        commonDebuffs.add(power);
+                    }
+                }
+            }
+        }
+
+        return commonDebuffs;
+    }
+
     public static ArrayList<PowerHelper> GetCommonDebuffs(int level)
     {
         switch (level)

@@ -1,39 +1,40 @@
 package eatyourbeets.cards.animator.series.Overlord;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.monsters.EnemyIntent;
-import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.powers.animator.EnchantedArmorPlayerPower;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
+import eatyourbeets.utilities.TargetHelper;
 
 public class Albedo extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Albedo.class)
-            .SetAttack(3, CardRarity.RARE)
+            .SetAttack(2, CardRarity.RARE)
             .SetSeriesFromClassPackage();
 
     public Albedo()
     {
         super(DATA);
 
-        Initialize(16, 0, 1);
-        SetUpgrade(2, 0, 0);
+        Initialize(2, 0, 3);
+        SetUpgrade(0, 0, 3);
 
-        SetAffinity_Red(2, 0, 2);
-        SetAffinity_Black(2, 0, 2);
+        SetAffinity_Pink(1, 0, 1);
+        SetAffinity_Violet(1, 0, 1);
+
+        SetEthereal(true);
     }
 
     @Override
     protected void OnUpgrade()
     {
-        SetInnate(true);
+        SetEthereal(false);
     }
 
     @Override
@@ -41,9 +42,13 @@ public class Albedo extends AnimatorCard
     {
         super.OnDrag(m);
 
-        for (EnemyIntent intent : GameUtilities.GetIntents())
-        {
-            intent.AddPlayerEnchantedArmor(magicNumber);
+        int amountEnchantedArmorToGain = CalculateEnchantedArmorGain();
+
+        if (amountEnchantedArmorToGain > 0) {
+            for (EnemyIntent intent : GameUtilities.GetIntents())
+            {
+                intent.AddPlayerEnchantedArmor(amountEnchantedArmorToGain);
+            }
         }
     }
 
@@ -52,30 +57,15 @@ public class Albedo extends AnimatorCard
     {
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_HEAVY);
-        GameActions.Bottom.StackPower(new EnchantedArmorPlayerPower(p, magicNumber));
-        GameActions.Bottom.GainTemporaryArtifact(1);
-        GameActions.Bottom.StackPower(new AlbedoPower(p, 1));
+
+        int amountEnchantedArmorToGain = CalculateEnchantedArmorGain();
+
+        if (amountEnchantedArmorToGain > 0) {
+            GameActions.Bottom.StackPower(new EnchantedArmorPlayerPower(p, amountEnchantedArmorToGain));
+        }
     }
 
-    public static class AlbedoPower extends AnimatorPower
-    {
-        public AlbedoPower(AbstractCreature owner, int amount)
-        {
-            super(owner, Albedo.DATA);
-
-            Initialize(amount);
-        }
-
-        @Override
-        public void atStartOfTurn()
-        {
-            super.atStartOfTurn();
-
-            GameActions.Top.FetchFromPile(name, amount, player.drawPile)
-            .SetOptions(false, true)
-            .SetFilter(c -> c.type == CardType.POWER);
-            RemovePower();
-            this.flash();
-        }
+    private int CalculateEnchantedArmorGain() {
+        return GameUtilities.GetCommonDebuffs(TargetHelper.Enemies()).size();
     }
 }
