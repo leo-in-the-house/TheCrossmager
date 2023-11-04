@@ -2469,7 +2469,7 @@
 		},
 		"animator:Albedo":
 		{
-			"DESCRIPTION": "Gain [Enchanted Armor] for each {Common Debuff} among {Common Debuffs} your enemies have.",
+			"DESCRIPTION": "Gain [Enchanted Armor] for each {Common Debuff} your enemies have.",
 			"NAME": "Albedo"
 		},
 		"animator:AuraBellaFiora":
