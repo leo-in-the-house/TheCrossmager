@@ -2463,8 +2463,8 @@
 	{
 		"animator:Ainz":
 		{
-			"DESCRIPTION": "Whenever you apply a {Common Debuff}: Gain [Strength] [Dexterity] [Focus]. || When {Drawn} or {Sealed}: Motivate this.",
-			"EXTENDED_DESCRIPTION": ["Whenever you apply a #yCommon #yDebuff: Gain #b{0} #yStrength #yDexterity #yFocus."],
+			"DESCRIPTION": "Whenever you apply a {Common Debuff}: Gain [Strength] [Dexterity] and !M! {Sadistic}. || When {Drawn} or {Sealed}: Motivate this.",
+			"EXTENDED_DESCRIPTION": ["Whenever you apply a #yCommon #yDebuff: Gain #b{0} #yStrength #yDexterity and #b{1} #ySadistic."],
 			"NAME": "Ainz Ooal Gown"
 		},
 		"animator:Albedo":

@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
+import com.megacrit.cardcrawl.powers.SadisticPower;
 import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
@@ -21,11 +22,13 @@ public class Ainz extends AnimatorCard
 
             .SetSeriesFromClassPackage();
 
+    private static int SADISTIC_MULTIPLIER = 7;
+
     public Ainz()
     {
         super(DATA);
 
-        Initialize(0, 0);
+        Initialize(0, 0, SADISTIC_MULTIPLIER);
         SetCostUpgrade(-2);
 
         SetAffinity_Blue(2);
@@ -68,7 +71,7 @@ public class Ainz extends AnimatorCard
         @Override
         public void updateDescription()
         {
-            description = FormatDescription(0, amount);
+            description = FormatDescription(0, amount, SADISTIC_MULTIPLIER * amount );
         }
 
         @Override
@@ -91,7 +94,7 @@ public class Ainz extends AnimatorCard
             {
                 GameActions.Bottom.GainStrength(amount);
                 GameActions.Bottom.GainDexterity(amount);
-                GameActions.Bottom.GainFocus(amount);
+                GameActions.Bottom.StackPower(new SadisticPower(player, amount * SADISTIC_MULTIPLIER));
 
                 this.flash();
             }

@@ -384,6 +384,12 @@
 		"NAMES": ["ricochet"],
 		"PROPER_NAME": "Ricochet"
 	},
+	"Sadistic":
+	{
+		"DESCRIPTION": "Deal damage whenever you apply a #ydebuff to an enemy #yBlock.",
+		"NAMES": ["sadistic"],
+		"PROPER_NAME": "Sadistic"
+	},
 	"Semi-Limited":
 	{
 		"DESCRIPTION": "This effect can only trigger once per turn, across all copies of this card.",
