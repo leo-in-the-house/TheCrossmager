@@ -2469,7 +2469,7 @@
 		},
 		"animator:Albedo":
 		{
-			"DESCRIPTION": "Gain [Enchanted Armor] for each {Common Debuff} your enemies have.",
+			"DESCRIPTION": "Gain [Enchanted Armor] for each {Common Debuff} your enemies have. || On Seal or Discard: Gain !S! {Sadistic}.",
 			"NAME": "Albedo"
 		},
 		"animator:AuraBellaFiora":

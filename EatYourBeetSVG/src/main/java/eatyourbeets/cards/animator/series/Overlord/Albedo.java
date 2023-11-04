@@ -2,17 +2,22 @@ package eatyourbeets.cards.animator.series.Overlord;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.SadisticPower;
 import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
+import eatyourbeets.cards.base.EYBCard;
 import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.effects.AttackEffects;
+import eatyourbeets.interfaces.subscribers.OnAffinitySealedSubscriber;
 import eatyourbeets.monsters.EnemyIntent;
+import eatyourbeets.powers.CombatStats;
 import eatyourbeets.powers.animator.EnchantedArmorPlayerPower;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.TargetHelper;
 
-public class Albedo extends AnimatorCard
+public class Albedo extends AnimatorCard implements OnAffinitySealedSubscriber
 {
     public static final EYBCardData DATA = Register(Albedo.class)
             .SetAttack(2, CardRarity.RARE)
@@ -22,7 +27,7 @@ public class Albedo extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(2, 0, 3);
+        Initialize(2, 0, 3, 2);
         SetUpgrade(0, 0, 3);
 
         SetAffinity_Pink(1, 0, 1);
@@ -32,9 +37,31 @@ public class Albedo extends AnimatorCard
     }
 
     @Override
+    public AbstractAttribute GetDamageInfo()
+    {
+        return super.GetDamageInfo().AddMultiplier(magicNumber);
+    }
+
+    @Override
     protected void OnUpgrade()
     {
         SetEthereal(false);
+    }
+
+    @Override
+    public void OnAffinitySealed(EYBCard card, boolean manual) {
+
+        GameActions.Bottom.Flash(this);
+        GameActions.Bottom.StackPower(new SadisticPower(player, secondaryValue));
+    }
+
+    @Override
+    public void triggerOnManualDiscard()
+    {
+        super.triggerOnManualDiscard();
+
+        GameActions.Bottom.Flash(this);
+        GameActions.Bottom.StackPower(new SadisticPower(player, secondaryValue));
     }
 
     @Override
@@ -56,7 +83,18 @@ public class Albedo extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_HEAVY);
+
+        for (int i=0; i<magicNumber; i++) {
+            if (i%2 == 0) {
+                GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_VERTICAL);
+            }
+            else if (i%2 == 1) {
+                GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_HORIZONTAL);
+            }
+            else {
+                GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_HEAVY);
+            }
+        }
 
         int amountEnchantedArmorToGain = CalculateEnchantedArmorGain();
 
@@ -67,5 +105,13 @@ public class Albedo extends AnimatorCard
 
     private int CalculateEnchantedArmorGain() {
         return GameUtilities.GetCommonDebuffs(TargetHelper.Enemies()).size();
+    }
+
+    @Override
+    public void triggerWhenCreated(boolean startOfBattle)
+    {
+        super.triggerWhenCreated(startOfBattle);
+
+        CombatStats.onAffinitySealed.Subscribe(this);
     }
 }
