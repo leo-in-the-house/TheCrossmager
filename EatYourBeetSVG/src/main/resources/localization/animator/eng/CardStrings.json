@@ -2499,7 +2499,7 @@
 		},
 		"animator:Evileye":
 		{
-			"DESCRIPTION": "Apply !M! of a random {Common Debuffs} on ALL enemies. || !A! [O] [B] [D]: Play a free copy of the top card in your discard pile against a random enemy. || Reload: Repeat all of the above effects.",
+			"DESCRIPTION": "Apply !M! of a random {Common Debuff} on ALL enemies. || !A! [V] [B] [D]: Play a free copy of the top card in your discard pile against a random enemy. || Reload: Repeat all of the above effects.",
 			"NAME": "Evileye"
 		},
 		"animator:GazefStronoff":
@@ -2525,7 +2525,7 @@
 		},
 		"animator:Sebas":
 		{
-			"DESCRIPTION": "Deal damage equal to your current [Block] to ALL enemies with a {Common Debuff}. ",
+			"DESCRIPTION": "Deal damage equal to your current [Block] to ALL enemies with a {Common Debuff}. || If you have !M! or more [Block] after playing this card: Enter <WS>.",
 			"NAME": "Sebas Tian"
 		},
 		"animator:Shalltear":
