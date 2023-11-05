@@ -2530,7 +2530,7 @@
 		},
 		"animator:Shalltear":
 		{
-			"DESCRIPTION": "For each enemy with a {Common Debuff}: Apply !M! [Shackles] to that target and gain [Pestilence].",
+			"DESCRIPTION": "For each enemy with a {Common Debuff}: Apply !M! [Shackles] to that target and gain !M! [THP]. || If this hit at least one enemy with a {Common Debuff}, put this on top of your draw pile.",
 			"NAME": "Shalltear Bloodfallen"
 		}
 	},

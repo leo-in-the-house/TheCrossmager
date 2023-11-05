@@ -5,10 +5,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.effects.VFX;
-import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameEffects;
-import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.utilities.TargetHelper;
+import eatyourbeets.utilities.*;
 
 public class Shalltear extends AnimatorCard
 {
@@ -20,11 +17,13 @@ public class Shalltear extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(6, 0, 2);
+        Initialize(7, 0, 2);
         SetUpgrade(3, 0, 1);
 
         SetAffinity_Violet(1, 0, 1);
         SetAffinity_Black(1, 0, 1);
+
+        SetDelayed(true);
     }
 
     @Override
@@ -34,12 +33,21 @@ public class Shalltear extends AnimatorCard
         GameActions.Bottom.DealDamageToAll(this, AttackEffects.NONE)
         .SetDamageEffect((enemy, __) -> GameEffects.List.Add(VFX.Hemokinesis(player.hb, enemy.hb)));
 
+        boolean hitCommonDebuff = false;
+
         for (AbstractMonster enemy : GameUtilities.GetEnemies(true))
         {
             if (GameUtilities.GetCommonDebuffs(TargetHelper.Normal(enemy)).size() > 0) {
                 GameActions.Bottom.ReduceStrength(enemy, magicNumber,true);
-                GameActions.Bottom.GainPestilence(1);
+                GameActions.Bottom.GainTemporaryHP(magicNumber);
+                hitCommonDebuff = true;
             }
+        }
+
+        if (hitCommonDebuff) {
+            GameActions.Last.MoveCard(this, player.drawPile)
+                    .SetDestination(CardSelection.Top)
+                    .ShowEffect(true, true);
         }
     }
 }
