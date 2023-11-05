@@ -1,15 +1,14 @@
 package eatyourbeets.cards.animator.special;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.orbs.Dark;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.cards.base.attributes.TempHPAttribute;
-import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
+import eatyourbeets.utilities.TargetHelper;
 
 public class Khajiit extends AnimatorCard
 {
@@ -27,11 +26,11 @@ public class Khajiit extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 0, 4, 1);
-        SetUpgrade(0, 0, 2, 0);
+        Initialize(0, 0, 4, 4);
+        SetUpgrade(0, 0, 3);
 
         SetAffinity_Black(1);
-        SetAffinity_Blue(1);
+        SetAffinity_Violet(1);
 
         SetCardPreview((cards, m) ->
         {
@@ -76,10 +75,6 @@ public class Khajiit extends AnimatorCard
     {
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainTemporaryHP(magicNumber);
-        GameActions.Bottom.GainBlack(1, upgraded);
-        GameActions.Bottom.TriggerOrbPassive(1)
-        .SetFilter(c -> Dark.ORB_ID.equals(c.ID))
-        .SetSequential(true);
 
         if (CheckSpecialCondition(false))
         {
@@ -91,15 +86,9 @@ public class Khajiit extends AnimatorCard
     @Override
     public boolean CheckSpecialCondition(boolean tryUse)
     {
-        if (CombatStats.CanActivateLimited(cardID))
-        {
-            int curses = 0;
-            for (AbstractCard c : player.exhaustPile.group)
-            {
-                if (c.type == CardType.CURSE && (curses += 1) >= 3)
-                {
-                    return !tryUse || CombatStats.TryActivateLimited(cardID);
-                }
+        for (AbstractMonster enemy : GameUtilities.GetEnemies(true)) {
+            if (GameUtilities.GetCommonDebuffs(TargetHelper.Normal(enemy)).size() >= secondaryValue) {
+                return true;
             }
         }
 

@@ -2,11 +2,9 @@ package eatyourbeets.cards.animator.special;
 
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.orbs.Dark;
 import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardSeries;
 import eatyourbeets.cards.base.CardUseInfo;
@@ -15,6 +13,7 @@ import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.effects.VFX;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Khajiit_SkeletalDragon extends AnimatorCard
 {
@@ -34,19 +33,13 @@ public class Khajiit_SkeletalDragon extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(32, 8, 2);
-        SetUpgrade(4, 0, 1);
+        Initialize(16, 12);
+        SetUpgrade(4, 4);
 
-        SetAffinity_Black(2);
-        SetAffinity_Red(2);
+        SetAffinity_Black(2, 0, 2);
+        SetAffinity_Violet(2, 0, 2);
 
         this.summoner = summoner;
-    }
-
-    @Override
-    protected float GetInitialBlock()
-    {
-        return super.GetInitialBlock() + (magicNumber * GameUtilities.GetOrbCount(Dark.ORB_ID));
     }
 
     @Override
@@ -58,11 +51,5 @@ public class Khajiit_SkeletalDragon extends AnimatorCard
         .SetSoundPitch(0.4f, 0.5f)
         .SetDamageEffect(c -> GameEffects.List.Add(VFX.Claw(c.hb, Color.VIOLET, Color.BLACK).SetScale(2f)).duration * 0.6f);
         GameActions.Bottom.ShakeScreen(0.4f, ScreenShake.ShakeDur.MED, ScreenShake.ShakeIntensity.MED);
-
-        GameActions.Bottom.ExhaustFromPile(name, 1, p.discardPile)
-        .ShowEffect(true, true)
-        .SetOptions(true, true)
-        .SetFilter(c -> c != summoner)
-        .AddCallback(() -> summoner = null);
     }
 }

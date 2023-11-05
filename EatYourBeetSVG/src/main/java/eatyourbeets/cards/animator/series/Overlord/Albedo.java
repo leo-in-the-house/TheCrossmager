@@ -27,7 +27,7 @@ public class Albedo extends AnimatorCard implements OnAffinitySealedSubscriber
     {
         super(DATA);
 
-        Initialize(2, 0, 3, 2);
+        Initialize(2, 0, 3, 1);
         SetUpgrade(0, 0, 3);
 
         SetAffinity_Pink(1, 0, 1);

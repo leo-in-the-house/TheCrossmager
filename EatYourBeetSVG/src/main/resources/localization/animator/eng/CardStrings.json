@@ -2463,73 +2463,87 @@
 	{
 		"animator:Ainz":
 		{
+			"FLAVOR_TEXT": "'There were two requirements for joining the guild Ainz Ooal Gown: the player's avatar had to be a human, and the player had to be a functioning member of society.  We put our livelihoods on the line to play.  Some members managed to make their dreams come true.  In the end, I can't blame them for choosing real life...'",
 			"DESCRIPTION": "Whenever you apply a {Common Debuff}: Gain [Strength] [Dexterity] and !M! {Sadistic}. || When {Drawn} or {Sealed}: Motivate this.",
 			"EXTENDED_DESCRIPTION": ["Whenever you apply a #yCommon #yDebuff: Gain #b{0} #yStrength #yDexterity and #b{1} #ySadistic."],
 			"NAME": "Ainz Ooal Gown"
 		},
 		"animator:Albedo":
 		{
-			"DESCRIPTION": "Gain [Enchanted Armor] for each {Common Debuff} your enemies have. || On Seal or Discard: Gain !S! {Sadistic}.",
+			"FLAVOR_TEXT": "'Oh, Lord Ainz!  I've tried so hard but I can't hold back any longer!  You are blain, my lord!  I can't contain myself after hearing your words!  And I'll be done long before your assassins can pry me off you!'",
+			"DESCRIPTION": "Gain [Enchanted Armor] for each {Common Debuff} your enemies have. || On Seal or Discard: Gain {Sadistic}.",
 			"NAME": "Albedo"
 		},
 		"animator:AuraBellaFiora":
 		{
+			"FLAVOR_TEXT": "'Hey!  You're obstructing my view of Lord Ainz's majestic form!  If you keep resisting, I may accidently crush your throat!'",
 			"DESCRIPTION": "Can only be played if an enemy has at least !M! {Common Debuffs}. || Discard your hand, then draw that many cards plus one from your discard pile.",
 			"NAME": "Aura Bella Fiora"
 		},
 		"animator:Cocytus":
 		{
+			"FLAVOR_TEXT": "'Your orders are to see this fight through, and deliver an absolute victory for the supreme one!  Don't let me down!'",
 			"DESCRIPTION": "Apply !M! [Freezing].",
 			"NAME": "Cocytus"
 		},
 		"animator:CZDelta":
 		{
+			"FLAVOR_TEXT": "'Distance is important, but I want to see cute things up close.  This solves the problem.'",
 			"DESCRIPTION": "Apply [Vulnerable] to ALL targets.",
 			"NAME": "CZ Delta"
 		},
 		"animator:Demiurge":
 		{
+			"FLAVOR_TEXT": "'Think about it: why did Lord Ainz raise an army of such low level servants for you?  It's possible... that this was a test.  Perhaps he wishes for you to think for yourself.  To gather intelligence on the enemy and adjust your strategy to assure victory.'",
 			"DESCRIPTION": "Take !M! [DD] to apply !S! [Burning] on ALL enemies.",
 			"NAME": "Demiurge"
 		},
 		"animator:Entoma":
 		{
+			"FLAVOR_TEXT": "'This is so much trouble...  Still, you're strong!  Maybe I'll preserve you for a midnight snack!'",
 			"DESCRIPTION": "Apply !M! [Poison].",
 			"NAME": "Entoma"
 		},
 		"animator:Evileye":
 		{
+			"FLAVOR_TEXT": "'Those with talent possess it from the outside.  Take Gazef Stronoff, he's a good example.  Can you catch up to where he is on effort alone?  ...I'm not saying, 'give up'.  Just know what you're up against.'",
 			"DESCRIPTION": "Apply !M! of a random {Common Debuff} on ALL enemies. || !A! [V] [B] [D]: Play a free copy of the top card in your discard pile against a random enemy. || Reload: Repeat all of the above effects.",
 			"NAME": "Evileye"
 		},
 		"animator:GazefStronoff":
 		{
+			"FLAVOR_TEXT": "'I am the chief royal warrior of the Re-Estize Kingdom: Gazef Stronoff.  The king has ordered me to hunt down the knights that have been attacking surrounding villages.  Your people are safe now.  We will do all we can to protect you.'",
 			"DESCRIPTION": "Gain [Counter-Attack] for each {Common Debuff} on each enemy.",
 			"NAME": "Gazef Stronoff"
 		},
 		"animator:MareBelloFiore":
 		{
+			"FLAVOR_TEXT": "'If the empire is planning to betray us, then maybe we should go ahead and destroy it right now!'",
 			"DESCRIPTION": "Can only be played if an enemy has at least !M! {Common Debuffs}. || Gain [E] and draw a card.",
 			"NAME": "Mare Bello Fiore"
 		},
 		"animator:NarberalGamma":
 		{
+			"FLAVOR_TEXT": "'It's time I ended this farce!  After all, if I made my lord wait too long, what kind of maid would I be?'",
 			"DESCRIPTION": "Channel !M! [Lightning]. || Lightning hits ALL enemies this turn.",
-			"NAME": "Gamma Narberal",
+			"NAME": "Narberal Gamma",
 			"UPGRADE_DESCRIPTION": "Channel !M! [Lightning]. <DRW>. || Lightning hits ALL enemies this turn."
 		},
 		"animator:PandorasActor":
 		{
+			"FLAVOR_TEXT": "'It's a tragedy!  I haven't touched a magic item in ages!  That means no regular maintenance, and no organizing our data crystals either!  We're left undone!  You must rectify this matter, my looooord!'",
 			"DESCRIPTION": "<LIM>. At the start of combat: Apply [Weak] to ALL enemies.",
 			"NAME": "Pandora's Actor"
 		},
 		"animator:Sebas":
 		{
+			"FLAVOR_TEXT": "'This is not your lucky day.  I'm afraid I'll be your partner for this dance of death.'",
 			"DESCRIPTION": "Deal damage equal to your current [Block] to ALL enemies with a {Common Debuff}. || If you have !M! or more [Block] after playing this card: Enter <WS>.",
 			"NAME": "Sebas Tian"
 		},
 		"animator:Shalltear":
 		{
+			"FLAVOR_TEXT": "'My name is Shalltear Bloodfallen.  I hope you will entertain me well before you perish.'",
 			"DESCRIPTION": "For each enemy with a {Common Debuff}: Apply !M! [Shackles] to that target and gain !M! [THP]. || If this hit at least one enemy with a {Common Debuff}, put this on top of your draw pile.",
 			"NAME": "Shalltear Bloodfallen"
 		}
@@ -3014,12 +3028,13 @@
 		},
 		"animator:Khajiit":
 		{
-			"DESCRIPTION": "Gain|Boost [D]. Trigger your first [Dark]. || <LIM>. If you have 3+ {Curses} in Exhaust pile: Play {Skeletal Dragon}{+}.",
+			"FLAVOR_TEXT": "'I'll call you a fool if I like, little girl!  You've left it to your doom and don't realize it!  Now, you're in the land of the dead, my territory!  And soon, you'll join my army!'",
+			"DESCRIPTION": "If an enemy has !S!+ {Common Debuffs}: Play {Skeletal Dragon}{+}.",
 			"NAME": "Khajiit"
 		},
 		"animator:Khajiit_SkeletalDragon":
 		{
-			"DESCRIPTION": "Gain !M! additional [Block] for each [Dark]. || Exhaust a random card in discard pile.",
+			"DESCRIPTION": "",
 			"NAME": "Skeletal Dragon"
 		},
 		"animator:Respite":
@@ -3252,6 +3267,7 @@
 		},
 		"animator:SirTouchMe":
 		{
+			"FLAVOR_TEXT": "'If the road is harsh, it is only natural to take your sword and help.'",
 			"DESCRIPTION": "For each {Common Debuff} on each enemy, Gain {Juggernaut} equal to its amount.",
 			"NAME": "Sir Touch Me"
 		},
