@@ -53,11 +53,11 @@ public class ApplyPowerActionPatches
                     powerToApply[0] = new AnimatorMetallicizePower(power.owner, power.amount);
                     _powerToApply.Set(__instance, powerToApply[0]);
                 }
-                else if (GameUtilities.IsPlayer(target) && power instanceof IntangiblePlayerPower && !(power instanceof AnimatorIntangiblePower))
+                /*else if (GameUtilities.IsPlayer(target) && power instanceof IntangiblePlayerPower && !(power instanceof AnimatorIntangiblePower))
                 {
                     powerToApply[0] = new AnimatorIntangiblePower(power.owner, power.amount);
                     _powerToApply.Set(__instance, powerToApply[0]);
-                }
+                }*/
             }
         }
 

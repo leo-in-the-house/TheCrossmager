@@ -58,6 +58,7 @@ import eatyourbeets.powers.EYBPower;
 import eatyourbeets.powers.PowerHelper;
 import eatyourbeets.powers.affinity.AbstractAffinityPower;
 import eatyourbeets.powers.common.BurningPower;
+import eatyourbeets.powers.common.FreezingPower;
 import eatyourbeets.powers.common.ShacklesPower;
 import eatyourbeets.powers.common.VigorPower;
 import eatyourbeets.powers.replacement.TemporaryArtifactPower;
@@ -1610,7 +1611,7 @@ public class GameUtilities
     public static boolean IsCommonDebuff(AbstractPower power)
     {
         return WeakPower.POWER_ID.equals(power.ID) || VulnerablePower.POWER_ID.equals(power.ID)
-            || PoisonPower.POWER_ID.equals(power.ID) || BurningPower.POWER_ID.equals(power.ID)
+            || PoisonPower.POWER_ID.equals(power.ID) || BurningPower.POWER_ID.equals(power.ID) || FreezingPower.POWER_ID.equals(power.ID)
             || ShacklesPower.POWER_ID.equals(power.ID) || GainStrengthPower.POWER_ID.equals(power.ID);
     }
 

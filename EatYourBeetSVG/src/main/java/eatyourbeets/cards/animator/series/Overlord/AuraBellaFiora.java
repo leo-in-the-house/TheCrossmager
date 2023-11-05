@@ -19,8 +19,8 @@ public class AuraBellaFiora extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(5, 0, 6);
-        SetUpgrade(1, 0, -2);
+        Initialize(5, 0, 4);
+        SetUpgrade(2, 0, -1);
 
         SetAffinity_Green(1, 0, 1);
     }
