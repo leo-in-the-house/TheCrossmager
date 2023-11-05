@@ -2120,7 +2120,7 @@
 		"animator:KyokoSakura":
 		{
 			"FLAVOR_TEXT": "'Hey, God, if you're there.  My life sucked.  So, for once, please... let me have a happy dream...'",
-			"DESCRIPTION": "Apply !M! Shackles to ALL enemies.",
+			"DESCRIPTION": "Apply !M! [Shackles] to ALL enemies.",
 			"NAME": "Kyoko Sakura"
 		},
 		"animator:KyokoSakura_Ophelia":
