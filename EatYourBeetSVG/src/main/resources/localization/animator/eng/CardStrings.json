@@ -2520,7 +2520,7 @@
 		},
 		"animator:PandorasActor":
 		{
-			"DESCRIPTION": "At the start of combat: Apply !M! [Weak] to ALL enemies.",
+			"DESCRIPTION": "<LIM>. At the start of combat: Apply [Weak] to ALL enemies.",
 			"NAME": "Pandora's Actor"
 		},
 		"animator:Sebas":

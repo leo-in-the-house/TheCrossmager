@@ -6,6 +6,7 @@ import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
+import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
 import eatyourbeets.utilities.GameUtilities;
@@ -21,8 +22,8 @@ public class PandorasActor extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 4, 1);
-        SetUpgrade(0, 3, 1);
+        Initialize(0, 6, 1);
+        SetUpgrade(0, 4, 0);
 
         SetAffinity_Black(1);
     }
@@ -39,7 +40,7 @@ public class PandorasActor extends AnimatorCard
     {
         super.triggerWhenCreated(startOfBattle);
 
-        if (startOfBattle)
+        if (startOfBattle && CombatStats.TryActivateLimited(cardID))
         {
             GameEffects.List.ShowCopy(this);
             GameActions.Bottom.ApplyWeak(TargetHelper.Enemies(), magicNumber);
