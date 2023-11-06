@@ -1458,7 +1458,7 @@
 		"animator:Furina":
 		{
 			"FLAVOR_TEXT": "'You had best stop and consider... do you really have the noble qualities and etiquette necessary to communicate with a god?  All it takes is a flick of my finger for me to know everything about you!'",
-			"DESCRIPTION": "On {Seal}: Gain [Regeneration] and [Artifact] for each type of Orb. || Channel [Water] and trigger it !M! times for each X.",
+			"DESCRIPTION": "<LIM>. On {Seal}: Gain [Regeneration] and [Artifact] for each type of Orb. || Channel [Water] and trigger it !M! times for each X.",
 			"NAME": "Furina"
 		},
 		"animator:Ganyu":

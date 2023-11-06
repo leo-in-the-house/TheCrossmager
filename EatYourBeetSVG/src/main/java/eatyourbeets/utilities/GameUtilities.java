@@ -2252,7 +2252,7 @@ public class GameUtilities
     //Tries to play the voice SFX if it exists.
     //Removes the "+" tied to suffixes
     public static void PlayVoiceSFX(String cardName) {
-        GameActions.Bottom.SFX(SFX.GetVoiceString(cardName.replace("+", "")));
+        GameActions.Delayed.SFX(SFX.GetVoiceString(cardName.replace("+", "")));
     }
 
     public static void RemoveDamagePowers()
