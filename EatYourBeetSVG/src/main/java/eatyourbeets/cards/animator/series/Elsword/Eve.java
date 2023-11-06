@@ -30,8 +30,8 @@ public class Eve extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 0, 10);
-        SetUpgrade(0, 0, 10);
+        Initialize(0, 0, 5);
+        SetUpgrade(0, 0, 5);
 
         SetAffinity_Teal(2);
         SetAffinity_Blue(1);

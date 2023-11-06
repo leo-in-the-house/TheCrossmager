@@ -13,7 +13,7 @@ import eatyourbeets.utilities.RandomizedList;
 public class Rayneshia extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Rayneshia.class)
-            .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None)
+            .SetSkill(2, CardRarity.UNCOMMON, EYBCardTarget.None)
             .SetSeriesFromClassPackage();
 
     public Rayneshia()
@@ -23,7 +23,7 @@ public class Rayneshia extends AnimatorCard
         Initialize(0, 11, 3);
         SetUpgrade(0, 0, 1);
 
-        SetAffinity_White(1, 0, 1);
+        SetAffinity_White(2, 0, 1);
 
         SetExhaust(true);
     }

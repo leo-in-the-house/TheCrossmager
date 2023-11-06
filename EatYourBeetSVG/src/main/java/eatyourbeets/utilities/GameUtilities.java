@@ -670,11 +670,6 @@ public class GameUtilities
 
     public static ArrayList<AbstractCard> GetAvailableCards(GenericCondition<AbstractCard> filter)
     {
-        return GetAvailableCards(filter, false);
-    }
-
-    public static ArrayList<AbstractCard> GetAvailableCards(GenericCondition<AbstractCard> filter, boolean upgraded)
-    {
         ArrayList<AbstractCard> result = new ArrayList<>();
         for (CardGroup pool : GetCardPools())
         {
@@ -682,12 +677,7 @@ public class GameUtilities
             {
                 if (filter == null || filter.Check(card))
                 {
-                    AbstractCard cardToAdd = card.makeCopy();
-                    if (upgraded) {
-                        cardToAdd.upgrade();
-                    }
-
-                    result.add(cardToAdd);
+                    result.add(card);
                 }
             }
         }

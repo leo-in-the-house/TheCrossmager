@@ -2525,9 +2525,8 @@
 		"animator:NarberalGamma":
 		{
 			"FLAVOR_TEXT": "'It's time I ended this farce!  After all, if I made my lord wait too long, what kind of maid would I be?'",
-			"DESCRIPTION": "Channel !M! [Lightning]. || Lightning hits ALL enemies this turn.",
-			"NAME": "Narberal Gamma",
-			"UPGRADE_DESCRIPTION": "Channel !M! [Lightning]. <DRW>. || Lightning hits ALL enemies this turn."
+			"DESCRIPTION": "Channel !M! [Lightning]. || [Lightning] hits ALL enemies this turn.",
+			"NAME": "Narberal Gamma"
 		},
 		"animator:PandorasActor":
 		{
@@ -2596,22 +2595,27 @@
 		"animator:Mikaela":
 		{
 			"DESCRIPTION": "Take !S! [DD]. || Discard 1 card, then Exhaust a card in discard pile.",
-			"NAME": "Mikaela"
+			"NAME": "Mikaela Hyakuya"
 		},
 		"animator:Mitsuba":
 		{
 			"DESCRIPTION": "At the start of {Elite} combats: Increase damage and [Block] by !M!. || !A! [S]: Gain 1 {Temp.} [M].",
-			"NAME": "Mitsuba"
+			"NAME": "Mitsuba Sangu"
 		},
 		"animator:GoshiNorito":
 		{
 			"DESCRIPTION": "Gain 1 additional [Block] for each Hindrance in hand. || Apply !S! [Weak] to ALL enemies.",
 			"NAME": "Goshi"
 		},
+		"animator:SayuriHanayori":
+		{
+			"DESCRIPTION": "When Exhausted: Gain !M! {Temp.} [Artifact].",
+			"NAME": "Sayuri Hanayori"
+		},
 		"animator:Shigure":
 		{
 			"DESCRIPTION": "When Exhausted: Obtain {[G] Token}{+}. || !A! [G]: Apply !M! [Poison].",
-			"NAME": "Shigure"
+			"NAME": "Shigure Yukimi"
 		},
 		"animator:Shinoa":
 		{
@@ -2621,7 +2625,7 @@
 		"animator:Yoichi":
 		{
 			"DESCRIPTION": "Discard 1 random card. Gain !M! [Support Damage]. || <slm>. !A! [L] [G]: Activate your [Support Damage].",
-			"NAME": "Yoichi",
+			"NAME": "Yoichi Saotome",
 			"UPGRADE_DESCRIPTION": "Discard 1 card. Gain !M! [Support Damage]. || <slm>. !A! [L] [G]: Activate your [Support Damage]."
 		},
 		"animator:Yuuichirou":

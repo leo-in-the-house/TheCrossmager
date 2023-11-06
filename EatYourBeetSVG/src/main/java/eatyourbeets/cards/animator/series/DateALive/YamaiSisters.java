@@ -34,7 +34,7 @@ public class YamaiSisters extends AnimatorCard
         GameActions.Bottom.DealDamage(this, m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
         GameActions.Bottom.GainBlock(block);
 
-        if (IsStarter())
+        if (info.TryActivateStarter())
         {
             GameActions.Bottom.MakeCardInHand(makeStatEquivalentCopy());
         }

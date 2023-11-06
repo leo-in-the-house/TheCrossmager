@@ -3,8 +3,9 @@ package eatyourbeets.cards.animator.series.OwariNoSeraph;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
+import eatyourbeets.cards.base.AnimatorCard;
+import eatyourbeets.cards.base.CardUseInfo;
+import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
@@ -13,7 +14,7 @@ import eatyourbeets.utilities.GameUtilities;
 public class KimizugiShiho extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(KimizugiShiho.class)
-            .SetAttack(1, CardRarity.COMMON)
+            .SetAttack(1, CardRarity.UNCOMMON)
             .SetSeriesFromClassPackage();
 
     public KimizugiShiho()

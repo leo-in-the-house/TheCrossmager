@@ -20,8 +20,8 @@ public class MareBelloFiore extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 7, 4);
-        SetUpgrade(0, 3, -1);
+        Initialize(0, 7, 3);
+        SetUpgrade(0, 4, 0);
 
         SetAffinity_Green(1);
     }
