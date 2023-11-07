@@ -29,7 +29,7 @@ public class GoshiNorito extends AnimatorCard
         SetAffinity_Blue(1);
         SetAffinity_Pink(1);
 
-        SetFading(true);
+        SetExhaust(true);
     }
 
     @Override

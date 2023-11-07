@@ -357,26 +357,23 @@ public class EYBCardPopupActions
             REQUIRED1 = requiredCard;
             HP_LOSS_AMOUNT = hpLossAmount;
 
-            SetText(specialActions.PayHPMiraiKimizuki(), terms.Obtain, specialActions.PayHPMiraiKimizuki(TARGET1.Strings.NAME));
+            SetText(specialActions.PayHPMiraiKimizuki(), terms.Obtain, specialActions.PayHPMiraiKimizuki(String.valueOf(HP_LOSS_AMOUNT)));
         }
 
         @Override
         public boolean CanExecute(AbstractCard card)
         {
-            return IsRestRoom() && HasCard(card) && HasCard(REQUIRED1);
+            return IsRestRoom() && HasCard(card) && !HasCard(TARGET1) && HasCard(REQUIRED1);
         }
 
         @Override
         public void Execute()
         {
-            if (Replace(card, TARGET1, card.upgraded) != null)
-            {
-                final EYBCard card = TARGET1.MakeCopy(false);
-                LoseHP(HP_LOSS_AMOUNT);
-                Obtain(card);
-                SFX.Play(SFX.STANCE_ENTER_WRATH, 0.4f);
-                Complete();
-            }
+            final EYBCard card = TARGET1.MakeCopy(false);
+            LoseHP(HP_LOSS_AMOUNT);
+            Obtain(card);
+            SFX.Play(SFX.STANCE_ENTER_WRATH, 0.4f);
+            Complete();
         }
     }
 

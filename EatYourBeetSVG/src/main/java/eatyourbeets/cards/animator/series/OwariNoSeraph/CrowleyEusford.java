@@ -35,7 +35,7 @@ public class CrowleyEusford extends AnimatorCard
         SetAffinity_Red(1, 0, 2);
         SetAffinity_Green(1, 0, 2);
 
-        SetExhaust(true);
+        SetFading(true);
     }
 
     @Override
