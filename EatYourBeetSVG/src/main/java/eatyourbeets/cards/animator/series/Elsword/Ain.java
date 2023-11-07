@@ -22,7 +22,7 @@ public class Ain extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(2, 0, 5);
+        Initialize(3, 0, 3);
         SetUpgrade(0, 0, 2);
 
         SetAffinity_Blue(2);
