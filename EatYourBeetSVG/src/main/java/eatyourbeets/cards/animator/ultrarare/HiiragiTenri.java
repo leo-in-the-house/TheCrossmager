@@ -10,6 +10,8 @@ import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
+import java.util.LinkedList;
+
 public class HiiragiTenri extends AnimatorCard_UltraRare
 {
     public static final EYBCardData DATA = Register(HiiragiTenri.class)
@@ -36,13 +38,21 @@ public class HiiragiTenri extends AnimatorCard_UltraRare
     {
         GameUtilities.PlayVoiceSFX(name);
 
+        LinkedList<AbstractCard> cardsToDiscard = new LinkedList<>();
+
         for (AbstractCard c : p.exhaustPile.group)
         {
             if (GameUtilities.IsPlayable(c)) {
                 GameActions.Bottom.PlayCard(c, p.exhaustPile, m);
-                GameActions.Bottom.MoveCard(c, p.discardPile);
+                cardsToDiscard.add(c);
                 GameActions.Bottom.GainTemporaryHP(magicNumber);
             }
         }
+
+        GameActions.Bottom.Callback(() -> {
+            for (AbstractCard card : cardsToDiscard) {
+                GameActions.Top.MoveCard(card, p.discardPile);
+            }
+        });
     }
 }

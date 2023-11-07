@@ -206,7 +206,7 @@
 	},
 	"Imitate":
 	{
-		"DESCRIPTION": "#yImitating a card creates a {0-Cost} copy of it with #yPurge, no base damage and [Block], and no scaling.",
+		"DESCRIPTION": "#yImitating a card creates a #y0-Cost copy of it with #yPurge, no base damage and [Block], and no scaling.",
 		"NAMES": ["imitate", "imitation", "imitations"],
 		"PROPER_NAME": "Imitate"
 	},

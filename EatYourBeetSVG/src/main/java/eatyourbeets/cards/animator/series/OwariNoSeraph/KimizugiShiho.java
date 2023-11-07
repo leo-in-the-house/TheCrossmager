@@ -21,7 +21,7 @@ public class KimizugiShiho extends AnimatorCard
             .SetSeriesFromClassPackage()
             .PostInitialize(data ->
             {
-                data.AddPopupAction(new EYBCardPopupActions.OwariNoSeraph_Mirai(MiraiKimizuki.DATA, 6));
+                data.AddPopupAction(new EYBCardPopupActions.OwariNoSeraph_Mirai(MiraiKimizuki.DATA, HiiragiKureto.DATA, 6));
                 data.AddPreview(new MiraiKimizuki(), true);
             });
 
@@ -35,7 +35,7 @@ public class KimizugiShiho extends AnimatorCard
         SetAffinity_Red(1, 0, 1);
         SetAffinity_Teal(1, 0, 1);
 
-        SetCardPreview(GameUtilities::IsHindrance);
+        SetDelayed(true);
     }
 
     @Override

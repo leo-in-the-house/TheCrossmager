@@ -15,7 +15,7 @@ import eatyourbeets.utilities.GameUtilities;
 public class GoshiNorito extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(GoshiNorito.class)
-            .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None)
+            .SetSkill(2, CardRarity.UNCOMMON, EYBCardTarget.None)
             
             .SetSeriesFromClassPackage();
 
@@ -49,7 +49,7 @@ public class GoshiNorito extends AnimatorCard
             GameActions.Bottom.Exhaust(card)
                  .AddCallback(c -> {
                     if (c != null && !GameUtilities.IsHindrance(c)) {
-                        GameUtilities.Imitate(c);
+                        GameActions.Top.MakeCardInHand(GameUtilities.Imitate(c));
                     }
                  });
         }

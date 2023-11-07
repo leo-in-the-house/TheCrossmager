@@ -14,14 +14,14 @@ import eatyourbeets.utilities.GameUtilities;
 public class HiiragiShinya extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(HiiragiShinya.class)
-            .SetSkill(2, CardRarity.UNCOMMON, EYBCardTarget.Normal)
+            .SetSkill(2, CardRarity.UNCOMMON, EYBCardTarget.None)
             .SetSeriesFromClassPackage();
 
     public HiiragiShinya()
     {
         super(DATA);
 
-        Initialize(0, 5, 2);
+        Initialize(0, 3, 2);
         SetUpgrade(0, 4, 0);
 
         SetAffinity_Pink(1, 0, 1);

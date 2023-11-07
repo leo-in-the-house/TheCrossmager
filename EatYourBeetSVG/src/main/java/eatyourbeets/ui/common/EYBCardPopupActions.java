@@ -348,11 +348,13 @@ public class EYBCardPopupActions
     public static class OwariNoSeraph_Mirai extends EYBCardPopupAction
     {
         protected final EYBCardData TARGET1;
+        protected final EYBCardData REQUIRED1;
         protected final int HP_LOSS_AMOUNT;
 
-        public OwariNoSeraph_Mirai(EYBCardData targetCard, int hpLossAmount)
+        public OwariNoSeraph_Mirai(EYBCardData targetCard, EYBCardData requiredCard, int hpLossAmount)
         {
             TARGET1 = targetCard;
+            REQUIRED1 = requiredCard;
             HP_LOSS_AMOUNT = hpLossAmount;
 
             SetText(specialActions.PayHPMiraiKimizuki(), terms.Obtain, specialActions.PayHPMiraiKimizuki(TARGET1.Strings.NAME));
@@ -361,7 +363,7 @@ public class EYBCardPopupActions
         @Override
         public boolean CanExecute(AbstractCard card)
         {
-            return IsRestRoom() && HasCard(card);
+            return IsRestRoom() && HasCard(card) && HasCard(REQUIRED1);
         }
 
         @Override

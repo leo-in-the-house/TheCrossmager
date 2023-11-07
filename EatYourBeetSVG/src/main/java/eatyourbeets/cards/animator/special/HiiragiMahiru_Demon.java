@@ -26,6 +26,6 @@ public class HiiragiMahiru_Demon extends AnimatorCard {
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info) {
         GameUtilities.PlayVoiceSFX(name);
 
-        GameActions.Bottom.StackPower(new DemonFormPower(p, 1));
+        GameActions.Bottom.StackPower(new DemonFormPower(p, 3));
     }
 }

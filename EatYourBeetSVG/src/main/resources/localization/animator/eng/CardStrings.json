@@ -2584,7 +2584,7 @@
 		},
 		"animator:HiiragiMahiru_Demon":
 		{
-			"DESCRIPTION": "At the start of your turn, gain !M! [Strength].",
+			"DESCRIPTION": "At the start of your turn, gain 3 [Strength].",
 			"NAME": "Demon Form"
 		},
 		"animator:HiiragiMahiru_Deva":
@@ -2599,7 +2599,7 @@
 		},
 		"animator:HiiragiMahiru_Wraith":
 		{
-			"DESCRIPTION": "Gain 2 [Intangible].  At the end of your turn, lose [Dexterity].",
+			"DESCRIPTION": "Gain 3 [~Intangible].  At the end of your turn, lose [Dexterity].",
 			"NAME": "Wraith Form"
 		},
 		"animator:HiiragiShinya":
@@ -2622,6 +2622,11 @@
 		{
 			"DESCRIPTION": "Exhaust a card in discard pile.",
 			"NAME": "Mikaela Hyakuya"
+		},
+		"animator:MiraiKimizuki":
+		{
+			"DESCRIPTION": "Starts the game in your exhaust pile. || When drawn: Gain [T] [W] for each card in your exhaust pile.",
+			"NAME": "Mirai Kimizuki"
 		},
 		"animator:Mitsuba":
 		{

@@ -76,10 +76,10 @@ public class FeridBathory extends AnimatorCard
         @Override
         public void OnAfterCardExhausted(AbstractCard card)
         {
-            GameActions.Bottom.DealDamage(source, GameUtilities.GetRandomEnemy(true), amount, DamageInfo.DamageType.HP_LOSS, AttackEffects.NONE)
+            GameActions.Bottom.DealDamage(player, GameUtilities.GetRandomEnemy(true), amount, DamageInfo.DamageType.HP_LOSS, AttackEffects.NONE)
             .SetDamageEffect(enemy ->
             {
-                GameEffects.List.Add(new HemokinesisEffect2(enemy.hb.cX, enemy.hb.cY, source.hb.cX, source.hb.cY));
+                GameEffects.List.Add(new HemokinesisEffect2(enemy.hb.cX, enemy.hb.cY, player.hb.cX, player.hb.cY));
                 return 0f;
             });
             GameActions.Bottom.GainTemporaryHP(amount);

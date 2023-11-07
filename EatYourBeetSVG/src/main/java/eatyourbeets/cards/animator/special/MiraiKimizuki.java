@@ -1,7 +1,9 @@
 package eatyourbeets.cards.animator.special;
 
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.BorderLongFlashEffect;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.effects.VFX;
@@ -60,8 +62,10 @@ public class MiraiKimizuki extends AnimatorCard {
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info) {
         GameUtilities.PlayVoiceSFX(name);
+        GameActions.Bottom.VFX(new BorderLongFlashEffect(Color.YELLOW));
+        GameActions.Bottom.WaitRealtime(0.4f);
         GameActions.Bottom.VFX(VFX.Cataclysm());
-        GameActions.Bottom.WaitRealtime(0.5f);
+        GameActions.Bottom.WaitRealtime(3f);
 
         GameActions.Bottom.DealDamageToAll(this, AttackEffects.FIRE);
     }

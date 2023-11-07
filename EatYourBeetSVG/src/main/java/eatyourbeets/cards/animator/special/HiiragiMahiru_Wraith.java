@@ -26,6 +26,7 @@ public class HiiragiMahiru_Wraith extends AnimatorCard {
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info) {
         GameUtilities.PlayVoiceSFX(name);
 
+        GameActions.Bottom.GainIntangible(3);
         GameActions.Bottom.StackPower(new WraithFormPower(p, 1));
     }
 }
