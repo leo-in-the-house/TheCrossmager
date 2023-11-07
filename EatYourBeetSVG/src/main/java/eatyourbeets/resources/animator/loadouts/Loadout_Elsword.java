@@ -17,8 +17,8 @@ public class Loadout_Elsword extends AnimatorLoadout
     public void AddStarterCards()
     {
         AddStarterCard(Elsword.DATA, 7);
-        AddStarterCard(Ciel.DATA, 6);
-        AddStarterCard(Chung.DATA, 5);
+        AddStarterCard(Ciel.DATA, 5);
+        AddStarterCard(Chung.DATA, 6);
         AddStarterCard(Raven.DATA, 8);
         AddStarterCard(Ara.DATA, 7);
     }
