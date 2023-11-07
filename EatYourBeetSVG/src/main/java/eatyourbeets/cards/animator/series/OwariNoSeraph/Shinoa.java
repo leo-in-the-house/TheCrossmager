@@ -18,7 +18,7 @@ public class Shinoa extends AnimatorCard
         super(DATA);
 
         Initialize(0, 5, 0);
-        SetUpgrade(0, 9, 0);
+        SetUpgrade(0, 4, 0);
 
         SetAffinity_Pink(1);
     }

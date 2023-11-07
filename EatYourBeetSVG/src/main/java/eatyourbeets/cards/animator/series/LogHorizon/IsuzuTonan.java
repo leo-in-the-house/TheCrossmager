@@ -19,13 +19,21 @@ public class IsuzuTonan extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 4, 2);
-        SetUpgrade(0, 1, 0);
+        Initialize(0, 3, 2);
+        SetUpgrade(0, 0, 3);
 
         SetAffinity_Yellow(2);
 
-        SetFading(true);
+        SetExhaust(true);
+        SetEthereal(true);
         SetDelayed(true);
+    }
+
+    @Override
+    protected void OnUpgrade() {
+        super.OnUpgrade();
+
+        SetEthereal(false);
     }
 
     @Override

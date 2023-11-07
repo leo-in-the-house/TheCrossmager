@@ -2,10 +2,7 @@ package eatyourbeets.cards.animator.series.OwariNoSeraph;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.animator.special.HiiragiMahiru_Demon;
-import eatyourbeets.cards.animator.special.HiiragiMahiru_Deva;
-import eatyourbeets.cards.animator.special.HiiragiMahiru_Echo;
-import eatyourbeets.cards.animator.special.HiiragiMahiru_Wraith;
+import eatyourbeets.cards.animator.tokens.AffinityToken;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.powers.CombatStats;
@@ -19,10 +16,8 @@ public class CrowleyEusford extends AnimatorCard
             .SetSeriesFromClassPackage()
             .PostInitialize(data ->
             {
-                data.AddPreview(new HiiragiMahiru_Demon(), false);
-                data.AddPreview(new HiiragiMahiru_Deva(), false);
-                data.AddPreview(new HiiragiMahiru_Echo(), false);
-                data.AddPreview(new HiiragiMahiru_Wraith(), false);
+                data.AddPreview(AffinityToken.GetCard(Affinity.Red), true);
+                data.AddPreview(AffinityToken.GetCard(Affinity.Green), true);
             });
 
     public CrowleyEusford()

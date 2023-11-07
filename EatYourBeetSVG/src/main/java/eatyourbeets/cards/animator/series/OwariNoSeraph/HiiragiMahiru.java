@@ -9,7 +9,6 @@ import eatyourbeets.cards.animator.special.HiiragiMahiru_Demon;
 import eatyourbeets.cards.animator.special.HiiragiMahiru_Deva;
 import eatyourbeets.cards.animator.special.HiiragiMahiru_Echo;
 import eatyourbeets.cards.animator.special.HiiragiMahiru_Wraith;
-import eatyourbeets.cards.animator.tokens.AffinityToken;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.cards.base.attributes.TempHPAttribute;
@@ -27,8 +26,10 @@ public class HiiragiMahiru extends AnimatorCard {
             .SetSeriesFromClassPackage()
             .PostInitialize(data ->
             {
-                data.AddPreview(AffinityToken.GetCard(Affinity.Red), true);
-                data.AddPreview(AffinityToken.GetCard(Affinity.Green), true);
+                data.AddPreview(new HiiragiMahiru_Demon(), false);
+                data.AddPreview(new HiiragiMahiru_Deva(), false);
+                data.AddPreview(new HiiragiMahiru_Echo(), false);
+                data.AddPreview(new HiiragiMahiru_Wraith(), false);
             });
 
     public HiiragiMahiru() {
@@ -40,6 +41,8 @@ public class HiiragiMahiru extends AnimatorCard {
         SetAffinity_White(1, 0, 1);
         SetAffinity_Black(1, 0, 1);
         SetAffinity_Violet(1, 0, 1);
+
+        SetExhaust(true);
     }
 
     @Override

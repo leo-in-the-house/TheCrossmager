@@ -26,6 +26,8 @@ public class DolaStephanie extends AnimatorCard
         SetUpgrade(0, 0, 1);
 
         SetAffinity_Yellow(1);
+
+        SetHaste(true);
     }
 
     @Override
