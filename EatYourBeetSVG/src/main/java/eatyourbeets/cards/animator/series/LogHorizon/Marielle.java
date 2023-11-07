@@ -31,6 +31,7 @@ public class Marielle extends AnimatorCard
         SetAffinity_White(1);
 
         SetDelayed(true);
+        SetExhaust(true);
     }
 
     @Override

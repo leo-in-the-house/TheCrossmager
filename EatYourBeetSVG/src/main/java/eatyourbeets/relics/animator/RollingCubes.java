@@ -20,8 +20,9 @@ import java.util.ArrayList;
 public class RollingCubes extends AnimatorRelic
 {
     private static final FieldInfo<Boolean> _isBoss = JUtils.GetField("isBoss", RewardItem.class);
-    private static final CardGroup tempGroup1 = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
-    private static final CardGroup tempGroup2 = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
+    private static final CardGroup tempGroupCommon = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
+    private static final CardGroup tempGroupUncommon = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
+    private static final CardGroup tempGroupRare = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
     private static final RewardItem fakeRewardItem = new RewardItem(0, true);
     static
     {
@@ -118,29 +119,36 @@ public class RollingCubes extends AnimatorRelic
         {
             final CardGroup g1 = AbstractDungeon.srcCommonCardPool;
             final CardGroup g2 = AbstractDungeon.srcUncommonCardPool;
+            final CardGroup g3 = AbstractDungeon.srcRareCardPool;
 
-            tempGroup1.clear();
-            tempGroup2.clear();
+            tempGroupCommon.clear();
+            tempGroupUncommon.clear();
+            tempGroupRare.clear();
 
             for (AbstractCard sc : availableCards)
             {
                 if (g1.contains(sc))
                 {
-                    tempGroup1.addToTop(sc);
+                    tempGroupCommon.addToTop(sc);
                 }
                 else if (g2.contains(sc))
                 {
-                    tempGroup2.addToTop(sc);
+                    tempGroupUncommon.addToTop(sc);
+                }
+                else if (g3.contains(sc)) {
+                    tempGroupRare.addToTop(sc);
                 }
             }
 
-            AbstractDungeon.srcCommonCardPool = tempGroup1;
-            AbstractDungeon.srcUncommonCardPool = tempGroup2;
+            AbstractDungeon.srcCommonCardPool = tempGroupCommon;
+            AbstractDungeon.srcUncommonCardPool = tempGroupUncommon;
+            AbstractDungeon.srcRareCardPool = tempGroupRare;
 
-            final AbstractCard reward = GR.Common.Dungeon.GetRandomRewardCard(rewardItem.cards, false,true);
+            final AbstractCard reward = GR.Common.Dungeon.GetRandomRewardCard(rewardItem.cards, true,true);
 
             AbstractDungeon.srcCommonCardPool = g1;
             AbstractDungeon.srcUncommonCardPool = g2;
+            AbstractDungeon.srcRareCardPool = g3;
 
             return reward;
         }

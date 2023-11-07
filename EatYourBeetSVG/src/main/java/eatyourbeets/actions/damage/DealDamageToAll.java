@@ -151,6 +151,10 @@ public class DealDamageToAll extends EYBActionWithCallback<ArrayList<AbstractCre
             int i = 0;
             for (AbstractMonster enemy : GameUtilities.GetEnemies(false))
             {
+                if (i >= this.damage.length) {
+                    break;
+                }
+
                 if (GameUtilities.IsValidTarget(enemy))
                 {
                     final DamageInfo info = new DamageInfo(this.source, this.damage[i], this.damageType);
