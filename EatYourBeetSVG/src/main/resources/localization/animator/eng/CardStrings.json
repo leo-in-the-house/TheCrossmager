@@ -1005,19 +1005,19 @@
 		{
 			"FLAVOR_TEXT": "'This genius magician won't be stopped just because it's a little dangerous!'",
 			"DESCRIPTION": "!S! [R]: Gains [R] Scaling. || !S! [G]: Gains [G] Scaling.",
-			"NAME": "Aisha"
+			"NAME": "Aisha Landar"
 		},
 		"animator:Ara":
 		{
 			"FLAVOR_TEXT": "'I must end the cycle of tragedy so no one else suffers.'",
 			"DESCRIPTION": "!A! [G]: Gain !S! [R].",
-			"NAME": "Ara"
+			"NAME": "Ara Haan"
 		},
 		"animator:Chung":
 		{
 			"FLAVOR_TEXT": "'I will shine endlessly, as everyone’s sanctuary.'",
 			"DESCRIPTION": "Decrease this card's [Block] by !M! this combat.",
-			"NAME": "Chung"
+			"NAME": "Chung Seiker"
 		},
 		"animator:Ciel":
 		{
@@ -1073,13 +1073,13 @@
 		{
 			"FLAVOR_TEXT": "'This life that they saved was not just my own, so I could not afford to stand back.'",
 			"DESCRIPTION": "If the enemy is attacking: Apply !M! [Weak] to ALL enemies.",
-			"NAME": "Raven"
+			"NAME": "Raven Cronwell"
 		},
 		"animator:Rena":
 		{
 			"FLAVOR_TEXT": "'This is the will of Eldrasil... Yes, there's nothing to be afraid of.'",
 			"DESCRIPTION": "Enter <CS>. || When Discarded: Gain [G] and [~Blur].",
-			"NAME": "Rena"
+			"NAME": "Rena Erindel"
 		}
 	},
 
