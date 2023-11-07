@@ -9,6 +9,7 @@ import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.effects.VFX;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
+import eatyourbeets.utilities.TargetHelper;
 
 public class Shigure extends AnimatorCard
 {
@@ -21,19 +22,16 @@ public class Shigure extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(7, 0, 5);
-        SetUpgrade(3, 0, 0);
+        Initialize(10, 0, 3);
+        SetUpgrade(4, 0, 0);
 
-        SetAffinity_White(1);
-        SetAffinity_Green(2, 0, 1);
-
-        SetAffinityRequirement(Affinity.Green, 2);
+        SetAffinity_Violet(1);
     }
 
     @Override
     public void triggerOnExhaust()
     {
-        GameActions.Bottom.ObtainAffinityToken(Affinity.Green, upgraded);
+        GameActions.Bottom.ApplyPoison(TargetHelper.RandomEnemy(), magicNumber);
     }
 
     @Override
@@ -42,10 +40,5 @@ public class Shigure extends AnimatorCard
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.NONE)
         .SetDamageEffect(enemy -> GameEffects.List.Add(VFX.DaggerSpray()).duration);
-
-        if (CheckSpecialCondition(false))
-        {
-            GameActions.Bottom.ApplyPoison(p, m, magicNumber);
-        }
     }
 }

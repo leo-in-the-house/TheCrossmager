@@ -21,11 +21,11 @@ public class Mikaela extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(7, 0, 4, 7);
-        SetUpgrade(0, 0, 0, -2);
+        Initialize(6, 0, 2);
+        SetUpgrade(3, 0, 1);
 
-        SetAffinity_Red(1, 1, 1);
         SetAffinity_Black(1);
+        SetAffinity_Brown(1);
     }
 
     @Override
@@ -39,10 +39,7 @@ public class Mikaela extends AnimatorCard
     {
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainTemporaryHP(magicNumber);
-        GameActions.Bottom.TakeDamageAtEndOfTurn(secondaryValue);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_DIAGONAL);
-        GameActions.Bottom.DiscardFromHand(name, 1, false)
-        .SetOptions(false, false, false);
         GameActions.Bottom.ExhaustFromPile(name, 1, p.discardPile)
         .SetOptions(false, false);
     }

@@ -2,16 +2,12 @@ package eatyourbeets.cards.animator.series.OwariNoSeraph;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.base.Affinity;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
-import eatyourbeets.cards.base.modifiers.BlockModifiers;
-import eatyourbeets.cards.base.modifiers.DamageModifiers;
 import eatyourbeets.effects.AttackEffects;
-import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Mitsuba extends AnimatorCard
 {
@@ -23,13 +19,31 @@ public class Mitsuba extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(6, 2, 2);
-        SetUpgrade(3, 0, 1);
+        Initialize(6, 6);
+        SetUpgrade(2, 2);
 
-        SetAffinity_Red(1);
-        SetAffinity_White(1);
+        SetAffinity_Brown(1);
+    }
 
-        SetAffinityRequirement(Affinity.Sealed, 1);
+    @Override
+    public boolean cardPlayable(AbstractMonster m)
+    {
+        if (super.cardPlayable(m) && GameUtilities.InGame())
+        {
+            if (m == null) {
+                for (AbstractMonster enemy : GameUtilities.GetEnemies(true)) {
+                    if (enemy.currentHealth > player.currentHealth) {
+                        return true;
+                    }
+                }
+            }
+            else if (m.currentHealth > player.currentHealth)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     @Override
@@ -38,22 +52,5 @@ public class Mitsuba extends AnimatorCard
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_HEAVY);
-
-        if (CheckSpecialCondition(false))
-        {
-            CombatStats.Affinities.AddTempAffinity(Affinity.Star, 1);
-        }
-    }
-
-    @Override
-    public void triggerWhenCreated(boolean startOfBattle)
-    {
-        super.triggerWhenCreated(startOfBattle);
-
-        if (GameUtilities.InEliteRoom())
-        {
-            DamageModifiers.For(this).Add(magicNumber);
-            BlockModifiers.For(this).Add(magicNumber);
-        }
     }
 }

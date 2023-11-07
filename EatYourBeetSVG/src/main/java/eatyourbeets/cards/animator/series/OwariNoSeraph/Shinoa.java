@@ -17,12 +17,18 @@ public class Shinoa extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 5, 2);
-        SetUpgrade(0, 3, 0);
+        Initialize(0, 5, 0);
+        SetUpgrade(0, 9, 0);
 
-        SetAffinity_Green(1);
-        SetAffinity_White(1);
+        SetAffinity_Pink(1);
     }
+
+    @Override
+    public void triggerOnExhaust()
+    {
+        GameActions.Bottom.ApplyVulnerable(TargetHelper.Enemies(), 1);
+    }
+
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
@@ -30,13 +36,6 @@ public class Shinoa extends AnimatorCard
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
 
-        if (info.TryActivateStarter())
-        {
-            GameActions.Bottom.ApplyVulnerable(TargetHelper.Enemies(), 1);
-        }
-        else
-        {
-            GameActions.Bottom.GainTemporaryStats(0, magicNumber, 0);
-        }
+        GameActions.Bottom.ApplyVulnerable(TargetHelper.Enemies(), 1);
     }
 }

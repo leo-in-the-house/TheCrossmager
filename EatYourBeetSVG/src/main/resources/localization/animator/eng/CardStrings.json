@@ -2594,18 +2594,18 @@
 		},
 		"animator:Mikaela":
 		{
-			"DESCRIPTION": "Take !S! [DD]. || Discard 1 card, then Exhaust a card in discard pile.",
+			"DESCRIPTION": "Exhaust a card in discard pile.",
 			"NAME": "Mikaela Hyakuya"
 		},
 		"animator:Mitsuba":
 		{
-			"DESCRIPTION": "At the start of {Elite} combats: Increase damage and [Block] by !M!. || !A! [S]: Gain 1 {Temp.} [M].",
+			"DESCRIPTION": "Can only be played if the enemy has more health than you.",
 			"NAME": "Mitsuba Sangu"
 		},
 		"animator:GoshiNorito":
 		{
 			"DESCRIPTION": "Gain 1 additional [Block] for each Hindrance in hand. || Apply !S! [Weak] to ALL enemies.",
-			"NAME": "Goshi"
+			"NAME": "Norito Goshi"
 		},
 		"animator:SayuriHanayori":
 		{
@@ -2614,19 +2614,18 @@
 		},
 		"animator:Shigure":
 		{
-			"DESCRIPTION": "When Exhausted: Obtain {[G] Token}{+}. || !A! [G]: Apply !M! [Poison].",
+			"DESCRIPTION": "On Exhaust: Apply !M! [Poison] to a random enemy.",
 			"NAME": "Shigure Yukimi"
 		},
 		"animator:Shinoa":
 		{
-			"DESCRIPTION": "<ST>. Apply 1 [Vulnerable] to ALL enemies. Otherwise: Gain !M! {Temp.} [Dexterity].",
-			"NAME": "Shinoa"
+			"DESCRIPTION": "Apply 1 [Vulnerable] to ALL enemies. || On Exhaust: Apply [Vulnerable] to ALL enemies.",
+			"NAME": "Shinoa Hiiragi"
 		},
 		"animator:Yoichi":
 		{
-			"DESCRIPTION": "Discard 1 random card. Gain !M! [Support Damage]. || <slm>. !A! [L] [G]: Activate your [Support Damage].",
-			"NAME": "Yoichi Saotome",
-			"UPGRADE_DESCRIPTION": "Discard 1 card. Gain !M! [Support Damage]. || <slm>. !A! [L] [G]: Activate your [Support Damage]."
+			"DESCRIPTION": "Exhaust 1 card to Gain !M! [Support Damage].",
+			"NAME": "Yoichi Saotome"
 		},
 		"animator:Yuuichirou":
 		{

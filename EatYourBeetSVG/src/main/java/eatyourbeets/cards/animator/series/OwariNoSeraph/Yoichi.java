@@ -3,9 +3,8 @@ package eatyourbeets.cards.animator.series.OwariNoSeraph;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.powers.animator.SupportDamagePower;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.JUtils;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Yoichi extends AnimatorCard
 {
@@ -17,36 +16,29 @@ public class Yoichi extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0,0,2);
+        Initialize(0,0,1);
+        SetUpgrade(0, 0, 1);
 
         SetAffinity_Green(1);
-        SetAffinity_White(1, 1, 0);
-
-        SetAffinityRequirement(Affinity.Green, 1);
-        SetAffinityRequirement(Affinity.White, 1);
     }
 
     @Override
-    public void OnLateUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
-    {
-        GameActions.Bottom.DiscardFromHand(name, 1, !upgraded);
-        GameActions.Bottom.StackPower(new SupportDamagePower(p, magicNumber))
-        .AddCallback(info, (info2, power) ->
-        {
-            if (CheckSpecialCondition(false))
-            {
-                final SupportDamagePower supportDamage = JUtils.SafeCast(power, SupportDamagePower.class);
-                if (supportDamage != null)
-                {
-                    supportDamage.atEndOfTurn(true);
-                }
-            }
-        });
+    protected void OnUpgrade() {
+        super.OnUpgrade();
+
+        SetHaste(true);
     }
 
     @Override
-    public boolean CheckSpecialCondition(boolean tryUse)
+    public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
-        return super.CheckSpecialConditionSemiLimited(tryUse, super::CheckSpecialCondition);
+        GameUtilities.PlayVoiceSFX(name);
+
+        GameActions.Bottom.ExhaustFromHand(name, 1, false)
+            .AddCallback(cards -> {
+               if (cards.size() > 0) {
+                   GameActions.Top.GainSupportDamage(magicNumber);
+               }
+            });
     }
 }
