@@ -16,7 +16,7 @@ public class Loadout_FullmetalAlchemist extends AnimatorLoadout
     @Override
     public void AddStarterCards()
     {
-        AddStarterCard(MaesHughes.DATA, 5);
+        AddStarterCard(MaesHughes.DATA, 6);
         AddStarterCard(Scar.DATA, 7);
         AddStarterCard(ElricAlphonse.DATA, 5);
         AddStarterCard(Sloth.DATA, 8);

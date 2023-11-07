@@ -20,7 +20,7 @@ public class Loadout_DateALive extends AnimatorLoadout
         AddStarterCard(YamaiSisters.DATA, 7);
         AddStarterCard(MikuIzayoi.DATA, 5);
         AddStarterCard(NiaHonjou.DATA, 5);
-        AddStarterCard(ShidoItsuka.DATA, 5);
+        AddStarterCard(ShidoItsuka.DATA, 6);
     }
 
     @Override

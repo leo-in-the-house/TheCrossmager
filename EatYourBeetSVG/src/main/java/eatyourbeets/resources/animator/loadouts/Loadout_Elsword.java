@@ -16,11 +16,11 @@ public class Loadout_Elsword extends AnimatorLoadout
     @Override
     public void AddStarterCards()
     {
-        AddStarterCard(Elsword.DATA, 6);
-        AddStarterCard(Ciel.DATA, 5);
+        AddStarterCard(Elsword.DATA, 7);
+        AddStarterCard(Ciel.DATA, 6);
         AddStarterCard(Chung.DATA, 5);
-        AddStarterCard(Raven.DATA, 7);
-        AddStarterCard(Ara.DATA, 6);
+        AddStarterCard(Raven.DATA, 8);
+        AddStarterCard(Ara.DATA, 7);
     }
 
     @Override
