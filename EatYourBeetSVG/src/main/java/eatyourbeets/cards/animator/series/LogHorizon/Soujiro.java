@@ -48,6 +48,7 @@ public class Soujiro extends AnimatorCard
 
         SetDelayed(true);
         SetRetain(true);
+        SetObtainableInCombat(false);
     }
 
     @Override

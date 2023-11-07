@@ -1,91 +1,48 @@
 package eatyourbeets.cards.animator.ultrarare;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.animator.tokens.AffinityToken;
-import eatyourbeets.cards.base.*;
-import eatyourbeets.cards.base.attributes.AbstractAttribute;
-import eatyourbeets.cards.base.attributes.TempHPAttribute;
-import eatyourbeets.powers.animator.SupportDamagePower;
-import eatyourbeets.utilities.ColoredString;
+import eatyourbeets.cards.base.AnimatorCard_UltraRare;
+import eatyourbeets.cards.base.CardSeries;
+import eatyourbeets.cards.base.CardUseInfo;
+import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class HiiragiTenri extends AnimatorCard_UltraRare
 {
     public static final EYBCardData DATA = Register(HiiragiTenri.class)
             .SetSkill(4, CardRarity.SPECIAL)
             .SetColor(CardColor.COLORLESS)
-            .SetSeries(CardSeries.OwariNoSeraph)
-            .PostInitialize(data ->
-            {
-                final AbstractCard token = AffinityToken.GetCard(Affinity.General);
-                token.upgrade();
-                data.AddPreview(token, true);
-            });
-    public static final int SUPPORT_DAMAGE = 13;
+            .SetSeries(CardSeries.OwariNoSeraph);
 
     public HiiragiTenri()
     {
         super(DATA);
 
-        Initialize(0, 0, 0, 5);
-        SetUpgrade(0, 0, 0, 2);
+        Initialize(0, 0, 2, 0);
+        SetCostUpgrade(-1);
 
-        SetAffinity_White(1);
         SetAffinity_Black(2);
+        SetAffinity_Red(2);
+        SetAffinity_Brown(2);
 
-        SetRetainOnce(true);
         SetPurge(true);
-
-        SetAffinityRequirement(Affinity.Sealed, 3);
-    }
-
-    @Override
-    public AbstractAttribute GetSpecialInfo()
-    {
-        return magicNumber > 0 ? TempHPAttribute.Instance.SetCard(this, true) : null;
-    }
-
-    @Override
-    public ColoredString GetSpecialVariableString()
-    {
-        return super.GetSpecialVariableString(SUPPORT_DAMAGE);
-    }
-
-    @Override
-    protected void Refresh(AbstractMonster enemy)
-    {
-        super.Refresh(enemy);
-
-        GameUtilities.ModifyMagicNumber(this, player.discardPile.size(), false);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        if (magicNumber > 0)
-        {
-            GameActions.Bottom.GainTemporaryHP(magicNumber);
-        }
 
-        if (CheckSpecialCondition(false))
+        for (AbstractCard c : p.exhaustPile.group)
         {
-            GameActions.Bottom.StackPower(new SupportDamagePower(p, SUPPORT_DAMAGE));
-        }
-
-        GameActions.Bottom.SelectFromPile(name, secondaryValue, p.discardPile)
-        .SetFilter(m, (target, c) -> !GameUtilities.IsHindrance(c) && GameUtilities.IsPlayable(c, target))
-        .SetOptions(true, true)
-        .AddCallback(m, (target, cards) ->
-        {
-            GameActions.DelayCurrentActions();
-            for (AbstractCard c : cards)
-            {
-               GameActions.Bottom.PlayCard(c, player.discardPile, target).SetExhaust(true);
+            if (GameUtilities.IsPlayable(c)) {
+                GameActions.Bottom.PlayCard(c, p.exhaustPile, m);
+                GameActions.Bottom.MoveCard(c, p.discardPile);
+                GameActions.Bottom.GainTemporaryHP(magicNumber);
             }
-        });
+        }
     }
 }

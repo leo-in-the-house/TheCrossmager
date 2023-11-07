@@ -1,13 +1,10 @@
 package eatyourbeets.actions.animator;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.EmptyDeckShuffleAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import eatyourbeets.actions.cardManipulation.PlayCard;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
-
-import java.util.ArrayList;
 
 public class GurenAction extends PlayCard
 {
@@ -46,7 +43,7 @@ public class GurenAction extends PlayCard
     {
         super.UpdateInternal(deltaTime);
 
-        if (isDone && card != null && GameUtilities.IsHindrance(card))
+       /* if (isDone && card != null && GameUtilities.IsHindrance(card))
         {
             boolean added = false;
             final ArrayList<AbstractGameAction> actions = GameActions.GetActions();
@@ -64,7 +61,7 @@ public class GurenAction extends PlayCard
             {
                 GameActions.Top.Add(new GurenAction(target));
             }
-        }
+        }*/
     }
 
     @Override

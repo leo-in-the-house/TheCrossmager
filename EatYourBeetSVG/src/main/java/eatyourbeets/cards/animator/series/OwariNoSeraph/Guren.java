@@ -1,36 +1,40 @@
 package eatyourbeets.cards.animator.series.OwariNoSeraph;
 
-import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.actions.animator.GurenAction;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardSeries;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
-import eatyourbeets.interfaces.subscribers.OnPhaseChangedSubscriber;
-import eatyourbeets.powers.CombatStats;
-import eatyourbeets.powers.animator.SupportDamagePower;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
-public class Guren extends AnimatorCard implements OnPhaseChangedSubscriber
+public class Guren extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Guren.class)
-            .SetSkill(3, CardRarity.RARE)
+            .SetSkill(2, CardRarity.RARE)
             .SetSeries(CardSeries.OwariNoSeraph);
 
     public Guren()
     {
         super(DATA);
 
-        Initialize(0, 0,2);
-        SetUpgrade(0, 0,1);
+        Initialize(0, 0,3);
+        SetUpgrade(0, 0,2);
 
-        SetAffinity_Red(2);
-        SetAffinity_White(1);
+        SetAffinity_Pink(1);
+        SetAffinity_Violet(1);
+        SetAffinity_Brown(1);
 
         SetExhaust(true);
+    }
+
+    @Override
+    protected void OnUpgrade() {
+        super.OnUpgrade();
+
+        SetExhaust(false);
     }
 
     @Override
@@ -40,26 +44,6 @@ public class Guren extends AnimatorCard implements OnPhaseChangedSubscriber
         for (int i = 0; i < magicNumber; i++)
         {
             GameActions.Bottom.Add(new GurenAction(m));
-        }
-
-        CombatStats.onPhaseChanged.Subscribe(this);
-    }
-
-    @Override
-    public void OnPhaseChanged(GameActionManager.Phase phase)
-    {
-        if (phase == GameActionManager.Phase.WAITING_ON_USER)
-        {
-            if (CombatStats.TryActivateSemiLimited(this.cardID))
-            {
-                int amount = player.exhaustPile.size();
-                if (amount > 0)
-                {
-                    GameActions.Bottom.StackPower(new SupportDamagePower(player, amount));
-                }
-            }
-
-            CombatStats.onPhaseChanged.Unsubscribe(this);
         }
     }
 }

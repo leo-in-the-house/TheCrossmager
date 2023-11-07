@@ -1,25 +1,21 @@
 package eatyourbeets.cards.animator.series.OwariNoSeraph;
 
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
-import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.effects.vfx.megacritCopy.SmokeBombEffect2;
-import eatyourbeets.monsters.EnemyIntent;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.utilities.JUtils;
-import eatyourbeets.utilities.TargetHelper;
 
 public class GoshiNorito extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(GoshiNorito.class)
-            .SetSkill(2, CardRarity.UNCOMMON, EYBCardTarget.None)
+            .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None)
             
             .SetSeriesFromClassPackage();
 
@@ -27,48 +23,13 @@ public class GoshiNorito extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0,4, 2, 1);
-        SetUpgrade(0,0, 0, 1);
+        Initialize(0,0);
+        SetCostUpgrade(-1);
 
-        SetAffinity_Red(1);
-        SetAffinity_Blue(1, 0, 1);
+        SetAffinity_Blue(1);
+        SetAffinity_Pink(1);
 
         SetFading(true);
-    }
-
-    @Override
-    public AbstractAttribute GetBlockInfo()
-    {
-        return magicNumber > 1 ? super.GetBlockInfo().AddMultiplier(magicNumber) : super.GetBlockInfo();
-    }
-
-    @Override
-    public void OnDrag(AbstractMonster m)
-    {
-        super.OnDrag(m);
-
-        for (EnemyIntent intent : GameUtilities.GetIntents())
-        {
-            intent.AddWeak();
-        }
-    }
-
-    @Override
-    protected float GetInitialBlock()
-    {
-//        final ArrayList<String> debuffs = new ArrayList<>();
-//        for (AbstractMonster m : GameUtilities.GetEnemies(true))
-//        {
-//            for (AbstractPower p : m.powers)
-//            {
-//                if (p.type == AbstractPower.PowerType.DEBUFF && !debuffs.contains(p.ID))
-//                {
-//                    debuffs.add(p.ID);
-//                }
-//            }
-//        }
-
-        return super.GetInitialBlock() + JUtils.Count(player.hand.group, GameUtilities::IsHindrance);
     }
 
     @Override
@@ -84,11 +45,15 @@ public class GoshiNorito extends AnimatorCard
             GameActions.Bottom.VFX(new SmokeBombEffect2(stepX * (4 + i), y), 0.02f);
         }
 
-        for (int i = 0; i < magicNumber; i++)
-        {
-            GameActions.Bottom.GainBlock(block).SetVFX(i > 0, i > 0);
+        for (AbstractCard card : player.hand.group) {
+            GameActions.Bottom.Exhaust(card)
+                 .AddCallback(c -> {
+                    if (c != null && !GameUtilities.IsHindrance(c)) {
+                        GameUtilities.Imitate(c);
+                    }
+                 });
         }
 
-        GameActions.Bottom.ApplyWeak(TargetHelper.Enemies(), secondaryValue);
+        GameActions.Bottom.Draw(1);
     }
 }

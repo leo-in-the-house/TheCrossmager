@@ -41,6 +41,8 @@ public class ArthurGaz extends AnimatorCard implements OnAddToDeckListener
 
         SetRetain(true);
         SetExhaust(true);
+
+        SetObtainableInCombat(false);
     }
 
     @Override

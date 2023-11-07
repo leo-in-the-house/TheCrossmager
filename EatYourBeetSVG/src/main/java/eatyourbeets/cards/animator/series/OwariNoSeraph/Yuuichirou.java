@@ -3,36 +3,35 @@ package eatyourbeets.cards.animator.series.OwariNoSeraph;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.special.Yuuichirou_Asuramaru;
-import eatyourbeets.cards.animator.status.Status_Void;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.effects.SFX;
 import eatyourbeets.powers.CombatStats;
+import eatyourbeets.stances.CalmStance;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Yuuichirou extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Yuuichirou.class)
-            .SetAttack(1, CardRarity.UNCOMMON)
-            .SetSeriesFromClassPackage()
-            .PostInitialize(data ->
-            {
-                data.AddPreview(new Yuuichirou_Asuramaru(), true);
-                data.AddPreview(new Status_Void(true), true);
-            });
+        .SetAttack(1, CardRarity.UNCOMMON)
+        .SetSeriesFromClassPackage()
+        .PostInitialize(data ->
+        {
+            data.AddPreview(new Yuuichirou_Asuramaru(), true);
+        });
 
     public Yuuichirou()
     {
         super(DATA);
 
-        Initialize(6, 0);
+        Initialize(8, 0);
         SetUpgrade(3, 0);
 
-        SetAffinity_Red(2, 0, 1);
-        SetAffinity_Green(2, 0, 2);
+        SetAffinity_White(1, 0, 1);
+        SetAffinity_Brown(1, 0, 1);
     }
 
     @Override
@@ -52,6 +51,6 @@ public class Yuuichirou extends AnimatorCard
     {
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_DIAGONAL);
-        GameActions.Bottom.Draw(1);
+        GameActions.Bottom.ChangeStance(CalmStance.STANCE_ID);
     }
 }

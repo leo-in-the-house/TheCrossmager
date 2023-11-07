@@ -4,25 +4,23 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.cards.base.CardUseInfo;
-import eatyourbeets.cards.base.EYBCardData;
-import eatyourbeets.powers.CombatStats;
+import eatyourbeets.cards.base.*;
 import eatyourbeets.stances.WrathStance;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
 public class Godan extends AnimatorCard
 {
-    public static final EYBCardData DATA = Register(Godan.class).SetAttack(1, CardRarity.COMMON)
+    public static final EYBCardData DATA = Register(Godan.class)
+            .SetAttack(1, CardRarity.COMMON, EYBAttackType.Normal, EYBCardTarget.ALL)
             .SetSeriesFromClassPackage();
 
     public Godan()
     {
         super(DATA);
 
-        Initialize(7, 0, 2);
-        SetUpgrade(4, 0, 1);
+        Initialize(7, 0);
+        SetUpgrade(4, 0);
 
         SetAffinity_Red(1);
     }
@@ -32,7 +30,7 @@ public class Godan extends AnimatorCard
     {
         GameUtilities.PlayVoiceSFX(name);
 
-        GameActions.Bottom.DealDamage(this, m, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
+        GameActions.Bottom.DealDamageToAll(this, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
 
         boolean hasEthereal = false;
 
@@ -43,7 +41,7 @@ public class Godan extends AnimatorCard
             }
         }
 
-        if (hasEthereal && CombatStats.TryActivateSemiLimited(cardID))
+        if (hasEthereal)
         {
             GameActions.Bottom.ChangeStance(WrathStance.STANCE_ID);
         }

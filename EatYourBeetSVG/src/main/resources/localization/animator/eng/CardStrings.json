@@ -301,6 +301,11 @@
 			"DESCRIPTION": "Gain [R] [G]. || !A! [G]: <DRW-2>, then increase [G] requirement by 1.",
 			"NAME": "Black Lotus"
 		},
+		"animator:LestKarr":
+		{
+			"DESCRIPTION": "Channel [Lightning], trigger it, then evoke it. || Exhaust any number of cards in your hand to Repeat.",
+			"NAME": "Lest Karr"
+		},
 		"animator:LimeBell":
 		{
 			"DESCRIPTION": "Convert up to !M! [Block] into [THP]. || Reload: Gain !S! [L].",
@@ -526,7 +531,7 @@
 		"animator:Godan":
 		{
 			"FLAVOR_TEXT": "'What's wrong with this world?  Someone tell me what's going on here!'",
-			"DESCRIPTION": "<SLM>. If you have another {Ethereal} card in your hand, Enter <WS>.",
+			"DESCRIPTION": "If you have another {Ethereal} card in your hand, Enter <WS>.",
 			"NAME": "Godan Matsushita"
 		},
 		"animator:HidekiHinata":
@@ -2552,40 +2557,61 @@
 	{
 		"animator:CrowleyEusford":
 		{
-			"DESCRIPTION": "Boost [R] [G]. Reduce [DD] by !M!. || If you Exhausted a card this turn: Motivate 1.",
+			"DESCRIPTION": "If you Exhausted a card this turn: Obtain a [R] and [G] {Affinity Token}{+}, then {Motivate} !M!.",
 			"NAME": "Crowley Eusford"
 		},
 		"animator:FeridBathory":
 		{
-			"DESCRIPTION": "Gain !M! [R] [G] [D]. || The next !S! times a card is Exhausted: Steal !K! [HP] from the enemy as [THP].",
-			"EXTENDED_DESCRIPTION": ["Whenever a card is #yExhausted, transfer #b{0} [HP] to the source of this power as [THP]."],
+			"DESCRIPTION": "Whenever a card is {Exhausted}: Steal !M! [HP] from a random enemy as [THP].",
+			"EXTENDED_DESCRIPTION": ["Whenever a card is #yExhausted, Steal #b{0} [HP] from a random enemy as [THP]."],
 			"NAME": "Ferid Bathory"
 		},
 		"animator:Guren":
 		{
-			"DESCRIPTION": "Play the top !M! cards of your draw pile and Exhaust them. For each {Hindrance} played: Play 1 additional card. || <slm>. Gain 1 [Support Damage] for each card in Exhaust pile.",
+			"DESCRIPTION": "Play the top !M! cards of your draw pile and {Exhaust} them.",
 			"NAME": "Guren"
 		},
 		"animator:HiiragiKureto":
 		{
-			"DESCRIPTION": "The first time you draw a Hindrance each turn: Take !M! [DD], Channel 1 [Lightning] and <DRW>.",
-			"EXTENDED_DESCRIPTION": ["The next time you draw a #yHindrance, take #b{0} [DD], #yChannel #b{1} [Lightning], and draw #b1 card."],
+			"DESCRIPTION": "<LIM>. Start of Combat: Enter <MS>. || Twice per turn: {Exhaust} a card to Channel [Lightning].",
+			"EXTENDED_DESCRIPTION": ["#yExhaust a card to #yChannel #yLightning."],
 			"NAME": "Kureto Hiiragi"
+		},
+		"animator:HiiragiMahiru":
+		{
+			"DESCRIPTION": "This card can only be played if you have at least 10 cards in your exhaust pile. || Choose 1 of 2 possible forms to Enter: {Demon Form}{+}, {Wraith Form}{+}, {Echo Form}{+}, {Deva Form}{+}.",
+			"NAME": "Mahiru Hiiragi"
+		},
+		"animator:HiiragiMahiru_Demon":
+		{
+			"DESCRIPTION": "At the start of your turn, gain !M! [Strength].",
+			"NAME": "Demon Form"
+		},
+		"animator:HiiragiMahiru_Deva":
+		{
+			"DESCRIPTION": "At the start of your turn, gain [E] and increase this gain by 1.",
+			"NAME": "Deva Form"
+		},
+		"animator:HiiragiMahiru_Echo":
+		{
+			"DESCRIPTION": "The first card you play each turn is played twice.",
+			"NAME": "Echo Form"
+		},
+		"animator:HiiragiMahiru_Wraith":
+		{
+			"DESCRIPTION": "Gain 2 [Intangible].  At the end of your turn, lose [Dexterity].",
+			"NAME": "Wraith Form"
 		},
 		"animator:HiiragiShinya":
 		{
-			"DESCRIPTION": "Apply !M! [~Lock-On]. Gain !S! [Support Damage]. || Fetch a card from your discard pile and Retain it. Raise its cost by 1 this turn.",
+			"DESCRIPTION": "Fetch a card from your discard pile and Motivate it.  It gains Exhaust and Ethereal.",
 			"NAME": "Shinya Hiiragi"
 		},
 		"animator:KimizugiShiho":
 		{
-			"DESCRIPTION": "Draw 1 {Hindrance}. || When Discarded or Exhausted: Boost [R].",
-			"NAME": "Shiho Kimizugi"
-		},
-		"animator:LestKarr":
-		{
-			"DESCRIPTION": "Any Stance: Obtain {[D] Token}. Otherwise: Enter <IS>. || When Drawn: Gain [E], then add 1 {Burn} to your draw and discard pile.",
-			"NAME": "Lest Karr"
+			"DESCRIPTION": "On Exhaust: Add a {Common} or {Special} card from your exhaust pile to your discard pile.",
+			"EXTENDED_DESCRIPTION": ["Choose #yCommon or #ySpecial card to move to your discard pile."],
+			"NAME": "Shiho Kimizuki"
 		},
 		"animator:KrulTepes":
 		{
@@ -2604,7 +2630,7 @@
 		},
 		"animator:GoshiNorito":
 		{
-			"DESCRIPTION": "Gain 1 additional [Block] for each Hindrance in hand. || Apply !S! [Weak] to ALL enemies.",
+			"DESCRIPTION": "Exhaust all cards in your hand.  Imitate all non-{Hindrance} cards exhausted this way. || Draw a card.",
 			"NAME": "Norito Goshi"
 		},
 		"animator:SayuriHanayori":
@@ -2629,12 +2655,12 @@
 		},
 		"animator:Yuuichirou":
 		{
-			"DESCRIPTION": "<DRW>. || <LIM>. On Exhaust: Add {Asuramaru}{+} to your discard pile.",
+			"DESCRIPTION": "Enter <CS>. || <LIM>. On Exhaust: Add {Asuramaru}{+} to your discard pile.",
 			"NAME": "Yuuichirou"
 		},
 		"animator:Yuuichirou_Asuramaru":
 		{
-			"DESCRIPTION": "Enter <CS>. Receive 2 {Void+}. || Gain !M! of each [W].",
+			"DESCRIPTION": "Enter <WS>.  Gain !M! {Demon Form}.",
 			"NAME": "Asuramaru"
 		}
 	},
@@ -3209,7 +3235,7 @@
 		},
 		"animator:HiiragiTenri":
 		{
-			"DESCRIPTION": "Gain [THP] for each card in discard pile. Play and Exhaust !S! random cards from your discard pile. || !A! [S]: Gain !K! [Support Damage].",
+			"DESCRIPTION": "Play and move all cards in your exhaust pile to your discard pile.  Gain !M! [THP] for each card played.",
 			"NAME": "Tenri Hiiragi"
 		},
 		"animator:HolyGrail":

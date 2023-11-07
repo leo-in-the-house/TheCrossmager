@@ -345,6 +345,39 @@ public class EYBCardPopupActions
         }
     }
 
+    public static class OwariNoSeraph_Mirai extends EYBCardPopupAction
+    {
+        protected final EYBCardData TARGET1;
+        protected final int HP_LOSS_AMOUNT;
+
+        public OwariNoSeraph_Mirai(EYBCardData targetCard, int hpLossAmount)
+        {
+            TARGET1 = targetCard;
+            HP_LOSS_AMOUNT = hpLossAmount;
+
+            SetText(specialActions.PayHPMiraiKimizuki(), terms.Obtain, specialActions.PayHPMiraiKimizuki(TARGET1.Strings.NAME));
+        }
+
+        @Override
+        public boolean CanExecute(AbstractCard card)
+        {
+            return IsRestRoom() && HasCard(card);
+        }
+
+        @Override
+        public void Execute()
+        {
+            if (Replace(card, TARGET1, card.upgraded) != null)
+            {
+                final EYBCard card = TARGET1.MakeCopy(false);
+                LoseHP(HP_LOSS_AMOUNT);
+                Obtain(card);
+                SFX.Play(SFX.STANCE_ENTER_WRATH, 0.4f);
+                Complete();
+            }
+        }
+    }
+
     public static class TouhouProject_Remilia extends EYBCardPopupAction
     {
         protected final EYBCardData TARGET1;

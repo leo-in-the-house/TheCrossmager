@@ -523,6 +523,21 @@ public class AnimatorStrings
             return JUtils.Format(T_PayGold_Eris_F2, cardName);
         }
 
+        public final String T_PayHP_MiraiKimizuki_F1 = Strings.TEXT[INDEX++];
+
+        public final String T_PayHP_MiraiKimizuki_F2 = Strings.TEXT[INDEX++];
+
+        public final String PayHPMiraiKimizuki()
+        {
+            return JUtils.Format(T_PayHP_MiraiKimizuki_F1);
+        }
+
+        public final String PayHPMiraiKimizuki(String cardName)
+        {
+            return JUtils.Format(T_PayHP_MiraiKimizuki_F2, cardName);
+        }
+
+
         public final String T_Obtain_GainVulnerable_F1 = Strings.TEXT[INDEX++];
         public final String D_Obtain_GainVulnerable_F2 = Strings.TEXT[INDEX++];
 
