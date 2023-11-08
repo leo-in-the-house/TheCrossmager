@@ -1,7 +1,6 @@
 package eatyourbeets.resources.animator.loadouts;
 
 import eatyourbeets.cards.animator.series.OwariNoSeraph.*;
-import eatyourbeets.cards.animator.status.Status_Wound;
 import eatyourbeets.cards.animator.ultrarare.HiiragiTenri;
 import eatyourbeets.cards.base.CardSeries;
 import eatyourbeets.cards.base.EYBCardData;
@@ -18,22 +17,11 @@ public class Loadout_OwariNoSeraph extends AnimatorLoadout
     public void AddStarterCards()
     {
         AddStarterCard(Shinoa.DATA, 6);
-        AddStarterCard(Shigure.DATA, 6);
+        AddStarterCard(Shigure.DATA, 8);
         AddStarterCard(Mitsuba.DATA, 7);
-        AddStarterCard(KimizugiShiho.DATA, 9);
-        AddStarterCard(Yoichi.DATA, 9);
+        AddStarterCard(SayuriHanayori.DATA, 6);
+        AddStarterCard(Yoichi.DATA, 5);
         AddStarterCard(Mikaela.DATA, 8);
-
-        AddStarterCard(HiiragiShinya.DATA, 10);
-        AddStarterCard(CrowleyEusford.DATA, 8);
-        AddStarterCard(Yuuichirou.DATA, 8);
-        AddStarterCard(GoshiNorito.DATA, 8);
-        AddStarterCard(FeridBathory.DATA, 12);
-
-        AddStarterCard(KrulTepes.DATA, 24);
-        AddStarterCard(Guren.DATA, 24);
-
-        AddStarterCard(Status_Wound.DATA, -5);
     }
 
     @Override

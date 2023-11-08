@@ -167,6 +167,13 @@
 			"DESCRIPTION": "Increase this card's number of {Attacks} by !S! this combat.",
 			"NAME": "Hibiki"
 		},
+		"animator:HornSkuld":
+		{
+			"FLAVOR_TEXT": "'When are you gonna learn to exhibit some self-control?  You're a noble, not a savage.'",
+			"DESCRIPTION": "Whenever you deal unblocked {Attack} damage to an enemy, gain that much [THP].",
+			"EXTENDED_DESCRIPTION": ["Whenever you deal unblocked #yAttack damage to an enemy: Gain that much #yTemp. #yHP."],
+			"NAME": "Horn Skuld"
+		},
 		"animator:HououinKyouma":
 		{
 			"DESCRIPTION": "Unplayable unless you have at least !M! cards in draw pile. Choose 1 card you played this combat: Add a copy to the bottom of your draw pile.",
@@ -303,6 +310,7 @@
 		},
 		"animator:LestKarr":
 		{
+			"FLAVOR_TEXT": "'Then if that's true, then how has the research come so far?  There were no organizations anywhere close to the sort of success other than the Hyakuya Sect.'",
 			"DESCRIPTION": "Channel [Lightning], trigger it, then evoke it. || Exhaust any number of cards in your hand to Repeat.",
 			"NAME": "Lest Karr"
 		},
@@ -2559,28 +2567,33 @@
 	{
 		"animator:CrowleyEusford":
 		{
+			"FLAVOR_TEXT": "'Well, I just wanted to see which weapon was stronger: a human's blade, or that of a vampire.'",
 			"DESCRIPTION": "If you Exhausted a card this turn: Obtain a [R] and [G] {Affinity Token}{+}, then {Motivate} !M!.",
 			"NAME": "Crowley Eusford"
 		},
 		"animator:FeridBathory":
 		{
+			"FLAVOR_TEXT": "'Don't you find it amusing that things seem to be going so smoothly?  As usual, the humans' lust for power is out of control, and we vampires are so arrogant that we take things too lightly.'",
 			"DESCRIPTION": "Whenever a card is {Exhausted}: Steal !M! [HP] from a random enemy as [THP].",
 			"EXTENDED_DESCRIPTION": ["Whenever a card is #yExhausted, Steal #b{0} [HP] from a random enemy as [THP]."],
 			"NAME": "Ferid Bathory"
 		},
 		"animator:Guren":
 		{
+			"FLAVOR_TEXT": "'This mission will probably be the most dangerous you will ever have.  Many of you will die.  Remember: everyone here is family!  That means those who fall in battle are our brothers and sisters!  But, they won't die in vain!  Their sacrifices will ensure our success!  Let me be clear: our goal isn't to come back alive, it is to be victorious, no matter what!  Do you understand me!'",
 			"DESCRIPTION": "Play the top !M! cards of your draw pile and {Exhaust} them.",
 			"NAME": "Guren Ichinose"
 		},
 		"animator:HiiragiKureto":
 		{
+			"FLAVOR_TEXT": "'There it is.  Blowing the fifth trumpet summoned the demon of destruction: Abbadon.  Our enchantments and curses worked!  We've succeeded in controlling the Owari no Seraph!'",
 			"DESCRIPTION": "<LIM>. Start of Combat: Enter <MS>. || Twice per turn: {Exhaust} a card to Channel [Lightning].",
 			"EXTENDED_DESCRIPTION": ["#yExhaust a card to #yChannel #yLightning."],
 			"NAME": "Kureto Hiiragi"
 		},
 		"animator:HiiragiMahiru":
 		{
+			"FLAVOR_TEXT": "'In the end, you’ll fall. Your heart will grow black and twisted, just like mine. Do you see, Guren? We just can’t stay apart. We’ll keep each other company on the road to hell.'",
 			"DESCRIPTION": "This card can only be played if you have at least 10 cards in your exhaust pile. || Choose 1 of 2 possible {Forms}{+} to Enter.",
 			"NAME": "Mahiru Hiiragi"
 		},
@@ -2606,67 +2619,80 @@
 		},
 		"animator:HiiragiShinya":
 		{
+			"FLAVOR_TEXT": "'It does seem there's a vampire spy in the army somewhere, though.  For the Hiiragis, that's a huge problem that must be dealt with immediately.'",
 			"DESCRIPTION": "Fetch a card from your discard pile and Motivate it.  It gains Exhaust and Ethereal.",
 			"NAME": "Shinya Hiiragi"
 		},
 		"animator:KimizugiShiho":
 		{
+			"FLAVOR_TEXT": "'Go, Kiseki-O!  Open the Devil's Coffin on the count of 9!'",
 			"DESCRIPTION": "On Exhaust: Add a {Common} or {Special} card from your exhaust pile to your discard pile.",
 			"EXTENDED_DESCRIPTION": ["Choose #yCommon or #ySpecial card to move to your discard pile."],
 			"NAME": "Shiho Kimizuki"
 		},
 		"animator:KrulTepes":
 		{
+			"FLAVOR_TEXT": "'Because we're exterminating the Japanese Imperial Demon Army!  We're going to war!  To ensure that we continue to rule this world, we'll have to slaughter the greedy livestock resistance, once and for all!'",
 			"DESCRIPTION": "Apply !M! [Weak]. || <LIM>. If this card kills an {Elite} or {Boss}: Obtain a {Blood Vial}.",
 			"NAME": "Krul Tepes"
 		},
 		"animator:Mikaela":
 		{
+			"FLAVOR_TEXT": "'Humans are ugly creatures.  They're animals driven by greed.  They only want to make themselves stronger.  They'll hurt anyone to get more power.  I can't leave you in the hands of people like that.'",
 			"DESCRIPTION": "Exhaust a card in your discard pile.",
 			"NAME": "Mikaela Hyakuya"
 		},
 		"animator:MiraiKimizuki":
 		{
+			"FLAVOR_TEXT": "'AAAAAAAAAAAAHHH!!! Stop! It hurts! Please! I can't take any more! The pain...! It hurts all over! Stop... Kill me... Please, just kill me... Eep... AAAAAAH!!! Help me! Big brother! Big brother! Help me! AAAAAAAAAAAAAAAAH!!!'",
 			"DESCRIPTION": "Starts the game in your exhaust pile. || When drawn: Gain [T] [W] for each card in your exhaust pile.",
 			"NAME": "Mirai Kimizuki"
 		},
 		"animator:Mitsuba":
 		{
+			"FLAVOR_TEXT": "'How could you be so stupid!  Your reckless behavior put our entire squad in danger!  You're lucky those vampires only had second-class weapons, otherwise, we'd be...'",
 			"DESCRIPTION": "Can only be played if the enemy has more health than you.",
 			"NAME": "Mitsuba Sangu"
 		},
 		"animator:GoshiNorito":
 		{
+			"FLAVOR_TEXT": "'Behold, the Demon Army's best men!  Let's do this!'",
 			"DESCRIPTION": "Exhaust all cards in your hand.  Imitate all non-{Hindrance} cards exhausted this way. || Draw a card.",
 			"NAME": "Norito Goshi"
 		},
 		"animator:SayuriHanayori":
 		{
+			"FLAVOR_TEXT": "'In preparation for next week's cursed gear aptitude test, I will be assessing all of your abilities!  If you can't show me you're ready here, then you'll have to keep training and take the test at a later date!  So do your best, OK?'",
 			"DESCRIPTION": "When Exhausted: Gain !M! {Temp.} [Artifact].",
 			"NAME": "Sayuri Hanayori"
 		},
 		"animator:Shigure":
 		{
+			"FLAVOR_TEXT": "'If he's going back, so am I.  You coming?  If this wasn't Guren's mission, I don't see any reason to finish it.'",
 			"DESCRIPTION": "On Exhaust: Apply !M! [Poison] to a random enemy.",
 			"NAME": "Shigure Yukimi"
 		},
 		"animator:Shinoa":
 		{
+			"FLAVOR_TEXT": "'According to Lt. Colonel Guren, you avoid social interactions cause you lost your family.  You're too afraid to engage other people.  You fear making connections or let anyone get close to you because you're afraid you may lose them.  It sounds lonely...'",
 			"DESCRIPTION": "Apply 1 [Vulnerable] to ALL enemies. || On Exhaust: Apply [Vulnerable] to ALL enemies.",
 			"NAME": "Shinoa Hiiragi"
 		},
 		"animator:Yoichi":
 		{
+			"FLAVOR_TEXT": "'I'm not gonna run away from my fears anymore!  That's why I need the ability to protect those I care about!  I want to be able to keep them safe from harm!  Only then can I make sure that nothing like this ever happens again...'",
 			"DESCRIPTION": "Exhaust 1 card to Gain !M! [Support Damage].",
 			"NAME": "Yoichi Saotome"
 		},
 		"animator:Yuuichirou":
 		{
+			"FLAVOR_TEXT": "'Hey, let's make a promise.  We'll survive together, even if it's painful sometimes.  Who cares if you're a vampire?  If it's too difficult for you, then I'll just have to turn you back into a human!'",
 			"DESCRIPTION": "Enter <CS>. || <LIM>. On Exhaust: Add {Asuramaru}{+} to your discard pile.",
 			"NAME": "Yuuichirou Hyakuya"
 		},
 		"animator:Yuuichirou_Asuramaru":
 		{
+			"FLAVOR_TEXT": "'The contract is now complete.  From this day forward, I shall lend you my strength and abilities!  Open your eyes, fan the flames of desire that burn inside you, and forge a bloodstained path through this world, Yuuichirou Hyakuya!'",
 			"DESCRIPTION": "Enter <WS>.  Gain !M! {Demon Form}.",
 			"NAME": "Asuramaru"
 		}
@@ -3242,6 +3268,7 @@
 		},
 		"animator:HiiragiTenri":
 		{
+			"FLAVOR_TEXT": "'Listen, my son. A king needs no comrades. You are Hiiragi. You are to shoulder the fate of the Hiiragi. This is your destiny... No, you be silent. Those born to the Hiiragi name have no need to mingle with others.'",
 			"DESCRIPTION": "Play and move all cards in your exhaust pile to your discard pile.  Gain !M! [THP] for each card played.",
 			"NAME": "Tenri Hiiragi"
 		},

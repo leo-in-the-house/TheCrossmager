@@ -20,7 +20,7 @@ public class MiraiKimizuki extends AnimatorCard {
         super(DATA);
 
         Initialize(24, 0, 0);
-        SetUpgrade(6, 0, 0);
+        SetUpgrade(8, 0, 0);
 
         SetAffinity_Teal(2, 0, 4);
         SetAffinity_White(2, 0, 4);
