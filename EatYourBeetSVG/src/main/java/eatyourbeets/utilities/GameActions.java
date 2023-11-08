@@ -1285,7 +1285,7 @@ public final class GameActions
 
     public SelectFromHand Retain(String sourceName, int amount, boolean isRandom)
     {
-        return (SelectFromHand) SelectFromHand(sourceName, 1, false)
+        return (SelectFromHand) SelectFromHand(sourceName, amount, false)
         .SetOptions(true, true, true)
         .SetMessage(RetainCardsAction.TEXT[0])
         .SetFilter(GameUtilities::CanRetain)

@@ -952,7 +952,9 @@
 		"animator:ReineMurasame":
 		{
 			"FLAVOR_TEXT": "'I dare say that I will never be able to go beyond him in my heart. He will always be my first and last lover.'",
-			"DESCRIPTION": "Add X copies of {Shido Itsuka} to your draw pile.  {Motivate} them. || !A! [B]: Gain X [E] next turn.",
+			"DESCRIPTION": "Retain X cards at the end of turn and double their block.",
+			"UPGRADE_DESCRIPTION": "Retain X cards at the end of turn and triple their block.",
+			"EXTENDED_DESCRIPTION": ["Retain #b{0} cards and multiply their block by #b{1}."],
 			"NAME": "Reine Murasame"
 		},
 		"animator:ShidoItsuka":
@@ -1220,8 +1222,8 @@
 		"animator:ElricAlphonse_Alt":
 		{
 			"FLAVOR_TEXT": "'You know, I didn't ask to be this big.'",
-			"DESCRIPTION": "Gain 2 [Orb_S] and !M! [Plated Armor]. || At the start of turn, if you have an [Orb_S]: Channel [Lightning].",
-			"EXTENDED_DESCRIPTION": ["At the start of turn, if you have an empty orb slot, #yChannel #b{0} [Lightning]."],
+			"DESCRIPTION": "Lose [Orb_S] and gain !M! [Plated Armor]. || At the start of turn, Channel [Lightning].",
+			"EXTENDED_DESCRIPTION": ["At the start of turn, #yChannel #b{0} [Lightning]."],
 			"NAME": "Armored Alphonse"
 		},
 		"animator:ElricEdward":

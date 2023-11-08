@@ -1,9 +1,14 @@
 package eatyourbeets.cards.animator.series.DateALive;
 
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.base.*;
-import eatyourbeets.cards.base.modifiers.CostModifiers;
+import eatyourbeets.cards.base.AnimatorCard;
+import eatyourbeets.cards.base.CardUseInfo;
+import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.cards.base.EYBCardTarget;
+import eatyourbeets.cards.base.modifiers.BlockModifiers;
+import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
@@ -21,15 +26,12 @@ public class ReineMurasame extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 0, 1);
-        SetUpgrade(0, 0, 0);
+        Initialize(0, 0, 2);
+        SetUpgrade(0, 0, 1);
 
         SetExhaust(true);
 
         SetAffinity_Pink(2);
-
-        SetAffinityRequirement(Affinity.Blue, 5);
-        
     }
 
     @Override
@@ -46,28 +48,46 @@ public class ReineMurasame extends AnimatorCard
         GameUtilities.PlayVoiceSFX(name);
         int stacks = GameUtilities.UseXCostEnergy(this);
 
-        for (int i = 0; i < stacks; i++)
-        {
-            GameActions.Bottom.MakeCardInDrawPile(new eatyourbeets.cards.animator.series.DateALive.ShidoItsuka())
-            .SetUpgrade(upgraded, true)
-            .AddCallback(card -> {
-                if (card.costForTurn > 0)
-                {
-                    final String key = cardID + uuid;
+        if (stacks > 0) {
+            GameActions.Bottom.StackPower(new ReineMurasamePower(player, stacks, magicNumber));
+        }
+    }
 
-                    CostModifiers.For(card).Add(key, -1);
+    public static class ReineMurasamePower extends AnimatorPower {
 
-                    GameUtilities.TriggerWhenPlayed(card, key, (k, c) ->
-                    {
-                        CostModifiers.For(c).Remove(k, false);
-                    });
-                }
-            });
+        private final int blockMultiplier;
+        public ReineMurasamePower(AbstractPlayer owner, int amount, int multiplier) {
+            super(owner, ReineMurasame.DATA);
+
+            this.blockMultiplier = multiplier;
+
+            Initialize(amount);
         }
 
-        if (CheckSpecialCondition(false) && stacks > 0)
+        @Override
+        public void updateDescription()
         {
-            GameActions.Bottom.GainEnergyNextTurn(stacks);
+            description = FormatDescription(0, amount, blockMultiplier);
         }
+
+        @Override
+        public void atEndOfTurn(boolean isPlayer)
+        {
+            super.atEndOfTurn(isPlayer);
+
+            GameActions.Bottom.Retain(name, amount, false)
+                 .SetOptions(true, true, true)
+                 .AddCallback(cards -> {
+                     for (AbstractCard card : cards) {
+                         if (card.block > 0) {
+                             BlockModifiers.For(card).Add(card.block * (blockMultiplier - 1));
+                         }
+                     }
+                 });
+
+            RemovePower();
+        }
+
+
     }
 }

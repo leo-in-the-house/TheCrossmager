@@ -1,5 +1,6 @@
 package eatyourbeets.cards.animator.special;
 
+import com.megacrit.cardcrawl.actions.defect.DecreaseMaxOrbAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -23,7 +24,7 @@ public class ElricAlphonse_Alt extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 0, 4);
+        Initialize(0, 0, 10);
         SetCostUpgrade(-1);
 
         SetAffinity_Blue(1);
@@ -34,7 +35,7 @@ public class ElricAlphonse_Alt extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.GainOrbSlots(2);
+        GameActions.Bottom.Add(new DecreaseMaxOrbAction(1));
         GameActions.Bottom.GainPlatedArmor(magicNumber);
         GameActions.Bottom.StackPower(new ElricAlphonse_AltPower(p, 1));
     }
@@ -53,7 +54,7 @@ public class ElricAlphonse_Alt extends AnimatorCard
         {
             super.atStartOfTurn();
 
-            GameActions.Top.ChannelOrbs(Lightning::new, amount).AutoEvoke(false);
+            GameActions.Top.ChannelOrbs(Lightning::new, amount);
             flashWithoutSound();
         }
     }
