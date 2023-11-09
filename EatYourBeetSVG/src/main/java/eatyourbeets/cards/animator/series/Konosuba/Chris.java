@@ -29,6 +29,7 @@ public class Chris extends AnimatorCard
         SetUpgrade(3, 0, 0, 0);
 
         SetAffinity_Yellow(1);
+        SetObtainableInCombat(false);
     }
 
     @Override

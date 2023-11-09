@@ -14,7 +14,7 @@ import eatyourbeets.utilities.GameUtilities;
 
 public class YuriNakamura extends AnimatorCard
 {
-    public static final EYBCardData DATA = Register(YuriNakamura.class).SetAttack(2, CardRarity.RARE, EYBAttackType.Ranged)
+    public static final EYBCardData DATA = Register(YuriNakamura.class).SetAttack(3, CardRarity.RARE, EYBAttackType.Ranged)
             .SetSeriesFromClassPackage();
 
     public YuriNakamura()
@@ -22,7 +22,7 @@ public class YuriNakamura extends AnimatorCard
         super(DATA);
 
         Initialize(7, 0, 2, 0);
-        SetUpgrade(2, 0, 1, 0);
+        SetUpgrade(0, 0, 1, 0);
 
         SetAffinity_Red(2, 0, 2);
         SetAffinity_Green(2, 0, 2);
@@ -68,7 +68,8 @@ public class YuriNakamura extends AnimatorCard
                 for (int i = 0; i < magicNumber; i++) {
                     AbstractCard c = card.makeCopy();
                     c.isEthereal = true;
-                    GameActions.Bottom.MakeCardInDrawPile(c);
+                    GameActions.Bottom.MakeCardInDrawPile(c)
+                            .SetUpgrade(upgraded, true);
                 }
             }
         });

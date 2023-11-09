@@ -42,7 +42,7 @@ public class Fischl_Oz extends AnimatorCard {
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info) {
         GameUtilities.PlayVoiceSFX(name);
 
-        GameActions.Bottom.StackPower(new Fischl_OzPower(p, 1));
+        GameActions.Bottom.StackPower(new Fischl_OzPower(p, magicNumber));
     }
 
     public static class Fischl_OzPower extends AnimatorPower {

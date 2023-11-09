@@ -386,7 +386,7 @@
 	},
 	"Sadistic":
 	{
-		"DESCRIPTION": "Deal damage whenever you apply a #ydebuff to an enemy #yBlock.",
+		"DESCRIPTION": "Deal damage whenever you apply a #ydebuff to an enemy.",
 		"NAMES": ["sadistic"],
 		"PROPER_NAME": "Sadistic"
 	},

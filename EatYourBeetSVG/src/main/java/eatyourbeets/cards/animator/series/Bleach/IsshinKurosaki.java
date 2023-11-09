@@ -22,11 +22,11 @@ public class IsshinKurosaki extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 10, 1, 1);
+        Initialize(0, 8, 1, 1);
         SetUpgrade(0, 4, 1);
         
-        SetAffinity_Red(1);
-        SetAffinity_Pink(1);
+        SetAffinity_Red(1, 0, 1);
+        SetAffinity_Pink(1, 0, 1);
         
     }
 

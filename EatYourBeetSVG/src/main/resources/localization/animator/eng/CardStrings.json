@@ -606,7 +606,7 @@
 		"animator:YuriNakamura":
 		{
 			"FLAVOR_TEXT": "'We have no choice but to accept the one and only life we're given, no matter how cruel and heartless it might be.'",
-			"DESCRIPTION": "Add up to !M! copies of an Attack from your exhaust pile to your draw pile. They gain Ethereal.",
+			"DESCRIPTION": "Add up to !M! copies{+} of an Attack from your exhaust pile to your draw pile. They gain Ethereal.",
 			"EXTENDED_DESCRIPTION": ["Choose cards to add copies to your draw pile."],
 			"NAME": "Yuri Nakamura"
 		},
@@ -939,7 +939,7 @@
 		"animator:Natsumi":
 		{
 			"FLAVOR_TEXT": "'I... can do this! I... am strong! I... am cute! Everyone... I'll... I'll protect you all!'",
-			"DESCRIPTION": "Transform up to !M! cards in your hand into random {Common} or {Uncommon} Skills. || Whenever you transform a {Hindrance}: Add a {Depression} into your draw pile.",
+			"DESCRIPTION": "Transform up to !M! cards in your hand into random {Common}{+} or {Uncommon}{+} Skills. || Whenever you transform a {Hindrance}: Add a {Depression} into your draw pile.",
 			"EXTENDED_DESCRIPTION": ["Choose a card to transform."],
 			"NAME": "Natsumi Kyouno"
 		},
@@ -2645,7 +2645,7 @@
 		"animator:MiraiKimizuki":
 		{
 			"FLAVOR_TEXT": "'AAAAAAAAAAAAHHH!!! Stop! It hurts! Please! I can't take any more! The pain...! It hurts all over! Stop... Kill me... Please, just kill me... Eep... AAAAAAH!!! Help me! Big brother! Big brother! Help me! AAAAAAAAAAAAAAAAH!!!'",
-			"DESCRIPTION": "Starts the game in your exhaust pile. || When drawn: Gain [T] [W] for each card in your exhaust pile.",
+			"DESCRIPTION": "Starts the game in your exhaust pile. || When drawn: Gain [T] [L] for each card in your exhaust pile.",
 			"NAME": "Mirai Kimizuki"
 		},
 		"animator:Mitsuba":
@@ -2675,7 +2675,7 @@
 		"animator:Shinoa":
 		{
 			"FLAVOR_TEXT": "'According to Lt. Colonel Guren, you avoid social interactions cause you lost your family.  You're too afraid to engage other people.  You fear making connections or let anyone get close to you because you're afraid you may lose them.  It sounds lonely...'",
-			"DESCRIPTION": "Apply 1 [Vulnerable] to ALL enemies. || On Exhaust: Apply [Vulnerable] to ALL enemies.",
+			"DESCRIPTION": "Apply [Vulnerable] to ALL enemies. || On Exhaust: Apply [Vulnerable] to ALL enemies.",
 			"NAME": "Shinoa Hiiragi"
 		},
 		"animator:Yoichi":

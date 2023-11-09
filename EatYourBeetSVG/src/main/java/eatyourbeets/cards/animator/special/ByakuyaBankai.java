@@ -2,7 +2,6 @@ package eatyourbeets.cards.animator.special;
 
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -13,6 +12,7 @@ import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.interfaces.delegates.ActionT3;
 import eatyourbeets.resources.GR;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class ByakuyaBankai extends AnimatorCard {
     public static final EYBCardData DATA = Register(ByakuyaBankai.class)
@@ -22,8 +22,8 @@ public class ByakuyaBankai extends AnimatorCard {
     public ByakuyaBankai() {
         super(DATA);
 
-        Initialize(13, 11);
-        SetUpgrade(5, 5);
+        Initialize(26, 22);
+        SetUpgrade(4, 4);
 
         SetAffinity_Red(1);
         SetAffinity_White(1);
@@ -57,6 +57,7 @@ public class ByakuyaBankai extends AnimatorCard {
     private AnimatorCardBuilder GenerateInternal(AbstractCard.CardType type, ActionT3<EYBCard, AbstractPlayer, AbstractMonster> onUseAction) {
         AnimatorCardBuilder builder = new AnimatorCardBuilder(ByakuyaBankai.DATA.ID);
         builder.SetText(name, "", "");
+        builder.SetImagePath(ByakuyaBankai.DATA.ImagePath);
         builder.SetProperties(type, GR.Enums.Cards.THE_ANIMATOR, AbstractCard.CardRarity.RARE, CardTarget.ENEMY);
         builder.SetOnUse(onUseAction);
 

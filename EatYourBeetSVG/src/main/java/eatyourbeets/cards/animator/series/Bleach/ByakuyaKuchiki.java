@@ -27,7 +27,7 @@ public class ByakuyaKuchiki extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(13, 11, 0);
+        Initialize(26, 22, 0);
         SetUpgrade(4, 4, 0);
         
         SetAffinity_White(1);
@@ -66,6 +66,7 @@ public class ByakuyaKuchiki extends AnimatorCard
     private AnimatorCardBuilder GenerateInternal(AbstractCard.CardType type, ActionT3<EYBCard, AbstractPlayer, AbstractMonster> onUseAction)
     {
         AnimatorCardBuilder builder = new AnimatorCardBuilder(ByakuyaKuchiki.DATA.ID);
+        builder.SetImagePath(ByakuyaKuchiki.DATA.ImagePath);
         builder.SetText(name, "", "");
         builder.SetProperties(type, GR.Enums.Cards.THE_ANIMATOR, AbstractCard.CardRarity.RARE, CardTarget.ENEMY);
         builder.SetOnUse(onUseAction);

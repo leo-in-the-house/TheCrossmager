@@ -15,7 +15,7 @@ import eatyourbeets.utilities.GameUtilities;
 public class PinaCoLada extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(PinaCoLada.class)
-            .SetPower(2, CardRarity.RARE)
+            .SetPower(3, CardRarity.RARE)
             .SetSeriesFromClassPackage();
 
     public PinaCoLada()
@@ -27,6 +27,8 @@ public class PinaCoLada extends AnimatorCard
 
         SetAffinity_White(1);
         SetAffinity_Pink(1);
+
+        SetEthereal(true);
     }
 
     @Override

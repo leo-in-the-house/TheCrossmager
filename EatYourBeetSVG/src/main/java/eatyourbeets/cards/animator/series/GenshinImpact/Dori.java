@@ -24,6 +24,7 @@ public class Dori extends AnimatorCard {
 
         SetExhaust(true);
         SetEthereal(true);
+        SetObtainableInCombat(false);
     }
 
     @Override

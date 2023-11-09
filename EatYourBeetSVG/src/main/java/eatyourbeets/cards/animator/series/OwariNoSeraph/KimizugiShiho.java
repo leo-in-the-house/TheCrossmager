@@ -22,7 +22,7 @@ public class KimizugiShiho extends AnimatorCard
             .PostInitialize(data ->
             {
                 data.AddPopupAction(new EYBCardPopupActions.OwariNoSeraph_Mirai(MiraiKimizuki.DATA, HiiragiKureto.DATA, 6));
-                data.AddPreview(new MiraiKimizuki(), true);
+                data.AddPreview(new MiraiKimizuki(), false);
             });
 
     public KimizugiShiho()

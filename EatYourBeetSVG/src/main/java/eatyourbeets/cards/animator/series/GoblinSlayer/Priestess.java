@@ -38,6 +38,8 @@ public class Priestess extends AnimatorCard
         SetUpgrade(0, 0, 4);
 
         SetAffinity_White(1);
+
+        SetFading(true);
     }
 
 

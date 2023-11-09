@@ -64,7 +64,8 @@ public class Natsumi extends AnimatorCard
                         GameActions.Bottom.MakeCardInDrawPile(new Curse_Depression());
                     }
 
-                    GameActions.Bottom.ReplaceCard(card.uuid, GetRandomCommonOrUncommonSkill().makeCopy());
+                    GameActions.Bottom.ReplaceCard(card.uuid, GetRandomCommonOrUncommonSkill().makeCopy())
+                            .SetUpgrade(upgraded);
                 }
             }
         });

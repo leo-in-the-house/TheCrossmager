@@ -20,22 +20,14 @@ public class MiraiKimizuki extends AnimatorCard {
         super(DATA);
 
         Initialize(24, 0, 0);
-        SetUpgrade(8, 0, 0);
+        SetUpgrade(24, 0, 0);
 
-        SetAffinity_Teal(2, 0, 4);
-        SetAffinity_White(2, 0, 4);
+        SetAffinity_Teal(2, 0, 9);
+        SetAffinity_White(2, 0, 9);
 
         SetRetain(true);
     }
 
-    @Override
-    protected void OnUpgrade()
-    {
-        super.OnUpgrade();
-
-        AddScaling(Affinity.Teal, 4);
-        AddScaling(Affinity.White, 4);
-    }
     @Override
     public void triggerWhenCreated(boolean startOfBattle)
     {
