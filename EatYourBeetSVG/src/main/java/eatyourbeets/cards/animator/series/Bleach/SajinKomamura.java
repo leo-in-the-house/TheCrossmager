@@ -24,6 +24,8 @@ public class SajinKomamura extends AnimatorCard
         SetUpgrade(0, 0, 0);
 
         SetAffinity_Brown(1);
+
+        SetRetain(true);
     }
 
     @Override
@@ -42,7 +44,7 @@ public class SajinKomamura extends AnimatorCard
     @Override
     protected void OnUpgrade()
     {
-        SetRetain(true);
+        SetInnate(true);
     }
 
     @Override

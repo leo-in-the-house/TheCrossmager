@@ -62,6 +62,7 @@ public class CombatStats extends EYBPower implements InvisiblePower
     public static float EnemyVulnerableModifier;
     public static float EnemyWeakModifier;
     public static int BlockRetained;
+    public static int BlockGainedLastTurn;
     public static int MaxHPSinceLastTurn;
     public static boolean LoadingPlayerSave;
     public static boolean IsPlayerTurn;
@@ -219,6 +220,7 @@ public class CombatStats extends EYBPower implements InvisiblePower
         MaxHPSinceLastTurn = AbstractDungeon.player == null ? 0 : AbstractDungeon.player.currentHealth;
         EnemyVulnerableModifier = 0;
         BlockRetained = 0;
+        BlockGainedLastTurn = 0;
         BattleID = null;
 
         turnCount = 0;
@@ -1269,6 +1271,7 @@ public class CombatStats extends EYBPower implements InvisiblePower
 
         turnData.clear();
         cardsExhaustedThisTurn.clear();
+        BlockGainedLastTurn = player.currentBlock;
         cardsDrawnThisTurn = 0;
         stanceChangesThisTurn = 0;
         canActivateStarter = true;

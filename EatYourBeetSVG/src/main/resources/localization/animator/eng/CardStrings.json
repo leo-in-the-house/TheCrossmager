@@ -811,6 +811,12 @@
 			"EXTENDED_DESCRIPTION": ["The next #b{0} time you are attacked this turn, Enter #yForce #yStance."],
 			"NAME": "Orihime Inoue"
 		},
+		"animator:RangikuMatsumoto":
+		{
+			"FLAVOR_TEXT": "'Oh, my. So you do listen after all. I was thinking your ears were as bad as your face and your style.'",
+			"DESCRIPTION": "Deals AoE damage when in a Stance.",
+			"NAME": "Rangiku Matsumoto"
+		},
 		"animator:RenjiAbarai":
 		{
 			"FLAVOR_TEXT": "'Only a piece of trash would slaughter a woman in cold blood. To live on as a worthless piece of trash would be just as bad as dying here now.'",
@@ -857,6 +863,18 @@
 			"FLAVOR_TEXT": "'The more complex a person, the weaker they are.'",
 			"DESCRIPTION": "On Exhaust: Enter <WS>.",
 			"NAME": "Yasutora Sado"
+		},
+		"animator:YoruichiShihouin":
+		{
+			"FLAVOR_TEXT": "'I really didn't want to have to resort to using this technique against you.  You better be careful, Soi Fon.  Even I can't control this technique very well.'",
+			"DESCRIPTION": "Channel !M! [Lightning]. || If in <WS>: Transform this card into {Cat Yoruichi} and shuffle it into your draw pile.",
+			"NAME": "Yoruichi Shihouin"
+		},
+		"animator:YoruichiShihouin_Cat":
+		{
+			"FLAVOR_TEXT": "'Hold still, you fool!  You're going to open up those wounds!  Don't you realize how badly you're hurt?'",
+			"DESCRIPTION": "Enter <CS>.  Transform this card into {Yoruichi Shihouin}.",
+			"NAME": "Cat Yoruichi"
 		},
 		"animator:ZarakiKenpachi":
 		{
@@ -906,6 +924,19 @@
 			"UPGRADE_DESCRIPTION": "Gain !M! [~Blur]. || Next turn: Draw !M! cards and Gain !M! [E].",
 			"NAME": "Kurumi Tokisaki"
 		},
+		"animator:MariaArusu":
+		{
+			"FLAVOR_TEXT": "'What is love?  ...Now I understand the reason why everyone had trouble answering that. It's because it's difficult to put into words. That's why, I'll only say this. Maria Arusu, loves... Shido Itsuka.'",
+			"DESCRIPTION": "At the end of your turn: Obtain a copy of the highest [Block] non-{Ethereal} card with [Block] in your discard pile with less [Block] than your current [Block].  Retain it.",
+			"EXTENDED_DESCRIPTION": ["At the end of turn: Obtain #b{0} copies of the highest-#yBlock non-#yEthereal card with #yBlock in your discard pile with less #yBlock than your current #yBlock.  Retain it."],
+			"NAME": "Maria Arusu"
+		},
+		"animator:Mayuri":
+		{
+			"FLAVOR_TEXT": "'Idiot. I was born from everyone’s Spirit power. Of course I don’t hate you. From the time I was I born, I loved you.'",
+			"DESCRIPTION": "Retain ALL {Defend}s in your hand.",
+			"NAME": "Mayuri"
+		},
 		"animator:MikuIzayoi":
 		{
 			"FLAVOR_TEXT": "'You kept our promise. If it's you, there's no problem. Only you... I can trust.'",
@@ -917,12 +948,6 @@
 			"FLAVOR_TEXT": "'I'll never let you go. I'll absolutely won't make a mistake anymore. So... please wait! Shin!'",
 			"DESCRIPTION": "Start of Combat: Enter <TS>, Gain [~Blur] !M! and Shuffle !S! {0-Cost} {Shido Itsuka}’s into your draw pile. || <TS>: Gain [G] for every 2 [Block].",
 			"NAME": "Mio Takamiya"
-		},
-		"animator:Mayuri":
-		{
-			"FLAVOR_TEXT": "'Idiot. I was born from everyone’s Spirit power. Of course I don’t hate you. From the time I was I born, I loved you.'",
-			"DESCRIPTION": "Retain ALL {Defend}s in your hand.",
-			"NAME": "Mayuri"
 		},
 		"animator:MukuroHoshimiya":
 		{
@@ -955,9 +980,22 @@
 		{
 			"FLAVOR_TEXT": "'I dare say that I will never be able to go beyond him in my heart. He will always be my first and last lover.'",
 			"DESCRIPTION": "Retain X cards at the end of turn and double their block.",
-			"UPGRADE_DESCRIPTION": "Retain X cards at the end of turn and triple their block.",
-			"EXTENDED_DESCRIPTION": ["Retain #b{0} cards and multiply their block by #b{1}."],
+			"UPGRADE_DESCRIPTION": "Retain X cards at the end of turn and triple their #yyBlock.",
+			"EXTENDED_DESCRIPTION": ["Retain #b{0} cards and multiply their #yBlock by #b{1}."],
 			"NAME": "Reine Murasame"
+		},
+		"animator:RinneSonogami":
+		{
+			"FLAVOR_TEXT": "'Farewell, Shido Itsuka. Return to those common days. And then, please make sure your next dream is a happy one...'",
+			"DESCRIPTION": "Once per turn: Pay [E] to gain [Block] equal to the total [Block] you ended last turn with.",
+			"EXTENDED_DESCRIPTION": ["Pay #yEnergy to gain #b{1} #yBlock.  This is the total amount of #yBlock you ended last turn in times #b{0}."],
+			"NAME": "Rinne Sonogami"
+		},
+		"animator:RioSonogami":
+		{
+			"FLAVOR_TEXT": "'YAYYY!  Let's go!  We're going out!  Going out!  Gooooing ouuut with Papaaa and Mamaaa!'",
+			"DESCRIPTION": "Gain !M! [Block] next turn.",
+			"NAME": "Rio Sonogami"
 		},
 		"animator:ShidoItsuka":
 		{
