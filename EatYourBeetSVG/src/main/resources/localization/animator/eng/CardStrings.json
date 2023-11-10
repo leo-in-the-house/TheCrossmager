@@ -2587,7 +2587,7 @@
 		"animator:HiiragiKureto":
 		{
 			"FLAVOR_TEXT": "'There it is.  Blowing the fifth trumpet summoned the demon of destruction: Abbadon.  Our enchantments and curses worked!  We've succeeded in controlling the Owari no Seraph!'",
-			"DESCRIPTION": "<LIM>. Start of Combat: Enter <MS>. || Twice per turn: {Exhaust} a card to Channel [Lightning].",
+			"DESCRIPTION": "<LIM>. Start of Combat: Enter <MS>. || Up to 3 times per turn: {Exhaust} a card to Channel [Lightning].",
 			"EXTENDED_DESCRIPTION": ["#yExhaust a card to #yChannel #yLightning."],
 			"NAME": "Kureto Hiiragi"
 		},

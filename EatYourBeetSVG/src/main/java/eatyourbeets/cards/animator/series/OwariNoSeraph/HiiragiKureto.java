@@ -56,7 +56,7 @@ public class HiiragiKureto extends AnimatorCard
         {
             super(owner, HiiragiKureto.DATA, PowerTriggerConditionType.Exhaust, 1);
 
-            triggerCondition.SetUses(2, true, true);
+            triggerCondition.SetUses(3, true, true);
             canBeZero = true;
 
             Initialize(amount);
