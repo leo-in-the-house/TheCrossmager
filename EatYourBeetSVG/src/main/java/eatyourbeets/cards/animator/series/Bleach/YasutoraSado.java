@@ -14,8 +14,6 @@ public class YasutoraSado extends AnimatorCard
             .SetAttack(2, CardRarity.COMMON, EYBAttackType.Normal)
             .SetSeriesFromClassPackage();
 
-    private static final CardEffectChoice choices = new CardEffectChoice();
-
     public YasutoraSado()
     {
         super(DATA);

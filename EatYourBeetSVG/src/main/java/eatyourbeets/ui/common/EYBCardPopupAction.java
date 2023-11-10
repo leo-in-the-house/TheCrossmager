@@ -1,6 +1,7 @@
 package eatyourbeets.ui.common;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -16,6 +17,7 @@ import eatyourbeets.resources.common.CommonStrings;
 import eatyourbeets.utilities.GameEffects;
 import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.JUtils;
+import eatyourbeets.utilities.RandomizedList;
 
 import java.util.function.Predicate;
 
@@ -83,6 +85,20 @@ public abstract class EYBCardPopupAction
     {
         return data.IsInGroup(AbstractDungeon.player.masterDeck);
     }
+    protected static boolean HasCardOfRarity(AbstractCard.CardRarity rarity)
+    {
+        for (AbstractCard card : AbstractDungeon.player.masterDeck.group) {
+            if (card.rarity == rarity) {
+               return true;
+            }
+        }
+
+        return false;
+    }
+    protected static boolean HasCardOfType(AbstractCard.CardType cardType)
+    {
+        return AbstractDungeon.player.masterDeck.getCardsOfType(cardType).size() > 0;
+    }
 
     protected static boolean HasMaxHp(int requiredHP)
     {
@@ -102,6 +118,39 @@ public abstract class EYBCardPopupAction
     protected static boolean Remove(AbstractCard card)
     {
         return AbstractDungeon.player.masterDeck.group.remove(card);
+    }
+
+    protected static boolean RemoveRandom(AbstractCard.CardRarity rarity)
+    {
+        boolean removableCardFound = false;
+
+        RandomizedList<AbstractCard> cardsToRemove = new RandomizedList<>();
+        for (AbstractCard card : AbstractDungeon.player.masterDeck.group) {
+            if (card.rarity == rarity) {
+                cardsToRemove.Add(card);
+                removableCardFound = true;
+            }
+        }
+
+        if (!removableCardFound) {
+            return false;
+        }
+
+        return AbstractDungeon.player.masterDeck.group.remove(cardsToRemove.Retrieve(EYBCard.rng));
+    }
+
+    protected static boolean RemoveRandom(AbstractCard.CardType cardType)
+    {
+        CardGroup cardsOfType = AbstractDungeon.player.masterDeck.getCardsOfType(cardType);
+
+        if (cardsOfType.size() == 0) {
+            return false;
+        }
+
+        RandomizedList<AbstractCard> cardsToRemove = new RandomizedList<>();
+        cardsToRemove.AddAll(cardsOfType.group);
+
+        return AbstractDungeon.player.masterDeck.group.remove(cardsToRemove.Retrieve(EYBCard.rng));
     }
 
     protected static void Obtain(AbstractCard card)

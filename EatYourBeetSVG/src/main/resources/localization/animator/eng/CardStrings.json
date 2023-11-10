@@ -281,12 +281,6 @@
 			"DESCRIPTION": "Heal !S! [HP]. Or, if used on an enemy: Apply !M! [Poison]. || When Obtained: Also obtain a random {Potion}.",
 			"NAME": "Eirin Yagokoro"
 		},
-		"animator:Kagari":
-		{
-			"DESCRIPTION": "Apply !M! [Shackles] to ALL enemies. || The next time you take damage: Channel !S! [Earth].",
-			"EXTENDED_DESCRIPTION": ["The next #b{0} time(s) you take damage: Channel #b{1} [Earth]."],
-			"NAME": "Kagari"
-		},
 		"animator:KaeyaAlberich":
 		{
 			"FLAVOR_TEXT": "'Kaeya, Knight of Favonius. Please allow me to join you on your journey. Guarding you on your journey sounds far more entertaining than any of the usual Favonius stuff.'",
@@ -2698,6 +2692,214 @@
 		}
 	},
 
+	"SERIES:REWRITE":
+	{
+		"animator:AkaneSenri":
+		{
+			"DESCRIPTION": "Enter <MS>. || Once per turn: Pay [E] to give {Haste} to the top 4 cards in your draw pile.",
+			"EXTENDED_DESCRIPTION": ["Pay 1 #yEnergy to give #yHaste to the top 4 cards in your draw pile.","Pay 1 #yEnergy to give #yHaste to the top #b{0} cards in your draw pile and #yMotivate them."],
+			"UPGRADE_DESCRIPTION": "Enter <MS>. || Once per turn: Pay [E] to give {Haste} to the top 4 cards in your draw pile and {Motivate} them.",
+			"NAME": "Akane Senri"
+		},
+		"animator:AkiraInoue":
+		{
+			"DESCRIPTION": "Exit your Stance. || Draw a card.",
+			"NAME": "Akira Inoue"
+		},
+		"animator:Chibimoth":
+		{
+			"DESCRIPTION": "When Obtained: This card gains a random Affinity. || Exit your Stance to obtain !M! [THP].",
+			"NAME": "Chibimoth"
+		},
+		"animator:ChihayaOhtori":
+		{
+			"DESCRIPTION": "This card costs 1 less for each time you changed your Stance this turn. || Discard all non-{Attack} cards in your hand.",
+			"NAME": "Chihaya Ohtori"
+		},
+		"animator:Kagari":
+		{
+			"DESCRIPTION": "Choose between {Moon Kagari} and {Terra Kagari} and apply the respective power.",
+			"NAME": "Kagari"
+		},
+		"animator:Kagari_Moon":
+		{
+			"DESCRIPTION": "Whenever you change Stances: Apply !M! [Shackles] to ALL enemies.",
+			"EXTENDED_DESCRIPTION": ["Whenever you change #yStances: #yApply #b{0} #yShackles to ALL enemies."],
+			"NAME": "Moon Kagari"
+		},
+		"animator:Kagari_Terra":
+		{
+			"DESCRIPTION": "Whenever you change Stances: Channel !M! [Earth].",
+			"EXTENDED_DESCRIPTION": ["Whenever you change #yStances: #yChannel #b{0} #yEarth."],
+			"NAME": "Terra Kagari"
+		},
+		"animator:KotarouTennouji":
+		{
+			"DESCRIPTION": "Enter <CS>. || <LIM>.  Permanently upgrade this card.",
+			"EXTENDED_DESCRIPTION": ["Enter <CS> or <WS>. || <LIM>.  Permanently upgrade this card.", "Enter <CS>, <WS>, or <MS>. || <LIM>.  Permanently upgrade this card.", "Enter <CS>, <WS>, <MS>, or <TS>. || <LIM>.  Permanently upgrade this card.", "Enter <CS>, <WS>, <MS>, <TS>, or <DS>. || <LIM>.  Permanently upgrade this card."],
+			"NAME": "Kotarou Tennouji"
+		},
+		"animator:KotoriKanbe":
+		{
+			"DESCRIPTION": "Apply !S! [Weak] and [Vulnerable]. Heal the enemy for !M!% [HP]. || <LIM>. If you didn't heal to max [HP], it also loses 3 [Strength].",
+			"NAME": "Kotori Kanbe"
+		},
+		"animator:LuciaKonohana":
+		{
+			"DESCRIPTION": "Apply !M!*X [Poison] to ALL enemies. || If X is 2 or greater: Whenever an enemy hit by this dies, transfer its {Common Debuffs} to ALL enemies.",
+			"EXTENDED_DESCRIPTION": ["When this creature dies, transfer its #yCommon #yDebuffs to ALL enemies."],
+			"NAME": "Lucia Konohana"
+		},
+		"animator:Luis":
+		{
+			"DESCRIPTION": "Enter <CS>.",
+			"NAME": "Luis"
+		},
+		"animator:Midou":
+		{
+			"DESCRIPTION": "Can only be played in a {Stance}.",
+			"NAME": "Midou"
+		},
+		"animator:SakuyaOhtori":
+		{
+			"DESCRIPTION": "Enter <CS>.  This can enter the same stance again. || On Discard: Play this card, then Exhaust.",
+			"NAME": "Sakuya Ohtori"
+		},
+		"animator:Shimako":
+		{
+			"DESCRIPTION": "If your {Stance} is: ** <WS> -> Channel [Fire]. ** <TS> -> Channel [Frost]. ** <MS> -> Channel [Dark]. ** <CS> -> Channel [Water].",
+			"NAME": "Shimako"
+		},
+		"animator:ShizuruNakatsu":
+		{
+			"DESCRIPTION": "Discard !M! random {Skills} to enter <TS>.",
+			"NAME": "Shizuru Nakatsu"
+		},
+		"animator:SougenEsaka":
+		{
+			"DESCRIPTION": "This gains [Block] a second time if in a {Stance}. || If in <CS>, enter <TS>.  Otherwise, enter <CS>.",
+			"NAME": "Sougen Esaka"
+		},
+		"animator:ToukaNishikujou":
+		{
+			"DESCRIPTION": "Whenever you change {Stances}: Obtain [T-Knife].  Increase its cost by 1, quadruple its damage, and give it x2 [L] Scaling.",
+			"EXTENDED_DESCRIPTION": ["Whenever you change #yStances, Obtain #b{0} #yThrowing #yKnife.  Increase their costs by 1, double their damage, and give them x2 #yWhite #yScaling"],
+			"NAME": "Touka Nishikujou"
+		},
+		"animator:YoshinoHaruhiko":
+		{
+			"DESCRIPTION": "When you change your Stance while this is in your discard pile: draw it.",
+			"NAME": "Yoshino Haruhiko"
+		}
+	},
+
+	"SERIES:ROZENMAIDEN":
+	{
+		"animator:Curse_JunTormented":
+		{
+			"DESCRIPTION": "Unplayable. || At the end of turn: Gain 1 [Weak] and [Frail]. || On Discard: Exhaust.",
+			"NAME": "Tormented Jun"
+		},
+		"animator:Curse_Rozen":
+		{
+			"DESCRIPTION": "Unplayable. ** While in hand, put this on top of your draw pile whenever you Synergize.",
+			"NAME": "'Rozen'"
+		},
+		"animator:Enju":
+		{
+			"DESCRIPTION": "Shuffle a {Barasuishou} into your draw pile. ** At start of your turn, Add a {Crystallize} and Upgrade a random card in your hand.",
+			"EXTENDED_DESCRIPTION": ["At start of your turn, add #b{0} #yCrystallize and #yUpgrade #b{0} random card in your hand."],
+			"NAME": "Enju",
+			"UPGRADE_DESCRIPTION": "Shuffle a {Barasuishou} with X+1 into your draw pile. ** At start of your turn, Add a {Crystallize} and Upgrade a random card in your hand."
+		},
+		"animator:Enju_Barasuishou":
+		{
+			"DESCRIPTION": "{~Unique}. Exhaust a card from your hand. || If it wasn't a Hindrance: Upgrade this.",
+			"NAME": "Barasuishou"
+		},
+		"animator:Hinaichigo":
+		{
+			"DESCRIPTION": "Apply !M! [Weak] [Vulnerable]. || <BS>: Apply !S! [Poison]. ** Otherwise: Enter <BS>.",
+			"NAME": "Hinaichigo"
+		},
+		"animator:JunSakurada":
+		{
+			"DESCRIPTION": "{~Unique}. Get {Tormented}. || Upgrade next !M! upgradable card created this combat. <LIM>. After that, upgrade permanently.",
+			"EXTENDED_DESCRIPTION": ["For the next #b{0} time(s) an upgradable card is created, upgrade it.", "For the next #b{0} time(s) an upgradable card is created, upgrade it, after that, Permanently Upgrade #yJun #ySakurada in your deck."],
+			"NAME": "Jun Sakurada"
+		},
+		"animator:Kanaria":
+		{
+			"DESCRIPTION": "Whenever you apply a Debuff: Gain 2 [Block]. || <LIM>. On Synergy: Add {Pizzicato} to your hand and Retain it.",
+			"EXTENDED_DESCRIPTION": ["Whenever you apply a Debuff, gain #b{0} [Block]."],
+			"NAME": "Kanaria"
+		},
+		"animator:Kanaria_Pizzicato":
+		{
+			"DESCRIPTION": "If you have [Air]: <DRW-M>. Otherwise: Channel [Air]. || Discard a card.",
+			"NAME": "Pizzicato"
+		},
+		"animator:Kirakishou":
+		{
+			"DESCRIPTION": "Apply !M! [Constricted]. Place the top card of your draw pile on the enemy. || <CDN>: Return ALL those cards, they cost 1 less this turn.",
+			"EXTENDED_DESCRIPTION": ["On death, nothing return to your hand.", "On death, {0} is returned to your hand.", "On death, {0} are returned to your hand."],
+			"NAME": "Kirakishou"
+		},
+		"animator:MeguKakizaki":
+		{
+			"DESCRIPTION": "Transfer !M! [Delayed Damage] from you to a random enemy. Exhaust a Curse from your hand or discard pile to Recover !S! [HP]. || <LIM>. On Exhaust: {Fetch} {Suigintou} from anywhere.",
+			"EXTENDED_DESCRIPTION": ["Exhaust a curse to recover HP."],
+			"NAME": "Megu Kakizaki"
+		},
+		"animator:NoriSakurada":
+		{
+			"DESCRIPTION": "Draw !M! card(s). Put 1 card on top of your draw pile. || At the end of turn, Reload: Remove !S! [Delayed Damage].",
+			"NAME": "Nori Sakurada"
+		},
+		"animator:Shinku":
+		{
+			"DESCRIPTION": "<ST>: <DRW-M>. || Discard your hand. Obtain [T-Knife] for each card discarded. || Can be Upgraded thrice.",
+			"NAME": "Shinku"
+		},
+		"animator:Shirosaki":
+		{
+			"DESCRIPTION": "Apply !M! [Blinded]. || Shuffle {Laplace no Ma} and a {Curse} to your draw pile. || On Synergy: The {Curse} is always {Injury}.",
+			"NAME": "Shirosaki"
+		},
+		"animator:Shirosaki_Laplace":
+		{
+			"DESCRIPTION": "When played from {Afterlife}: Draw a card in your discard pile. Otherwise: Discard a {Curse} to Enter a random {Stance}, then Exhaust.",
+			"EXTENDED_DESCRIPTION": ["Discard a curse to enter a random Stance."],
+			"NAME": "Laplace no Ma"
+		},
+		"animator:Souseiseki":
+		{
+			"DESCRIPTION": "Exhaust a card in your hand. If it was a Hindrance: <DRW>. || Synergy or On Discard: {Fetch} {Suiseiseki} from your Draw Pile.",
+			"NAME": "Souseiseki"
+		},
+		"animator:Suigintou":
+		{
+			"DESCRIPTION": "{~Unique}. || <CDN>: Channel 1 Fire and trigger it !M! times. || On Discard: Obtain a {Black Feather}.",
+			"NAME": "Suigintou"
+		},
+		"animator:Suigintou_BlackFeather":
+		{
+			"DESCRIPTION": "Draw Suigintou from anywhere and add a random {Curse} to your hand. || On Discard: Purge, then apply !M! [Shackles] to a random enemy.",
+			"NAME": "Black Feather"
+		},
+		"animator:Suiseiseki":
+		{
+			"DESCRIPTION": "Add {Slimed} to your draw pile. || {Synergy} with {Souseiseki}: Play this card again.",
+			"NAME": "Suiseiseki"
+		},
+		"animator:TomoeKashiwaba":
+		{
+			"DESCRIPTION": "<slm>. If the top card of your draw pile is {Synergic}: Draw it and gain !B! [Block]. || When Drawn: {Maintain} [W].",
+			"NAME": "Tomoe Kashiwaba",
+			"UPGRADE_DESCRIPTION": "<slm>. If the top card of your draw pile is {Synergic}: Draw it and gain !B! [Block]. || When Drawn: Gain [W]."
+		}
+	},
+
 	"SERIES:TENSEISLIME":
 	{
 		"animator:Benimaru":
@@ -3314,6 +3516,12 @@
 			"FLAVOR_TEXT": "'Hybrid railgun, Supersonic Buster with the greatest firepower!'",
 			"DESCRIPTION": "<DRW-M>. {Reload}: Attack 1 additional time. || If this card kills an enemy, deal !S! damage to ALL enemies.",
 			"NAME": "Rose"
+		},
+		"animator:SakuraKashima":
+		{
+			"DESCRIPTION": "Whenever you change your Stance: Add a {Miracle} to your hand. || Once per turn: Exhaust a card from your hand to enter <DS>.",
+			"EXTENDED_DESCRIPTION": ["Once per turn, #yExhaust a card from your hand to enter #yDivinity #yStance.  Whenever you change stance, add a #yMiracle to your hand."],
+			"NAME": "Sakura Kashima"
 		},
 		"animator:SeriousSaitama":
 		{

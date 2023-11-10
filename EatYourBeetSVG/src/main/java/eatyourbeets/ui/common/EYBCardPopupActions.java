@@ -377,6 +377,69 @@ public class EYBCardPopupActions
         }
     }
 
+    public static class Rewrite_Chibimoth extends EYBCardPopupAction
+    {
+        protected final EYBCardData TARGET1;
+
+        protected final int HP_LOSS_AMOUNT;
+        public Rewrite_Chibimoth(EYBCardData targetCard, int hpLossAmount)
+        {
+            TARGET1 = targetCard;
+            HP_LOSS_AMOUNT = hpLossAmount;
+
+            SetText(specialActions.LoseMaxHP_Chibimoth(), terms.Obtain, specialActions.LoseMaxHP_Chibimoth(String.valueOf(HP_LOSS_AMOUNT)));
+        }
+
+        @Override
+        public boolean CanExecute(AbstractCard card)
+        {
+            return IsRestRoom() && HasCard(card) && HasCardOfRarity(AbstractCard.CardRarity.BASIC);
+        }
+
+        @Override
+        public void Execute()
+        {
+            if (RemoveRandom(AbstractCard.CardRarity.BASIC)) {
+                final EYBCard card = TARGET1.MakeCopy(false);
+                LoseHP(HP_LOSS_AMOUNT);
+
+                Obtain(card);
+                SFX.Play(SFX.STANCE_ENTER_CALM, 0.4f);
+            }
+            Complete();
+        }
+    }
+
+    public static class Rewrite_Sakuya extends EYBCardPopupAction
+    {
+        protected final EYBCardData TARGET1;
+
+        public Rewrite_Sakuya(EYBCardData targetCard)
+        {
+            TARGET1 = targetCard;
+
+            SetText(specialActions.RemoveCurseSakuyaOhtori(), terms.Obtain, specialActions.RemoveCurseSakuyaOhtori(TARGET1.Strings.NAME));
+        }
+
+        @Override
+        public boolean CanExecute(AbstractCard card)
+        {
+            return IsRestRoom() && HasCard(card) && !HasCard(TARGET1) && HasCardOfType(AbstractCard.CardType.CURSE);
+        }
+
+        @Override
+        public void Execute()
+        {
+            if (RemoveRandom(AbstractCard.CardType.CURSE)) {
+                final EYBCard card = TARGET1.MakeCopy(false);
+
+                Obtain(card);
+                SFX.Play(SFX.STANCE_ENTER_CALM, 0.4f);
+            }
+            Complete();
+        }
+    }
+
     public static class TouhouProject_Remilia extends EYBCardPopupAction
     {
         protected final EYBCardData TARGET1;

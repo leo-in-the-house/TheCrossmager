@@ -1,7 +1,6 @@
 package eatyourbeets.actions.player;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -65,14 +64,14 @@ public class ChangeStance extends EYBActionWithCallback<AbstractStance>
         }
 
         previousStance = player.stance;
-        if (previousStance.ID.equals(id))
+        if (previousStance.ID.equals(id) && !triggerOnSameStance)
         {
             if (previousStance instanceof EYBStance)
             {
                 ((EYBStance) previousStance).onRefreshStance();
             }
 
-            Complete(triggerOnSameStance ? previousStance : null);
+            Complete(null);
             return;
         }
 

@@ -1,17 +1,17 @@
-package eatyourbeets.cards.animator.colorless.rare;
+package eatyourbeets.cards.animator.series.Rewrite;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import eatyourbeets.cards.animator.special.Chibimoth;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.cards.base.CardSeries;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.cards.base.attributes.HPAttribute;
 import eatyourbeets.monsters.EnemyIntent;
 import eatyourbeets.powers.CombatStats;
+import eatyourbeets.ui.common.EYBCardPopupActions;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.Mathf;
@@ -20,18 +20,22 @@ public class KotoriKanbe extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(KotoriKanbe.class)
             .SetSkill(1, CardRarity.RARE)
-            .SetColor(CardColor.COLORLESS)
-            .SetSeries(CardSeries.Rewrite);
-    public static final int HP_HEAL_STEP = 2;
+            .SetSeriesFromClassPackage()
+            .PostInitialize(data ->
+            {
+                data.AddPopupAction(new EYBCardPopupActions.Rewrite_Chibimoth(Chibimoth.DATA, 3));
+                data.AddPreview(new Chibimoth(), false);
+            });
     public static final int STRENGTH_REDUCTION = 3;
 
     public KotoriKanbe()
     {
         super(DATA);
 
-        Initialize(0, 0, 12, 2);
-        SetUpgrade(0, 0, 0, 1);
+        Initialize(0, 0, 14, 4);
+        SetUpgrade(0, 0, -4, 0);
 
+        SetAffinity_Green(1);
         SetAffinity_Blue(1);
 
         SetExhaust(true);

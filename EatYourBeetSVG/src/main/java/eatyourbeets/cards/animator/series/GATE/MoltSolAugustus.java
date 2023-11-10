@@ -54,6 +54,13 @@ public class MoltSolAugustus extends AnimatorCard
         }
 
         @Override
+        public void stackPower(int stackAmount)
+        {
+            super.stackPower(stackAmount);
+            updateDescription();
+        }
+
+        @Override
         public String GetUpdatedDescription()
         {
             return FormatDescription(upgrade ? 1 : 0, amount);

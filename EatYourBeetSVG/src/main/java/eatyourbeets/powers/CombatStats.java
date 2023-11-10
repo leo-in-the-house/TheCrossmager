@@ -138,6 +138,7 @@ public class CombatStats extends EYBPower implements InvisiblePower
     private static GameActionManager.Phase currentPhase;
     private static boolean canActivateStarter;
     private static boolean enableConsumingStatsWithScalingCard = true;
+    private static int stanceChangesThisTurn = 0;
     private static int cardsDrawnThisTurn = 0;
     private static int turnCount = 0;
     private static HashMap<String, Integer> amountIncreasedOnOrbs = new HashMap<>();
@@ -222,6 +223,7 @@ public class CombatStats extends EYBPower implements InvisiblePower
 
         turnCount = 0;
         cardsDrawnThisTurn = 0;
+        stanceChangesThisTurn = 0;
         canActivateStarter = true;
         enableConsumingStatsWithScalingCard = true;
         orbTypesChanneledThisCombat.clear();
@@ -869,7 +871,10 @@ public class CombatStats extends EYBPower implements InvisiblePower
     {
         return cardsDrawnThisTurn;
     }
-
+    public static int StanceChangesThisTurn()
+    {
+        return stanceChangesThisTurn;
+    }
     public static List<AbstractOrb> OrbsEvokedThisCombat()
     {
         return orbsEvokedThisCombat;
@@ -1090,6 +1095,8 @@ public class CombatStats extends EYBPower implements InvisiblePower
     {
         super.onChangeStance(oldStance, newStance);
 
+        stanceChangesThisTurn++;
+
         for (OnStanceChangedSubscriber s : onStanceChanged.GetSubscribers())
         {
             s.OnStanceChanged(oldStance, newStance);
@@ -1263,6 +1270,7 @@ public class CombatStats extends EYBPower implements InvisiblePower
         turnData.clear();
         cardsExhaustedThisTurn.clear();
         cardsDrawnThisTurn = 0;
+        stanceChangesThisTurn = 0;
         canActivateStarter = true;
         synergiesThisTurn.clear();
         unplayableCards.clear();

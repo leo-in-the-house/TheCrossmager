@@ -19,8 +19,6 @@ public class Spearman extends AnimatorCard
                 data.AddPreview(new Status_Wound(), false);
             });
 
-    private static final CardEffectChoice choices = new CardEffectChoice();
-
     public Spearman()
     {
         super(DATA);

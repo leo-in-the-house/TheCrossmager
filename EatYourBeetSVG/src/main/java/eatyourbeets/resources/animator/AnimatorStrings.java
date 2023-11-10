@@ -538,6 +538,36 @@ public class AnimatorStrings
         }
 
 
+        public final String T_RemoveCurse_SakuyaOhtori_F1 = Strings.TEXT[INDEX++];
+
+        public final String T_RemoveCurse_SakuyaOhtori_F2 = Strings.TEXT[INDEX++];
+
+        public final String RemoveCurseSakuyaOhtori()
+        {
+            return JUtils.Format(T_RemoveCurse_SakuyaOhtori_F1);
+        }
+
+        public final String RemoveCurseSakuyaOhtori(String cardName)
+        {
+            return JUtils.Format(T_RemoveCurse_SakuyaOhtori_F2, cardName);
+        }
+
+
+        public final String T_LoseMaxHP_Chibimoth_F1 = Strings.TEXT[INDEX++];
+
+        public final String T_LoseMaxHP_Chibimoth_F2 = Strings.TEXT[INDEX++];
+
+        public final String LoseMaxHP_Chibimoth()
+        {
+            return JUtils.Format(T_LoseMaxHP_Chibimoth_F1);
+        }
+
+        public final String LoseMaxHP_Chibimoth(String cardName)
+        {
+            return JUtils.Format(T_LoseMaxHP_Chibimoth_F2, cardName);
+        }
+
+
         public final String T_Obtain_GainVulnerable_F1 = Strings.TEXT[INDEX++];
         public final String D_Obtain_GainVulnerable_F2 = Strings.TEXT[INDEX++];
 

@@ -23,8 +23,10 @@ public class Witch extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 11);
+        Initialize(0, 7);
         SetUpgrade(0, 8);
+
+        SetEthereal(true);
 
         SetAffinity_Blue(1, 0, 1);
         SetAffinity_Pink(1, 0, 1);
