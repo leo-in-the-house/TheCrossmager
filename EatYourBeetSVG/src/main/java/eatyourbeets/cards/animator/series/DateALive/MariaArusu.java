@@ -54,7 +54,9 @@ public class MariaArusu extends AnimatorCard {
                         cardPossibilities.Clear();
                     }
 
-                    cardPossibilities.Add(card.makeCopy());
+                    if (!card.isEthereal) {
+                        cardPossibilities.Add(card.makeCopy());
+                    }
                 }
             }
 

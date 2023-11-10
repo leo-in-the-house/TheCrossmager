@@ -41,9 +41,11 @@ public class RangikuMatsumoto extends AnimatorCard implements OnStanceChangedSub
 
         if (GameUtilities.InGame() && !GameUtilities.InStance(NeutralStance.STANCE_ID)) {
             SetAttackTarget(EYBCardTarget.ALL);
+            SetMultiDamage(true);
         }
         else {
             SetAttackTarget(EYBCardTarget.Random);
+            SetMultiDamage(false);
         }
     }
 

@@ -1,5 +1,6 @@
 package eatyourbeets.cards.animator.series.Bleach;
 
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.Lightning;
@@ -38,7 +39,12 @@ public class YoruichiShihouin extends AnimatorCard {
 
         if (GameUtilities.InStance(WrathStance.STANCE_ID)) {
             GameActions.Last.ReplaceCard(uuid, new YoruichiShihouin_Cat())
-                    .SetUpgrade(upgraded);
+                .SetUpgrade(upgraded)
+                .AddCallback(cards -> {
+                    for (AbstractCard card : cards.values()) {
+                        GameActions.Top.MoveCard(card, player.discardPile, player.drawPile);
+                    }
+                });
         }
     }
 }
