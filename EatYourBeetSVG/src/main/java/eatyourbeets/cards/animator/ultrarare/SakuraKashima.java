@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.stances.AbstractStance;
 import eatyourbeets.cards.animator.special.Special_Miracle;
-import eatyourbeets.cards.base.AnimatorCard;
+import eatyourbeets.cards.base.AnimatorCard_UltraRare;
 import eatyourbeets.cards.base.CardSeries;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
@@ -17,7 +17,7 @@ import eatyourbeets.stances.DivinityStance;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
-public class SakuraKashima extends AnimatorCard {
+public class SakuraKashima extends AnimatorCard_UltraRare {
     public static final EYBCardData DATA = Register(SakuraKashima.class)
             .SetPower(3, CardRarity.SPECIAL)
             .SetColor(CardColor.COLORLESS)
