@@ -192,11 +192,6 @@
 			"EXTENDED_DESCRIPTION": ["#yWater reflects unblocked attack damage."],
 			"NAME": "Kokomi Sangonomiya"
 		},
-		"animator:KotoriKanbe":
-		{
-			"DESCRIPTION": "Apply !S! [Weak] and [Vulnerable]. Heal the enemy for !M!% [HP]. || <LIM>. If you didn't heal to max [HP], it also loses 3 [Strength].",
-			"NAME": "Kotori Kanbe"
-		},
 		"animator:Lelouch":
 		{
 			"DESCRIPTION": "Exhaust !M! random cards to make ALL enemies attack themselves this turn, the enemies who are not attacking are Stunned.",
@@ -2733,6 +2728,7 @@
 	{
 		"animator:AkaneSenri":
 		{
+			"FLAVOR_TEXT": "'It's useless.  The rest of the planet will sink into the forest in a few hours.  Go.  I don't need your power anymore.'",
 			"DESCRIPTION": "Enter <MS>. || Once per turn: Pay [E] to give {Haste} to the top 4 cards in your draw pile.",
 			"EXTENDED_DESCRIPTION": ["Pay 1 #yEnergy to give #yHaste to the top 4 cards in your draw pile.","Pay 1 #yEnergy to give #yHaste to the top #b{0} cards in your draw pile and #yMotivate them."],
 			"UPGRADE_DESCRIPTION": "Enter <MS>. || Once per turn: Pay [E] to give {Haste} to the top 4 cards in your draw pile and {Motivate} them.",
@@ -2740,21 +2736,25 @@
 		},
 		"animator:AkiraInoue":
 		{
+			"FLAVOR_TEXT": "'I got my hands on some juicy intel!  I was thinking of going to check out the forest...'",
 			"DESCRIPTION": "Exit your Stance. || Draw a card.",
 			"NAME": "Akira Inoue"
 		},
 		"animator:Chibimoth":
 		{
+			"FLAVOR_TEXT": "'Mosu!  Mosu!'",
 			"DESCRIPTION": "When Obtained: This card gains a random Affinity. || Exit your Stance to obtain !M! [THP].",
 			"NAME": "Chibimoth"
 		},
 		"animator:ChihayaOhtori":
 		{
+			"FLAVOR_TEXT": "'Listen, you need to be more careful!  There's a girl riding behind you, you know!'",
 			"DESCRIPTION": "This card costs 1 less for each time you changed your Stance this turn. || Discard all non-{Attack} cards in your hand.",
 			"NAME": "Chihaya Ohtori"
 		},
 		"animator:Kagari":
 		{
+			"FLAVOR_TEXT": "'No need to be ashamed.  You did very well for just one human.  Hold your head up high and finish your final task.'",
 			"DESCRIPTION": "Choose between {Moon Kagari} and {Terra Kagari} and apply the respective power.",
 			"NAME": "Kagari"
 		},
@@ -2772,59 +2772,70 @@
 		},
 		"animator:KotarouTennouji":
 		{
+			"FLAVOR_TEXT": "'If I were to change something, would it be the world or myself?'",
 			"DESCRIPTION": "Enter <CS>. || <LIM>.  Permanently upgrade this card.",
 			"EXTENDED_DESCRIPTION": ["Enter <CS> or <WS>. || <LIM>.  Permanently upgrade this card.", "Enter <CS>, <WS>, or <MS>. || <LIM>.  Permanently upgrade this card.", "Enter <CS>, <WS>, <MS>, or <TS>. || <LIM>.  Permanently upgrade this card.", "Enter <CS>, <WS>, <MS>, <TS>, or <DS>. || <LIM>.  Permanently upgrade this card."],
 			"NAME": "Kotarou Tennouji"
 		},
 		"animator:KotoriKanbe":
 		{
-			"DESCRIPTION": "Apply !S! [Weak] and [Vulnerable]. Heal the enemy for !M!% [HP]. || <LIM>. If you didn't heal to max [HP], it also loses 3 [Strength].",
+			"FLAVOR_TEXT": "'Yes, I'm the summoner of the forest!  But I need to take Kotarou to a hospital!  I'm gonna do what I should've done years ago!  So... go awaaaaaaaay!'",
+			"DESCRIPTION": "Apply !S! [Weak] and [Vulnerable]. Heal the enemy for !M!% [HP]. || <LIM>.  If the target didn't heal to max [HP], it also loses 3 [Strength].",
 			"NAME": "Kotori Kanbe"
 		},
 		"animator:LuciaKonohana":
 		{
+			"FLAVOR_TEXT": "'But... I do love sunflowers.  I could only watch them from far away... since they'd wilt if I touched them.  Today, I finally made it this far... this is just like the field I saw back then...'",
 			"DESCRIPTION": "Apply !M!*X [Poison] to ALL enemies. || If X is 2 or greater: Whenever an enemy hit by this dies, transfer its {Common Debuffs} to ALL enemies.",
 			"EXTENDED_DESCRIPTION": ["When this creature dies, transfer its #yCommon #yDebuffs to ALL enemies."],
 			"NAME": "Lucia Konohana"
 		},
 		"animator:Luis":
 		{
+			"FLAVOR_TEXT": "'I once hit a friend of mine.  It was a trivial fight.  But he died from it.  I volunteered to come here to punish myself.'",
 			"DESCRIPTION": "Enter <CS>.",
 			"NAME": "Luis"
 		},
 		"animator:Midou":
 		{
+			"FLAVOR_TEXT": "'You need to keep on walking as long as you possibly can!  Keep me entertained as I watch you from hell.  Don't stop walking your path now.  Don't stop until the ground falls out under your feet from despair!'",
 			"DESCRIPTION": "Can only be played in a {Stance}.",
 			"NAME": "Midou"
 		},
 		"animator:SakuyaOhtori":
 		{
+			"FLAVOR_TEXT": "'Chihaya, I told you before why cherry blossoms are fated to fall apart.  The reason is that the flow of time moves in only one direction.'",
 			"DESCRIPTION": "Enter <CS>.  This can enter the same stance again. || On Discard: Play this card, then Exhaust.",
 			"NAME": "Sakuya Ohtori"
 		},
 		"animator:Shimako":
 		{
+			"FLAVOR_TEXT": "'I can explain everything that happened!  I can tell you anything you want to know about salvation!  I did all of it... so... Kotarou and Akane... they didn't do it...'",
 			"DESCRIPTION": "If your {Stance} is: ** <WS> -> Channel [Fire]. ** <TS> -> Channel [Frost]. ** <MS> -> Channel [Dark]. ** <CS> -> Channel [Water].",
 			"NAME": "Shimako"
 		},
 		"animator:ShizuruNakatsu":
 		{
+			"FLAVOR_TEXT": "'I'm not sure... this is the first time I've told anyone.  And what you just said might've made me happy, Kotarou.'",
 			"DESCRIPTION": "Discard !M! random {Skills} to enter <TS>.",
 			"NAME": "Shizuru Nakatsu"
 		},
 		"animator:SougenEsaka":
 		{
+			"FLAVOR_TEXT": "'An opponent with inferior skill would surely go for a surprise attack in my blind spot.  Yet no matter how fast that attack may be, it poses no trouble when I know it's coming.'",
 			"DESCRIPTION": "This gains [Block] a second time if in a {Stance}. || If in <CS>, enter <TS>.  Otherwise, enter <CS>.",
 			"NAME": "Sougen Esaka"
 		},
 		"animator:ToukaNishikujou":
 		{
+			"FLAVOR_TEXT": "'If you ever meet my parents... They're probably at HQ, but if you ever do see them... Could you tell them... I found something I wanted to do, and did it to the best of my ability?'",
 			"DESCRIPTION": "Whenever you change {Stances}: Obtain [T-Knife].  Increase its cost by 1, quadruple its damage, and give it x2 [L] Scaling.",
 			"EXTENDED_DESCRIPTION": ["Whenever you change #yStances, Obtain #b{0} #yThrowing #yKnife.  Increase their costs by 1, double their damage, and give them x2 #yWhite #yScaling"],
 			"NAME": "Touka Nishikujou"
 		},
 		"animator:YoshinoHaruhiko":
 		{
+			"FLAVOR_TEXT": "'Give them hell for me. That's the way I roll! No one's here to see this, which makes it the perfect last gig for me! ...isn't that right, Kotarou?'",
 			"DESCRIPTION": "When you change your Stance while this is in your discard pile: draw it.",
 			"NAME": "Yoshino Haruhiko"
 		}
@@ -3556,6 +3567,7 @@
 		},
 		"animator:SakuraKashima":
 		{
+			"FLAVOR_TEXT": "'Those who do not know true despair, who are merely discontent with life, are nothing but nuisances.'",
 			"DESCRIPTION": "Whenever you change your Stance: Add a {Miracle} to your hand. || Once per turn: Exhaust a card from your hand to enter <DS>.",
 			"EXTENDED_DESCRIPTION": ["Once per turn, #yExhaust a card from your hand to enter #yDivinity #yStance.  Whenever you change stance, add a #yMiracle to your hand."],
 			"NAME": "Sakura Kashima"
