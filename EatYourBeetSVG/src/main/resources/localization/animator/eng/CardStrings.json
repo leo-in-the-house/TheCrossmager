@@ -2816,7 +2816,7 @@
 		},
 		"animator:ShizuruNakatsu":
 		{
-			"FLAVOR_TEXT": "'I'm not sure... this is the first time I've told anyone.  And what you just said might've made me happy, Kotarou.'",
+			"FLAVOR_TEXT": "'I feel calm under this tree.  Why is that?  The light streaming through the leaves gently covers my body.  Kotarou...?  We really did meet again.'",
 			"DESCRIPTION": "Discard !M! random {Skills} to enter <TS>.",
 			"NAME": "Shizuru Nakatsu"
 		},
