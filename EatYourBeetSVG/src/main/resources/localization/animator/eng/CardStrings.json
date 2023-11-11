@@ -668,7 +668,7 @@
 		"animator:Lulua":
 		{
 			"FLAVOR_TEXT": "'The version of me from that time, she’s still separated from her Stia.  That... That makes me so sad!  That’s why... I have to do something!'",
-			"DESCRIPTION": "Gain|Boost !M! [P]. || Add a copy of this card and another card in your hand to your discard pile.",
+			"DESCRIPTION": "Gain !M! [P]. || Add a copy of this card and another card in your hand to your discard pile.",
 			"NAME": "Lulua"
 		},
 		"animator:LydieMalen":
@@ -760,7 +760,7 @@
 		"animator:ByakuyaKuchiki":
 		{
 			"FLAVOR_TEXT": "'At what point did I ever claim that I was cutting you down in my capacity as a Shinigami?'",
-			"DESCRIPTION": "Choose whether to Attack or Block. || <WS>: Exhaust, exit your Stance, and add {Byakuya Bankai} to your draw pile.",
+			"DESCRIPTION": "Choose whether to Attack or Block. || <WS>: Exhaust, exit your Stance, and add {Byakuya Bankai}{+} to your draw pile.",
 			"NAME": "Byakuya Kuchiki"
 		},
 		"animator:Defend_Bleach":
@@ -777,7 +777,7 @@
 		"animator:IchigoKurosaki":
 		{
 			"FLAVOR_TEXT": "'If fate is a millstone, then we are the grist. There is nothing we can do. So I wish for strength.'",
-			"DESCRIPTION": "Gain !M! [L]. || <WS>: Exhaust, exit your Stance, and add {Ichigo Bankai} to your draw pile.",
+			"DESCRIPTION": "Gain !M! [L]. || <WS>: Exhaust, exit your Stance, and add {Ichigo Bankai}{+} to your draw pile.",
 			"NAME": "Ichigo Kurosaki"
 		},
 		"animator:IkkakuBankai":
@@ -789,13 +789,13 @@
 		"animator:IkkakuMadarame":
 		{
 			"FLAVOR_TEXT": "'You really think you're gonna win a fight like this without taking any lives?'",
-			"DESCRIPTION": "<WS>: Exhaust, exit your Stance, and add {Ikkaku Bankai} to your draw pile.",
+			"DESCRIPTION": "<WS>: Exhaust, exit your Stance, and add {Ikkaku Bankai}{+} to your draw pile.",
 			"NAME": "Ikkaku Madarame"
 		},
 		"animator:IsshinKurosaki":
 		{
 			"FLAVOR_TEXT": "'Live well, age well, and go bald well. And die after me. And... if you can, die smiling.'",
-			"DESCRIPTION": "Channel !M! [Fire]. || <WS>. All [Fire] deal !S! additional damage this combat.",
+			"DESCRIPTION": "Channel !M! [Fire]. || <WS>: All [Fire] deal !S! additional damage this combat.",
 			"NAME": "Isshin Kurosaki"
 		},
 		"animator:MayuriKurotsuchi":
@@ -832,7 +832,7 @@
 		"animator:RukiaKuchiki":
 		{
 			"FLAVOR_TEXT": "'Whether I like him, whether I hate him, it's just all so troublesome.'",
-			"DESCRIPTION": "Channel [Frost]. Increase its amount by !M!. || <WS>: Exhaust, exit your Stance, and add {Rukia Bankai} to your draw pile.",
+			"DESCRIPTION": "Channel [Frost]. Increase its amount by !M!. || <WS>: Exhaust, exit your Stance, and add {Rukia Bankai}{+} to your draw pile.",
 			"NAME": "Rukia Kuchiki"
 		},
 		"animator:SajinKomamura":
@@ -855,7 +855,7 @@
 		"animator:UryuuIshida":
 		{
 			"FLAVOR_TEXT": "'You're asking if this is a bow? Of course it is. You think I would use anything else?'",
-			"DESCRIPTION": "Any Stance: Transfer all [Weak] and [Vulnerable] from you to the enemy.",
+			"DESCRIPTION": "Transfer all [Weak] and [Vulnerable] from you to the enemy.",
 			"NAME": "Uryuu Ishida"
 		},
 		"animator:YasutoraSado":
@@ -879,8 +879,7 @@
 		"animator:ZarakiKenpachi":
 		{
 			"FLAVOR_TEXT": "'To feel this desire again... I want to get stronger!'",
-			"DESCRIPTION": "Enter <WS>. || Whenever you gain [Force]: You gain an additional !M! [Strength].",
-			"EXTENDED_DESCRIPTION": ["Whenever you gain #yForce, You gain an additional #b{0} #yStrength."],
+			"DESCRIPTION": "Enter <WS>. || Gain [Strength] equal to the number of <R> cards in your master deck.",
 			"NAME": "Zaraki Kenpachi"
 		}
 	},
@@ -958,7 +957,7 @@
 		"animator:Natsumi":
 		{
 			"FLAVOR_TEXT": "'I... can do this! I... am strong! I... am cute! Everyone... I'll... I'll protect you all!'",
-			"DESCRIPTION": "Transform up to !M! cards in your hand into random {Common}{+} or {Uncommon}{+} Skills. || Whenever you transform a {Hindrance}: Add a {Depression} into your draw pile.",
+			"DESCRIPTION": "Transform up to !M! cards in your hand into random {Uncommon}{+} Skills. || Whenever you transform a {Hindrance}: Add a {Depression} into your draw pile.",
 			"EXTENDED_DESCRIPTION": ["Choose a card to transform."],
 			"NAME": "Natsumi Kyouno"
 		},
@@ -979,8 +978,8 @@
 		"animator:ReineMurasame":
 		{
 			"FLAVOR_TEXT": "'I dare say that I will never be able to go beyond him in my heart. He will always be my first and last lover.'",
-			"DESCRIPTION": "Retain X cards at the end of turn and double their block.",
-			"UPGRADE_DESCRIPTION": "Retain X cards at the end of turn and triple their #yyBlock.",
+			"DESCRIPTION": "Retain X cards at the end of turn and double their [Block].",
+			"UPGRADE_DESCRIPTION": "Retain X cards at the end of turn and triple their [Block].",
 			"EXTENDED_DESCRIPTION": ["Retain #b{0} cards and multiply their #yBlock by #b{1}."],
 			"NAME": "Reine Murasame"
 		},

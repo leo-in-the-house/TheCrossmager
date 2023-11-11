@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
-import com.megacrit.cardcrawl.stances.NeutralStance;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
@@ -45,10 +44,7 @@ public class UryuuIshida extends AnimatorCard
         GameActions.Bottom.DealDamage(this, m, AbstractGameAction.AttackEffect.BLUNT_LIGHT)
                 .SetSoundPitch(1.2f, 1.5f);
 
-        if (!GameUtilities.InStance(NeutralStance.STANCE_ID))
-        {
-            TransferWeakVulnerable(m);
-        }
+        TransferWeakVulnerable(m);
     }
 
     private void TransferWeakVulnerable(AbstractMonster m)

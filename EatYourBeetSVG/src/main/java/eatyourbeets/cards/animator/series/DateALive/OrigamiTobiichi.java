@@ -16,7 +16,7 @@ import eatyourbeets.utilities.GameUtilities;
 public class OrigamiTobiichi extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(OrigamiTobiichi.class)
-            .SetPower(3, CardRarity.UNCOMMON)
+            .SetPower(4, CardRarity.UNCOMMON)
             .SetSeriesFromClassPackage()
             .PostInitialize(data ->
             {
@@ -29,8 +29,8 @@ public class OrigamiTobiichi extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 0, 20, 0);
-        SetUpgrade(0, 0, 20);
+        Initialize(0, 0, 25, 0);
+        SetCostUpgrade(-1);
 
         SetAffinity_White(1);
         SetAffinity_Blue(1);

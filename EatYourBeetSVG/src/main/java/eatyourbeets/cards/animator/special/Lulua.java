@@ -18,7 +18,7 @@ public class Lulua extends AnimatorCard {
         super(DATA);
 
         Initialize(6, 0, 2);
-        SetUpgrade(3, 0, 0);
+        SetUpgrade(4, 0, 0);
 
         SetAffinity_Pink(1, 0, 1);
     }
@@ -29,7 +29,7 @@ public class Lulua extends AnimatorCard {
 
         GameActions.Bottom.DealDamage(this, m, AttackEffects.ICE);
 
-        GameActions.Bottom.GainPink(magicNumber, upgraded);
+        GameActions.Bottom.GainPink(magicNumber);
 
         GameActions.Bottom.SelectFromHand(name, 1, false)
         .SetOptions(false, false, false)

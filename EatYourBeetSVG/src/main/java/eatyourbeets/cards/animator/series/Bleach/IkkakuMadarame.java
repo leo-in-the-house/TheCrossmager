@@ -17,7 +17,7 @@ public class IkkakuMadarame extends AnimatorCard
             .SetSeriesFromClassPackage();
     static
     {
-        DATA.AddPreview(new IkkakuBankai(), false);
+        DATA.AddPreview(new IkkakuBankai(), true);
     }
 
     public IkkakuMadarame()
@@ -40,7 +40,8 @@ public class IkkakuMadarame extends AnimatorCard
         if (WrathStance.IsActive())
         {
             GameActions.Bottom.ChangeStance(NeutralStance.STANCE_ID);
-            GameActions.Bottom.MakeCardInDrawPile(new IkkakuBankai());
+            GameActions.Bottom.MakeCardInDrawPile(new IkkakuBankai())
+                    .SetUpgrade(upgraded, true);
             GameActions.Last.ModifyAllInstances(uuid).AddCallback(GameActions.Bottom::Exhaust);
         }
     }

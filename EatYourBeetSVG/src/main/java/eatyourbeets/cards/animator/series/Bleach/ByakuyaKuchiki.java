@@ -20,7 +20,7 @@ public class ByakuyaKuchiki extends AnimatorCard
             .SetSeriesFromClassPackage();
     static
     {
-        DATA.AddPreview(new ByakuyaBankai(), false);
+        DATA.AddPreview(new ByakuyaBankai(), true);
     }
 
     public ByakuyaKuchiki()
@@ -46,7 +46,8 @@ public class ByakuyaKuchiki extends AnimatorCard
         if (WrathStance.IsActive())
         {
             GameActions.Bottom.ChangeStance(NeutralStance.STANCE_ID);
-            GameActions.Bottom.MakeCardInDrawPile(new ByakuyaBankai());
+            GameActions.Bottom.MakeCardInDrawPile(new ByakuyaBankai())
+                    .SetUpgrade(upgraded, true);
             GameActions.Last.ModifyAllInstances(uuid).AddCallback(GameActions.Bottom::Exhaust);
         }
     }

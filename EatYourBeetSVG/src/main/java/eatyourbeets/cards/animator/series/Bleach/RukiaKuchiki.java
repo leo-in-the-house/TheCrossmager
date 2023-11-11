@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.orbs.Frost;
 import com.megacrit.cardcrawl.stances.NeutralStance;
 import eatyourbeets.cards.animator.special.RukiaBankai;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
@@ -21,7 +20,7 @@ public class RukiaKuchiki extends AnimatorCard
             .SetSeriesFromClassPackage();
     static
     {
-        DATA.AddPreview(new RukiaBankai(), false);
+        DATA.AddPreview(new RukiaBankai(), true);
     }
 
     public RukiaKuchiki()
@@ -46,7 +45,8 @@ public class RukiaKuchiki extends AnimatorCard
         if (WrathStance.IsActive())
         {
             GameActions.Bottom.ChangeStance(NeutralStance.STANCE_ID);
-            GameActions.Bottom.MakeCardInDrawPile(new RukiaBankai());
+            GameActions.Bottom.MakeCardInDrawPile(new RukiaBankai())
+                    .SetUpgrade(upgraded, true);
             GameActions.Last.ModifyAllInstances(uuid).AddCallback(GameActions.Bottom::Exhaust);
         }
     }

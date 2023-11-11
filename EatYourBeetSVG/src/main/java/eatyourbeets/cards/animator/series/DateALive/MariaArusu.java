@@ -22,6 +22,9 @@ public class MariaArusu extends AnimatorCard {
 
         Initialize(0, 0, 0);
         SetUpgrade(0, 0, 0);
+
+        SetAffinity_Teal(1);
+        SetAffinity_Pink(1);
     }
 
     @Override

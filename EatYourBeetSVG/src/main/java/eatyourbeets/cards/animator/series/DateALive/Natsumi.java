@@ -38,7 +38,6 @@ public class Natsumi extends AnimatorCard
 
         SetExhaust(true);
     }
-
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
@@ -64,19 +63,10 @@ public class Natsumi extends AnimatorCard
                         GameActions.Bottom.MakeCardInDrawPile(new Curse_Depression());
                     }
 
-                    GameActions.Bottom.ReplaceCard(card.uuid, GetRandomCommonOrUncommonSkill().makeCopy())
+                    GameActions.Bottom.ReplaceCard(card.uuid, AbstractDungeon.getCardFromPool(CardRarity.UNCOMMON, CardType.SKILL, true).makeCopy())
                             .SetUpgrade(upgraded);
                 }
             }
         });
-    }
-
-    private AbstractCard GetRandomCommonOrUncommonSkill() {
-        if (rng.randomBoolean()) {
-            return AbstractDungeon.getCardFromPool(CardRarity.COMMON, CardType.SKILL, true);
-        }
-        else {
-            return AbstractDungeon.getCardFromPool(CardRarity.UNCOMMON, CardType.SKILL, true);
-        }
     }
 }

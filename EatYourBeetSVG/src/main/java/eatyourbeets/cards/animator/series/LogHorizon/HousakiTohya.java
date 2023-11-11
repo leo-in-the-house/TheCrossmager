@@ -12,8 +12,7 @@ public class HousakiTohya extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(HousakiTohya.class)
             .SetAttack(1, CardRarity.COMMON, EYBAttackType.Normal)
-            .SetSeriesFromClassPackage()
-            .PostInitialize(data -> data.AddPreview(new HousakiMinori(), false));
+            .SetSeriesFromClassPackage();
 
     public HousakiTohya()
     {

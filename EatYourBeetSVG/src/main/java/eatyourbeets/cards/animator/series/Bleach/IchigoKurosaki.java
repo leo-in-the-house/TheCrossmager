@@ -17,7 +17,7 @@ public class IchigoKurosaki extends AnimatorCard
             .SetSeriesFromClassPackage();
     static
     {
-        DATA.AddPreview(new IchigoBankai(), false);
+        DATA.AddPreview(new IchigoBankai(), true);
     }
 
     public IchigoKurosaki()
@@ -41,7 +41,8 @@ public class IchigoKurosaki extends AnimatorCard
         if (WrathStance.IsActive())
         {
             GameActions.Bottom.ChangeStance(NeutralStance.STANCE_ID);
-            GameActions.Bottom.MakeCardInDrawPile(new IchigoBankai());
+            GameActions.Bottom.MakeCardInDrawPile(new IchigoBankai())
+                    .SetUpgrade(upgraded, true);
             GameActions.Last.ModifyAllInstances(uuid).AddCallback(GameActions.Bottom::Exhaust);
         }
     }
