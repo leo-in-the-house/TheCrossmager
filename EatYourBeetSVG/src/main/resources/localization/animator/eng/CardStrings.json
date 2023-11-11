@@ -1160,7 +1160,7 @@
 		"animator:EmiyaKiritsugu":
 		{
 			"FLAVOR_TEXT": "'The thing is, when you save one person's life, it means that you won't be able to save someone else's.'",
-			"DESCRIPTION": "To play this, Exhaust and Seal 1 of !M! {Uncommon}s from your draw pile. If it is: || [L] -> Obtain {[D] Token}{+} ** [D] -> Obtain {[L] Token}{+} ** Other -> Gain [L][D] for each color.",
+			"DESCRIPTION": "To play this, Exhaust and Seal 1 of !M! {Uncommon}s from your draw pile. If it is: || [L] -> Obtain {[D] Token}{+} ** [D] -> Obtain {[L] Token}{+} ** Other -> Gain !M! [L][D].",
 			"NAME": "Emiya Kiritsugu"
 		},
 		"animator:EmiyaShirou":
@@ -1331,8 +1331,8 @@
 		"animator:WinryRockbell":
 		{
 			"FLAVOR_TEXT": "'If you're so grateful, then you should clean up your act and stop picking pockets! Mr. Dominic gave you these legs out of a selfless act of good will!'",
-			"DESCRIPTION": "Whenever you channel an {Orb}: Gain !M! [Block].",
-			"EXTENDED_DESCRIPTION": ["Whenever you channel an #yOrb, gain #b{0} #yBlock."],
+			"DESCRIPTION": "Whenever you Channel an {Orb}: Gain !M! [Block].",
+			"EXTENDED_DESCRIPTION": ["Whenever you #yChannel an #yOrb, gain #b{0} #yBlock."],
 			"NAME": "Winry Rockbell"
 		},
 		"animator:Wrath":
@@ -2805,7 +2805,7 @@
 		"animator:SakuyaOhtori":
 		{
 			"FLAVOR_TEXT": "'Chihaya, I told you before why cherry blossoms are fated to fall apart.  The reason is that the flow of time moves in only one direction.'",
-			"DESCRIPTION": "Enter <CS>.  This can enter the same stance again. || On Discard: Play this card, then Exhaust.",
+			"DESCRIPTION": "Enter <CS>.  This can enter the same Stance again. || On Discard: Play this card, then Exhaust.",
 			"NAME": "Sakuya Ohtori"
 		},
 		"animator:Shimako":
@@ -2816,7 +2816,7 @@
 		},
 		"animator:ShizuruNakatsu":
 		{
-			"FLAVOR_TEXT": "'I feel calm under this tree.  Why is that?  The light streaming through the leaves gently covers my body.  Kotarou...?  We really did meet again.'",
+			"FLAVOR_TEXT": "'I feel calm under this tree.  Why is that?  The light streaming through the leaves gently covers my body...  Kotarou...?  We really did meet again...'",
 			"DESCRIPTION": "Discard !M! random {Skills} to enter <TS>.",
 			"NAME": "Shizuru Nakatsu"
 		},
@@ -2835,7 +2835,7 @@
 		},
 		"animator:YoshinoHaruhiko":
 		{
-			"FLAVOR_TEXT": "'Give them hell for me. That's the way I roll! No one's here to see this, which makes it the perfect last gig for me! ...isn't that right, Kotarou?'",
+			"FLAVOR_TEXT": "'Give them hell for me. That's the way I roll! No one's here to see this, which makes it the perfect last gig for me! ...Isn't that right, Kotarou?'",
 			"DESCRIPTION": "When you change your Stance while this is in your discard pile: draw it.",
 			"NAME": "Yoshino Haruhiko"
 		}

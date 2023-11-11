@@ -27,11 +27,11 @@ public class EmiyaKiritsugu extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(7, 7, 2);
-        SetUpgrade(3, 3, 0);
+        Initialize(7, 7, 3);
+        SetUpgrade(2, 2, 0);
 
-        SetAffinity_White(2);
-        SetAffinity_Black(2);
+        SetAffinity_White(2, 0, 2);
+        SetAffinity_Black(2, 0, 2);
     }
 
     @Override
@@ -100,8 +100,8 @@ public class EmiyaKiritsugu extends AnimatorCard
                             GameActions.Bottom.ObtainAffinityToken(Affinity.White, true);
                         }
                         else {
-                            GameActions.Bottom.GainAffinity(Affinity.Black);
-                            GameActions.Bottom.GainAffinity(Affinity.White);
+                            GameActions.Bottom.GainAffinity(Affinity.Black, magicNumber);
+                            GameActions.Bottom.GainAffinity(Affinity.White, magicNumber);
                         }
                     }
                 }
