@@ -17,7 +17,7 @@ import eatyourbeets.utilities.GameUtilities;
 public class AlinaGray extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(AlinaGray.class)
-            .SetPower(2, CardRarity.RARE)
+            .SetPower(1, CardRarity.RARE)
             
             .SetSeriesFromClassPackage();
 
