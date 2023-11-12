@@ -1119,7 +1119,7 @@
 		"animator:Rena":
 		{
 			"FLAVOR_TEXT": "'This is the will of Eldrasil... Yes, there's nothing to be afraid of.'",
-			"DESCRIPTION": "Enter <CS>. || When Discarded: Gain [G] and [~Blur].",
+			"DESCRIPTION": "Gain !M! [G]. || When Discarded: Gain [G] and [~Blur].",
 			"NAME": "Rena Erindel"
 		}
 	},
@@ -2867,7 +2867,7 @@
 		},
 		"animator:Hinaichigo":
 		{
-			"DESCRIPTION": "Apply !M! [Weak] [Vulnerable]. || <BS>: Apply !S! [Poison]. ** Otherwise: Enter <BS>.",
+			"DESCRIPTION": "Apply !M! [Shackles].",
 			"NAME": "Hinaichigo"
 		},
 		"animator:JunSakurada":
@@ -2901,7 +2901,7 @@
 		},
 		"animator:NoriSakurada":
 		{
-			"DESCRIPTION": "Draw !M! card(s). Put 1 card on top of your draw pile. || At the end of turn, Reload: Remove !S! [Delayed Damage].",
+			"DESCRIPTION": "When Retained, increase the amount of [THP] this card generates by !S! until played.",
 			"NAME": "Nori Sakurada"
 		},
 		"animator:Shinku":
@@ -2922,7 +2922,7 @@
 		},
 		"animator:Souseiseki":
 		{
-			"DESCRIPTION": "Exhaust a card in your hand. If it was a Hindrance: <DRW>. || Synergy or On Discard: {Fetch} {Suiseiseki} from your Draw Pile.",
+			"DESCRIPTION": "Deal additional damage for each other card in your hand.",
 			"NAME": "Souseiseki"
 		},
 		"animator:Suigintou":
@@ -2937,14 +2937,13 @@
 		},
 		"animator:Suiseiseki":
 		{
-			"DESCRIPTION": "Add {Slimed} to your draw pile. || {Synergy} with {Souseiseki}: Play this card again.",
+			"DESCRIPTION": "Gain {Temp.} [Thorns] for each other card in your hand.",
 			"NAME": "Suiseiseki"
 		},
 		"animator:TomoeKashiwaba":
 		{
-			"DESCRIPTION": "<slm>. If the top card of your draw pile is {Synergic}: Draw it and gain !B! [Block]. || When Drawn: {Maintain} [W].",
-			"NAME": "Tomoe Kashiwaba",
-			"UPGRADE_DESCRIPTION": "<slm>. If the top card of your draw pile is {Synergic}: Draw it and gain !B! [Block]. || When Drawn: Gain [W]."
+			"DESCRIPTION": "Retain a card at end of turn.",
+			"NAME": "Tomoe Kashiwaba"
 		}
 	},
 
