@@ -2872,8 +2872,7 @@
 		},
 		"animator:JunSakurada":
 		{
-			"DESCRIPTION": "{~Unique}. Get {Tormented}. || Upgrade next !M! upgradable card created this combat. <LIM>. After that, upgrade permanently.",
-			"EXTENDED_DESCRIPTION": ["For the next #b{0} time(s) an upgradable card is created, upgrade it.", "For the next #b{0} time(s) an upgradable card is created, upgrade it, after that, Permanently Upgrade #yJun #ySakurada in your deck."],
+			"DESCRIPTION": "{Retain} your rightmost {Rozen Maiden Doll}. || !A! [P] [L]: Instead, {Retain} all {Rozen Maiden Dolls} in your hand.",
 			"NAME": "Jun Sakurada"
 		},
 		"animator:Kanaria":
@@ -2911,14 +2910,14 @@
 		},
 		"animator:Shirosaki":
 		{
-			"DESCRIPTION": "Apply !M! [Blinded]. || Shuffle {Laplace no Ma} and a {Curse} to your draw pile. || On Synergy: The {Curse} is always {Injury}.",
+			"DESCRIPTION": "Add {Laplace’s Demon}{+} and {Dazed} to the top of your draw pile.",
 			"NAME": "Shirosaki"
 		},
 		"animator:Shirosaki_Laplace":
 		{
-			"DESCRIPTION": "When played from {Afterlife}: Draw a card in your discard pile. Otherwise: Discard a {Curse} to Enter a random {Stance}, then Exhaust.",
-			"EXTENDED_DESCRIPTION": ["Discard a curse to enter a random Stance."],
-			"NAME": "Laplace no Ma"
+			"DESCRIPTION": "Whenever you {Retain} a card, reduce its cost by !M!.",
+			"EXTENDED_DESCRIPTION": ["Whenever you #yRetain a card, reduce its cost by #b{0}."],
+			"NAME": "Laplace's Demon"
 		},
 		"animator:Souseiseki":
 		{

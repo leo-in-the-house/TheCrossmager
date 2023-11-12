@@ -384,6 +384,12 @@
 		"NAMES": ["ricochet"],
 		"PROPER_NAME": "Ricochet"
 	},
+	"Rozen Maiden Doll":
+	{
+		"DESCRIPTION": "Suigintou, Kanaria, Suiseiseki, Souseiseki, Shinku, Hinaichigo, Kirakishou",
+		"NAMES": ["rozen maiden doll"],
+		"PROPER_NAME": "Rozen Maiden Doll"
+	},
 	"Sadistic":
 	{
 		"DESCRIPTION": "Deal damage whenever you apply a #ydebuff to an enemy.",

@@ -89,6 +89,7 @@ public class CombatStats extends EYBPower implements InvisiblePower
     public static final GameEvent<OnShuffleSubscriber> onShuffle = RegisterEvent(new GameEvent<>());
     public static final GameEvent<OnCardCreatedSubscriber> onCardCreated = RegisterEvent(new GameEvent<>());
     public static final GameEvent<OnCardResetSubscriber> onCardReset = RegisterEvent(new GameEvent<>());
+    public static final GameEvent<OnCardRetainedSubscriber> onCardRetained = RegisterEvent(new GameEvent<>());
     public static final GameEvent<OnCardReshuffledSubscriber> onCardReshuffled = RegisterEvent(new GameEvent<>());
     public static final GameEvent<OnAfterCardDiscardedSubscriber> onAfterCardDiscarded = RegisterEvent(new GameEvent<>());
     public static final GameEvent<OnAfterCardDrawnSubscriber> onAfterCardDrawn = RegisterEvent(new GameEvent<>());
@@ -1267,6 +1268,16 @@ public class CombatStats extends EYBPower implements InvisiblePower
         for (OnEndOfTurnLastSubscriber s : onEndOfTurnLast.GetSubscribers())
         {
             s.OnEndOfTurnLast(isPlayer);
+        }
+
+        for (AbstractCard card : player.hand.group) {
+
+            if (card.retain || card.selfRetain) {
+                for (OnCardRetainedSubscriber p : onCardRetained.GetSubscribers())
+                {
+                    p.OnCardRetained(card);
+                }
+            }
         }
 
         turnData.clear();
