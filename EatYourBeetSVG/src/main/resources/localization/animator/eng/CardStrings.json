@@ -2845,86 +2845,102 @@
 	{
 		"animator:Barasuishou":
 		{
+			"FLAVOR_TEXT": "'It's so sad.  You are so pitiful.  You cannot fight me, can you?  How pathetic and weak, and pitiful!  In that case, I shall take great pleasure in breaking you!'",
 			"DESCRIPTION": "Channel !M! [Frost]. || At the end of this turn: Trigger your [Frost] once for each card in your hand.",
 			"EXTENDED_DESCRIPTION": ["Add end of this turn: Trigger your #yFrost once for each card in your hand."],
 			"NAME": "Barasuishou"
 		},
 		"animator:Enju":
 		{
+			"FLAVOR_TEXT": "'Rozen?  I am greater than Rozen ever was!  I am the best dollmaker!  No one's ever surpassed my master's talent before, but I have!'",
 			"DESCRIPTION": "Purge a card in your draw or discard pile. || Once per turn: Pay 1 [E], Add a copy of the purged card to the top of your draw pile.  It costs 0 and gains {Retain}.",
 			"EXTENDED_DESCRIPTION": ["Add a copy of #y{0} to the top of your draw pile.  It costs 0 and gains #yRetain."],
 			"NAME": "Enju"
 		},
 		"animator:Hinaichigo":
 		{
+			"FLAVOR_TEXT": "'Don't cry anymore, 'kay?  Everything will be fine, you'll see!  Even when... I'm gone!  Everyone will be... be there!  For you!  They will... You'll never be... alone... again...'",
 			"DESCRIPTION": "Apply !M! [Shackles].",
 			"NAME": "Hinaichigo"
 		},
 		"animator:JunSakurada":
 		{
-			"DESCRIPTION": "{Retain} your rightmost {Rozen Maiden Doll}. || !A! [P] [L]: Instead, {Retain} all {Rozen Maiden Dolls} in your hand.",
+			"FLAVOR_TEXT": "'Doll #1 is Suigintou.  Doll #2 is Kanaria.  Doll #3 is Suiseiseki.  Doll #4 is Souseiseki.  Doll #5 is Shinku.  Doll #6 Hinaichigo.  And the last doll, doll #7, is Kirakishou.  She's the villain in all of this.'",
+			"DESCRIPTION": "{Retain} your rightmost {Rozen Maiden Doll}. || !A! [P] [L]: {Retain} all {Rozen Maiden Dolls} in your hand.",
 			"NAME": "Jun Sakurada"
 		},
 		"animator:Kanaria":
 		{
+			"FLAVOR_TEXT": "'Aw, Jun!  Could you be any louder!  Maybe I was this close to having a good idea, but you went and ruined it!'",
 			"DESCRIPTION": "Enter <TS>. || Whenever you play a card with {Retain} in <TS>: Deal !M! Damage to ALL enemies, then increase this amount by 3.",
 			"EXTENDED_DESCRIPTION": ["Whenever you play a card with #yRetain in #yTrance #yStance: Deal #b{0} Damage to ALL enemies, then increase this amount by 3."],
 			"NAME": "Kanaria"
 		},
 		"animator:MeguKakizaki":
 		{
+			"FLAVOR_TEXT": "'A while back, before we met, I thought that beautiful wings would sprout out of my back to take me away the very moment that I died.  I'm sure I could fly right out of this window with an angel at my side.'",
 			"DESCRIPTION": "Take !M! [DD] to Fetch a <D> card from anywhere and Retain it.  If you do, Gain !S! [D].",
 			"NAME": "Megu Kakizaki"
 		},
 		"animator:MitsuKusabue":
 		{
+			"FLAVOR_TEXT": "'What?!  Shinku and the others were baking cookies?  Oh wow!  I didn't know they could do that!  I wish I could have eaten some...'",
 			"DESCRIPTION": "At the end of your turn, {Retain} a card and give it Scaling equal to its affinities.",
 			"EXTENDED_DESCRIPTION": ["At the end of your turn, #yRetain a card and give it #yScaling equal to its affinities."],
 			"NAME": "Mitsu Kusabue"
 		},
 		"animator:NoriSakurada":
 		{
+			"FLAVOR_TEXT": "'Hey, Jun-kun!  Maybe you... could you maybe come down and start eating dinners with me again!  I wanna hear about your hobbies and have fun conversations with you!  Maybe if you do that, you'll go back to school...'",
 			"DESCRIPTION": "When Retained, increase the amount of [THP] this card generates by !S! until played.",
 			"NAME": "Nori Sakurada"
 		},
 		"animator:Shinku":
 		{
+			"FLAVOR_TEXT": "'However, when a girl grows into a woman, she eventually stops playing with dolls.  In spite of this, the dolls won't complain.  Please remember our time together... Jun.  Remember me, the doll you made.  Please remember the tiny doll... who was so happy to have spent time with you.'",
 			"DESCRIPTION": "Play !M! [T-Knife] against random enemies. || When this card is {Retained}, increase the [T-Knife] amount by !S! until played.",
 			"NAME": "Shinku"
 		},
 		"animator:Shirosaki":
 		{
+			"FLAVOR_TEXT": "'These dolls are well made, aren't they?  With all these details, sometimes it seems like they're alive.  Like they might actually have thoughts of their own...'",
 			"DESCRIPTION": "Add {Laplace’s Demon}{+} and {Dazed} to the top of your draw pile.",
 			"NAME": "Shirosaki"
 		},
 		"animator:Shirosaki_Laplace":
 		{
+			"FLAVOR_TEXT": "'Fair is foul, and foul is fair.  And thinking won't get you anywhere, but the undeniable truth is right, over, there.'",
 			"DESCRIPTION": "Whenever you {Retain} a card, reduce its cost by !M!.",
 			"EXTENDED_DESCRIPTION": ["Whenever you #yRetain a card, reduce its cost by #b{0}."],
 			"NAME": "Laplace's Demon"
 		},
 		"animator:Souseiseki":
 		{
+			"FLAVOR_TEXT": "'Suiseiseki and I are twin dolls, as you know.  We are so unusually close, we even share our unusual eye color.  Now, what might you not know is that among the seven Rosa Mystica shared between all of us sisters, she and I had gemstones that were perfectly overlapping.'",
 			"DESCRIPTION": "Deal additional damage for each other card in your hand.",
 			"NAME": "Souseiseki"
 		},
 		"animator:Suigintou":
 		{
+			"FLAVOR_TEXT": "'You are going to enter a contract with me, whether you like it or not.  Your life force is going to provide me with nourishment.  And I alone will dominate the Alice Game.'",
 			"DESCRIPTION": "{~Unique}. || Remove your rightmost {debuff} to obtain {Black Feather}.",
 			"NAME": "Suigintou"
 		},
 		"animator:Suigintou_BlackFeather":
 		{
+			"FLAVOR_TEXT": "'It's been a while.  Some 586,921 hours and 37 minutes.'",
 			"DESCRIPTION": "Draw {Suigintou} from anywhere, including your exhaust pile, and {Retain} it. || <LIM>. Permanently upgrade {Suigintou}.",
 			"NAME": "Black Feather"
 		},
 		"animator:Suiseiseki":
 		{
+			"FLAVOR_TEXT": "'However, if you even thought for an instant that I was gonna enter into a contract with you, you are such an idiot!  Suiseiseki's master will always be little Jun, and that's all there is to it, you stupidhead!'",
 			"DESCRIPTION": "Gain {Temp.} [Thorns] for each other card in your hand.",
 			"NAME": "Suiseiseki"
 		},
 		"animator:TomoeKashiwaba":
 		{
+			"FLAVOR_TEXT": "'I'm the one who should be thanking you, Hinaichigo!  I was happy with you here!  I was so happy!  Whenever I came home, you... you always cheered me up!  And even when you went to Sakurada's house, you know, I thought about you each and every day!  And when I'd come home, I'd be alone in my room!  I'd always wondered what you were doing then!  I'd worry that you'd forget about me or something, I dunno!  But you never did, did you!  You always remembered me, Hina!'",
 			"DESCRIPTION": "Retain a card at end of turn.",
 			"NAME": "Tomoe Kashiwaba"
 		}
@@ -3529,7 +3545,7 @@
 		},
 		"animator:Kirakishou":
 		{
-			"FLAVOR_TEXT": "''",
+			"FLAVOR_TEXT": "'Joke?  Illusion?  You say horrible things!  You made me so unhappy that day!  So of course you'd understand!  Why I'd have to hide your dear one from you, sister!'",
 			"DESCRIPTION": "On start of turn: Purge the top !M! cards of your draw pile || 3 times per turn: Obtain a copy of a card Purged by this ability, reduce its cost by 1, and Retain it.",
 			"EXTENDED_DESCRIPTION": ["Obtain a copy of a random card #yPurged by this ability, reduce its cost by 1, and #yRetain it. At start of Turn: Purge the top #b{0} cards of your draw pile."],
 			"NAME": "Kirakishou"

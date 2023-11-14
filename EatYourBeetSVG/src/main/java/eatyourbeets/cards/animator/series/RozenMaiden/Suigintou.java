@@ -5,7 +5,11 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.special.Suigintou_BlackFeather;
 import eatyourbeets.cards.base.*;
+import eatyourbeets.cards.base.attributes.AbstractAttribute;
+import eatyourbeets.cards.base.attributes.TempHPAttribute;
+import eatyourbeets.effects.VFX;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameEffects;
 import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.ListSelection;
 
@@ -29,10 +33,22 @@ public class Suigintou extends AnimatorCard {
     }
 
     @Override
+    public AbstractAttribute GetSpecialInfo()
+    {
+        return TempHPAttribute.Instance.SetCard(this, true);
+    }
+
+    @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info) {
         GameUtilities.PlayVoiceSFX(name);
 
-        GameActions.Bottom.DealDamageToAll(this, AbstractGameAction.AttackEffect.POISON);
+        GameActions.Bottom.DealDamageToAll(this, AbstractGameAction.AttackEffect.NONE)
+        .SetDamageEffect((c, __) ->
+        {
+            GameEffects.List.Add(VFX.Whirlwind());
+        });
+
+        GameActions.Bottom.GainTemporaryHP(magicNumber);
 
         GameActions.Bottom.RemoveDebuffs(player, ListSelection.Last(0), 1)
             .AddCallback(debuffs -> {
