@@ -3,18 +3,16 @@ package eatyourbeets.cards.animator.basic;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
-import eatyourbeets.ui.common.EYBCardPopupActions;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Defend extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Defend.class)
-            .SetSkill(1, CardRarity.BASIC, EYBCardTarget.None)
-            .PostInitialize(data -> data.AddPopupAction(new EYBCardPopupActions.ImproveBasicCard()));
+            .SetSkill(1, CardRarity.BASIC, EYBCardTarget.None);
 
     public Defend()
     {

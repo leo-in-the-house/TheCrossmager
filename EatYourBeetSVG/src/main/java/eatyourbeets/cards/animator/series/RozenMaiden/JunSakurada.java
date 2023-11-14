@@ -3,6 +3,7 @@ package eatyourbeets.cards.animator.series.RozenMaiden;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import eatyourbeets.cards.animator.ultrarare.Kirakishou;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
@@ -12,7 +13,7 @@ import java.util.List;
 
 public class JunSakurada extends AnimatorCard {
     public static final EYBCardData DATA = Register(JunSakurada.class)
-            .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None)
+            .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.Normal)
             .SetSeriesFromClassPackage();
 
     private static final List<String> ROZEN_MAIDEN_DOLLS = new LinkedList<String>();
@@ -20,15 +21,19 @@ public class JunSakurada extends AnimatorCard {
     public JunSakurada() {
         super(DATA);
 
-        Initialize(0, 6, 0);
+        Initialize(0, 8, 0);
         SetUpgrade(0, 2, 0);
 
         SetAffinity_Pink(1, 0, 1);
         SetAffinity_White(1, 0, 1);
 
-        ROZEN_MAIDEN_DOLLS.add(Hinaichigo.DATA.ID);
+        ROZEN_MAIDEN_DOLLS.add(Suigintou.DATA.ID);
+        ROZEN_MAIDEN_DOLLS.add(Kanaria.DATA.ID);
         ROZEN_MAIDEN_DOLLS.add(Souseiseki.DATA.ID);
         ROZEN_MAIDEN_DOLLS.add(Suiseiseki.DATA.ID);
+        ROZEN_MAIDEN_DOLLS.add(Shinku.DATA.ID);
+        ROZEN_MAIDEN_DOLLS.add(Hinaichigo.DATA.ID);
+        ROZEN_MAIDEN_DOLLS.add(Kirakishou.DATA.ID);
 
         SetAffinityRequirement(Affinity.Pink, 2);
         SetAffinityRequirement(Affinity.White, 2);
@@ -49,22 +54,18 @@ public class JunSakurada extends AnimatorCard {
 
         GameActions.Bottom.GainBlock(block);
 
-        boolean rightmostOnly = true;
 
         if (CheckSpecialCondition(false)) {
-            rightmostOnly = false;
-        }
-
-        for (int i=0; i<player.hand.size(); i++) {
-            AbstractCard card = player.hand.getNCardFromTop(i);
-            if (card != null && isRozenMaidenDoll(card)) {
-                GameUtilities.Retain(card);
-
-                if (rightmostOnly) {
+            for (int i=0; i<player.hand.size(); i++) {
+                AbstractCard card = player.hand.getNCardFromTop(i);
+                if (card != null && isRozenMaidenDoll(card)) {
+                    GameActions.Bottom.PlayCopy(card, m);
+                    GameActions.Bottom.PlayCard(card, m);
                     break;
                 }
             }
         }
+
     }
 
     private boolean isRozenMaidenDoll(AbstractCard card) {

@@ -2,6 +2,7 @@ package eatyourbeets.cards.animator.series.RozenMaiden;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.special.Suigintou_BlackFeather;
 import eatyourbeets.cards.base.*;
@@ -46,6 +47,7 @@ public class Suigintou extends AnimatorCard {
         .SetDamageEffect((c, __) ->
         {
             GameEffects.List.Add(VFX.Whirlwind());
+            CardCrawlGame.sound.play("ATTACK_WHIRLWIND", 0.2f);
         });
 
         GameActions.Bottom.GainTemporaryHP(magicNumber);

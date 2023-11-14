@@ -1,20 +1,18 @@
 package eatyourbeets.cards.animator.basic;
 
-import eatyourbeets.cards.base.CardUseInfo;
-import eatyourbeets.effects.AttackEffects;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
+import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
-import eatyourbeets.ui.common.EYBCardPopupActions;
+import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Strike extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Strike.class)
-            .SetAttack(1, CardRarity.BASIC)
-            .PostInitialize(data -> data.AddPopupAction(new EYBCardPopupActions.ImproveBasicCard()));
+            .SetAttack(1, CardRarity.BASIC);
 
     public Strike()
     {

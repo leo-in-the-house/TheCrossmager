@@ -5,7 +5,6 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Interpolation;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -162,7 +161,8 @@ public class EYBCardPopup extends GUIElement
         }
 
         this.downgradeValue = GetDowngradeValue(card);
-        this.downgradeCard_button.SetText(GR.Animator.Strings.SpecialActions.Downgrade_T(downgradeValue)).SetActive(downgradeValue > 0);
+        //this.downgradeCard_button.SetText(GR.Animator.Strings.SpecialActions.Downgrade_T(downgradeValue)).SetActive(downgradeValue > 0);
+        this.downgradeCard_button.SetText(GR.Animator.Strings.SpecialActions.Downgrade_T(downgradeValue));
         this.upgradedCard = null;
         this.isActive = true;
         this.prevCard = null;
@@ -267,7 +267,8 @@ public class EYBCardPopup extends GUIElement
         this.upgrade_toggle.SetToggle(SingleCardViewPopup.isViewingUpgrade).TryUpdate();
         this.betaArt_toggle.SetToggle(viewBetaArt).TryUpdate();
         this.specialAction_button.SetActive(specialAction_button.onLeftClick != null).TryUpdate();
-        this.downgradeCard_button.SetActive(downgradeValue > 0).TryUpdate();
+        this.downgradeCard_button.SetActive(false).TryUpdate();
+        //this.downgradeCard_button.SetActive(downgradeValue > 0).TryUpdate();
     }
 
     @Override

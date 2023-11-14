@@ -2865,8 +2865,8 @@
 		},
 		"animator:JunSakurada":
 		{
-			"FLAVOR_TEXT": "'Doll #1 is Suigintou.  Doll #2 is Kanaria.  Doll #3 is Suiseiseki.  Doll #4 is Souseiseki.  Doll #5 is Shinku.  Doll #6 Hinaichigo.  And the last doll, doll #7, is Kirakishou.  She's the villain in all of this.'",
-			"DESCRIPTION": "{Retain} your rightmost {Rozen Maiden Doll}. || !A! [P] [L]: {Retain} all {Rozen Maiden Dolls} in your hand.",
+			"FLAVOR_TEXT": "'Doll number 1 is Suigintou.  Doll number 2 is Kanaria.  Doll number 3 is Suiseiseki.  Doll number 4 is Souseiseki.  Doll number 5 is Shinku.  Doll number 6 Hinaichigo.  And the last doll, doll number 7, is Kirakishou.  She's the villain in all of this.'",
+			"DESCRIPTION": "!A! [P] [L]: Play the rightmost {Rozen Maiden Doll} in your hand twice.",
 			"NAME": "Jun Sakurada"
 		},
 		"animator:Kanaria":
@@ -2940,7 +2940,7 @@
 		},
 		"animator:TomoeKashiwaba":
 		{
-			"FLAVOR_TEXT": "'I'm the one who should be thanking you, Hinaichigo!  I was happy with you here!  I was so happy!  Whenever I came home, you... you always cheered me up!  And even when you went to Sakurada's house, you know, I thought about you each and every day!  And when I'd come home, I'd be alone in my room!  I'd always wondered what you were doing then!  I'd worry that you'd forget about me or something, I dunno!  But you never did, did you!  You always remembered me, Hina!'",
+			"FLAVOR_TEXT": "'Whenever I came home, you... you always cheered me up!  And even when you went to Sakurada's house, you know, I thought about you each and every day!  And when I'd come home, I'd be alone in my room!  I'd always wondered what you were doing then!  I'd worry that you'd forget about me or something, I dunno!  But you never did, did you!  You always remembered me, Hina!'",
 			"DESCRIPTION": "Retain a card at end of turn.",
 			"NAME": "Tomoe Kashiwaba"
 		}
