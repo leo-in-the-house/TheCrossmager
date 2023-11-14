@@ -14,7 +14,16 @@ import java.util.List;
 public class JunSakurada extends AnimatorCard {
     public static final EYBCardData DATA = Register(JunSakurada.class)
             .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.Normal)
-            .SetSeriesFromClassPackage();
+            .SetSeriesFromClassPackage()
+            .PostInitialize(data ->
+            {
+                data.AddPreview(new Suigintou(), true);
+                data.AddPreview(new Kanaria(), true);
+                data.AddPreview(new Souseiseki(), true);
+                data.AddPreview(new Suiseiseki(), true);
+                data.AddPreview(new Shinku(), true);
+                data.AddPreview(new Hinaichigo(), true);
+            });
 
     private static final List<String> ROZEN_MAIDEN_DOLLS = new LinkedList<String>();
 

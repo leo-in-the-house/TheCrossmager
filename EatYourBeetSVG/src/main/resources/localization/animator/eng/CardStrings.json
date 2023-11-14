@@ -2853,8 +2853,8 @@
 		"animator:Enju":
 		{
 			"FLAVOR_TEXT": "'Rozen?  I am greater than Rozen ever was!  I am the best dollmaker!  No one's ever surpassed my master's talent before, but I have!'",
-			"DESCRIPTION": "Purge a card in your draw or discard pile. || Once per turn: Pay 1 [E], Add a copy of the purged card to the top of your draw pile.  It costs 0 and gains {Retain}.",
-			"EXTENDED_DESCRIPTION": ["Add a copy of #y{0} to the top of your draw pile.  It costs 0 and gains #yRetain."],
+			"DESCRIPTION": "Once per turn, Pay 2: Add a copy of a random {Rozen Maiden Doll}{+} that you have seen to your hand.  {Retain} it.  Fetches the imposter of the seventh doll.",
+			"EXTENDED_DESCRIPTION": ["Pay 2 #yEnergy, add #b{0} copies of random #yRozen #yMaiden #yDolls that you have seen to your hand.  #yRetain it.  Fetches the imposter of the seventh doll.","Pay 2 #yEnergy, Add #b{0} copies of random #yupgraded #yRozen #yMaiden #yDolls that you have seen to your hand.  #yRetain it.  Fetches the imposter of the seventh doll."],
 			"NAME": "Enju"
 		},
 		"animator:Hinaichigo":
@@ -3546,7 +3546,7 @@
 		"animator:Kirakishou":
 		{
 			"FLAVOR_TEXT": "'Joke?  Illusion?  You say horrible things!  You made me so unhappy that day!  So of course you'd understand!  Why I'd have to hide your dear one from you, sister!'",
-			"DESCRIPTION": "On start of turn: Purge the top !M! cards of your draw pile || 3 times per turn: Obtain a copy of a card Purged by this ability, reduce its cost by 1, and Retain it.",
+			"DESCRIPTION": "On start of turn: Purge the top !M! cards of your draw pile. || 3 times per turn: Obtain a copy of a card Purged by this ability, reduce its cost by 1, and Retain it.",
 			"EXTENDED_DESCRIPTION": ["Obtain a copy of a random card #yPurged by this ability, reduce its cost by 1, and #yRetain it. At start of Turn: Purge the top #b{0} cards of your draw pile."],
 			"NAME": "Kirakishou"
 		},
