@@ -3,14 +3,14 @@ package eatyourbeets.cards.animator.series.LogHorizon;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.cards.base.attributes.AbstractAttribute;
+import eatyourbeets.powers.common.DeEnergizedPower;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
 public class IsuzuTonan extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(IsuzuTonan.class)
-            .SetSkill(3, CardRarity.COMMON, EYBCardTarget.None)
+            .SetSkill(1, CardRarity.COMMON, EYBCardTarget.None)
             .SetSeriesFromClassPackage();
 
     private static final CardEffectChoice choices = new CardEffectChoice();
@@ -19,27 +19,13 @@ public class IsuzuTonan extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 3, 2);
-        SetUpgrade(0, 0, 3);
+        Initialize(0, 0, 0);
+        SetCostUpgrade(-1);
 
         SetAffinity_Yellow(2);
 
         SetExhaust(true);
-        SetEthereal(true);
         SetDelayed(true);
-    }
-
-    @Override
-    protected void OnUpgrade() {
-        super.OnUpgrade();
-
-        SetEthereal(false);
-    }
-
-    @Override
-    public AbstractAttribute GetBlockInfo()
-    {
-        return super.GetBlockInfo().AddMultiplier(magicNumber);
     }
 
     @Override
@@ -47,10 +33,11 @@ public class IsuzuTonan extends AnimatorCard
     {
         GameUtilities.PlayVoiceSFX(name);
 
-        for (int i=0; i<magicNumber; i++) {
-            GameActions.Bottom.GainBlock(block);
-        }
+        int energyGainAmount = player.hand.group.size();
 
-        GameActions.Bottom.GainEnergy(player.hand.group.size());
+        if (energyGainAmount > 0) {
+            GameActions.Bottom.GainEnergy(energyGainAmount);
+            GameActions.Bottom.StackPower(new DeEnergizedPower(player, energyGainAmount));
+        }
     }
 }

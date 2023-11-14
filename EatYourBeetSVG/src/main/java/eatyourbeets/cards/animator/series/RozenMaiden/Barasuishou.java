@@ -15,6 +15,7 @@ import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.SFX;
 import eatyourbeets.effects.VFX;
 import eatyourbeets.powers.AnimatorPower;
+import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
 import eatyourbeets.utilities.GameUtilities;
@@ -27,7 +28,7 @@ public class Barasuishou extends AnimatorCard {
     public Barasuishou() {
         super(DATA);
 
-        Initialize(5, 0, 2);
+        Initialize(4, 0, 1);
         SetUpgrade(4, 0, 1);
 
         SetAffinity_Blue(1, 0, 1);
@@ -46,7 +47,10 @@ public class Barasuishou extends AnimatorCard {
         });
 
         GameActions.Bottom.ChannelOrbs(Frost::new, magicNumber);
-        GameActions.Bottom.StackPower(new BarasuishouPower(player, 1));
+
+        if (CombatStats.TryActivateSemiLimited(cardID)) {
+            GameActions.Bottom.StackPower(new BarasuishouPower(player, 1));
+        }
     }
 
     public static class BarasuishouPower extends AnimatorPower {

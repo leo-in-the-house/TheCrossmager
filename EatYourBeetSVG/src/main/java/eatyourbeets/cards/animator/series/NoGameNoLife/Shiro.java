@@ -49,7 +49,7 @@ public class Shiro extends AnimatorCard
 
     public void RefreshCost()
     {
-        CostModifiers.For(this).Set(-1 * JUtils.Count(player.exhaustPile.group, card -> (card.costForTurn == 0)));
+        CostModifiers.For(this).Set("shiro",-1 * JUtils.Count(player.exhaustPile.group, card -> (card.costForTurn == 0)));
     }
 
     @Override
