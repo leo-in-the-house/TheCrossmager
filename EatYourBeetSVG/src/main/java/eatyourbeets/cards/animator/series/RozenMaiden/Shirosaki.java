@@ -1,9 +1,9 @@
 package eatyourbeets.cards.animator.series.RozenMaiden;
 
-import com.megacrit.cardcrawl.cards.status.Dazed;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.special.Shirosaki_Laplace;
+import eatyourbeets.cards.animator.status.Status_Dazed;
 import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
@@ -19,7 +19,7 @@ public class Shirosaki extends AnimatorCard {
             .PostInitialize(data ->
             {
                 data.AddPreview(new Shirosaki_Laplace(), true);
-                data.AddPreview(new Dazed(), false);
+                data.AddPreview(new Status_Dazed(), false);
             });
 
     public Shirosaki() {
@@ -38,7 +38,7 @@ public class Shirosaki extends AnimatorCard {
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info) {
         GameUtilities.PlayVoiceSFX(name);
 
-        GameActions.Bottom.MakeCardInDrawPile(new Dazed())
+        GameActions.Bottom.MakeCardInDrawPile(new Status_Dazed())
                 .SetDestination(CardSelection.Top);
         GameActions.Bottom.MakeCardInDrawPile(new Shirosaki_Laplace())
                 .SetDestination(CardSelection.Top);

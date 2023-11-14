@@ -2843,27 +2843,17 @@
 
 	"SERIES:ROZENMAIDEN":
 	{
-		"animator:Curse_JunTormented":
+		"animator:Barasuishou":
 		{
-			"DESCRIPTION": "Unplayable. || At the end of turn: Gain 1 [Weak] and [Frail]. || On Discard: Exhaust.",
-			"NAME": "Tormented Jun"
-		},
-		"animator:Curse_Rozen":
-		{
-			"DESCRIPTION": "Unplayable. ** While in hand, put this on top of your draw pile whenever you Synergize.",
-			"NAME": "'Rozen'"
+			"DESCRIPTION": "Channel !M! [Frost]. || At the end of this turn: Trigger your [Frost] once for each card in your hand.",
+			"EXTENDED_DESCRIPTION": ["Add end of this turn: Trigger your #yFrost once for each card in your hand."],
+			"NAME": "Barasuishou"
 		},
 		"animator:Enju":
 		{
-			"DESCRIPTION": "Shuffle a {Barasuishou} into your draw pile. ** At start of your turn, Add a {Crystallize} and Upgrade a random card in your hand.",
-			"EXTENDED_DESCRIPTION": ["At start of your turn, add #b{0} #yCrystallize and #yUpgrade #b{0} random card in your hand."],
-			"NAME": "Enju",
-			"UPGRADE_DESCRIPTION": "Shuffle a {Barasuishou} with X+1 into your draw pile. ** At start of your turn, Add a {Crystallize} and Upgrade a random card in your hand."
-		},
-		"animator:Enju_Barasuishou":
-		{
-			"DESCRIPTION": "{~Unique}. Exhaust a card from your hand. || If it wasn't a Hindrance: Upgrade this.",
-			"NAME": "Barasuishou"
+			"DESCRIPTION": "Purge a card in your draw or discard pile. || Once per turn: Pay 1 [E], Add a copy of the purged card to the top of your draw pile.  It costs 0 and gains {Retain}.",
+			"EXTENDED_DESCRIPTION": ["Add a copy of #y{0} to the top of your draw pile.  It costs 0 and gains #yRetain."],
+			"NAME": "Enju"
 		},
 		"animator:Hinaichigo":
 		{
@@ -2877,26 +2867,20 @@
 		},
 		"animator:Kanaria":
 		{
-			"DESCRIPTION": "Whenever you apply a Debuff: Gain 2 [Block]. || <LIM>. On Synergy: Add {Pizzicato} to your hand and Retain it.",
-			"EXTENDED_DESCRIPTION": ["Whenever you apply a Debuff, gain #b{0} [Block]."],
+			"DESCRIPTION": "Enter <TS>. || Whenever you play a card with {Retain} in <TS>: Deal !M! Damage to ALL enemies, then increase this amount by 3.",
+			"EXTENDED_DESCRIPTION": ["Whenever you play a card with #yRetain in #yTrance #yStance: Deal #b{0} Damage to ALL enemies, then increase this amount by 3."],
 			"NAME": "Kanaria"
-		},
-		"animator:Kanaria_Pizzicato":
-		{
-			"DESCRIPTION": "If you have [Air]: <DRW-M>. Otherwise: Channel [Air]. || Discard a card.",
-			"NAME": "Pizzicato"
-		},
-		"animator:Kirakishou":
-		{
-			"DESCRIPTION": "Apply !M! [Constricted]. Place the top card of your draw pile on the enemy. || <CDN>: Return ALL those cards, they cost 1 less this turn.",
-			"EXTENDED_DESCRIPTION": ["On death, nothing return to your hand.", "On death, {0} is returned to your hand.", "On death, {0} are returned to your hand."],
-			"NAME": "Kirakishou"
 		},
 		"animator:MeguKakizaki":
 		{
-			"DESCRIPTION": "Transfer !M! [Delayed Damage] from you to a random enemy. Exhaust a Curse from your hand or discard pile to Recover !S! [HP]. || <LIM>. On Exhaust: {Fetch} {Suigintou} from anywhere.",
-			"EXTENDED_DESCRIPTION": ["Exhaust a curse to recover HP."],
+			"DESCRIPTION": "Take !M! [DD] to Fetch a <D> card from anywhere and Retain it.  If you do, Gain !S! [D].",
 			"NAME": "Megu Kakizaki"
+		},
+		"animator:MitsuKusabue":
+		{
+			"DESCRIPTION": "At the end of your turn, {Retain} a card and give it Scaling equal to its affinities.",
+			"EXTENDED_DESCRIPTION": ["At the end of your turn, #yRetain a card and give it #yScaling equal to its affinities."],
+			"NAME": "Mitsu Kusabue"
 		},
 		"animator:NoriSakurada":
 		{
@@ -2905,7 +2889,7 @@
 		},
 		"animator:Shinku":
 		{
-			"DESCRIPTION": "<ST>: <DRW-M>. || Discard your hand. Obtain [T-Knife] for each card discarded. || Can be Upgraded thrice.",
+			"DESCRIPTION": "Play !M! [T-Knife] against random enemies. || When this card is {Retained}, increase the [T-Knife] amount by !S! until played.",
 			"NAME": "Shinku"
 		},
 		"animator:Shirosaki":
@@ -2926,12 +2910,12 @@
 		},
 		"animator:Suigintou":
 		{
-			"DESCRIPTION": "{~Unique}. || <CDN>: Channel 1 Fire and trigger it !M! times. || On Discard: Obtain a {Black Feather}.",
+			"DESCRIPTION": "{~Unique}. || Remove your rightmost {debuff} to obtain {Black Feather}.",
 			"NAME": "Suigintou"
 		},
 		"animator:Suigintou_BlackFeather":
 		{
-			"DESCRIPTION": "Draw Suigintou from anywhere and add a random {Curse} to your hand. || On Discard: Purge, then apply !M! [Shackles] to a random enemy.",
+			"DESCRIPTION": "Draw {Suigintou} from anywhere, including your exhaust pile, and {Retain} it. || <LIM>. Permanently upgrade {Suigintou}.",
 			"NAME": "Black Feather"
 		},
 		"animator:Suiseiseki":
@@ -3542,6 +3526,13 @@
 			"FLAVOR_TEXT": "''Kay then!  First, let's tackle that Nue!  Then, we'll go find Mr. Frog Man, along with Eli-Eli and Crus-Crus while we're at it!'",
 			"DESCRIPTION": "",
 			"NAME": "The Human Typhoon"
+		},
+		"animator:Kirakishou":
+		{
+			"FLAVOR_TEXT": "''",
+			"DESCRIPTION": "On start of turn: Purge the top !M! cards of your draw pile || 3 times per turn: Obtain a copy of a card Purged by this ability, reduce its cost by 1, and Retain it.",
+			"EXTENDED_DESCRIPTION": ["Obtain a copy of a random card #yPurged by this ability, reduce its cost by 1, and #yRetain it. At start of Turn: Purge the top #b{0} cards of your draw pile."],
+			"NAME": "Kirakishou"
 		},
 		"animator:NivaLada":
 		{

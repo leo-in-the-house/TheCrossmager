@@ -21,7 +21,8 @@
 			"Choose {0} card(s).",
 			"Purge {0} card(s).",
 			"Scry (You draw from left to right).",
-			"Fetch {0} card(s)."
+			"Fetch {0} card(s).",
+			"Select a card to permanently remove from your deck."
 		]
 	},
 	"eyb:TheUnnamedReign":
