@@ -23,7 +23,7 @@ public class Suigintou extends AnimatorCard {
     public Suigintou() {
         super(DATA);
 
-        Initialize(12, 0, 3);
+        Initialize(12, 0, 6);
         SetUpgrade(3, 0, 1);
 
         SetAffinity_Violet(1, 0, 1);
