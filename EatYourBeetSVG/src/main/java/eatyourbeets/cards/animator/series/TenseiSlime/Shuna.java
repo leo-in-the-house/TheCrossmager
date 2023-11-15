@@ -17,26 +17,19 @@ public class Shuna extends AnimatorCard
         super(DATA);
 
         Initialize(0, 0, 2, 2);
-        SetUpgrade(0, 0, 0, 1);
+        SetUpgrade(0, 0, 4, 0);
 
-        SetAffinity_Blue(1);
-        SetAffinity_White(1, 1, 0);
-    }
+        SetAffinity_White(1);
 
-    @Override
-    public void triggerWhenDrawn()
-    {
-        super.triggerWhenDrawn();
-
-        GameActions.Bottom.GainTemporaryHP(secondaryValue);
-        GameActions.Bottom.Flash(this);
+        SetEthereal(true);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.GainAffinity(Affinity.White, 1, upgraded);
-        GameActions.Bottom.Draw(magicNumber);
+
+        GameActions.Bottom.GainWhite(magicNumber);
+        GameActions.Bottom.GainEnergyNextTurn(secondaryValue);
     }
 }

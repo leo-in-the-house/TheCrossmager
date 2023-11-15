@@ -111,6 +111,11 @@
 		"DESCRIPTIONS": ["At the end of turn, gain #b{0} [Strength]."],
 		"NAME": "Delayed Strength"
 	},
+	"eyb:DelayedWrathPower":
+	{
+		"DESCRIPTIONS": ["At the start of your next turn, Enter <WS>."],
+		"NAME": "Delayed Wrath"
+	},
 	"eyb:NextTurnDrawReductionPower":
 	{
 		"DESCRIPTIONS": ["Next turn, draw #b{0} less card(s)."],

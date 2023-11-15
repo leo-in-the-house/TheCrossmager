@@ -3,14 +3,13 @@ package eatyourbeets.cards.animator.series.TenseiSlime;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.tokens.AffinityToken;
-import eatyourbeets.cards.base.Affinity;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.AttackEffects;
-import eatyourbeets.stances.WrathStance;
+import eatyourbeets.powers.common.DelayedWrathPower;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Shion extends AnimatorCard
 {
@@ -22,13 +21,11 @@ public class Shion extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(16, 0, 13);
-        SetUpgrade(4, 0, 0);
+        Initialize(14, 0, 0);
+        SetUpgrade(8, 0, 0);
 
-        SetAffinity_Red(2, 0, 2);
-        SetAffinity_White(1);
-
-        SetAffinityRequirement(Affinity.Red, 2);
+        SetAffinity_Red(1);
+        SetAffinity_Brown(1);
     }
 
     @Override
@@ -36,11 +33,6 @@ public class Shion extends AnimatorCard
     {
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.BLUNT_HEAVY);
-    }
-
-    @Override
-    public void OnLateUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
-    {
         GameActions.Bottom.DiscardFromHand(name, 1, false)
         .SetFilter(c -> c instanceof AffinityToken)
         .SetOptions(false, true, false)
@@ -48,19 +40,9 @@ public class Shion extends AnimatorCard
         {
             if (cards.size() > 0)
             {
-                GameActions.Bottom.GainBlock(magicNumber);
+                GameActions.Bottom.StackPower(new DelayedWrathPower(player, 1));
+                GameActions.Bottom.DrawNextTurn(cards.size());
             }
         });
-
-        if (CheckSpecialCondition(false))
-        {
-            GameActions.Bottom.ChangeStance(WrathStance.STANCE_ID);
-        }
-    }
-
-    @Override
-    public boolean CheckSpecialCondition(boolean tryUse)
-    {
-        return !WrathStance.IsActive() && super.CheckSpecialConditionLimited(tryUse, super::CheckSpecialCondition);
     }
 }

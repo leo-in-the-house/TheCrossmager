@@ -2,23 +2,17 @@ package eatyourbeets.cards.animator.series.TenseiSlime;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.combat.DieDieDieEffect;
 import eatyourbeets.cards.animator.tokens.AffinityToken;
-import eatyourbeets.cards.base.Affinity;
-import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.cards.base.CardUseInfo;
-import eatyourbeets.cards.base.EYBCardData;
-import eatyourbeets.cards.base.attributes.AbstractAttribute;
-import eatyourbeets.effects.AttackEffects;
+import eatyourbeets.cards.base.*;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.stances.AgilityStance;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Hakurou extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Hakurou.class)
-            .SetAttack(2, CardRarity.COMMON)
+            .SetSkill(3, CardRarity.COMMON, EYBCardTarget.None)
             .SetSeriesFromClassPackage()
             .PostInitialize(data -> data.AddPreview(AffinityToken.GetCard(Affinity.Green), false));
 
@@ -26,23 +20,12 @@ public class Hakurou extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(1, 0, 3);
-        SetUpgrade(0, 0, 1);
+        Initialize(0, 18);
+        SetUpgrade(0, 12);
 
-        SetAffinity_Red(1, 0, 0);
-        SetAffinity_Green(1, 1, 2);
-    }
+        SetAffinity_Green(2);
 
-    @Override
-    protected void OnUpgrade()
-    {
-        upgradedDamage = true;
-    }
-
-    @Override
-    public AbstractAttribute GetDamageInfo()
-    {
-        return super.GetDamageInfo().AddMultiplier(magicNumber);
+        SetAffinityRequirement(Affinity.Green, 3);
     }
 
     @Override
@@ -61,13 +44,11 @@ public class Hakurou extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.VFX(new DieDieDieEffect());
-        for (int i = 0; i < magicNumber; i++)
-        {
-            GameActions.Bottom.DealDamage(this, m, AttackEffects.NONE);
-        }
 
-        GameActions.Bottom.ChangeStance(AgilityStance.STANCE_ID)
-        .RequireNeutralStance(true);
+        GameActions.Bottom.GainBlock(block);
+
+        if (CheckSpecialCondition(false)) {
+            GameActions.Bottom.ChangeStance(AgilityStance.STANCE_ID);
+        }
     }
 }
