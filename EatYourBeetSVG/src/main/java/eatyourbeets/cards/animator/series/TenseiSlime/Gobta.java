@@ -23,6 +23,8 @@ public class Gobta extends AnimatorCard {
         SetUpgrade(0, 3, 0);
 
         SetExhaust(true);
+
+        SetAffinity_Pink(1);
     }
 
     @Override

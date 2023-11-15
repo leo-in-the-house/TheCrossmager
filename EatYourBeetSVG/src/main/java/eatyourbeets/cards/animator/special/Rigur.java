@@ -24,6 +24,8 @@ public class Rigur extends AnimatorCard {
 
         SetExhaust(true);
         SetRetain(true);
+
+        SetAffinity_Brown(1);
     }
 
     @Override
