@@ -763,6 +763,20 @@
 			"DESCRIPTION": "<LIM>. Discard !M! card(s) to Channel !S! [Fire].",
 			"NAME": "Improved Defend"
 		},
+		"animator:GinBankai":
+		{
+			"FLAVOR_TEXT": "'I'm a snake. Cold of flesh and devoid of heart. My tongue flicks back and forth, ever in search of new prey, and if I like what I find, I swallow 'em whole.'",
+			"DESCRIPTION": "At the end of turn: Deal X * !M! Damage to ALL enemies. || If this hit only one enemy, Apply X * !M! [Poison].",
+			"EXTENDED_DESCRIPTION": ["At the end of turn: Deal #b{0} Damage to ALL enemies.  If this hits only one enemy, Apply #b{0} #yPoison."],
+			"NAME": "Gin Bankai"
+		},
+		"animator:GinIchimaru":
+		{
+			"FLAVOR_TEXT": "'Feelings, eh? Nah, 'fraid not. Don't got none o' them. Didn't I tell ya, back when we first met?'",
+			"DESCRIPTION": "At the end of turn: Deal !M! Damage to ALL enemies. || Exit <WS> to Remove this power and add {Gin Bankai}{+} to your draw pile.  Activate this only in <WS>. ",
+			"EXTENDED_DESCRIPTION": ["Exit #yWrath #yStance and remove this power to add #yGin #yBankai to your draw pile.  Activate this only in #yWrath #yStance.  At the end of turn, deal #b{0} damage to ALL enemies.", "Exit #yWrath #yStance and remove this power to add #yupgraded #yGin #yBankai to your draw pile.  Activate this only in #yWrath #yStance.  At the end of turn, deal #b{0} damage to ALL enemies."],
+			"NAME": "Gin Ichimaru"
+		},
 		"animator:IchigoBankai":
 		{
 			"FLAVOR_TEXT": "'If I cannot protect them from the wheel, then give me a strong blade, and enough strength... to shatter fate.'",
