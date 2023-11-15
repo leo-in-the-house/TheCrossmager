@@ -26,6 +26,8 @@ public class NoriSakurada extends AnimatorCard {
 
         SetExhaust(true);
         SetDelayed(true);
+
+        SetAffinity_White(1);
     }
 
     @Override
