@@ -21,11 +21,10 @@ public class NoriSakurada extends AnimatorCard {
     public NoriSakurada() {
         super(DATA);
 
-        Initialize(0, 0, BASE_TEMP_HP, 1);
-        SetUpgrade(0, 0, 0, 1);
+        Initialize(0, 0, BASE_TEMP_HP, 2);
+        SetUpgrade(0, 0, 0, 2);
 
         SetExhaust(true);
-        SetDelayed(true);
 
         SetAffinity_White(1);
     }

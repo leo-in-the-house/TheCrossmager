@@ -26,7 +26,7 @@ public class MeguKakizaki extends AnimatorCard {
         GameUtilities.PlayVoiceSFX(name);
 
         GameActions.Bottom.FetchFromPile(name, 1, player.discardPile, player.drawPile)
-            .SetFilter(card -> GameUtilities.HasAffinity(card, Affinity.Blue))
+            .SetFilter(card -> GameUtilities.HasAffinity(card, Affinity.Black))
             .SetOptions(false, true, false)
             .AddCallback(cards -> {
                 if (cards.size() > 0) {

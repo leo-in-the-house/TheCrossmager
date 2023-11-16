@@ -18,8 +18,8 @@ public class Shinku extends AnimatorCard {
     public Shinku() {
         super(DATA);
 
-        Initialize(0, 0, 3, 2);
-        SetUpgrade(0, 0, 2, 1);
+        Initialize(0, 0, 3, 3);
+        SetUpgrade(0, 0, 2, 2);
 
         SetAffinity_Red(1);
         SetAffinity_Violet(1);

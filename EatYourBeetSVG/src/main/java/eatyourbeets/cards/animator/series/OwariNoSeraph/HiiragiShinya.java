@@ -44,7 +44,7 @@ public class HiiragiShinya extends AnimatorCard
         }
 
         GameActions.Bottom.FetchFromPile(name, 1, p.discardPile)
-        .SetOptions(false, false)
+        .SetOptions(false, true)
         .AddCallback(cards ->
         {
             if (cards.size() > 0)

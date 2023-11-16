@@ -41,8 +41,10 @@ public class MitsuKusabue extends AnimatorCard {
         }
 
         @Override
-        public void atEndOfTurn(boolean isPlayer)
+        public void atEndOfTurnPreEndTurnCards(boolean isPlayer)
         {
+            super.atEndOfTurnPreEndTurnCards(isPlayer);
+
             GameActions.Bottom.SelectFromHand(name, 1, false)
                 .SetOptions(true, false, false)
                 .SetMessage(RetainCardsAction.TEXT[0])

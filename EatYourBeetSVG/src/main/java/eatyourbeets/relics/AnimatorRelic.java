@@ -46,7 +46,7 @@ public abstract class AnimatorRelic extends EYBRelic
             data.AddRelic(MarkOfPain.ID, AbstractRelic.RelicTier.BOSS);
             data.AddRelic(HoveringKite.ID, AbstractRelic.RelicTier.BOSS);
             data.AddRelic(Inserter.ID, AbstractRelic.RelicTier.BOSS);
-            data.AddRelic(NuclearBattery.ID, AbstractRelic.RelicTier.BOSS);
+            //data.AddRelic(NuclearBattery.ID, AbstractRelic.RelicTier.BOSS);
             data.AddRelic(RunicCube.ID, AbstractRelic.RelicTier.BOSS);
             data.AddRelic(VioletLotus.ID, AbstractRelic.RelicTier.BOSS);
             data.AddRelic(WristBlade.ID, AbstractRelic.RelicTier.BOSS);
