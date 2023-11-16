@@ -1,18 +1,17 @@
 package eatyourbeets.cards.animator.series.TenseiSlime;
 
-import com.megacrit.cardcrawl.actions.unique.RetainCardsAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
-import eatyourbeets.effects.card.PermanentUpgradeEffect;
+import eatyourbeets.cards.base.modifiers.CostModifiers;
 import eatyourbeets.interfaces.listeners.OnAddToDeckListener;
 import eatyourbeets.powers.AnimatorPower;
+import eatyourbeets.resources.GR;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameEffects;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Kaijin extends AnimatorCard implements OnAddToDeckListener
 {
@@ -24,10 +23,11 @@ public class Kaijin extends AnimatorCard implements OnAddToDeckListener
     {
         super(DATA);
 
-        Initialize(0, 0, 1);
+        Initialize(0, 0, 8);
+        SetUpgrade(0, 0, 3);
 
-        SetAffinity_Red(1);
-        SetAffinity_White(1);
+        SetAffinity_Teal(1);
+        SetAffinity_Brown(1);
     }
 
     @Override
@@ -43,14 +43,6 @@ public class Kaijin extends AnimatorCard implements OnAddToDeckListener
         GameActions.Bottom.StackPower(new KaijinPower(p, magicNumber));
     }
 
-    @Override
-    public boolean OnAddToDeck()
-    {
-        GameEffects.TopLevelQueue.Add(new PermanentUpgradeEffect()).SetFilter(c -> CardRarity.BASIC.equals(c.rarity));
-
-        return true;
-    }
-
     public static class KaijinPower extends AnimatorPower
     {
         public static final String POWER_ID = CreateFullID(KaijinPower.class);
@@ -63,6 +55,11 @@ public class Kaijin extends AnimatorCard implements OnAddToDeckListener
         }
 
         @Override
+        public void updateDescription() {
+            description = FormatDescription(0, amount);
+        }
+
+        @Override
         public void atEndOfTurn(boolean isPlayer)
         {
             super.atEndOfTurn(isPlayer);
@@ -71,12 +68,16 @@ public class Kaijin extends AnimatorCard implements OnAddToDeckListener
             {
                 GameActions.Bottom.SelectFromHand(name, 1, false)
                 .SetOptions(true, true, true)
-                .SetMessage(RetainCardsAction.TEXT[0])
-                .SetFilter(c -> !c.isEthereal)
+                .SetMessage(GR.Common.Strings.HandSelection.MoveToDrawPile)
                 .AddCallback(cards ->
                 {
                     if (cards.size() > 0)
                     {
+                        for (AbstractCard c : cards)
+                        {
+                            GameActions.Top.MoveCard(c, player.hand, player.drawPile);
+                        }
+
                         final AbstractCard card = cards.get(0);
                         if (card.baseBlock >= 0)
                         {
@@ -87,7 +88,7 @@ public class Kaijin extends AnimatorCard implements OnAddToDeckListener
                             card.baseDamage += amount;
                         }
 
-                        GameUtilities.Retain(card);
+                        CostModifiers.For(card).Add(1);
                     }
                 });
             }

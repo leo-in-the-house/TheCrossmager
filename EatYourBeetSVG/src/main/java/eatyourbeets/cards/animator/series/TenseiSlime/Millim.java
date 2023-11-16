@@ -1,45 +1,31 @@
 package eatyourbeets.cards.animator.series.TenseiSlime;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.orbs.Dark;
+import com.megacrit.cardcrawl.vfx.combat.FireballEffect;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.cards.base.modifiers.CostModifiers;
 import eatyourbeets.effects.AttackEffects;
-import eatyourbeets.resources.GR;
+import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameEffects;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Millim extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Millim.class)
-            .SetAttack(1, CardRarity.COMMON, EYBAttackType.Elemental)
-            
-            .SetSeriesFromClassPackage()
-            .ModifyRewards((data, rewards) ->
-            {
-                final EYBCard copy = data.GetFirstCopy(player.masterDeck);
-                if (copy != null)
-                {
-                    float chances = 0.075f;
-                    if (copy.timesUpgraded < 5)
-                    {
-                        chances += (5 - copy.timesUpgraded) * 0.025f;
-                    }
-
-                    GR.Common.Dungeon.TryReplaceFirstCardReward(rewards, chances, true, data);
-                }
-            });
+            .SetAttack(1, CardRarity.UNCOMMON, EYBAttackType.Elemental, EYBCardTarget.ALL)
+            .SetSeriesFromClassPackage();
 
     public Millim()
     {
         super(DATA);
 
-        Initialize(15, 0, 3);
+        Initialize(5, 5);
+        SetUpgrade(4, 4);
 
-        SetAffinity_Star(1, 0, 1);
+        SetAffinity_Violet(2);
 
         SetUnique(true, true);
     }
@@ -67,17 +53,36 @@ public class Millim extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_HEAVY);
-        GameActions.Bottom.ChannelOrb(new Dark());
-        GameActions.Bottom.SelectFromPile(name, magicNumber, p.drawPile)
-        .SetOptions(false, false, true)
-        .SetFilter(c -> c.cost >= 0)
-        .AddCallback(cards ->
+
+        GameActions.Bottom.DealDamageToAll(this, AttackEffects.BLUNT_HEAVY)
+            .SetDamageEffect((enemy, __) ->  {
+                CardCrawlGame.sound.play("ATTACK_FIRE", 0.2f);
+                GameEffects.Queue.Add(new FireballEffect(player.hb.cX, player.hb.cY, enemy.hb.cX, enemy.hb.cY));
+            });
+        GameActions.Bottom.GainBlock(block);
+
+        GameActions.Bottom.StackPower(new MillimPower(player, 1));
+    }
+
+    public static class MillimPower extends AnimatorPower {
+        public MillimPower(AbstractPlayer owner, int amount)
         {
-            for (AbstractCard c : cards)
-            {
-                CostModifiers.For(c).Add(cardID, 1);
+            super(owner, Millim.DATA);
+
+            Initialize(amount);
+        }
+
+        @Override
+        public void onPlayCard(AbstractCard card, AbstractMonster m) {
+            super.onPlayCard(card, m);
+
+            if (GameUtilities.IsHighCost(card)) {
+                GameActions.Bottom.GainEnergy(1);
             }
-        });
+        }
+        @Override
+        public void updateDescription() {
+            description = FormatDescription(0, amount);
+        }
     }
 }

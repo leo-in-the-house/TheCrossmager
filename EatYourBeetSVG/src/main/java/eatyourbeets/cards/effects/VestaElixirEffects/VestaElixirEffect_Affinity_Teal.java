@@ -5,9 +5,9 @@ import eatyourbeets.cards.base.EYBCard;
 import eatyourbeets.resources.GR;
 import eatyourbeets.utilities.GameActions;
 
-public class VestaElixirEffect_Affinity_Red extends VestaElixirEffect
+public class VestaElixirEffect_Affinity_Teal extends VestaElixirEffect
 {
-    public VestaElixirEffect_Affinity_Red(boolean upgraded)
+    public VestaElixirEffect_Affinity_Teal(boolean upgraded)
     {
         super(upgraded ? 4 : 3);
     }
@@ -15,12 +15,12 @@ public class VestaElixirEffect_Affinity_Red extends VestaElixirEffect
     @Override
     public String GetDescription()
     {
-        return ACTIONS.GainAmount(amount, GR.AnimatorClassic.IsSelected() ? GR.Tooltips.RedThreshold : GR.Tooltips.Affinity_Red, true);
+        return ACTIONS.GainAmount(amount, GR.AnimatorClassic.IsSelected() ? GR.Tooltips.RedThreshold : GR.Tooltips.Affinity_Teal, true);
     }
 
     @Override
     public void EnqueueAction(EYBCard elixir, AbstractPlayer player)
     {
-        GameActions.Bottom.GainRed(amount);
+        GameActions.Bottom.GainTeal(amount);
     }
 }

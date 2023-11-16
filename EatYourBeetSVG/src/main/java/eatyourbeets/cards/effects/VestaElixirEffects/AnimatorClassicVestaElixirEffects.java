@@ -1,7 +1,6 @@
 package eatyourbeets.cards.effects.VestaElixirEffects;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.random.Random;
 import eatyourbeets.cards.animatorClassic.series.TenseiSlime.Vesta;
@@ -116,9 +115,8 @@ public class AnimatorClassicVestaElixirEffects
         RandomizedList<VestaElixirEffect> effectPool = new RandomizedList<>();
 
         effectPool.Add(new VestaElixirEffect_CardDraw(upgraded));
-        effectPool.Add(new VestaElixirEffect_Affinity_Blue(upgraded));
-        effectPool.Add(new VestaElixirEffect_Affinity_Red(upgraded));
-        effectPool.Add(new VestaElixirEffect_Affinity_Green(upgraded));
+        effectPool.Add(new VestaElixirEffect_Affinity_Pink(upgraded));
+        effectPool.Add(new VestaElixirEffect_Affinity_Teal(upgraded));
         effectPool.Add(new VestaElixirEffect_OrbSlots(upgraded));
         effectPool.Add(new VestaElixirEffect_TempHP(upgraded));
         effectPool.Add(new VestaElixirEffect_Metallicize(upgraded));

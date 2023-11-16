@@ -1,13 +1,12 @@
 package eatyourbeets.cards.animator.series.TenseiSlime;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.actions.animator.RimuruAction;
 import eatyourbeets.cards.animator.status.Status_Slimed;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
+import eatyourbeets.cards.base.modifiers.CostModifiers;
 import eatyourbeets.interfaces.subscribers.OnAfterCardPlayedSubscriber;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
@@ -28,7 +27,7 @@ public class Rimuru extends AnimatorCard implements OnAfterCardPlayedSubscriber
 
         Initialize(0, 0);
 
-        SetAffinity_Star(1, 1, 0);
+        SetAffinity_Star(1, 0, 0);
         SetVolatile(true);
 
         this.copy = this;
@@ -52,7 +51,10 @@ public class Rimuru extends AnimatorCard implements OnAfterCardPlayedSubscriber
 
         if (startOfBattle)
         {
-            GameActions.Top.MakeCard(new Status_Slimed(), upgraded ? player.discardPile : player.drawPile).SetEffectDuration(0.75f);
+            GameActions.Top.MakeCard(new Status_Slimed(), player.discardPile).SetEffectDuration(0.75f)
+                    .AddCallback(card -> {
+                        CostModifiers.For(card).Add(1);
+                    });
             GameEffects.List.ShowCopy(this);
         }
     }

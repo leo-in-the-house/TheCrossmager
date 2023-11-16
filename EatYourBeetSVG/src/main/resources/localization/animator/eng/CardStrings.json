@@ -2984,14 +2984,15 @@
 		},
 		"animator:Kaijin":
 		{
-			"DESCRIPTION": "At the end of turn: Retain 1 card and increase its damage and [Block] by !M! this combat. || When Obtained: Upgrade a random Basic card.",
-			"EXTENDED_DESCRIPTION": ["At the end of each turn, #yRetain a card and increase its damage and #yBlock by #b{0} this combat."],
+			"DESCRIPTION": "At the end of your turn: put a card on top of your draw pile.  Increase its damage and [Block] by !M!, then increase its cost by 1.",
+			"EXTENDED_DESCRIPTION": ["At the end of each turn, put a card on top of your draw pile.  Increase its damage and #yBlock by #b{0} this combat, then increase its cost by 1."],
 			"NAME": "Kaijin"
 		},
 		"animator:Millim":
 		{
-			"DESCRIPTION": "{~Unique}. Channel [Dark]. || Choose !M! cards in draw pile and raise their cost by 1.",
-			"NAME": "Millim"
+			"DESCRIPTION": "{~Unique}. || Whenever you play a {High-Cost} card this turn: Gain [E].",
+			"EXTENDED_DESCRIPTION": ["Whenever you play a #yHigh-Cost card this turn: Gain #b{0} #yEnergy."],
+			"NAME": "Milim Nava"
 		},
 		"animator:Ramiris":
 		{
@@ -3000,7 +3001,7 @@
 		},
 		"animator:Ranga":
 		{
-			"DESCRIPTION": "When you Evoke [Lightning] or [Dark]: Fetch this card from your Exhaust pile and give it Purge.",
+			"DESCRIPTION": "When you {Evoke} an {Orb}, fetch this card from your {Exhaust} pile and increase its number of attacks and cost by 1.",
 			"NAME": "Ranga"
 		},
 		"animator:Rimuru":
@@ -3035,13 +3036,12 @@
 		},
 		"animator:Souei":
 		{
-			"DESCRIPTION": "Discard X cards (max !S!): For !K! turns, when you play a {Skill}: Apply X [Poison] to a random enemy. || <LIM>. !A! [G]: Gain [~Intangible].",
-			"EXTENDED_DESCRIPTION": ["Whenever you play a #ySkill, apply #b{0} [Poison] to a random enemy."],
+			"DESCRIPTION": "Apply !M! [Poison]. || Exhaust a {High-Cost} card to trigger the [Poison] of ALL enemies.  If this kills an enemy, gain [~Intangible] and Purge this card.",
 			"NAME": "Souei"
 		},
 		"animator:Vesta":
 		{
-			"DESCRIPTION": "Gain !M! [B] and [INS]. || Research an {Elixir} for the next !S! turns. || !A! [M]: Upgrade it.",
+			"DESCRIPTION": "Research an {Elixir}{+} for the next !S! turns.",
 			"EXTENDED_DESCRIPTION": ["Researching #yElixir. #b{0} turn(s) left."],
 			"NAME": "Vesta"
 		},
