@@ -28,11 +28,13 @@ public class Barasuishou extends AnimatorCard {
     public Barasuishou() {
         super(DATA);
 
-        Initialize(4, 0, 1);
+        Initialize(6, 0, 1);
         SetUpgrade(4, 0, 1);
 
         SetAffinity_Blue(1, 0, 1);
         SetAffinity_Teal(1, 0, 1);
+
+        SetFading(true);
     }
 
     @Override
