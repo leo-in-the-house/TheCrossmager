@@ -23,8 +23,8 @@ public class Shirosaki_Laplace extends AnimatorCard {
     public Shirosaki_Laplace() {
         super(DATA);
 
-        Initialize(0, 0, 1);
-        SetUpgrade(0, 0, 1);
+        Initialize(0, 8, 1);
+        SetUpgrade(0, 3, 1);
 
         SetAffinity_Pink(1);
         SetAffinity_Black(1);
@@ -33,6 +33,8 @@ public class Shirosaki_Laplace extends AnimatorCard {
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info) {
         GameUtilities.PlayVoiceSFX(name);
+
+        GameActions.Bottom.GainBlock(block);
 
         GameActions.Bottom.StackPower(new Shirosaki_LaplacePower(p, magicNumber));
     }
