@@ -39,7 +39,9 @@ public class Souei extends AnimatorCard
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.ApplyPoison(TargetHelper.Normal(m), magicNumber);
 
-        GameActions.Bottom.Callback(() ->
+        GameActions.Bottom.ExhaustFromHand(name, 1, false)
+                .SetFilter(GameUtilities::IsHighCost)
+                .AddCallback(() ->
         {
             final int intangible = GameUtilities.GetPowerAmount(IntangiblePlayerPower.POWER_ID);
             for (AbstractMonster enemy : GameUtilities.GetEnemies(true))

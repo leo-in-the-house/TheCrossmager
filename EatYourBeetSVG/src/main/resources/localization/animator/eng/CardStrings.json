@@ -2967,6 +2967,12 @@
 			"DESCRIPTION": "Discard up to !M! {High-Cost} cards.  For each card, Apply [Burning] to a random enemy equal to its cost.",
 			"NAME": "Benimaru"
 		},
+		"animator:Gabiru":
+		{
+			"DESCRIPTION": "At the start of your turn: Gain !M! [E] if the first card you drew was a {High-Cost} card.",
+			"EXTENDED_DESCRIPTION": ["At the start of your turn: Gain #b{0} #yEnergy if the first card you drew was a #yHigh-Cost card."],
+			"NAME": "Gabiru"
+		},
 		"animator:GazelDwargon":
 		{
 			"DESCRIPTION": "Gain !M! * X [Plated Armor] and !M! * X [B].",
@@ -2974,7 +2980,7 @@
 		},
 		"animator:Gobta":
 		{
-			"DESCRIPTION": "Add {Rigur}{+} to your draw pile.",
+			"DESCRIPTION": "Add {Rigur}{+} to your hand.",
 			"NAME": "Gobta"
 		},
 		"animator:Hakurou":
@@ -2996,7 +3002,8 @@
 		},
 		"animator:Ramiris":
 		{
-			"DESCRIPTION": "Give 2X random cards in discard pile {Haste}. || If you have not {Attacked} this turn: Apply !M! [Weak] and !S! [Shackles] to ALL enemies.",
+			"DESCRIPTION": "This card can only be played if you have not {Attacked} this turn. || Imitate up to X {High-Cost} {Attacks} or {Skills} in your draw pile.  Put the copies on top of your draw pile, and give them {Haste}.",
+			"UPGRADE_DESCRIPTION": "This card can only be played if you have not {Attacked} this turn. || Imitate up to X {High-Cost} {Attacks} or {Skills} in your draw or discard pile.  Put the copies on top of your draw pile, and give them {Haste}.",
 			"NAME": "Ramiris"
 		},
 		"animator:Ranga":
@@ -3021,12 +3028,13 @@
 		},
 		"animator:Shizu":
 		{
-			"DESCRIPTION": "For !M! turns, whenever you deal unblocked {Attack} damage: Apply 2 [Burning]. || <LIM>. If you have [Dark] and [Fire]: Obtain {Ifrit}{+}.",
+			"DESCRIPTION": "For 2 turns, whenever you deal unblocked {Attack} damage: Apply 2 [Burning]. || <LIM>. If the total cost of cards in your hand is !S! or higher: Obtain {Ifrit}{+}.",
 			"NAME": "Shizu"
 		},
 		"animator:Shizu_Ifrit":
 		{
-			"DESCRIPTION": "Enter <CS>. Receive 2 {Burn+}. || Increase the damage bonus of [Burning] by !M!% this combat.",
+			"DESCRIPTION": "Exhaust all other non-{High-Cost} cards in your hand and obtain that many {Burn}. || Double the damage bonus of [Burning] this combat.",
+			"UPGRADE_DESCRIPTION": "Exhaust all other non-{High-Cost} cards in your hand and obtain that many {Burn}. || Triple the damage bonus of [Burning] this combat.",
 			"NAME": "Ifrit"
 		},
 		"animator:Shuna":
@@ -3036,7 +3044,7 @@
 		},
 		"animator:Souei":
 		{
-			"DESCRIPTION": "Apply !M! [Poison]. || Exhaust a {High-Cost} card to trigger the [Poison] of ALL enemies.  If this kills an enemy, gain [~Intangible] and Purge this card.",
+			"DESCRIPTION": "Apply !M! [Poison]. || Exhaust a {High-Cost} card to trigger the [Poison] of ALL enemies.  If this kills an enemy, gain [~Intangible].",
 			"NAME": "Souei"
 		},
 		"animator:Vesta":
@@ -3653,7 +3661,8 @@
 		},
 		"animator:Veldora":
 		{
-			"DESCRIPTION": "Gain !S! [B]. Evoke ALL orbs !M! times. || When Sealed: Channel 3 [Random Orb].",
+			"DESCRIPTION": "Channel [Random Orb]. || At the end of turn: For each card in your hand, Evoke a random {Orb} without removing it a number of times equal to its cost.",
+			"EXTENDED_DESCRIPTION": ["At the end of turn: For each card in your hand, #yEvoke a random #yOrb #b{0} times without removing it a number of times equal to its cost."],
 			"NAME": "Veldora"
 		},
 		"animator:Walpurgisnacht":

@@ -33,7 +33,7 @@ public class Gobta extends AnimatorCard {
 
         GameActions.Bottom.GainBlock(block);
 
-        GameActions.Bottom.MakeCardInDrawPile(new Rigur())
+        GameActions.Bottom.MakeCardInHand(new Rigur())
                 .SetUpgrade(upgraded, true);
     }
 }

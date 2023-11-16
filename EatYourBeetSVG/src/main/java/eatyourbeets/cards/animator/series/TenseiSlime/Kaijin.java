@@ -10,6 +10,7 @@ import eatyourbeets.cards.base.modifiers.CostModifiers;
 import eatyourbeets.interfaces.listeners.OnAddToDeckListener;
 import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.resources.GR;
+import eatyourbeets.utilities.CardSelection;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
@@ -64,7 +65,7 @@ public class Kaijin extends AnimatorCard implements OnAddToDeckListener
         {
             super.atEndOfTurn(isPlayer);
 
-            if (isPlayer && !player.hand.isEmpty())
+            if (!player.hand.isEmpty())
             {
                 GameActions.Bottom.SelectFromHand(name, 1, false)
                 .SetOptions(true, true, true)
@@ -75,7 +76,8 @@ public class Kaijin extends AnimatorCard implements OnAddToDeckListener
                     {
                         for (AbstractCard c : cards)
                         {
-                            GameActions.Top.MoveCard(c, player.hand, player.drawPile);
+                            GameActions.Top.MoveCard(c, player.hand, player.drawPile)
+                                    .SetDestination(CardSelection.Top);
                         }
 
                         final AbstractCard card = cards.get(0);

@@ -1,20 +1,14 @@
 package eatyourbeets.cards.animator.series.TenseiSlime;
 
-import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.cards.base.CardUseInfo;
-import eatyourbeets.cards.base.EYBCardData;
-import eatyourbeets.cards.base.EYBCardTarget;
+import eatyourbeets.cards.base.*;
 import eatyourbeets.effects.SFX;
-import eatyourbeets.monsters.EnemyIntent;
-import eatyourbeets.powers.PowerHelper;
-import eatyourbeets.utilities.*;
+import eatyourbeets.utilities.CardSelection;
+import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Ramiris extends AnimatorCard
 {
@@ -29,73 +23,57 @@ public class Ramiris extends AnimatorCard
         Initialize(0, 0, 1, 3);
         SetUpgrade(0, 0, 1, 0);
 
-        SetAffinity_White(2);
-        SetAffinity_Blue(1);
-        SetAffinity_Green(1);
+        SetAffinity_Pink(2);
 
         SetExhaust(true);
     }
 
     @Override
-    public void OnDrag(AbstractMonster m)
+    public boolean cardPlayable(AbstractMonster m)
     {
-        super.OnDrag(m);
-
-        if (CheckSpecialCondition(false))
-        {
-            for (EnemyIntent intent : GameUtilities.GetIntents())
+        if (super.cardPlayable(m)) {
+            for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisTurn)
             {
-                intent.AddWeak();
-                intent.AddStrength(-secondaryValue);
+                if (c.type == CardType.ATTACK)
+                {
+                    return false;
+                }
             }
+
+            return true;
         }
+
+        return false;
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        final int charge = GameUtilities.UseXCostEnergy(this) * 2;
+        final int charge = GameUtilities.UseXCostEnergy(this);
         if (charge > 0)
         {
-            GameActions.Bottom.SelectFromPile(name, charge, p.discardPile)
-            .SetOptions(true, true)
-            .SetFilter(c -> !c.hasTag(HASTE))
+            GameActions.Bottom.SelectFromPile(name, charge, p.drawPile)
+            .SetOptions(false, true)
+            .SetFilter(c -> (c.type == CardType.ATTACK || c.type == CardType.SKILL) && GameUtilities.IsHighCost(c))
             .AddCallback(cards ->
             {
                 if (cards.size() > 0)
                 {
-                    GameActions.Bottom.SFX(SFX.TINGSHA, 1.2f, 1.4f, 0.9f);
+                    GameActions.Top.SFX(SFX.TINGSHA, 1.2f, 1.4f, 0.9f);
 
                     for (AbstractCard c : cards)
                     {
-                        GameUtilities.SetCardTag(c, HASTE, true);
-                        GameEffects.Queue.ShowCopy(c,
-                                Settings.WIDTH * 0.8f + (MathUtils.random(-0.25f, 0.25f) * AbstractCard.IMG_WIDTH),
-                                Settings.HEIGHT * 0.75f + (MathUtils.random(-0.33f, 0.33f) * AbstractCard.IMG_HEIGHT));
+                        GameActions.Top.MakeCardInDrawPile(GameUtilities.Imitate(c))
+                            .SetDestination(CardSelection.Top)
+                            .AddCallback(card -> {
+                                if (card instanceof EYBCard) {
+                                    ((EYBCard) card).SetHaste(true);
+                                }
+                            });
                     }
                 }
             });
         }
-
-        if (CheckSpecialCondition(false))
-        {
-            GameActions.Bottom.StackPower(TargetHelper.Enemies(), PowerHelper.Weak, magicNumber);
-            GameActions.Bottom.StackPower(TargetHelper.Enemies(), PowerHelper.Shackles, secondaryValue);
-        }
-    }
-
-    @Override
-    public boolean CheckSpecialCondition(boolean tryUse)
-    {
-        for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisTurn)
-        {
-            if (c.type == CardType.ATTACK)
-            {
-                return false;
-            }
-        }
-
-        return true;
     }
 }

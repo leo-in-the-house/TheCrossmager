@@ -80,6 +80,15 @@ public class Millim extends AnimatorCard
                 GameActions.Bottom.GainEnergy(1);
             }
         }
+
+        @Override
+        public void atEndOfTurn(boolean isPlayer)
+        {
+            super.atEndOfTurn(isPlayer);
+
+            RemovePower();
+        }
+
         @Override
         public void updateDescription() {
             description = FormatDescription(0, amount);

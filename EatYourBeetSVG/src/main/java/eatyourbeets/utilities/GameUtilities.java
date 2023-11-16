@@ -147,6 +147,16 @@ public class GameUtilities
         return group == null || group.areMonstersBasicallyDead();
     }
 
+    public static int GetTotalCostOfCardsInHand() {
+        int cost = 0;
+
+        for (AbstractCard card : player.hand.group) {
+            cost += card.costForTurn;
+        }
+
+        return cost;
+    }
+
     @SuppressWarnings("BooleanMethodIsAlwaysInverted")
     public static boolean CanApplyPower(AbstractCreature source, AbstractCreature target, AbstractPower powerToApply, AbstractGameAction action)
     {

@@ -1,23 +1,22 @@
 package eatyourbeets.cards.animator.special;
 
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.ScreenOnFireEffect;
 import eatyourbeets.cards.animator.series.TenseiSlime.Shizu;
 import eatyourbeets.cards.animator.status.Status_Burn;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
-import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.powers.common.BurningPower;
-import eatyourbeets.stances.CorruptionStance;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Shizu_Ifrit extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Shizu_Ifrit.class)
-            .SetSkill(2, CardRarity.SPECIAL, EYBCardTarget.None)
+            .SetPower(0, CardRarity.SPECIAL)
             .SetSeries(Shizu.DATA.Series)
             .PostInitialize(data -> data.AddPreview(new Status_Burn(true), false));
 
@@ -25,14 +24,10 @@ public class Shizu_Ifrit extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 0, 40);
-        SetUpgrade(0, 0, 20);
+        Initialize(0, 0, 100);
+        SetUpgrade(0, 0, 200);
 
         SetAffinity_Red(2);
-        SetAffinity_Black(2);
-
-        SetExhaust(true);
-        SetRetainOnce(true);
     }
 
     @Override
@@ -42,9 +37,12 @@ public class Shizu_Ifrit extends AnimatorCard
         final ScreenOnFireEffect effect = new ScreenOnFireEffect();
         effect.duration = effect.startingDuration = 1.5f; // Changed from 3f
         GameActions.Bottom.VFX(effect, 0.2f);
-        GameActions.Bottom.MakeCardInHand(new Status_Burn(true));
-        GameActions.Bottom.MakeCardInHand(new Status_Burn(true));
+        for (AbstractCard card : player.hand.group) {
+            if (!GameUtilities.IsHighCost(card)) {
+                GameActions.Bottom.Exhaust(card);
+                GameActions.Bottom.MakeCardInHand(new Status_Burn(true));
+            }
+        }
         GameActions.Bottom.Callback(() -> BurningPower.AddPlayerAttackBonus(magicNumber));
-        GameActions.Bottom.ChangeStance(CorruptionStance.STANCE_ID);
     }
 }
