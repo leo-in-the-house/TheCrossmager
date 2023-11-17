@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.FireballEffect;
+import com.megacrit.cardcrawl.vfx.combat.ScreenOnFireEffect;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.powers.AnimatorPower;
@@ -53,6 +54,10 @@ public class Millim extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
+
+        final ScreenOnFireEffect effect = new ScreenOnFireEffect();
+        effect.duration = effect.startingDuration = 0.5f;
+        GameActions.Bottom.VFX(effect, 0.2f);
 
         GameActions.Bottom.DealDamageToAll(this, AttackEffects.BLUNT_HEAVY)
             .SetDamageEffect((enemy, __) ->  {

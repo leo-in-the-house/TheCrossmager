@@ -2964,97 +2964,116 @@
 	{
 		"animator:Benimaru":
 		{
+			"FLAVOR_TEXT": "'We have no intention of listening to your lies.  The mask you wear has already told us the truth.'",
 			"DESCRIPTION": "Discard up to !M! {High-Cost} cards.  For each card, Apply [Burning] to a random enemy equal to its cost.",
 			"NAME": "Benimaru"
 		},
 		"animator:Gabiru":
 		{
+			"FLAVOR_TEXT": "'Which is why it would be prudent for you to come and fight under me!  I, the illustrious Gabiru, can protect you!  Serve me, and you weaklings will have nothing to fear from the orcs!  I am strong!'",
 			"DESCRIPTION": "At the start of your turn: Gain !M! [E] if the first card you drew was a {High-Cost} card.",
 			"EXTENDED_DESCRIPTION": ["At the start of your turn: Gain #b{0} #yEnergy if the first card you drew was a #yHigh-Cost card."],
 			"NAME": "Gabiru"
 		},
 		"animator:GazelDwargon":
 		{
+			"FLAVOR_TEXT": "'Have you apprehended the proxy?  Punish him severely!  And I want you to observe that slime's movements.  It is unthinkable that we have released such a monster!  Do not allow yourself to be seen, no matter what!'",
 			"DESCRIPTION": "Gain !M! * X [Plated Armor] and !M! * X [B].",
-			"NAME": "Gazel Dwargon"
+			"NAME": "Gazel Dwargo"
 		},
 		"animator:Gobta":
 		{
+			"FLAVOR_TEXT": "'Wait!  Lord Rimuru, it's you?  Did you come all the way out here just to help us?'",
 			"DESCRIPTION": "Add {Rigur}{+} to your hand.",
 			"NAME": "Gobta"
 		},
 		"animator:Hakurou":
 		{
+			"FLAVOR_TEXT": "'The centipede's paralysis breath.  The black spider's sticky steel thread.  And the armor saurus's body armor.  There's no telling just how many skills he may possess from other monsters.  Do not let your guard down, young master!'",
 			"DESCRIPTION": "!A! [G]: Enter <TS>.",
 			"NAME": "Hakurou"
 		},
 		"animator:Kaijin":
 		{
+			"FLAVOR_TEXT": "'Forgive me, your majesty, but I have already sworn myself to a master.  My word and my oath are the greatest treasures I own, and that's why... I could never do anything to forsake them, ever if you tried to order me to do so!'",
 			"DESCRIPTION": "At the end of your turn: put a card on top of your draw pile.  Increase its damage and [Block] by !M!, then increase its cost by 1.",
 			"EXTENDED_DESCRIPTION": ["At the end of each turn, put a card on top of your draw pile.  Increase its damage and #yBlock by #b{0} this combat, then increase its cost by 1."],
 			"NAME": "Kaijin"
 		},
 		"animator:Millim":
 		{
+			"FLAVOR_TEXT": "'Well, that was pretty impressive!  You know, that attack may have actually worked on a different Demon Lord!  There's no way that they would have escaped that big blast in one piece!  Still, though, your pitiful attacks have no effect on MEEEEEEEEE!!!'",
 			"DESCRIPTION": "{~Unique}. || Whenever you play a {High-Cost} card this turn: Gain [E].",
 			"EXTENDED_DESCRIPTION": ["Whenever you play a #yHigh-Cost card this turn: Gain #b{0} #yEnergy."],
 			"NAME": "Milim Nava"
 		},
 		"animator:Ramiris":
 		{
+			"FLAVOR_TEXT": "'As if that's even possible, what a moron!  He looked like was gonna cry!  No, he did cry!  It's not a stretch to say he cried!  A demanding crybaby... I'd take him out with one punch, I tell ya!'",
 			"DESCRIPTION": "This card can only be played if you have not {Attacked} this turn. || Imitate up to X {High-Cost} {Attacks} or {Skills} in your draw pile.  Put the copies on top of your draw pile, and give them {Haste}.",
 			"UPGRADE_DESCRIPTION": "This card can only be played if you have not {Attacked} this turn. || Imitate up to X {High-Cost} {Attacks} or {Skills} in your draw or discard pile.  Put the copies on top of your draw pile, and give them {Haste}.",
 			"NAME": "Ramiris"
 		},
 		"animator:Ranga":
 		{
+			"FLAVOR_TEXT": "'You see, in our pack, we're all connected.  Therefore, my name has also become our clan's name.'",
 			"DESCRIPTION": "When you {Evoke} an {Orb}, fetch this card from your {Exhaust} pile and increase its number of attacks and cost by 1.",
 			"NAME": "Ranga"
 		},
-		"animator:Rimuru":
-		{
-			"DESCRIPTION": "This card is always a copy of the last card played. || At the start of combat: Add {Slimed} to your draw|discard pile.",
-			"NAME": "Rimuru"
-		},
 		"animator:Rigur":
 		{
+			"FLAVOR_TEXT": "'Strong one!  Please forgive me... but... do you have some sort of business out here in the forest?'",
 			"DESCRIPTION": "",
 			"NAME": "Rigur"
 		},
+		"animator:Rimuru":
+		{
+			"FLAVOR_TEXT": "'At that moment, I felt something shift, deep within my very soul!  It was as if the name itself became permanently engraved upon it!'",
+			"DESCRIPTION": "This card is always a copy of the last card played. || At the start of combat: Add {Slimed} to your draw|discard pile.",
+			"NAME": "Rimuru Tempest"
+		},
 		"animator:Shion":
 		{
+			"FLAVOR_TEXT": "'...and I am your secretary and bodyguard, remember?  So it looks like you're stuck with me!'",
 			"DESCRIPTION": "Discard a card.  Next turn, enter <WS> and draw a card.",
 			"NAME": "Shion"
 		},
 		"animator:Shizu":
 		{
-			"DESCRIPTION": "For 2 turns, whenever you deal unblocked {Attack} damage: Apply 2 [Burning]. || <LIM>. If the total cost of cards in your hand is !S! or higher: Obtain {Ifrit}{+}.",
-			"NAME": "Shizu"
+			"FLAVOR_TEXT": "'There was fire, the town was burning.  Bombs were falling from the sky.  My mother and I tried to get to safety, when she...'",
+			"DESCRIPTION": "For 2 turns, whenever you deal unblocked {Attack} damage: Channel [Fire]. || <LIM>. If the total cost of cards in your hand is !S! or higher: Obtain {Ifrit}{+}.",
+			"EXTENDED_DESCRIPTION": ["For #b{0} more turns, whenever you deal unblocked #yAttack damage: #yChannel #yFire."],
+			"NAME": "Shizue Izawa"
 		},
 		"animator:Shizu_Ifrit":
 		{
+			"FLAVOR_TEXT": "'What did I... just do...?  My... whole body... it felt like it was moving on its own...  The fire... it wasn't me... I couldn't stop...!'",
 			"DESCRIPTION": "Exhaust all other non-{High-Cost} cards in your hand and obtain that many {Burn}. || Double the damage bonus of [Burning] this combat.",
 			"UPGRADE_DESCRIPTION": "Exhaust all other non-{High-Cost} cards in your hand and obtain that many {Burn}. || Triple the damage bonus of [Burning] this combat.",
 			"NAME": "Ifrit"
 		},
 		"animator:Shuna":
 		{
+			"FLAVOR_TEXT": "'There's no doubt that he is different from us, and he's strong.  But I truly believe that he has no connection to the attack!'",
 			"DESCRIPTION": "Gain !M! [L].  Next turn, gain !S! [E].",
 			"NAME": "Shuna"
 		},
 		"animator:Souei":
 		{
+			"FLAVOR_TEXT": "'My master is known as the great Rimuru Tempest.  He recently received a request from the dryads.  He has sworn that he will defeat the Orc Army.'",
 			"DESCRIPTION": "Apply !M! [Poison]. || Exhaust a {High-Cost} card to trigger the [Poison] of ALL enemies.  If this kills an enemy, gain [~Intangible].",
 			"NAME": "Souei"
 		},
 		"animator:Vesta":
 		{
+			"FLAVOR_TEXT": "'All I ever wanted... was to be useful to you somehow... Ever since I first saw you, I was but a young boy... It has always been my dream...'",
 			"DESCRIPTION": "Research an {Elixir}{+} for the next !S! turns.",
 			"EXTENDED_DESCRIPTION": ["Researching #yElixir. #b{0} turn(s) left."],
 			"NAME": "Vesta"
 		},
 		"animator:Vesta_Elixir":
 		{
+			"FLAVOR_TEXT": "'And yet I... I failed to do just that.  All because I envied Kaijin.  Or was it something else... For betraying your great expectations, I beg your forgiveness!'",
 			"DESCRIPTION": "Choose and combine up to 3 effects.",
 			"EXTENDED_DESCRIPTION": ["Takes 1 less turn to complete."],
 			"NAME": "Elixir"
@@ -3661,9 +3680,10 @@
 		},
 		"animator:Veldora":
 		{
+			"FLAVOR_TEXT": "'You must promise not to fear me when you gain the ability to see, and, I'd like you to come and visit again sometime.  That's all.'",
 			"DESCRIPTION": "Channel [Random Orb]. || At the end of turn: For each card in your hand, Evoke a random {Orb} without removing it a number of times equal to its cost.",
 			"EXTENDED_DESCRIPTION": ["At the end of turn: For each card in your hand, #yEvoke a random #yOrb #b{0} times without removing it a number of times equal to its cost."],
-			"NAME": "Veldora"
+			"NAME": "Veldora Tempest"
 		},
 		"animator:Walpurgisnacht":
 		{
