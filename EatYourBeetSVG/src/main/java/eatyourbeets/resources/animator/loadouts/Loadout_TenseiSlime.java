@@ -20,18 +20,9 @@ public class Loadout_TenseiSlime extends AnimatorLoadout
         AddStarterCard(Shion.DATA, 7);
         AddStarterCard(Shuna.DATA, 5);
         AddStarterCard(Hakurou.DATA, 8);
-        AddStarterCard(Millim.DATA, 8);
-        AddStarterCard(Benimaru.DATA, 6);
-
-        AddStarterCard(Vesta.DATA, 9);
-        AddStarterCard(Ranga.DATA, 11);
-        AddStarterCard(Souei.DATA, 10);
-
-        AddStarterCard(Rimuru.DATA, 17);
-        AddStarterCard(Shizu.DATA, 20);
-        AddStarterCard(Ramiris.DATA, 17);
-
-        AddStarterCard(Status_Burn.DATA, -6);
+        AddStarterCard(Benimaru.DATA, 5);
+        AddStarterCard(Gobta.DATA, 6);
+        AddStarterCard(GazelDwargon.DATA, 7);
     }
 
     @Override
