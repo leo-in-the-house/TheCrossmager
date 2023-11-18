@@ -1679,7 +1679,7 @@ public class GameUtilities
 
     public static boolean IsHighCost(AbstractCard card)
     {
-        return card.costForTurn >= 2;
+        return card.costForTurn >= 2 || card.costForTurn == EYBCard.X_COST;
     }
 
     public static boolean IsLowCost(AbstractCard card)

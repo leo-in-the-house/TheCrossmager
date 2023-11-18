@@ -1,28 +1,30 @@
 package eatyourbeets.cards.animator.series.TenseiSlime;
 
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
-import eatyourbeets.cards.base.modifiers.CostModifiers;
 import eatyourbeets.effects.AttackEffects;
-import eatyourbeets.interfaces.subscribers.OnEvokeOrbSubscriber;
+import eatyourbeets.interfaces.subscribers.OnPlayCardSubscriber;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
-public class Ranga extends AnimatorCard implements OnEvokeOrbSubscriber
+import java.util.ArrayList;
+
+public class Ranga extends AnimatorCard implements OnPlayCardSubscriber
 {
     public static final EYBCardData DATA = Register(Ranga.class)
-            .SetAttack(1, CardRarity.UNCOMMON, EYBAttackType.Elemental)
+            .SetAttack(0, CardRarity.UNCOMMON, EYBAttackType.Elemental)
             .SetSeriesFromClassPackage();
 
     public Ranga()
     {
         super(DATA);
 
-        Initialize(6, 0, 1);
+        Initialize(4, 0, 1);
         SetUpgrade(1, 0, 0);
 
         SetAffinity_Yellow(1, 0, 1);
@@ -47,15 +49,25 @@ public class Ranga extends AnimatorCard implements OnEvokeOrbSubscriber
     }
 
     @Override
-    public void OnEvokeOrb(AbstractOrb orb)
+    public void OnPlayCard(AbstractCard card, AbstractMonster m)
     {
-        if (player.exhaustPile.contains(this))
+        if (player.exhaustPile.contains(this) && GameUtilities.IsHighCost(card))
         {
-            GameActions.Last.MoveCard(this, player.exhaustPile, player.hand)
-            .AddCallback(c -> {
-                GameUtilities.IncreaseMagicNumber(this, 1, false);
-                CostModifiers.For(this).Add(1);
-            });
+            ArrayList<AbstractCard> cardsPlayed = AbstractDungeon.actionManager.cardsPlayedThisTurn;
+            int numHighCostCardsPlayed = 0;
+
+            for (AbstractCard c : cardsPlayed) {
+                if (GameUtilities.IsHighCost(c)) {
+                    numHighCostCardsPlayed++;
+                }
+            }
+
+            if (numHighCostCardsPlayed == 1) {
+                GameActions.Last.MoveCard(this, player.exhaustPile, player.hand)
+                        .AddCallback(c -> {
+                            GameUtilities.IncreaseMagicNumber(this, 1, false);
+                        });
+            }
         }
     }
 
@@ -81,6 +93,6 @@ public class Ranga extends AnimatorCard implements OnEvokeOrbSubscriber
     {
         super.triggerWhenCreated(startOfBattle);
 
-        CombatStats.onEvokeOrb.Subscribe(this);
+        CombatStats.onPlayCard.Subscribe(this);
     }
 }

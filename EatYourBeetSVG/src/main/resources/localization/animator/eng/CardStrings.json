@@ -2978,7 +2978,7 @@
 		"animator:GazelDwargon":
 		{
 			"FLAVOR_TEXT": "'Have you apprehended the proxy?  Punish him severely!  And I want you to observe that slime's movements.  It is unthinkable that we have released such a monster!  Do not allow yourself to be seen, no matter what!'",
-			"DESCRIPTION": "Gain !M! * X [Plated Armor] and !M! * X [B].",
+			"DESCRIPTION": "Gain !M! * X [Plated Armor] and !M! * X [O].",
 			"NAME": "Gazel Dwargo"
 		},
 		"animator:Gobta":
@@ -3003,8 +3003,8 @@
 		"animator:Millim":
 		{
 			"FLAVOR_TEXT": "'Well, that was pretty impressive!  You know, that attack may have actually worked on a different Demon Lord!  There's no way that they would have escaped that big blast in one piece!  Still, though, your pitiful attacks have no effect on MEEEEEEEEE!!!'",
-			"DESCRIPTION": "{~Unique}. || Whenever you play a {High-Cost} card this turn: Gain [E].",
-			"EXTENDED_DESCRIPTION": ["Whenever you play a #yHigh-Cost card this turn: Gain #b{0} #yEnergy."],
+			"DESCRIPTION": "{~Unique}. || Whenever you play a {High-Cost} card in the next !M! turns: Gain [E].",
+			"EXTENDED_DESCRIPTION": ["Whenever you play a #yHigh-Cost card in the next #b{0} turns: Gain #yEnergy."],
 			"NAME": "Milim Nava"
 		},
 		"animator:Ramiris":
@@ -3017,7 +3017,7 @@
 		"animator:Ranga":
 		{
 			"FLAVOR_TEXT": "'You see, in our pack, we're all connected.  Therefore, my name has also become our clan's name.'",
-			"DESCRIPTION": "When you {Evoke} an {Orb}, fetch this card from your {Exhaust} pile and increase its number of attacks and cost by 1.",
+			"DESCRIPTION": "When you play your second {High-Cost} card each turn, fetch this card from your {Exhaust} pile and increase its number of attacks by 1.",
 			"NAME": "Ranga"
 		},
 		"animator:Rigur":
@@ -3029,7 +3029,8 @@
 		"animator:Rimuru":
 		{
 			"FLAVOR_TEXT": "'At that moment, I felt something shift, deep within my very soul!  It was as if the name itself became permanently engraved upon it!'",
-			"DESCRIPTION": "This card is always a copy of the last card played. || At the start of combat: Add {Slimed} to your draw|discard pile.",
+			"DESCRIPTION": "This card is always a copy of the last card played. || At the start of combat: Add {Slimed} to your discard pile and increase its cost by 1.",
+			"UPGRADE_DESCRIPTION": "This card is always an upgraded copy of the last card played. || At the start of combat: Add {Slimed} to your discard pile and increase its cost by 1.",
 			"NAME": "Rimuru Tempest"
 		},
 		"animator:Shion":

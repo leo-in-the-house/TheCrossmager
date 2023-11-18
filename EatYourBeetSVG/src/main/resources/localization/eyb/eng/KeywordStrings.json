@@ -194,7 +194,7 @@
 	},
 	"High-Cost":
 	{
-		"DESCRIPTION": "Card which costs #b2 or more [E].",
+		"DESCRIPTION": "Card which costs #b2 or more [E], or #yX-Cost cards.",
 		"NAMES": ["high-cost", "high cost"],
 		"PROPER_NAME": "High-Cost Card"
 	},

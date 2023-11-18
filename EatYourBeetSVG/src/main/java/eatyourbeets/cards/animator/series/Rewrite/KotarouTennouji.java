@@ -9,6 +9,7 @@ import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.effects.GenericEffects.GenericEffect_EnterStance;
 import eatyourbeets.effects.AttackEffects;
+import eatyourbeets.powers.CombatStats;
 import eatyourbeets.stances.*;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
@@ -69,6 +70,7 @@ public class KotarouTennouji extends AnimatorCard {
         GameUtilities.PlayVoiceSFX(name);
 
         GameActions.Bottom.DealDamage(this, m, AttackEffects.CLAW);
+        GameActions.Bottom.GainBlock(block);
 
         if (this.timesUpgraded >= 2) {
             CardEffectChoice choices = new CardEffectChoice();
@@ -98,7 +100,7 @@ public class KotarouTennouji extends AnimatorCard {
             GameActions.Bottom.ChangeStance(CalmStance.STANCE_ID);
         }
 
-        if (CheckSpecialConditionLimited(false)) {
+        if (CombatStats.TryActivateLimited(cardID)) {
             GameActions.Bottom.ModifyAllInstances(uuid, AbstractCard::upgrade)
                     .IncludeMasterDeck(true)
                     .IsCancellable(false);

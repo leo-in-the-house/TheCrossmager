@@ -1,7 +1,6 @@
 package eatyourbeets.actions.animator;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import eatyourbeets.actions.EYBAction;
 import eatyourbeets.cards.animator.series.TenseiSlime.Rimuru;
@@ -17,7 +16,7 @@ public class RimuruAction extends EYBAction
     private final AbstractCard newCopy;
     private final Rimuru rimuru;
 
-    public RimuruAction(Rimuru rimuru, AbstractCard card)
+    public RimuruAction(Rimuru rimuru, AbstractCard card, boolean alwaysUpgraded)
     {
         super(ActionType.CARD_MANIPULATION);
 
@@ -25,6 +24,10 @@ public class RimuruAction extends EYBAction
         this.newCopy = card.makeStatEquivalentCopy();
         this.copy = rimuru.copy;
         this.rimuru = rimuru;
+
+        if (alwaysUpgraded) {
+            newCopy.upgrade();
+        }
 
         Initialize(1);
     }

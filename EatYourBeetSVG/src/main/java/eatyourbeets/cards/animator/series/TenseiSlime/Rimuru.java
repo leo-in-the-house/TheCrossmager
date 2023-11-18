@@ -38,7 +38,7 @@ public class Rimuru extends AnimatorCard implements OnAfterCardPlayedSubscriber
     {
         if (card != copy && !(card instanceof Rimuru) && !card.purgeOnUse && !card.isInAutoplay)
         {
-            GameActions.Top.Add(new RimuruAction(this, card));
+            GameActions.Top.Add(new RimuruAction(this, card, upgraded));
         }
     }
 

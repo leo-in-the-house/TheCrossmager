@@ -117,7 +117,7 @@ public class VestaElixirEffects
         effectPool.Add(new VestaElixirEffect_CardDraw(upgraded));
         effectPool.Add(new VestaElixirEffect_Affinity_Pink(upgraded));
         effectPool.Add(new VestaElixirEffect_Affinity_Teal(upgraded));
-        effectPool.Add(new VestaElixirEffect_Affinity_Green(upgraded));
+        effectPool.Add(new VestaElixirEffect_Affinity_Star(upgraded));
         effectPool.Add(new VestaElixirEffect_OrbSlots(upgraded));
         effectPool.Add(new VestaElixirEffect_TempHP(upgraded));
         effectPool.Add(new VestaElixirEffect_Metallicize(upgraded));

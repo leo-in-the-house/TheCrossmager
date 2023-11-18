@@ -16,17 +16,19 @@ import eatyourbeets.utilities.GameUtilities;
 public class Millim extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Millim.class)
-            .SetAttack(1, CardRarity.UNCOMMON, EYBAttackType.Elemental, EYBCardTarget.ALL)
+            .SetAttack(2, CardRarity.UNCOMMON, EYBAttackType.Elemental, EYBCardTarget.ALL)
             .SetSeriesFromClassPackage();
 
     public Millim()
     {
         super(DATA);
 
-        Initialize(5, 5);
-        SetUpgrade(4, 4);
+        Initialize(5, 5, 2);
+        SetUpgrade(2, 2, 1);
 
         SetAffinity_Violet(2);
+
+        SetEthereal(true);
 
         SetUnique(true, true);
     }
@@ -66,7 +68,7 @@ public class Millim extends AnimatorCard
             });
         GameActions.Bottom.GainBlock(block);
 
-        GameActions.Bottom.StackPower(new MillimPower(player, 1));
+        GameActions.Bottom.StackPower(new MillimPower(player, magicNumber));
     }
 
     public static class MillimPower extends AnimatorPower {
@@ -91,7 +93,7 @@ public class Millim extends AnimatorCard
         {
             super.atEndOfTurn(isPlayer);
 
-            RemovePower();
+            ReducePower(1);
         }
 
         @Override
