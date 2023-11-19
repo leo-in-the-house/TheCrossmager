@@ -99,7 +99,7 @@ public class Albedo extends AnimatorCard implements OnAffinitySealedSubscriber
         int amountEnchantedArmorToGain = CalculateEnchantedArmorGain();
 
         if (amountEnchantedArmorToGain > 0) {
-            GameActions.Bottom.StackPower(new EnchantedArmorPlayerPower(p, amountEnchantedArmorToGain));
+            GameActions.Bottom.StackPower(new EnchantedArmorPlayerPower(p, Math.min(2, amountEnchantedArmorToGain)));
         }
     }
 

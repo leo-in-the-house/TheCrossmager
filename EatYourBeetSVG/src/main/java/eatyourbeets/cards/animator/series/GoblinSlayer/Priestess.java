@@ -18,7 +18,7 @@ import eatyourbeets.utilities.GameUtilities;
 public class Priestess extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Priestess.class)
-            .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.ALL)
+            .SetSkill(2, CardRarity.UNCOMMON, EYBCardTarget.ALL)
             .SetSeriesFromClassPackage()
             .PostInitialize(data ->
             {
@@ -34,7 +34,7 @@ public class Priestess extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 0, 7, 3);
+        Initialize(0, 0, 8, 3);
         SetUpgrade(0, 0, 4);
 
         SetAffinity_White(1);

@@ -2526,7 +2526,7 @@
 		"animator:Albedo":
 		{
 			"FLAVOR_TEXT": "'Oh, Lord Ainz!  I've tried so hard but I can't hold back any longer!  You are blain, my lord!  I can't contain myself after hearing your words!  And I'll be done long before your assassins can pry me off you!'",
-			"DESCRIPTION": "Gain [Enchanted Armor] for each {Common Debuff} your enemies have. || On Seal or Discard: Gain {Sadistic}.",
+			"DESCRIPTION": "Gain [Enchanted Armor] for each {Common Debuff} your enemies have (max 2 per use). || On Seal or Discard: Gain {Sadistic}.",
 			"NAME": "Albedo"
 		},
 		"animator:AuraBellaFiora":
@@ -2568,7 +2568,7 @@
 		"animator:GazefStronoff":
 		{
 			"FLAVOR_TEXT": "'I am the chief royal warrior of the Re-Estize Kingdom: Gazef Stronoff.  The king has ordered me to hunt down the knights that have been attacking surrounding villages.  Your people are safe now.  We will do all we can to protect you.'",
-			"DESCRIPTION": "Gain {Temp.} [Thorns] for each {Common Debuff} on each enemy.",
+			"DESCRIPTION": "Gain !M! {Temp.} [Thorns] for each {Common Debuff} on each enemy.",
 			"NAME": "Gazef Stronoff"
 		},
 		"animator:MareBelloFiore":
@@ -3036,7 +3036,7 @@
 		"animator:Shion":
 		{
 			"FLAVOR_TEXT": "'...and I am your secretary and bodyguard, remember?  So it looks like you're stuck with me!'",
-			"DESCRIPTION": "Discard a card.  Next turn, enter <WS> and draw a card.",
+			"DESCRIPTION": "Discard a card.  Next turn, Enter <WS> and draw a card.",
 			"NAME": "Shion"
 		},
 		"animator:Shizu":

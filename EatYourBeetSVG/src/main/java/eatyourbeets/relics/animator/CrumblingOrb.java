@@ -1,11 +1,11 @@
 package eatyourbeets.relics.animator;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.random.Random;
+import eatyourbeets.actions.animator.CreateRandomCurses;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.relics.AnimatorRelic;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.JUtils;
 
 public class CrumblingOrb extends AnimatorRelic
@@ -70,7 +70,7 @@ public class CrumblingOrb extends AnimatorRelic
             battleRNG = new Random(rng.randomLong(), 0);
         }
 
-        final AbstractCard card = GameUtilities.GetCardsInCombatWeighted(null).Retrieve(battleRNG).makeCopy();
+        final AbstractCard card = CreateRandomCurses.GetRandomCurse(AbstractDungeon.cardRng).makeCopy();
         if (card.canUpgrade() && battleRNG.randomBoolean(0.3f))
         {
             card.upgrade();

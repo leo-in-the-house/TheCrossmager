@@ -29,7 +29,7 @@ public class Evileye extends AnimatorCard
         SetAffinity_Black(1);
 
         SetExhaust(true);
-        SetRetain(true);
+        SetEthereal(true);
 
         SetAffinityRequirement(Affinity.Violet, 3);
         SetAffinityRequirement(Affinity.Blue, 3);
