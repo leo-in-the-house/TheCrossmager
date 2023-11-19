@@ -2526,7 +2526,7 @@
 		"animator:Albedo":
 		{
 			"FLAVOR_TEXT": "'Oh, Lord Ainz!  I've tried so hard but I can't hold back any longer!  You are blain, my lord!  I can't contain myself after hearing your words!  And I'll be done long before your assassins can pry me off you!'",
-			"DESCRIPTION": "Gain [Enchanted Armor] for each {Common Debuff} your enemies have (max 2 per use). || On Seal or Discard: Gain {Sadistic}.",
+			"DESCRIPTION": "Gain [Enchanted Armor] if there are at least 4 {Common Debuffs} among enemies. || On Seal or Discard: Gain {Sadistic}.",
 			"NAME": "Albedo"
 		},
 		"animator:AuraBellaFiora":

@@ -69,12 +69,12 @@ public class Albedo extends AnimatorCard implements OnAffinitySealedSubscriber
     {
         super.OnDrag(m);
 
-        int amountEnchantedArmorToGain = CalculateEnchantedArmorGain();
+        int debuffAmount = CalculateCommonDebuffAmount();
 
-        if (amountEnchantedArmorToGain > 0) {
+        if (debuffAmount > 0) {
             for (EnemyIntent intent : GameUtilities.GetIntents())
             {
-                intent.AddPlayerEnchantedArmor(amountEnchantedArmorToGain);
+                intent.AddPlayerEnchantedArmor(1);
             }
         }
     }
@@ -96,14 +96,14 @@ public class Albedo extends AnimatorCard implements OnAffinitySealedSubscriber
             }
         }
 
-        int amountEnchantedArmorToGain = CalculateEnchantedArmorGain();
+        int debuffAmount = CalculateCommonDebuffAmount();
 
-        if (amountEnchantedArmorToGain > 0) {
-            GameActions.Bottom.StackPower(new EnchantedArmorPlayerPower(p, Math.min(2, amountEnchantedArmorToGain)));
+        if (debuffAmount > 4) {
+            GameActions.Bottom.StackPower(new EnchantedArmorPlayerPower(p, 1));
         }
     }
 
-    private int CalculateEnchantedArmorGain() {
+    private int CalculateCommonDebuffAmount() {
         return GameUtilities.GetCommonDebuffs(TargetHelper.Enemies()).size();
     }
 
