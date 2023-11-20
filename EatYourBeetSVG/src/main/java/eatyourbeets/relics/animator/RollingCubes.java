@@ -144,7 +144,7 @@ public class RollingCubes extends AnimatorRelic
             AbstractDungeon.srcUncommonCardPool = tempGroupUncommon;
             AbstractDungeon.srcRareCardPool = tempGroupRare;
 
-            final AbstractCard reward = GR.Common.Dungeon.GetRandomRewardCard(rewardItem.cards, true,true);
+            final AbstractCard reward = GR.Common.Dungeon.GetRandomRewardCardRollingCubes(rewardItem.cards, true,true);
 
             AbstractDungeon.srcCommonCardPool = g1;
             AbstractDungeon.srcUncommonCardPool = g2;
@@ -153,6 +153,6 @@ public class RollingCubes extends AnimatorRelic
             return reward;
         }
 
-        return GR.Common.Dungeon.GetRandomRewardCard(rewardItem.cards, false,true);
+        return GR.Common.Dungeon.GetRandomRewardCardRollingCubes(rewardItem.cards, false,true);
     }
 }
