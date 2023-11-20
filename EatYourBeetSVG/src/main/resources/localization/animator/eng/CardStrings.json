@@ -199,6 +199,7 @@
 		},
 		"animator:Patchouli":
 		{
+			"FLAVOR_TEXT": "''",
 			"DESCRIPTION": "Attack 1 additional time for each unique orb Channeled this combat. || <LIM>. <IS> or !A! [B]: Obtain 1 {Orb Core+}.",
 			"NAME": "Patchouli"
 		},
@@ -266,13 +267,9 @@
 			"EXTENDED_DESCRIPTION": ["Whenever you discard a card: Obtain #b{0} #yCommons.", "Whenever you discard a card: Obtain #b{0} upgraded #yCommons."],
 			"NAME": "Chaika Kamaz"
 		},
-		"animator:Cirno":
-		{
-			"DESCRIPTION": "Apply !M! [Freezing] to ALL enemies. || When Exhausted, Channel 1 [Frost].",
-			"NAME": "Cirno"
-		},
 		"animator:EirinYagokoro":
 		{
+			"FLAVOR_TEXT": "''",
 			"DESCRIPTION": "Heal !S! [HP]. Or, if used on an enemy: Apply !M! [Poison]. || When Obtained: Also obtain a random {Potion}.",
 			"NAME": "Eirin Yagokoro"
 		},
@@ -284,6 +281,7 @@
 		},
 		"animator:KomachiOnozuka":
 		{
+			"FLAVOR_TEXT": "''",
 			"DESCRIPTION": "Apply !M! [Vulnerable]. || <LIM>. If this card kills an Elite: Obtain {Shinigami's Ferry}.",
 			"NAME": "Komachi Onozuka"
 		},
@@ -326,6 +324,7 @@
 		},
 		"animator:MamizouFutatsuiwa":
 		{
+			"FLAVOR_TEXT": "''",
 			"DESCRIPTION": "Retain 1 card and change its [W] to [M]. || When Sealed: Exhaust, then obtain a random {+Upgraded} {Colorless} card.",
 			"EXTENDED_DESCRIPTION": ["turn into a Shapeshifter."],
 			"NAME": "Mamizou Futatsuiwa"
@@ -3085,87 +3084,116 @@
 	{
 		"animator:AliceMargatroid":
 		{
+			"FLAVOR_TEXT": "''",
 			"DESCRIPTION": "Boost [B]. <DRW-M>. || Raise the passive amount of your next orb by !S!, skipping orbs that are already affected by this.",
 			"NAME": "Alice Margatroid"
 		},
+		"animator:AunnKomano":
+		{
+			"FLAVOR_TEXT": "'I'm Komano, the komainu!  I'm this shrine's guardian god!  I chase away intruders while the shrine maiden is out.'",
+			"DESCRIPTION": "If you have [Frost], Channel [Earth].  Otherwise, Channel [Frost].",
+			"NAME": "Aunn Komano"
+		},
 		"animator:AyaShameimaru":
 		{
+			"FLAVOR_TEXT": "''",
 			"DESCRIPTION": "Gain !S! [~Blur]. <DRW-M>. || This turn, pay 1 [E]: Enter <AS>.",
 			"EXTENDED_DESCRIPTION": ["Pay 1 [E]: Enter [G] #yStance."],
 			"NAME": "Aya Shameimaru"
 		},
 		"animator:ByakurenHijiri":
 		{
+			"FLAVOR_TEXT": "''",
 			"DESCRIPTION": "Gain !M! [R] [G] [B]. || !A! [D]: If not paid: Take !S! [DD].",
 			"NAME": "Byakuren Hijiri"
 		},
+		"animator:Cirno":
+		{
+			"FLAVOR_TEXT": "'When I get serious, I'm scarier than any shrine maiden!  I'll freeze ya to death with my seriousness!'",
+			"DESCRIPTION": "The next !S! times you gain [Block] this turn: Apply [Freezing] to ALL attacking enemies.",
+			"EXTENDED_DESCRIPTION": ["The next #b{0} times you gain #yBlock this turn, Apply #yFreezing to ALL attacking enemies."],
+			"NAME": "Cirno"
+		},
+		"animator:Clownpiece":
+		{
+			"FLAVOR_TEXT": "'I'm a fairy from hell, Clownpiece.  The moon's people are enemies of my dear friend. Enemies of my dear friend are enemies of Master's.  And any enemy of Master's is an enemy of mine!'",
+			"DESCRIPTION": "Play the topmost card of your draw pile with an Attack or [Block] multiplier, and take [DD] equal to twice its cost.",
+			"NAME": "Clownpiece"
+		},
 		"animator:HataNoKokoro":
 		{
+			"FLAVOR_TEXT": "''",
 			"DESCRIPTION": "Choose a card you have not played this combat from your Exhaust pile: Purge it and play it at the start of next turn.",
 			"EXTENDED_DESCRIPTION": ["At the start of turn, play {0}."],
 			"NAME": "Hata no Kokoro"
 		},
 		"animator:MarisaKirisame":
 		{
-			"DESCRIPTION": "Choose 1: Trigger 1 [Fire], then Channel 1 [Lightning]; Trigger 1 [Lightning], then Channel 1 [Fire].",
-			"EXTENDED_DESCRIPTION":
-			[
-				"Trigger 1 [Fire]. Channel 1 [Lightning].",
-				"Trigger 1 [Lightning]. Channel 1 [Fire]."
-			],
+			"FLAVOR_TEXT": "'Okay, okay, I give up.  You're right. The endless night, stealing the full moon, hiding the human village, and putting hats on stone statues!  It's all Alice's fault!  Now, bitch, get out of the way!'",
+			"DESCRIPTION": "Evoke your next {Orb} twice.",
 			"NAME": "Marisa Kirisame"
 		},
 		"animator:MedicineMelancholy":
 		{
+			"FLAVOR_TEXT": "''",
 			"DESCRIPTION": "When attacked, on first hit: Trigger the attacker's [Poison]. || Once per combat: Raise the [Poison] of each enemy by !M! to apply 1 [Weak].",
 			"EXTENDED_DESCRIPTION": ["Raise the [Poison] of each enemy by #b{0} to apply #b1 [Weak]. || Whenever you are attacked, trigger the attacker's [Poison]."],
 			"NAME": "Medicine Melancholy"
 		},
 		"animator:ReimuHakurei":
 		{
-			"DESCRIPTION": "Obtain 1 {[L] Token}{+}. || !A! [L]: Gain 1 [S] and give all {[W] Tokens} +!M! [Block].",
+			"FLAVOR_TEXT": "'But you're just a youkai, aren't you? It's my job to defeat youkai. Defeating you is just a matter of course.'",
+			"DESCRIPTION": "Apply [Weak] [Vulnerable].",
 			"NAME": "Reimu Hakurei"
 		},
 		"animator:ReisenInaba":
 		{
-			"DESCRIPTION": "Discard 1 card. Choose: Apply !M! [Vulnerable] and give !S! [Strength]; Apply !M! [Weak] and give !S! [Malleable]. || !A! [S]: Exhaust 1 card instead of discarding it.",
-			"EXTENDED_DESCRIPTION": ["Apply !M! [Vulnerable]. Give !S! [Strength].", "Apply !M! [Weak]. Give !S! [Malleable]."],
-			"NAME": "Reisen U. Inaba"
+			"FLAVOR_TEXT": "'The moon drives people mad.  So, I wonder if you can remain in your right mind while gazing into the eyes of this lunar rabbit?'",
+			"DESCRIPTION": "Whenever you hit the enemy this turn, Apply !M! [~Lock-On].",
+			"EXTENDED_DESCRIPTION": ["Whenever you hit the enemy this turn, Apply #b{0} #yLock-On."],
+			"NAME": "Reisen Udongein Inaba"
 		},
 		"animator:RemiliaScarlet":
 		{
+			"FLAVOR_TEXT": "''",
 			"DESCRIPTION": "At the start of turn: Boost your {Stance} [W] (Random [W] if Neutral). || Once per combat: Exhaust 1 card to Recover !M! [HP].",
 			"EXTENDED_DESCRIPTION": ["Exhaust 1 card to #yRecover #b{0} [HP]. || At the end of each turn: #yBoost your #yStance [W] #yPower."],
 			"NAME": "Remilia Scarlet"
 		},
 		"animator:Rumia":
 		{
+			"FLAVOR_TEXT": "''",
 			"DESCRIPTION": "<ST>. Motivate 1 [D]. || Trigger your first [Dark] to obtain {[D] Token}{+}. Else: Channel 1 [Dark].",
 			"NAME": "Rumia"
 		},
 		"animator:SakuyaIzayoi":
 		{
+			"FLAVOR_TEXT": "'Even so, you cannot meet with my mistress.  I can stall you for as long as it takes by stopping time.'",
 			"DESCRIPTION": "Gain X [G]. Next turn: Add X [T-Knife] to your hand. || If you have a [T-Knife]: Increase X by 1.",
 			"EXTENDED_DESCRIPTION": ["At the start of turn, add #b{0} [T-Knife] to your hand."],
 			"NAME": "Sakuya Izayoi"
 		},
 		"animator:SanaeKochiya":
 		{
+			"FLAVOR_TEXT": "''",
 			"DESCRIPTION": "Gain !M! [L]. If you have [Blessing]: Channel [Aether] and Exhaust. || <LIM>. When Sealed: Obtain a {[W] Token}.",
 			"NAME": "Sanae Kochiya"
 		},
 		"animator:TenshiHinanawi":
 		{
+			"FLAVOR_TEXT": "''",
 			"DESCRIPTION": "Trigger your first [Earth] to deal !M! [DD]. || <slm>. If this is [S]: <DRW>.",
 			"NAME": "Tenshi Hinanawi"
 		},
 		"animator:YoumuKonpaku":
 		{
+			"FLAVOR_TEXT": "''",
 			"DESCRIPTION": "Deals double damage to enemies with full [HP]. || <slm>. <AS>: Next turn: Fetch this card from your discard pile.",
 			"NAME": "Youmu Konpaku"
 		},
 		"animator:YukariYakumo":
 		{
+			"FLAVOR_TEXT": "''",
 			"DESCRIPTION": "Remove all of your Debuffs until the start of next turn. || For each Debuff removed: Apply a random {Common Debuff}{+} to ALL enemies.",
 			"EXTENDED_DESCRIPTION": ["At the start of turn, reapply all #yDebuffs removed by this effect, ignoring #yArtifact."],
 			"NAME": "Yukari Yakumo"

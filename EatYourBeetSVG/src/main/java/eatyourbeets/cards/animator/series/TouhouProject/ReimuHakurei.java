@@ -1,15 +1,17 @@
 package eatyourbeets.cards.animator.series.TouhouProject;
 
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.tokens.AffinityToken;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.cards.base.modifiers.BlockModifiers;
+import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.effects.AttackEffects;
-import eatyourbeets.powers.CombatStats;
+import eatyourbeets.effects.SFX;
+import eatyourbeets.effects.VFX;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameEffects;
+import eatyourbeets.utilities.GameUtilities;
 
 public class ReimuHakurei extends AnimatorCard
 {
@@ -23,40 +25,35 @@ public class ReimuHakurei extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(6, 0, 1);
+        Initialize(2, 0, 3);
+        SetUpgrade(0, 0, 2);
 
-        SetAffinity_White(2, 0, 1);
-        SetAffinity_Red(1);
+        SetAffinity_White(1);
+    }
 
-        SetAffinityRequirement(Affinity.White, 1);
+    @Override
+    public AbstractAttribute GetDamageInfo()
+    {
+        return super.GetDamageInfo().AddMultiplier(magicNumber);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_VERTICAL);
-        GameActions.Bottom.ObtainAffinityToken(Affinity.White, upgraded);
-    }
 
-    @Override
-    public void OnLateUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
-    {
-        if (CheckSpecialCondition(false))
-        {
-            CombatStats.Affinities.AddAffinitySealUses(1);
-            GameActions.Bottom.Callback(() ->
+        for (int i=0; i<magicNumber; i++) {
+            GameActions.Bottom.DealDamage(this, m, AttackEffects.NONE)
+            .SetDamageEffect(target ->
             {
-                for (AbstractCard c : player.hand.group)
-                {
-                    if (c instanceof AffinityToken)
-                    {
-                        BlockModifiers.For(c).Add(cardID, magicNumber);
-                        c.flash();
-                    }
-                }
+                SFX.Play(SFX.ATTACK_MAGIC_BEAM_SHORT, 0.9f, 1.1f);
+                GameEffects.List.Add(VFX.SmallLaser(p.hb, target.hb, Color.RED));
+                return 0f;
             });
         }
+
+        GameActions.Bottom.ApplyWeak(player, m, 1);
+        GameActions.Bottom.ApplyVulnerable(player, m, 1);
     }
 }
 

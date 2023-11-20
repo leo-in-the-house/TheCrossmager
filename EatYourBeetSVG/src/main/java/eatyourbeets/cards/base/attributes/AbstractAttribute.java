@@ -6,13 +6,12 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.GlyphLayout;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.core.Settings;
 import eatyourbeets.cards.base.EYBCard;
 import eatyourbeets.resources.GR;
 import eatyourbeets.resources.common.CommonImages;
-import eatyourbeets.utilities.ColoredString;
 import eatyourbeets.utilities.AdvancedTexture;
+import eatyourbeets.utilities.ColoredString;
 import eatyourbeets.utilities.RenderHelpers;
 
 import java.util.HashMap;

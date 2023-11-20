@@ -2265,6 +2265,35 @@ public class GameUtilities
         GameActions.Delayed.SFX(SFX.GetVoiceString(cardName.replace("+", "")));
     }
 
+    public static boolean HasAttackOrBlockMultiplier(AbstractCard card) {
+        return HasAttackMultiplier(card) || HasBlockMultiplier(card);
+    }
+
+
+    public static boolean HasAttackMultiplier(AbstractCard card) {
+        if (card instanceof EYBCard) {
+            EYBCard eybCard = (EYBCard) card;
+
+            if (eybCard.GetDamageInfo() != null && eybCard.GetDamageInfo().suffix != null) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public static boolean HasBlockMultiplier(AbstractCard card) {
+        if (card instanceof EYBCard) {
+            EYBCard eybCard = (EYBCard) card;
+
+            if (eybCard.GetBlockInfo() != null && eybCard.GetBlockInfo().suffix != null) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public static void RemoveDamagePowers()
     {
         if (player.hasPower(PenNibPower.POWER_ID))
