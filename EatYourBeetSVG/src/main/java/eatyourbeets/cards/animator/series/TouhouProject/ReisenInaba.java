@@ -66,6 +66,15 @@ public class ReisenInaba extends AnimatorCard
             CombatStats.onAttack.Unsubscribe(this);
         }
 
+        @Override
+        public void atEndOfTurn(boolean isPlayer)
+        {
+            super.atEndOfTurn(isPlayer);
+
+            SetEnabled(false);
+            RemovePower();
+            flash();
+        }
 
         @Override
         public void OnAttack(DamageInfo info, int damageAmount, AbstractCreature target)

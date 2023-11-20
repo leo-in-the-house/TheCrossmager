@@ -36,7 +36,7 @@ public class AyatoNaoi extends AnimatorCard
         SetExhaust(true);
     }
 
-        @Override
+    @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);

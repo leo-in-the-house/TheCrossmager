@@ -2294,6 +2294,30 @@ public class GameUtilities
         return false;
     }
 
+    public static int GetAttackMultiplier(AbstractCard card) {
+        if (card instanceof EYBCard) {
+            EYBCard eybCard = (EYBCard) card;
+
+            if (eybCard.GetDamageInfo() != null) {
+                return eybCard.GetDamageInfo().multiplierAmount;
+            }
+        }
+
+        return 0;
+    }
+
+    public static int GetBlockMultiplier(AbstractCard card) {
+        if (card instanceof EYBCard) {
+            EYBCard eybCard = (EYBCard) card;
+
+            if (eybCard.GetBlockInfo() != null) {
+                return eybCard.GetBlockInfo().multiplierAmount;
+            }
+        }
+
+        return 0;
+    }
+
     public static void RemoveDamagePowers()
     {
         if (player.hasPower(PenNibPower.POWER_ID))

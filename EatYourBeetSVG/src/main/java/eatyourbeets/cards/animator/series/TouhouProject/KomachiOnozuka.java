@@ -1,4 +1,4 @@
-package eatyourbeets.cards.animator.colorless.uncommon;
+package eatyourbeets.cards.animator.series.TouhouProject;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
 import com.megacrit.cardcrawl.rooms.MonsterRoomElite;
 import eatyourbeets.cards.base.*;
+import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.effects.SFX;
@@ -21,8 +22,7 @@ public class KomachiOnozuka extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(KomachiOnozuka.class)
             .SetAttack(2, CardRarity.UNCOMMON, EYBAttackType.Piercing)
-            .SetColor(CardColor.COLORLESS)
-            .SetSeries(CardSeries.TouhouProject);
+            .SetSeriesFromClassPackage();
 
     private static final AbstractRelic relicReward = new ShinigamiFerry();
     private static final EYBCardTooltip tooltip = new EYBCardTooltip(relicReward.name, relicReward.description);
@@ -31,13 +31,19 @@ public class KomachiOnozuka extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(11, 0, 2, 0);
-        SetUpgrade(3, 0, 0, 0);
+        Initialize(5, 0, 2, 2);
+        SetUpgrade(0, 0, 1, 2);
 
-        SetAffinity_Black(1, 0, 6);
-        SetAffinity_Green(1, 0, 6);
+        SetAffinity_Black(1, 0, 1);
+        SetAffinity_Blue(1, 0, 1);
 
         SetObtainableInCombat(false);
+    }
+
+    @Override
+    public AbstractAttribute GetDamageInfo()
+    {
+        return super.GetDamageInfo().AddMultiplier(magicNumber);
     }
 
     @Override
@@ -55,20 +61,27 @@ public class KomachiOnozuka extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.SFX(SFX.ATTACK_REAPER, 0.95f, 1.05f);
-        GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_HORIZONTAL)
-        .SetSoundPitch(0, 0)
-        .AddCallback(enemy ->
-        {
-            AbstractRoom room = AbstractDungeon.getCurrRoom();
-            if ((room instanceof MonsterRoomElite || room instanceof MonsterRoomBoss)
-                    && GameUtilities.IsFatal(enemy, false)
-                    && CombatStats.TryActivateLimited(cardID))
-            {
-                ObtainReward();
-            }
-        });
-        GameActions.Bottom.ApplyVulnerable(p, m, magicNumber);
+
+        for (int i=0; i<magicNumber; i++) {
+            GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_HORIZONTAL)
+                .SetDamageEffect(e -> {
+                    GameActions.Bottom.SFX(SFX.ATTACK_REAPER, 0.95f, 1.05f);
+                    return 0f;
+                })
+                .SetSoundPitch(0, 0)
+                .AddCallback(enemy ->
+                {
+                    AbstractRoom room = AbstractDungeon.getCurrRoom();
+                    if ((room instanceof MonsterRoomElite || room instanceof MonsterRoomBoss)
+                            && GameUtilities.IsFatal(enemy, false)
+                            && CombatStats.TryActivateLimited(cardID))
+                    {
+                        ObtainReward();
+                    }
+                });
+        }
+
+        GameActions.Bottom.ApplyVulnerable(p, m, secondaryValue);
     }
 
     public void ObtainReward()

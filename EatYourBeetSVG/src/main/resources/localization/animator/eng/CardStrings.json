@@ -279,12 +279,6 @@
 			"DESCRIPTION": "This card gains [Block] an extra time for each {Orb}. || On Discard or Exhaust: Channel [Frost].",
 			"NAME": "Kaeya Alberich"
 		},
-		"animator:KomachiOnozuka":
-		{
-			"FLAVOR_TEXT": "''",
-			"DESCRIPTION": "Apply !M! [Vulnerable]. || <LIM>. If this card kills an Elite: Obtain {Shinigami's Ferry}.",
-			"NAME": "Komachi Onozuka"
-		},
 		"animator:Kuroyukihime":
 		{
 			"DESCRIPTION": "Discard !M! cards to obtain {Black Lotus}. || !A! [M]: Upgrade it.",
@@ -3084,9 +3078,22 @@
 	{
 		"animator:AliceMargatroid":
 		{
-			"FLAVOR_TEXT": "''",
-			"DESCRIPTION": "Boost [B]. <DRW-M>. || Raise the passive amount of your next orb by !S!, skipping orbs that are already affected by this.",
+			"FLAVOR_TEXT": "'And we've only just met after so long, old friend.  Have you only brought me your life as a gift?'",
+			"DESCRIPTION": "The next !M! times you hit the enemy this turn, add {Shanghai Doll}{+} to your hand. || !A! [T][B]: Add {Artful Sacrifice}{+} to your hand.",
+			"EXTENDED_DESCRIPTION": ["The next #b{0} times you hit the enemy this turn, add #yShanghai #yDoll to your hand.","The next #b{0} times you hit the enemy this turn, add #yupgraded #yShanghai #yDoll to your hand."],
 			"NAME": "Alice Margatroid"
+		},
+		"animator:ArtfulSacrifice":
+		{
+			"FLAVOR_TEXT": "'Soon, the ultimate doll should be complete.  With this, the forest will be mine.' - Alice Margatroid",
+			"DESCRIPTION": "{Exhaust} ALL {Shanghai Doll} in your hand.  Deal !M! damage to a random enemy for each {Shanghai Doll} exhausted this way.",
+			"NAME": "Artful Sacrifice"
+		},
+		"animator:ShanghaiDoll":
+		{
+			"FLAVOR_TEXT": "'It seems that it's more convenient to control the dolls myself than have dolls that think on their own.' - Alice Margatroid",
+			"DESCRIPTION": "Enter <CS>.",
+			"NAME": "Shanghai Doll"
 		},
 		"animator:AunnKomano":
 		{
@@ -3096,9 +3103,8 @@
 		},
 		"animator:AyaShameimaru":
 		{
-			"FLAVOR_TEXT": "''",
-			"DESCRIPTION": "Gain !S! [~Blur]. <DRW-M>. || This turn, pay 1 [E]: Enter <AS>.",
-			"EXTENDED_DESCRIPTION": ["Pay 1 [E]: Enter [G] #yStance."],
+			"FLAVOR_TEXT": "'Hmm. I've got enough pictures, but...  I'd like to try to get something a bit more useful.  I can't write a good article with pictures like these.'",
+			"DESCRIPTION": "Gain !M! {Temp.} [Dexterity]. || <DRW>.",
 			"NAME": "Aya Shameimaru"
 		},
 		"animator:ByakurenHijiri":
@@ -3126,6 +3132,19 @@
 			"DESCRIPTION": "Choose a card you have not played this combat from your Exhaust pile: Purge it and play it at the start of next turn.",
 			"EXTENDED_DESCRIPTION": ["At the start of turn, play {0}."],
 			"NAME": "Hata no Kokoro"
+		},
+		"animator:KomachiOnozuka":
+		{
+			"FLAVOR_TEXT": "'Ah, what a problem...  Now I'm swamped in work, and I can't possibly catch up...  All these ghosts are waiting to cross the Sanzu River...'",
+			"DESCRIPTION": "Apply !S! [Vulnerable]. || <LIM>. If this card kills an Elite: Obtain {Shinigami's Ferry}.",
+			"NAME": "Komachi Onozuka"
+		},
+		"animator:KoishiKomeiji":
+		{
+			"FLAVOR_TEXT": "'Read your mind?  I've already closed my satori eye.  Reading people's minds only makes you depressed and there's nothing good about it.'",
+			"DESCRIPTION": "At the start of your turn, {Autoplay} a random card in your hand with an Attack or [Block] multiplier to gain [E].",
+			"EXTENDED_DESCRIPTION": ["At the start of your turn, #yAutoplay a random card in your hand with an #yAttack or #yBlock multiplier to gain #yEnergy."],
+			"NAME": "Koishi Komeiji"
 		},
 		"animator:MarisaKirisame":
 		{
@@ -3175,8 +3194,10 @@
 		},
 		"animator:SanaeKochiya":
 		{
-			"FLAVOR_TEXT": "''",
-			"DESCRIPTION": "Gain !M! [L]. If you have [Blessing]: Channel [Aether] and Exhaust. || <LIM>. When Sealed: Obtain a {[W] Token}.",
+			"FLAVOR_TEXT": "'I'm Sanae, a wind priestess, descendent of a long-forgotten line of gods incarnate in the outside world.  Well, I guess you could call me something like a shrine maiden.'",
+			"DESCRIPTION": "Enter <TS>. || Whenever you gain [Block] for the rest of the turn, add {Miracle} to your draw pile.",
+			"UPGRADE_DESCRIPTION": "Enter <TS>. || Whenever you gain [Block] for the rest of the turn, add {Miracle} to your draw pile and give it {Haste}.",
+			"EXTENDED_DESCRIPTION": ["Whenever you gain #yBlock for the rest of the turn, add #b{0} #yMiracle to your draw pile.","Whenever you gain #yBlock for the rest of the turn, add #b{0} #yMiracle to your draw pile and give them #yHaste."],
 			"NAME": "Sanae Kochiya"
 		},
 		"animator:TenshiHinanawi":

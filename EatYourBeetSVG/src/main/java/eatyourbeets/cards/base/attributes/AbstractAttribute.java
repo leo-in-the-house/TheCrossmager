@@ -26,6 +26,7 @@ public abstract class AbstractAttribute
     protected static final GlyphLayout layout = new GlyphLayout();
 
     public static boolean leftAlign;
+    public int multiplierAmount;
 
     public Texture icon;
     public ColoredString mainText;
@@ -65,6 +66,7 @@ public abstract class AbstractAttribute
     public AbstractAttribute AddMultiplier(int times)
     {
         this.suffix = leftAlign ? ("x" + times) : (times + "x");
+        this.multiplierAmount = times;
 
         return this;
     }

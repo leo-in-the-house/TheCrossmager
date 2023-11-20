@@ -92,6 +92,16 @@ public class Cirno extends AnimatorCard
         }
 
         @Override
+        public void atEndOfTurn(boolean isPlayer)
+        {
+            super.atEndOfTurn(isPlayer);
+
+            SetEnabled(false);
+            RemovePower();
+            flash();
+        }
+
+        @Override
         public void OnBlockGained(AbstractCreature creature, int block)
         {
             if (creature == owner && this.amount > 0)

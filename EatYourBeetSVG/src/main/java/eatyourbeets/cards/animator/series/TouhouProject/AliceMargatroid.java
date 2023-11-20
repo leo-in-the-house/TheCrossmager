@@ -1,70 +1,113 @@
 package eatyourbeets.cards.animator.series.TouhouProject;
 
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.orbs.AbstractOrb;
-import com.megacrit.cardcrawl.vfx.combat.OrbFlareEffect;
-import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.cards.base.CardUseInfo;
-import eatyourbeets.cards.base.EYBCardData;
-import eatyourbeets.cards.base.EYBCardTarget;
+import eatyourbeets.cards.animator.special.ArtfulSacrifice;
+import eatyourbeets.cards.animator.special.ShanghaiDoll;
+import eatyourbeets.cards.base.*;
+import eatyourbeets.interfaces.subscribers.OnAttackSubscriber;
+import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameEffects;
-
-import java.util.HashSet;
+import eatyourbeets.utilities.GameUtilities;
 
 public class AliceMargatroid extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(AliceMargatroid.class)
             .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None)
-            .SetSeriesFromClassPackage();
+            .SetSeriesFromClassPackage()
+            .PostInitialize(data ->
+            {
+                data.AddPreview(new ShanghaiDoll(), true);
+                data.AddPreview(new ArtfulSacrifice(), true);
+            });
 
     public AliceMargatroid()
     {
         super(DATA);
 
-        Initialize(0, 0, 1, 2);
-        SetUpgrade(0, 0, 1);
+        Initialize(0, 0, 4);
+        SetUpgrade(0, 0, 2);
 
-        SetAffinity_Blue(2);
-        SetAffinity_White(1);
+        SetAffinity_Teal(1);
+        SetAffinity_Brown(1);
 
-        SetEthereal(true);
+        SetFading(true);
+
+        SetAffinityRequirement(Affinity.Teal, 3);
+        SetAffinityRequirement(Affinity.Brown, 3);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.GainBlue(1, true);
-        GameActions.Bottom.Draw(magicNumber);
+
+        GameActions.Bottom.StackPower(new AliceMargatroidPower(player, magicNumber, upgraded));
+
+        if (CheckSpecialCondition(false)) {
+            GameActions.Bottom.MakeCardInHand(new ArtfulSacrifice())
+                    .SetUpgrade(upgraded, true);
+        }
     }
 
-    @Override
-    public void OnLateUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
-    {
-        GameActions.Delayed.Callback(() ->
-        {
-            HashSet<AbstractOrb> cache = CombatStats.GetCombatData(cardID, null);
-            if (cache == null)
-            {
-                cache = new HashSet<>();
-                CombatStats.SetCombatData(cardID, cache);
-            }
+    public static class AliceMargatroidPower extends AnimatorPower implements OnAttackSubscriber {
 
-            for (AbstractOrb orb : player.orbs)
+        private boolean upgraded;
+
+        public AliceMargatroidPower(AbstractCreature owner, int amount, boolean upgraded) {
+            super(owner, AliceMargatroid.DATA);
+
+            this.upgraded = upgraded;
+
+            Initialize(amount);
+        }
+
+        @Override
+        public void updateDescription()
+        {
+            description = FormatDescription(0, amount);
+        }
+
+        @Override
+        public void onInitialApplication()
+        {
+            super.onInitialApplication();
+
+            CombatStats.onAttack.Subscribe(this);
+        }
+
+        @Override
+        public void onRemove()
+        {
+            super.onRemove();
+
+            CombatStats.onAttack.Unsubscribe(this);
+        }
+
+        @Override
+        public void atEndOfTurn(boolean isPlayer)
+        {
+            super.atEndOfTurn(isPlayer);
+
+            SetEnabled(false);
+            RemovePower();
+            flash();
+        }
+
+        @Override
+        public void OnAttack(DamageInfo info, int damageAmount, AbstractCreature target)
+        {
+            if (info.type == DamageInfo.DamageType.NORMAL && GameUtilities.IsMonster(target))
             {
-                if (!cache.contains(orb) && orb.passiveAmount >= 2)
-                {
-                    GameUtilities.IncreaseOrbPassiveAmount(orb, secondaryValue);
-                    GameEffects.List.Add(new OrbFlareEffect(orb, OrbFlareEffect.OrbFlareColor.DARK));
-                    cache.add(orb);
-                    return;
-                }
+                GameActions.Bottom.MakeCardInHand(new ShanghaiDoll())
+                        .SetUpgrade(upgraded, true);
+                this.flash();
+                ReducePower(1);
             }
-        });
+        }
     }
 }
 
