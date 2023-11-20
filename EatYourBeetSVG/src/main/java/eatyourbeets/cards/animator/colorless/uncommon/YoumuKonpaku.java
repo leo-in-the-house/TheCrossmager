@@ -5,19 +5,16 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardSeries;
-import eatyourbeets.cards.base.attributes.AbstractAttribute;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.effects.VFX;
-import eatyourbeets.interfaces.subscribers.OnStartOfTurnSubscriber;
-import eatyourbeets.powers.CombatStats;
-import eatyourbeets.stances.AgilityStance;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
+import eatyourbeets.utilities.GameUtilities;
 
-public class YoumuKonpaku extends AnimatorCard implements OnStartOfTurnSubscriber
+public class YoumuKonpaku extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(YoumuKonpaku.class)
             .SetAttack(1, CardRarity.UNCOMMON)

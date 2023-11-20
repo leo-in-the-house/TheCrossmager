@@ -22,7 +22,7 @@ import eatyourbeets.utilities.TargetHelper;
 public class MedicineMelancholy extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(MedicineMelancholy.class)
-            .SetPower(3, CardRarity.RARE)
+            .SetPower(2, CardRarity.RARE)
             .SetColor(CardColor.COLORLESS)
             .SetSeries(CardSeries.TouhouProject);
 

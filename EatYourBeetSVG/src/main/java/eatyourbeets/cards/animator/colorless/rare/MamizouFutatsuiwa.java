@@ -44,24 +44,6 @@ public class MamizouFutatsuiwa extends AnimatorCard
     }
 
     @Override
-    public void OnLateUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
-    {
-        GameActions.Bottom.SelectFromHand(name, 1, false)
-        .SetOptions(false, false, false)
-        .SetMessage(RetainCardsAction.TEXT[0])
-        .AddCallback(cards ->
-        {
-            for (AbstractCard c : cards)
-            {
-                if (GameUtilities.GetAffinityLevel(c, Affinity.Star, true, false) <= 0)
-                {
-                    GameActions.Bottom.ModifyAffinityLevel(c, Affinity.Star, 1, false);
-                }
-            }
-        });
-    }
-
-    @Override
     public void triggerOnAffinitySeal(boolean reshuffle)
     {
         super.triggerOnAffinitySeal(reshuffle);

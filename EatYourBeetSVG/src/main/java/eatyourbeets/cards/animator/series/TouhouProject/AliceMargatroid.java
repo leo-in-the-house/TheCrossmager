@@ -29,7 +29,7 @@ public class AliceMargatroid extends AnimatorCard
         super(DATA);
 
         Initialize(0, 0, 4);
-        SetUpgrade(0, 0, 2);
+        SetUpgrade(0, 0, 0);
 
         SetAffinity_Teal(1);
         SetAffinity_Brown(1);

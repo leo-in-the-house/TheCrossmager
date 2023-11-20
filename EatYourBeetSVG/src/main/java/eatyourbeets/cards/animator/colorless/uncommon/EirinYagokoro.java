@@ -41,15 +41,17 @@ public class EirinYagokoro extends AnimatorCard implements OnAddToDeckListener
     {
         GameUtilities.PlayVoiceSFX(name);
 
-        GameActions.Bottom.DealDamage(this, m, AttackEffects.BLUNT_HEAVY)
-        .AddCallback(m.currentBlock, (initialBlock, target) ->
-        {
-            if (GameUtilities.IsDeadOrEscaped(target) || (initialBlock > 0 && target.currentBlock <= 0))
-            {
-                CreatePotion();
-                GameActions.Last.Exhaust(this);
-            }
-        });
+        for (int i=0; i<magicNumber; i++) {
+            GameActions.Bottom.DealDamage(this, m, AttackEffects.BLUNT_HEAVY)
+                    .AddCallback(m.currentBlock, (initialBlock, target) ->
+                    {
+                        if (GameUtilities.IsDeadOrEscaped(target) || (initialBlock > 0 && target.currentBlock <= 0))
+                        {
+                            CreatePotion();
+                            GameActions.Last.Exhaust(this);
+                        }
+                    });
+        }
     }
 
     public void CreatePotion()
