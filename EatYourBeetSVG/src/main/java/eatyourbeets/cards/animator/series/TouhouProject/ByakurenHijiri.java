@@ -10,7 +10,7 @@ import eatyourbeets.utilities.GameActions;
 public class ByakurenHijiri extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(ByakurenHijiri.class)
-            .SetSkill(0, CardRarity.COMMON, EYBCardTarget.None)
+            .SetSkill(0, CardRarity.RARE, EYBCardTarget.None)
             
             .SetSeriesFromClassPackage();
 

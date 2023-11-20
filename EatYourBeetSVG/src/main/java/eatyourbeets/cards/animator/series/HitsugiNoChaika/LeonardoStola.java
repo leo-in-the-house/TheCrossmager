@@ -58,12 +58,14 @@ public class LeonardoStola extends AnimatorCard {
 
         @Override
         public void OnAfterCardDiscarded() {
+
+            GameActions.Bottom.Callback(() -> {
             if (this.amount > 0) {
-                GameActions.Bottom.Draw(1);
+                GameActions.Top.Draw(1);
                 this.amount -= 1;
                 updateDescription();
                 flash();
-            }
+            }});
         }
 
         public void atStartOfTurn()

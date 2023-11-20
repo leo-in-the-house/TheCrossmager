@@ -367,7 +367,7 @@ public abstract class EYBPower extends AbstractPower implements CloneablePowerIn
 
     public ReducePower ReducePower(int amount)
     {
-        return ReducePower(GameActions.Bottom, amount);
+        return ReducePower(GameActions.Top, amount);
     }
 
     public ReducePower ReducePower(GameActions order, int amount)
@@ -377,7 +377,7 @@ public abstract class EYBPower extends AbstractPower implements CloneablePowerIn
 
     public RemovePower RemovePower()
     {
-        return RemovePower(GameActions.Bottom);
+        return RemovePower(GameActions.Top);
     }
 
     public RemovePower RemovePower(GameActions order)

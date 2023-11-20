@@ -3128,9 +3128,9 @@
 		},
 		"animator:HataNoKokoro":
 		{
-			"FLAVOR_TEXT": "''",
-			"DESCRIPTION": "Choose a card you have not played this combat from your Exhaust pile: Purge it and play it at the start of next turn.",
-			"EXTENDED_DESCRIPTION": ["At the start of turn, play {0}."],
+			"FLAVOR_TEXT": "'In order to normalize all emotions, and return the village to its former self...  I should just use you, overflowing with hope, as my new Mask of Hope!'",
+			"DESCRIPTION": "Choose a card you have not played this combat from your Exhaust pile: Purge it and play it twice at the start of next turn.",
+			"EXTENDED_DESCRIPTION": ["At the start of turn, play {0} twice."],
 			"NAME": "Hata no Kokoro"
 		},
 		"animator:KomachiOnozuka":
@@ -3174,23 +3174,10 @@
 		},
 		"animator:RemiliaScarlet":
 		{
-			"FLAVOR_TEXT": "''",
-			"DESCRIPTION": "At the start of turn: Boost your {Stance} [W] (Random [W] if Neutral). || Once per combat: Exhaust 1 card to Recover !M! [HP].",
-			"EXTENDED_DESCRIPTION": ["Exhaust 1 card to #yRecover #b{0} [HP]. || At the end of each turn: #yBoost your #yStance [W] #yPower."],
+			"FLAVOR_TEXT": "'Fufufu. Is it because the moon is so red?  It looks like it's going to be a hot night...  It looks like it's gonna be a cold night, too...'",
+			"DESCRIPTION": "Start of Game: Add {Sakuya Izayoi}{+} to your draw pile. || !M! times per combat: Exhaust a card and heal HP equal to its Attack multiplier plus [Block] multiplier.",
+			"EXTENDED_DESCRIPTION": ["Once per combat: Exhaust 1 card to #yheal #yHP equal to its #yAttack multiplier plus #yBlock multiplier."],
 			"NAME": "Remilia Scarlet"
-		},
-		"animator:Rumia":
-		{
-			"FLAVOR_TEXT": "''",
-			"DESCRIPTION": "<ST>. Motivate 1 [D]. || Trigger your first [Dark] to obtain {[D] Token}{+}. Else: Channel 1 [Dark].",
-			"NAME": "Rumia"
-		},
-		"animator:SakuyaIzayoi":
-		{
-			"FLAVOR_TEXT": "'Even so, you cannot meet with my mistress.  I can stall you for as long as it takes by stopping time.'",
-			"DESCRIPTION": "Gain X [G]. Next turn: Add X [T-Knife] to your hand. || If you have a [T-Knife]: Increase X by 1.",
-			"EXTENDED_DESCRIPTION": ["At the start of turn, add #b{0} [T-Knife] to your hand."],
-			"NAME": "Sakuya Izayoi"
 		},
 		"animator:SanaeKochiya":
 		{
@@ -3202,8 +3189,9 @@
 		},
 		"animator:TenshiHinanawi":
 		{
-			"FLAVOR_TEXT": "''",
-			"DESCRIPTION": "Trigger your first [Earth] to deal !M! [DD]. || <slm>. If this is [S]: <DRW>.",
+			"FLAVOR_TEXT": "'I'm saying I was bored out of my mind!  So I came down to the surface and watched you playing with all kinds of different youkai.  Seeing that made me think, 'I want to play incident resolution too!'  So I caused my own incident.'",
+			"DESCRIPTION": "Channel [Earth]. || After every !M! additional times you gain [Block] this turn, Evoke your rightmost [Earth] !S! times, then Channel it again.",
+			"EXTENDED_DESCRIPTION": ["After every #b{1} additional times you gain #yBlock this turn, #yEvoke your rightmost #yEarth #b{0} times, then #yChannel it again."],
 			"NAME": "Tenshi Hinanawi"
 		},
 		"animator:YoumuKonpaku":
@@ -3428,7 +3416,9 @@
 		},
 		"animator:FlandreScarlet":
 		{
-			"DESCRIPTION": "If the enemy has [Vulnerable]: Give this card +!M! [M] scaling. || <LIM>. When Exhausted: Add !S! {Imitations} of this card to your hand.",
+			"FLAVOR_TEXT": "'You're not trying to trick me, are you?  I've only ever seen humans in the form of a drink.'",
+			"DESCRIPTION": "When you would gain [Block] this turn, apply !S! [DD] to ALL targets. || On Exhaust: {Imitate} this card 3 times.",
+			"EXTENDED_DESCRIPTION": ["When you would gain #yBlock this turn, apply #b{0} #yDelayed #yDamage to ALL targets."],
 			"NAME": "Flandre Scarlet"
 		},
 		"animator:HinaKagiyama":
@@ -3452,6 +3442,13 @@
 		{
 			"DESCRIPTION": "Delay certain doom by 1 turn.",
 			"NAME": "Respite"
+		},
+		"animator:SakuyaIzayoi":
+		{
+			"FLAVOR_TEXT": "'Even so, you cannot meet with my mistress.  I can stall you for as long as it takes by stopping time.'",
+			"DESCRIPTION": "On Discard or Exhaust: The next !S! times you gain [Block] this turn, add [T-Knife] to your hand.",
+			"EXTENDED_DESCRIPTION": ["The next #b{0} times you gain #yBlock this turn, add #yT-Knife to your hand."],
+			"NAME": "Sakuya Izayoi"
 		},
 		"animator:SogaNoTojiko":
 		{

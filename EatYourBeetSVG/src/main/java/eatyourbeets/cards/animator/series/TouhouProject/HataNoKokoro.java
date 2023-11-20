@@ -1,6 +1,7 @@
 package eatyourbeets.cards.animator.series.TouhouProject;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -28,13 +29,15 @@ public class HataNoKokoro extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 0);
+        Initialize(0, 2, 3);
+        SetUpgrade(0, 0, 3);
 
         SetEthereal(true);
         SetExhaust(true);
 
+        SetAffinity_Red(1);
+        SetAffinity_Green(1);
         SetAffinity_Blue(1);
-        SetAffinity_Black(1);
 
         SetCardPreview(this::CanSelectCard)
         .SetGroupType(CardGroup.CardGroupType.EXHAUST_PILE);
@@ -63,9 +66,20 @@ public class HataNoKokoro extends AnimatorCard
     }
 
     @Override
+    public AbstractAttribute GetBlockInfo()
+    {
+        return super.GetBlockInfo().AddMultiplier(magicNumber);
+    }
+
+    @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
+
+        for (int i=0; i<magicNumber; i++) {
+            GameActions.Bottom.GainBlock(block);
+        }
+
         GameActions.Bottom.PurgeFromPile(name, 1, p.exhaustPile)
         //.SetOptions(false, false)
         .SetFilter(this::CanSelectCard)
@@ -119,7 +133,9 @@ public class HataNoKokoro extends AnimatorCard
 
             card.target_x = MoveCard.DEFAULT_CARD_X_LEFT;
             card.target_y = MoveCard.DEFAULT_CARD_Y;
-            GameActions.Last.PlayCard(card, CombatStats.PurgedCards, target).SetPurge(true);
+            GameActions.Last.PlayCopy(card, target);
+            GameActions.Last.PlayCard(card, CombatStats.PurgedCards, target)
+                    .SetPurge(true);
             RemovePower();
         }
     }

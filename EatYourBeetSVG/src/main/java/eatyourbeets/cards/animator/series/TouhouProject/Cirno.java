@@ -104,15 +104,16 @@ public class Cirno extends AnimatorCard
         @Override
         public void OnBlockGained(AbstractCreature creature, int block)
         {
-            if (creature == owner && this.amount > 0)
-            {
-                for (AbstractMonster monster : GameUtilities.GetEnemies(true)) {
-                    if (GameUtilities.IsAttacking(monster.intent)) {
-                        GameActions.Bottom.ApplyFreezing(TargetHelper.Normal(monster), 1);
+            GameActions.Bottom.Callback(() -> {
+                if (creature == owner && this.amount > 0) {
+                    for (AbstractMonster monster : GameUtilities.GetEnemies(true)) {
+                        if (GameUtilities.IsAttacking(monster.intent)) {
+                            GameActions.Top.ApplyFreezing(TargetHelper.Normal(monster), 1);
+                        }
                     }
+                    ReducePower(1);
                 }
-                ReducePower(1);
-            }
+            });
         }
     }
 }
