@@ -3079,7 +3079,7 @@
 		"animator:AliceMargatroid":
 		{
 			"FLAVOR_TEXT": "'And we've only just met after so long, old friend.  Have you only brought me your life as a gift?'",
-			"DESCRIPTION": "The next !M! times you hit the enemy this turn, add {Shanghai Doll}{+} to your hand. || !A! [T][B]: Add {Artful Sacrifice}{+} to your hand.",
+			"DESCRIPTION": "The next !M! times you hit the enemy this turn, add {Shanghai Doll}{+} to your hand. || !A! [T][O]: Add {Artful Sacrifice}{+} to your hand.",
 			"EXTENDED_DESCRIPTION": ["The next #b{0} times you hit the enemy this turn, add #yShanghai #yDoll to your hand.","The next #b{0} times you hit the enemy this turn, add #yupgraded #yShanghai #yDoll to your hand."],
 			"NAME": "Alice Margatroid"
 		},

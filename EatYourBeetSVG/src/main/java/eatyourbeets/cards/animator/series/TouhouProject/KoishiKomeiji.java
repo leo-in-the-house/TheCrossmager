@@ -15,13 +15,13 @@ import eatyourbeets.utilities.RandomizedList;
 
 public class KoishiKomeiji extends AnimatorCard {
     public static final EYBCardData DATA = Register(KoishiKomeiji.class)
-            .SetPower(2, CardRarity.UNCOMMON)
+            .SetPower(1, CardRarity.UNCOMMON)
             .SetSeriesFromClassPackage();
 
     public KoishiKomeiji() {
         super(DATA);
 
-        Initialize(0, 2, 4);
+        Initialize(0, 2, 3);
         SetCostUpgrade(-1);
 
         SetAffinity_Pink(1);
@@ -57,29 +57,31 @@ public class KoishiKomeiji extends AnimatorCard {
         }
 
         @Override
-        public void atStartOfTurn() {
-            super.atStartOfTurn();
+        public void atStartOfTurnPostDraw() {
+            super.atStartOfTurnPostDraw();
 
-            RandomizedList<AbstractCard> possibleCards = new RandomizedList<>();
+            GameActions.Bottom.Callback(() -> {
+                RandomizedList<AbstractCard> possibleCards = new RandomizedList<>();
 
-            for (AbstractCard card : player.hand.group) {
-                if (GameUtilities.HasAttackOrBlockMultiplier(card)) {
-                    possibleCards.Add(card);
+                for (AbstractCard card : player.hand.group) {
+                    if (GameUtilities.HasAttackOrBlockMultiplier(card)) {
+                        possibleCards.Add(card);
+                    }
                 }
-            }
 
-            if (possibleCards.Size() > 0) {
-                AbstractCard card = possibleCards.Retrieve(rng);
+                if (possibleCards.Size() > 0) {
+                    AbstractCard card = possibleCards.Retrieve(rng);
 
-                if (card != null) {
-                    GameActions.Bottom.SpendEnergy(card).AddCallback(amount -> {
-                        GameActions.Top.PlayCard(card, GameUtilities.GetRandomEnemy(true))
-                            .AddCallback(c -> {
-                                GameActions.Top.GainEnergy(1);
-                            });
-                    });
+                    if (card != null) {
+                        GameActions.Bottom.SpendEnergy(card).AddCallback(amount -> {
+                            GameActions.Top.PlayCard(card, GameUtilities.GetRandomEnemy(true))
+                                    .AddCallback(c -> {
+                                        GameActions.Top.GainEnergy(1);
+                                    });
+                        });
+                    }
                 }
-            }
+            });
         }
     }
 }

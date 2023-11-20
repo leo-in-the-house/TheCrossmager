@@ -42,7 +42,7 @@ public class ArtfulSacrifice extends AnimatorCard {
                 GameActions.Bottom.Exhaust(card);
                 GameActions.Bottom.DealDamageToRandomEnemy(magicNumber, DamageInfo.DamageType.THORNS, AttackEffects.FIRE)
                     .SetDamageEffect(e -> {
-                        GameActions.Top.VFX(VFX.Fireball(player.hb, m.hb).SetColor(Color.RED, Color.YELLOW).SetScale(2).SetRealtime(true));
+                        GameActions.Top.VFX(VFX.Fireball(player.hb, e.hb).SetColor(Color.RED, Color.YELLOW).SetScale(2).SetRealtime(true));
                         return 0f;
                     });
             }
