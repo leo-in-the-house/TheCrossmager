@@ -3109,8 +3109,9 @@
 		},
 		"animator:ByakurenHijiri":
 		{
-			"FLAVOR_TEXT": "''",
-			"DESCRIPTION": "Gain !M! [R] [G] [B]. || !A! [D]: If not paid: Take !S! [DD].",
+			"FLAVOR_TEXT": "'I grieve for the youkai that are oppressed by humans.  I did everything in my power to create a peaceful world where humans and youkai could live as equals.  And yet, I was sealed away by humans who didn't want that sort of world...'",
+			"DESCRIPTION": "Whenever you hit the enemy: Gain !S! [THP]. || Whenever you gain [Block]: Gain !S! [B] [D] [L].",
+			"EXTENDED_DESCRIPTION": ["Whenever you hit the enemy: Gain #b{0} #yTemporary #yHP.  Whenever you gain #yBlock: Gain #b{0} #yBlue #yBlack #yWhite."],
 			"NAME": "Byakuren Hijiri"
 		},
 		"animator:Cirno":
@@ -3199,6 +3200,12 @@
 			"FLAVOR_TEXT": "''",
 			"DESCRIPTION": "Deals double damage to enemies with full [HP]. || <slm>. <AS>: Next turn: Fetch this card from your discard pile.",
 			"NAME": "Youmu Konpaku"
+		},
+		"animator:YuumaToutetsu":
+		{
+			"FLAVOR_TEXT": "'All the petroleum buried here is mine!  And everything wrapped around it-- every joy, every convenience, every curse, every animosity, every desire...  Every last drop of it is MINE!  If some human wants to have it, it'll be over my dead body!'",
+			"DESCRIPTION": "When Drawn: Exhaust another card in your hand.  Give this card an extra attack equal to its Attack multiplier plus its [Block] multiplier.",
+			"NAME": "Yuuma Toutetsu"
 		},
 		"animator:YukariYakumo":
 		{
@@ -3741,7 +3748,8 @@
 		},
 		"animator:YuyukoSaigyouji":
 		{
-			"DESCRIPTION": "Next turn: <DRW>. || Kill ALL enemies with less than !M! [HP]. If this kills at least 1 enemy: Gain [~Intangible]. Otherwise: Increase the [HP] threshold by !S!%.",
+			"FLAVOR_TEXT": "'My life might have ended knowing nothing of my misery were this a world without the custom of priestly retreat...'",
+			"DESCRIPTION": "Kill ALL enemies with less than !M! [HP]. || If this kills at least 1 enemy: Gain [~Intangible]. Otherwise: Double the [HP] threshold.",
 			"NAME": "Yuyuko Saigyouji"
 		}
 	}

@@ -8,13 +8,12 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.PetalEffect;
 import eatyourbeets.actions.utility.WaitRealtimeAction;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.cards.base.attributes.SpecialAttribute;
 import eatyourbeets.effects.SFX;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
-import eatyourbeets.utilities.Mathf;
+import eatyourbeets.utilities.GameUtilities;
 
 import java.util.ArrayList;
 
@@ -29,13 +28,13 @@ public class YuyukoSaigyouji extends AnimatorCard_UltraRare
     {
         super(DATA);
 
-        Initialize(0, 0, 34, 10);
-        SetUpgrade(0, 0, 6, 0);
+        Initialize(0, 0, 30, 0);
+        SetUpgrade(0, 0, 10, 0);
 
         SetAffinity_Blue(2);
         SetAffinity_Black(2);
 
-        SetInnate(true);
+        SetDelayed(true);
     }
 
     @Override
@@ -48,7 +47,6 @@ public class YuyukoSaigyouji extends AnimatorCard_UltraRare
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.DrawNextTurn(1);
 
         final ArrayList<AbstractMonster> targets = new ArrayList<>();
         for (AbstractMonster m1 : GameUtilities.GetEnemies(true))
@@ -78,28 +76,33 @@ public class YuyukoSaigyouji extends AnimatorCard_UltraRare
 
         GameActions.Delayed.Callback(targets, (enemies, __) ->
         {
+            boolean isFatal = false;
+
             for (AbstractMonster enemy : enemies)
             {
                 if (GameUtilities.IsFatal(enemy, true))
                 {
                     GameActions.Bottom.GainIntangible(1);
+                    isFatal = true;
                     return;
                 }
             }
 
-            GameActions.Bottom.ModifyAllInstances(uuid)
-            .AddCallback(c ->
-            {
-                final int bonus = Mathf.RoundToInt(c.baseMagicNumber * secondaryValue * 0.01f);
-                if ((bonus + c.baseMagicNumber) > 999)
+            if (!isFatal) {
+                GameActions.Bottom.ModifyAllInstances(uuid)
+                .AddCallback(c ->
                 {
-                    GameUtilities.ModifyMagicNumber(c, 999, false);
-                }
-                else
-                {
-                    GameUtilities.IncreaseMagicNumber(c, bonus, false);
-                }
-            });
+                    final int bonus = c.magicNumber;
+                    if ((bonus + c.magicNumber) > 999)
+                    {
+                        GameUtilities.ModifyMagicNumber(c, 999, false);
+                    }
+                    else
+                    {
+                        GameUtilities.IncreaseMagicNumber(c, bonus, false);
+                    }
+                });
+            }
         });
     }
 
