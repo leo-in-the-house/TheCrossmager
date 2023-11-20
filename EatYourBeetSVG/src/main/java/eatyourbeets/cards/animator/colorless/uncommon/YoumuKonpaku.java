@@ -1,9 +1,11 @@
-package eatyourbeets.cards.animator.series.TouhouProject;
+package eatyourbeets.cards.animator.colorless.uncommon;
 
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
+import eatyourbeets.cards.base.CardSeries;
+import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
@@ -19,19 +21,26 @@ public class YoumuKonpaku extends AnimatorCard implements OnStartOfTurnSubscribe
 {
     public static final EYBCardData DATA = Register(YoumuKonpaku.class)
             .SetAttack(1, CardRarity.UNCOMMON)
-            .SetSeriesFromClassPackage();
+            .SetColor(CardColor.COLORLESS)
+            .SetSeries(CardSeries.TouhouProject);
 
     public YoumuKonpaku()
     {
         super(DATA);
 
-        Initialize(5, 3);
-        SetUpgrade(2, 1);
+        Initialize(3, 3, 2);
+        SetUpgrade(1, 2);
 
-        SetAffinity_Green(1, 0, 1);
-        SetAffinity_Red(1);
+        SetAffinity_Black(1, 0, 1);
+        SetAffinity_Green(1);
 
         SetInnate(true);
+    }
+
+    @Override
+    public AbstractAttribute GetDamageInfo()
+    {
+        return super.GetDamageInfo().AddMultiplier(magicNumber);
     }
 
     @Override
@@ -46,33 +55,15 @@ public class YoumuKonpaku extends AnimatorCard implements OnStartOfTurnSubscribe
     }
 
     @Override
-    public void OnStartOfTurn()
-    {
-        if (player.discardPile.contains(this) && CombatStats.TryActivateSemiLimited(cardID))
-        {
-            GameActions.Top.MoveCard(this, player.discardPile, player.hand);
-            GameActions.Bottom.Flash(this);
-        }
-    }
-
-    @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
-        GameActions.Bottom.DealDamage(this, m, AttackEffects.NONE)
-        .SetDamageEffect(c -> GameEffects.List.Add(VFX.Clash(c.hb)).duration)
-        .SetVFXColor(Color.TEAL);
 
-        if (CheckSpecialCondition(false))
-        {
-            CombatStats.onStartOfTurn.SubscribeOnce(this);
+        for (int i=0; i<magicNumber; i++) {
+            GameActions.Bottom.DealDamage(this, m, AttackEffects.NONE)
+            .SetDamageEffect(c -> GameEffects.List.Add(VFX.Clash(c.hb)).duration)
+            .SetVFXColor(Color.TEAL);
         }
-    }
-
-    @Override
-    public boolean CheckSpecialCondition(boolean tryUse)
-    {
-        return AgilityStance.IsActive();
     }
 }

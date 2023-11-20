@@ -1,21 +1,18 @@
-package eatyourbeets.cards.animator.colorless.uncommon;
+package eatyourbeets.cards.animator.colorless.rare;
 
 import com.megacrit.cardcrawl.actions.unique.RetainCardsAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.cards.base.attributes.AbstractAttribute;
-import eatyourbeets.cards.base.attributes.TempHPAttribute;
+import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
 public class MamizouFutatsuiwa extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(MamizouFutatsuiwa.class)
-            .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None)
+            .SetSkill(1, CardRarity.RARE, EYBCardTarget.None)
             .SetColor(CardColor.COLORLESS)
             .SetSeries(CardSeries.TouhouProject);
 
@@ -23,25 +20,27 @@ public class MamizouFutatsuiwa extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 0, 2);
-        SetUpgrade(0, 0, 3);
+        Initialize(0, 0, 3);
+        SetUpgrade(0, 0, 2);
 
-        SetAffinity_Star(1);
+        SetAffinity_Star(1, 1, 0);
 
         SetExhaust(true);
-    }
-
-    @Override
-    public AbstractAttribute GetSpecialInfo()
-    {
-        return (magicNumber > 0) ? TempHPAttribute.Instance.SetCard(this, true) : null;
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.GainTemporaryHP(magicNumber);
+        GameActions.Bottom.Draw(magicNumber)
+        .AddCallback(cards -> {
+
+            for (AbstractCard card : cards) {
+                if (card instanceof AnimatorCard) {
+                    GameUtilities.AddAffinityToCard(card, Affinity.Star, 1);
+                }
+            }
+        });
     }
 
     @Override
@@ -67,11 +66,6 @@ public class MamizouFutatsuiwa extends AnimatorCard
     {
         super.triggerOnAffinitySeal(reshuffle);
 
-        final AbstractCard card = GameUtilities.GetColorlessCardPoolInCombat().Retrieve(rng, false);
-        if (card != null)
-        {
-            GameActions.Bottom.MakeCardInHand(card).SetUpgrade(upgraded, true);
-            GameActions.Last.Exhaust(this);
-        }
+        CombatStats.Affinities.AddAffinitySealUses(1);
     }
 }

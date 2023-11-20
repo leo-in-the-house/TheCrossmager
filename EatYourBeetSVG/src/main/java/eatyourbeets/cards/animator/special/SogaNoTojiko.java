@@ -4,10 +4,9 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.Lightning;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.monsters.EnemyIntent;
-import eatyourbeets.powers.replacement.AnimatorIntangiblePower;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class SogaNoTojiko extends AnimatorCard
 {
@@ -20,19 +19,13 @@ public class SogaNoTojiko extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 0, 3);
+        Initialize(0, 0, 1);
+        SetUpgrade(0, 0, 1);
 
-        SetAffinity_White(1);
         SetAffinity_Black(1);
+        SetAffinity_Yellow(1);
 
         SetExhaust(true);
-        SetEthereal(true);
-    }
-
-    @Override
-    protected void OnUpgrade()
-    {
-        SetEthereal(false);
     }
 
     @Override
@@ -50,7 +43,8 @@ public class SogaNoTojiko extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.StackPower(new AnimatorIntangiblePower(p, 1));
-        GameActions.Bottom.TriggerOrbPassive(1).SetFilter(o -> Lightning.ORB_ID.equals(o.ID));
+
+        GameActions.Bottom.ChannelOrb(new Lightning());
+        GameActions.Bottom.GainIntangible(1);
     }
 }

@@ -18,7 +18,7 @@ import eatyourbeets.utilities.GameActions;
 public class HinaKagiyama extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(HinaKagiyama.class)
-            .SetPower(0, CardRarity.SPECIAL)
+            .SetPower(1, CardRarity.SPECIAL)
             .SetColor(CardColor.COLORLESS)
             .SetSeries(CardSeries.TouhouProject)
             
@@ -29,14 +29,11 @@ public class HinaKagiyama extends AnimatorCard
         super(DATA);
 
         Initialize(0, 0, 1);
+        SetCostUpgrade(-1);
 
-        SetAffinity_Blue(1);
-        SetAffinity_White(2);
-    }
+        SetAffinity_Violet(1);
+        SetAffinity_White(1);
 
-    @Override
-    protected void OnUpgrade()
-    {
         SetInnate(true);
     }
 
@@ -75,18 +72,6 @@ public class HinaKagiyama extends AnimatorCard
         }
 
         @Override
-        public void onExhaust(AbstractCard card)
-        {
-            super.onExhaust(card);
-
-            if (card.type == CardType.CURSE)
-            {
-                GameActions.Bottom.MakeCardInHand(new Special_Miracle());
-                flash();
-            }
-        }
-
-        @Override
         public void OnAfterCardDrawn(AbstractCard card)
         {
             Activate(card);
@@ -102,7 +87,7 @@ public class HinaKagiyama extends AnimatorCard
         {
             if (c.type == AbstractCard.CardType.CURSE)
             {
-                GameActions.Bottom.GainWhite(amount);
+                GameActions.Bottom.Draw(1);
                 flashWithoutSound();
             }
         }

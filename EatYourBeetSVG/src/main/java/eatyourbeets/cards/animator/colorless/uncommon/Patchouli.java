@@ -1,7 +1,5 @@
-package eatyourbeets.cards.animator.colorless.rare;
+package eatyourbeets.cards.animator.colorless.uncommon;
 
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -13,9 +11,7 @@ import com.megacrit.cardcrawl.vfx.combat.FireballEffect;
 import com.megacrit.cardcrawl.vfx.combat.LightningEffect;
 import com.megacrit.cardcrawl.vfx.combat.WhirlwindEffect;
 import eatyourbeets.actions.damage.DealDamageToRandomEnemy;
-import eatyourbeets.cards.animator.special.OrbCore;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.interfaces.delegates.ActionT0;
@@ -30,18 +26,9 @@ import java.util.HashSet;
 public class Patchouli extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Patchouli.class)
-            .SetAttack(3, CardRarity.RARE, EYBAttackType.Elemental, EYBCardTarget.Random)
+            .SetAttack(3, CardRarity.UNCOMMON, EYBAttackType.Elemental, EYBCardTarget.Random)
             .SetColor(CardColor.COLORLESS)
-            .SetSeries(CardSeries.TouhouProject)
-            .PostInitialize(data ->
-            {
-                for (OrbCore core : OrbCore.GetAllCores())
-                {
-                    final AbstractCard card = core.makeCopy();
-                    card.upgrade();
-                    data.AddPreview(card, false);
-                }
-            });
+            .SetSeries(CardSeries.TouhouProject);
 
     private final HashSet<String> uniqueOrbs = new HashSet<>();
 
@@ -49,12 +36,12 @@ public class Patchouli extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(7, 0, 1, 2);
-        SetUpgrade(3, 0, 0, 0);
+        Initialize(15, 0, 1);
+        SetUpgrade(0, 0, 0);
 
-        SetAffinity_Blue(2, 0, 2);
-
-        SetAffinityRequirement(Affinity.Blue, 3);
+        SetAffinity_Blue(1, 0, 1);
+        SetAffinity_Red(1, 0, 1);
+        SetAffinity_Green(1, 0, 1);
     }
 
     @Override
@@ -95,18 +82,6 @@ public class Patchouli extends AnimatorCard
 
             actions.Retrieve(rng).Invoke();
             GameActions.Bottom.WaitRealtime(0.2f);
-        }
-
-        if (CheckSpecialCondition(false))
-        {
-            GameActions.Bottom.Add(OrbCore.SelectCoreAction(name, 1, 5, true)
-            .AddCallback(cards ->
-            {
-                for (AbstractCard c : cards)
-                {
-                    GameActions.Bottom.MakeCardInHand(c);
-                }
-            }));
         }
     }
 

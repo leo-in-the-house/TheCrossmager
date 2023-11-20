@@ -197,11 +197,12 @@
 			"DESCRIPTION": "Exhaust !M! random cards to make ALL enemies attack themselves this turn, the enemies who are not attacking are Stunned.",
 			"NAME": "Lelouch"
 		},
-		"animator:Patchouli":
+		"animator:MedicineMelancholy":
 		{
-			"FLAVOR_TEXT": "''",
-			"DESCRIPTION": "Attack 1 additional time for each unique orb Channeled this combat. || <LIM>. <IS> or !A! [B]: Obtain 1 {Orb Core+}.",
-			"NAME": "Patchouli"
+			"FLAVOR_TEXT": "'If the poison's too strong, it gets immediately cleaned out.  But with the right amount, the poison will circulate through the whole body before one realizes it.  The most fearsome poison is the one that will slowly deteriorate the body, and then deteriorate the mind.'",
+			"DESCRIPTION": "Whenever you hit the enemy, Apply [Poison]. || Whenever you gain [Block], Trigger 25% of the [Poison] on ALL enemies.",
+			"EXTENDED_DESCRIPTION": ["Whenever you hit the enemy, Apply #yPoison. || Whenever you gain #yBlock, Trigger #b{0}% of the #yPoison on ALL enemies."],
+			"NAME": "Medicine Melancholy"
 		},
 		"animator:ResnaSternlicht":
 		{
@@ -243,6 +244,12 @@
 			"DESCRIPTION": "For the rest of combat: [T-Knife] you create deals damage to ALL enemies. || Obtain a [T-Knife]{+} for each Orb. ",
 			"EXTENDED_DESCRIPTION": ["#yThrowing #yKnives you create deals damage to ALL enemies."],
 			"NAME": "Yoimiya Naganohara"
+		},
+		"animator:YukariYakumo":
+		{
+			"FLAVOR_TEXT": "'Oh, perfect timing.  You are the human who defeated my Ran?  Knowing that dangerous humans like you exist keeps me from sleeping soundly.'",
+			"DESCRIPTION": "Remove ALL your debuffs, and gain [Strength] [Dexterity] [Focus] for each debuff removed. || Enter <MS>.",
+			"NAME": "Yukari Yakumo"
 		}
 	},
 
@@ -269,8 +276,8 @@
 		},
 		"animator:EirinYagokoro":
 		{
-			"FLAVOR_TEXT": "''",
-			"DESCRIPTION": "Heal !S! [HP]. Or, if used on an enemy: Apply !M! [Poison]. || When Obtained: Also obtain a random {Potion}.",
+			"FLAVOR_TEXT": "'Yes, you were led through that eternal corridor, and came to this false moon here.  The full moon is the one key that links the moon to the earth.  If one were to break that key, travel between the moon and earth would be impossible.  See? You've been deceived by this fake illusion, just like that.'",
+			"DESCRIPTION": "If this killed the enemy or broke through the enemy [Block], gain a random {Potion}, then {Exhaust}.",
 			"NAME": "Eirin Yagokoro"
 		},
 		"animator:KaeyaAlberich":
@@ -318,9 +325,8 @@
 		},
 		"animator:MamizouFutatsuiwa":
 		{
-			"FLAVOR_TEXT": "''",
-			"DESCRIPTION": "Retain 1 card and change its [W] to [M]. || When Sealed: Exhaust, then obtain a random {+Upgraded} {Colorless} card.",
-			"EXTENDED_DESCRIPTION": ["turn into a Shapeshifter."],
+			"FLAVOR_TEXT": "'Ho! Ho! Ho!  How long will you keep that confidence?  Now, shall we begin?  A ten-game match of danmaku transformations!'",
+			"DESCRIPTION": "When Sealed: Gain [A_Seal]. || Draw !M! cards and give them [A_Star] scaling.",
 			"NAME": "Mamizou Futatsuiwa"
 		},
 		"animator:MisaKurobane":
@@ -356,6 +362,12 @@
 			"DESCRIPTION": "Heal [HP] for each {Genshin Impact} card in your master deck.",
 			"NAME": "Paimon"
 		},
+		"animator:Patchouli":
+		{
+			"FLAVOR_TEXT": "'Let's see... How to take out the black thing in front of me without having to do anything...  Hmm, my eyes have gotten worse lately...  Perhaps I have an iron deficiency...   How about you?'",
+			"DESCRIPTION": "Attack 1 additional time for each unique orb Channeled this combat.",
+			"NAME": "Patchouli Knowledge"
+		},
 		"animator:QuestionMark":
 		{
 			"DESCRIPTION": "Unplayable. || When Sealed: Obtain 1 out of !M! random Upgraded cards.",
@@ -381,6 +393,12 @@
 			"FLAVOR_TEXT": "'Listen up, you’re gonna give it back without any tiresome rambling.  I’m not going to scold you nicely, I’m going to beat it out of you.'",
 			"DESCRIPTION": "This card costs 1 less for each other {Uncommon} or {Rare} in your hand.",
 			"NAME": "Valeria"
+		},
+		"animator:YoumuKonpaku":
+		{
+			"FLAVOR_TEXT": "'The things that cannot be cut by my Roukanken, forged by youkai... are next to none!'",
+			"DESCRIPTION": "Deals double damage to enemies with full [HP].",
+			"NAME": "Youmu Konpaku"
 		},
 		"animator:Zero":
 		{
@@ -3153,13 +3171,6 @@
 			"DESCRIPTION": "Evoke your next {Orb} twice.",
 			"NAME": "Marisa Kirisame"
 		},
-		"animator:MedicineMelancholy":
-		{
-			"FLAVOR_TEXT": "''",
-			"DESCRIPTION": "When attacked, on first hit: Trigger the attacker's [Poison]. || Once per combat: Raise the [Poison] of each enemy by !M! to apply 1 [Weak].",
-			"EXTENDED_DESCRIPTION": ["Raise the [Poison] of each enemy by #b{0} to apply #b1 [Weak]. || Whenever you are attacked, trigger the attacker's [Poison]."],
-			"NAME": "Medicine Melancholy"
-		},
 		"animator:ReimuHakurei":
 		{
 			"FLAVOR_TEXT": "'But you're just a youkai, aren't you? It's my job to defeat youkai. Defeating you is just a matter of course.'",
@@ -3195,24 +3206,11 @@
 			"EXTENDED_DESCRIPTION": ["After every #b{1} additional times you gain #yBlock this turn, #yEvoke your rightmost #yEarth #b{0} times, then #yChannel it again."],
 			"NAME": "Tenshi Hinanawi"
 		},
-		"animator:YoumuKonpaku":
-		{
-			"FLAVOR_TEXT": "''",
-			"DESCRIPTION": "Deals double damage to enemies with full [HP]. || <slm>. <AS>: Next turn: Fetch this card from your discard pile.",
-			"NAME": "Youmu Konpaku"
-		},
 		"animator:YuumaToutetsu":
 		{
 			"FLAVOR_TEXT": "'All the petroleum buried here is mine!  And everything wrapped around it-- every joy, every convenience, every curse, every animosity, every desire...  Every last drop of it is MINE!  If some human wants to have it, it'll be over my dead body!'",
 			"DESCRIPTION": "When Drawn: Exhaust another card in your hand.  Give this card an extra attack equal to its Attack multiplier plus its [Block] multiplier.",
 			"NAME": "Yuuma Toutetsu"
-		},
-		"animator:YukariYakumo":
-		{
-			"FLAVOR_TEXT": "''",
-			"DESCRIPTION": "Remove all of your Debuffs until the start of next turn. || For each Debuff removed: Apply a random {Common Debuff}{+} to ALL enemies.",
-			"EXTENDED_DESCRIPTION": ["At the start of turn, reapply all #yDebuffs removed by this effect, ignoring #yArtifact."],
-			"NAME": "Yukari Yakumo"
 		}
 	},
 
@@ -3430,8 +3428,9 @@
 		},
 		"animator:HinaKagiyama":
 		{
-			"DESCRIPTION": "Whenever you draw a Curse: Gain !M! [L]. || Whenever a Curse is Exhausted: Obtain 1 {Miracle}.",
-			"EXTENDED_DESCRIPTION": ["TWhenever you draw a curse, gain #b{0} [L]. Whenever a #yCurse is #yExhausted: Obtain #b1 #yMiracle."],
+			"FLAVOR_TEXT": "'Every disaster will befall you.  I can't let you pass, even to protect humans!'",
+			"DESCRIPTION": "Whenever you draw a Curse: Draw a card.",
+			"EXTENDED_DESCRIPTION": ["Whenever you draw a #yCurse, draw #b{0} cards."],
 			"NAME": "Hina Kagiyama"
 		},
 		"animator:Khajiit":
@@ -3459,7 +3458,8 @@
 		},
 		"animator:SogaNoTojiko":
 		{
-			"DESCRIPTION": "Gain 1 [~Intangible]. || Trigger 1 [Lightning].",
+			"FLAVOR_TEXT": "'OK, if you want to join our faith, please fill in the required forms!  Then I'll guide to your room if you plan to stay at our dormitory...'",
+			"DESCRIPTION": "Channel [Lightning]. || Gain 1 [~Intangible].",
 			"NAME": "Soga no Tojiko"
 		},
 		"animator:TacticalRetreat":

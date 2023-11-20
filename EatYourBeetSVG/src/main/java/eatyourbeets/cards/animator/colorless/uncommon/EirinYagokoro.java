@@ -1,22 +1,21 @@
 package eatyourbeets.cards.animator.colorless.uncommon;
 
-import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.relics.Sozu;
-import eatyourbeets.actions.special.SelectCreature;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.effects.VFX;
+import eatyourbeets.cards.base.attributes.AbstractAttribute;
+import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.interfaces.listeners.OnAddToDeckListener;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class EirinYagokoro extends AnimatorCard implements OnAddToDeckListener
 {
     public static final EYBCardData DATA = Register(EirinYagokoro.class)
-            .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None)
+            .SetAttack(2, CardRarity.UNCOMMON, EYBAttackType.Ranged, EYBCardTarget.Normal)
             
             .SetColor(CardColor.COLORLESS)
             .SetSeries(CardSeries.TouhouProject);
@@ -25,39 +24,35 @@ public class EirinYagokoro extends AnimatorCard implements OnAddToDeckListener
     {
         super(DATA);
 
-        Initialize(0, 0, 6, 5);
-        SetUpgrade(0, 0, 2, 2);
+        Initialize(8, 0, 2);
+        SetUpgrade(0, 0, 1);
 
-        SetAffinity_Black(1);
-        SetAffinity_Blue(1);
+        SetAffinity_Teal(2, 0, 2);
+    }
 
-        SetHealing(true);
-        SetExhaust(true);
+    @Override
+    public AbstractAttribute GetDamageInfo()
+    {
+        return super.GetDamageInfo().AddMultiplier(magicNumber);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.SelectCreature(SelectCreature.Targeting.Any, name)
-        .IsCancellable(false)
-        .AddCallback(c ->
+
+        GameActions.Bottom.DealDamage(this, m, AttackEffects.BLUNT_HEAVY)
+        .AddCallback(m.currentBlock, (initialBlock, target) ->
         {
-            if (c.isPlayer)
+            if (GameUtilities.IsDeadOrEscaped(target) || (initialBlock > 0 && target.currentBlock <= 0))
             {
-                GameActions.Bottom.VFX(VFX.PotionBounce(hb, c.hb).SetColor(new Color(1f, 0.3f, 0.3f, 0f)), 0.75f, true);
-                GameActions.Bottom.HealPlayerLimited(this, secondaryValue);
-            }
-            else
-            {
-                GameActions.Bottom.VFX(VFX.PotionBounce(hb, c.hb).SetColor(new Color(0.4f, 1f, 0f, 0f)), 0.75f, true);
-                GameActions.Bottom.ApplyPoison(player, c, magicNumber);
+                CreatePotion();
+                GameActions.Last.Exhaust(this);
             }
         });
     }
 
-    @Override
-    public boolean OnAddToDeck()
+    public void CreatePotion()
     {
         final AbstractRelic sozu = GameUtilities.GetRelic(Sozu.ID);
         if (sozu == null)
@@ -68,7 +63,5 @@ public class EirinYagokoro extends AnimatorCard implements OnAddToDeckListener
         {
             sozu.flash();
         }
-
-        return true;
     }
 }
