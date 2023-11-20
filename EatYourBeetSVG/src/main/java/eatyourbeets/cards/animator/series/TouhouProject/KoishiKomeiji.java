@@ -15,7 +15,7 @@ import eatyourbeets.utilities.RandomizedList;
 
 public class KoishiKomeiji extends AnimatorCard {
     public static final EYBCardData DATA = Register(KoishiKomeiji.class)
-            .SetPower(1, CardRarity.UNCOMMON)
+            .SetPower(2, CardRarity.UNCOMMON)
             .SetSeriesFromClassPackage();
 
     public KoishiKomeiji() {

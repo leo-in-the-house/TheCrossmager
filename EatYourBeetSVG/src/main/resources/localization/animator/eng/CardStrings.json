@@ -3187,7 +3187,7 @@
 		"animator:RemiliaScarlet":
 		{
 			"FLAVOR_TEXT": "'Fufufu. Is it because the moon is so red?  It looks like it's going to be a hot night...  It looks like it's gonna be a cold night, too...'",
-			"DESCRIPTION": "Start of Game: Add {Sakuya Izayoi}{+} to your draw pile. || !M! times per combat: Exhaust a card and heal HP equal to its Attack multiplier plus [Block] multiplier.",
+			"DESCRIPTION": "Start of Game: Add {Sakuya Izayoi}{+} to your draw pile. || !M! times per combat: Exhaust a card and heal [HP] equal to its Attack multiplier plus [Block] multiplier.",
 			"EXTENDED_DESCRIPTION": ["Once per combat: Exhaust 1 card to #yheal #yHP equal to its #yAttack multiplier plus #yBlock multiplier."],
 			"NAME": "Remilia Scarlet"
 		},

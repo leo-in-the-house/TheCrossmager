@@ -18,8 +18,7 @@ public class ReimuHakurei extends AnimatorCard
     public static final EYBCardData DATA = Register(ReimuHakurei.class)
             .SetAttack(1, CardRarity.COMMON, EYBAttackType.Ranged)
             
-            .SetSeriesFromClassPackage()
-            .PostInitialize(data -> data.AddPreview(AffinityToken.GetCard(Affinity.White), true));
+            .SetSeriesFromClassPackage();
 
     public ReimuHakurei()
     {

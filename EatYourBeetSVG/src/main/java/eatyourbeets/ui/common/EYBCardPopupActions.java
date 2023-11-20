@@ -456,7 +456,7 @@ public class EYBCardPopupActions
         @Override
         public boolean CanExecute(AbstractCard card)
         {
-            return IsRestRoom() && HasCard(card);
+            return IsRestRoom() && HasCard(card) && !HasCard(TARGET1);
         }
 
         @Override

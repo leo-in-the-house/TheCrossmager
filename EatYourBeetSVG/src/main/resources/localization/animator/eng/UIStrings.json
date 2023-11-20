@@ -264,8 +264,8 @@
 			"Druid's Familiar.",
 			"Lose #b{0} Max [HP] to remove a random #yBasic card and obtain #yChibimoth.  NL You may only perform this action at #yRest #ySites.",
 
-			"Obtain card. Gain #b{0} [Vulnerable].",
-			"Obtain {0} and start your next combat with #b{1} [Vulnerable]. NL You can only perform this action at #yRest #ySites.",
+			"Scarlet Sister",
+			"Obtain {0} and start your next combat with #b{1} [Vulnerable]. NL You can only perform this action at #yRest #ySites if you do not have #yFlandre #yScarlet.",
 			
 			"Obtain Curse. Heal #b{0} [HP].",
 			"If you have at least #b{0} Curses, Obtain {1}. NL You can only perform this action at #yRest #ySites."

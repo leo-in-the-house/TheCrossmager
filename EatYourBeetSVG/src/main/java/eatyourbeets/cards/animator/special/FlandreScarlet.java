@@ -1,6 +1,7 @@
 package eatyourbeets.cards.animator.special;
 
 import com.badlogic.gdx.graphics.Color;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -39,6 +40,22 @@ public class FlandreScarlet extends AnimatorCard
     public AbstractAttribute GetDamageInfo()
     {
         return super.GetDamageInfo().AddMultiplier(magicNumber);
+    }
+
+    @Override
+    public void triggerWhenCreated(boolean startOfBattle)
+    {
+        super.triggerWhenCreated(startOfBattle);
+
+        if (startOfBattle && misc > 0)
+        {
+            GameActions.Bottom.ApplyVulnerable(player, player, misc);
+            final AbstractCard card = GameUtilities.GetMasterDeckInstance(uuid);
+            if (card != null)
+            {
+                card.misc = misc = 0;
+            }
+        }
     }
 
     @Override
