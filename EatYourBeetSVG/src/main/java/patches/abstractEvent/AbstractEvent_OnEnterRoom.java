@@ -14,7 +14,8 @@ public class AbstractEvent_OnEnterRoom
     {
         if (GameUtilities.IsPlayerClass(GR.Animator.PlayerClass) && GR.Animator.Dungeon.Loadouts.isEmpty())
         {
-            GR.UI.SeriesSelection.Open(true);
+            //GR.UI.SeriesSelection.Open(true);
+            GR.UI.SeriesSelection.AddAllSeries();
         }
     }
 }

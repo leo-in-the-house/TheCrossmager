@@ -384,6 +384,11 @@ public class AnimatorSeriesSelectScreen extends AbstractScreen
         UpdateStartingDeckText();
     }
 
+    public void AddAllSeries()
+    {
+        container.AddAllSeriesToPool();
+    }
+
     public void Proceed()
     {
         //TODO: Check card pool

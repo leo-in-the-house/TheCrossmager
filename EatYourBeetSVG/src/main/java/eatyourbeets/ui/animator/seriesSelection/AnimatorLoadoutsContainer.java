@@ -176,6 +176,34 @@ public class AnimatorLoadoutsContainer
         GameUtilities.GetAscensionData(true).OnGameStart();
     }
 
+    public void AddAllSeriesToPool()
+    {
+        GR.Animator.Dungeon.Loadouts.clear();
+        for (AnimatorRuntimeLoadout loadout : cardsMap.values())
+        {
+            if (loadout.IsBeta)
+            {
+                // Do not unlock trophies or ascension
+                Settings.seedSet = true;
+            }
+
+            GR.Animator.Dungeon.AddLoadout(loadout);
+        }
+
+        if (GR.Animator.Data.SelectedLoadout.IsBeta)
+        {
+            Settings.seedSet = true;
+        }
+
+        if (GameUtilities.IsPlayerClass(GR.Animator.PlayerClass) && GameUtilities.IsNormalRun(false) && Settings.seed != null)
+        {
+            GR.Animator.Config.LastSeed.Set(Settings.seed.toString(), true);
+        }
+
+        GR.Animator.Dungeon.InitializeCardPool(false);
+        GameUtilities.GetAscensionData(true).OnGameStart();
+    }
+
     public ArrayList<AbstractCard> GetAllCardsInPool()
     {
         final ArrayList<AbstractCard> cards = new ArrayList<>();
