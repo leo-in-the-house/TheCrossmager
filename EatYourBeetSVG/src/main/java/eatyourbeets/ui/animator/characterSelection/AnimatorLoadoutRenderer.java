@@ -332,7 +332,7 @@ public class AnimatorLoadoutRenderer extends GUIElement
         {
             String themeText = loadout.GetTheme();
             if (themeText != null) {
-                theme.SetText(GR.Animator.Strings.Themes.Themes + ": " + themeText);
+                theme.SetText(GR.Animator.Strings.SeriesInfo.Themes + ": " + themeText);
             } else {
                 theme.SetText("");
             }

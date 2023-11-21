@@ -101,7 +101,7 @@ public class CardSeries
         {
             CardSeries s = mapIDs.get(k);
             s.LocalizedName = GR.Animator.Strings.Series.SeriesName(k);
-            s.Theme = GR.Animator.Strings.Themes.GetTheme(s.LocalizedName);
+            s.Theme = GR.Animator.Strings.SeriesInfo.GetTheme(s.LocalizedName);
         }
     }
 

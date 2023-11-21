@@ -17,14 +17,14 @@ public class EschaMalier extends AnimatorCard {
             .SetSeriesFromClassPackage();
     static
     {
-        DATA.AddPreview(new Logy(), false);
+        DATA.AddPreview(new Logy(), true);
     }
 
     public EschaMalier() {
         super(DATA);
 
         Initialize(0, 3, 0);
-        SetUpgrade(0, 3, 0);
+        SetUpgrade(0, 2, 0);
 
         SetAffinity_White(1);
     }
@@ -42,7 +42,8 @@ public class EschaMalier extends AnimatorCard {
         super.triggerWhenDrawn();
 
         if (CombatStats.TryActivateLimited(cardID)) {
-            GameActions.Bottom.MakeCardInDrawPile(new Logy().makeCopy());
+            GameActions.Bottom.MakeCardInDrawPile(new Logy().makeCopy())
+                    .SetUpgrade(upgraded, true);
         }
     }
 }

@@ -25,7 +25,7 @@ public class Berserker extends AnimatorCard
         SetUpgrade(8, 0, 2);
 
         SetAffinity_Red(2);
-        SetAffinity_Brown(1);
+        SetAffinity_Black(1);
     }
 
     @Override

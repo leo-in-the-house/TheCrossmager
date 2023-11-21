@@ -642,7 +642,7 @@
 		"animator:EschaMalier":
 		{
 			"FLAVOR_TEXT": "'Don’t you want to try it?  Let’s take on the challenge of building a dreadnought!'",
-			"DESCRIPTION": "<LIM>. When drawn: Add {Logy} to your draw pile.",
+			"DESCRIPTION": "<LIM>. When drawn: Add {Logy}{+} to your draw pile.",
 			"NAME": "Escha Malier"
 		},
 		"animator:FirisMistlud":
