@@ -20,14 +20,14 @@ import eatyourbeets.utilities.TargetHelper;
 public class Cirno extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Cirno.class)
-            .SetAttack(2, CardRarity.COMMON, EYBAttackType.Elemental, EYBCardTarget.ALL)
+            .SetAttack(1, CardRarity.COMMON, EYBAttackType.Elemental, EYBCardTarget.ALL)
             .SetSeriesFromClassPackage();
 
     public Cirno()
     {
         super(DATA);
 
-        Initialize(2, 0, 2, 2);
+        Initialize(4, 0, 2, 2);
         SetUpgrade(1, 0, 0, 2);
 
         SetAffinity_Blue(1, 0, 0);
