@@ -105,9 +105,7 @@ public class RollingCubes extends AnimatorRelic
         }
 
         for (AbstractCard c : replacement) {
-            //Upgrade only the first card if it exists
             c.upgrade();
-            break;
         }
 
         return replacement;

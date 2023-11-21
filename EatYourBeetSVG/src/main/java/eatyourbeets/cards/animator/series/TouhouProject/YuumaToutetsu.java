@@ -37,6 +37,7 @@ public class YuumaToutetsu extends AnimatorCard {
         super.triggerWhenDrawn();
 
         GameActions.Bottom.ExhaustFromHand(name, 1, false)
+            .SetFilter(card -> !card.cardID.equals(cardID))
             .SetOptions(true, false, false)
             .AddCallback(cards -> {
                 for (AbstractCard card : cards) {

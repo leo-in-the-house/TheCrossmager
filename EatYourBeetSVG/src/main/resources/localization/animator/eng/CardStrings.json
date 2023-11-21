@@ -3128,8 +3128,8 @@
 		"animator:ByakurenHijiri":
 		{
 			"FLAVOR_TEXT": "'I grieve for the youkai that are oppressed by humans.  I did everything in my power to create a peaceful world where humans and youkai could live as equals.  And yet, I was sealed away by humans who didn't want that sort of world...'",
-			"DESCRIPTION": "Whenever you hit the enemy: Gain !S! [THP]. || Whenever you gain [Block]: Gain !S! [B] [D] [L].",
-			"EXTENDED_DESCRIPTION": ["Whenever you hit the enemy: Gain #b{0} #yTemporary #yHP.  Whenever you gain #yBlock: Gain #b{0} #yBlue #yBlack #yWhite."],
+			"DESCRIPTION": "Whenever you hit the enemy: Gain !S! [THP]. || Whenever you gain [Block]: Gain [B] [D] [L].",
+			"EXTENDED_DESCRIPTION": ["Whenever you hit the enemy: Gain #b{0} #yTemporary #yHP.  Whenever you gain #yBlock: Gain #yBlue #yBlack #yWhite."],
 			"NAME": "Byakuren Hijiri"
 		},
 		"animator:Cirno":

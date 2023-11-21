@@ -17,7 +17,7 @@ import eatyourbeets.utilities.GameUtilities;
 
 public class ByakurenHijiri extends AnimatorCard {
     public static final EYBCardData DATA = Register(ByakurenHijiri.class)
-            .SetPower(3, CardRarity.RARE)
+            .SetPower(4, CardRarity.RARE)
             .SetSeriesFromClassPackage();
 
     public ByakurenHijiri() {
@@ -40,6 +40,10 @@ public class ByakurenHijiri extends AnimatorCard {
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info) {
         GameUtilities.PlayVoiceSFX(name);
+
+        for (int i=0; i<magicNumber; i++) {
+            GameActions.Bottom.GainBlock(block);
+        }
 
         GameActions.Bottom.StackPower(new ByakurenHijiriPower(p, secondaryValue));
     }
@@ -85,9 +89,9 @@ public class ByakurenHijiri extends AnimatorCard {
         public void OnBlockGained(AbstractCreature creature, int block)
         {
             if (this.amount > 0) {
-                GameActions.Bottom.GainBlue(amount);
-                GameActions.Bottom.GainBlack(amount);
-                GameActions.Bottom.GainWhite(amount);
+                GameActions.Bottom.GainBlue(1);
+                GameActions.Bottom.GainBlack(1);
+                GameActions.Bottom.GainWhite(1);
             }
         }
     }

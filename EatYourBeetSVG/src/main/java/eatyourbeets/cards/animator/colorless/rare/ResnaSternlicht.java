@@ -2,6 +2,7 @@ package eatyourbeets.cards.animator.colorless.rare;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardSeries;
@@ -10,7 +11,6 @@ import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.utilities.GenericCondition;
 
 public class ResnaSternlicht extends AnimatorCard {
     public static final EYBCardData DATA = Register(ResnaSternlicht.class)
@@ -52,7 +52,7 @@ public class ResnaSternlicht extends AnimatorCard {
             super.atStartOfTurnPostDraw();
 
             for (int i=0; i<amount; i++) {
-                GameActions.Bottom.MakeCardInHand(GameUtilities.GetCardsInCombat(GenericCondition.FromT1(c -> c.rarity == CardRarity.RARE)).Retrieve(rng).makeCopy());
+                GameActions.Bottom.MakeCardInHand(AbstractDungeon.getCard(CardRarity.RARE).makeCopy());
             }
         }
     }
