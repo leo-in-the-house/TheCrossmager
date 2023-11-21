@@ -339,7 +339,7 @@ public class CommonDungeonData implements CustomSavable<CommonDungeonData>
         {
             list = AbstractDungeon.srcRareCardPool.group;
         }
-        else if (roll < 70)
+        else if (roll < 75)
         {
             list = AbstractDungeon.srcUncommonCardPool.group;
         }
