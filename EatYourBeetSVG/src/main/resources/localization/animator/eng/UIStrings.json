@@ -20,7 +20,7 @@
 			"Hataraku Maou-sama",
 			"Grimoire of Zero",
 			"Steins;Gate",
-			"Tensei shitara Slime",
+			"Tensei Shitara Slime",
 			"Re:Zero",
 			"Madoka Magica",
 			"Charlotte",
@@ -69,6 +69,74 @@
 		"EXTRA_TEXT":
 		[
 			"Series"
+		]
+	},
+
+	"animator:ThemesKeys":
+	{
+		"TEXT":
+		[
+			"Angel Beats",
+			"Atelier",
+			"Bleach",
+			"Date-a-Live",
+			"Elsword",
+			"Fate",
+			"Fullmetal Alchemist",
+			"GATE",
+			"Genshin Impact",
+			"Goblin Slayer",
+			"Hitsugi no Chaika",
+			"Konosuba",
+			"Katanagatari",
+			"Log Horizon",
+			"Madoka Magica",
+			"No Game No Life",
+			"One Punch Man",
+			"Overlord",
+			"Owari no Seraph",
+			"Rewrite",
+			"Rozen Maiden",
+			"Tensei Shitara Slime",
+			"Touhou Project"
+		],
+		"EXTRA_TEXT":
+		[
+			"Theme"
+		]
+	},
+
+	"animator:Themes":
+	{
+		"TEXT":
+		[
+			"Ethereal",
+			"Card Creation",
+			"Wrath Stance and Bankais",
+			"Block Amount",
+			"Red, Green, and Blue Affinity",
+			"White and Black Affinity",
+			"Orb Channeling and Evoking",
+			"Attacks",
+			"Orb Diversity",
+			"Hindrances",
+			"Mass Discard",
+			"No Theme/KonoSuba Matters",
+			"Mass Seal",
+			"Delayed",
+			"Curses and Exhausting Curses",
+			"0-Cost",
+			"Cards with Scaling",
+			"Common Debuffs",
+			"Mass Exhaust",
+			"Stance Switching",
+			"Mass Retain",
+			"High-Cost",
+			"Attack and Block Multipliers"
+		],
+		"EXTRA_TEXT":
+		[
+			"Themes"
 		]
 	},
 

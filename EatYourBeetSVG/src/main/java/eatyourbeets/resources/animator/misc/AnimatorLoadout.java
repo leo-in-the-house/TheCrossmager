@@ -335,6 +335,11 @@ public abstract class AnimatorLoadout
         return trophies;
     }
 
+    public String GetTheme()
+    {
+        return this.Series.Theme;
+    }
+
     public AnimatorLoadoutStats GetStats(boolean ascension20)
     {
         if (IsBeta)

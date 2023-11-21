@@ -1,7 +1,6 @@
 package eatyourbeets.cards.base;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import eatyourbeets.interfaces.subscribers.OnSynergyCheckSubscriber;
 import eatyourbeets.powers.CombatStats;
@@ -82,6 +81,7 @@ public class CardSeries
     public final int ID;
     public final String Name;
     public String LocalizedName;
+    public String Theme;
 
     public CardSeries(int id, String name)
     {
@@ -101,6 +101,7 @@ public class CardSeries
         {
             CardSeries s = mapIDs.get(k);
             s.LocalizedName = GR.Animator.Strings.Series.SeriesName(k);
+            s.Theme = GR.Animator.Strings.Themes.GetTheme(s.LocalizedName);
         }
     }
 

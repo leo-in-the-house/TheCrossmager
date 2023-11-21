@@ -10,6 +10,7 @@ public class AnimatorStrings
     public Rewards Rewards;
     public Misc Misc;
     public Series Series;
+    public Themes Themes;
     public CharacterSelect CharSelect;
     public SeriesSelection SeriesSelection;
     public SeriesSelectionButtons SeriesSelectionButtons;
@@ -24,6 +25,7 @@ public class AnimatorStrings
         Misc = new Misc();
         Rewards = new Rewards();
         Series = new Series();
+        Themes = new Themes();
         CharSelect = new CharacterSelect();
         Actions = new Actions();
         Trophies = new Trophies();
@@ -67,6 +69,35 @@ public class AnimatorStrings
         public final String SeriesName(int seriesID)
         {
             return Strings.TEXT.length > seriesID ? Strings.TEXT[seriesID] : null;
+        }
+    }
+
+    public class Themes
+    {
+        private final UIStrings Keys = GetUIStrings("ThemesKeys");
+        private final UIStrings Strings = GetUIStrings("Themes");
+
+        public final String Themes = Strings.EXTRA_TEXT[0];
+
+        public final String GetTheme(String seriesName)
+        {
+            int currentIndex = 0;
+            boolean found = false;
+
+            for (String key : Keys.TEXT) {
+                if (key.equals(seriesName)) {
+                    found = true;
+                    break;
+                }
+
+                currentIndex++;
+            }
+
+            if (!found) {
+                return null;
+            }
+
+            return Strings.TEXT[currentIndex];
         }
     }
 

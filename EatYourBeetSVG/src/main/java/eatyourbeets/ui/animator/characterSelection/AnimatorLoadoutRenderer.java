@@ -14,7 +14,6 @@ import com.megacrit.cardcrawl.screens.charSelect.CharacterSelectScreen;
 import eatyourbeets.resources.GR;
 import eatyourbeets.resources.animator.AnimatorStrings;
 import eatyourbeets.resources.animator.misc.AnimatorLoadout;
-import eatyourbeets.resources.animator.misc.AnimatorLoadoutStats;
 import eatyourbeets.ui.GUIElement;
 import eatyourbeets.ui.controls.GUI_Button;
 import eatyourbeets.ui.hitboxes.AdvancedHitbox;
@@ -45,8 +44,9 @@ public class AnimatorLoadoutRenderer extends GUIElement
     protected CharacterOption characterOption;
     protected AnimatorLoadout loadout;
     protected ColoredString subtitle;
-    protected ColoredString score1;
-    protected ColoredString score2;
+    protected ColoredString theme;
+    /*protected ColoredString score1;
+    protected ColoredString score2;*/
     protected int ascension;
 
     public AnimatorLoadoutRenderer()
@@ -58,8 +58,9 @@ public class AnimatorLoadoutRenderer extends GUIElement
         float POS_Y = ((float) Settings.HEIGHT / 2f) + (20 * Settings.scale);
 
         subtitle = new ColoredString();
-        score1 = new ColoredString();
-        score2 = new ColoredString();
+        theme = new ColoredString();
+        /* score1 = new ColoredString();
+        score2 = new ColoredString();*/
         loadouts = new ArrayList<>();
         availableLoadouts = new ArrayList<>();
         startingCardsLabelHb = new Hitbox(leftTextWidth, 50f * Settings.scale);
@@ -73,11 +74,11 @@ public class AnimatorLoadoutRenderer extends GUIElement
         startingCardsRightHb.move(startingCardsSelectedHb.x + startingCardsSelectedHb.width + (10 * Settings.scale), POS_Y - (10 * Settings.scale));
 
         RandomizeButton = new GUI_Button(GR.Common.Images.Randomize.Texture(), new AdvancedHitbox(0, 0, Scale(64), Scale(64)))
-        .SetPosition(startingCardsRightHb.x + startingCardsRightHb.width - Scale(110), POS_Y - Scale(55)).SetText("")
+        .SetPosition(startingCardsRightHb.x + startingCardsRightHb.width + Scale(40), POS_Y).SetText("")
         .SetOnClick(this::RandomizeLoadout);
 
         LoadoutEditorButton = new GUI_Button(GR.Common.Images.SwapCards.Texture(), new AdvancedHitbox(0, 0, Scale(64), Scale(64)))
-        .SetPosition(startingCardsRightHb.x + startingCardsRightHb.width - Scale(50), POS_Y - Scale(55)).SetText("")
+        .SetPosition(startingCardsRightHb.x + startingCardsRightHb.width + Scale(100), POS_Y).SetText("")
         .SetTooltip(charSelectStrings.DeckEditor, charSelectStrings.DeckEditorInfo, false)
         .SetOnRightClick(this::ChangePreset)
         .SetOnClick(this::OpenLoadoutEditor);
@@ -179,7 +180,8 @@ public class AnimatorLoadoutRenderer extends GUIElement
         _gold.Set(characterOption, loadout.GetGold());
         _hp.Set(characterOption, String.valueOf(loadout.GetHP()));
         RefreshAscension();
-        RefreshScore();
+        RefreshTheme();
+        //RefreshScore();
 
         if (refreshPortrait)
         {
@@ -217,7 +219,7 @@ public class AnimatorLoadoutRenderer extends GUIElement
 
         if (RefreshAscension())
         {
-            RefreshScore();
+            //RefreshScore();
         }
 
         if (InputHelper.justClickedLeft)
@@ -279,14 +281,20 @@ public class AnimatorLoadoutRenderer extends GUIElement
         font.getData().setScale(0.8f);
 
         FontHelper.renderFont(sb, font, subtitle.text, startingCardsSelectedHb.x, startingCardsSelectedHb.cY + (20 * Settings.scale), subtitle.color);
-        if (score1.text != null)
+
+        if (theme.text != null)
+        {
+            FontHelper.renderFont(sb, font, theme.text, startingCardsSelectedHb.x + (15 * Settings.scale), startingCardsSelectedHb.cY - (50 * Settings.scale), theme.color);
+        }
+
+        /*if (score1.text != null)
         {
             FontHelper.renderFont(sb, font, score1.text, startingCardsSelectedHb.x + (5 * Settings.scale), startingCardsSelectedHb.cY - (50 * Settings.scale), score1.color);
         }
         if (score2.text != null)
         {
             FontHelper.renderFont(sb, font, score2.text, startingCardsSelectedHb.x + (60 * Settings.scale), startingCardsSelectedHb.cY - (50 * Settings.scale), score2.color);
-        }
+        }*/
         font.getData().setScale(originalScale);
 
         FontHelper.renderFont(sb, FontHelper.cardTitleFont, charSelectStrings.LeftText, startingCardsLabelHb.x, startingCardsLabelHb.cY, Settings.GOLD_COLOR);
@@ -318,7 +326,20 @@ public class AnimatorLoadoutRenderer extends GUIElement
         return false;
     }
 
-    private void RefreshScore()
+    private void RefreshTheme()
+    {
+        if (theme != null)
+        {
+            String themeText = loadout.GetTheme();
+            if (themeText != null) {
+                theme.SetText(GR.Animator.Strings.Themes.Themes + ": " + themeText);
+            } else {
+                theme.SetText("");
+            }
+        }
+    }
+
+    /*private void RefreshScore()
     {
         final AnimatorLoadoutStats stats = loadout.GetStats(ascension >= 20);
         if (stats == null)
@@ -341,5 +362,5 @@ public class AnimatorLoadoutRenderer extends GUIElement
             score2.SetColor(Colors.White(1));
             score2.SetText(JUtils.Format("[ {0} | {1} | {2} | {3} ]", p[0], p[1], p[2], p[3]));
         }
-    }
+    }*/
 }
