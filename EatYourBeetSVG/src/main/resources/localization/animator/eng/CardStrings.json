@@ -1088,7 +1088,7 @@
 		"animator:Ciel":
 		{
 			"FLAVOR_TEXT": "'I'll retake the throne... I'll give my soul for you... The contract is complete!'",
-			"DESCRIPTION": "Give all copies of {Lu} +!M! damage and {~Haste}.",
+			"DESCRIPTION": "Gain !S! [R] [G] [B].",
 			"NAME": "Ciel"
 		},
 		"animator:Elesis":
@@ -1126,7 +1126,8 @@
 		"animator:Lu":
 		{
 			"FLAVOR_TEXT": "'Before the embers of my life go out.... will you... become my royal strength?'",
-			"DESCRIPTION": "If in Neutral Stance: take !M! [DD] and enter <WS>.",
+			"DESCRIPTION": "Take !M! [DD] and enter <WS>. || Until you change stances, playing a card with scaling will no longer reduce your stats.",
+			"EXTENDED_DESCRIPTION": ["Until you change stances, playing a card with scaling will no longer reduce your stats."],
 			"NAME": "Lu"
 		},
 		"animator:Noah":
@@ -1144,7 +1145,7 @@
 		"animator:Rena":
 		{
 			"FLAVOR_TEXT": "'This is the will of Eldrasil... Yes, there's nothing to be afraid of.'",
-			"DESCRIPTION": "Gain !M! [G]. || When Discarded: Gain [G] and [~Blur].",
+			"DESCRIPTION": "Double your [R] [G] [B]. || When Discarded: Gain [~Blur].",
 			"NAME": "Rena Erindel"
 		}
 	},

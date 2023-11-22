@@ -3,11 +3,16 @@ package eatyourbeets.cards.animator.series.Elsword;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.utility.ShakeScreenAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.stances.AbstractStance;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.effects.VFX;
+import eatyourbeets.interfaces.subscribers.OnStanceChangedSubscriber;
+import eatyourbeets.powers.AnimatorPower;
+import eatyourbeets.powers.CombatStats;
 import eatyourbeets.resources.GR;
 import eatyourbeets.stances.WrathStance;
 import eatyourbeets.utilities.GameActions;
@@ -69,14 +74,55 @@ public class Lu extends AnimatorCard
         }
 
         GameActions.Bottom.ChangeStance(WrathStance.STANCE_ID)
-                .RequireNeutralStance(true)
                 .AddCallback(stance ->
                 {
                     if (stance != null)
                     {
                         GameActions.Bottom.Flash(this);
                         GameActions.Bottom.TakeDamageAtEndOfTurn(magicNumber, AttackEffects.CLAW);
+                        GameActions.Bottom.StackPower(new LuPower(player, 1));
                     }
                 });
+    }
+
+    public static class LuPower extends AnimatorPower implements OnStanceChangedSubscriber
+    {
+        public LuPower(AbstractCreature owner, int amount)
+        {
+            super(owner, Lu.DATA);
+
+            this.amount = amount;
+
+            updateDescription();
+        }
+
+        @Override
+        public void onInitialApplication()
+        {
+            super.onInitialApplication();
+
+            CombatStats.onStanceChanged.Subscribe(this);
+            CombatStats.setEnableConsumingStatsWithScalingCard(false);
+        }
+
+        @Override
+        public void onRemove()
+        {
+            super.onRemove();
+
+            CombatStats.onStanceChanged.Unsubscribe(this);
+            CombatStats.setEnableConsumingStatsWithScalingCard(true);
+        }
+
+        @Override
+        public void OnStanceChanged(AbstractStance oldStance, AbstractStance newStance) {
+            RemovePower();
+        }
+
+        @Override
+        public void updateDescription()
+        {
+            description = FormatDescription(0, amount);
+        }
     }
 }

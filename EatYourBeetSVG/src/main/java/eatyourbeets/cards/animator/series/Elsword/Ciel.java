@@ -29,8 +29,8 @@ public class Ciel extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 5, 12);
-        SetUpgrade(0, 2, 4);
+        Initialize(0, 5, 12, 2);
+        SetUpgrade(0, 2, 4, 2);
 
         SetAffinity_Red(1, 0, 0);
         SetAffinity_Green(1, 0, 0);
@@ -51,13 +51,9 @@ public class Ciel extends AnimatorCard
         GameActions.Bottom.GainBlock(block);
         GameActions.Bottom.GainBlock(block);
 
-        GameActions.Bottom.ModifyAllCopies(Lu.DATA.ID)
-        .AddCallback(info, (info2, c) ->
-        {
-            GameUtilities.IncreaseDamage(c, magicNumber, false);
-            GameUtilities.SetCardTag(c, HASTE, true);
-            c.flash();
-        });
+        GameActions.Bottom.GainRed(secondaryValue);
+        GameActions.Bottom.GainGreen(secondaryValue);
+        GameActions.Bottom.GainBlue(secondaryValue);
     }
 
     @Override

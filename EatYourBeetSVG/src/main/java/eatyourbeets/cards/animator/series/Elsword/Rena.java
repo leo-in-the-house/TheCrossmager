@@ -2,10 +2,8 @@ package eatyourbeets.cards.animator.series.Elsword;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.cards.base.CardUseInfo;
-import eatyourbeets.cards.base.EYBCardData;
-import eatyourbeets.cards.base.EYBCardTarget;
+import eatyourbeets.cards.base.*;
+import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
@@ -19,8 +17,8 @@ public class Rena extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 4, 2);
-        SetUpgrade(0, 4, 1);
+        Initialize(0, 4, 0);
+        SetUpgrade(0, 4, 0);
 
         SetAffinity_Green(1, 0, 1);
     }
@@ -30,7 +28,6 @@ public class Rena extends AnimatorCard
     {
         super.triggerOnManualDiscard();
 
-        GameActions.Bottom.GainGreen(1);
         GameActions.Bottom.GainBlur(1);
     }
 
@@ -40,6 +37,8 @@ public class Rena extends AnimatorCard
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
 
-        GameActions.Bottom.GainGreen(magicNumber);
+        GameActions.Bottom.GainRed(CombatStats.Affinities.GetAffinityLevel(Affinity.Red));
+        GameActions.Bottom.GainGreen(CombatStats.Affinities.GetAffinityLevel(Affinity.Green));
+        GameActions.Bottom.GainBlue(CombatStats.Affinities.GetAffinityLevel(Affinity.Blue));
     }
 }
