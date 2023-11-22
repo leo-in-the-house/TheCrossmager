@@ -21,7 +21,7 @@ public class GazefStronoff extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 7, 3);
+        Initialize(0, 12, 3);
         SetUpgrade(0, 8);
 
         SetAffinity_White(2);
@@ -36,7 +36,7 @@ public class GazefStronoff extends AnimatorCard
         int numCommonDebuffs = GameUtilities.GetCommonDebuffs(TargetHelper.Enemies()).size();
 
         if (numCommonDebuffs > 0) {
-            GameActions.Bottom.GainTemporaryThorns(numCommonDebuffs * magicNumber);
+            GameActions.Bottom.GainWhite(numCommonDebuffs * magicNumber);
         }
     }
 }

@@ -2579,7 +2579,7 @@
 		"animator:GazefStronoff":
 		{
 			"FLAVOR_TEXT": "'I am the chief royal warrior of the Re-Estize Kingdom: Gazef Stronoff.  The king has ordered me to hunt down the knights that have been attacking surrounding villages.  Your people are safe now.  We will do all we can to protect you.'",
-			"DESCRIPTION": "Gain !M! {Temp.} [Thorns] for each {Common Debuff} on each enemy.",
+			"DESCRIPTION": "Gain !M! [L] for each {Common Debuff} on each enemy.",
 			"NAME": "Gazef Stronoff"
 		},
 		"animator:MareBelloFiore":

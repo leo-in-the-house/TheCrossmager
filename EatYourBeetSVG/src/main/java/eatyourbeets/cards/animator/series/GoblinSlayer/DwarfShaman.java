@@ -13,15 +13,15 @@ import eatyourbeets.utilities.GameUtilities;
 public class DwarfShaman extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(DwarfShaman.class)
-            .SetSkill(2, CardRarity.COMMON, EYBCardTarget.None)
+            .SetSkill(3, CardRarity.COMMON, EYBCardTarget.None)
             .SetSeriesFromClassPackage();
 
     public DwarfShaman()
     {
         super(DATA);
 
-        Initialize(0, 8, 6);
-        SetUpgrade(0, 5, 3);
+        Initialize(0, 15, 8);
+        SetUpgrade(0, 8, 4);
 
         SetAffinity_Brown(2);
     }
