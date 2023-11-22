@@ -18,7 +18,7 @@ import eatyourbeets.utilities.GameUtilities;
 public class Archer extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Archer.class)
-            .SetPower(1, CardRarity.UNCOMMON)
+            .SetPower(2, CardRarity.UNCOMMON)
             
             .SetSeriesFromClassPackage();
 
@@ -31,6 +31,7 @@ public class Archer extends AnimatorCard
 
         SetAffinity_Green(1);
         SetEthereal(true);
+        SetDelayed(true);
     }
 
     @Override
@@ -62,8 +63,8 @@ public class Archer extends AnimatorCard
 
             SetEnabled(true);
 
-            final int black = CombatStats.Affinities.GetAffinityLevel(Affinity.Black);
-            for (int i = 0; i < black; i++)
+            final int blackWhite = CombatStats.Affinities.GetAffinityLevel(Affinity.Black) +  CombatStats.Affinities.GetAffinityLevel(Affinity.White);
+            for (int i = 0; i < blackWhite; i++)
             {
                 AbstractMonster monster = GameUtilities.GetRandomEnemy(true);
                 GameActions.Bottom.VFX(VFX.ThrowDagger(monster.hb, 0.2f));

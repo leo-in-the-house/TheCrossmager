@@ -1161,7 +1161,7 @@
 		"animator:Archer":
 		{
 			"FLAVOR_TEXT": "'There are always fewer seats called 'happiness' than there are people to fill them.'",
-			"DESCRIPTION": "At the end of turn: Deal !M! damage to a random enemy for each [D] you have.",
+			"DESCRIPTION": "At the end of turn: Deal !M! damage to a random enemy for each [L] and [D] you have.",
 			"EXTENDED_DESCRIPTION": ["At the end of turn: deal #b{0} damage to a random enemy for each #yBlack you have."],
 			"NAME": "Archer"
 		},

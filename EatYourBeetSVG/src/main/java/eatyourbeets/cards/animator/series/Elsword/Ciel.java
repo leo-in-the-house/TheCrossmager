@@ -29,7 +29,7 @@ public class Ciel extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 5, 12, 2);
+        Initialize(0, 4, 12, 2);
         SetUpgrade(0, 2, 4, 2);
 
         SetAffinity_Red(1, 0, 0);
