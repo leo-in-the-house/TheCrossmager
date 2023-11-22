@@ -21,10 +21,11 @@ public class Berserker extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(24, 0, 3);
-        SetUpgrade(8, 0, 2);
+        Initialize(24, 0, 2, 1);
+        SetUpgrade(8, 0, 1, 1);
 
-        SetAffinity_Red(2);
+        SetAffinity_Red(1);
+        SetAffinity_White(1);
         SetAffinity_Black(1);
     }
 
@@ -34,6 +35,7 @@ public class Berserker extends AnimatorCard
         super.triggerOnExhaust();
 
         GameActions.Bottom.GainWhite(this.magicNumber);
+        GameActions.Bottom.GainBlack(this.secondaryValue);
     }
 
     @Override

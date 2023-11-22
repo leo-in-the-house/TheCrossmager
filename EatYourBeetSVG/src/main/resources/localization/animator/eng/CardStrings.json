@@ -1174,13 +1174,13 @@
 		"animator:Berserker":
 		{
 			"FLAVOR_TEXT": "'Berserker can't lose to anyone, because he's the strongest in the world!' -Illyasviel von Einzbern",
-			"DESCRIPTION": "On Exhaust: Gain !M! [L].",
+			"DESCRIPTION": "On Exhaust: Gain !M! [L] and !S! [D].",
 			"NAME": "Berserker"
 		},
 		"animator:Caster":
 		{
 			"FLAVOR_TEXT": "'All I know I learned directly from the goddess Hecate herself.'",
-			"DESCRIPTION": "{Gain} !M! [D].",
+			"DESCRIPTION": "{Gain} !M! [D] and !S! [L].",
 			"NAME": "Caster"
 		},
 		"animator:EmiyaKiritsugu":

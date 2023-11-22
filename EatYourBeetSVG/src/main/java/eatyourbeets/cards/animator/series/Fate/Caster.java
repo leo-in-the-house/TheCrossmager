@@ -17,7 +17,7 @@ public class Caster extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 0, 3);
+        Initialize(0, 0, 2, 1);
         SetUpgrade(0, 0, 1);
 
         SetAffinity_Blue(1);
@@ -39,5 +39,6 @@ public class Caster extends AnimatorCard
         GameUtilities.PlayVoiceSFX(name);
 
         GameActions.Bottom.GainBlack(magicNumber, false);
+        GameActions.Bottom.GainWhite(secondaryValue, false);
     }
 }
