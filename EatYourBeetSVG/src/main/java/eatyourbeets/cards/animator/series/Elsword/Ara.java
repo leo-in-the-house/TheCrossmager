@@ -26,6 +26,7 @@ public class Ara extends AnimatorCard
         SetUpgrade(2, 0, 0);
 
         SetAffinity_Green(1);
+        SetAffinity_Red(1);
 
         SetAffinityRequirement(Affinity.Green, 2);
     }
