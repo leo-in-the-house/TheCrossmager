@@ -46,9 +46,12 @@ public class Raven extends AnimatorCard
 
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_DIAGONAL);
 
-        if (GameUtilities.IsAttacking(m.intent))
-        {
-            GameActions.Bottom.ApplyWeak(TargetHelper.Enemies(), magicNumber);
-        }
+        GameActions.Bottom.DiscardFromHand(name, 1, false)
+            .SetFilter(card -> GameUtilities.HasRedAffinity(card) || GameUtilities.HasGreenAffinity(card) || GameUtilities.HasBlueAffinity(card))
+            .AddCallback(cards -> {
+                if (cards.size() > 0) {
+                    GameActions.Top.ApplyWeak(TargetHelper.Enemies(), magicNumber);
+                }
+            });
     }
 }

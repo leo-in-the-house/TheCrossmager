@@ -3,7 +3,6 @@ package eatyourbeets.cards.animator.series.Bleach;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.base.Affinity;
 import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
@@ -51,7 +50,7 @@ public class ZarakiKenpachi extends AnimatorCard
         int strengthToGain = 0;
 
         for (AbstractCard card : player.masterDeck.group) {
-            if (GameUtilities.HasAffinity(card, Affinity.Red)) {
+            if (GameUtilities.HasRedAffinity(card)) {
                 strengthToGain++;
             }
         }

@@ -8,6 +8,7 @@ import eatyourbeets.cards.animator.tokens.AffinityToken;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.effects.AttackEffects;
+import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
@@ -47,6 +48,7 @@ public class Ain extends AnimatorCard
             GameActions.Bottom.DealDamageToAll(this, AttackEffects.NONE).SetVFX(true, false);
         }
 
+        CombatStats.Affinities.AddAffinitySealUses(1);
         GameActions.Bottom.ObtainAffinityToken(Affinity.Blue, upgraded);
     }
 }

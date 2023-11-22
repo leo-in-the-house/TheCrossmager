@@ -1,7 +1,5 @@
 package eatyourbeets.cards.animator.series.Fate;
 
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.actions.cardManipulation.RandomCardUpgrade;
@@ -10,6 +8,7 @@ import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class EmiyaShirou extends AnimatorCard
 {
@@ -25,6 +24,7 @@ public class EmiyaShirou extends AnimatorCard
         SetUpgrade(0, 3, 1);
 
         SetAffinity_White(1);
+        SetAffinity_Black(1);
     }
 
     @Override

@@ -1064,7 +1064,7 @@
 		"animator:Ain":
 		{
 			"FLAVOR_TEXT": "'My will is God's desire, and my existence is God's will.'",
-			"DESCRIPTION": "Obtain {[B] Token}{+}.",
+			"DESCRIPTION": "Obtain [A_Seal] and {[B] Token}{+}.",
 			"NAME": "Ain"
 		},
 		"animator:Aisha":
@@ -1106,7 +1106,7 @@
 		"animator:Elsword":
 		{
 			"FLAVOR_TEXT": "'I, no, we will never lose!'",
-			"DESCRIPTION": "Cycle !M! card(s).",
+			"DESCRIPTION": "Discard !M! card(s) to draw that many <R>, <G>, or <B> cards.",
 			"NAME": "Elsword"
 		},
 		"animator:Eve":
@@ -1139,7 +1139,7 @@
 		"animator:Raven":
 		{
 			"FLAVOR_TEXT": "'This life that they saved was not just my own, so I could not afford to stand back.'",
-			"DESCRIPTION": "If the enemy is attacking: Apply !M! [Weak] to ALL enemies.",
+			"DESCRIPTION": "Discard a <R>, <G>, or <B> card to apply !M! [Weak] to ALL enemies.",
 			"NAME": "Raven Cronwell"
 		},
 		"animator:Rena":

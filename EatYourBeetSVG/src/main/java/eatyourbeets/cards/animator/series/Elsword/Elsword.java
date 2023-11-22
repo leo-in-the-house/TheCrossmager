@@ -1,6 +1,7 @@
 package eatyourbeets.cards.animator.series.Elsword;
 
 import com.badlogic.gdx.graphics.Color;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
@@ -37,6 +38,12 @@ public class Elsword extends AnimatorCard
     @Override
     public void OnLateUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
-        GameActions.Bottom.Cycle(name, magicNumber);
+        GameActions.Bottom.DiscardFromHand(name, magicNumber, false)
+                .AddCallback(cards -> {
+                    for (AbstractCard card : cards) {
+                        GameActions.Top.Draw(1)
+                           .SetFilter(c -> GameUtilities.HasRedAffinity(c) || GameUtilities.HasGreenAffinity(c) || GameUtilities.HasBlueAffinity(c), false);
+                    }
+                });
     }
 }
