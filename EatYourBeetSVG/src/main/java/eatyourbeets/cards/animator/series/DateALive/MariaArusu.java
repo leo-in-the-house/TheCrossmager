@@ -21,7 +21,7 @@ public class MariaArusu extends AnimatorCard {
         super(DATA);
 
         Initialize(0, 0, 0);
-        SetUpgrade(0, 0, 0);
+        SetCostUpgrade(-1);
 
         SetAffinity_Teal(1);
         SetAffinity_Pink(1);
