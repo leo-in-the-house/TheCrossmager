@@ -20,7 +20,7 @@ public class DwarfShaman extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 15, 8);
+        Initialize(0, 15, 11);
         SetUpgrade(0, 8, 4);
 
         SetAffinity_Brown(2);
