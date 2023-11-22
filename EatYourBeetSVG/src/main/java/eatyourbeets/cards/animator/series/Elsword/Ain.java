@@ -26,6 +26,8 @@ public class Ain extends AnimatorCard
         SetUpgrade(0, 0, 2);
 
         SetAffinity_Blue(2);
+
+        SetRetain(true);
     }
 
     @Override
