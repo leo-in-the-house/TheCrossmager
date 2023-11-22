@@ -83,6 +83,7 @@ public class Eve extends AnimatorCard
         @Override
         public void OnAffinitySealed(EYBCard card, boolean manual)
         {
+            if (GameUtilities.HasBlueAffinity(card) || GameUtilities.HasGreenAffinity(card) || GameUtilities.HasRedAffinity(card))
             GameEffects.Queue.BorderFlash(Color.SKY);
             GameActions.Bottom.DealDamageToRandomEnemy(amount, DamageInfo.DamageType.THORNS, AttackEffects.NONE)
             .SetOptions(true, false)
