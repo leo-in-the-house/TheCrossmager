@@ -18,7 +18,7 @@ import eatyourbeets.utilities.GameUtilities;
 public class Archer extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Archer.class)
-            .SetPower(2, CardRarity.UNCOMMON)
+            .SetPower(1, CardRarity.UNCOMMON)
             
             .SetSeriesFromClassPackage();
 
@@ -26,8 +26,8 @@ public class Archer extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 0, 2);
-        SetUpgrade(0, 0, 2);
+        Initialize(0, 0, 1);
+        SetUpgrade(0, 0, 1);
 
         SetAffinity_Green(1);
         SetEthereal(true);
