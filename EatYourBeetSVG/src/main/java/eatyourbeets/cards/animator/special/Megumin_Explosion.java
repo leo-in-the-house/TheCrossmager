@@ -58,6 +58,7 @@ public class Megumin_Explosion extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
+        GameActions.Bottom.Wait(0.8f);
 
         if (linkedUUID != null && CombatStats.TryActivateLimited(cardID)) {
             GameActions.Bottom.ModifyAllInstances(linkedUUID, AbstractCard::upgrade)

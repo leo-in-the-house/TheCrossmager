@@ -1155,7 +1155,7 @@
 		"animator:Alexander":
 		{
 			"FLAVOR_TEXT": "'When you someday find a way of life that you can truly be proud of, you’ll be forced into your own battle whether you like it or not.'",
-			"DESCRIPTION": "When Exhausted: Play this card.",
+			"DESCRIPTION": "When Discarded or Exhausted with !A! [L]: Play a copy of this card.",
 			"NAME": "Alexander"
 		},
 		"animator:Archer":
@@ -1248,7 +1248,7 @@
 		"animator:Rider":
 		{
 			"FLAVOR_TEXT": "'I cannot abide by that command. I prioritize your life more than anything else.'",
-			"DESCRIPTION": "Apply !M! [Shackles] to ALL enemies.",
+			"DESCRIPTION": "!A! [D]: Apply !M! [Shackles] to ALL enemies.",
 			"NAME": "Rider"
 		},
 		"animator:RinTohsaka":

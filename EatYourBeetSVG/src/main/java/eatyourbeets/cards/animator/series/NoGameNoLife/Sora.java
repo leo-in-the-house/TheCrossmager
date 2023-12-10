@@ -24,9 +24,9 @@ public class Sora extends AnimatorCard
             .SetSeriesFromClassPackage()
             .PostInitialize(data ->
             {
-                data.AddPreview(new Sora_BattlePlan1(), false);
-                data.AddPreview(new Sora_BattlePlan2(), false);
-                data.AddPreview(new Sora_BattlePlan3(), false);
+                data.AddPreview(new Sora_BattlePlan1(), true);
+                data.AddPreview(new Sora_BattlePlan2(), true);
+                data.AddPreview(new Sora_BattlePlan3(), true);
             });
 
     public Sora()

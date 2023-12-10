@@ -2,10 +2,7 @@ package eatyourbeets.cards.animator.series.Fate;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.cards.base.CardUseInfo;
-import eatyourbeets.cards.base.EYBCardData;
-import eatyourbeets.cards.base.EYBCardTarget;
+import eatyourbeets.cards.base.*;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
@@ -19,11 +16,13 @@ public class Rider extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 7, 4);
+        Initialize(0, 7, 7);
         SetUpgrade(0, 4, 2);
 
         SetAffinity_Green(1);
         SetAffinity_Black(1);
+
+        SetAffinityRequirement(Affinity.Black, 4);
     }
 
     @Override
@@ -43,8 +42,10 @@ public class Rider extends AnimatorCard
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
 
-        for (AbstractMonster target : GameUtilities.GetEnemies(true)) {
-            GameActions.Bottom.ReduceStrength(target, magicNumber, true);
+        if (CheckSpecialCondition(false)) {
+            for (AbstractMonster target : GameUtilities.GetEnemies(true)) {
+                GameActions.Bottom.ReduceStrength(target, magicNumber, true);
+            }
         }
     }
 }

@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.cards.tempCards.Miracle;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import eatyourbeets.cards.animator.special.Special_Miracle;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.interfaces.subscribers.OnBlockGainedSubscriber;
@@ -16,7 +17,9 @@ import eatyourbeets.utilities.GameUtilities;
 public class SanaeKochiya extends AnimatorCard {
     public static final EYBCardData DATA = Register(SanaeKochiya.class)
             .SetSkill(2, CardRarity.UNCOMMON, EYBCardTarget.None)
-            .SetSeriesFromClassPackage();
+            .SetSeriesFromClassPackage()
+            .PostInitialize(data -> data.AddPreview(new Special_Miracle(), false));
+
 
     public SanaeKochiya()
     {

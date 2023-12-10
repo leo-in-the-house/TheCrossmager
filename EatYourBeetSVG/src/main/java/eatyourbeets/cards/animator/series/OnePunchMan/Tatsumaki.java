@@ -33,7 +33,11 @@ public class Tatsumaki extends AnimatorCard
     {
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
-        GameActions.Bottom.ChannelOrb(new Aether());
+
+        for (int i=0; i<magicNumber; i++) {
+            GameActions.Bottom.ChannelOrb(new Aether());
+        }
+
         GameActions.Bottom.ChangeStance(MagicStance.STANCE_ID);
     }
 }

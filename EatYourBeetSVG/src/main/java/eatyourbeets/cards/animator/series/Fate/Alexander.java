@@ -22,6 +22,18 @@ public class Alexander extends AnimatorCard
 
         SetAffinity_Red(1);
         SetAffinity_White(1);
+
+        SetAffinityRequirement(Affinity.White, 4);
+    }
+
+    @Override
+    public void triggerOnManualDiscard()
+    {
+        super.triggerOnManualDiscard();
+
+        if (CheckSpecialCondition(false)) {
+            GameActions.Top.PlayCopy(this, null);
+        }
     }
 
     @Override
@@ -29,7 +41,9 @@ public class Alexander extends AnimatorCard
     {
         super.triggerOnExhaust();
 
-        GameActions.Top.PlayCopy(this, null);
+        if (CheckSpecialCondition(false)) {
+            GameActions.Top.PlayCopy(this, null);
+        }
     }
 
     @Override

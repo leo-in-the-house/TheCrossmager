@@ -39,6 +39,7 @@ public class Megumin extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
+        GameActions.Bottom.Wait(0.8f);
 
         final int charge = GameUtilities.UseXCostEnergy(this);
         final Megumin_Explosion card = new Megumin_Explosion();
