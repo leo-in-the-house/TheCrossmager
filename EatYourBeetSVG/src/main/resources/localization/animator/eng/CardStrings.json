@@ -158,11 +158,6 @@
 			"DESCRIPTION": "Reduce the cost of a random card to 0.",
 			"NAME": "Madness"
 		},
-		"animator:Emilia":
-		{
-			"DESCRIPTION": "Channel !M! [Frost]. || At the start of next turn: Channel 1 [Lightning] for each [Frost] you have.",
-			"NAME": "Emilia"
-		},
 		"animator:GiftBox":
 		{
 			"DESCRIPTION": "<LIM>. Gain !S! [Gold]. || Discard all cards. Add !M! random card(s) to your hand.",
@@ -287,6 +282,12 @@
 			"FLAVOR_TEXT": "'Yes, you were led through that eternal corridor, and came to this false moon here.  The full moon is the one key that links the moon to the earth.  If one were to break that key, travel between the moon and earth would be impossible.  See? You've been deceived by this fake illusion, just like that.'",
 			"DESCRIPTION": "If this killed the enemy or broke through the enemy [Block], gain a random {Potion}, then {Exhaust}.",
 			"NAME": "Eirin Yagokoro"
+		},
+		"animator:Emilia":
+		{
+			"FLAVOR_TEXT": "'I have only one wish: for all to be equal.  I desire to create a nation where all citizens are equal.'",
+			"DESCRIPTION": "Channel !M! [Frost]. || At the start of next turn: Channel 1 [Lightning] for each [Frost] you have.",
+			"NAME": "Emilia"
 		},
 		"animator:HarukoHaruhara":
 		{

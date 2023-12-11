@@ -1,4 +1,4 @@
-package eatyourbeets.cards.animator.colorless.rare;
+package eatyourbeets.cards.animator.colorless.uncommon;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -15,7 +15,7 @@ import eatyourbeets.utilities.GameEffects;
 public class Emilia extends AnimatorCard implements OnStartOfTurnPostDrawSubscriber
 {
     public static final EYBCardData DATA = Register(Emilia.class)
-            .SetSkill(2, CardRarity.RARE, EYBCardTarget.None)
+            .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None)
             .SetColor(CardColor.COLORLESS)
             .SetSeries(CardSeries.ReZero);
 
@@ -37,6 +37,7 @@ public class Emilia extends AnimatorCard implements OnStartOfTurnPostDrawSubscri
     protected void OnUpgrade()
     {
         SetEvokeOrbCount(magicNumber);
+        SetRetain(true);
     }
 
     @Override
