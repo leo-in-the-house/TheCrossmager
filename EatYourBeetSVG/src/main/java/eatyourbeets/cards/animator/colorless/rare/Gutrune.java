@@ -20,6 +20,9 @@ public class Gutrune extends AnimatorCard {
 
         Initialize(0, 4, 4);
         SetUpgrade(0, 2, 2);
+
+        SetAffinity_Blue(2, 0, 1);
+        SetAffinity_Black(2, 0, 1);
     }
 
     @Override
