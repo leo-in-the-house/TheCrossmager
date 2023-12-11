@@ -9,14 +9,12 @@ import com.megacrit.cardcrawl.daily.mods.Binary;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ModHelper;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import eatyourbeets.cards.animator.colorless.uncommon.QuestionMark;
+import eatyourbeets.cards.animator.colorless.uncommon.AiKizuna;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardSeries;
 import eatyourbeets.cards.base.EYBCard;
 import eatyourbeets.interfaces.listeners.OnAddingToCardRewardListener;
 import eatyourbeets.resources.GR;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.JUtils;
 import eatyourbeets.utilities.WeightedList;
 
@@ -73,7 +71,7 @@ public abstract class AnimatorReward extends CustomReward
         }
         else
         {
-            context.AddCard(new QuestionMark(), result);
+            context.AddCard(new AiKizuna(), result);
         }
 
         return result;

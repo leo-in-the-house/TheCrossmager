@@ -1,8 +1,7 @@
 package eatyourbeets.cards.base;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.cards.animator.colorless.uncommon.QuestionMark;
+import eatyourbeets.cards.animator.colorless.uncommon.AiKizuna;
 import eatyourbeets.resources.GR;
 
 public class UnnamedCardBuilder extends DynamicCardBuilder
@@ -31,7 +30,7 @@ public class UnnamedCardBuilder extends DynamicCardBuilder
 
         if (imagePath == null)
         {
-            imagePath = QuestionMark.DATA.ImagePath;
+            imagePath = AiKizuna.DATA.ImagePath;
         }
 
         return new UnnamedCard_Dynamic(this);

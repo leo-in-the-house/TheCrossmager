@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.screens.compendium.CardLibSortHeader;
 import com.megacrit.cardcrawl.screens.compendium.CardLibraryScreen;
 import com.megacrit.cardcrawl.screens.mainMenu.SortHeaderButton;
-import eatyourbeets.cards.animator.colorless.uncommon.QuestionMark;
+import eatyourbeets.cards.animator.colorless.uncommon.AiKizuna;
 import eatyourbeets.cards.base.AnimatorCard_UltraRare;
 import eatyourbeets.cards.base.CardSeries;
 import eatyourbeets.cards.base.CardSeriesComparator;
@@ -200,7 +200,7 @@ public class CustomCardLibSortHeader extends CardLibSortHeader
 
         if (group.isEmpty())
         {
-            group.group.add(new QuestionMark());
+            group.group.add(new AiKizuna());
         }
 
         if (Screen != null)

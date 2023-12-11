@@ -4,9 +4,8 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.animator.colorless.uncommon.QuestionMark;
+import eatyourbeets.cards.animator.colorless.uncommon.AiKizuna;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
@@ -18,7 +17,7 @@ public class CardNotFound extends AnimatorCard implements Hidden
 {
     public static final EYBCardData DATA = Register(CardNotFound.class)
             .SetSkill(0, CardRarity.COMMON, EYBCardTarget.None)
-            .SetImagePath(GR.GetCardImage(QuestionMark.DATA.ID))
+            .SetImagePath(GR.GetCardImage(AiKizuna.DATA.ID))
             .SetColor(CardColor.COLORLESS);
 
     public CardNotFound()

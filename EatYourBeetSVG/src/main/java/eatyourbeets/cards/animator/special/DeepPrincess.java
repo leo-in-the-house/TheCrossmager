@@ -15,7 +15,7 @@ import eatyourbeets.interfaces.listeners.OnAddToDeckListener;
 import eatyourbeets.utilities.ColoredString;
 import eatyourbeets.utilities.GameActions;
 
-public class DeepPrincess extends AnimatorCard implements OnAddToDeckListener
+public class DeepPrincess extends AnimatorCard
 {
     public static final int COST = 12;
     public static final EYBCardData DATA = Register(DeepPrincess.class)
@@ -32,14 +32,6 @@ public class DeepPrincess extends AnimatorCard implements OnAddToDeckListener
         SetUpgrade(300, 0, 300);
 
         SetAffinity_Star(2, 0, 1);
-    }
-
-    @Override
-    public boolean OnAddToDeck()
-    {
-        SFX.Play(SFX.NECRONOMICON, 0.666f, 0.666f);
-
-        return true;
     }
 
     @Override

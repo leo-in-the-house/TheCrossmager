@@ -77,6 +77,8 @@ public class CardSeries
     public final static CardSeries Berserk = Add(60, "Berserk");
     public final static CardSeries SwordArtOnline = Add(61, "SwordArtOnline");
     public final static CardSeries EtrianOdyssey = Add(62, "EtrianOdyssey");
+    public final static CardSeries OrangeJuice = Add(63, "OrangeJuice");
+    public final static CardSeries KizunaNoAllele = Add(64, "KizunaNoAllele");
 
 
     private static AbstractCard currentSynergy = null;

@@ -5,7 +5,7 @@ import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import eatyourbeets.cards.animator.basic.Defend;
 import eatyourbeets.cards.animator.basic.Strike;
-import eatyourbeets.cards.animator.colorless.uncommon.QuestionMark;
+import eatyourbeets.cards.animator.colorless.uncommon.AiKizuna;
 import eatyourbeets.cards.animator.ultrarare.Azami;
 import eatyourbeets.cards.animator.special.DeepPrincess;
 import eatyourbeets.cards.base.EYBCardData;
@@ -38,13 +38,13 @@ public class _FakeLoadout extends AnimatorLoadout
     @Override
     public void AddStarterCards()
     {
-        AddStarterCard(QuestionMark.DATA, 10);
+        AddStarterCard(AiKizuna.DATA, 10);
     }
 
     @Override
     public EYBCardData GetSymbolicCard()
     {
-        return QuestionMark.DATA;
+        return AiKizuna.DATA;
     }
 
     @Override

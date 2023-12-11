@@ -26,6 +26,7 @@ public class HarukoHaruhara extends AnimatorCard
         SetAffinity_Star(1, 0, 0);
 
         SetEthereal(true);
+        SetHaste(true);
     }
 
     @Override

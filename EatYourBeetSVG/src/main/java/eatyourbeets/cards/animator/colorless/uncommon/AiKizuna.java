@@ -1,7 +1,6 @@
 package eatyourbeets.cards.animator.colorless.uncommon;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
@@ -9,7 +8,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.random.Random;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
@@ -18,16 +16,16 @@ import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.WeightedList;
 
-public class QuestionMark extends AnimatorCard
+public class AiKizuna extends AnimatorCard
 {
-    public static final EYBCardData DATA = Register(QuestionMark.class)
+    public static final EYBCardData DATA = Register(AiKizuna.class)
             .SetSkill(-2, CardRarity.UNCOMMON, EYBCardTarget.ALL)
             
             .SetColor(CardColor.COLORLESS);
 
     public AnimatorCard copy = null;
 
-    public QuestionMark()
+    public AiKizuna()
     {
         super(DATA);
 
@@ -39,15 +37,24 @@ public class QuestionMark extends AnimatorCard
     }
 
     @Override
+    protected void OnUpgrade()
+    {
+        super.OnUpgrade();
+
+        SetHaste(false);
+    }
+
+    @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
-        GameUtilities.PlayVoiceSFX(name);
 
     }
 
     @Override
     public void triggerOnAffinitySeal(boolean reshuffle)
     {
+        GameUtilities.PlayVoiceSFX(name);
+
         super.triggerOnAffinitySeal(reshuffle);
 
         GameActions.Bottom.Callback(() ->

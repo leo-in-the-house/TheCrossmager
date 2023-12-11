@@ -158,11 +158,12 @@
 			"DESCRIPTION": "Reduce the cost of a random card to 0.",
 			"NAME": "Madness"
 		},
-		"animator:GiftBox":
+		"animator:Aru":
 		{
-			"DESCRIPTION": "<LIM>. Gain !S! [Gold]. || Discard all cards. Add !M! random card(s) to your hand.",
-			"NAME": "Gift Box",
-			"UPGRADE_DESCRIPTION": "<LIM>. Gain !S! [Gold]. || Discard all cards. Add !M! random Upgraded card(s) to your hand."
+			"FLAVOR_TEXT": "'Presents for good boys and girls.'",
+			"DESCRIPTION": "Discard all cards. Add !M! random card(s) to your hand.",
+			"NAME": "Aru",
+			"UPGRADE_DESCRIPTION": "Discard all cards. Add !M! random Upgraded card(s) to your hand."
 		},
 		"animator:Gutrune":
 		{
@@ -389,10 +390,11 @@
 			"DESCRIPTION": "Attack 1 additional time for each unique orb Channeled this combat.",
 			"NAME": "Patchouli Knowledge"
 		},
-		"animator:QuestionMark":
+		"animator:AiKizuna":
 		{
+			"FLAVOR_TEXT": "'While I am sleeping, thanks to everyone coming to watch this video, like you, you, you, you, and youuu!  I am able to connect with everyone in the world, even in my sleep, thanks to everyone!'",
 			"DESCRIPTION": "Unplayable. || When Sealed: Obtain 1 out of !M! random Upgraded cards.",
-			"NAME": "Question Mark"
+			"NAME": "Ai Kizuna"
 		},
 		"animator:Shimakaze":
 		{

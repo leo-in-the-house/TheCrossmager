@@ -19,7 +19,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.vfx.cardManip.CardGlowBorder;
-import eatyourbeets.cards.animator.colorless.uncommon.QuestionMark;
+import eatyourbeets.cards.animator.colorless.uncommon.AiKizuna;
 import eatyourbeets.resources.GR;
 import eatyourbeets.utilities.*;
 
@@ -361,7 +361,7 @@ public abstract class EYBCardBase extends AbstractCard
     {
         if (!isSeen || isLocked)
         {
-            RenderPortraitImage(sb, GR.GetTexture(QuestionMark.DATA.ImagePath), _renderColor.Get(this), 1, false, false, false);
+            RenderPortraitImage(sb, GR.GetTexture(AiKizuna.DATA.ImagePath), _renderColor.Get(this), 1, false, false, false);
             return;
         }
 

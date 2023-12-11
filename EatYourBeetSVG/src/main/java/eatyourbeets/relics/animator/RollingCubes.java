@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
 import com.megacrit.cardcrawl.rooms.MonsterRoomElite;
-import eatyourbeets.cards.animator.colorless.uncommon.QuestionMark;
+import eatyourbeets.cards.animator.colorless.uncommon.AiKizuna;
 import eatyourbeets.relics.AnimatorRelic;
 import eatyourbeets.resources.GR;
 import eatyourbeets.utilities.FieldInfo;
@@ -100,7 +100,7 @@ public class RollingCubes extends AnimatorRelic
             }
             else
             {
-                replacement.add(new QuestionMark());
+                replacement.add(new AiKizuna());
             }
         }
 
