@@ -4,7 +4,6 @@ import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.shop.Merchant;
@@ -74,7 +73,9 @@ public class MerchantPatches
         {
             final MerchantData data = map.remove(__instance);
 
-            AbstractDungeon.colorlessCardPool = data.colorless;
+            data.colorless = AbstractDungeon.colorlessCardPool;
+            AbstractDungeon.colorlessCardPool = data.GetReplacement(data.colorless);
+
             AbstractDungeon.commonCardPool = data.common;
             AbstractDungeon.uncommonCardPool = data.uncommon;
             AbstractDungeon.rareCardPool = data.rare;
