@@ -1,6 +1,5 @@
 package patches.merchant;
 
-import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
@@ -75,18 +74,8 @@ public class MerchantPatches
             AbstractDungeon.rareCardPool = data.GetReplacement(data.rare);
         }
 
-        @SpireInsertPatch(
-             localvars = {"cards2"}
-        )
-        public static void ResetCards2(Merchant __instance, float x, float y, int newShopScreen, ArrayList<AbstractCard> cards2) {
-            //Prevent this from being overriden with even mods
-            cards2.clear();
-            cards2.add(AbstractDungeon.getColorlessCardFromPool(AbstractCard.CardRarity.UNCOMMON).makeCopy());
-            cards2.add(AbstractDungeon.getColorlessCardFromPool(AbstractCard.CardRarity.RARE).makeCopy());
-        }
-
         @SpirePostfixPatch
-        public static void Postfix(Merchant __instance, float x, float y, int newShopScreen)
+        public static void Postfix(Merchant __instance, float x, float y, int newShopScreen, ArrayList<AbstractCard> ___cards2)
         {
             final MerchantData data = map.remove(__instance);
 
@@ -96,6 +85,18 @@ public class MerchantPatches
             AbstractDungeon.commonCardPool = data.common;
             AbstractDungeon.uncommonCardPool = data.uncommon;
             AbstractDungeon.rareCardPool = data.rare;
+
+            //Prevent this from being overriden with even mods
+            ___cards2.clear();
+            ___cards2.add(AbstractDungeon.getColorlessCardFromPool(AbstractCard.CardRarity.UNCOMMON).makeCopy());
+            ___cards2.add(AbstractDungeon.getColorlessCardFromPool(AbstractCard.CardRarity.RARE).makeCopy());
+
+            ___cards2.get(0).price = 50;
+            ___cards2.get(1).price = 100;
+
+
+            AbstractDungeon.shopScreen.colorlessCards.addAll(___cards2);
+
         }
     }
 }
