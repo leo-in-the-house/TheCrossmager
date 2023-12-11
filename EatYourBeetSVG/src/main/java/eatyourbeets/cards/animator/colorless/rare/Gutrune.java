@@ -24,6 +24,8 @@ public class Gutrune extends AnimatorCard {
 
         SetAffinity_Blue(2, 0, 1);
         SetAffinity_Black(2, 0, 1);
+
+        SetFading(true);
     }
 
     @Override
