@@ -31,7 +31,7 @@ public class Gutrune extends AnimatorCard {
     @Override
     public void triggerOnExhaust()
     {
-        GameActions.Bottom.MakeCardInDiscardPile(new DeepPrincess());
+        GameActions.Bottom.MakeCardInDrawPile(new DeepPrincess());
     }
 
     @Override

@@ -172,7 +172,7 @@
 		"animator:Gutrune":
 		{
 			"FLAVOR_TEXT": "'I heard the Deep One’s voices... But the price I paid for eternal life was to join their ranks.  As a puppet of that evil, the great tree controlling my brother became anathema to me.  ...But even then, I went on with the hope of meeting my brother someday.  I yearned for him so...'",
-			"DESCRIPTION": "On Exhaust: Add {Deep Princess} to your discard pile.",
+			"DESCRIPTION": "On Exhaust: Add {Deep Princess} to your draw pile.",
 			"NAME": "Gutrune"
 		},
 		"animator:Hibiki":
