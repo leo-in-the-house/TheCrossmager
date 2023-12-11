@@ -1,5 +1,6 @@
 package patches.merchant;
 
+import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
@@ -11,6 +12,7 @@ import eatyourbeets.cards.base.EYBCard;
 import eatyourbeets.interfaces.listeners.OnAddingToCardRewardListener;
 import eatyourbeets.utilities.JUtils;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class MerchantPatches
@@ -33,6 +35,11 @@ public class MerchantPatches
                 for (AbstractCard c : group.group)
                 {
                     final EYBCard card = JUtils.SafeCast(c, EYBCard.class);
+                    if (card == null) {
+                        //No non-animator cards!
+                        continue;
+                    }
+
                     if (card != null && card.cardData.ShouldCancel())
                     {
                         continue;
@@ -66,6 +73,16 @@ public class MerchantPatches
 
             data.rare = AbstractDungeon.rareCardPool;
             AbstractDungeon.rareCardPool = data.GetReplacement(data.rare);
+        }
+
+        @SpireInsertPatch(
+             localvars = {"cards2"}
+        )
+        public static void ResetCards2(Merchant __instance, float x, float y, int newShopScreen, ArrayList<AbstractCard> cards2) {
+            //Prevent this from being overriden with even mods
+            cards2.clear();
+            cards2.add(AbstractDungeon.getColorlessCardFromPool(AbstractCard.CardRarity.UNCOMMON).makeCopy());
+            cards2.add(AbstractDungeon.getColorlessCardFromPool(AbstractCard.CardRarity.RARE).makeCopy());
         }
 
         @SpirePostfixPatch
