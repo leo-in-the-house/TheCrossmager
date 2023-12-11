@@ -7,10 +7,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.random.Random;
-import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.cards.base.CardUseInfo;
-import eatyourbeets.cards.base.EYBCardData;
-import eatyourbeets.cards.base.EYBCardTarget;
+import eatyourbeets.cards.base.*;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
@@ -20,7 +17,7 @@ public class AiKizuna extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(AiKizuna.class)
             .SetSkill(-2, CardRarity.UNCOMMON, EYBCardTarget.ALL)
-            
+            .SetSeries(CardSeries.KizunaNoAllele)
             .SetColor(CardColor.COLORLESS);
 
     public AnimatorCard copy = null;
