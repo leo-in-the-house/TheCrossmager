@@ -157,11 +157,6 @@
 			"DESCRIPTION": "Channel !M! [Frost]. || At the start of next turn: Channel 1 [Lightning] for each [Frost] you have.",
 			"NAME": "Emilia"
 		},
-		"animator:HarukoHaruhara":
-		{
-			"DESCRIPTION": "Cycle 1 random card. Gain !M! [E]. Raise the cost of a random card by 1 this turn.",
-			"NAME": "Haruko Haruhara"
-		},
 		"animator:Hibiki":
 		{
 			"DESCRIPTION": "Increase this card's number of {Attacks} by !S! this combat.",
@@ -261,11 +256,6 @@
 			"DESCRIPTION": "If below or at 30% [HP]: Gain !M! [Vigor].  If above 30% [HP]: Take !S! [DD].",
 			"NAME": "Bennett"
 		},
-		"animator:Canti":
-		{
-			"DESCRIPTION": "Deal additional damage equal to the enemy's current attack damage.",
-			"NAME": "Canti"
-		},
 		"animator:ChaikaKamaz":
 		{
 			"FLAVOR_TEXT": "'How foolish they are!  No matter, they are nothing but father's playthings after all!  My only interest is...'",
@@ -280,11 +270,23 @@
 			"DESCRIPTION": "If this killed the enemy or broke through the enemy [Block], gain a random {Potion}, then {Exhaust}.",
 			"NAME": "Eirin Yagokoro"
 		},
+		"animator:HarukoHaruhara":
+		{
+			"FLAVOR_TEXT": "'Oh I killed him, I finally found the S.O.B. and I killed him!  I didn’t mean to... it was an accident, kind of.  Ah, lets face it!  I definitely totally killed him, just like that- bang!  No more like bong, kablam or kunga ka-splat!'",
+			"DESCRIPTION": "Cycle 1 random card. Gain !M! [E]. Raise the cost of a random card by 1 this turn.",
+			"NAME": "Haruko Haruhara"
+		},
 		"animator:KaeyaAlberich":
 		{
 			"FLAVOR_TEXT": "'Kaeya, Knight of Favonius. Please allow me to join you on your journey. Guarding you on your journey sounds far more entertaining than any of the usual Favonius stuff.'",
 			"DESCRIPTION": "This card gains [Block] an extra time for each {Orb}. || On Discard or Exhaust: Channel [Frost].",
 			"NAME": "Kaeya Alberich"
+		},
+		"animator:Kirito":
+		{
+			"FLAVOR_TEXT": "'No matter what, my heart will be forever yours, and I will fight until the day I see you again.'",
+			"DESCRIPTION": "Deal additional damage equal to the enemy's current attack damage.",
+			"NAME": "Kirito"
 		},
 		"animator:Kuroyukihime":
 		{
