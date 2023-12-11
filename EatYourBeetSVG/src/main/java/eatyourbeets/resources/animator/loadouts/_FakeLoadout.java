@@ -7,11 +7,10 @@ import eatyourbeets.cards.animator.basic.Defend;
 import eatyourbeets.cards.animator.basic.Strike;
 import eatyourbeets.cards.animator.colorless.uncommon.QuestionMark;
 import eatyourbeets.cards.animator.ultrarare.Azami;
-import eatyourbeets.cards.animator.ultrarare.Cthulhu;
+import eatyourbeets.cards.animator.special.DeepPrincess;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.resources.animator.misc.AnimatorLoadout;
 import eatyourbeets.resources.animator.misc.AnimatorTrophies;
-import eatyourbeets.utilities.GameUtilities;
 
 import java.util.ArrayList;
 
@@ -63,7 +62,7 @@ public class _FakeLoadout extends AnimatorLoadout
             }
         }
 
-        return darkAmount >= 17 ? Azami.DATA : Cthulhu.DATA;
+        return darkAmount >= 17 ? Azami.DATA : DeepPrincess.DATA;
     }
 
     @Override

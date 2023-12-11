@@ -6,7 +6,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import eatyourbeets.cards.animator.ultrarare.Azami;
-import eatyourbeets.cards.animator.ultrarare.Cthulhu;
+import eatyourbeets.cards.animator.special.DeepPrincess;
 import eatyourbeets.cards.animator.ultrarare.HolyGrail;
 import eatyourbeets.cards.animator.ultrarare.SummoningRitual;
 import eatyourbeets.resources.GR;
@@ -54,7 +54,6 @@ public abstract class AnimatorCard_UltraRare extends AnimatorCard
             }
 
             cards.put(Azami.DATA.ID, new Azami());
-            cards.put(Cthulhu.DATA.ID, new Cthulhu());
             cards.put(HolyGrail.DATA.ID, new HolyGrail());
             cards.put(SummoningRitual.DATA.ID, new SummoningRitual());
         }
@@ -64,7 +63,7 @@ public abstract class AnimatorCard_UltraRare extends AnimatorCard
 
     public static EYBCardData GetCardData(AnimatorLoadout loadout)
     {
-        return loadout == null ? Cthulhu.DATA : loadout.GetUltraRare();
+        return loadout == null ? DeepPrincess.DATA : loadout.GetUltraRare();
     }
 
     public static void MarkAsSeen(String cardID)

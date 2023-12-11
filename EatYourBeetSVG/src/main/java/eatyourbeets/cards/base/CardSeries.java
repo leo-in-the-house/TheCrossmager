@@ -76,6 +76,8 @@ public class CardSeries
     public final static CardSeries DrStone = Add(59, "DrStone");
     public final static CardSeries Berserk = Add(60, "Berserk");
     public final static CardSeries SwordArtOnline = Add(61, "SwordArtOnline");
+    public final static CardSeries EtrianOdyssey = Add(62, "EtrianOdyssey");
+
 
     private static AbstractCard currentSynergy = null;
     private static EYBCard lastCardPlayed = null;

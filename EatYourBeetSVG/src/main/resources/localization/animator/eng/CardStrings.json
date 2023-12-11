@@ -146,16 +146,34 @@
 			"EXTENDED_DESCRIPTION": ["If you would gain #yBlock this turn, instead apply that much #yFreezing to ALL enemies."],
 			"NAME": "Ayaka Kamisato"
 		},
+		"animator:DeepPrincess":
+		{
+			"FLAVOR_TEXT": "'How dare you kill Kujura!'",
+			"DESCRIPTION": "This card cannot be Autoplayed, and its cost cannot be reduced. || When Drawn: Add {Madness} to your hand.",
+			"NAME": "Deep Princess"
+		},
+		"animator:DeepPrincess_Madness":
+		{
+			"FLAVOR_TEXT": "'I do not fear death.  Only... I hoped to visit that Deep City just once...'",
+			"DESCRIPTION": "Reduce the cost of a random card to 0.",
+			"NAME": "Madness"
+		},
+		"animator:Emilia":
+		{
+			"DESCRIPTION": "Channel !M! [Frost]. || At the start of next turn: Channel 1 [Lightning] for each [Frost] you have.",
+			"NAME": "Emilia"
+		},
 		"animator:GiftBox":
 		{
 			"DESCRIPTION": "<LIM>. Gain !S! [Gold]. || Discard all cards. Add !M! random card(s) to your hand.",
 			"NAME": "Gift Box",
 			"UPGRADE_DESCRIPTION": "<LIM>. Gain !S! [Gold]. || Discard all cards. Add !M! random Upgraded card(s) to your hand."
 		},
-		"animator:Emilia":
+		"animator:Gutrune":
 		{
-			"DESCRIPTION": "Channel !M! [Frost]. || At the start of next turn: Channel 1 [Lightning] for each [Frost] you have.",
-			"NAME": "Emilia"
+			"FLAVOR_TEXT": "'I heard the Deep One’s voices... But the price I paid for eternal life was to join their ranks.  As a puppet of that evil, the great tree controlling my brother became anathema to me.  ...But even then, I went on with the hope of meeting my brother someday.  I yearned for him so...'",
+			"DESCRIPTION": "On Exhaust: Add {Deep Princess} to your discard pile.",
+			"NAME": "Gutrune"
 		},
 		"animator:Hibiki":
 		{
@@ -379,11 +397,6 @@
 		{
 			"DESCRIPTION": "Gain|Boost [G]. || <DRW-M>. Add 1 Dazed to your draw pile.",
 			"NAME": "Shimakaze"
-		},
-		"animator:Clownpiece":
-		{
-			"DESCRIPTION": "Reveal the top card in your draw pile. If it is 0 or 1 cost, play it. Otherwise, draw it. || <LIM>. Starter: This card will not Exhaust.",
-			"NAME": "Clownpiece"
 		},
 		"animator:Urushihara":
 		{
@@ -3599,16 +3612,6 @@
 			"FLAVOR_TEXT": "'I promise she won't cause anyone any trouble...' -Megumin",
 			"DESCRIPTION": "When Obtained: Transform all {Basic} cards in your master deck into random {Konosuba} cards. || Gain !M! [E].  Draw !S! cards from your discard pile.",
 			"NAME": "Chomusuke"
-		},
-		"animator:Cthulhu":
-		{
-			"DESCRIPTION": "This card cannot be Autoplayed, and its cost cannot be reduced. || When Drawn: Add 1 {Madness} to your hand.",
-			"NAME": "Cthulhu"
-		},
-		"animator:Cthulhu_Madness":
-		{
-			"DESCRIPTION": "Reduce the cost of a random card to 0.",
-			"NAME": "Madness"
 		},
 		"animator:Giselle":
 		{

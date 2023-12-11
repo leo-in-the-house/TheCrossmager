@@ -3,7 +3,6 @@ package eatyourbeets.cards.animator.special;
 import com.megacrit.cardcrawl.actions.unique.MadnessAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.animator.ultrarare.Cthulhu;
 import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
@@ -12,14 +11,14 @@ import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.interfaces.markers.Hidden;
 import eatyourbeets.utilities.GameActions;
 
-public class Cthulhu_Madness extends AnimatorCard implements Hidden
+public class DeepPrincess_Madness extends AnimatorCard implements Hidden
 {
-    public static final EYBCardData DATA = Register(Cthulhu_Madness.class)
+    public static final EYBCardData DATA = Register(DeepPrincess_Madness.class)
             .SetSkill(1, CardRarity.SPECIAL, EYBCardTarget.None)
             .SetColor(CardColor.COLORLESS)
-            .SetSeries(Cthulhu.DATA.Series);
+            .SetSeries(DeepPrincess.DATA.Series);
 
-    public Cthulhu_Madness()
+    public DeepPrincess_Madness()
     {
         super(DATA);
 

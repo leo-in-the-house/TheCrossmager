@@ -28,10 +28,9 @@ import eatyourbeets.cards.animator.series.NoGameNoLife.ChlammyZell;
 import eatyourbeets.cards.animator.series.OnePunchMan.Boros;
 import eatyourbeets.cards.animator.series.Overlord.Ainz;
 import eatyourbeets.cards.animator.series.OwariNoSeraph.Guren;
-import eatyourbeets.cards.animator.ultrarare.Cthulhu;
+import eatyourbeets.cards.animator.special.DeepPrincess;
 import eatyourbeets.cards.animator.ultrarare.SummoningRitual;
 import eatyourbeets.cards.base.AnimatorCard_UltraRare;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.interfaces.listeners.OnTryApplyPowerListener;
 import eatyourbeets.interfaces.subscribers.OnBattleStartSubscriber;
 import eatyourbeets.interfaces.subscribers.OnStartOfTurnPostDrawSubscriber;
@@ -42,7 +41,6 @@ import eatyourbeets.powers.animator.EnchantedArmorPower;
 import eatyourbeets.powers.common.BurningPower;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.JUtils;
 
 import java.util.ArrayList;
@@ -377,7 +375,7 @@ public class TheUnnamedPower extends AnimatorPower implements OnBattleStartSubsc
         {
             Talk(21, 2.5f);
         }
-        else if (card instanceof SummoningRitual || card instanceof Cthulhu)
+        else if (card instanceof SummoningRitual || card instanceof DeepPrincess)
         {
             Talk(35, 2.5f);
         }

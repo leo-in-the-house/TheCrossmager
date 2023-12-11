@@ -1,10 +1,9 @@
-package eatyourbeets.cards.animator.ultrarare;
+package eatyourbeets.cards.animator.special;
 
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
-import eatyourbeets.cards.animator.special.Cthulhu_Madness;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
@@ -16,22 +15,23 @@ import eatyourbeets.interfaces.listeners.OnAddToDeckListener;
 import eatyourbeets.utilities.ColoredString;
 import eatyourbeets.utilities.GameActions;
 
-public class Cthulhu extends AnimatorCard_UltraRare implements OnAddToDeckListener
+public class DeepPrincess extends AnimatorCard implements OnAddToDeckListener
 {
     public static final int COST = 12;
-    public static final EYBCardData DATA = Register(Cthulhu.class)
+    public static final EYBCardData DATA = Register(DeepPrincess.class)
             .SetAttack(-1, CardRarity.SPECIAL, EYBAttackType.Elemental, EYBCardTarget.ALL)
             .SetColor(CardColor.COLORLESS)
-            .SetSeries(CardSeries.CallOfCthulhu)
-            .PostInitialize(data -> data.AddPreview(new Cthulhu_Madness(), false));
+            .SetSeries(CardSeries.EtrianOdyssey)
+            .PostInitialize(data -> data.AddPreview(new DeepPrincess_Madness(), false));
 
-    public Cthulhu()
+    public DeepPrincess()
     {
         super(DATA);
 
-        Initialize(800, 0, 120);
+        Initialize(600, 0, 200);
+        SetUpgrade(300, 0, 300);
 
-        SetAffinity_Black(2, 0, 32);
+        SetAffinity_Star(2, 0, 1);
     }
 
     @Override
@@ -96,7 +96,7 @@ public class Cthulhu extends AnimatorCard_UltraRare implements OnAddToDeckListen
             case 2: SFX.Play(SFX.VO_AWAKENEDONE_3, 0.5f, 0.75f); break;
         }
 
-        GameActions.Bottom.MakeCardInHand(new Cthulhu_Madness());
+        GameActions.Bottom.MakeCardInHand(new DeepPrincess_Madness());
         GameActions.Bottom.Flash(this);
     }
 
