@@ -13,6 +13,7 @@ public class Gutrune extends AnimatorCard {
     public static final EYBCardData DATA = Register(Gutrune.class)
             .SetSkill(1, CardRarity.RARE, EYBCardTarget.None)
             .SetSeries(CardSeries.EtrianOdyssey)
+            .SetColor(CardColor.COLORLESS)
             .PostInitialize(data -> data.AddPreview(new DeepPrincess(), false));
 
     public Gutrune() {
