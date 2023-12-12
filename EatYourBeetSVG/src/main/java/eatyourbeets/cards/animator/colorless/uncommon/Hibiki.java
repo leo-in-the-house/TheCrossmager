@@ -1,4 +1,4 @@
-package eatyourbeets.cards.animator.colorless.rare;
+package eatyourbeets.cards.animator.colorless.uncommon;
 
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -8,12 +8,11 @@ import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
-import eatyourbeets.utilities.GameUtilities;
 
 public class Hibiki extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Hibiki.class)
-            .SetAttack(1, CardRarity.RARE, EYBAttackType.Ranged, EYBCardTarget.Random)
+            .SetAttack(1, CardRarity.UNCOMMON, EYBAttackType.Ranged, EYBCardTarget.Random)
             .SetColor(CardColor.COLORLESS)
             .SetSeries(CardSeries.Kancolle);
 
@@ -21,10 +20,10 @@ public class Hibiki extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(1, 0, 3, 1);
-        SetUpgrade(0, 0, 1, 0);
+        Initialize(2, 0, 3, 1);
+        SetUpgrade(0, 0, 2, 0);
 
-        SetAffinity_Green(1, 0, 1);
+        SetAffinity_Brown(1, 0, 1);
     }
 
     @Override

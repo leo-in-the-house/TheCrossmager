@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.special.Kuroyukihime_BlackLotus;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Kuroyukihime extends AnimatorCard
 {
@@ -19,24 +20,23 @@ public class Kuroyukihime extends AnimatorCard
         super(DATA);
 
         Initialize(0, 0, 2);
-        SetCostUpgrade(-1);
 
-        SetAffinity_White(1);
+        SetAffinity_Green(2);
 
         SetExhaust(true);
-
-        SetAffinityRequirement(Affinity.Star, 1);
     }
 
     @Override
-    public void OnLateUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
+    public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
+        GameUtilities.PlayVoiceSFX(name);
+
         GameActions.Bottom.DiscardFromHand(name, magicNumber, false)
         .SetOptions(false, false, false)
         .AddCallback(() ->
         {//
             GameActions.Bottom.MakeCardInHand(new Kuroyukihime_BlackLotus())
-            .SetUpgrade(CheckSpecialCondition(false), false);
+                    .SetUpgrade(upgraded, true);
         });
     }
 }

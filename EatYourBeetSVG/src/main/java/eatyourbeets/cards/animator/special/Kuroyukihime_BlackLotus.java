@@ -23,9 +23,8 @@ public class Kuroyukihime_BlackLotus extends AnimatorCard
         super(DATA);
 
         Initialize(7, 4);
-        SetUpgrade(2, 2);
+        SetUpgrade(3, 3);
 
-        SetAffinity_Red(1);
         SetAffinity_Green(1);
 
         SetAffinityRequirement(Affinity.Green, 1);
@@ -40,12 +39,10 @@ public class Kuroyukihime_BlackLotus extends AnimatorCard
         GameActions.Bottom.VFX(VFX.SweepingBeam(p.hb, VFX.FlipHorizontally(), new Color(0.24f, 0, 0.4f, 1f)), 0.3f);
         GameActions.Bottom.DealDamageToAll(this, AttackEffects.FIRE);
 
-        GameActions.Bottom.GainAffinity(Affinity.Red);
-        GameActions.Bottom.GainAffinity(Affinity.Green);
-
         if (CheckSpecialCondition(false))
         {
             GameActions.Bottom.Draw(2);
+            GameActions.Bottom.GainAffinity(Affinity.Green);
             GameActions.Bottom.ModifyAllInstances(uuid)
             .AddCallback(card ->
             {

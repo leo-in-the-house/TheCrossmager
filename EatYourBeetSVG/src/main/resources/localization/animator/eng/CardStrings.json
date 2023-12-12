@@ -171,11 +171,6 @@
 			"DESCRIPTION": "On Exhaust: Add {Deep Princess} to your draw pile.",
 			"NAME": "Gutrune"
 		},
-		"animator:Hibiki":
-		{
-			"DESCRIPTION": "Increase this card's number of {Attacks} by !S! this combat.",
-			"NAME": "Hibiki"
-		},
 		"animator:HornSkuld":
 		{
 			"FLAVOR_TEXT": "'When are you gonna learn to exhibit some self-control?  You're a noble, not a savage.'",
@@ -193,6 +188,12 @@
 			"DESCRIPTION": "The enemy gains !S! [Strength] and dies after a certain number of turns (Hover the enemy to check). || <LIM>. Gain Max [HP] equal to half the number of turns.",
 			"EXTENDED_DESCRIPTION": ["Gain {0} Max [HP]. || ", "The enemy gains !S! [Strength] and dies after !M! turn(s)."],
 			"NAME": "Light Yagami"
+		},
+		"animator:Kirito":
+		{
+			"FLAVOR_TEXT": "'No matter what, my heart will be forever yours, and I will fight until the day I see you again.'",
+			"DESCRIPTION": "Deal additional damage equal to the enemy's current attack damage.",
+			"NAME": "Kirito"
 		},
 		"animator:KokomiSangonomiya":
 		{
@@ -264,6 +265,12 @@
 
 	"COLORLESS:UNCOMMON":
 	{
+		"animator:AiKizuna":
+		{
+			"FLAVOR_TEXT": "'Listen uuuuuuuuuuup!!!  Right now, I'm mad!  It never ends...  It's on every single video... 'Did they change the person behind Kizuna Ai?'  'Aren't there four Kizuna Ais?'  'Her voice did change!'  'She sounds so different now, lol!' 'Meh, I preferred the original Kizuna Ai!'  These comments JUST KEEP COMING!!!  WAAAAAAAAAA!!!  You don't even do your research before you hit your keyboard!'",
+			"DESCRIPTION": "Unplayable. || When Sealed: Obtain 1 out of !M! random Upgraded cards.",
+			"NAME": "Kizuna Ai"
+		},
 		"animator:Bennett":
 		{
 			"FLAVOR_TEXT": "'I'm the leader of Benny's Adventure Team — a rising star in the Mondstadt Adventurers' Guild! ...Where are the others? Ah, haha, they're all on leave right now!'",
@@ -296,26 +303,28 @@
 			"DESCRIPTION": "Cycle 1 random card. Gain !M! [E]. Raise the cost of a random card by 1 this turn.",
 			"NAME": "Haruko Haruhara"
 		},
+		"animator:Hibiki":
+		{
+			"FLAVOR_TEXT": "'After experiencing several battles, I was unable to accompany the Yamato Surface Special Attack Force due to repairs.  I was handed over to the Soviet Union as a prize of war, and was given a name that means 'Faithful' in Russian.'",
+			"DESCRIPTION": "Increase this card's number of {Attacks} by !S! this combat.",
+			"NAME": "Hibiki"
+		},
 		"animator:KaeyaAlberich":
 		{
 			"FLAVOR_TEXT": "'Kaeya, Knight of Favonius. Please allow me to join you on your journey. Guarding you on your journey sounds far more entertaining than any of the usual Favonius stuff.'",
 			"DESCRIPTION": "This card gains [Block] an extra time for each {Orb}. || On Discard or Exhaust: Channel [Frost].",
 			"NAME": "Kaeya Alberich"
 		},
-		"animator:Kirito":
-		{
-			"FLAVOR_TEXT": "'No matter what, my heart will be forever yours, and I will fight until the day I see you again.'",
-			"DESCRIPTION": "Deal additional damage equal to the enemy's current attack damage.",
-			"NAME": "Kirito"
-		},
 		"animator:Kuroyukihime":
 		{
-			"DESCRIPTION": "Discard !M! cards to obtain {Black Lotus}. || !A! [M]: Upgrade it.",
+			"FLAVOR_TEXT": "'You see... what I'm about to do... is send you an application.  I'm sending it directly to your neural linker.  If you accept it, your current reality will be destroyed.  Rebuilt in its place will be a world like you have never dreamed of.'",
+			"DESCRIPTION": "Discard !M! cards to obtain {Black Lotus}{+}.",
 			"NAME": "Kuroyukihime"
 		},
 		"animator:Kuroyukihime_BlackLotus":
 		{
-			"DESCRIPTION": "Gain [R] [G]. || !A! [G]: <DRW-2>, then increase [G] requirement by 1.",
+			"FLAVOR_TEXT": "'The time has come.  I must leave my peaceful cocoon and aim for the sky once again.'",
+			"DESCRIPTION": "!A! [G]: <DRW-2>, Gain [G], then increase [G] requirement by 1.",
 			"NAME": "Black Lotus"
 		},
 		"animator:LestKarr":
@@ -326,7 +335,8 @@
 		},
 		"animator:LimeBell":
 		{
-			"DESCRIPTION": "Convert up to !M! [Block] into [THP]. || Reload: Gain !S! [L].",
+			"FLAVOR_TEXT": "'Hey, aren't me and Haru supposed to be in some kind of duel right about now?'",
+			"DESCRIPTION": "Convert up to !M! [Block] into [THP].",
 			"NAME": "Lime Bell"
 		},
 		"animator:LisaMinci":
@@ -337,12 +347,14 @@
 		},
 		"animator:Magilou":
 		{
-			"DESCRIPTION": "Trigger your first orb !M! time(s), then Evoke it. || <LIM>. When Drawn: Discard this and add {Bienfu} to your hand.",
-			"NAME": "Magilou"
+			"FLAVOR_TEXT": "'I suppose you'll never understand. People can be so miserable. Not that it matters, really.'",
+			"DESCRIPTION": "Trigger your first orb !M! time(s), then Evoke it. || <LIM>. When Drawn: Discard this and add {Bienfu}{+} to your hand.",
+			"NAME": "Magilou Mayvin"
 		},
 		"animator:Magilou_Bienfu":
 		{
-			"DESCRIPTION": "Unplayable. || When Drawn: Boost [B]. When Discarded: Move this to your draw pile and give it {~Haste}.",
+			"FLAVOR_TEXT": "'Bieeeeen! The bad bad days are here again!'",
+			"DESCRIPTION": "Unplayable. || When Drawn: Gain !M! [B]. || When Discarded: Move this to your draw pile and give it {~Haste}.",
 			"NAME": "Bienfu"
 		},
 		"animator:MamizouFutatsuiwa":
@@ -353,13 +365,15 @@
 		},
 		"animator:MisaKurobane":
 		{
-			"DESCRIPTION": "<DRW-M>. Channel 1 [Fire]. || !A! [L]: Add {Yusarin}{+} to your draw pile.",
+			"FLAVOR_TEXT": "'Of course, I am Yusa Nishimori, the real Yusarin, who else?  And in order to ensure my success, I am willing to kill anyone who gets in my way, like them!'",
+			"DESCRIPTION": "<DRW-M>. Channel 1 [Fire]. || !A! [L]: Add {Yusa Nishimori}{+} to your draw pile.",
 			"NAME": "Misa Kurobane"
 		},
 		"animator:MisaKurobane_Yusarin":
 		{
+			"FLAVOR_TEXT": "'I guess you can call it 'sleepwalking'... I've been falling asleep without realizing it, and then when I wake up, I'm somewhere else, with no idea how I got there!'",
 			"DESCRIPTION": "<DRW>. Motivate !M!.",
-			"NAME": "Yusarin"
+			"NAME": "Yusa Nishimori"
 		},
 		"animator:MisakiNakahara":
 		{
@@ -390,15 +404,10 @@
 			"DESCRIPTION": "Attack 1 additional time for each unique orb Channeled this combat.",
 			"NAME": "Patchouli Knowledge"
 		},
-		"animator:AiKizuna":
-		{
-			"FLAVOR_TEXT": "'Listen uuuuuuuuuuup!!!  Right now, I'm mad!  It never ends...  It's on every single video... 'Did they change the person behind Kizuna Ai?'  'Aren't there four Kizuna Ais?'  'Her voice did change!'  'She sounds so different now, lol!' 'Meh, I preferred the original Kizuna Ai!'  These comments JUST KEEP COMING!!!  WAAAAAAAAAA!!!  You don't even do your research before you hit your keyboard!'",
-			"DESCRIPTION": "Unplayable. || When Sealed: Obtain 1 out of !M! random Upgraded cards.",
-			"NAME": "Kizuna Ai"
-		},
 		"animator:Shimakaze":
 		{
-			"DESCRIPTION": "Gain|Boost [G]. || <DRW-M>. Add 1 Dazed to your draw pile.",
+			"FLAVOR_TEXT": "'I am Shimakaze, the Shimakaze-class ship that was developed as the pinnacle of destroyers, fast and armed with heavy torpedos.  After all, I can go faster than 40 knots.  However, I wasn't suited for mass production so I was the only one built.'",
+			"DESCRIPTION": "<DRW-M>. Add {Dazed} to your draw pile.",
 			"NAME": "Shimakaze"
 		},
 		"animator:Urushihara":

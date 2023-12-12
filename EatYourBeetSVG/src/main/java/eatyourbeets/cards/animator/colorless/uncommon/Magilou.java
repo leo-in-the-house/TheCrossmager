@@ -19,17 +19,16 @@ public class Magilou extends AnimatorCard implements OnCardResetListener
             
             .SetColor(CardColor.COLORLESS)
             .SetSeries(CardSeries.TalesOfBerseria)
-            .PostInitialize(data -> data.AddPreview(new Magilou_Bienfu(), false));
+            .PostInitialize(data -> data.AddPreview(new Magilou_Bienfu(), true));
 
     public Magilou()
     {
         super(DATA);
 
         Initialize(0, 0, 2);
-        SetUpgrade(0, 0, 1);
+        SetUpgrade(0, 0, 2);
 
         SetAffinity_Blue(1);
-        SetAffinity_Black(1);
 
         SetExhaust(true);
     }

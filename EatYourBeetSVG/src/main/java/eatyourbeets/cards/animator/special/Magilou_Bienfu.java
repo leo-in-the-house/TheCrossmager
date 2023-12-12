@@ -4,11 +4,11 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.colorless.uncommon.Magilou;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Magilou_Bienfu extends AnimatorCard
 {
@@ -21,23 +21,17 @@ public class Magilou_Bienfu extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 0);
+        Initialize(0, 0, 2);
+        SetUpgrade(0, 0, 2);
 
         SetAffinity_Blue(1);
-
-        SetEthereal(true);
-    }
-
-    @Override
-    protected void OnUpgrade()
-    {
-        SetEthereal(false);
+        SetHaste(true);
     }
 
     @Override
     public void triggerWhenDrawn()
     {
-        GameActions.Bottom.GainBlue(1, true);
+        GameActions.Bottom.GainBlue(magicNumber, true);
     }
 
     @Override

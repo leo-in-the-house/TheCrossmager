@@ -20,20 +20,19 @@ public class Shimakaze extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(2, 2, 3);
-        SetUpgrade(1, 1);
+        Initialize(3, 3, 3);
+        SetUpgrade(1, 1, 1);
         
-        SetAffinity_Green(1);
+        SetAffinity_Green(1, 0, 1);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.GainBlock(block);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.BLUNT_LIGHT);
+        GameActions.Bottom.GainBlock(block);
 
-        GameActions.Bottom.GainAffinity(Affinity.Green, 1, upgraded);
         GameActions.Bottom.Draw(magicNumber);
         GameActions.Bottom.MakeCardInDrawPile(new Status_Dazed());
     }
