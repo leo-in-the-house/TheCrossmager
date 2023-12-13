@@ -14,7 +14,7 @@ import eatyourbeets.utilities.RotatingList;
 public class Zero extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Zero.class)
-            .SetSkill(0, CardRarity.UNCOMMON)
+            .SetSkill(1, CardRarity.UNCOMMON)
             .SetColor(CardColor.COLORLESS)
             .SetSeries(CardSeries.GrimoireOfZero);
 
@@ -35,17 +35,16 @@ public class Zero extends AnimatorCard
     protected void OnUpgrade()
     {
         SetExhaust(false);
-        SetFading(true);
+        SetHaste(true);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.GainBlue(1, upgraded);
         GameActions.Bottom.PlayFromPile(name, 1, m, p.drawPile)
         .SetOptions(true, false)
-        .SetFilter(c -> c.type == CardType.SKILL);
+        .SetFilter(c -> c.type == CardType.SKILL && GameUtilities.IsHighCost(c));
     }
 
     protected void FindCards(RotatingList<AbstractCard> cards, AbstractMonster target)
@@ -53,7 +52,7 @@ public class Zero extends AnimatorCard
         cards.Clear();
         for (AbstractCard c : player.drawPile.group)
         {
-            if (c.type == CardType.SKILL && GameUtilities.IsPlayable(c, target) && !c.tags.contains(VOLATILE))
+            if (c.type == CardType.SKILL && GameUtilities.IsHighCost(c) && GameUtilities.IsPlayable(c, target) && !c.tags.contains(VOLATILE))
             {
                 cards.Add(c);
             }

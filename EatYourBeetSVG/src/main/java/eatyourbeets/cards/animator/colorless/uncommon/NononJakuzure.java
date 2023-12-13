@@ -1,11 +1,9 @@
 package eatyourbeets.cards.animator.colorless.uncommon;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.interfaces.subscribers.OnAffinitySealedSubscriber;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
@@ -14,7 +12,7 @@ import eatyourbeets.utilities.GameUtilities;
 public class NononJakuzure extends AnimatorCard implements OnAffinitySealedSubscriber
 {
     public static final EYBCardData DATA = Register(NononJakuzure.class)
-            .SetSkill(2, CardRarity.UNCOMMON, EYBCardTarget.None)
+            .SetSkill(3, CardRarity.UNCOMMON, EYBCardTarget.None)
             .SetColor(CardColor.COLORLESS)
             .SetSeries(CardSeries.KillLaKill);
 
@@ -23,16 +21,11 @@ public class NononJakuzure extends AnimatorCard implements OnAffinitySealedSubsc
         super(DATA);
 
         Initialize(0, 0, 2, 1);
+        SetCostUpgrade(-1);
 
-        SetAffinity_Green(1);
+        SetAffinity_Yellow(2);
         
         SetExhaust(true);
-    }
-
-    @Override
-    protected void OnUpgrade()
-    {
-        SetRetainOnce(true);
     }
 
     @Override
@@ -46,9 +39,11 @@ public class NononJakuzure extends AnimatorCard implements OnAffinitySealedSubsc
     }
 
     @Override
-    public void OnLateUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
+    public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
-        GameActions.Bottom.Cycle(name, magicNumber)
+        GameUtilities.PlayVoiceSFX(name);
+
+        GameActions.Bottom.Draw(magicNumber)
         .AddCallback(() ->
         { //
             GameActions.Top.Motivate(1)

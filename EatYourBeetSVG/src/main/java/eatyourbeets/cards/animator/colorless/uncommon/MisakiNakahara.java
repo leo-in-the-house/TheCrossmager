@@ -1,4 +1,4 @@
-package eatyourbeets.cards_beta;
+package eatyourbeets.cards.animator.colorless.uncommon;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import eatyourbeets.utilities.GameUtilities;
@@ -25,6 +25,7 @@ public class MisakiNakahara extends AnimatorCard implements Hidden //TODO:
         super(DATA);
 
         Initialize(0, 0, 2);
+        SetUpgrade(0, 0, 1);
 
         SetAffinity_White(1);
 

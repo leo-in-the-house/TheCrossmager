@@ -377,12 +377,14 @@
 		},
 		"animator:MisakiNakahara":
 		{
+			"FLAVOR_TEXT": "'People who neglect to make efforts or who don't take any actions at all are always the ones who dream that someday they will suddenly become wildly successful.'",
 			"DESCRIPTION": "Choose and add 1 of !M! Colorless cards to your draw pile. || The first time you draw it: Motivate 1.",
 			"NAME": "Misaki Nakahara"
 		},
 		"animator:NononJakuzure":
 		{
-			"DESCRIPTION": "Cycle !M! card(s). Motivate !S!. || Whenever you Seal another card in hand: Raise this card's Motivate amount by 1.",
+			"FLAVOR_TEXT": "'Bite me!  And if you bring it up again, I'm gonna switch out your lenses with non-prescription ones, you four-eyed nerd!'",
+			"DESCRIPTION": "Draw !M! card(s). Motivate !S!. || Whenever you Seal another card in hand: Raise this card's Motivate amount by 1.",
 			"NAME": "Nonon Jakuzure"
 		},
 		"animator:OrikoMikuni":
@@ -412,8 +414,9 @@
 		},
 		"animator:Urushihara":
 		{
-			"DESCRIPTION": "Channel 1 [Dark]. || Deal damage after !M! to !S! turns.",
-			"NAME": "Urushihara"
+			"FLAVOR_TEXT": "'Laziness is such an ugly word.  I prefer 'selective participation'.'",
+			"DESCRIPTION": "Channel [Dark]. || Deal damage after !M! to !S! turns.",
+			"NAME": "Hanzou Urushihara"
 		},
 		"animator:Valeria":
 		{
@@ -429,7 +432,7 @@
 		},
 		"animator:Zero":
 		{
-			"DESCRIPTION": "Gain|Boost [B] || Play a random {Skill} from your draw pile.",
+			"DESCRIPTION": "Play a random {High-Cost} {Skill} from your draw pile.",
 			"NAME": "Zero"
 		}
 	},
