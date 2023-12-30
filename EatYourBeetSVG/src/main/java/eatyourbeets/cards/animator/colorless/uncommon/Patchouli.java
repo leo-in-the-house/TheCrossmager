@@ -37,7 +37,7 @@ public class Patchouli extends AnimatorCard
         super(DATA);
 
         Initialize(15, 0, 1);
-        SetUpgrade(0, 0, 0);
+        SetUpgrade(12, 0, 0);
 
         SetAffinity_Blue(1, 0, 1);
         SetAffinity_Red(1, 0, 1);
