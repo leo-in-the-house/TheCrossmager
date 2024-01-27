@@ -1,15 +1,14 @@
 package eatyourbeets.cards.animator.colorless.rare;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.CardSelection;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class HououinKyouma extends AnimatorCard
 {
@@ -22,10 +21,12 @@ public class HououinKyouma extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 0, 9);
-        SetUpgrade(0, 0, -3);
+        Initialize(0, 0);
+        SetUpgrade(0, 0);
 
-        SetAffinity_Blue(2);
+        SetAffinity_Teal(1);
+
+        SetEthereal(true);
 
         SetPurge(true);
     }
@@ -33,15 +34,8 @@ public class HououinKyouma extends AnimatorCard
     @Override
     protected void OnUpgrade()
     {
-        SetRetainOnce(true);
-    }
-
-    @Override
-    protected void Refresh(AbstractMonster enemy)
-    {
-        super.Refresh(enemy);
-
-        SetUnplayable(player.drawPile.size() < magicNumber);
+        SetEthereal(false);
+        SetRetain(true);
     }
 
     @Override

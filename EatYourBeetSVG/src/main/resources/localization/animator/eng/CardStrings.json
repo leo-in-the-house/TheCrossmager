@@ -180,8 +180,9 @@
 		},
 		"animator:HououinKyouma":
 		{
-			"DESCRIPTION": "Unplayable unless you have at least !M! cards in draw pile. Choose 1 card you played this combat: Add a copy to the bottom of your draw pile.",
-			"NAME": "Hououin Kyouma"
+			"FLAVOR_TEXT": "'It is those who possess wisdom who are the greatest fools.  History has shown us this.  You could say that this is the final warning from god to those who resist.'",
+			"DESCRIPTION": "Choose 1 card you played this combat: Add a copy to the bottom of your draw pile.",
+			"NAME": "Rintaro Okabe"
 		},
 		"animator:Kira":
 		{
