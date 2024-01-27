@@ -1,17 +1,18 @@
 package eatyourbeets.cards.animator.special;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.colorless.rare.TanyaDegurechaff;
 import eatyourbeets.cards.base.*;
+import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class TanyaDegurechaff_Type95 extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(TanyaDegurechaff_Type95.class)
-            .SetSkill(2, CardRarity.SPECIAL, EYBCardTarget.None)
+            .SetSkill(1, CardRarity.SPECIAL, EYBCardTarget.None)
             .SetColor(CardColor.COLORLESS)
             .SetSeries(TanyaDegurechaff.DATA.Series);
 
@@ -19,37 +20,36 @@ public class TanyaDegurechaff_Type95 extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 0, 3, 1);
+        Initialize(0, 0);
+        SetCostUpgrade(-1);
 
-        SetAffinity_Black(1);
-        SetAffinity_White(1);
+        SetAffinity_Red(1);
 
         SetExhaust(true);
     }
 
     @Override
-    protected void OnUpgrade()
-    {
-        SetRetainOnce(true);
-    }
-
-    @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
-        GameUtilities.PlayVoiceSFX(name);
-        for (Affinity a : Affinity.Basic())
-        {
-            GameActions.Bottom.GainAffinity(a, magicNumber, false);
+        int affinityLevel = CombatStats.Affinities.GetAffinityLevel(Affinity.Red);
+
+        if (affinityLevel > 9) {
+            affinityLevel = 9;
         }
 
-        GameActions.Bottom.SelectFromHand(name, 1, false)
-        .SetFilter(c -> c instanceof EYBCard && ((EYBCard) c).CanScale())
-        .AddCallback(cards ->
-        {
-            for (AbstractCard c : cards)
+        if (affinityLevel > 0) {
+            GameUtilities.PlayVoiceSFX(name);
+
+            int curAffinityLevel = affinityLevel;
+            GameActions.Bottom.SelectFromHand(name, 1, false)
+            .SetFilter(c -> c instanceof EYBCard && ((EYBCard) c).CanScale())
+            .AddCallback(cards ->
             {
-                GameActions.Top.IncreaseScaling(c, Affinity.Star, secondaryValue);
-            }
-        });
+                for (AbstractCard c : cards)
+                {
+                    GameActions.Top.IncreaseScaling(c, Affinity.Red, curAffinityLevel);
+                }
+            });
+        }
     }
 }

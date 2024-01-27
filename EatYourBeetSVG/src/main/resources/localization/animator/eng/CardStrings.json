@@ -185,8 +185,9 @@
 		},
 		"animator:Kira":
 		{
-			"DESCRIPTION": "The enemy gains !S! [Strength] and dies after a certain number of turns (Hover the enemy to check). || <LIM>. Gain Max [HP] equal to half the number of turns.",
-			"EXTENDED_DESCRIPTION": ["Gain {0} Max [HP]. || ", "The enemy gains !S! [Strength] and dies after !M! turn(s)."],
+			"FLAVOR_TEXT": "'Look around you, and all you will see are people the world would be better off without.'",
+			"DESCRIPTION": "The enemy gains !S! [Strength] and dies after a certain number of turns (Hover the enemy to check).",
+			"EXTENDED_DESCRIPTION": ["The enemy gains !S! [Strength] and dies after !M! turn(s)."],
 			"NAME": "Light Yagami"
 		},
 		"animator:Kirito":
@@ -204,6 +205,7 @@
 		},
 		"animator:Lelouch":
 		{
+			"FLAVOR_TEXT": "'I must spill yet more blood, so the blood already spilt will not be in vain.'",
 			"DESCRIPTION": "Exhaust !M! random cards to make ALL enemies attack themselves this turn, the enemies who are not attacking are Stunned.",
 			"NAME": "Lelouch"
 		},
@@ -223,29 +225,33 @@
 		},
 		"animator:SakuraKinomoto":
 		{
-			"DESCRIPTION": "Deal 1 additional damage for each card in your deck. || <LIM>. If this card kills an Elite or Boss: Choose 1 of !S! cards to add to your deck.",
+			"FLAVOR_TEXT": "'I don't want to be your master.  I want to be your friend.'",
+			"DESCRIPTION": "<LIM>. If this card kills an Elite or Boss: Choose 1 of !S! {Rare} cards to add to your deck.",
 			"NAME": "Sakura Kinomoto"
 		},
 		"animator:ShuuOuma":
 		{
-			"DESCRIPTION": "Fetch 1 {Power} from your draw pile and take [DD] equal to twice its cost. || This turn, when you play a {Power}: Boost [R] [B] [D].",
-			"EXTENDED_DESCRIPTION": ["This turn, whenever you play a #yPower: #yBoost [D] [B] [R] #b{0} time(s)."],
+			"FLAVOR_TEXT": "'The right to use my friends as a weapon, that is the sinful crown I shall adorn.'",
+			"DESCRIPTION": "Fetch 1 {Power} from your draw pile and take [DD] equal to twice its cost. It costs 0 to play this turn.",
 			"NAME": "Shuu Ouma"
 		},
 		"animator:TakanashiRikka":
 		{
+			"FLAVOR_TEXT": "'Reality rejected... synapses shattered... be vanished from this world!'",
 			"DESCRIPTION": "Imitate all {Attacks} in your hand. || Whenever you play an {Attack} this turn: Gain !M! [Block].",
 			"EXTENDED_DESCRIPTION": ["Whenever you play an #yAttack this turn: Gain {0} [Block]."],
 			"NAME": "Rikka Takanashi"
 		},
 		"animator:TanyaDegurechaff":
 		{
-			"DESCRIPTION": "Discard the top !M! {Hindrances} of your draw pile. || <LIM>. !A! [S]: Add {Type 95} to your draw pile.",
+			"FLAVOR_TEXT": "'You should try persuasion when people are mentally defenseless.  The fascist who proposed that was a demonic genius.'",
+			"DESCRIPTION": "Discard the top !M! {Hindrances} from your discard pile, and gain [R] for each {Hindrance} discarded this way. || !A! [R]: Add {Type 95}{+} to your draw pile.",
 			"NAME": "Tanya Degurechaff"
 		},
 		"animator:TanyaDegurechaff_Type95":
 		{
-			"DESCRIPTION": "Gain !M! of each [W]. || Give a card in your hand +!S! [M] scaling.",
+			"FLAVOR_TEXT": "'They say a thin line separates genius and madness.'",
+			"DESCRIPTION": "Give a card in your hand that can scale [R] scaling equal to your current [R] (to a max of 9).",
 			"NAME": "Type 95"
 		},
 		"animator:Yoimiya":

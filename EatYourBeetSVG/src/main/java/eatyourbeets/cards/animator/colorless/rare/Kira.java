@@ -9,15 +9,16 @@ import com.megacrit.cardcrawl.powers.FadingPower;
 import com.megacrit.cardcrawl.vfx.CollectorCurseEffect;
 import eatyourbeets.actions.utility.WaitRealtimeAction;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardSeries;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.SFX;
 import eatyourbeets.monsters.Bosses.TheUnnamed;
-import eatyourbeets.powers.CombatStats;
 import eatyourbeets.powers.replacement.GenericFadingPower;
-import eatyourbeets.utilities.*;
+import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameEffects;
+import eatyourbeets.utilities.GameUtilities;
+import eatyourbeets.utilities.Mathf;
 
 public class Kira extends AnimatorCard
 {
@@ -131,11 +132,6 @@ public class Kira extends AnimatorCard
                 m.powers.add(new GenericFadingPower(m, countdown));
             }
         }
-
-        if (info.TryActivateLimited())
-        {
-            player.increaseMaxHp(GetMaxHpBonus(countdown), true);
-        }
     }
 
     private void UpdateCurrentEffect(AbstractMonster monster)
@@ -144,11 +140,7 @@ public class Kira extends AnimatorCard
 
         if (magicNumber > 0)
         {
-            String text = cardData.Strings.EXTENDED_DESCRIPTION[1];
-            if (CombatStats.CanActivateLimited(cardID))
-            {
-                text = JUtils.Format(cardData.Strings.EXTENDED_DESCRIPTION[0], GetMaxHpBonus(magicNumber)) + text;
-            }
+            String text = cardData.Strings.EXTENDED_DESCRIPTION[0];
             cardText.OverrideDescription(text, true);
         }
         else

@@ -4,7 +4,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.special.TanyaDegurechaff_Type95;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.CardSelection;
 import eatyourbeets.utilities.GameActions;
@@ -14,22 +13,21 @@ public class TanyaDegurechaff extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(TanyaDegurechaff.class)
             .SetAttack(1, CardRarity.RARE, EYBAttackType.Ranged)
-            
             .SetColor(CardColor.COLORLESS)
             .SetSeries(CardSeries.YoujoSenki)
-            .PostInitialize(data -> data.AddPreview(new TanyaDegurechaff_Type95(), false));
+            .PostInitialize(data -> data.AddPreview(new TanyaDegurechaff_Type95(), true));
 
     public TanyaDegurechaff()
     {
         super(DATA);
 
-        Initialize(7, 0, 2);
-        SetUpgrade(4, 0, 0);
+        Initialize(4, 0, 3);
+        SetUpgrade(3, 0, 1);
 
-        SetAffinity_Green(2, 0, 1);
-        SetAffinity_Blue(2, 0, 1);
+        SetAffinity_Red(1, 0, 1);
+        SetAffinity_Violet(1, 0, 0);
 
-        SetAffinityRequirement(Affinity.Sealed, 2);
+        SetAffinityRequirement(Affinity.Red, 5);
     }
 
     @Override
@@ -41,11 +39,17 @@ public class TanyaDegurechaff extends AnimatorCard
         GameActions.Bottom.DiscardFromPile(name, magicNumber, p.drawPile)
         .ShowEffect(true, true)
         .SetFilter(GameUtilities::IsHindrance)
-        .SetOptions(CardSelection.Top, true);
+        .SetOptions(CardSelection.Top, true)
+        .AddCallback(cards -> {
+            if (cards.size() > 0) {
+                GameActions.Top.GainRed(cards.size());
+            }
+        });
 
         if (CheckSpecialCondition(false))
         {
-            GameActions.Bottom.MakeCardInDrawPile(new TanyaDegurechaff_Type95());
+            GameActions.Bottom.MakeCardInDrawPile(new TanyaDegurechaff_Type95())
+                    .SetUpgrade(true, true);
         }
     }
 

@@ -24,12 +24,12 @@ public class Kirito extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(2, 0, 2);
+        Initialize(2, 0);
         SetCostUpgrade(-1);
 
         SetAffinity_White(1, 0, 1);
-        SetAffinity_Red(1);
-        SetAffinity_Green(1);
+        SetAffinity_Green(1, 0, 0);
+        SetAffinity_Red(1, 0, 0);
     }
 
     @Override

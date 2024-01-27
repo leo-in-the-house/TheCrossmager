@@ -1,18 +1,17 @@
 package eatyourbeets.cards.animator.colorless.rare;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.effects.AttackEffects;
-import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class ShuuOuma extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(ShuuOuma.class)
-            .SetSkill(0, CardRarity.RARE, EYBCardTarget.None)
+            .SetSkill(1, CardRarity.RARE, EYBCardTarget.None)
             .SetColor(CardColor.COLORLESS)
             .SetSeries(CardSeries.GuiltyCrown);
 
@@ -22,10 +21,12 @@ public class ShuuOuma extends AnimatorCard
 
         Initialize(0, 0, 1);
 
-        SetAffinity_White(1);
+        SetAffinity_Pink(1);
         SetAffinity_Black(1);
+        SetCostUpgrade(-1);
 
-        SetExhaust(true);
+        SetRetain(true);
+        SetFading(true);
 
         SetCardPreview(c -> c.type == CardType.POWER);
     }
@@ -40,7 +41,6 @@ public class ShuuOuma extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
-        GameActions.Bottom.StackPower(new ShuuOumaPower(player, 1));
         GameActions.Bottom.FetchFromPile(name, magicNumber, player.drawPile)
         .SetOptions(false, false)
         .SetFilter(c -> c.type.equals(CardType.POWER))
@@ -53,39 +53,8 @@ public class ShuuOuma extends AnimatorCard
                 {
                     GameActions.Bottom.TakeDamageAtEndOfTurn(damage, AttackEffects.DARK);
                 }
+                c.setCostForTurn(0);
             }
         });
-    }
-
-    public static class ShuuOumaPower extends AnimatorPower
-    {
-        public ShuuOumaPower(AbstractPlayer owner, int amount)
-        {
-            super(owner, ShuuOuma.DATA);
-
-            Initialize(amount);
-        }
-
-        @Override
-        public void atEndOfTurn(boolean isPlayer)
-        {
-            super.atEndOfTurn(isPlayer);
-
-            RemovePower();
-        }
-
-        @Override
-        public void onAfterCardPlayed(AbstractCard card)
-        {
-            super.onAfterCardPlayed(card);
-
-            if (card.type.equals(CardType.POWER))
-            {
-                GameActions.Bottom.GainBlack(amount, true);
-                GameActions.Bottom.GainBlue(amount, true);
-                GameActions.Bottom.GainRed(amount, true);
-                this.flashWithoutSound();
-            }
-        }
     }
 }

@@ -20,12 +20,13 @@ public class TakanashiRikka extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 0, 1);
-        SetUpgrade(0, 0, 1);
+        Initialize(0, 0, 2);
+        SetUpgrade(0, 0, 3);
 
+        SetAffinity_Black(1);
         SetAffinity_White(1);
 
-        SetExhaust(true);
+        SetFading(true);
     }
 
     @Override

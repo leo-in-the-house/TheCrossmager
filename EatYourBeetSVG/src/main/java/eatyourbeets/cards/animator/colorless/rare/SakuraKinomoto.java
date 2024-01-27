@@ -3,12 +3,11 @@ package eatyourbeets.cards.animator.colorless.rare;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.effects.SFX;
 import eatyourbeets.effects.VFX;
 import eatyourbeets.powers.CombatStats;
@@ -28,12 +27,11 @@ public class SakuraKinomoto extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(2, 0, 0, 4);
-        SetUpgrade(4, 0, 0, 0);
+        Initialize(18, 0, 0, 3);
+        SetUpgrade(8, 0, 0, 2);
 
-        SetAffinity_Blue(2, 0, 4);
-
-        SetExhaust(true);
+        SetAffinity_Pink(2, 0, 2);
+        SetAffinity_Blue(1, 0, 1);
 
         SetObtainableInCombat(false);
     }
@@ -58,7 +56,7 @@ public class SakuraKinomoto extends AnimatorCard
                 final CardGroup choices = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
                 for (int i = 0; i < secondaryValue; i++)
                 {
-                    final AbstractCard card = GR.Common.Dungeon.GetRandomRewardCard(choices.group, false, true);
+                    final AbstractCard card = AbstractDungeon.getCard(CardRarity.RARE).makeCopy();
                     if (card != null)
                     {
                         choices.group.add(card);
