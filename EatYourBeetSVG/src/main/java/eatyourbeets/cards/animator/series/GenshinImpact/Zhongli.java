@@ -57,7 +57,7 @@ public class Zhongli extends AnimatorCard
         {
             super(owner, Zhongli.DATA, PowerTriggerConditionType.Energy, POWER_ENERGY_COST);
 
-            this.triggerCondition.SetUses(amount, false, true);
+            this.triggerCondition.SetUses(amount, true, true);
             canBeZero = true;
             Initialize(amount);
         }
