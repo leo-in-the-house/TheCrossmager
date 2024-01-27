@@ -1,6 +1,5 @@
-package eatyourbeets.cards.animator.colorless.uncommon;
+package eatyourbeets.cards.animator.tokens;
 
-import eatyourbeets.cards.animator.tokens.AffinityToken;
 import eatyourbeets.cards.base.Affinity;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
@@ -12,7 +11,7 @@ import eatyourbeets.utilities.GameActions;
 public class AffinityToken_General extends AffinityToken implements OnAddToDeckListener
 {
     public static final EYBCardData DATA = Register(AffinityToken_General.class)
-            .SetSkill(UNPLAYABLE_COST, CardRarity.UNCOMMON, EYBCardTarget.None)
+            .SetSkill(UNPLAYABLE_COST, CardRarity.SPECIAL, EYBCardTarget.None)
             .SetColor(CardColor.COLORLESS)
             .PostInitialize(data ->
             {
