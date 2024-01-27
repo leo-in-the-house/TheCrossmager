@@ -12,7 +12,7 @@ import eatyourbeets.utilities.GameUtilities;
 
 public class Tartaglia extends AnimatorCard {
     public static final EYBCardData DATA = Register(Tartaglia.class)
-            .SetSkill(2, CardRarity.UNCOMMON, EYBCardTarget.None)
+            .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None)
             .SetSeriesFromClassPackage();
 
     public Tartaglia() {
