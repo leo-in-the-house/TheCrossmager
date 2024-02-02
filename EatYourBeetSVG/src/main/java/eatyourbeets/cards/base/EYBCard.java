@@ -75,6 +75,7 @@ public abstract class EYBCard extends EYBCardBase implements OnStartOfTurnPostDr
     public final ArrayList<EYBCardTooltip> tooltips;
     public EYBCardTarget attackTarget = EYBCardTarget.Normal;
     public EYBAttackType attackType = EYBAttackType.Normal;
+    public EYBCard upgradeForm = null;
 
     public EYBCardCooldown cooldown;
     public boolean playAtEndOfTurn;
@@ -933,6 +934,11 @@ public abstract class EYBCard extends EYBCardBase implements OnStartOfTurnPostDr
 
         if (TryUpgrade())
         {
+            if (upgradeForm != null) {
+                GameActions.Bottom.ReplaceCard(uuid, upgradeForm.makeCopy());
+                return;
+            }
+
             if (upgrade_damage != 0)
             {
                 if (baseDamage < 0)
