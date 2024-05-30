@@ -104,8 +104,15 @@ public class RollingCubes extends AnimatorRelic
             }
         }
 
+        boolean upgraded = false;
         for (AbstractCard c : replacement) {
-            c.upgrade();
+            if (AbstractDungeon.actNum >= 3) {
+                c.upgrade();
+            }
+            else if (AbstractDungeon.actNum == 2 && !upgraded) {
+                c.upgrade();
+                upgraded = true;
+            }
         }
 
         return replacement;

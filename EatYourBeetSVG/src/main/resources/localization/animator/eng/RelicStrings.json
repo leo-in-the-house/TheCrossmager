@@ -215,7 +215,7 @@
 	},
 	"animator:RollingCubes":
 	{
-		"DESCRIPTIONS": ["Once per floor, you may reroll all cards in a #yNormal card reward for #yupgraded cards of your starting series. NL Gain #b{0} use when you enter #yElite or #yBoss rooms. Stores up to #b{1} uses."],
+		"DESCRIPTIONS": ["Once per floor, you may reroll all cards in a #yNormal card reward for cards of your starting series. NL Upgraded cards can appear in later acts. NL Gain #b{0} use when you enter #yElite or #yBoss rooms. Stores up to #b{1} uses."],
 		"FLAVOR": "A pair of die that draws from the power of many worlds.",
 		"NAME": "Crossmager's Die"
 	},
