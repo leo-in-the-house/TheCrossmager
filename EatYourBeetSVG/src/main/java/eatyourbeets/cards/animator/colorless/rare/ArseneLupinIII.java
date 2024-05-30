@@ -5,10 +5,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.RainingGoldEffect;
-import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.cards.base.CardUseInfo;
-import eatyourbeets.cards.base.EYBCardData;
-import eatyourbeets.cards.base.EYBCardTarget;
+import eatyourbeets.cards.base.*;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.effects.VFX;
 import eatyourbeets.utilities.GameActions;
@@ -27,6 +24,8 @@ public class ArseneLupinIII extends AnimatorCard {
         Initialize(0, 20, 5, 10);
         SetUpgrade(0, 0, 4, 5);
         SetAffinity_Yellow(2, 0, 1);
+
+        SetSeries(CardSeries.Lupin);
 
         SetPurge(true);
         SetHaste(true);

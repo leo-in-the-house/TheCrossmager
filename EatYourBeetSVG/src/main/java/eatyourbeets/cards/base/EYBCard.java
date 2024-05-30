@@ -1314,6 +1314,7 @@ public abstract class EYBCard extends EYBCardBase implements OnStartOfTurnPostDr
             {
                 tempDamage = p.atDamageFinalReceive(tempDamage, damageTypeForTurn, this);
             }
+            tempDamage = CombatStats.OnDamageOverride(enemy, damageTypeForTurn, tempDamage, this);
         }
 
         UpdateBlock(tempBlock);

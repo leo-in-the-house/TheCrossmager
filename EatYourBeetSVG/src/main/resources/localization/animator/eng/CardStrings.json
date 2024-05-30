@@ -164,12 +164,24 @@
 			"DESCRIPTION": "Reduce the cost of a random card to 0.",
 			"NAME": "Madness"
 		},
+		"animator:AsukaLangleySoryu":
+		{
+			"FLAVOR_TEXT": "''",
+			"DESCRIPTION": "!A! [T] [R]: Apply !M! [~Lock-On] to ALL enemies. || For the rest of the game, Attacks that hit enemies with [~Lock-On] ignore damage reduction.",
+			"NAME": "Asuka Langley Soryu"
+		},
 		"animator:Aru":
 		{
 			"FLAVOR_TEXT": "'Presents for good boys and girls.'",
 			"DESCRIPTION": "Discard all cards. Add !M! random card(s) to your hand.",
 			"NAME": "Aru",
 			"UPGRADE_DESCRIPTION": "Discard all cards. Add !M! random Upgraded card(s) to your hand."
+		},
+		"animator:Frieren":
+		{
+			"FLAVOR_TEXT": "''",
+			"DESCRIPTION": "At the start of your turn: Draw !M! card(s). || Whenever you play a card without Exhaust or Purge, gain [E] and it gains Exhaust.",
+			"NAME": "Frieren"
 		},
 		"animator:Gutrune":
 		{
@@ -229,6 +241,18 @@
 			"DESCRIPTION": "Whenever you hit the enemy, Apply [Poison]. || Whenever you gain [Block], Trigger 25% of the [Poison] on ALL enemies.",
 			"EXTENDED_DESCRIPTION": ["Whenever you hit the enemy, Apply #yPoison. || Whenever you gain #yBlock, Trigger #b{0}% of the #yPoison on ALL enemies."],
 			"NAME": "Medicine Melancholy"
+		},
+		"animator:Megunee":
+		{
+			"FLAVOR_TEXT": "'TODO'",
+			"DESCRIPTION": "When Exhausted: Put this card in your draw pile zombified after a random number of turns.",
+			"NAME": "Megu-Nee"
+		},
+		"animator:Megunee_Zombie":
+		{
+			"FLAVOR_TEXT": "'TODO'",
+			"DESCRIPTION": "If Fatal: Heal !M! [HP]. || {Ricochet} after a random amount of turns.",
+			"NAME": "Zombie Megu-Nee"
 		},
 		"animator:ResnaSternlicht":
 		{

@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.PetalEffect;
 import com.megacrit.cardcrawl.vfx.RainbowCardEffect;
 import eatyourbeets.cards.base.AnimatorCard;
+import eatyourbeets.cards.base.CardSeries;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.powers.AnimatorPower;
@@ -30,6 +31,9 @@ public class HatsuneMiku extends AnimatorCard {
         Initialize(0, 0, 0);
         SetUpgrade(0, 0, 0);
 
+        SetSeries(CardSeries.Vocaloid);
+
+        SetAffinity_Teal(1);
         SetEthereal(true);
     }
 

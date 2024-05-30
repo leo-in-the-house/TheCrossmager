@@ -115,6 +115,7 @@ public class CombatStats extends EYBPower implements InvisiblePower
     public static final GameEvent<OnStartOfTurnPostDrawSubscriber> onStartOfTurnPostDraw = RegisterEvent(new GameEvent<>());
     public static final GameEvent<OnEnergyRechargeSubscriber> onEnergyRecharge = RegisterEvent(new GameEvent<>());
     public static final GameEvent<OnPlayerMinionActionSubscriber> onPlayerMinionAction = RegisterEvent(new GameEvent<>());
+    public static final GameEvent<OnDamageOverrideSubscriber> onDamageOverride = RegisterEvent(new GameEvent<>());
     public static final GameEvent<OnEndOfTurnFirstSubscriber> onEndOfTurnFirst = RegisterEvent(new GameEvent<>());
     public static final GameEvent<OnEndOfTurnLastSubscriber> onEndOfTurnLast = RegisterEvent(new GameEvent<>());
     //
@@ -404,6 +405,16 @@ public class CombatStats extends EYBPower implements InvisiblePower
         }
 
         return b.getValue();
+    }
+
+    public static float OnDamageOverride(AbstractCreature target, DamageInfo.DamageType type, float damage, AbstractCard card)
+    {
+        for (OnDamageOverrideSubscriber s : onDamageOverride.GetSubscribers())
+        {
+            damage = s.OnDamageOverride(target, type, damage, card);
+        }
+
+        return damage;
     }
 
     public static void OnCardReset(AbstractCard card)
