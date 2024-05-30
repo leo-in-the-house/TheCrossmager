@@ -139,6 +139,12 @@
 
 	"COLORLESS:RARE":
 	{
+		"animator:ArseneLupinIII":
+		{
+			"FLAVOR_TEXT": "''",
+			"DESCRIPTION": "Reload: Deal !M! damage to a random enemy and gain !S! Gold.",
+			"NAME": "Arsene Lupin III"
+		},
 		"animator:AyakaKamisato":
 		{
 			"FLAVOR_TEXT": "'Today, as in the past, I aspire to be somebody whom everyone can trust. But what motivates me is no longer the responsibilities I shoulder, or the expectations of other people. Rather, it is the fact that you are this kind of person, too.'",
@@ -170,6 +176,13 @@
 			"FLAVOR_TEXT": "'I heard the Deep One’s voices... But the price I paid for eternal life was to join their ranks.  As a puppet of that evil, the great tree controlling my brother became anathema to me.  ...But even then, I went on with the hope of meeting my brother someday.  I yearned for him so...'",
 			"DESCRIPTION": "On Exhaust: Add {Deep Princess} to your draw pile.",
 			"NAME": "Gutrune"
+		},
+		"animator:HatsuneMiku":
+		{
+			"FLAVOR_TEXT": "''",
+			"DESCRIPTION": "Can only be played if your master deck contains exactly 39 cards. || Upgrade ALL cards everywhere. || All cards cost 0 when drawn.",
+			"EXTENDED_DESCRIPTION": ["All cards cost 0 when drawn."],
+			"NAME": "Hatsune Miku"
 		},
 		"animator:HornSkuld":
 		{
