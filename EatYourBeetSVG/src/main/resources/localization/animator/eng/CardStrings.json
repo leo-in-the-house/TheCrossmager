@@ -244,15 +244,21 @@
 		},
 		"animator:Megunee":
 		{
-			"FLAVOR_TEXT": "'TODO'",
+			"FLAVOR_TEXT": "''",
 			"DESCRIPTION": "When Exhausted: Put this card in your draw pile zombified after a random number of turns.",
 			"NAME": "Megu-Nee"
 		},
 		"animator:Megunee_Zombie":
 		{
-			"FLAVOR_TEXT": "'TODO'",
-			"DESCRIPTION": "If Fatal: Heal !M! [HP]. || {Ricochet} after a random amount of turns.",
+			"FLAVOR_TEXT": "''",
+			"DESCRIPTION": "If Fatal: Heal !M! [HP]. || {Ricochet} 2 into your draw pile.",
 			"NAME": "Zombie Megu-Nee"
+		},
+		"animator:MotokoKusanagi":
+		{
+			"FLAVOR_TEXT": "''",
+			"DESCRIPTION": "When Exhausted: Gain [Intangible]. || {Ricochet} !M!.",
+			"NAME": "Motoko Kusanagi"
 		},
 		"animator:ResnaSternlicht":
 		{

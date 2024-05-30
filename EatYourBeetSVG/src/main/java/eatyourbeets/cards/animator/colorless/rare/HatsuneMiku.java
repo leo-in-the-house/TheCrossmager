@@ -22,8 +22,7 @@ import java.util.List;
 public class HatsuneMiku extends AnimatorCard {
     public static final EYBCardData DATA = Register(HatsuneMiku.class)
             .SetPower(0, CardRarity.RARE)
-            .SetColor(CardColor.COLORLESS)
-            .SetSeriesFromClassPackage();
+            .SetColor(CardColor.COLORLESS);
 
     public HatsuneMiku() {
         super(DATA);

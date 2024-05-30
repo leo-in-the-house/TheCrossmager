@@ -12,8 +12,7 @@ import eatyourbeets.utilities.GameUtilities;
 public class Frieren extends AnimatorCard {
     public static final EYBCardData DATA = Register(Frieren.class)
             .SetPower(3, CardRarity.RARE)
-            .SetColor(CardColor.COLORLESS)
-            .SetSeriesFromClassPackage();
+            .SetColor(CardColor.COLORLESS);
 
     public Frieren() {
         super(DATA);

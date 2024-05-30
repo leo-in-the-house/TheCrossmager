@@ -15,8 +15,7 @@ import eatyourbeets.utilities.GameUtilities;
 public class ArseneLupinIII extends AnimatorCard {
     public static final EYBCardData DATA = Register(ArseneLupinIII.class)
             .SetSkill(2, CardRarity.RARE, EYBCardTarget.None)
-            .SetColor(CardColor.COLORLESS)
-            .SetSeriesFromClassPackage();
+            .SetColor(CardColor.COLORLESS);
 
     public ArseneLupinIII() {
         super(DATA);
