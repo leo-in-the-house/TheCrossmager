@@ -262,8 +262,8 @@
 		},
 		"animator:Lugia":
 		{
-			"FLAVOR_TEXT": "'TODO'",
-			"DESCRIPTION": "This card attacks an extra time for every !M! [Block] you have.",
+			"FLAVOR_TEXT": "''",
+			"DESCRIPTION": "This card attacks an extra time for every !S! [Block] you have.",
 			"NAME": "Lugia"
 		},
 		"animator:MotokoKusanagi":

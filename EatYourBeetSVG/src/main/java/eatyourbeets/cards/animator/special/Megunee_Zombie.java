@@ -15,7 +15,7 @@ import eatyourbeets.utilities.GameUtilities;
 public class Megunee_Zombie extends AnimatorCard {
     public static final EYBCardData DATA = Register(Megunee_Zombie.class)
             .SetAttack(-1, CardRarity.SPECIAL, EYBAttackType.Normal, EYBCardTarget.Random)
-            .SetSeriesFromClassPackage();
+            .SetSeries(CardSeries.GakkouGurashi);
 
     public Megunee_Zombie() {
         super(DATA);

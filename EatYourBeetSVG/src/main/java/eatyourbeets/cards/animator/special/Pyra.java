@@ -16,8 +16,7 @@ import eatyourbeets.utilities.GameUtilities;
 public class Pyra extends AnimatorCard {
     public static final EYBCardData DATA = Register(Pyra.class)
             .SetPower(2, CardRarity.SPECIAL)
-            .SetSeries(CardSeries.XenobladeChronicles)
-            .SetSeriesFromClassPackage();
+            .SetSeries(CardSeries.XenobladeChronicles);
 
     public Pyra() {
         super(DATA);
