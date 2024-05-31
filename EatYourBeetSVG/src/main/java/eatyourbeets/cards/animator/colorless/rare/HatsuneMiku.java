@@ -22,6 +22,7 @@ import java.util.List;
 public class HatsuneMiku extends AnimatorCard {
     public static final EYBCardData DATA = Register(HatsuneMiku.class)
             .SetPower(0, CardRarity.RARE)
+            .SetSeries(CardSeries.Vocaloid)
             .SetColor(CardColor.COLORLESS);
 
     public HatsuneMiku() {
@@ -29,8 +30,6 @@ public class HatsuneMiku extends AnimatorCard {
 
         Initialize(0, 0, 0);
         SetUpgrade(0, 0, 0);
-
-        SetSeries(CardSeries.Vocaloid);
 
         SetAffinity_Teal(1);
         SetEthereal(true);

@@ -11,8 +11,8 @@ import eatyourbeets.utilities.GameUtilities;
 public class MotokoKusanagi extends AnimatorCard {
     public static final EYBCardData DATA = Register(MotokoKusanagi.class)
             .SetAttack(1, CardRarity.RARE, EYBAttackType.Ranged, EYBCardTarget.Normal)
-            .SetColor(CardColor.COLORLESS)
-            .SetSeriesFromClassPackage();
+            .SetSeries(CardSeries.GhostInTheShell)
+            .SetColor(CardColor.COLORLESS);
 
     public MotokoKusanagi() {
         super(DATA);
@@ -20,7 +20,6 @@ public class MotokoKusanagi extends AnimatorCard {
         Initialize(4, 0, 4);
         SetUpgrade(0, 0, 1);
 
-        SetSeries(CardSeries.GhostInTheShell);
         SetExhaust(true);
         SetDelayed(true);
 

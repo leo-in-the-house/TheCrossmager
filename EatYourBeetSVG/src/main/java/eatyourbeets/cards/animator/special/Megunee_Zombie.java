@@ -2,7 +2,9 @@ package eatyourbeets.cards.animator.special;
 
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.utility.ShakeScreenAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.effects.VFX;
@@ -12,7 +14,7 @@ import eatyourbeets.utilities.GameUtilities;
 
 public class Megunee_Zombie extends AnimatorCard {
     public static final EYBCardData DATA = Register(Megunee_Zombie.class)
-            .SetAttack(1, CardRarity.SPECIAL, EYBAttackType.Normal, EYBCardTarget.Random)
+            .SetAttack(-1, CardRarity.SPECIAL, EYBAttackType.Normal, EYBCardTarget.Random)
             .SetSeriesFromClassPackage();
 
     public Megunee_Zombie() {
@@ -30,21 +32,27 @@ public class Megunee_Zombie extends AnimatorCard {
 
         SetAutoplayed(true);
         SetExhaust(true);
+        SetMultiDamage(true);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info) {
         GameUtilities.PlayVoiceSFX(name);
 
-        GameActions.Bottom.DealDamageToRandomEnemy(this, AbstractGameAction.AttackEffect.NONE)
-                .SetDamageEffect(e -> GameEffects.List.Add(VFX.Bite(e.hb, Color.RED)).duration)
-                .AddCallback(info, (info2, enemy) ->
-                {
-                    if (GameUtilities.IsFatal(enemy, true)) {
-                        GameActions.Bottom.Heal(magicNumber);
-                    }
-                });
 
+        int stacks = GameUtilities.UseXCostEnergy(this);
+
+        for (int i=0; i<stacks; i++) {
+            GameActions.Bottom.DealDamageToRandomEnemy(this, AbstractGameAction.AttackEffect.NONE)
+                    .SetDamageEffect(e -> GameEffects.List.Add(VFX.Bite(e.hb, Color.RED)).duration)
+                    .AddCallback(info, (info2, enemy) ->
+                    {
+                        if (GameUtilities.IsFatal(enemy, true)) {
+                            GameActions.Bottom.Heal(magicNumber);
+                        }
+                    });
+            GameActions.Bottom.Add(new ShakeScreenAction(0.5f, ScreenShake.ShakeDur.MED, ScreenShake.ShakeIntensity.LOW));
+        }
     }
 
     protected void OnCooldownCompleted(AbstractMonster m)

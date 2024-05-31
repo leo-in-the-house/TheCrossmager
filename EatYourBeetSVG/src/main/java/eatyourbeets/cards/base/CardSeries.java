@@ -80,6 +80,9 @@ public class CardSeries
     public final static CardSeries OrangeJuice = Add(63, "OrangeJuice");
     public final static CardSeries KizunaNoAllele = Add(64, "KizunaNoAllele");
     public final static CardSeries SousouNoFreiren = Add(65, "SousouNoFreiren");
+    public final static CardSeries XenobladeChronicles = Add(66, "XenobladeChronicles");
+    public final static CardSeries Pokemon = Add(67, "Pokémon");
+    public final static CardSeries PokemonReminiscencia = Add(68, "PokémonReminiscencia");
 
 
     private static AbstractCard currentSynergy = null;

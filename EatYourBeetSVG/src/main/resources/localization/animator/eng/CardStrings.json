@@ -254,11 +254,44 @@
 			"DESCRIPTION": "If Fatal: Heal !M! [HP]. || {Ricochet} 2 into your draw pile.",
 			"NAME": "Zombie Megu-Nee"
 		},
+		"animator:Lucius":
+		{
+			"FLAVOR_TEXT": "'TODO'",
+			"DESCRIPTION": "Can only be played if you have at least 5 {Colorless} or {Special} cards in your {Exhaust} pile. || Choose a {Colorless} or {Special} card in your exhaust pile and add a copy of it to your master deck.",
+			"NAME": "Lucius"
+		},
+		"animator:Lugia":
+		{
+			"FLAVOR_TEXT": "'TODO'",
+			"DESCRIPTION": "This card attacks an extra time for every !M! [Block] you have.",
+			"NAME": "Lugia"
+		},
 		"animator:MotokoKusanagi":
 		{
 			"FLAVOR_TEXT": "''",
-			"DESCRIPTION": "When Exhausted: Gain [Intangible]. || {Ricochet} !M!.",
+			"DESCRIPTION": "When Exhausted: Gain [~Intangible]. || {Ricochet} !M!.",
 			"NAME": "Motoko Kusanagi"
+		},
+		"animator:Mythra":
+		{
+			"FLAVOR_TEXT": "''",
+			"DESCRIPTION": "Start of Combat: If you have more <R> than <G> in your master deck: Transform this card to {Pyra}.",
+			"NAME": "Mythra"
+		},
+		"animator:NaoTomori":
+		{
+			"FLAVOR_TEXT": "''",
+			"DESCRIPTION": "<ST>: Transform a {Power} or {Rare} card into a {Normality} to gain [~Intangible].",
+			"EXTENDED_DESCRIPTION": ["Choose a Power or Rare card to transform into Normality."],
+			"NAME": "Nao Tomori"
+		},
+		"animator:Pyra":
+		{
+			"FLAVOR_TEXT": "''",
+			"DESCRIPTION": "When you play your first Skill with [Block] you play each turn: Gain [Flame Barrier] equal to its [Block].",
+			"UPGRADE_DESCRIPTION": "When you play your first Skill with [Block] you play each turn: Gain [Flame Barrier] equal to twice its [Block].",
+			"EXTENDED_DESCRIPTION": ["When you play your first Skill with #yBlock you play each turn: Gain #yFlame #yBarrier equal to #b{0} times its #yBlock."],
+			"NAME": "Pyra"
 		},
 		"animator:ResnaSternlicht":
 		{

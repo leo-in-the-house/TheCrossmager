@@ -12,6 +12,7 @@ import eatyourbeets.utilities.GameUtilities;
 public class Frieren extends AnimatorCard {
     public static final EYBCardData DATA = Register(Frieren.class)
             .SetPower(3, CardRarity.RARE)
+            .SetSeries(CardSeries.SousouNoFreiren)
             .SetColor(CardColor.COLORLESS);
 
     public Frieren() {
@@ -19,8 +20,6 @@ public class Frieren extends AnimatorCard {
 
         Initialize(0, 0, 1);
         SetUpgrade(0, 0, 1);
-
-        SetSeries(CardSeries.Vocaloid);
 
         SetAffinity_Brown(2);
         SetAffinity_Blue(2);
