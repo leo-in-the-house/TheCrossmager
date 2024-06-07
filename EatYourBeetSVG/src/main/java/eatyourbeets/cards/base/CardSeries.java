@@ -83,6 +83,7 @@ public class CardSeries
     public final static CardSeries XenobladeChronicles = Add(66, "XenobladeChronicles");
     public final static CardSeries Pokemon = Add(67, "Pokémon");
     public final static CardSeries PokemonReminiscencia = Add(68, "PokémonReminiscencia");
+    public final static CardSeries HonkaiImpact3rd = Add(69, "HonkaiImpact3rd");
 
 
     private static AbstractCard currentSynergy = null;

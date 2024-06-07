@@ -470,6 +470,36 @@ public class EYBCardPopupActions
         }
     }
 
+    public static class Pokemon_Lucius extends EYBCardPopupAction
+    {
+        protected final EYBCardData TARGET1;
+        protected final int HP_LOSS;
+
+        public Pokemon_Lucius(EYBCardData targetCard, int hpLoss)
+        {
+            TARGET1 = targetCard;
+            HP_LOSS = hpLoss;
+
+            SetText(specialActions.TransformAndLoseHP_T(HP_LOSS), terms.Transform, specialActions.TransformAndLoseHP_T(TARGET1.Strings.NAME, HP_LOSS));
+        }
+
+        @Override
+        public boolean CanExecute(AbstractCard card)
+        {
+            return IsRestRoom() && HasCard(card);
+        }
+
+        @Override
+        public void Execute()
+        {
+            final EYBCard card = TARGET1.MakeCopy(false);
+            Obtain(card);
+            LoseHP(HP_LOSS);
+            SFX.Play(SFX.ANIMATOR_ORB_WATER_EVOKE, 0.4f);
+            Complete();
+        }
+    }
+
     public static class ImproveBasicCard extends EYBCardPopupAction
     {
         private static final String LAST_IMPROVEMENT_PRICE = ImproveBasicCard.class.getSimpleName() + ".LastImprovementPrice";

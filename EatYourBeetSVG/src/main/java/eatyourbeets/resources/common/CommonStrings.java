@@ -59,6 +59,7 @@ public class CommonStrings
         public final String Scry = Strings.TEXT[5];
         public final String Fetch_F1 = Strings.TEXT[6];
         public final String PermanentlyRemove = Strings.TEXT[7];
+        public final String PermanentlyAdd = Strings.TEXT[8];
         public final String Discard = DiscardAction.TEXT[0];
         public final String Exhaust = ExhaustAction.TEXT[0];
         public final String Cycle = GamblingChipAction.TEXT[1];

@@ -4,18 +4,25 @@ import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import eatyourbeets.cards.animator.colorless.rare.Lucius;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.effects.SFX;
 import eatyourbeets.effects.VFX;
+import eatyourbeets.ui.common.EYBCardPopupActions;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
 public class Lugia extends AnimatorCard {
     public static final EYBCardData DATA = Register(Lugia.class)
             .SetAttack(4, CardRarity.SPECIAL, EYBAttackType.Elemental, EYBCardTarget.ALL)
-            .SetSeries(CardSeries.Pokemon);
+            .SetSeries(CardSeries.Pokemon)
+            .PostInitialize(data ->
+            {
+                data.AddPopupAction(new EYBCardPopupActions.Pokemon_Lucius(Lucius.DATA, 3));
+                data.AddPreview(new Lucius(), true);
+            });
 
     public Lugia() {
         super(DATA);

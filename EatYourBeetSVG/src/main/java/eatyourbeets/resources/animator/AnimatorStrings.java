@@ -431,6 +431,7 @@ public class AnimatorStrings
 
         public final String T_Transform_GriefSeed_F0 = Strings.TEXT[INDEX++];
         public final String T_Transform_LoseHP_F1 = Strings.TEXT[INDEX++];
+        public final String T_Transform_LoseHPWithName_F1 = Strings.TEXT[INDEX++];
         public final String T_Transform_LoseMaxHP_F1 = Strings.TEXT[INDEX++];
         public final String D_Transform_Generic_F1 = Strings.TEXT[INDEX++];
         public final String D_Transform_RequireCard_F2 = Strings.TEXT[INDEX++];
@@ -450,6 +451,12 @@ public class AnimatorStrings
         {
             return JUtils.Format(T_Transform_LoseMaxHP_F1, amount);
         }
+
+        public final String TransformAndLoseHP_T(String cardName, int amount)
+        {
+            return JUtils.Format(T_Transform_LoseHPWithName_F1, cardName, amount);
+        }
+
 
         public final String TransformGeneric_D(String cardName)
         {

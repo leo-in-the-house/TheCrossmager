@@ -177,10 +177,24 @@
 			"NAME": "Aru",
 			"UPGRADE_DESCRIPTION": "Discard all cards. Add !M! random Upgraded card(s) to your hand."
 		},
+		"animator:Elysia":
+		{
+			"FLAVOR_TEXT": "''",
+			"DESCRIPTION": "Start of turn: Scry !M!.  Then, if you have exactly 12 cards in your draw pile: Remove this power and obtain {Herrscher of Human}{+}.",
+			"EXTENDED_DESCRIPTION": ["Start of turn: #yScry #b{0}.  Then, if you have exactly #b12 cards in your draw pile, remove this power and obtain #yHerrscher #yof #yHuman."],
+			"NAME": "Elysia"
+		},
+		"animator:Elysia_Herrscher":
+		{
+			"FLAVOR_TEXT": "''",
+			"DESCRIPTION": "Gain 99 [Artifact].",
+			"NAME": "Herrscher of Human"
+		},
 		"animator:Frieren":
 		{
 			"FLAVOR_TEXT": "''",
 			"DESCRIPTION": "At the start of your turn: Draw !M! card(s). || Whenever you play a card without Exhaust or Purge, gain [E] and it gains Exhaust.",
+			"EXTENDED_DESCRIPTION": ["At the start of your turn: Draw #b{0} cards.  Whenever you play a card without #yExhaust or #yPurge, gain #yEnergy and it gains #yExhaust"],
 			"NAME": "Frieren"
 		},
 		"animator:Gutrune":
@@ -256,7 +270,7 @@
 		},
 		"animator:Lucius":
 		{
-			"FLAVOR_TEXT": "'TODO'",
+			"FLAVOR_TEXT": "''",
 			"DESCRIPTION": "Can only be played if you have at least 5 {Colorless} or {Special} cards in your {Exhaust} pile. || Choose a {Colorless} or {Special} card in your exhaust pile and add a copy of it to your master deck.",
 			"NAME": "Lucius"
 		},
