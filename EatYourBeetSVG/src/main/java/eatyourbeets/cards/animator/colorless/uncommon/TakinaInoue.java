@@ -24,6 +24,8 @@ public class TakinaInoue extends AnimatorCard {
 
         Initialize(4, 0, 2);
         SetUpgrade(0, 0, 1);
+        SetAffinity_Green(1, 0, 1);
+        SetAffinity_Blue(1);
     }
 
     @Override

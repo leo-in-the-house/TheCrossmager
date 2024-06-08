@@ -24,6 +24,8 @@ public class ChisatoNishikigi extends AnimatorCard {
 
         Initialize(0, 6, 4);
         SetUpgrade(0, 0, 0);
+        SetAffinity_Green(1, 0, 1);
+        SetAffinity_White(1);
     }
 
     @Override
