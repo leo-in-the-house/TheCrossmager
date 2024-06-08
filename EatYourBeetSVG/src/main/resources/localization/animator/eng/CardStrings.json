@@ -180,7 +180,7 @@
 		"animator:Elysia":
 		{
 			"FLAVOR_TEXT": "''",
-			"DESCRIPTION": "Start of turn: Scry !M!.  Then, if you have exactly 12 cards in your draw pile: Remove this power and obtain {Herrscher of Human}{+}.",
+			"DESCRIPTION": "Start of turn: Scry !M!.  Then, if you have exactly 12 cards in your draw pile: Remove this power and obtain {Herrscher of Human Ego}{+}.",
 			"EXTENDED_DESCRIPTION": ["Start of turn: #yScry #b{0}.  Then, if you have exactly #b12 cards in your draw pile, remove this power and obtain #yHerrscher #yof #yHuman."],
 			"NAME": "Elysia"
 		},
@@ -188,7 +188,7 @@
 		{
 			"FLAVOR_TEXT": "''",
 			"DESCRIPTION": "Gain 99 [Artifact].",
-			"NAME": "Herrscher of Human"
+			"NAME": "Herrscher of Human Ego"
 		},
 		"animator:Frieren":
 		{
@@ -382,6 +382,13 @@
 			"EXTENDED_DESCRIPTION": ["Whenever you discard a card: Obtain #b{0} #yCommons.", "Whenever you discard a card: Obtain #b{0} upgraded #yCommons."],
 			"NAME": "Chaika Kamaz"
 		},
+		"animator:ChisatoNishikigi":
+		{
+			"FLAVOR_TEXT": "''",
+			"DESCRIPTION": "Transform a {Hindrance} in your hand into {Takina Inoue}{+}.  If you do, gain [E][E].",
+			"EXTENDED_DESCRIPTION": ["Choose a Hindrance to transform into Takina Inoue."],
+			"NAME": "Chisato Nishikigi"
+		},
 		"animator:EirinYagokoro":
 		{
 			"FLAVOR_TEXT": "'Yes, you were led through that eternal corridor, and came to this false moon here.  The full moon is the one key that links the moon to the earth.  If one were to break that key, travel between the moon and earth would be impossible.  See? You've been deceived by this fake illusion, just like that.'",
@@ -508,6 +515,13 @@
 			"FLAVOR_TEXT": "'I am Shimakaze, the Shimakaze-class ship that was developed as the pinnacle of destroyers, fast and armed with heavy torpedos.  After all, I can go faster than 40 knots.  However, I wasn't suited for mass production so I was the only one built.'",
 			"DESCRIPTION": "<DRW-M>. Add {Dazed} to your draw pile.",
 			"NAME": "Shimakaze"
+		},
+		"animator:TakinaInoue":
+		{
+			"FLAVOR_TEXT": "''",
+			"DESCRIPTION": "Transform a {Hindrance} in your hand into {Chisato Nishikigi}{+}.  If you do, gain 3 [E].",
+			"EXTENDED_DESCRIPTION": ["Choose a Hindrance to transform into Chisato Nishikigi."],
+			"NAME": "Takina Inoue"
 		},
 		"animator:Urushihara":
 		{
