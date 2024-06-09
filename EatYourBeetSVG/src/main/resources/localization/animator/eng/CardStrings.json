@@ -168,6 +168,7 @@
 		{
 			"FLAVOR_TEXT": "''",
 			"DESCRIPTION": "!A! [T] [R]: Apply !M! [~Lock-On] to ALL enemies. || For the rest of the game, Attacks that hit enemies with [~Lock-On] ignore damage reduction.",
+			"EXTENDED_DESCRIPTION": ["Attacks that hit enemies with #yLock-On ignore damage reduction."],
 			"NAME": "Asuka Langley Soryu"
 		},
 		"animator:Aru":
@@ -194,7 +195,7 @@
 		{
 			"FLAVOR_TEXT": "''",
 			"DESCRIPTION": "At the start of your turn: Draw !M! card(s). || Whenever you play a card without Exhaust or Purge, gain [E] and it gains Exhaust.",
-			"EXTENDED_DESCRIPTION": ["At the start of your turn: Draw #b{0} cards.  Whenever you play a card without #yExhaust or #yPurge, gain #yEnergy and it gains #yExhaust"],
+			"EXTENDED_DESCRIPTION": ["At the start of your turn: Draw #b{0} cards.  Whenever you play a card without #yExhaust or #yPurge, gain #yEnergy and it gains #yExhaust."],
 			"NAME": "Frieren"
 		},
 		"animator:Gutrune":
@@ -259,7 +260,7 @@
 		"animator:Megunee":
 		{
 			"FLAVOR_TEXT": "''",
-			"DESCRIPTION": "When Exhausted: Put this card in your draw pile zombified after a random number of turns.",
+			"DESCRIPTION": "When Exhausted: Put this card in your draw pile zombified.",
 			"NAME": "Megu-Nee"
 		},
 		"animator:Megunee_Zombie":

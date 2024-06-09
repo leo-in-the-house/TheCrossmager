@@ -492,11 +492,12 @@ public class EYBCardPopupActions
         @Override
         public void Execute()
         {
-            final EYBCard card = TARGET1.MakeCopy(false);
-            Obtain(card);
-            LoseHP(HP_LOSS);
-            SFX.Play(SFX.ANIMATOR_ORB_WATER_EVOKE, 0.4f);
-            Complete();
+            if (Replace(card, TARGET1, card.upgraded) != null)
+            {
+                LoseHP(HP_LOSS);
+                SFX.Play(SFX.ANIMATOR_ORB_WATER_EVOKE, 0.4f);
+                Complete();
+            }
         }
     }
 

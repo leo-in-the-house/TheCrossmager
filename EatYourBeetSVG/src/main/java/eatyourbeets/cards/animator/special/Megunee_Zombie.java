@@ -4,15 +4,18 @@ import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.ShakeScreenAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.effects.VFX;
+import eatyourbeets.interfaces.subscribers.OnStartOfTurnPostDrawSubscriber;
+import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
 import eatyourbeets.utilities.GameUtilities;
 
-public class Megunee_Zombie extends AnimatorCard {
+public class Megunee_Zombie extends AnimatorCard implements OnStartOfTurnPostDrawSubscriber {
     public static final EYBCardData DATA = Register(Megunee_Zombie.class)
             .SetAttack(-1, CardRarity.SPECIAL, EYBAttackType.Normal, EYBCardTarget.Random)
             .SetSeries(CardSeries.GakkouGurashi);
@@ -39,20 +42,42 @@ public class Megunee_Zombie extends AnimatorCard {
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info) {
         GameUtilities.PlayVoiceSFX(name);
 
-
+        this.freeToPlayOnce = false;
         int stacks = GameUtilities.UseXCostEnergy(this);
 
         for (int i=0; i<stacks; i++) {
             GameActions.Bottom.DealDamageToRandomEnemy(this, AbstractGameAction.AttackEffect.NONE)
-                    .SetDamageEffect(e -> GameEffects.List.Add(VFX.Bite(e.hb, Color.RED)).duration)
+                    .SetDamageEffect(e -> {
+                        GameEffects.List.Add(VFX.Bite(e.hb, Color.RED));
+                        return 0.02f;
+                    })
                     .AddCallback(info, (info2, enemy) ->
                     {
                         if (GameUtilities.IsFatal(enemy, true)) {
-                            GameActions.Bottom.Heal(magicNumber);
+                            GameActions.Top.Heal(magicNumber);
                         }
                     });
             GameActions.Bottom.Add(new ShakeScreenAction(0.5f, ScreenShake.ShakeDur.MED, ScreenShake.ShakeIntensity.LOW));
         }
+    }
+
+    @Override
+    public void OnStartOfTurnPostDraw()
+    {
+        if (player.exhaustPile.contains(this))
+        {
+            GameEffects.List.ShowCopy(this, Settings.WIDTH * 0.75f, Settings.HEIGHT * 0.4f);
+
+            cooldown.ProgressCooldownAndTrigger(null);
+        }
+    }
+
+    @Override
+    public void triggerWhenCreated(boolean startOfBattle)
+    {
+        super.triggerWhenCreated(startOfBattle);
+
+        CombatStats.onStartOfTurnPostDraw.Subscribe(this);
     }
 
     protected void OnCooldownCompleted(AbstractMonster m)

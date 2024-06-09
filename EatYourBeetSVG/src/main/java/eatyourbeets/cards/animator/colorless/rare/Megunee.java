@@ -50,7 +50,7 @@ public class Megunee extends AnimatorCard {
                 .SetUpgrade(upgraded)
                 .AddCallback(cards -> {
                     for (AbstractCard card : cards.values()) {
-                        GameActions.Top.MoveCard(card, player.discardPile, player.drawPile);
+                        GameActions.Top.MoveCard(card, player.exhaustPile, player.drawPile);
                     }
                 });
 

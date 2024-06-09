@@ -63,9 +63,11 @@ public class Frieren extends AnimatorCard {
 
             if (!card.exhaust && !card.tags.contains(EYBCard.PURGE) && !card.purgeOnUse)
             {
-                card.exhaust = true;
                 GameActions.Top.GainEnergy(1);
                 this.flashWithoutSound();
+                GameActions.Last.Callback(() -> {
+                    card.exhaust = true;
+                });
             }
         }
 

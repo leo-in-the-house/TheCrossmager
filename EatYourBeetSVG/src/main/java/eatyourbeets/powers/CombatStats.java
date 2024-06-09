@@ -1037,11 +1037,11 @@ public class CombatStats extends EYBPower implements InvisiblePower
         super.onAfterUseCard(card, action);
 
         resetAfterPlay.add(card);
-        for (AbstractCard c : resetAfterPlay)
+        /*for (AbstractCard c : resetAfterPlay)
         {
             card.tags.remove(GR.Enums.CardTags.AUTOPLAYED);
             card.tags.remove(GR.Enums.CardTags.AUTOPLAYED_COPY);
-        }
+        }*/
         resetAfterPlay.clear();
 
         CardSeries.SetLastCardPlayed(card);

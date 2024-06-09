@@ -33,7 +33,7 @@ public class NaoTomori extends AnimatorCard {
 
         if (info.TryActivateStarter())
         {
-            GameActions.Bottom.SelectFromHand(name, magicNumber, false)
+            GameActions.Bottom.SelectFromHand(name, 1, false)
                 .SetOptions(true, true, true)
                 .SetFilter(card -> card.type == CardType.POWER || card.rarity == CardRarity.RARE)
                 .SetMessage(cardData.Strings.EXTENDED_DESCRIPTION[0])

@@ -2,10 +2,12 @@ package eatyourbeets.cards.animator.colorless.rare;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.special.Pyra;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameEffects;
 import eatyourbeets.utilities.GameUtilities;
 
 public class Mythra extends AnimatorCard {
@@ -46,12 +48,13 @@ public class Mythra extends AnimatorCard {
                 if (GameUtilities.HasRedAffinity(card)) {
                     amountRed++;
                 }
-                else if (GameUtilities.HasGreenAffinity(card)) {
+                if (GameUtilities.HasGreenAffinity(card)) {
                     amountGreen++;
                 }
             }
 
             if (amountRed > amountGreen) {
+                GameEffects.List.ShowCopy(this, Settings.WIDTH * 0.75f, Settings.HEIGHT * 0.4f);
                 GameActions.Bottom.ReplaceCard(uuid, new Pyra())
                         .SetUpgrade(upgraded);
             }

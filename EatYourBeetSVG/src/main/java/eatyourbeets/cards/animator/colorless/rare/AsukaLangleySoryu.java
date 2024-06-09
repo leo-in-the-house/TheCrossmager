@@ -24,7 +24,7 @@ public class AsukaLangleySoryu extends AnimatorCard {
     public AsukaLangleySoryu() {
         super(DATA);
 
-        Initialize(8, 0, 3);
+        Initialize(8, 0, 99);
         SetUpgrade(8, 0, 0);
 
         SetAffinity_Teal(1, 0, 1);
