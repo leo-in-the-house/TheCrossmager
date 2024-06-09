@@ -50,7 +50,7 @@ public class ChisatoNishikigi extends AnimatorCard {
                 {
                     if (cards.size() > 0) {
                         GameActions.Top.ReplaceCard(cards.get(0).uuid, new TakinaInoue());
-                        GameActions.Top.GainEnergy(2);
+                        GameActions.Top.GainEnergy(3);
                     }
                 });
     }

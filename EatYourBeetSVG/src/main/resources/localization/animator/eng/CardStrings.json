@@ -386,7 +386,7 @@
 		"animator:ChisatoNishikigi":
 		{
 			"FLAVOR_TEXT": "''",
-			"DESCRIPTION": "Transform a {Hindrance} in your hand into {Takina Inoue}{+}.  If you do, gain [E][E].",
+			"DESCRIPTION": "Transform a {Hindrance} in your hand into {Takina Inoue}{+}.  If you do, gain 3 [E].",
 			"EXTENDED_DESCRIPTION": ["Choose a Hindrance to transform into Takina Inoue."],
 			"NAME": "Chisato Nishikigi"
 		},
