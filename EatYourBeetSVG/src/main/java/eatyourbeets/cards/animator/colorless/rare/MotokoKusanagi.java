@@ -15,7 +15,7 @@ import eatyourbeets.utilities.GameUtilities;
 
 public class MotokoKusanagi extends AnimatorCard implements OnStartOfTurnPostDrawSubscriber {
     public static final EYBCardData DATA = Register(MotokoKusanagi.class)
-            .SetAttack(1, CardRarity.RARE, EYBAttackType.Ranged, EYBCardTarget.Normal)
+            .SetAttack(3, CardRarity.RARE, EYBAttackType.Ranged, EYBCardTarget.Normal)
             .SetSeries(CardSeries.GhostInTheShell)
             .SetColor(CardColor.COLORLESS);
 

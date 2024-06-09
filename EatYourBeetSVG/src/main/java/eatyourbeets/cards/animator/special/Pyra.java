@@ -15,7 +15,7 @@ import eatyourbeets.utilities.GameUtilities;
 
 public class Pyra extends AnimatorCard {
     public static final EYBCardData DATA = Register(Pyra.class)
-            .SetPower(2, CardRarity.SPECIAL)
+            .SetPower(0, CardRarity.SPECIAL)
             .SetSeries(CardSeries.XenobladeChronicles);
 
     public Pyra() {
@@ -24,7 +24,7 @@ public class Pyra extends AnimatorCard {
         Initialize(0, 0, 0);
         SetUpgrade(0, 0, 0);
 
-        SetEthereal(true);
+        SetRetain(true);
 
         SetAffinity_Red(2);
     }

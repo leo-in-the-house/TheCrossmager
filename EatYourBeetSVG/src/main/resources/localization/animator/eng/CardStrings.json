@@ -544,6 +544,7 @@
 		},
 		"animator:Zero":
 		{
+			"FLAVOR_TEXT": "'A kiss is a show of love?  Oh...  I was born and raised in a cave... and it's been just recently, that I finally venture out into the world.  I was locked into a sea of books.  My only meat was to focus my mind on my research.  It's only natural this is all unfamiliar.'",
 			"DESCRIPTION": "Play a random {High-Cost} {Skill} from your draw pile.",
 			"NAME": "Zero"
 		}
