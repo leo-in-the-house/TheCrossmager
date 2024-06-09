@@ -22,7 +22,7 @@ public class TakinaInoue extends AnimatorCard {
     public TakinaInoue() {
         super(DATA);
 
-        Initialize(4, 0, 2);
+        Initialize(6, 0, 2);
         SetUpgrade(0, 0, 1);
         SetAffinity_Green(1, 0, 1);
         SetAffinity_Blue(1);
