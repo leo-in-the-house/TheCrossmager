@@ -16,7 +16,8 @@ public class Elysia extends AnimatorCard {
     public static final EYBCardData DATA = Register(Elysia.class)
             .SetPower(1, CardRarity.RARE)
             .SetColor(CardColor.COLORLESS)
-            .SetSeries(CardSeries.HonkaiImpact3rd);
+            .SetSeries(CardSeries.HonkaiImpact3rd)
+            .PostInitialize(data -> data.AddPreview(new Elysia_Herrscher(), false));
 
     public Elysia() {
         super(DATA);

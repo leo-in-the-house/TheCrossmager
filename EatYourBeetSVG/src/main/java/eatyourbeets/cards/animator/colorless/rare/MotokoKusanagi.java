@@ -3,6 +3,7 @@ package eatyourbeets.cards.animator.colorless.rare;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.BufferPower;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.effects.AttackEffects;
@@ -55,7 +56,7 @@ public class MotokoKusanagi extends AnimatorCard implements OnStartOfTurnPostDra
     @Override
     public void triggerOnExhaust()
     {
-        GameActions.Bottom.GainIntangible(1);
+        GameActions.Bottom.StackPower(new BufferPower(player, 1));
     }
 
     @Override

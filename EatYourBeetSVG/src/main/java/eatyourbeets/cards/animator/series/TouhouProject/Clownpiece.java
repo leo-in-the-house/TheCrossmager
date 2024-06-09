@@ -33,7 +33,7 @@ public class Clownpiece extends AnimatorCard {
         AbstractCard card = FindTopMatchingCard();
 
         if (card != null) {
-            int damageAmount = card.costForTurn;
+            int damageAmount = card.costForTurn * 2;
             GameActions.Bottom.PlayCard(card, player.drawPile, m);
 
             if (damageAmount > 0) {

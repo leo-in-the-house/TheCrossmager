@@ -284,7 +284,7 @@
 		"animator:MotokoKusanagi":
 		{
 			"FLAVOR_TEXT": "''",
-			"DESCRIPTION": "When Exhausted: Gain [~Intangible]. || {Ricochet} !M!.",
+			"DESCRIPTION": "When Exhausted: Prevent the next time you would lose [HP]. || {Ricochet} !M!.",
 			"NAME": "Motoko Kusanagi"
 		},
 		"animator:Mythra":

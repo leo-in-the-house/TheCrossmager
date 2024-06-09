@@ -5,13 +5,12 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.ViolentAttackEffect;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.cards.base.attributes.AbstractAttribute;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardSeries;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Kirito extends AnimatorCard
 {
@@ -30,12 +29,6 @@ public class Kirito extends AnimatorCard
         SetAffinity_White(1, 0, 1);
         SetAffinity_Green(1, 0, 0);
         SetAffinity_Red(1, 0, 0);
-    }
-
-    @Override
-    public AbstractAttribute GetDamageInfo()
-    {
-        return super.GetDamageInfo().AddMultiplier(magicNumber);
     }
 
     @Override
