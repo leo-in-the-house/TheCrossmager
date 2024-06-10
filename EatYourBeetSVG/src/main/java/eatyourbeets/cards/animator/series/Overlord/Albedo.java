@@ -51,8 +51,10 @@ public class Albedo extends AnimatorCard implements OnAffinitySealedSubscriber
     @Override
     public void OnAffinitySealed(EYBCard card, boolean manual) {
 
-        GameActions.Bottom.Flash(this);
-        GameActions.Bottom.StackPower(new SadisticPower(player, secondaryValue));
+        if (card.uuid.equals(uuid)) {
+            GameActions.Bottom.Flash(this);
+            GameActions.Bottom.StackPower(new SadisticPower(player, secondaryValue));
+        }
     }
 
     @Override
