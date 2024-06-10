@@ -5,19 +5,16 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.SadisticPower;
 import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
-import eatyourbeets.cards.base.EYBCard;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.effects.AttackEffects;
-import eatyourbeets.interfaces.subscribers.OnAffinitySealedSubscriber;
 import eatyourbeets.monsters.EnemyIntent;
-import eatyourbeets.powers.CombatStats;
 import eatyourbeets.powers.animator.EnchantedArmorPlayerPower;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.TargetHelper;
 
-public class Albedo extends AnimatorCard implements OnAffinitySealedSubscriber
+public class Albedo extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Albedo.class)
             .SetAttack(2, CardRarity.RARE)
@@ -49,12 +46,12 @@ public class Albedo extends AnimatorCard implements OnAffinitySealedSubscriber
     }
 
     @Override
-    public void OnAffinitySealed(EYBCard card, boolean manual) {
+    public void triggerOnAffinitySeal(boolean reshuffle)
+    {
+        super.triggerOnAffinitySeal(reshuffle);
 
-        if (card.uuid.equals(uuid)) {
-            GameActions.Bottom.Flash(this);
-            GameActions.Bottom.StackPower(new SadisticPower(player, secondaryValue));
-        }
+        GameActions.Bottom.Flash(this);
+        GameActions.Bottom.StackPower(new SadisticPower(player, secondaryValue));
     }
 
     @Override
@@ -107,13 +104,5 @@ public class Albedo extends AnimatorCard implements OnAffinitySealedSubscriber
 
     private int CalculateCommonDebuffAmount() {
         return GameUtilities.GetCommonDebuffs(TargetHelper.Enemies()).size();
-    }
-
-    @Override
-    public void triggerWhenCreated(boolean startOfBattle)
-    {
-        super.triggerWhenCreated(startOfBattle);
-
-        CombatStats.onAffinitySealed.Subscribe(this);
     }
 }
