@@ -23,13 +23,13 @@ public class Megunee_Zombie extends AnimatorCard implements OnStartOfTurnPostDra
     public Megunee_Zombie() {
         super(DATA);
 
-        Initialize(10, 0, 4);
-        SetUpgrade(3, 0, 2);
+        Initialize(12, 0, 5);
+        SetUpgrade(2, 0, 2);
 
         SetSeries(CardSeries.GakkouGurashi);
-        SetAffinity_Black(1, 0, 1);
-        SetAffinity_Violet(1, 0, 1);
-        SetAffinity_White(1, 0, 1);
+        SetAffinity_Black(1, 0, 2);
+        SetAffinity_Violet(1, 0, 2);
+        SetAffinity_White(1, 0, 2);
 
         SetRicochet(2, 0, this::OnCooldownCompleted);
 

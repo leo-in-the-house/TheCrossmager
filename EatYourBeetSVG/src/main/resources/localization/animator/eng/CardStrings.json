@@ -141,7 +141,7 @@
 	{
 		"animator:ArseneLupinIII":
 		{
-			"FLAVOR_TEXT": "''",
+			"FLAVOR_TEXT": "'Listen, I'm just a thief who stole a kidnappers' car!'",
 			"DESCRIPTION": "Reload: Deal !M! damage to a random enemy and gain !S! Gold.",
 			"NAME": "Arsene Lupin III"
 		},
@@ -166,7 +166,7 @@
 		},
 		"animator:AsukaLangleySoryu":
 		{
-			"FLAVOR_TEXT": "''",
+			"FLAVOR_TEXT": "'If you want real happiness, you've got to find it for yourself!  Not wait for someone to give it to you!'",
 			"DESCRIPTION": "!A! [T] [R]: Apply !M! [~Lock-On] to ALL enemies. || For the rest of the game, Attacks that hit enemies with [~Lock-On] ignore damage reduction.",
 			"EXTENDED_DESCRIPTION": ["Attacks that hit enemies with #yLock-On ignore damage reduction."],
 			"NAME": "Asuka Langley Soryu"
@@ -180,20 +180,20 @@
 		},
 		"animator:Elysia":
 		{
-			"FLAVOR_TEXT": "''",
+			"FLAVOR_TEXT": "'How do you do?  You know, every new day starts with a beautiful encounter.'",
 			"DESCRIPTION": "Start of turn: Scry !M!.  Then, if you have exactly 12 cards in your draw pile: Remove this power and obtain {Herrscher of Human Ego}{+}.",
 			"EXTENDED_DESCRIPTION": ["Start of turn: #yScry #b{0}.  Then, if you have exactly #b12 cards in your draw pile, remove this power and obtain #yHerrscher #yof #yHuman."],
 			"NAME": "Elysia"
 		},
 		"animator:Elysia_Herrscher":
 		{
-			"FLAVOR_TEXT": "''",
+			"FLAVOR_TEXT": "'Tragedy isn't the end. It's the beginning of hope. You'll have faith, right?'",
 			"DESCRIPTION": "Gain 99 [Artifact].",
 			"NAME": "Herrscher of Human Ego"
 		},
 		"animator:Frieren":
 		{
-			"FLAVOR_TEXT": "''",
+			"FLAVOR_TEXT": "'It's not like I knew anything about him.  We only traveled together for a mere 10 years.  I knew human lives were short, but...  why didn't I try to get to know him better?'",
 			"DESCRIPTION": "At the start of your turn: Draw !M! card(s). || Whenever you play a card without Exhaust or Purge, gain [E] and it gains Exhaust.",
 			"EXTENDED_DESCRIPTION": ["At the start of your turn: Draw #b{0} cards.  Whenever you play a card without #yExhaust or #yPurge, gain #yEnergy and it gains #yExhaust."],
 			"NAME": "Frieren"
@@ -206,7 +206,7 @@
 		},
 		"animator:HatsuneMiku":
 		{
-			"FLAVOR_TEXT": "''",
+			"FLAVOR_TEXT": "'I'm the #1 princess in the world!  And that's how you'll treat me, got it?' -World is Mine by ryo",
 			"DESCRIPTION": "Can only be played if your master deck contains exactly 39 cards. || Upgrade ALL cards everywhere. || All cards cost 0 when drawn.",
 			"EXTENDED_DESCRIPTION": ["All cards cost 0 when drawn."],
 			"NAME": "Hatsune Miku"
@@ -259,50 +259,50 @@
 		},
 		"animator:Megunee":
 		{
-			"FLAVOR_TEXT": "''",
+			"FLAVOR_TEXT": "'There are things you can do, things you can give, that no one else can give.  Your smile is a beautiful gift, and you give it freely to everyone.  No one, can cheer us all up like you, Miss Yuki, and we always need that.  We'll always need you.  Now, I want you to make me a promise, promise me that no matter what happens, you'll never stop giving me that gift.'",
 			"DESCRIPTION": "When Exhausted: Put this card in your draw pile zombified.",
 			"NAME": "Megu-Nee"
 		},
 		"animator:Megunee_Zombie":
 		{
-			"FLAVOR_TEXT": "''",
+			"FLAVOR_TEXT": "'Miss Yuki, don't ever forget, the promise that we both made.  You have to keep sharing your gift.  No matter what happens.  Always.'",
 			"DESCRIPTION": "If Fatal: Heal !M! [HP]. || {Ricochet} 2 into your draw pile.",
 			"NAME": "Zombie Megu-Nee"
 		},
 		"animator:Lucius":
 		{
-			"FLAVOR_TEXT": "''",
+			"FLAVOR_TEXT": "'It would be better if you had given up the position of Guardian to another Zapdos.  I will suggest it to His Majesty when I return to see him.'",
 			"DESCRIPTION": "Can only be played if you have at least 5 {Colorless} or {Special} cards in your {Exhaust} pile. || Choose a {Colorless} or {Special} card in your exhaust pile and add a copy of it to your master deck.",
 			"NAME": "Lucius"
 		},
 		"animator:Lugia":
 		{
-			"FLAVOR_TEXT": "''",
+			"FLAVOR_TEXT": "'It is said to be the guardian of the seas. It is rumored to have been seen on the night of a storm.' -Pokémon Soul Silver Pokédex.",
 			"DESCRIPTION": "This card attacks an extra time for every !S! [Block] you have.",
 			"NAME": "Lugia"
 		},
 		"animator:MotokoKusanagi":
 		{
-			"FLAVOR_TEXT": "''",
+			"FLAVOR_TEXT": "'What if a cyber brain could possibly generate its own ghost, and create a soul all by itself.  And if it did, just what would be the importance of being human then?'",
 			"DESCRIPTION": "When Exhausted: Prevent the next time you would lose [HP]. || {Ricochet} !M!.",
 			"NAME": "Motoko Kusanagi"
 		},
 		"animator:Mythra":
 		{
-			"FLAVOR_TEXT": "''",
+			"FLAVOR_TEXT": "'I am not Pyra. I am Mythra. Pyra... She's a different self that I constructed.'",
 			"DESCRIPTION": "Start of Combat: If you have more <R> than <G> in your master deck: Transform this card to {Pyra}.",
 			"NAME": "Mythra"
 		},
 		"animator:NaoTomori":
 		{
-			"FLAVOR_TEXT": "''",
+			"FLAVOR_TEXT": "'The student council here is entrusted with a special mission.  And that is to seek out those with special abilities who are on the loose like you were and either protect them, or threaten them to never use their powers.'",
 			"DESCRIPTION": "<ST>: Transform a {Power} or {Rare} card into a {Normality} to gain [~Intangible].",
 			"EXTENDED_DESCRIPTION": ["Choose a Power or Rare card to transform into Normality."],
 			"NAME": "Nao Tomori"
 		},
 		"animator:Pyra":
 		{
-			"FLAVOR_TEXT": "''",
+			"FLAVOR_TEXT": "'I have a request. Can you...take me to Elysium?'",
 			"DESCRIPTION": "When you play your first Skill with [Block] you play each turn: Gain [Flame Barrier] equal to its [Block].",
 			"UPGRADE_DESCRIPTION": "When you play your first Skill with [Block] you play each turn: Gain [Flame Barrier] equal to twice its [Block].",
 			"EXTENDED_DESCRIPTION": ["When you play your first Skill with #yBlock you play each turn: Gain #yFlame #yBarrier equal to #b{0} times its #yBlock."],
@@ -385,7 +385,7 @@
 		},
 		"animator:ChisatoNishikigi":
 		{
-			"FLAVOR_TEXT": "''",
+			"FLAVOR_TEXT": "'I'm glad I was able to meet you. I'm glad. I'm happy.'",
 			"DESCRIPTION": "Transform a {Hindrance} in your hand into {Takina Inoue}{+}.  If you do, gain 3 [E].",
 			"EXTENDED_DESCRIPTION": ["Choose a Hindrance to transform into Takina Inoue."],
 			"NAME": "Chisato Nishikigi"
@@ -519,7 +519,7 @@
 		},
 		"animator:TakinaInoue":
 		{
-			"FLAVOR_TEXT": "''",
+			"FLAVOR_TEXT": "'Please answer calls from me within three rings. If you don't, I'll know that you're in danger, and do a one-ring call to tell you I'm heading over.'",
 			"DESCRIPTION": "Transform a {Hindrance} in your hand into {Chisato Nishikigi}{+}.  If you do, gain 3 [E].",
 			"EXTENDED_DESCRIPTION": ["Choose a Hindrance to transform into Chisato Nishikigi."],
 			"NAME": "Takina Inoue"
