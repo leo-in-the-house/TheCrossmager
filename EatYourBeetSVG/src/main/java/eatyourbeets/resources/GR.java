@@ -523,6 +523,7 @@ public class GR
             @SpireEnum public static AbstractCard.CardTags LOYAL;
             @SpireEnum public static AbstractCard.CardTags FADING;
             @SpireEnum public static AbstractCard.CardTags IMPROVED_BASIC_CARD;
+            @SpireEnum public static AbstractCard.CardTags POKEMON_CARD;
             //Classic
             @SpireEnum public static AbstractCard.CardTags SHAPESHIFTER;
             @SpireEnum public static AbstractCard.CardTags MARTIAL_ARTIST;

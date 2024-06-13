@@ -137,6 +137,22 @@
 		}
 	},
 
+	"BASIC:POKEMON":
+	{
+		"animator:Litleo":
+		{
+			"FLAVOR_TEXT": "'They set off on their own from their pride and live by themselves to become stronger. These hot-blooded Pokémon are quick to fight.' -Kalos Pokédex.",
+			"DESCRIPTION": "",
+			"NAME": "Litleo"
+		},
+		"animator:Pyroar":
+		{
+			"FLAVOR_TEXT": "'With fiery breath of more than 10,000 degrees Fahrenheit, they viciously threaten any challenger. The females protect the pride's cubs.' -Kalos Pokédex.",
+			"DESCRIPTION": "",
+			"NAME": "Pyroar"
+		}
+	},
+
 	"COLORLESS:RARE":
 	{
 		"animator:ArseneLupinIII":
@@ -277,7 +293,7 @@
 		},
 		"animator:Lugia":
 		{
-			"FLAVOR_TEXT": "'It is said to be the guardian of the seas. It is rumored to have been seen on the night of a storm.' -Pokémon Soul Silver Pokédex.",
+			"FLAVOR_TEXT": "'It is said to be the guardian of the seas. It is rumored to have been seen on the night of a storm.' -Johto Pokédex.",
 			"DESCRIPTION": "This card attacks an extra time for every !S! [Block] you have.",
 			"NAME": "Lugia"
 		},
@@ -3887,4 +3903,4 @@
 			"NAME": "Yuyuko Saigyouji"
 		}
 	}
-}
+},

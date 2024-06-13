@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import eatyourbeets.cards.animator.basic.pokemon.PokemonCard;
 import eatyourbeets.cards.animator.colorless.rare.Lucius;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
@@ -14,7 +15,7 @@ import eatyourbeets.ui.common.EYBCardPopupActions;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
-public class Lugia extends AnimatorCard {
+public class Lugia extends PokemonCard {
     public static final EYBCardData DATA = Register(Lugia.class)
             .SetAttack(4, CardRarity.SPECIAL, EYBAttackType.Elemental, EYBCardTarget.ALL)
             .SetSeries(CardSeries.Pokemon)
@@ -29,6 +30,7 @@ public class Lugia extends AnimatorCard {
 
         Initialize(30, 0, 1, 15);
         SetUpgrade(10, 0, 0, -5);
+        SetAsLegendaryPokemon();
 
         SetAffinity_Blue(2, 0, 3);
 
