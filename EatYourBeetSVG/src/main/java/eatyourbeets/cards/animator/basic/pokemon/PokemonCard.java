@@ -6,6 +6,8 @@ import eatyourbeets.cards.base.EYBCard;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.resources.GR;
 
+import java.util.ArrayList;
+
 /**
  * Pokemon Cards are basic cards that evolve instead of being upgraded if there is a valid evolution.
  * Evolution permanently transforms the card in your master deck into the evolved card.
@@ -38,6 +40,20 @@ public class PokemonCard extends AnimatorCard {
         SetSeries(CardSeries.Pokemon);
 
         SetTag(GR.Enums.CardTags.POKEMON_CARD, true);
+    }
+
+    public static ArrayList<EYBCardData> GetCards(AnimatorCard emblemicPokemon)
+    {
+        ArrayList<EYBCardData> cards = new ArrayList<>();
+
+        //Remember to add any new Pokemon here if you want them to be available in a loadout!
+        cards.add(Litleo.DATA);
+
+        if (emblemicPokemon != null) {
+            cards.add(emblemicPokemon.cardData);
+        }
+
+        return cards;
     }
 
     public void SetEvolution(AnimatorCard evolution) {

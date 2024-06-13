@@ -34,6 +34,7 @@ public abstract class AnimatorLoadout
         public int HpValue;
         public boolean AllCardsSeen;
         public boolean IsValid;
+        public AnimatorCard EmblemicPokemon;
 
         public static Validation For(AnimatorLoadoutData data)
         {
@@ -200,8 +201,7 @@ public abstract class AnimatorLoadout
         data.Gold = BASE_GOLD;
         data.AddCardSlot(1, 6).AddItem(Strike.DATA, -2);
         data.AddCardSlot(1, 6).AddItem(Defend.DATA, -2);
-        data.AddCardSlot(0, 1).AddItems(ImprovedStrike.GetCards(), 0);
-        data.AddCardSlot(0, 1).AddItems(ImprovedDefend.GetCards(), 0);
+        data.AddCardSlot(0, 2).AddItems(ImprovedStrike.GetCards(), 0);
 
         final AnimatorCardSlot s1 = data.AddCardSlot(0, 1);
         final AnimatorCardSlot s2 = data.AddCardSlot(0, 1);
