@@ -39,11 +39,21 @@ public class PokemonCard extends AnimatorCard {
             SetEvolution(evolution);
         }
 
-        tooltips.add(CardTooltips.FindByName(GR.Animator.PlayerClass, "pokemon"));
-
         SetSeries(CardSeries.Pokemon);
 
         SetTag(GR.Enums.CardTags.POKEMON_CARD, true);
+    }
+
+
+    @Override
+    public void initializeDescription()
+    {
+        super.initializeDescription();
+
+        if (cardText != null)
+        {
+            tooltips.add(CardTooltips.FindByName(GR.Animator.PlayerClass, "pokemon"));
+        }
     }
 
     public static ArrayList<EYBCardData> GetStarterCards(AnimatorCard emblemicPokemon)
@@ -99,6 +109,7 @@ public class PokemonCard extends AnimatorCard {
 
     //Override this method to implement custom evolutions
     //Note that no matter what happens, the Pokemon card is removed from the deck automatically afterwards.
+    //Set hasSpecialEvolution to true on the Pokemon card if you do not wish to use PokemonCard.evolution.
     public void Evolve() {
         EvolveInto(evolution);
     }

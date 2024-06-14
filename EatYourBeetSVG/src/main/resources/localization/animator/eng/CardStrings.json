@@ -4,13 +4,13 @@
 	{
 		"animator:Strike":
 		{
-			"FLAVOR_TEXT": "'Victorious warriors win first and then go to war, while defeated warriors go to war first and then seek to win.' -Sun Tsu",
+			"FLAVOR_TEXT": "'You can do a lot more with weapons and politeness than just politeness.' -Vladimir Putin",
 			"DESCRIPTION": "",
 			"NAME": "Strike"
 		},
 		"animator:Defend":
 		{
-			"FLAVOR_TEXT": "'For to win one hundred victories in one hundred battles is not the acme of skill. To subdue the enemy without fighting is the acme of skill.' -Sun Tsu,",
+			"FLAVOR_TEXT": "'If there is no Ukrainian strong army, there will be no Ukraine, and that will be the case when everyone will understand... it's not the war in Ukraine, it's the war in Europe. We are defending our country, our land.' -Volodymyr Zelensky",
 			"DESCRIPTION": "",
 			"NAME": "Defend"
 		},
@@ -141,6 +141,42 @@
 
 	"BASIC:POKEMON":
 	{
+		"animator:Bunnelby":
+		{
+			"FLAVOR_TEXT": "'It has ears like shovels. Digging holes strengthens its ears so much that they can sever thick roots effortlessly.' -Kalos Pokédex",
+			"DESCRIPTION": "Gain !M! Temp. [Thorns]. || {Evolves} into {Diggersby}.",
+			"NAME": "Bunnelby"
+		},
+		"animator:Diggersby":
+		{
+			"FLAVOR_TEXT": "'With their powerful ears, they can heft boulders of a ton or more with ease. They can be a big help at construction sites.' -Kalos Pokédex",
+			"DESCRIPTION": "Gain !M! Temp. [Thorns].",
+			"NAME": "Diggersby"
+		},
+		"animator:Stantler":
+		{
+			"FLAVOR_TEXT": "'Those who stare at its antlers will gradually lose control of their senses and be unable to stand.' -Johto Pokédex",
+			"DESCRIPTION": "{Evolves} into {Wyrdeer}.",
+			"NAME": "Stantler"
+		},
+		"animator:Wyrdeer":
+		{
+			"FLAVOR_TEXT": "'The black orbs shine with an uncanny light when the Pokémon is erecting invisible barriers. The fur shed from its beard retains heat well and is a highly useful material for winter clothing.' -Hisui Pokédex.",
+			"DESCRIPTION": "Draw a card.",
+			"NAME": "Wyrdeer"
+		},
+		"animator:Helioptile":
+		{
+			"FLAVOR_TEXT": "'They make their home in deserts. They can generate their energy from basking in the sun, so eating food is not a requirement.' -Kalos Pokédex",
+			"DESCRIPTION": "Gain !M! [THP] for each enemy hit. || {Evolves} into {Heliolisk}.",
+			"NAME": "Helioptile"
+		},
+		"animator:Heliolisk":
+		{
+			"FLAVOR_TEXT": "'It stimulates its muscles with electricity, boosting the strength in its legs and enabling it to run 100 yards in five seconds.' -Kalos Pokédex.",
+			"DESCRIPTION": "Gain !M! [THP] for each enemy hit.",
+			"NAME": "Heliolisk"
+		},
 		"animator:Zorua":
 		{
 			"FLAVOR_TEXT": "'A once-departed soul, returned to life in Hisui. Derives power from resentment, which rises as energy atop its head and takes on the forms of foes. In this way, Zorua vents lingering malice.' -Hisui Pokédex",

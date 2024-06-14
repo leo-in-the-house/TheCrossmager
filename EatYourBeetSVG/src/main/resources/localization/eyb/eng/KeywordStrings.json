@@ -344,7 +344,7 @@
 	},
 	"Pokemon":
 	{
-		"DESCRIPTION": "Pokémon are #yBasic cards.  Many of them can #yEvolve, which cause them to automatically transform into a stronger Pokémon that costs 1 more [E] whenever you enter a new act with at least 4 #yEnergy.",
+		"DESCRIPTION": "Pokémon are #yBasic cards.  Many of them can #yEvolve, which cause them to automatically transform into a stronger Pokémon that costs 1 more [E] whenever you enter a new act with at least 4 [E].",
 		"NAMES": ["pokemon"],
 		"PROPER_NAME": "Pokémon"
 	},
