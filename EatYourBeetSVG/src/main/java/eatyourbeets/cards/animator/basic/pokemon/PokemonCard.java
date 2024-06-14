@@ -2,10 +2,13 @@ package eatyourbeets.cards.animator.basic.pokemon;
 
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.helpers.CardLibrary;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardSeries;
 import eatyourbeets.cards.base.EYBCard;
 import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.resources.CardTooltips;
 import eatyourbeets.resources.GR;
 import eatyourbeets.utilities.AdvancedTexture;
 import eatyourbeets.utilities.GameEffects;
@@ -44,7 +47,7 @@ public class PokemonCard extends AnimatorCard {
             SetEvolution(evolution);
         }
 
-
+        tooltips.add(CardTooltips.FindByName(GR.Animator.PlayerClass, "pokemon"));
         SetEvolved(evolved);
 
         SetSeries(CardSeries.Pokemon);
@@ -64,7 +67,21 @@ public class PokemonCard extends AnimatorCard {
             cards.add(emblemicPokemon.cardData);
         }
 
+        MarkAllStarterPokemonAsSeen(cards);
+
         return cards;
+    }
+
+    private static void MarkAllStarterPokemonAsSeen(ArrayList<EYBCardData> pokemonCards) {
+        for (EYBCardData cardData : pokemonCards)
+        {
+            AbstractCard card = CardLibrary.getCard(cardData.ID);
+
+            if (!card.isSeen)
+            {
+                UnlockTracker.markCardAsSeen(card.cardID);
+            }
+        }
     }
 
     public static void EvolveAllPokemon() {

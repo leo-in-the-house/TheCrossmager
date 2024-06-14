@@ -21,6 +21,7 @@ public class Dolliv extends PokemonCard {
         SetUpgrade(0, 2, 1);
         SetEvolution(new Arboliva());
         SetEvolved(true);
+        SetAffinity_Green(1);
     }
 
     @Override

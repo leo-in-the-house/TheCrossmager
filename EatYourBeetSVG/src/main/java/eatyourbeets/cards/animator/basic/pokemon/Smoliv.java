@@ -20,6 +20,8 @@ public class Smoliv extends PokemonCard {
         Initialize(0, 5, 2);
         SetUpgrade(0, 3, 0);
         SetEvolution(new Dolliv());
+
+        SetAffinity_Green(1);
     }
 
     @Override
