@@ -1,8 +1,8 @@
 {
   "modid": "eatyourbeetsvg-theanimator",
-  "name": "The Animator",
-  "author_list": ["EatYourBeetS"],
-  "description": "Adds a new playable character, a new Act, 150+ cards, and 25+ relics.",
+  "name": "The Crossmager",
+  "author_list": ["EatYourBeetS, Touhou"],
+  "description": "Adds a new playable character, 300+ cards, and 25+ relics themed after anime.",
   "version": "3.9.1",
   "sts_version": "10-04-2022",
   "mts_version": "3.30.0",

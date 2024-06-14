@@ -6,7 +6,6 @@ import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.cards.curses.AscendersBane;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -18,6 +17,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.saveAndContinue.SaveFile;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
+import eatyourbeets.cards.animator.basic.pokemon.PokemonCard;
 import eatyourbeets.cards.animator.curse.special.Curse_AscendersBane;
 import eatyourbeets.events.base.EYBEvent;
 import eatyourbeets.interfaces.listeners.OnRoomTransitionListener;
@@ -151,6 +151,11 @@ public class AbstractDungeonPatches
             if (!GameUtilities.IsPlayerClass(GR.Animator.PlayerClass))
             {
                 return;
+            }
+
+            //Evolve Pokemon past act 1
+            if (AbstractDungeon.actNum > 1) {
+                PokemonCard.EvolveAllPokemon();
             }
 
             final ArrayList<AbstractCard> cards = AbstractDungeon.player.masterDeck.group;

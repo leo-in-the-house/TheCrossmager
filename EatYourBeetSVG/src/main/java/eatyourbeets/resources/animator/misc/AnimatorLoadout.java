@@ -10,6 +10,7 @@ import eatyourbeets.cards.animator.basic.Defend;
 import eatyourbeets.cards.animator.basic.ImprovedDefend;
 import eatyourbeets.cards.animator.basic.ImprovedStrike;
 import eatyourbeets.cards.animator.basic.Strike;
+import eatyourbeets.cards.animator.basic.pokemon.PokemonCard;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.characters.AnimatorCharacter;
 import eatyourbeets.relics.animator.RollingCubes;
@@ -34,7 +35,6 @@ public abstract class AnimatorLoadout
         public int HpValue;
         public boolean AllCardsSeen;
         public boolean IsValid;
-        public AnimatorCard EmblemicPokemon;
 
         public static Validation For(AnimatorLoadoutData data)
         {
@@ -168,6 +168,7 @@ public abstract class AnimatorLoadout
     public CardSeries Series;
     public boolean IsBeta;
     public boolean IsEnabled;
+    public AnimatorCard EmblemicPokemon;
 
     public int CardDraw = 5;
     public int OrbSlots = 3;
@@ -201,7 +202,8 @@ public abstract class AnimatorLoadout
         data.Gold = BASE_GOLD;
         data.AddCardSlot(1, 6).AddItem(Strike.DATA, -2);
         data.AddCardSlot(1, 6).AddItem(Defend.DATA, -2);
-        data.AddCardSlot(0, 2).AddItems(ImprovedStrike.GetCards(), 0);
+        data.AddCardSlot(0, 1).AddItems(PokemonCard.GetCards(this.EmblemicPokemon), 0);
+        data.AddCardSlot(0, 1).AddItems(PokemonCard.GetCards(this.EmblemicPokemon), 0);
 
         final AnimatorCardSlot s1 = data.AddCardSlot(0, 1);
         final AnimatorCardSlot s2 = data.AddCardSlot(0, 1);

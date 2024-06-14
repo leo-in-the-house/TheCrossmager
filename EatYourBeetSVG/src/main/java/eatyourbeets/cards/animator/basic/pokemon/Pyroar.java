@@ -12,7 +12,7 @@ import eatyourbeets.utilities.GameUtilities;
 
 public class Pyroar extends PokemonCard {
     public static final EYBCardData DATA = Register(Pyroar.class)
-            .SetAttack(1, CardRarity.BASIC, EYBAttackType.Normal, EYBCardTarget.Normal);
+            .SetAttack(2, CardRarity.BASIC, EYBAttackType.Normal, EYBCardTarget.Normal);
 
     public Pyroar() {
         super(DATA);
@@ -20,6 +20,8 @@ public class Pyroar extends PokemonCard {
         Initialize(22, 0, 0);
         SetUpgrade(3, 0, 0);
         SetEvolved(true);
+
+        SetAffinity_Red(1);
     }
 
     @Override

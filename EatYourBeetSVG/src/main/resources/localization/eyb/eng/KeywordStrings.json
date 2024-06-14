@@ -150,6 +150,12 @@
 		"NAMES": ["envenom"],
 		"PROPER_NAME": "Envenom"
 	},
+	"Evolve":
+	{
+		"DESCRIPTION": "Transforms into a completely different card upon entering a new act, which is more efficient and powerful but costs 1 more [E].",
+		"NAMES": ["evolve","evolves","Evolves"],
+		"PROPER_NAME": "Evolve"
+	},
 	"Fetch":
 	{
 		"DESCRIPTION": "Choose a card and move it to your hand.",
@@ -335,6 +341,12 @@
 		"DESCRIPTION": "At the start of each turn, lose [HP] equal to [Poison], then reduce [Poison] by #b1.",
 		"NAMES": ["poison"],
 		"PROPER_NAME": "Poison"
+	},
+	"Pokemon":
+	{
+		"DESCRIPTION": "Pokémon are #yBasic cards.  Many of them can #yEvolve, which cause them to automatically transform into a stronger Pokémon that costs 1 more [E] whenever you enter a new act.",
+		"NAMES": ["pokemon"],
+		"PROPER_NAME": "Pokémon"
 	},
 	"Protagonist":
 	{

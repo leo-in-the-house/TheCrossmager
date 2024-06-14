@@ -4,8 +4,6 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.interfaces.subscribers.OnStartOfTurnPostDrawSubscriber;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.cards.CardQueueItem;
 import com.megacrit.cardcrawl.cards.green.Tactician;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -27,6 +25,7 @@ import eatyourbeets.cards.base.attributes.DamageAttribute;
 import eatyourbeets.interfaces.delegates.ActionT1;
 import eatyourbeets.interfaces.delegates.ActionT2;
 import eatyourbeets.interfaces.delegates.FuncT1;
+import eatyourbeets.interfaces.subscribers.OnStartOfTurnPostDrawSubscriber;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.powers.replacement.PlayerFlightPower;
 import eatyourbeets.resources.AbstractResources;
@@ -935,7 +934,10 @@ public abstract class EYBCard extends EYBCardBase implements OnStartOfTurnPostDr
         if (TryUpgrade())
         {
             if (upgradeForm != null) {
-                GameActions.Bottom.ReplaceCard(uuid, upgradeForm.makeCopy());
+                this.name = upgradeForm.name;
+
+                GameUtilities.CopyVisualProperties(upgradeForm, this);
+
                 return;
             }
 

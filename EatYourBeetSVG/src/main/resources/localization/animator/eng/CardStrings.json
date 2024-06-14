@@ -139,10 +139,29 @@
 
 	"BASIC:POKEMON":
 	{
+		"animator:Smoliv":
+		{
+			"FLAVOR_TEXT": "'This Pokémon converts nutrients into oil, which it stores in the fruit on its head. It can easily go a whole week without eating or drinking.' -Paldea Pokédex.",
+			"DESCRIPTION": "{Evolves} into {Dolliv}.",
+			"NAME": "Smoliv"
+		},
+		"animator:Dolliv":
+		{
+			"FLAVOR_TEXT": "'Dolliv shares its tasty, fresh-scented oil with others. This species has coexisted with humans since times long gone.' -Paldea Pokédex.",
+			"DESCRIPTION": "{Evolves} into {Arboliva}.",
+			"NAME": "Dolliv"
+		},
+		"animator:Arboliva":
+		{
+			"FLAVOR_TEXT": "'This calm Pokémon is very compassionate. It will share its delicious, nutrient-rich oil with weakened Pokémon.' -Paldea Pokédex.",
+			"DESCRIPTION": "Whenever you are attacked this turn, gain !S! [THP].",
+			"EXTENDED_DESCRIPTION": ["Whenever you are attacked this turn, gain #b{0} #yTemp #yHP."],
+			"NAME": "Arboliva"
+		},
 		"animator:Litleo":
 		{
 			"FLAVOR_TEXT": "'They set off on their own from their pride and live by themselves to become stronger. These hot-blooded Pokémon are quick to fight.' -Kalos Pokédex.",
-			"DESCRIPTION": "",
+			"DESCRIPTION": "{Evolves} into {Pyroar}.",
 			"NAME": "Litleo"
 		},
 		"animator:Pyroar":

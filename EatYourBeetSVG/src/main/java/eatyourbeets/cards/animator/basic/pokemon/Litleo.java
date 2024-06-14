@@ -18,6 +18,7 @@ public class Litleo extends PokemonCard {
         super(DATA);
 
         Initialize(9, 0, 0);
+        SetUpgrade(3, 0, 0);
         SetEvolution(new Pyroar());
 
         SetAffinity_Red(1);

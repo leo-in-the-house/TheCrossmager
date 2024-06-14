@@ -1,29 +1,35 @@
 package eatyourbeets.cards.animator.basic.pokemon;
 
+import com.badlogic.gdx.graphics.Color;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardSeries;
 import eatyourbeets.cards.base.EYBCard;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.resources.GR;
+import eatyourbeets.utilities.AdvancedTexture;
+import eatyourbeets.utilities.GameEffects;
 
 import java.util.ArrayList;
 
 /**
- * Pokemon Cards are basic cards that evolve instead of being upgraded if there is a valid evolution.
+ * Pokemon Cards are basic cards that evolve when you enter a new act if there is a valid evolution.
  * Evolution permanently transforms the card in your master deck into the evolved card.
  * Legendary Pokemon and Series Pokemon cannot be added automatically like most basics, as well as evolved Pokemon.
  * Otherwise, the Pokemon is upgraded normally.
  */
 public class PokemonCard extends AnimatorCard {
 
+    private PokemonCard evolution;
     private boolean evolved;
     private boolean legendary;
     private boolean series;
+    private final Color borderColor = Color.RED;
     public PokemonCard(EYBCardData data) {
         this(data, false, null);
     }
 
-    public PokemonCard(EYBCardData data, AnimatorCard evolution) {
+    public PokemonCard(EYBCardData data, PokemonCard evolution) {
         this(data, false, evolution);
     }
 
@@ -31,10 +37,14 @@ public class PokemonCard extends AnimatorCard {
         this(data, evolved, null);
     }
 
-    public PokemonCard(EYBCardData data, boolean evolved, AnimatorCard evolution) {
+    public PokemonCard(EYBCardData data, boolean evolved, PokemonCard evolution) {
         super(data);
 
-        SetEvolution(evolution);
+        if (evolution != null){
+            SetEvolution(evolution);
+        }
+
+
         SetEvolved(evolved);
 
         SetSeries(CardSeries.Pokemon);
@@ -48,6 +58,7 @@ public class PokemonCard extends AnimatorCard {
 
         //Remember to add any new Pokemon here if you want them to be available in a loadout!
         cards.add(Litleo.DATA);
+        cards.add(Smoliv.DATA);
 
         if (emblemicPokemon != null) {
             cards.add(emblemicPokemon.cardData);
@@ -56,8 +67,30 @@ public class PokemonCard extends AnimatorCard {
         return cards;
     }
 
-    public void SetEvolution(AnimatorCard evolution) {
-        this.upgradeForm = evolution;
+    public static void EvolveAllPokemon() {
+        ArrayList<AbstractCard> cardsToRemove = new ArrayList<>();
+
+        for (AbstractCard card : player.masterDeck.group) {
+            if (card instanceof PokemonCard) {
+                PokemonCard pokemon = (PokemonCard) card;
+                if (pokemon.evolution != null) {
+                    cardsToRemove.add(pokemon);
+                    AbstractCard evoPokemon = pokemon.evolution.makeCopy();
+                    if (pokemon.upgraded) {
+                        evoPokemon.upgrade();
+                    }
+                    GameEffects.TopLevelQueue.ShowAndObtain(evoPokemon);
+                }
+            }
+        }
+
+        for (AbstractCard card : cardsToRemove) {
+            player.masterDeck.removeCard(card.cardID);
+        }
+    }
+
+    public void SetEvolution(PokemonCard evolution) {
+        this.evolution = evolution;
 
         cardData.AddPreview(evolution.makeCopy(), false);
     }
@@ -79,10 +112,22 @@ public class PokemonCard extends AnimatorCard {
     }
 
     public boolean HasEvolution() {
-        return upgradeForm != null;
+        return evolution != null;
     }
 
     public EYBCard GetEvolution() {
-        return upgradeForm;
+        return evolution;
+    }
+
+    @Override
+    protected AdvancedTexture GetCardBanner()
+    {
+        return super.GetCardBanner().SetColor(borderColor);
+    }
+
+    @Override
+    protected AdvancedTexture GetPortraitFrame()
+    {
+        return super.GetPortraitFrame().SetColor(borderColor);
     }
 }
