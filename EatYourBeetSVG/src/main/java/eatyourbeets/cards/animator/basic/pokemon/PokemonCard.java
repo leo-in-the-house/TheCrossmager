@@ -24,6 +24,7 @@ import java.util.ArrayList;
 public class PokemonCard extends AnimatorCard {
 
     private PokemonCard evolution;
+    private boolean hasSpecialEvolution;
     private boolean legendary;
     private boolean series;
     private final Color borderColor = Color.RED;
@@ -82,21 +83,32 @@ public class PokemonCard extends AnimatorCard {
 
         for (AbstractCard card : player.masterDeck.group) {
             if (card instanceof PokemonCard) {
+
                 PokemonCard pokemon = (PokemonCard) card;
-                if (pokemon.evolution != null) {
-                    cardsToRemove.add(pokemon);
-                    AbstractCard evoPokemon = pokemon.evolution.makeCopy();
-                    if (pokemon.upgraded) {
-                        evoPokemon.upgrade();
-                    }
-                    GameEffects.TopLevelQueue.ShowAndObtain(evoPokemon);
+                if (pokemon.evolution != null || pokemon.hasSpecialEvolution) {
+                    pokemon.Evolve();
                 }
+                cardsToRemove.add(pokemon);
             }
         }
 
         for (AbstractCard card : cardsToRemove) {
             player.masterDeck.removeCard(card.cardID);
         }
+    }
+
+    //Override this method to implement custom evolutions
+    //Note that no matter what happens, the Pokemon card is removed from the deck automatically afterwards.
+    public void Evolve() {
+        EvolveInto(evolution);
+    }
+
+    protected void EvolveInto(PokemonCard target) {
+            AbstractCard evoPokemon = target.makeCopy();
+            if (upgraded) {
+                evoPokemon.upgrade();
+            }
+            GameEffects.TopLevelQueue.ShowAndObtain(evoPokemon);
     }
 
     public void SetEvolution(PokemonCard evolution) {
