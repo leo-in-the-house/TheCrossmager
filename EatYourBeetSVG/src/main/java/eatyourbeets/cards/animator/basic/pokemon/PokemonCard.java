@@ -53,6 +53,8 @@ public class PokemonCard extends AnimatorCard {
         cards.add(Litleo.DATA);
         cards.add(Smoliv.DATA);
         cards.add(Bidoof.DATA);
+        cards.add(Igglybuff.DATA);
+        cards.add(Zorua.DATA);
 
         if (emblemicPokemon != null) {
             cards.add(emblemicPokemon.cardData);

@@ -4,12 +4,13 @@
 	{
 		"animator:Strike":
 		{
+			"FLAVOR_TEXT": "'Victorious warriors win first and then go to war, while defeated warriors go to war first and then seek to win.' -Sun Tsu",
 			"DESCRIPTION": "",
 			"NAME": "Strike"
 		},
 		"animator:Defend":
 		{
-			"DESCRIPTION": "",
+			"DESCRIPTION": "'For to win one hundred victories in one hundred battles is not the acme of skill. To subdue the enemy without fighting is the acme of skill.' -Sun Tsu",
 			"NAME": "Defend"
 		},
 
