@@ -139,6 +139,18 @@
 
 	"BASIC:POKEMON":
 	{
+		"animator:Zorua":
+		{
+			"FLAVOR_TEXT": "'A once-departed soul, returned to life in Hisui. Derives power from resentment, which rises as energy atop its head and takes on the forms of foes. In this way, Zorua vents lingering malice.' -Hisui Pokédex",
+			"DESCRIPTION": "Copy !M! {Basic} or {Common} card(s) in your hand. || {Evolves} into {Zoroark}.",
+			"NAME": "Zorua"
+		},
+		"animator:Zoroark":
+		{
+			"FLAVOR_TEXT": "'With its disheveled white fur, it looks like an embodiment of death. Heedless of its own safety, Zoroark attacks its nemeses with a bitter energy so intense, it lacerates Zoroark's own body.' -Hisui Pokédex.",
+			"DESCRIPTION": "Copy !M! {Basic} or {Common} card(s) in your hand.",
+			"NAME": "Zoroark"
+		},
 		"animator:Igglybuff":
 		{
 			"FLAVOR_TEXT": "'I've had so much fun since Master took me on as an apprentice.  We would open up the map and look for a place to explore.  We'd decide where to go together like two old friends...  and then head out exploring right away...  Master and I made a great team and we found a bunch of treasure!  Just like that, we went on one successful expedition after another!'",

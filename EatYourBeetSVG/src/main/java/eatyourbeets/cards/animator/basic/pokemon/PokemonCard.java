@@ -45,7 +45,7 @@ public class PokemonCard extends AnimatorCard {
         SetTag(GR.Enums.CardTags.POKEMON_CARD, true);
     }
 
-    public static ArrayList<EYBCardData> GetCards(AnimatorCard emblemicPokemon)
+    public static ArrayList<EYBCardData> GetStarterCards(AnimatorCard emblemicPokemon)
     {
         ArrayList<EYBCardData> cards = new ArrayList<>();
 

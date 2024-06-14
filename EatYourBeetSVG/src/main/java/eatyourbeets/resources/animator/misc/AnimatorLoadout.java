@@ -202,8 +202,8 @@ public abstract class AnimatorLoadout
         data.Gold = BASE_GOLD;
         data.AddCardSlot(1, 6).AddItem(Strike.DATA, -2);
         data.AddCardSlot(1, 6).AddItem(Defend.DATA, -2);
-        data.AddCardSlot(0, 1).AddItems(PokemonCard.GetCards(this.EmblemicPokemon), 0);
-        data.AddCardSlot(0, 1).AddItems(PokemonCard.GetCards(this.EmblemicPokemon), 0);
+        data.AddCardSlot(0, 1).AddItems(PokemonCard.GetStarterCards(this.EmblemicPokemon), 0);
+        data.AddCardSlot(0, 1).AddItems(PokemonCard.GetStarterCards(this.EmblemicPokemon), 0);
 
         final AnimatorCardSlot s1 = data.AddCardSlot(0, 1);
         final AnimatorCardSlot s2 = data.AddCardSlot(0, 1);
