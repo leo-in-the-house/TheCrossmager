@@ -3,31 +3,28 @@ package eatyourbeets.cards.animator.basic.pokemon;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.CardUseInfo;
-import eatyourbeets.cards.base.EYBAttackType;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
-import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
-public class Pyroar extends PokemonCard {
-    public static final EYBCardData DATA = Register(Pyroar.class)
-            .SetAttack(2, CardRarity.BASIC, EYBAttackType.Normal, EYBCardTarget.Normal);
+public class Igglybuff extends PokemonCard {
+    public static final EYBCardData DATA = Register(Igglybuff.class)
+            .SetSkill(0, CardRarity.BASIC, EYBCardTarget.Normal);
 
-    public Pyroar() {
+    public Igglybuff() {
         super(DATA);
 
-        Initialize(22, 0, 0);
-        SetUpgrade(3, 0, 0);
+        Initialize(0, 0, 1);
+        SetUpgrade(0, 0, 2);
 
-
-        SetAffinity_Red(1);
+        SetAffinity_White(1);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info) {
         GameUtilities.PlayVoiceSFX(name);
 
-        GameActions.Bottom.DealDamage(this, m, AttackEffects.FIRE);
+        GameActions.Bottom.ApplyWeak(player, m, magicNumber);
     }
 }

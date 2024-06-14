@@ -155,7 +155,9 @@ public class AbstractDungeonPatches
 
             //Evolve Pokemon past act 1
             if (AbstractDungeon.actNum > 1) {
-                PokemonCard.EvolveAllPokemon();
+                if (AbstractDungeon.player.energy.energyMaster >= 4) {
+                    PokemonCard.EvolveAllPokemon();
+                }
             }
 
             final ArrayList<AbstractCard> cards = AbstractDungeon.player.masterDeck.group;

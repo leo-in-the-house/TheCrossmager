@@ -21,7 +21,7 @@ public class Arboliva extends PokemonCard {
 
         Initialize(0, 20, 10, 3);
         SetUpgrade(0, 1, 2);
-        SetEvolved(true);
+
         SetAffinity_Green(1);
     }
 

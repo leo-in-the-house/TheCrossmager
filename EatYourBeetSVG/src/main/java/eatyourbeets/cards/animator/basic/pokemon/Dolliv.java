@@ -20,7 +20,7 @@ public class Dolliv extends PokemonCard {
         Initialize(0, 12, 6);
         SetUpgrade(0, 2, 1);
         SetEvolution(new Arboliva());
-        SetEvolved(true);
+
         SetAffinity_Green(1);
     }
 

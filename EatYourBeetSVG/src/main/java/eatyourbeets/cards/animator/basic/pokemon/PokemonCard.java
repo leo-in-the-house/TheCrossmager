@@ -24,23 +24,14 @@ import java.util.ArrayList;
 public class PokemonCard extends AnimatorCard {
 
     private PokemonCard evolution;
-    private boolean evolved;
     private boolean legendary;
     private boolean series;
     private final Color borderColor = Color.RED;
     public PokemonCard(EYBCardData data) {
-        this(data, false, null);
+        this(data, null);
     }
 
     public PokemonCard(EYBCardData data, PokemonCard evolution) {
-        this(data, false, evolution);
-    }
-
-    public PokemonCard(EYBCardData data, boolean evolved) {
-        this(data, evolved, null);
-    }
-
-    public PokemonCard(EYBCardData data, boolean evolved, PokemonCard evolution) {
         super(data);
 
         if (evolution != null){
@@ -48,7 +39,6 @@ public class PokemonCard extends AnimatorCard {
         }
 
         tooltips.add(CardTooltips.FindByName(GR.Animator.PlayerClass, "pokemon"));
-        SetEvolved(evolved);
 
         SetSeries(CardSeries.Pokemon);
 
@@ -62,6 +52,7 @@ public class PokemonCard extends AnimatorCard {
         //Remember to add any new Pokemon here if you want them to be available in a loadout!
         cards.add(Litleo.DATA);
         cards.add(Smoliv.DATA);
+        cards.add(Bidoof.DATA);
 
         if (emblemicPokemon != null) {
             cards.add(emblemicPokemon.cardData);
@@ -110,14 +101,6 @@ public class PokemonCard extends AnimatorCard {
         this.evolution = evolution;
 
         cardData.AddPreview(evolution.makeCopy(), false);
-    }
-
-    public void SetEvolved(boolean evolved) {
-        this.evolved = evolved;
-    }
-
-    public boolean ObtainableFromLoadout() {
-        return !series && !legendary && !evolved;
     }
 
     public void SetAsSeriesPokemon() {

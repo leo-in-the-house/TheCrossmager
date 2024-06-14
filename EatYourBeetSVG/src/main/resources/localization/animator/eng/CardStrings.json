@@ -139,6 +139,36 @@
 
 	"BASIC:POKEMON":
 	{
+		"animator:Igglybuff":
+		{
+			"FLAVOR_TEXT": "'I've had so much fun since Master took me on as an apprentice.  We would open up the map and look for a place to explore.  We'd decide where to go together like two old friends...  and then head out exploring right away...  Master and I made a great team and we found a bunch of treasure!  Just like that, we went on one successful expedition after another!'",
+			"DESCRIPTION": "Apply !M! [Weak]. || {Evolves} into {Jigglypuff}.",
+			"NAME": "Igglybuff"
+		},
+		"animator:Jigglypuff":
+		{
+			"FLAVOR_TEXT": "'When its huge eyes light up, it sings a mysteriously soothing melody that lulls its enemies to sleep.' -Kanto Pokédex.",
+			"DESCRIPTION": "Apply !M! [Weak] to ALL enemies. || {Evolves} into {Wigglytuff}.",
+			"NAME": "Jigglypuff"
+		},
+		"animator:Wigglytuff":
+		{
+			"FLAVOR_TEXT": "'You know, whenever I look at this Defend Globe... I think of him.  It's my starting point in becoming an explorer.  And... of course, there are lots of outlaws in this world...  They are caught and punished, but...  Truly bad Pokémon don't really exist anywhere.'",
+			"DESCRIPTION": "Apply !M! [Weak] to ALL enemies.",
+			"NAME": "Wigglytuff"
+		},
+		"animator:Bidoof":
+		{
+			"FLAVOR_TEXT": "'It constantly gnaws on logs and rocks to whittle down its front teeth. It nests alongside water.' -Sinnoh Pokédex.",
+			"DESCRIPTION": "Gain !M! {Temp}. [Artifact]. || {Evolves} into {Bibarel}.",
+			"NAME": "Bidoof"
+		},
+		"animator:Bibarel":
+		{
+			"FLAVOR_TEXT": "'It makes its nest by damming streams with bark and mud. It is known as an industrious worker.' -Sinnoh Pokédex.",
+			"DESCRIPTION": "Gain !M! {Temp}. [Artifact].",
+			"NAME": "Bibarel"
+		},
 		"animator:Smoliv":
 		{
 			"FLAVOR_TEXT": "'This Pokémon converts nutrients into oil, which it stores in the fruit on its head. It can easily go a whole week without eating or drinking.' -Paldea Pokédex.",

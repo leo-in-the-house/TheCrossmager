@@ -152,7 +152,7 @@
 	},
 	"Evolve":
 	{
-		"DESCRIPTION": "Transforms into a completely different card upon entering a new act, which is more efficient and powerful but costs 1 more [E].",
+		"DESCRIPTION": "Transforms into a completely different card upon entering a new act if you have at least 4 [E], which is more efficient and powerful but costs 1 more [E].",
 		"NAMES": ["evolve","evolves","Evolves"],
 		"PROPER_NAME": "Evolve"
 	},
@@ -344,7 +344,7 @@
 	},
 	"Pokemon":
 	{
-		"DESCRIPTION": "Pokémon are #yBasic cards.  Many of them can #yEvolve, which cause them to automatically transform into a stronger Pokémon that costs 1 more [E] whenever you enter a new act.",
+		"DESCRIPTION": "Pokémon are #yBasic cards.  Many of them can #yEvolve, which cause them to automatically transform into a stronger Pokémon that costs 1 more [E] whenever you enter a new act with at least 4 #yEnergy.",
 		"NAMES": ["pokemon"],
 		"PROPER_NAME": "Pokémon"
 	},
