@@ -141,6 +141,25 @@
 
 	"BASIC:POKEMON":
 	{
+		"animator:Zigzagoon":
+		{
+			"FLAVOR_TEXT": "'Its restlessness has it constantly running around. If it sees another Pokémon, it will purposely run into them in order to start a fight.' -Galar Pokédex",
+			"DESCRIPTION": "{Evolves} into {Linoone}.",
+			"NAME": "Zigzagoon"
+		},
+		"animator:Linoone":
+		{
+			"FLAVOR_TEXT": "'It uses its long tongue to taunt opponents. Once the opposition is enraged, this Pokémon hurls itself at the opponent, tackling them forcefully. ' -Galar Pokédex",
+			"DESCRIPTION": "{Evolves} into {Obstagoon}.",
+			"NAME": "Linoone"
+		},
+		"animator:Obstagoon":
+		{
+			"FLAVOR_TEXT": "'Its voice is staggering in volume. Obstagoon has a tendency to take on a threatening posture and shout—this move is known as Obstruct.' -Galar Pokédex",
+			"DESCRIPTION": "Whenever you are attacked without breaking your [Block] this turn, the attacker gains !M! [Vulnerable] [Lock-On].",
+			"EXTENDED_DESCRIPTION": ["Whenever you are attacked without breaking your #yBlock this turn, the attacker gains #b{0} #yVulnerable #yLock-On."],
+			"NAME": "Obstagoon"
+		},
 		"animator:Bunnelby":
 		{
 			"FLAVOR_TEXT": "'It has ears like shovels. Digging holes strengthens its ears so much that they can sever thick roots effortlessly.' -Kalos Pokédex",

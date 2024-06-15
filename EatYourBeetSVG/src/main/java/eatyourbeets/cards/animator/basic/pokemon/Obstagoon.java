@@ -6,29 +6,22 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
-import eatyourbeets.cards.base.attributes.AbstractAttribute;
-import eatyourbeets.cards.base.attributes.TempHPAttribute;
 import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
+import eatyourbeets.utilities.TargetHelper;
 
-public class Arboliva extends PokemonCard {
-    public static final EYBCardData DATA = Register(Arboliva.class)
+public class Obstagoon extends PokemonCard {
+    public static final EYBCardData DATA = Register(Obstagoon.class)
             .SetSkill(3, CardRarity.BASIC, EYBCardTarget.None);
 
-    public Arboliva() {
+    public Obstagoon() {
         super(DATA);
 
-        Initialize(0, 20, 10, 3);
-        SetUpgrade(0, 1, 2);
+        Initialize(0, 29, 3);
+        SetUpgrade(0, 3, 0);
 
-        SetAffinity_Green(1);
-    }
-
-    @Override
-    public AbstractAttribute GetSpecialInfo()
-    {
-        return TempHPAttribute.Instance.SetCard(this, true);
+        SetAffinity_Violet(1);
     }
 
     @Override
@@ -36,15 +29,14 @@ public class Arboliva extends PokemonCard {
         GameUtilities.PlayVoiceSFX(name);
 
         GameActions.Bottom.GainBlock(block);
-        GameActions.Bottom.GainTemporaryHP(magicNumber);
-        GameActions.Bottom.StackPower(new ArbolivaPower(player, secondaryValue));
+        GameActions.Bottom.StackPower(new ObstagoonPower(player, magicNumber));
     }
 
-    public static class ArbolivaPower extends AnimatorPower
+    public static class ObstagoonPower extends AnimatorPower
     {
-        public ArbolivaPower(AbstractPlayer owner, int amount)
+        public ObstagoonPower(AbstractPlayer owner, int amount)
         {
-            super(owner, Arboliva.DATA);
+            super(owner, Obstagoon.DATA);
 
             this.amount = amount;
 
@@ -72,7 +64,10 @@ public class Arboliva extends PokemonCard {
 
         public int onAttacked(DamageInfo info, int damageAmount)
         {
-            GameActions.Top.GainTemporaryHP(amount);
+            if (damageAmount < player.currentBlock && info.owner != null) {
+                GameActions.Top.ApplyVulnerable(TargetHelper.Normal(info.owner), amount);
+                GameActions.Top.ApplyLockOn(TargetHelper.Normal(info.owner), amount);
+            }
 
             return super.onAttacked(info, damageAmount);
         }
