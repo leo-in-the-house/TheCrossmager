@@ -141,6 +141,80 @@
 
 	"BASIC:POKEMON":
 	{
+		"animator:Eevee":
+		{
+			"FLAVOR_TEXT": "'It can evolve into a variety of forms. Eevee's genes are the key to solving the mysteries of Pokémon evolution.' -Kanto Pokédex",
+			"DESCRIPTION": "This card evolves into a random Pokémon.  When that happens, upgrade that card.",
+			"NAME": "Eevee"
+		},
+		"animator:Flareon":
+		{
+			"FLAVOR_TEXT": "'Inhaled air is carried to its flame sac, heated, and exhaled as fire that reaches over 3,000 degrees Fahrenheit.' -Paldea Pokédex",
+			"DESCRIPTION": "Add {Burn} to your hand.",
+			"NAME": "Flareon"
+		},
+		"animator:Jolteon":
+		{
+			"FLAVOR_TEXT": "'It accumulates negative ions in the atmosphere to blast out 10,000-volt lightning bolts.' -Galar Pokédex",
+			"DESCRIPTION": "Apply 3 [Vulnerable] to the target.",
+			"NAME": "Jolteon"
+		},
+		"animator:Vaporeon":
+		{
+			"FLAVOR_TEXT": "'It detects nearby moisture with its fin. When its fin begins trembling rapidly, that means rain will fall in a few hours.' -Alola Pokédex",
+			"DESCRIPTION": "Gain 3 [Plated Armor].",
+			"NAME": "Vaporeon"
+		},
+		"animator:Espeon":
+		{
+			"FLAVOR_TEXT": "'By reading air currents, it can predict things such as the weather or its foe's next move.' -Johto Pokédex",
+			"DESCRIPTION": "Draw 2 cards next turn.",
+			"NAME": "Espeon"
+		},
+		"animator:Umbreon":
+		{
+			"FLAVOR_TEXT": "'Umbreon evolved as a result of exposure to the moon's waves. It hides silently in darkness and waits for its foes to make a move. The rings on its body glow when it leaps to attack.' -Hoenn Pokédex",
+			"DESCRIPTION": "<LIM>. Heal 5 [HP].",
+			"NAME": "Umbreon"
+		},
+		"animator:Leafeon":
+		{
+			"FLAVOR_TEXT": "'With cells similar to those of plants, it performs photosynthesis inside its body and creates pure air.' -Unova Pokédex",
+			"DESCRIPTION": "",
+			"NAME": "Leafeon"
+		},
+		"animator:Glaceon":
+		{
+			"FLAVOR_TEXT": "'As a protective technique, it can completely freeze its fur to make its hairs stand like needles.' -Sinnoh Pokédex",
+			"DESCRIPTION": "Channel [Frost].",
+			"NAME": "Glaceon"
+		},
+		"animator:Sylveon":
+		{
+			"FLAVOR_TEXT": "'It wraps its ribbonlike feelers around the arm of its beloved Trainer and walks with him or her.' -Kalos Pokédex",
+			"DESCRIPTION": "End of Turn: Retain all cards in your hand and give them <L> scaling.",
+			"EXTENDED_DESCRIPTION": ["At the end of this turn, #yRetain all cards in your hand and give them #b{0} #yWhite scaling"],
+			"NAME": "Sylveon"
+		},
+		"animator:Porygon":
+		{
+			"FLAVOR_TEXT": "'The world's first artificially created Pokémon. It can travel through electronic space.' -Sinnoh Pokédex",
+			"DESCRIPTION": "Upgrades all colors for one card in your hand. || {Evolves} into {Porygon2}.",
+			"EXTENDED_DESCRIPTION": ["Choose a card in your hand to upgrade its colors."],
+			"NAME": "Porygon"
+		},
+		"animator:Porygon2":
+		{
+			"FLAVOR_TEXT": "'With planetary development software installed, it became capable of working in space.' -Sinnoh Pokédex",
+			"DESCRIPTION": "Upgrades all colors for all cards in your hand.  Increase their scaling by !M!. || {Evolves} into {Porygon-Z}.",
+			"NAME": "Porygon2"
+		},
+		"animator:PorygonZ":
+		{
+			"FLAVOR_TEXT": "'Additional software was installed to make it a better Pokémon. It began acting oddly, however.' -Sinnoh Pokédex",
+			"DESCRIPTION": "All cards EVERYWHERE, including your draw pile gain [A_Star].  Increase their scaling by !M!.",
+			"NAME": "Porygon-Z"
+		},
 		"animator:Zigzagoon":
 		{
 			"FLAVOR_TEXT": "'Its restlessness has it constantly running around. If it sees another Pokémon, it will purposely run into them in order to start a fight.' -Galar Pokédex",
@@ -599,7 +673,7 @@
 		"animator:MamizouFutatsuiwa":
 		{
 			"FLAVOR_TEXT": "'Ho! Ho! Ho!  How long will you keep that confidence?  Now, shall we begin?  A ten-game match of danmaku transformations!'",
-			"DESCRIPTION": "When Sealed: Gain [A_Seal]. || Draw !M! cards and give them [A_Star] scaling.",
+			"DESCRIPTION": "When Sealed: Gain [A_Seal]. || Draw !M! cards and give them [A_Star] affinity.",
 			"NAME": "Mamizou Futatsuiwa"
 		},
 		"animator:MisaKurobane":
