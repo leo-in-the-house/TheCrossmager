@@ -39,10 +39,12 @@ public class Leafeon extends PokemonCard {
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info) {
         GameUtilities.PlayVoiceSFX(name);
 
-        for (int i=0; i<magicNumber; i++) {
-            GameActions.Bottom.VFX(VFX.ThrowDagger(m.hb, 0.15f).SetColor(Color.GREEN));
-            GameActions.Bottom.DealDamage(this, m, AttackEffects.POISON);
-            GameActions.Bottom.Wait(0.8f);
+        for (AbstractMonster enemy : GameUtilities.GetEnemies(true)) {
+            for (int i=0; i<magicNumber; i++) {
+                GameActions.Bottom.VFX(VFX.ThrowDagger(enemy.hb, 0.15f).SetColor(Color.GREEN));
+                GameActions.Bottom.DealDamage(this, enemy, AttackEffects.POISON);
+                GameActions.Bottom.Wait(0.8f);
+            }
         }
     }
 }

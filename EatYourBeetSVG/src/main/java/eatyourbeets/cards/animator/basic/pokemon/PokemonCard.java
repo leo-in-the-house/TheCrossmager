@@ -66,6 +66,12 @@ public class PokemonCard extends AnimatorCard {
         cards.add(Bidoof.DATA);
         cards.add(Igglybuff.DATA);
         cards.add(Zorua.DATA);
+        cards.add(Helioptile.DATA);
+        cards.add(Stantler.DATA);
+        cards.add(Bunnelby.DATA);
+        cards.add(Zigzagoon.DATA);
+        cards.add(Porygon.DATA);
+        cards.add(Eevee.DATA);
 
         if (emblemicPokemon != null) {
             cards.add(emblemicPokemon.cardData);
@@ -116,7 +122,7 @@ public class PokemonCard extends AnimatorCard {
 
     protected void EvolveInto(PokemonCard target) {
             AbstractCard evoPokemon = target.makeCopy();
-            if (upgraded) {
+            if (upgraded || target.upgraded) {
                 evoPokemon.upgrade();
             }
             GameEffects.TopLevelQueue.ShowAndObtain(evoPokemon);
@@ -130,6 +136,10 @@ public class PokemonCard extends AnimatorCard {
 
     public void SetAsSeriesPokemon() {
         series = true;
+    }
+
+    public void HasSpecialEvolution() {
+        hasSpecialEvolution = true;
     }
 
     public void SetAsLegendaryPokemon() {

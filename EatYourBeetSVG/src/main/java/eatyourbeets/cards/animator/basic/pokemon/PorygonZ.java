@@ -38,7 +38,7 @@ public class PorygonZ extends PokemonCard {
     private void SetStarAndUpgradeScaling(CardGroup cardGroup) {
         for (AbstractCard c : cardGroup.group) {
             if (c instanceof AnimatorCard) {
-                GameActions.Top.IncreaseScaling(c, Affinity.Star, 1);
+                GameUtilities.AddAffinityToCard(c, Affinity.Star, 1);
 
                 for (EYBCardAffinity affinity : GameUtilities.GetAffinities(c).List) {
                     if (affinity.scaling > 0) {

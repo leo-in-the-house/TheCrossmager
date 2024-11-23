@@ -13,7 +13,7 @@ import eatyourbeets.utilities.GameUtilities;
 
 public class Glaceon extends PokemonCard {
     public static final EYBCardData DATA = Register(Glaceon.class)
-            .SetAttack(1, CardRarity.BASIC, EYBAttackType.Elemental, EYBCardTarget.Normal);
+            .SetAttack(2, CardRarity.BASIC, EYBAttackType.Elemental, EYBCardTarget.Normal);
 
     public Glaceon() {
         super(DATA);

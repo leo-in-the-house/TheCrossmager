@@ -14,13 +14,13 @@ import eatyourbeets.utilities.GameUtilities;
 
 public class Sylveon extends PokemonCard {
     public static final EYBCardData DATA = Register(Sylveon.class)
-            .SetSkill(1, CardRarity.BASIC, EYBCardTarget.None);
+            .SetSkill(2, CardRarity.BASIC, EYBCardTarget.None);
 
     public Sylveon() {
         super(DATA);
 
-        Initialize(10, 0, 0);
-        SetUpgrade(3, 0, 0);
+        Initialize(0, 10, 0);
+        SetUpgrade(0, 3, 0);
 
         SetAffinity_White(1, 0, 1);
     }
@@ -77,7 +77,10 @@ public class Sylveon extends PokemonCard {
                 });
             }
 
-            RemovePower();
+            GameActions.Bottom.Callback(() -> {
+                RemovePower();
+            });
+
         }
     }
 

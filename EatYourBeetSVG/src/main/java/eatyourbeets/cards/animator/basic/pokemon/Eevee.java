@@ -34,7 +34,7 @@ public class Eevee extends PokemonCard {
 
         SetAffinity_Star(1);
 
-
+        HasSpecialEvolution();
     }
 
     @Override
