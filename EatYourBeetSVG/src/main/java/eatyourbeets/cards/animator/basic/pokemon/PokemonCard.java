@@ -103,8 +103,8 @@ public class PokemonCard extends AnimatorCard {
                 PokemonCard pokemon = (PokemonCard) card;
                 if (pokemon.evolution != null || pokemon.hasSpecialEvolution) {
                     pokemon.Evolve();
+                    cardsToRemove.add(pokemon);
                 }
-                cardsToRemove.add(pokemon);
             }
         }
 
