@@ -230,7 +230,7 @@
 		"animator:Obstagoon":
 		{
 			"FLAVOR_TEXT": "'Its voice is staggering in volume. Obstagoon has a tendency to take on a threatening posture and shout—this move is known as Obstruct.' -Galar Pokédex",
-			"DESCRIPTION": "Whenever you are attacked without breaking your [Block] this turn, the attacker gains !M! [Vulnerable] [Lock-On].",
+			"DESCRIPTION": "Whenever you are attacked without breaking your [Block] this turn, the attacker gains !M! [Vulnerable] [~Lock-On].",
 			"EXTENDED_DESCRIPTION": ["Whenever you are attacked without breaking your #yBlock this turn, the attacker gains #b{0} #yVulnerable #yLock-On."],
 			"NAME": "Obstagoon"
 		},
