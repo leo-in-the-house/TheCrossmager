@@ -1,5 +1,6 @@
 package eatyourbeets.relics.animator;
 
+import basemod.BaseMod;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.random.Random;
@@ -76,8 +77,11 @@ public class CrumblingOrb extends AnimatorRelic
             card.upgrade();
         }
 
-        player.drawPile.addToTop(card);
-        CombatStats.OnCardCreated(card, false);
-        flash();
+        if (player.hand.size() < BaseMod.MAX_HAND_SIZE)
+        {
+            player.hand.addToTop(card);
+            CombatStats.OnCardCreated(card, false);
+            flash();
+        }
     }
 }

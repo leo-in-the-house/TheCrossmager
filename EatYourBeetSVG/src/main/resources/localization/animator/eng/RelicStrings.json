@@ -83,7 +83,7 @@
 	},
 	"animator:CrumblingOrb":
 	{
-		"DESCRIPTIONS": ["Gain [E] at the start of each turn. At the start of each turn, before drawing, add a random #yCurse to the top of your draw pile."],
+		"DESCRIPTIONS": ["Gain [E] at the start of each turn. At the start of each turn, add a random #yCurse to your hand."],
 		"FLAVOR": "As the orb understands the user's heart, the fusion between the two restructures the soul and causes a great transformation.",
 		"NAME": "Crumbling Orb"
 	},
