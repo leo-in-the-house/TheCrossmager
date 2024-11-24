@@ -22,7 +22,7 @@ public class Curse_Regret extends AnimatorCard
         Initialize(0, 0);
 
         SetEndOfTurnPlay(true);
-        SetAffinity_Black(1);
+        SetAffinity_White(1);
     }
 
     @Override

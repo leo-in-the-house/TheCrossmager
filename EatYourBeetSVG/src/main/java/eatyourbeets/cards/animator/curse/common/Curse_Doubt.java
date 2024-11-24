@@ -20,7 +20,7 @@ public class Curse_Doubt extends AnimatorCard
 
         Initialize(0, 0, 1);
 
-        SetAffinity_Black(1);
+        SetAffinity_Blue(1);
 
         SetEndOfTurnPlay(true);
     }

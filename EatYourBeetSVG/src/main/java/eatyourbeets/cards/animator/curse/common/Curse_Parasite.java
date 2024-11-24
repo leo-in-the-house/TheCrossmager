@@ -21,7 +21,7 @@ public class Curse_Parasite extends AnimatorCard
 
         Initialize(0, 0, 3);
 
-        SetAffinity_Black(1);
+        SetAffinity_Teal(1);
 
         SetEndOfTurnPlay(false);
         SetExhaust(true);

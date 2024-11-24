@@ -2,9 +2,11 @@ package eatyourbeets.cards.animator.status;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.base.*;
+import eatyourbeets.cards.base.AnimatorCard;
+import eatyourbeets.cards.base.CardUseInfo;
+import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.utilities.GameActions;
 
 public class Status_Wound extends AnimatorCard
 {
@@ -17,17 +19,9 @@ public class Status_Wound extends AnimatorCard
 
         Initialize(0, 0, 2);
 
-        SetAffinity_Black(1);
+        SetAffinity_Red(1);
 
         SetEndOfTurnPlay(false);
-    }
-
-    @Override
-    public void triggerOnExhaust()
-    {
-        super.triggerOnExhaust();
-
-        GameActions.Bottom.RecoverHP(magicNumber);
     }
 
     @Override

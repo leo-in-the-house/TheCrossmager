@@ -3,12 +3,10 @@ package eatyourbeets.cards.animator.status;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
-import eatyourbeets.powers.CombatStats;
-import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Status_Dazed extends AnimatorCard
 {
@@ -21,22 +19,10 @@ public class Status_Dazed extends AnimatorCard
 
         Initialize(0, 0);
 
-        SetAffinity_Black(1);
+        SetAffinity_Pink(1);
 
         SetEndOfTurnPlay(false);
         SetEthereal(true);
-    }
-
-    @Override
-    public void triggerOnManualDiscard()
-    {
-        super.triggerOnManualDiscard();
-
-        if (CombatStats.TryActivateLimited(cardID))
-        {
-            GameActions.Delayed.Exhaust(this)
-            .AddCallback(() -> GameActions.Top.GainBlack(1));
-        }
     }
 
     @Override

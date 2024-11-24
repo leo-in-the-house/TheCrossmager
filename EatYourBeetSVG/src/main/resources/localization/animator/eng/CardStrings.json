@@ -773,77 +773,92 @@
 		},
 		"animator:Curse_Dizziness":
 		{
+			"FLAVOR_TEXT": "'I'm sure we've met before, but I'm just here to gather misfortune, now.' -Hina Kagiyama",
 			"DESCRIPTION": "Unplayable. When drawn: Add a Dazed to your draw pile.",
 			"NAME": "Dizziness"
 		},
 		"animator:Curse_Greed":
 		{
+			"FLAVOR_TEXT": "'Greed is a bottomless pit which exhausts the person in an endless effort to satisfy the need without ever reaching satisfaction.' -Erich Fromm",
 			"DESCRIPTION": "Unplayable. When drawn: Raise the cost of a random card in your hand by 1 this turn.",
 			"NAME": "Greed"
 		},
 		"animator:Curse_GriefSeed":
 		{
+			"FLAVOR_TEXT": "'Sorry, I lied. I guess I still have one left.' -Madoka Kaname",
 			"DESCRIPTION": "When Exhausted: Gain !M! [THP].",
 			"NAME": "Grief Seed"
 		},
 		"animator:Curse_Nutcracker":
 		{
+			"FLAVOR_TEXT": "'Anything that can go wrong, will go wrong. That’s a famous law. If you live a long life, you’ll understand.' -Tanya Degurechaff",
 			"DESCRIPTION": "Unplayable. At the end of your turn: ALL enemies heal !M! [HP].",
 			"NAME": "Nutcracker"
 		},
 		"animator:Curse_Clumsy":
 		{
+			"FLAVOR_TEXT": "'I am terribly clumsy, so there is a plethora of walking into lamp-posts, falling over, dropping things, and ruining sofas.' -Matt Smith",
 			"DESCRIPTION": "Unplayable.",
 			"NAME": "Clumsy"
 		},
 		"animator:Curse_Decay":
 		{
+			"FLAVOR_TEXT": "'As the blessings of health and fortune have a beginning, so they must also find an end. Everything rises but to fall, and increases but to decay.' -Sallust",
 			"DESCRIPTION": "Unplayable. At the end of turn: Take !M! damage.",
 			"NAME": "Decay"
 		},
 		"animator:Curse_Doubt":
 		{
+			"FLAVOR_TEXT": "'The fundamental cause of the trouble is that in the modern world the stupid are cocksure while the intelligent are full of doubt.' -Bertrand Russell",
 			"DESCRIPTION": "Unplayable. At the end of turn: Gain !M! [Weak].",
 			"NAME": "Doubt"
 		},
 		"animator:Curse_Injury":
 		{
+			"FLAVOR_TEXT": "'Injury in general teaches you to appreciate every moment. I've had my share of injuries throughout my career. It's humbling. It gives you perspective. No matter how many times I've been hurt, I've learned from that injury and come back even more humble.' -Troy Polamalu",
 			"DESCRIPTION": "Unplayable.",
 			"NAME": "Injury"
 		},
 		"animator:Curse_Normality":
 		{
+			"FLAVOR_TEXT": "'I am a very simple man. I love normality, and I love normal people. I love to eat normal food. It's how I grew up.' -Granit Xhaka",
 			"DESCRIPTION": "Unplayable. When drawn: While in hand, you cannot draw additional cards this turn.",
 			"EXTENDED_DESCRIPTION": [""],
 			"NAME": "Normality"
 		},
 		"animator:Curse_Pain":
 		{
+			"FLAVOR_TEXT": "'It is easier to find men who will volunteer to die, than to find those who are willing to endure pain with patience.' -Julius Caesar",
 			"DESCRIPTION": "Unplayable. While in hand, whenever you play a card: Lose !M! [MHP].",
 			"NAME": "Pain"
 		},
 		"animator:Curse_Parasite":
 		{
+			"FLAVOR_TEXT": "'When a parasite moves to a new habitat, it can find new hosts through a process called the trans-species jump. Often, the new host has no resistance; it and the parasite haven't had time to adjust to each other through natural selection (it is frequently not in the best interest of a parasite to kill its host quickly).' -Richard Preston",
 			"DESCRIPTION": "Remove this card from your deck, then lose !M! Max [HP].",
 			"NAME": "Parasite"
 		},
 		"animator:Curse_Regret":
 		{
+			"FLAVOR_TEXT": "'Regret for the things we did can be tempered by time; it is regret for the things we did not do that is inconsolable.' -Sydney J. Harris",
 			"DESCRIPTION": "Unplayable. At the end of turn: Lose 1 [MHP] for each other card in hand.",
 			"NAME": "Regret"
 		},
 		"animator:Curse_Shame":
 		{
+			"FLAVOR_TEXT": "'Shame is the most powerful, master emotion. It's the fear that we're not good enough.' -Brene Brown",
 			"DESCRIPTION": "Unplayable. At the end of turn: Gain !M! [Frail].",
 			"NAME": "Shame"
 		},
 		"animator:Curse_Writhe":
 		{
+			"FLAVOR_TEXT": "'If man makes himself a worm he must not complain when he is trodden on.' -Immanuel Kant",
 			"DESCRIPTION": "Unplayable.",
 			"NAME": "Writhe"
 		},
 		"animator:Curse_Dread":
 		{
+			"FLAVOR_TEXT": "'I have a new philosophy. I'm only going to dread one day at a time.' -Charles M. Schulz",
 			"DESCRIPTION": "While in your draw pile: Lose !M! [MHP] at the start of each turn. || <LIM>. On Exhaust: Gain [D] and 1 Max [HP].",
 			"NAME": "Dread"
 		}
@@ -3899,26 +3914,31 @@
 		},
 		"animator:Status_Burn":
 		{
+			"FLAVOR_TEXT": "'It's better to burn out, than to fade away.' -Neil Young",
 			"DESCRIPTION": "Unplayable. || At the end of turn: Take !M! damage.",
 			"NAME": "Burn"
 		},
 		"animator:Status_Dazed":
 		{
-			"DESCRIPTION": "Unplayable. || <LIM>. When discarded: Boost [D] and Exhaust.",
+			"FLAVOR_TEXT": "'A good sacrifice is one that is not necessarily sound but leaves your opponent dazed and confused.' -Nigel Short",
+			"DESCRIPTION": "Unplayable.",
 			"NAME": "Dazed"
 		},
 		"animator:Status_Slimed":
 		{
+			"FLAVOR_TEXT": "'By polluting clear water with slime you will never find good drinking water.' -Aeschylus",
 			"DESCRIPTION": "When created: Give this card a random [W].",
 			"NAME": "Slimed"
 		},
 		"animator:Status_Wound":
 		{
-			"DESCRIPTION": "Unplayable. || When Exhausted: Recover !M! [HP].",
+			"FLAVOR_TEXT": "'It has been said that time heals all wounds. I don't agree. The wounds remain. Time - the mind, protecting its sanity - covers them with some scar tissue and the pain lessens, but it is never gone.' -Rose Kennedy",
+			"DESCRIPTION": "Unplayable.",
 			"NAME": "Wound"
 		},
 		"animator:Status_Void":
 		{
+			"FLAVOR_TEXT": "'The void, the concept of nothingness, is terrifying to most people on the planet. And I get anxiety attacks myself. I know the fear of that void. You have to learn to die before you die. You give up, surrender to the void, to nothingness.' -Harry Dean Stanton",
 			"DESCRIPTION": "Unplayable. || When drawn: Lose 1 [E].",
 			"NAME": "Void"
 		},

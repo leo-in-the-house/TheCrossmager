@@ -23,7 +23,7 @@ public class Curse_Pain extends AnimatorCard
         Initialize(0, 0, 1);
 
         SetEndOfTurnPlay(false);
-        SetAffinity_Black(1);
+        SetAffinity_Violet(1);
     }
 
     @Override

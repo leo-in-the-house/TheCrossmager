@@ -50,6 +50,13 @@ public class Status_Slimed extends AnimatorCard
             affinities.Add(Affinity.Red);
             affinities.Add(Affinity.Green);
             affinities.Add(Affinity.Blue);
+            affinities.Add(Affinity.White);
+            affinities.Add(Affinity.Black);
+            affinities.Add(Affinity.Pink);
+            affinities.Add(Affinity.Violet);
+            affinities.Add(Affinity.Brown);
+            affinities.Add(Affinity.Yellow);
+            affinities.Add(Affinity.Teal);
         }
 
         InitializeAffinity(affinities.Retrieve(rng, false), 1, 0, 0);

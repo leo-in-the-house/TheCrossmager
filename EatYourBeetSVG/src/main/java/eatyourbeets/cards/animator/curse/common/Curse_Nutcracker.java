@@ -19,7 +19,7 @@ public class Curse_Nutcracker extends AnimatorCard
 
         Initialize(0, 0, 3);
 
-        SetAffinity_Black(1);
+        SetAffinity_Violet(1);
 
         SetEndOfTurnPlay(true);
     }

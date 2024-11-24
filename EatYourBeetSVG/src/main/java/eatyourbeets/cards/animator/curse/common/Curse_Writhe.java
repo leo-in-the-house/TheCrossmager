@@ -19,7 +19,7 @@ public class Curse_Writhe extends AnimatorCard
 
         Initialize(0, 0);
 
-        SetAffinity_Black(1);
+        SetAffinity_Violet(1);
 
         SetEndOfTurnPlay(false);
         SetInnate(true);
