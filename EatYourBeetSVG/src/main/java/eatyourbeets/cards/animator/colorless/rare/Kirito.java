@@ -47,18 +47,16 @@ public class Kirito extends AnimatorCard
     {
         GameUtilities.PlayVoiceSFX(name);
 
-        for (int i=0; i<magicNumber; i++) {
-            if (damage >= 20)
-            {
-                //GameActions.Bottom.VFX(new WeightyImpactEffect(m.hb.cX, m.hb.cY));
-                //GameActions.Bottom.Wait(0.8f);
-                GameActions.Bottom.VFX(new ViolentAttackEffect(m.hb.cX, m.hb.cY, Color.SKY));
-                GameActions.Bottom.DealDamage(this, m, AttackEffects.NONE);
-            }
-            else
-            {
-                GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_VERTICAL);
-            }
+        if (damage >= 20)
+        {
+            //GameActions.Bottom.VFX(new WeightyImpactEffect(m.hb.cX, m.hb.cY));
+            //GameActions.Bottom.Wait(0.8f);
+            GameActions.Bottom.VFX(new ViolentAttackEffect(m.hb.cX, m.hb.cY, Color.SKY));
+            GameActions.Bottom.DealDamage(this, m, AttackEffects.NONE);
+        }
+        else
+        {
+            GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_VERTICAL);
         }
     }
 }
