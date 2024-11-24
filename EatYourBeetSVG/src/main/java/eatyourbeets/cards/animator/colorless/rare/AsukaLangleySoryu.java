@@ -19,6 +19,7 @@ import eatyourbeets.utilities.TargetHelper;
 public class AsukaLangleySoryu extends AnimatorCard {
     public static final EYBCardData DATA = Register(AsukaLangleySoryu.class)
             .SetSeries(CardSeries.Evangelion)
+            .SetColor(CardColor.COLORLESS)
             .SetAttack(2, CardRarity.RARE, EYBAttackType.Ranged, EYBCardTarget.ALL);
 
     public AsukaLangleySoryu() {
