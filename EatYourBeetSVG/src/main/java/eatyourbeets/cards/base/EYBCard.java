@@ -1292,7 +1292,7 @@ public abstract class EYBCard extends EYBCardBase implements OnStartOfTurnPostDr
                     }
                     else if (LockOnPower.POWER_ID.equals(power.ID))
                     {
-                        tempDamage *= 1.25f;
+                        tempDamage *= 1.5f;
                     }
                 }
             }

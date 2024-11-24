@@ -560,7 +560,7 @@
 	},
 	"~Lock-On":
 	{
-		"DESCRIPTION": "Receive #b50% more damage from Orbs and #b25% from #yRanged attacks.",
+		"DESCRIPTION": "Receive #b50% more damage from Orbs and #yRanged Attacks.",
 		"NAMES": ["~lock-on"],
 		"PROPER_NAME": "Lock-On"
 	},
@@ -578,7 +578,7 @@
 	},
 	"~Ranged":
 	{
-		"DESCRIPTION": "Ignores #yThorns and #yFlight.",
+		"DESCRIPTION": "Ignores #yThorns and #yFlight.  Deals #b50% additional damage against enemies with #yLock-On.",
 		"NAMES": ["~ranged"],
 		"PROPER_NAME": "Ranged Damage"
 	},
