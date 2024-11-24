@@ -763,6 +763,7 @@
 		"animator:Curse_AscendersBane":
 		{
 			"DESCRIPTION": "Unplayable.",
+			"FLAVOR_TEXT": "'All the adversity I've had in my life, all my troubles and obstacles, have strengthened me... You may not realize it when it happens, but a kick in the teeth may be the best thing in the world for you.' -Walt Disney",
 			"EXTENDED_DESCRIPTION":
 			[
 				"Take !M! damage. || At the end of turn: Purge the top card of your draw pile.",
