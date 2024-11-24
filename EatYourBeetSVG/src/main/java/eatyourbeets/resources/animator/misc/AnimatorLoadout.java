@@ -11,6 +11,7 @@ import eatyourbeets.cards.animator.basic.ImprovedDefend;
 import eatyourbeets.cards.animator.basic.ImprovedStrike;
 import eatyourbeets.cards.animator.basic.Strike;
 import eatyourbeets.cards.animator.basic.pokemon.PokemonCard;
+import eatyourbeets.cards.animator.curse.special.Curse_AscendersBane;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.characters.AnimatorCharacter;
 import eatyourbeets.relics.animator.RollingCubes;
@@ -202,8 +203,14 @@ public abstract class AnimatorLoadout
         data.Gold = BASE_GOLD;
         data.AddCardSlot(3, 6).AddItem(Strike.DATA, -2);
         data.AddCardSlot(3, 6).AddItem(Defend.DATA, -2);
-        data.AddCardSlot(0, 2).AddItems(PokemonCard.GetStarterCards(this.EmblemicPokemon), 1);
-        data.AddCardSlot(0, 2).AddItems(PokemonCard.GetStarterCards(this.EmblemicPokemon), 1);
+
+        final AnimatorCardSlot pokemon_slot1 = data.AddCardSlot(0, 2);
+        final AnimatorCardSlot pokemon_slot2 = data.AddCardSlot(0, 2);
+
+        pokemon_slot1.AddItems(PokemonCard.GetStarterCards(this.EmblemicPokemon), 1);
+        pokemon_slot1.AddItem(Curse_AscendersBane.DATA, -2);
+        pokemon_slot2.AddItems(PokemonCard.GetStarterCards(this.EmblemicPokemon), 1);
+        pokemon_slot2.AddItem(Curse_AscendersBane.DATA, -2);
 
         final AnimatorCardSlot s1 = data.AddCardSlot(0, 1);
         final AnimatorCardSlot s2 = data.AddCardSlot(0, 1);
