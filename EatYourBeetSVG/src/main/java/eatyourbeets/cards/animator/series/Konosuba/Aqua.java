@@ -31,10 +31,11 @@ public class Aqua extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 0, 2, 2);
+        Initialize(0, 0, 3, 2);
         SetUpgrade(0, 0, 0, 0);
 
         SetAffinity_Blue(2);
+        SetRetain(true);
 
         SetTransformed(transformed);
     }
