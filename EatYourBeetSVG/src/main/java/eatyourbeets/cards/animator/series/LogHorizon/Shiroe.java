@@ -55,8 +55,8 @@ public class Shiroe extends AnimatorCard
             if (card.type == CardType.ATTACK && card instanceof EYBCard) {
                 ((EYBCard) card).SetDelayed(true);
             }
-            else if (card.type == CardType.SKILL) {
-                GameUtilities.Retain(card);
+            else if (card.type == CardType.SKILL && card instanceof EYBCard) {
+                ((EYBCard) card).SetRetain(true);
             }
         }
     }
