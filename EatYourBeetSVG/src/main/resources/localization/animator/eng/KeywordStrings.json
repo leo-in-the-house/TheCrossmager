@@ -124,7 +124,7 @@
 	},
 	"Trance Stance":
 	{
-		"DESCRIPTION": "Deal and receive half damage.",
+		"DESCRIPTION": "Deal and receive half damage.  #g-5 [Focus].",
 		"NAMES": ["[Trance Stance] Stance", "[trance stance] stance", "trance stance"],
 		"PROPER_NAME": "Trance Stance"
 	},

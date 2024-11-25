@@ -10,6 +10,7 @@ import eatyourbeets.effects.SFX;
 import eatyourbeets.effects.stance.StanceAura;
 import eatyourbeets.effects.stance.StanceParticleHorizontal;
 import eatyourbeets.effects.stance.StanceParticleVertical;
+import eatyourbeets.powers.PowerHelper;
 import eatyourbeets.utilities.GameEffects;
 import eatyourbeets.utilities.GameUtilities;
 
@@ -17,6 +18,8 @@ public class TranceStance extends EYBStance
 {
     public static final String STANCE_ID = CreateFullID(TranceStance.class);
     public static final String NAME = "Trance Stance";
+
+    public static final int STAT_CHANGE_AMOUNT = 5;
 
     public static boolean IsActive()
     {
@@ -50,6 +53,11 @@ public class TranceStance extends EYBStance
         CardCrawlGame.sound.play(SFX.STANCE_ENTER_CALM);
         sfxId = CardCrawlGame.sound.playAndLoop(SFX.STANCE_LOOP_CALM);
         AbstractDungeon.effectsQueue.add(new BorderFlashEffect(Color.GREEN, true));
+
+        if (TryApplyStance(STANCE_ID))
+        {
+            GameUtilities.ApplyPowerInstantly(owner, PowerHelper.Focus, -STAT_CHANGE_AMOUNT);
+        }
     }
 
     @Override
@@ -57,6 +65,10 @@ public class TranceStance extends EYBStance
     {
         super.onExitStance();
 
+        if (TryApplyStance(null))
+        {
+            GameUtilities.ApplyPowerInstantly(owner, PowerHelper.Focus, +STAT_CHANGE_AMOUNT);
+        }
         this.stopIdleSfx();
     }
 
