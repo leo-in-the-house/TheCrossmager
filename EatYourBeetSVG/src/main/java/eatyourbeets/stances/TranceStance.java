@@ -115,4 +115,9 @@ public class TranceStance extends EYBStance
     {
         return new Color(0.1f, 2f, 0.2f, 1f);
     }
+    @Override
+    public void updateDescription()
+    {
+        description = FormatDescription(STAT_CHANGE_AMOUNT);
+    }
 }

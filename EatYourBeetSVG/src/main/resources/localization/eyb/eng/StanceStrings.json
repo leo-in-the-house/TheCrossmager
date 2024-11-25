@@ -45,7 +45,7 @@
 		"NAME": "Trance Stance",
 		"DESCRIPTION":
 		[
-			"Deal and receive half damage."
+			"Deal and receive half damage.  #g-{0} [Focus]."
 		]
 	},
 	"eyb:MagicStance":
