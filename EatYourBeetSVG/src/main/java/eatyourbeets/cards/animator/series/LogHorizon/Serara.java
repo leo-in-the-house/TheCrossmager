@@ -17,7 +17,7 @@ public class Serara extends AnimatorCard
         super(DATA);
 
         Initialize(0, 6, 2);
-        SetUpgrade(0, 8, 2);
+        SetUpgrade(0, 4, 0);
 
         SetAffinity_Brown(1);
     }
