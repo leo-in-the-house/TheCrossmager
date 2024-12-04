@@ -17,7 +17,7 @@ public class SakuyaTachibana extends AnimatorCard {
         super(DATA);
 
         Initialize(11, 0, 0);
-        SetUpgrade(6, 0, 0);
+        SetUpgrade(8, 0, 0);
 
         SetAffinity_Red(1, 0, 1);
         SetAffinity_Pink(1, 0, 1);
