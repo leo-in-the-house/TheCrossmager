@@ -446,7 +446,7 @@ public class GameUtilities
         final ArrayList<AbstractCard> curses = new ArrayList<>();
         for (AbstractCard c : CardLibrary.getAllCards())
         {
-            if (c.type == AbstractCard.CardType.CURSE && c.rarity != AbstractCard.CardRarity.SPECIAL)
+            if (c.type == AbstractCard.CardType.CURSE && c instanceof AnimatorCard && c.rarity != AbstractCard.CardRarity.SPECIAL)
             {
                 curses.add(c);
             }
