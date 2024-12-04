@@ -1321,6 +1321,7 @@ public abstract class EYBCard extends EYBCardBase implements OnStartOfTurnPostDr
 
         UpdateBlock(tempBlock);
         UpdateDamage(tempDamage);
+        affinities.Refresh();
     }
 
     protected void UpdateBlock(float amount)

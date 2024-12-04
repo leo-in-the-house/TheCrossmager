@@ -64,9 +64,21 @@ public class Noah extends AnimatorCard
 
     }
 
+    @Override
+    public void AfterAffinitiesRestored()
+    {
+        if (curAffinity != Affinity.Blue) {
+            TransitionAffinity(Affinity.Blue, curAffinity);
+        }
+    }
+
     private void TransitionAffinity(Affinity oldAffinity, Affinity newAffinity) {
         int curAffinityAmount = affinities.GetLevel(oldAffinity);
         int curScaling = affinities.GetScaling(oldAffinity, false);
+
+        if (curAffinityAmount > 1) {
+            affinities.sealed = false;
+        }
 
         SetScaling(oldAffinity, 0);
         affinities.Set(oldAffinity, 0);

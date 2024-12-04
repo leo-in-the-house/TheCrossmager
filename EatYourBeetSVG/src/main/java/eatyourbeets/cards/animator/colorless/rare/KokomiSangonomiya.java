@@ -35,7 +35,7 @@ public class KokomiSangonomiya extends AnimatorCard
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
-        GameActions.Bottom.ChannelOrbs(Water::new, 2);
+        GameActions.Bottom.ChannelOrbs(Water::new, magicNumber);
         GameActions.Bottom.StackPower(new KokomiPower(player));
     }
 

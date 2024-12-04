@@ -377,6 +377,7 @@ public class EYBCardAffinitySystem extends GUIElement implements OnStartOfTurnSu
         for (AbstractCard card : group.group) {
             if (card instanceof AnimatorCard) {
                 RestoreAffinities(((AnimatorCard) card).affinities);
+                ((AnimatorCard) card).AfterAffinitiesRestored();
             }
         }
     }
