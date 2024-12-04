@@ -41,6 +41,6 @@ public class Dehya extends AnimatorCard {
         GameActions.Bottom.Wait(0.3f);
         GameActions.Bottom.DealDamage(this, m, AbstractGameAction.AttackEffect.SLASH_HEAVY);
 
-        GameActions.Bottom.ApplyBurning(TargetHelper.Normal(m), GameUtilities.GetUniqueOrbsCount());
+        GameActions.Bottom.ApplyBurning(TargetHelper.Enemies(), GameUtilities.GetUniqueOrbsCount());
     }
 }
