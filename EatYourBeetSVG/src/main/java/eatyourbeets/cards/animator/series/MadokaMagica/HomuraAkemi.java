@@ -41,6 +41,7 @@ public class HomuraAkemi extends AnimatorCard
         SetAffinity_Black(1, 1, 0);
 
         SetExhaust(true);
+        SetDelayed(true);
     }
 
     @Override

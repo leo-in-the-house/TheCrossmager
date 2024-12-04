@@ -29,6 +29,8 @@ public class LuciaKonohana extends AnimatorCard {
 
         SetAffinity_White(1);
         SetAffinity_Violet(1);
+
+        SetDelayed(true);
     }
 
     @Override

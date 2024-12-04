@@ -34,6 +34,7 @@ public class Totori extends AnimatorCard {
         SetAffinity_Pink(1);
 
         SetExhaust(true);
+        SetDelayed(true);
     }
 
 
@@ -103,6 +104,7 @@ public class Totori extends AnimatorCard {
         AbstractCard copyTarget = possibleCards.Retrieve(rng, false);
 
         GameActions.Top.MakeCardInDrawPile(copyTarget.makeCopy())
+                .SetUpgrade(copyTarget.upgraded, true)
                 .SetDestination(CardSelection.Top)
                 .AddCallback(card -> {
                     CostModifiers.For(card).Add(-secondaryValue);

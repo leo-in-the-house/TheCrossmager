@@ -35,6 +35,8 @@ public class Barasuishou extends AnimatorCard {
         SetAffinity_Teal(1, 0, 1);
 
         SetFading(true);
+        SetEthereal(true);
+        SetDelayed(true);
     }
 
     @Override

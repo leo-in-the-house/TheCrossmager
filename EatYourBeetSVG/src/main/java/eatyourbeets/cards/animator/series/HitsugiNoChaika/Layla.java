@@ -31,6 +31,8 @@ public class Layla extends AnimatorCard
 
         SetAffinity_Pink(1, 0, 1);
         SetAffinity_Violet(1);
+
+        SetDelayed(true);
     }
 
     @Override

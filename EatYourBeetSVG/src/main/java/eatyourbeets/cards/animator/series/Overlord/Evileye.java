@@ -34,6 +34,8 @@ public class Evileye extends AnimatorCard
         SetAffinityRequirement(Affinity.Violet, 3);
         SetAffinityRequirement(Affinity.Blue, 3);
         SetAffinityRequirement(Affinity.Black, 3);
+
+        SetDelayed(true);
     }
 
     @Override

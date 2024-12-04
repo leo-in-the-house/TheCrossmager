@@ -26,6 +26,7 @@ public class ClaudiaDodge extends AnimatorCard
         SetAffinity_Blue(1);
         SetAffinity_Green(1);
 
+        SetDelayed(true);
         SetEthereal(true);
     }
 

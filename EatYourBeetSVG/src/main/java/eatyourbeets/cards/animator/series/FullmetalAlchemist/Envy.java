@@ -30,6 +30,8 @@ public class Envy extends AnimatorCard
 
         SetAffinity_Pink(1);
         SetAffinity_Violet(1);
+
+        SetDelayed(true);
         SetEthereal(true);
     }
 

@@ -28,6 +28,7 @@ public class Iris extends AnimatorCard {
 
         SetRetain(true);
         SetExhaust(true);
+        SetDelayed(true);
     }
 
     @Override

@@ -38,6 +38,8 @@ public class AliceMargatroid extends AnimatorCard
 
         SetAffinityRequirement(Affinity.Teal, 3);
         SetAffinityRequirement(Affinity.Brown, 3);
+
+        SetDelayed(true);
     }
 
     @Override

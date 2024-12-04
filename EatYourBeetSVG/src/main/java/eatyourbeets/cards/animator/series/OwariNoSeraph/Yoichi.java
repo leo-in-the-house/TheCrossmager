@@ -27,6 +27,7 @@ public class Yoichi extends AnimatorCard
         super.OnUpgrade();
 
         SetHaste(true);
+        SetDelayed(true);
     }
 
     @Override

@@ -14,7 +14,7 @@ import eatyourbeets.utilities.GameUtilities;
 public class Geryuganshoop extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(Geryuganshoop.class)
-            .SetPower(3, CardRarity.UNCOMMON)
+            .SetPower(2, CardRarity.UNCOMMON)
             .SetSeriesFromClassPackage();
 
     public Geryuganshoop()
@@ -28,6 +28,7 @@ public class Geryuganshoop extends AnimatorCard
         SetAffinity_Yellow(2);
 
         SetEthereal(true);
+        SetDelayed(true);
     }
 
     @Override

@@ -20,6 +20,8 @@ public class SakuyaOhtori extends AnimatorCard {
 
         SetAffinity_White(1, 0, 1);
         SetAffinity_Brown(1, 0, 1);
+
+        SetDelayed(true);
     }
 
     @Override

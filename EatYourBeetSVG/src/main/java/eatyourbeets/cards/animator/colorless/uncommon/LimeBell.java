@@ -23,6 +23,7 @@ public class LimeBell extends AnimatorCard
         SetAffinity_Teal(2);
 
         SetExhaust(true);
+        SetDelayed(true);
     }
 
     @Override

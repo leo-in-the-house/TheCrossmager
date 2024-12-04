@@ -25,6 +25,8 @@ public class MariaArusu extends AnimatorCard {
 
         SetAffinity_Teal(1);
         SetAffinity_Pink(1);
+
+        SetDelayed(true);
     }
 
     @Override

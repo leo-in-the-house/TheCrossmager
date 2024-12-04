@@ -611,7 +611,7 @@ public abstract class EYBCard extends EYBCardBase implements OnStartOfTurnPostDr
 
     public AbstractAttribute GetDamageInfo()
     {
-        return baseDamage >= 0 ? DamageAttribute.Instance.SetCard(this) : null;
+        return type == CardType.ATTACK || baseDamage >= 0 ? DamageAttribute.Instance.SetCard(this) : null;
     }
 
     public AbstractAttribute GetBlockInfo()

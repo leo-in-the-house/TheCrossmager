@@ -29,6 +29,8 @@ public class Chaa extends AnimatorCard
 
         SetAffinity_Teal(2);
         SetAffinity_Red(1);
+
+        SetDelayed(true);
     }
 
     @Override

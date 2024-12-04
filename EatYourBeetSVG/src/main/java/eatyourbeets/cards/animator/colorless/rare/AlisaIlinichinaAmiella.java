@@ -23,6 +23,8 @@ public class AlisaIlinichinaAmiella extends AnimatorCard {
 
         SetAffinity_Red(2, 0, 0);
         SetAffinity_Violet(1, 0, 0);
+
+        SetDelayed(true);
     }
 
     @Override
