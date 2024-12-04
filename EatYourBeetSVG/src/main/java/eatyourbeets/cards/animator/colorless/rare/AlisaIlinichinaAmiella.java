@@ -18,7 +18,7 @@ public class AlisaIlinichinaAmiella extends AnimatorCard {
     public AlisaIlinichinaAmiella() {
         super(DATA);
 
-        Initialize(3, 0, 6);
+        Initialize(4, 0, 6);
         SetUpgrade(0, 0, 3);
 
         SetAffinity_Red(2, 0, 0);
