@@ -347,6 +347,12 @@
 
 	"COLORLESS:RARE":
 	{
+		"animator:AlisaIlinichinaAmiella":
+		{
+			"FLAVOR_TEXT": "'When I was told I might become a God Eater... that I might be one of the New Types... I was so happy and so furious...  In that moment I thought I could get revenge.  I could kill that wretched monster.'",
+			"DESCRIPTION": "Gains [R] scaling equal to the number of cards in your {Exhaust} pile. || Gains [V] scaling equal to half the number of cards in your hand, rounded down.",
+			"NAME": "Alisa Ilinichina Amiella"
+		},
 		"animator:ArseneLupinIII":
 		{
 			"FLAVOR_TEXT": "'Listen, I'm just a thief who stole a kidnappers' car!'",
@@ -718,6 +724,12 @@
 			"FLAVOR_TEXT": "'Let's see... How to take out the black thing in front of me without having to do anything...  Hmm, my eyes have gotten worse lately...  Perhaps I have an iron deficiency...   How about you?'",
 			"DESCRIPTION": "Attack 1 additional time for each unique orb Channeled this combat.",
 			"NAME": "Patchouli Knowledge"
+		},
+		"animator:SakuyaTachibana":
+		{
+			"FLAVOR_TEXT": "'You've got the lead today.  I'll be handling the long range backup, so whereever you go, I'll follow.  This is as basic a strategy gets, but it's the key to success when you're teamed up with a long range God Arc like mine.'",
+			"DESCRIPTION": "Motivate a random card in your hand for every 10 unblocked damage this card dealt.",
+			"NAME": "Sakuya Tachibana"
 		},
 		"animator:Shimakaze":
 		{

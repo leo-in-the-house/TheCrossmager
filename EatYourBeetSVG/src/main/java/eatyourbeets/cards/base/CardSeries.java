@@ -85,6 +85,7 @@ public class CardSeries
     public final static CardSeries PokemonReminiscencia = Add(68, "PokémonReminiscencia");
     public final static CardSeries HonkaiImpact3rd = Add(69, "HonkaiImpact3rd");
     public final static CardSeries LycorisRecoil = Add(70, "LycorisRecoil");
+    public final static CardSeries GodEater = Add(71, "GodEater");
 
 
     private static AbstractCard currentSynergy = null;
