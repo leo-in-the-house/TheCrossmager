@@ -3802,7 +3802,7 @@
 		"animator:FlandreScarlet":
 		{
 			"FLAVOR_TEXT": "'You're not trying to trick me, are you?  I've only ever seen humans in the form of a drink.'",
-			"DESCRIPTION": "When you would gain [Block] this turn, apply !S! [DD] to ALL targets. || On Exhaust: {Imitate} this card 3 times.",
+			"DESCRIPTION": "When you would gain [Block] this turn, apply !S! [DD] to yourself and deal !S! damage to ALL enemies. || On Exhaust: {Imitate} this card 3 times.",
 			"EXTENDED_DESCRIPTION": ["When you would gain #yBlock this turn, apply #b{0} #yDelayed #yDamage to ALL targets."],
 			"NAME": "Flandre Scarlet"
 		},

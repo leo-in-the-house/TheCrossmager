@@ -21,6 +21,8 @@ public class YoshinoHaruhiko extends AnimatorCard {
         SetCostUpgrade(-1);
 
         SetAffinity_Red(1);
+
+        SetDelayed(true);
     }
 
     @Override

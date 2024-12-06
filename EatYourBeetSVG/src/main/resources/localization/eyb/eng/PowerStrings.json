@@ -113,7 +113,7 @@
 	},
 	"eyb:DelayedWrathPower":
 	{
-		"DESCRIPTIONS": ["At the start of your next turn, Enter <WS>."],
+		"DESCRIPTIONS": ["At the start of your next turn, Enter #yWrath #yStance."],
 		"NAME": "Delayed Wrath"
 	},
 	"eyb:NextTurnDrawReductionPower":

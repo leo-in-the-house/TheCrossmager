@@ -70,7 +70,8 @@ public class FielNirvalen extends AnimatorCard
                 int numZeroCostsPlayed = ((int) cardsPlayed.stream().filter(c -> c.costForTurn == 0).count()) + 1;
 
                 if (numZeroCostsPlayed % 2 == 0) {
-                    GameActions.Bottom.MakeCardInHand(AffinityToken.GetRandomCard());
+                    GameActions.Bottom.MakeCardInHand(AffinityToken.GetRandomCard())
+                            .SetUpgrade(upgraded, true);
                 }
             }
         }
@@ -78,7 +79,12 @@ public class FielNirvalen extends AnimatorCard
         @Override
         public void updateDescription()
         {
-            description = FormatDescription(0, amount);
+            if (upgraded) {
+                description = FormatDescription(1, amount);
+            }
+            else {
+                description = FormatDescription(0, amount);
+            }
         }
     }
 }
