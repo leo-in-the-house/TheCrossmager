@@ -1,11 +1,9 @@
 package eatyourbeets.events.animator;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.vfx.RainingGoldEffect;
-import eatyourbeets.cards.animator.basic.ImprovedDefend;
-import eatyourbeets.cards.animator.basic.ImprovedStrike;
+import eatyourbeets.cards.animator.basic.pokemon.PokemonCard;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.events.base.EYBEvent;
 import eatyourbeets.events.base.EYBEventOption;
@@ -99,8 +97,8 @@ public class TheMaskedTraveler1 extends EYBEvent
                 }
             }
 
-            final EYBCardData defend = GameUtilities.GetRandomElement(ImprovedDefend.GetCards(), RNG);
-            final EYBCardData strike = GameUtilities.GetRandomElement(ImprovedStrike.GetCards(), RNG);
+            final EYBCardData defend = GameUtilities.GetRandomElement(PokemonCard.GetStarterCards(), RNG);
+            final EYBCardData strike = GameUtilities.GetRandomElement(PokemonCard.GetStarterCards(), RNG);
             if (strikes.Size() > 0 && strike != null)
             {
                 SwapCards(strike, strikes.Retrieve(RNG), defend == null ? 0.5f : 0.4f);
