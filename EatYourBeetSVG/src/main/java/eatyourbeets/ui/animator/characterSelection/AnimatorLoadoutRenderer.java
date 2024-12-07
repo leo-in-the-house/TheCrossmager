@@ -288,12 +288,12 @@ public class AnimatorLoadoutRenderer extends GUIElement
 
         if (theme.text != null)
         {
-            FontHelper.renderFont(sb, font, theme.text, startingCardsSelectedHb.x + (15 * Settings.scale), startingCardsSelectedHb.cY - (50 * Settings.scale), theme.color);
+            FontHelper.renderFont(sb, font, theme.text, startingCardsSelectedHb.x + (15 * Settings.scale), startingCardsSelectedHb.cY - (30 * Settings.scale), theme.color);
         }
 
         if (emblemicPokemon.text != null)
         {
-            FontHelper.renderFont(sb, font, emblemicPokemon.text, startingCardsSelectedHb.x + (15 * Settings.scale), startingCardsSelectedHb.cY - (120 * Settings.scale), emblemicPokemon.color);
+            FontHelper.renderFont(sb, font, emblemicPokemon.text, startingCardsSelectedHb.x + (15 * Settings.scale), startingCardsSelectedHb.cY - (60 * Settings.scale), emblemicPokemon.color);
         }
         /*if (score1.text != null)
         {

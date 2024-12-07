@@ -230,6 +230,11 @@ public abstract class AnimatorLoadout
             s1.AddItem(pair.V1, pair.V2);
             s2.AddItem(pair.V1, pair.V2);
         }
+
+        JUtils.ForEach(pokemon_slot1.GetSelectableCards(), EYBCard::MarkSeen);
+        JUtils.ForEach(pokemon_slot2.GetSelectableCards(), EYBCard::MarkSeen);
+        JUtils.ForEach(s1.GetSelectableCards(), EYBCard::MarkSeen);
+        JUtils.ForEach(s2.GetSelectableCards(), EYBCard::MarkSeen);
     }
 
     public Validation Validate()

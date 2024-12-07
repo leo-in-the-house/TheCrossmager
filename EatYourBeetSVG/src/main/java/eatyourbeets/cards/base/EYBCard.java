@@ -624,6 +624,10 @@ public abstract class EYBCard extends EYBCardBase implements OnStartOfTurnPostDr
         return null;
     }
 
+    public void MarkSeen() {
+        this.cardData.MarkSeen();
+    }
+
     @Override
     protected AdvancedTexture GetCardBorderIndicator()
     {
