@@ -61,6 +61,7 @@ public class AnimatorLoadoutRenderer extends GUIElement
 
         subtitle = new ColoredString();
         theme = new ColoredString();
+        emblemicPokemon = new ColoredString();
         /* score1 = new ColoredString();
         score2 = new ColoredString();*/
         loadouts = new ArrayList<>();
