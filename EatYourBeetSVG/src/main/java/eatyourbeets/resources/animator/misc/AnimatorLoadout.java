@@ -221,8 +221,8 @@ public abstract class AnimatorLoadout
         }
 
         if (this.EmblemicPokemon != null) {
-            s1.AddItem(this.EmblemicPokemon.cardData, 3);
-            s2.AddItem(this.EmblemicPokemon.cardData, 3);
+            s1.AddItem(this.EmblemicPokemon.cardData, 4);
+            s2.AddItem(this.EmblemicPokemon.cardData, 4);
         }
 
         for (TupleT2<EYBCardData, Integer> pair : starterCards)
