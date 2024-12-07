@@ -13,7 +13,7 @@
 		"NAME": "Exp. Potion",
 		"DESCRIPTIONS":
 		[
-			"Gain #b{0} #yForce, #yIntellect and #yAgility."
+			"Gain #b{0} in all stats."
 		]
 	}
 }

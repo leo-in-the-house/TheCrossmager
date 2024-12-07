@@ -36,6 +36,13 @@ public class GrowthPotion extends AbstractPotion
         GameActions.Bottom.GainRed(potency);
         GameActions.Bottom.GainBlue(potency);
         GameActions.Bottom.GainGreen(potency);
+        GameActions.Bottom.GainWhite(potency);
+        GameActions.Bottom.GainBlack(potency);
+        GameActions.Bottom.GainPink(potency);
+        GameActions.Bottom.GainYellow(potency);
+        GameActions.Bottom.GainViolet(potency);
+        GameActions.Bottom.GainBrown(potency);
+        GameActions.Bottom.GainTeal(potency);
     }
 
     @Override

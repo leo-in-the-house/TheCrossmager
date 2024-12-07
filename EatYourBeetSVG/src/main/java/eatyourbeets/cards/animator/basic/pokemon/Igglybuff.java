@@ -16,7 +16,7 @@ public class Igglybuff extends PokemonCard {
         super(DATA);
 
         Initialize(0, 0, 1);
-        SetUpgrade(0, 0, 2);
+        SetUpgrade(0, 0, 1);
         SetEvolution(new Jigglypuff());
 
         SetAffinity_White(1);

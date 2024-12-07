@@ -350,13 +350,13 @@
 		"animator:Togepi":
 		{
 			"FLAVOR_TEXT": "'The shell seems to be filled with joy. It is said that it will share good luck when treated kindly.' -Johto Pokédex.",
-			"DESCRIPTION": "Evolves into {Togetic}",
+			"DESCRIPTION": "Evolves into {Togetic}.",
 			"NAME": "Togepi"
 		},
 		"animator:Togetic":
 		{
 			"FLAVOR_TEXT": "'It grows dispirited if it is not with kind people. It can float in midair without moving its wings.' -Johto Pokédex.",
-			"DESCRIPTION": "Evolves into {Togekiss}",
+			"DESCRIPTION": "Evolves into {Togekiss}.",
 			"NAME": "Togetic"
 		},
 		"animator:Togekiss":
