@@ -347,6 +347,54 @@
 
 	"BASIC:SERIESPOKEMON":
 	{
+		"animator:Ralts":
+		{
+			"FLAVOR_TEXT": "'Ralts senses the emotions of people using the horns on its head. This Pokémon rarely appears before people. But when it does, it draws closer if it senses that the person has a positive disposition.' -Hoenn Pokédex.",
+			"DESCRIPTION": "Evolves into {Kirlia}.",
+			"NAME": "Ralts"
+		},
+		"animator:Kirlia":
+		{
+			"FLAVOR_TEXT": "'Kirlia uses the horns on its head to amplify its psychokinetic power. When the Pokémon uses its power, the air around it becomes distorted, creating mirages of nonexistent scenery.' -Hoenn Pokédex.",
+			"DESCRIPTION": "Gain !M! [~Blur]. || Evolves into {Gallade} if you have more cards with Attack damage than [Block] in your master deck.  Otherwise, evolves into {Gardevoir}.",
+			"NAME": "Kirlia"
+		},
+		"animator:Gardevoir":
+		{
+			"FLAVOR_TEXT": "'Gardevoir has the ability to read the future. If it senses impending danger to its Trainer, this Pokémon is said to unleash its psychokinetic energy at full power.' -Hoenn Pokédex.",
+			"DESCRIPTION": "Gain !M! [~Blur].",
+			"NAME": "Gardevoir"
+		},
+		"animator:Gallade":
+		{
+			"FLAVOR_TEXT": "'When trying to protect someone, it extends its elbows as if they were swords and fights savagely.' -Sinnoh Pokédex.",
+			"DESCRIPTION": "Gain !M! [~Blur].",
+			"NAME": "Gallade"
+		},
+		"animator:Pancham":
+		{
+			"FLAVOR_TEXT": "'It does its level best to glare and pull a scary face, but it can't help grinning if anyone pats its head.' -Kalos Pokédex.",
+			"DESCRIPTION": "Deals double damage in <WS>. || Evolves into {Pangoro}.",
+			"NAME": "Pancham"
+		},
+		"animator:Pangoro":
+		{
+			"FLAVOR_TEXT": "'Although it possesses a violent temperament, it won't put up with bullying. It uses the leaf in its mouth to sense the movements of its enemies.' -Kalos Pokédex.",
+			"DESCRIPTION": "Deals triple damage in <WS>.",
+			"NAME": "Pangoro"
+		},
+		"animator:Sinistea":
+		{
+			"FLAVOR_TEXT": "'The teacup in which this Pokémon makes its home is a famous piece of antique tableware. Many forgeries are in circulation.' -Galar Pokédex.",
+			"DESCRIPTION": "{Imitate} a random {Basic} or {Common} card in your hand. || Evolves into {Polteageist}.",
+			"NAME": "Sinistea"
+		},
+		"animator:Polteageist":
+		{
+			"FLAVOR_TEXT": "'Trainers Polteageist trusts will be allowed to experience its distinctive flavor and aroma firsthand by sampling just a tiny bit of its tea.' -Galar Pokédex.",
+			"DESCRIPTION": "{Imitate} a {Basic} or {Common} card in your hand !M! times.",
+			"NAME": "Polteageist"
+		},
 		"animator:Togepi":
 		{
 			"FLAVOR_TEXT": "'The shell seems to be filled with joy. It is said that it will share good luck when treated kindly.' -Johto Pokédex.",

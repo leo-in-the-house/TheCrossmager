@@ -1,5 +1,6 @@
 package eatyourbeets.resources.animator.loadouts;
 
+import eatyourbeets.cards.animator.basic.seriespokemon.Sinistea;
 import eatyourbeets.cards.animator.series.Atelier.*;
 import eatyourbeets.cards.animator.ultrarare.PamelaIbis;
 import eatyourbeets.cards.base.CardSeries;
@@ -11,6 +12,7 @@ public class Loadout_Atelier extends AnimatorLoadout
     public Loadout_Atelier()
     {
         super(CardSeries.Atelier);
+        this.EmblemicPokemon = new Sinistea();
     }
 
     @Override

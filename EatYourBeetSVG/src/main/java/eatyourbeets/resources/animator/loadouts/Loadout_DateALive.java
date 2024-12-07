@@ -1,5 +1,6 @@
 package eatyourbeets.resources.animator.loadouts;
 
+import eatyourbeets.cards.animator.basic.seriespokemon.Ralts;
 import eatyourbeets.cards.animator.series.DateALive.*;
 import eatyourbeets.cards.animator.ultrarare.MioTakamiya;
 import eatyourbeets.cards.base.CardSeries;
@@ -11,6 +12,7 @@ public class Loadout_DateALive extends AnimatorLoadout
     public Loadout_DateALive()
     {
         super(CardSeries.DateALive);
+        this.EmblemicPokemon = new Ralts();
     }
 
     @Override

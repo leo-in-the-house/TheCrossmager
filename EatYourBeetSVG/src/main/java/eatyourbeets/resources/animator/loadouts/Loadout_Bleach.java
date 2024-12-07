@@ -1,5 +1,6 @@
 package eatyourbeets.resources.animator.loadouts;
 
+import eatyourbeets.cards.animator.basic.seriespokemon.Pancham;
 import eatyourbeets.cards.animator.series.Bleach.*;
 import eatyourbeets.cards.animator.ultrarare.SosukeAizen;
 import eatyourbeets.cards.base.CardSeries;
@@ -11,6 +12,7 @@ public class Loadout_Bleach extends AnimatorLoadout
     public Loadout_Bleach()
     {
         super(CardSeries.Bleach);
+        this.EmblemicPokemon = new Pancham();
     }
 
     @Override
