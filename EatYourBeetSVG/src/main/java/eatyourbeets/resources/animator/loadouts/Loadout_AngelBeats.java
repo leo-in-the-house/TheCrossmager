@@ -1,5 +1,6 @@
 package eatyourbeets.resources.animator.loadouts;
 
+import eatyourbeets.cards.animator.basic.seriespokemon.Togepi;
 import eatyourbeets.cards.animator.series.AngelBeats.*;
 import eatyourbeets.cards.animator.ultrarare.AngelAlter;
 import eatyourbeets.cards.base.CardSeries;
@@ -11,6 +12,7 @@ public class Loadout_AngelBeats extends AnimatorLoadout
     public Loadout_AngelBeats()
     {
         super(CardSeries.AngelBeats);
+        this.EmblemicPokemon = new Togepi();
     }
 
     @Override

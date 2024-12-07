@@ -18,6 +18,7 @@ import eatyourbeets.ui.GUIElement;
 import eatyourbeets.ui.controls.GUI_Button;
 import eatyourbeets.ui.hitboxes.AdvancedHitbox;
 import eatyourbeets.utilities.*;
+import org.apache.logging.log4j.util.Strings;
 
 import java.util.ArrayList;
 
@@ -45,6 +46,7 @@ public class AnimatorLoadoutRenderer extends GUIElement
     protected AnimatorLoadout loadout;
     protected ColoredString subtitle;
     protected ColoredString theme;
+    protected ColoredString emblemicPokemon;
     /*protected ColoredString score1;
     protected ColoredString score2;*/
     protected int ascension;
@@ -181,6 +183,7 @@ public class AnimatorLoadoutRenderer extends GUIElement
         _hp.Set(characterOption, String.valueOf(loadout.GetHP()));
         RefreshAscension();
         RefreshTheme();
+        RefreshEmblemicPokemon();
         //RefreshScore();
 
         if (refreshPortrait)
@@ -287,6 +290,10 @@ public class AnimatorLoadoutRenderer extends GUIElement
             FontHelper.renderFont(sb, font, theme.text, startingCardsSelectedHb.x + (15 * Settings.scale), startingCardsSelectedHb.cY - (50 * Settings.scale), theme.color);
         }
 
+        if (emblemicPokemon.text != null)
+        {
+            FontHelper.renderFont(sb, font, emblemicPokemon.text, startingCardsSelectedHb.x + (15 * Settings.scale), startingCardsSelectedHb.cY - (120 * Settings.scale), emblemicPokemon.color);
+        }
         /*if (score1.text != null)
         {
             FontHelper.renderFont(sb, font, score1.text, startingCardsSelectedHb.x + (5 * Settings.scale), startingCardsSelectedHb.cY - (50 * Settings.scale), score1.color);
@@ -335,6 +342,20 @@ public class AnimatorLoadoutRenderer extends GUIElement
                 theme.SetText(GR.Animator.Strings.SeriesInfo.Themes + ": " + themeText);
             } else {
                 theme.SetText("");
+            }
+        }
+    }
+
+    private void RefreshEmblemicPokemon()
+    {
+
+        if (emblemicPokemon != null)
+        {
+            String emblemicPokemonName = loadout.GetEmblemicPokemonName();
+            if (emblemicPokemon != null && !Strings.isEmpty(emblemicPokemonName)) {
+                emblemicPokemon.SetText(GR.Animator.Strings.SeriesInfo.EmblemicPokemon + ": " + emblemicPokemonName);
+            } else {
+                emblemicPokemon.SetText("");
             }
         }
     }

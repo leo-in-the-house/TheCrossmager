@@ -56,7 +56,7 @@ public class PokemonCard extends AnimatorCard {
         }
     }
 
-    public static ArrayList<EYBCardData> GetStarterCards(AnimatorCard emblemicPokemon)
+    public static ArrayList<EYBCardData> GetStarterCards()
     {
         ArrayList<EYBCardData> cards = new ArrayList<>();
 
@@ -72,10 +72,6 @@ public class PokemonCard extends AnimatorCard {
         cards.add(Zigzagoon.DATA);
         cards.add(Porygon.DATA);
         cards.add(Eevee.DATA);
-
-        if (emblemicPokemon != null) {
-            cards.add(emblemicPokemon.cardData);
-        }
 
         MarkAllStarterPokemonAsSeen(cards);
 

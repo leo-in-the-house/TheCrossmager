@@ -345,6 +345,27 @@
 		}
 	},
 
+	"BASIC:SERIESPOKEMON":
+	{
+		"animator:Togepi":
+		{
+			"FLAVOR_TEXT": "'The shell seems to be filled with joy. It is said that it will share good luck when treated kindly.' -Johto Pokédex.",
+			"DESCRIPTION": "",
+			"NAME": "Togepi"
+		},
+		"animator:Togetic":
+		{
+			"FLAVOR_TEXT": "'It grows dispirited if it is not with kind people. It can float in midair without moving its wings.' -Johto Pokédex.",
+			"DESCRIPTION": "",
+			"NAME": "Togetic"
+		},
+		"animator:Togekiss":
+		{
+			"FLAVOR_TEXT": "'It will never appear where there is strife. Its sightings have become rare recently.' -Sinnoh Pokédex.",
+			"DESCRIPTION": "",
+			"NAME": "Togekiss"
+		}
+	},
 	"COLORLESS:RARE":
 	{
 		"animator:AlisaIlinichinaAmiella":
@@ -4128,4 +4149,4 @@
 			"NAME": "Yuyuko Saigyouji"
 		}
 	}
-}
+},

@@ -78,6 +78,7 @@ public class AnimatorStrings
         private final UIStrings ThemeStrings = GetUIStrings("Themes");
 
         public final String Themes = ThemeStrings.EXTRA_TEXT[0];
+        public final String EmblemicPokemon = ThemeStrings.EXTRA_TEXT[1];
 
         public final String GetTheme(String seriesName)
         {

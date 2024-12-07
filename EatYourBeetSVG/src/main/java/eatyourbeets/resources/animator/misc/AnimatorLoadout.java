@@ -207,9 +207,9 @@ public abstract class AnimatorLoadout
         final AnimatorCardSlot pokemon_slot1 = data.AddCardSlot(0, 2);
         final AnimatorCardSlot pokemon_slot2 = data.AddCardSlot(0, 2);
 
-        pokemon_slot1.AddItems(PokemonCard.GetStarterCards(this.EmblemicPokemon), 1);
+        pokemon_slot1.AddItems(PokemonCard.GetStarterCards(), 1);
         pokemon_slot1.AddItem(Curse_AscendersBane.DATA, -2);
-        pokemon_slot2.AddItems(PokemonCard.GetStarterCards(this.EmblemicPokemon), 1);
+        pokemon_slot2.AddItems(PokemonCard.GetStarterCards(), 1);
         pokemon_slot2.AddItem(Curse_AscendersBane.DATA, -2);
 
         final AnimatorCardSlot s1 = data.AddCardSlot(0, 1);
@@ -218,6 +218,11 @@ public abstract class AnimatorLoadout
         if (starterCards.isEmpty())
         {
             AddStarterCards();
+        }
+
+        if (this.EmblemicPokemon != null) {
+            s1.AddItem(this.EmblemicPokemon.cardData, 3);
+            s2.AddItem(this.EmblemicPokemon.cardData, 3);
         }
 
         for (TupleT2<EYBCardData, Integer> pair : starterCards)
@@ -348,6 +353,15 @@ public abstract class AnimatorLoadout
     {
         return this.Series.Theme;
     }
+
+    public String GetEmblemicPokemonName()
+    {
+        if (this.EmblemicPokemon != null) {
+            return this.EmblemicPokemon.name;
+        }
+        return "";
+    }
+
 
     public AnimatorLoadoutStats GetStats(boolean ascension20)
     {
