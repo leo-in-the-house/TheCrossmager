@@ -1,5 +1,6 @@
 package eatyourbeets.resources.animator.loadouts;
 
+import eatyourbeets.cards.animator.basic.seriespokemon.Impidimp;
 import eatyourbeets.cards.animator.series.Fate.*;
 import eatyourbeets.cards.animator.ultrarare.JeanneDArc;
 import eatyourbeets.cards.base.CardSeries;
@@ -11,6 +12,7 @@ public class Loadout_Fate extends AnimatorLoadout
     public Loadout_Fate()
     {
         super(CardSeries.Fate);
+        this.EmblemicPokemon = new Impidimp();
     }
 
     @Override

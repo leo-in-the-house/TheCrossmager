@@ -347,6 +347,24 @@
 
 	"BASIC:SERIESPOKEMON":
 	{
+		"animator:Impidimp":
+		{
+			"FLAVOR_TEXT": "'It sneaks into people's homes, stealing things and feasting on the negative energy of the frustrated occupants.' -Galar Pokédex.",
+			"DESCRIPTION": "Evolves into {Morgrem}.",
+			"NAME": "Impidimp"
+		},
+		"animator:Morgrem":
+		{
+			"FLAVOR_TEXT": "'When it gets down on all fours as if to beg for forgiveness, it's trying to lure opponents in so that it can stab them with its spear-like hair.' -Galar Pokédex.",
+			"DESCRIPTION": "Evolves into {Grimmsnarl}.",
+			"NAME": "Morgrem"
+		},
+		"animator:Grimmsnarl":
+		{
+			"FLAVOR_TEXT": "'Its hairs work like muscle fibers. When its hairs unfurl, they latch on to opponents, ensnaring them as tentacles would.' -Galar Pokédex.",
+			"DESCRIPTION": "",
+			"NAME": "Grimmsnarl"
+		},
 		"animator:Rotom":
 		{
 			"FLAVOR_TEXT": "'Its body is composed of plasma. It is known to infiltrate electronic devices and wreak havoc.' -Sinnoh Pokédex.",
