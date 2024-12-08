@@ -347,6 +347,42 @@
 
 	"BASIC:SERIESPOKEMON":
 	{
+		"animator:Rotom":
+		{
+			"FLAVOR_TEXT": "'Its body is composed of plasma. It is known to infiltrate electronic devices and wreak havoc.' -Sinnoh Pokédex.",
+			"DESCRIPTION": "You may change the form of {Rotom} in a rest stop.",
+			"NAME": "Rotom"
+		},
+		"animator:RotomMow":
+		{
+			"FLAVOR_TEXT": "'This is Rotom after it's seized control of a lawn mower that has a special motor. As it mows down grass, it scatters the clippings everywhere.' -Galar Pokédex.",
+			"DESCRIPTION": "Gain !M! [G].  Draw a card. || You may change the form of {Rotom} in a rest stop.",
+			"NAME": "Rotom-Mow"
+		},
+		"animator:RotomHeat":
+		{
+			"FLAVOR_TEXT": "'This Rotom has possessed a convection microwave oven that uses a special motor. It also has a flair for manipulating flames.' -Galar Pokédex.",
+			"DESCRIPTION": "Gain !M! [R].  Draw a card. || You may change the form of {Rotom} in a rest stop.",
+			"NAME": "Rotom-Heat"
+		},
+		"animator:RotomWash":
+		{
+			"FLAVOR_TEXT": "'This Rotom has possessed a washing machine that uses a special motor. It blasts out water to get enemies to back down.' -Galar Pokédex.",
+			"DESCRIPTION": "Gain !M! [B].  Draw a card. || You may change the form of {Rotom} in a rest stop.",
+			"NAME": "Rotom-Wash"
+		},
+		"animator:RotomFan":
+		{
+			"FLAVOR_TEXT": "'In this form, Rotom applies its new power over wind to its love of pranks. It will happily blow away any important documents it can find.' -Galar Pokédex.",
+			"DESCRIPTION": "Gain !M! [G].  Enter <TS>. || You may change the form of {Rotom} in a rest stop.",
+			"NAME": "Rotom-Fan"
+		},
+		"animator:RotomFrost":
+		{
+			"FLAVOR_TEXT": "'When it's like this, Rotom likes to play pranks that are freezing cold. You may find it's turned the bath you just filled to solid ice!' -Galar Pokédex.",
+			"DESCRIPTION": "Gain !M! [G].  Channel [Frost]. || You may change the form of {Rotom} in a rest stop.",
+			"NAME": "Rotom-Frost"
+		},
 		"animator:Ralts":
 		{
 			"FLAVOR_TEXT": "'Ralts senses the emotions of people using the horns on its head. This Pokémon rarely appears before people. But when it does, it draws closer if it senses that the person has a positive disposition.' -Hoenn Pokédex.",

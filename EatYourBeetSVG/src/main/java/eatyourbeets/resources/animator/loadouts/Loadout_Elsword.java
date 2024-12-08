@@ -1,5 +1,6 @@
 package eatyourbeets.resources.animator.loadouts;
 
+import eatyourbeets.cards.animator.basic.seriespokemon.Rotom;
 import eatyourbeets.cards.animator.series.Elsword.*;
 import eatyourbeets.cards.animator.ultrarare.Rose;
 import eatyourbeets.cards.base.CardSeries;
@@ -11,6 +12,7 @@ public class Loadout_Elsword extends AnimatorLoadout
     public Loadout_Elsword()
     {
         super(CardSeries.Elsword);
+        this.EmblemicPokemon = new Rotom();
     }
 
     @Override

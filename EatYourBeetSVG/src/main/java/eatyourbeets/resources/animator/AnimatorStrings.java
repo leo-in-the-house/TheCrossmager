@@ -458,6 +458,10 @@ public class AnimatorStrings
             return JUtils.Format(T_Transform_LoseHPWithName_F1, cardName, amount);
         }
 
+        public final String TransformForm(String cardName)
+        {
+            return JUtils.Format(D_Transform_Generic_F1, JUtils.ModifyString(cardName, w -> "#y" + w));
+        }
 
         public final String TransformGeneric_D(String cardName)
         {
@@ -490,6 +494,19 @@ public class AnimatorStrings
         public final String TransformCardAndGainDepression_D(String cardName)
         {
             return JUtils.Format(D_Transform_GainDepression_F2, JUtils.ModifyString(cardName, w -> "#y" + w));
+        }
+
+        public final String Rotom_TransformIntoDifferentForm_F1 = Strings.TEXT[INDEX++];
+        public final String Rotom_TransformIntoDifferentForm_F2 = Strings.TEXT[INDEX++];
+
+        public final String Rotom_TransformSelection()
+        {
+            return JUtils.Format(Rotom_TransformIntoDifferentForm_F1);
+        }
+
+        public final String Rotom_TransformSelection_D()
+        {
+            return JUtils.Format(Rotom_TransformIntoDifferentForm_F2);
         }
 
         public final String T_Transform_GainMiyu_F1 = Strings.TEXT[INDEX++];

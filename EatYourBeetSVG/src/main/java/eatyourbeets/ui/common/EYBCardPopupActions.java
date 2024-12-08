@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import eatyourbeets.actions.pileSelection.SelectFromPile;
 import eatyourbeets.cards.animator.basic.*;
+import eatyourbeets.cards.animator.basic.seriespokemon.Rotom;
 import eatyourbeets.cards.animator.curse.common.Curse_Depression;
 import eatyourbeets.cards.animator.curse.special.Curse_GriefSeed;
 import eatyourbeets.cards.animator.special.Illya_Miyu;
@@ -312,6 +313,40 @@ public class EYBCardPopupActions
                 Obtain(new Curse_Depression().makeCopy());
                 SFX.Play(SFX.ORB_LIGHTNING_EVOKE, 0.4f);
             };
+            Complete();
+        }
+    }
+
+    public static class Pokemon_Rotom extends EYBCardPopupAction
+    {
+
+        public Pokemon_Rotom()
+        {
+
+            SetText(specialActions.Rotom_TransformSelection(), terms.Transform, specialActions.Rotom_TransformSelection_D());
+        }
+
+        @Override
+        public boolean CanExecute(AbstractCard card)
+        {
+            return IsRestRoom() && HasCard(card);
+        }
+
+        @Override
+        public void Execute()
+        {
+            final CardGroup group = Rotom.GetForms();
+
+            GameEffects.TopLevelQueue.Callback(new SelectFromPile(terms.Transform, 1, group)
+                    .HideTopPanel(true)
+                    .CancellableFromPlayer(true)
+                    .AddCallback(card, (c, cards) ->
+                    {
+                        if (cards != null && cards.size() > 0 && Replace(c, (EYBCard) cards.get(0)) != null)
+                        {
+                            SFX.Play(SFX.ORB_LIGHTNING_EVOKE, 0.66f, 0.66f, 0.825f);
+                        }
+                    }));
             Complete();
         }
     }
