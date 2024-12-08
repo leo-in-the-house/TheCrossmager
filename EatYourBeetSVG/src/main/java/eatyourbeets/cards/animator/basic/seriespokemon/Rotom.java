@@ -13,7 +13,7 @@ import eatyourbeets.utilities.GameUtilities;
 
 public class Rotom extends PokemonCard {
     public static final EYBCardData DATA = Register(Rotom.class)
-            .SetAttack(1, CardRarity.BASIC, EYBAttackType.Elemental, EYBCardTarget.ALL)
+            .SetAttack(0, CardRarity.BASIC, EYBAttackType.Elemental, EYBCardTarget.ALL)
             .PostInitialize(data ->
             {
                 data.AddPopupAction(new EYBCardPopupActions.Pokemon_Rotom());
