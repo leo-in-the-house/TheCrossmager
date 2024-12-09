@@ -347,6 +347,18 @@
 
 	"BASIC:SERIESPOKEMON":
 	{
+		"animator:Grimer":
+		{
+			"FLAVOR_TEXT": "'Brought to Alola to solve the garbage problem, Grimer seems to relish any and all kinds of trash.' -Alola Pokédex.",
+			"DESCRIPTION": "Evoke your rightmost {Orb} !M! times and add {Slimed} to your hand. || Evolves into {Muk}.",
+			"NAME": "Grimer"
+		},
+		"animator:Muk":
+		{
+			"FLAVOR_TEXT": "'There are over a hundred kinds of poison inside its body. Chemical reactions between different poisons are the source of its vitality.' -Alola Pokédex.",
+			"DESCRIPTION": "Evoke your rightmost {Orb} !M! times and add {Slimed} to your hand.",
+			"NAME": "Muk"
+		},
 		"animator:Impidimp":
 		{
 			"FLAVOR_TEXT": "'It sneaks into people's homes, stealing things and feasting on the negative energy of the frustrated occupants.' -Galar Pokédex.",

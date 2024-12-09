@@ -1,5 +1,6 @@
 package eatyourbeets.resources.animator.loadouts;
 
+import eatyourbeets.cards.animator.basic.seriespokemon.Grimer;
 import eatyourbeets.cards.animator.series.FullmetalAlchemist.*;
 import eatyourbeets.cards.animator.ultrarare.Truth;
 import eatyourbeets.cards.base.CardSeries;
@@ -11,6 +12,7 @@ public class Loadout_FullmetalAlchemist extends AnimatorLoadout
     public Loadout_FullmetalAlchemist()
     {
         super(CardSeries.FullmetalAlchemist);
+        this.EmblemicPokemon = new Grimer();
     }
 
     @Override
