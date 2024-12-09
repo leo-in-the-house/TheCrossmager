@@ -268,7 +268,7 @@ public class EYBCardAffinityRow extends GUIElement
             }*/
         }
 
-        if (Type == Affinity.Sealed || Level == BaseLevel)
+        if (Level == BaseLevel)
         {
             text_affinity.SetText(Level).SetColor(Colors.Cream(Level > 0 ? 1 : 0.6f));
         }
