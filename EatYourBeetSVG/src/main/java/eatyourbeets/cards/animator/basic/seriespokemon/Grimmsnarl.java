@@ -16,11 +16,11 @@ public class Grimmsnarl extends PokemonCard {
     public Grimmsnarl() {
         super(DATA);
 
-        Initialize(7, 0, 3);
+        Initialize(4, 0, 3);
         SetUpgrade(0, 0, 0);
 
-        SetAffinity_White(1, 0, 3);
-        SetAffinity_Black(1, 0, 3);
+        SetAffinity_White(1, 0, 1);
+        SetAffinity_Black(1, 0, 1);
     }
 
     @Override

@@ -16,11 +16,11 @@ public class Morgrem extends PokemonCard {
     public Morgrem() {
         super(DATA);
 
-        Initialize(7, 0, 2);
+        Initialize(4, 0, 2);
         SetUpgrade(0, 0, 0);
 
-        SetAffinity_White(1, 0, 3);
-        SetAffinity_Black(1, 0, 3);
+        SetAffinity_White(1, 0, 1);
+        SetAffinity_Black(1, 0, 1);
 
         SetEvolution(new Grimmsnarl());
     }

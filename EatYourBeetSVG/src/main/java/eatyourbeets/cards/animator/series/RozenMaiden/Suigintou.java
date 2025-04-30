@@ -58,6 +58,7 @@ public class Suigintou extends AnimatorCard {
                     Suigintou_BlackFeather blackFeather = new Suigintou_BlackFeather();
                     blackFeather.setLinkedUUID(uuid);
                     GameActions.Top.MakeCardInHand(blackFeather);
+                    GameActions.Top.RemovePower(player, debuffs.get(0));
                 }
             });
 

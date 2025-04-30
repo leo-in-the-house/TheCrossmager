@@ -31,8 +31,7 @@ public class Mayuri extends AnimatorCard
     {
         GameUtilities.PlayVoiceSFX(name);
 
-        int[] damageMatrix = DamageInfo.createDamageMatrix(damage, true);
-        GameActions.Bottom.DealDamageToAll(damageMatrix, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.LIGHTNING);
+        GameActions.Bottom.DealDamageToAll(this, AbstractGameAction.AttackEffect.LIGHTNING);
         GameActions.Bottom.SFX(SFX.ORB_LIGHTNING_EVOKE);
 
         GameActions.Bottom.Callback(cards -> {

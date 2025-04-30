@@ -239,7 +239,13 @@ public class GR
     }
 
     public static String TryGetFlavorText(String name) {
-        return flavorTexts.get(name);
+        String parsedName = name;
+
+        if (parsedName.contains("+")) {
+            parsedName = name.split("\\+")[0];
+        }
+
+        return flavorTexts.get(parsedName);
     }
 
     public static String CreateID(String prefix, String suffix)
