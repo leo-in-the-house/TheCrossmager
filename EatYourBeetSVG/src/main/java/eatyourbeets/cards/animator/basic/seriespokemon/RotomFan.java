@@ -14,7 +14,7 @@ import eatyourbeets.utilities.GameUtilities;
 
 public class RotomFan extends PokemonCard {
     public static final EYBCardData DATA = Register(RotomFan.class)
-            .SetSkill(1, CardRarity.BASIC, EYBCardTarget.None)
+            .SetSkill(2, CardRarity.BASIC, EYBCardTarget.None)
             .PostInitialize(data ->
             {
                 data.AddPopupAction(new EYBCardPopupActions.Pokemon_Rotom());
