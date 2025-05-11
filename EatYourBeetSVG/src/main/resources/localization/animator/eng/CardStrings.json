@@ -347,6 +347,78 @@
 
 	"BASIC:SERIESPOKEMON":
 	{
+		"animator:Yamask":
+		{
+			"FLAVOR_TEXT": "'Each of them carries a mask that used to be its face when it was human. Sometimes they look at it and cry.' -Unova Pokédex.",
+			"DESCRIPTION": "<SLM>. On Discard: Add a copy of this card to your hand and Motivate it. || Evolves into {Cofagrigus}.",
+			"NAME": "Yamask"
+		},
+		"animator:Cofagrigus":
+		{
+			"FLAVOR_TEXT": "'They pretend to be elaborate coffins to teach lessons to grave robbers. Their bodies are covered in pure gold.' -Unova Pokédex.",
+			"DESCRIPTION": "On Discard: Add a copy of this card to your hand and Motivate it.",
+			"NAME": "Cofagrigus"
+		},
+		"animator:Venipede":
+		{
+			"FLAVOR_TEXT": "'It discovers what is going on around it by using the feelers on its head and tail. It is brutally aggressive.' -Unova Pokédex.",
+			"DESCRIPTION": "Can only play if you have a Hindrance in your hand. || Evolves into {Whirlipede}.",
+			"NAME": "Venipede"
+		},
+		"animator:Whirlipede":
+		{
+			"FLAVOR_TEXT": "'Protected by a hard shell, it spins its body like a wheel and crashes furiously into its enemies.' -Unova Pokédex.",
+			"DESCRIPTION": "Can only play if you have a Hindrance in your hand. || Evolves into {Scolipede}.",
+			"NAME": "Whirlipede"
+		},
+		"animator:Scolipede":
+		{
+			"FLAVOR_TEXT": "'It clasps its prey with the claws on its neck until it stops moving. Then it finishes it off with deadly poison.' -Unova Pokédex.",
+			"DESCRIPTION": "Can only play if you have a Hindrance in your hand.",
+			"NAME": "Scolipede"
+		},
+		"animator:Froakie":
+		{
+			"FLAVOR_TEXT": "'It protects its skin by covering its body in delicate bubbles. Beneath its happy-go-lucky air, it keeps a watchful eye on its surroundings.' -Kalos Pokédex.",
+			"DESCRIPTION": "Channel [Water] [Dark]. || Evolves into {Frogardier}.",
+			"NAME": "Froakie"
+		},
+		"animator:Frogadier":
+		{
+			"FLAVOR_TEXT": "'It can throw bubble-covered pebbles with precise control, hitting empty cans up to a hundred feet away.' -Kalos Pokédex.",
+			"DESCRIPTION": "Channel [Water] [Dark]. || Evolves into {Greninja}.",
+			"NAME": "Frogadier"
+		},
+		"animator:Greninja":
+		{
+			"FLAVOR_TEXT": "'It creates throwing stars out of compressed water. When it spins them and throws them at high speed, these stars can split metal in two.' -Kalos Pokédex.",
+			"DESCRIPTION": "Channel [Water] [Dark].",
+			"NAME": "Greninja"
+		},
+		"animator:Rockruff":
+		{
+			"FLAVOR_TEXT": "'When it rubs the rocks on its neck against you, that's proof of its love for you. However, the rocks are sharp, so the gesture is quite painful!' -Alola Pokédex.",
+			"DESCRIPTION": "This can only be played if you have !M! other {Attacks} in your hand. || Evolves into a random {Lycanroc} form.",
+			"NAME": "Rockruff"
+		},
+		"animator:Lycanroc_Midday":
+		{
+			"FLAVOR_TEXT": "'Its quick movements confuse its enemies. Well equipped with claws and fangs, it also uses the sharp rocks in its mane as weapons.' -Alola Pokédex.",
+			"DESCRIPTION": "This can only be played if you have !M! other {Attacks} in your hand.",
+			"NAME": "Lycanroc"
+		},
+		"animator:Lycanroc_Midnight":
+		{
+			"FLAVOR_TEXT": "'It goads its enemies into attacking, withstands the hits, and in return, delivers a headbutt, crushing their bones with its rocky mane.' -Alola Pokédex.",
+			"DESCRIPTION": "This can only be played if you have !M! other {Attacks} in your hand.",
+			"NAME": "Lycanroc"
+		},
+		"animator:Lycanroc_Dusk":
+		{
+			"FLAVOR_TEXT": "'This form of Lycanroc is normally calm and quiet. Once a battle begins, however, this Pokémon displays a ferocious fighting spirit.' -Galar Pokédex.",
+			"DESCRIPTION": "This can only be played if you have !S! other {Attacks} in your hand.",
+			"NAME": "Lycanroc"
+		},
 		"animator:Grimer":
 		{
 			"FLAVOR_TEXT": "'Brought to Alola to solve the garbage problem, Grimer seems to relish any and all kinds of trash.' -Alola Pokédex.",

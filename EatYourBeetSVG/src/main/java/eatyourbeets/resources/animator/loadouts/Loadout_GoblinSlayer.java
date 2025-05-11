@@ -1,5 +1,6 @@
 package eatyourbeets.resources.animator.loadouts;
 
+import eatyourbeets.cards.animator.basic.seriespokemon.Venipede;
 import eatyourbeets.cards.animator.series.GoblinSlayer.*;
 import eatyourbeets.cards.animator.ultrarare.Hero;
 import eatyourbeets.cards.base.CardSeries;
@@ -11,6 +12,7 @@ public class Loadout_GoblinSlayer extends AnimatorLoadout
     public Loadout_GoblinSlayer()
     {
         super(CardSeries.GoblinSlayer);
+        this.EmblemicPokemon = new Venipede();
     }
 
     @Override

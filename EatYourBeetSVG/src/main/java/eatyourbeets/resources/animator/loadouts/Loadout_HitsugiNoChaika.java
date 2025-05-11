@@ -1,5 +1,6 @@
 package eatyourbeets.resources.animator.loadouts;
 
+import eatyourbeets.cards.animator.basic.seriespokemon.Yamask;
 import eatyourbeets.cards.animator.series.HitsugiNoChaika.*;
 import eatyourbeets.cards.animator.ultrarare.NivaLada;
 import eatyourbeets.cards.base.CardSeries;
@@ -14,6 +15,7 @@ public class Loadout_HitsugiNoChaika extends AnimatorLoadout
     public Loadout_HitsugiNoChaika()
     {
         super(CardSeries.HitsugiNoChaika);
+        this.EmblemicPokemon = new Yamask();
     }
 
     @Override

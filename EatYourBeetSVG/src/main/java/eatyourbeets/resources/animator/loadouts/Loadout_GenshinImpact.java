@@ -1,5 +1,6 @@
 package eatyourbeets.resources.animator.loadouts;
 
+import eatyourbeets.cards.animator.basic.seriespokemon.Froakie;
 import eatyourbeets.cards.animator.series.GenshinImpact.*;
 import eatyourbeets.cards.animator.ultrarare.Traveler;
 import eatyourbeets.cards.base.CardSeries;
@@ -11,6 +12,7 @@ public class Loadout_GenshinImpact extends AnimatorLoadout
     public Loadout_GenshinImpact()
     {
         super(CardSeries.GenshinImpact);
+        this.EmblemicPokemon = new Froakie();
     }
 
     @Override

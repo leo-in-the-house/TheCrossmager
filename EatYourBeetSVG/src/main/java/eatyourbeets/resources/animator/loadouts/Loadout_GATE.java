@@ -1,5 +1,6 @@
 package eatyourbeets.resources.animator.loadouts;
 
+import eatyourbeets.cards.animator.basic.seriespokemon.Rockruff;
 import eatyourbeets.cards.animator.series.GATE.*;
 import eatyourbeets.cards.animator.ultrarare.Giselle;
 import eatyourbeets.cards.base.CardSeries;
@@ -11,6 +12,7 @@ public class Loadout_GATE extends AnimatorLoadout
     public Loadout_GATE()
     {
         super(CardSeries.GATE);
+        this.EmblemicPokemon = new Rockruff();
     }
 
     @Override
