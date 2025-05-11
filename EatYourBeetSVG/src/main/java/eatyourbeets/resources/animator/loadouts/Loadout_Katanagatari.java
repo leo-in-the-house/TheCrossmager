@@ -1,5 +1,6 @@
 package eatyourbeets.resources.animator.loadouts;
 
+import eatyourbeets.cards.animator.basic.seriespokemon.Honedge;
 import eatyourbeets.cards.animator.series.Katanagatari.*;
 import eatyourbeets.cards.animator.ultrarare.ShikizakiKiki;
 import eatyourbeets.cards.base.CardSeries;
@@ -11,6 +12,7 @@ public class Loadout_Katanagatari extends AnimatorLoadout
     public Loadout_Katanagatari()
     {
         super(CardSeries.Katanagatari);
+        this.EmblemicPokemon = new Honedge();
     }
 
     @Override

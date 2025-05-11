@@ -31,7 +31,7 @@ public class Cofagrigus extends PokemonCard {
         GameActions.Bottom.MakeCardInHand(this.makeStatEquivalentCopy())
             .AddCallback(card ->
             {
-                GameUtilities.ModifyCostForTurn(card, 1, true);
+                GameActions.Bottom.Motivate(card, 1);
                 GameActions.Bottom.Add(new RefreshHandLayout());
             });
     }

@@ -347,6 +347,27 @@
 
 	"BASIC:SERIESPOKEMON":
 	{
+		"animator:Honedge":
+		{
+			"FLAVOR_TEXT": "'Apparently this Pokémon is born when a departed spirit inhabits a sword. It attaches itself to people and drinks their life force.' -Kalos Pokédex.",
+			"DESCRIPTION": "When Sealed, this card turns into a Skill that provides [Block] instead of Attack. || Evolves into {Doublade}.",
+			"EXTENDED_DESCRIPTION": [""],
+			"NAME": "Honedge"
+		},
+		"animator:Doublade":
+		{
+			"FLAVOR_TEXT": "'The complex attack patterns of its two swords are unstoppable, even for an opponent greatly accomplished at swordplay.' -Kalos Pokédex.",
+			"DESCRIPTION": "When Sealed, this card turns into a Skill that provides [Block] instead of Attack. || Evolves into {Aegislash}.",
+			"EXTENDED_DESCRIPTION": [""],
+			"NAME": "Doublade"
+		},
+		"animator:Aegislash":
+		{
+			"FLAVOR_TEXT": "'Generations of kings were attended by these Pokémon, which used their spectral power to manipulate and control people and Pokémon.' -Kalos Pokédex.",
+			"DESCRIPTION": "When Sealed, this card turns into a Skill that provides [Block] instead of Attack.",
+			"EXTENDED_DESCRIPTION": [""],
+			"NAME": "Aegislash"
+		},
 		"animator:Yamask":
 		{
 			"FLAVOR_TEXT": "'Each of them carries a mask that used to be its face when it was human. Sometimes they look at it and cry.' -Unova Pokédex.",
