@@ -20,7 +20,7 @@ public class Scolipede extends PokemonCard {
     public Scolipede() {
         super(DATA);
 
-        Initialize(12, 5, 2);
+        Initialize(12, 12, 2);
         SetUpgrade(3, 0, 0);
 
         SetAffinity_Green(1);

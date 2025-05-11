@@ -32,7 +32,7 @@ public class ShioriSekine extends AnimatorCard {
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info) {
         GameUtilities.PlayVoiceSFX(name);
 
-        GameActions.Bottom.StackPower(new ShioriSekinePower(p, 5));
+        GameActions.Bottom.StackPower(new ShioriSekinePower(p, magicNumber));
     }
 
     public static class ShioriSekinePower extends AnimatorPower {

@@ -55,6 +55,12 @@
 		"NAMES": ["[c] stance", "demon stance"],
 		"PROPER_NAME": "Demon Stance"
 	},
+	"Neutral Stance":
+	{
+		"DESCRIPTION": "The default stance that can be entered via exiting your current stance.  No effects.",
+		"NAMES": [",neutral stance"],
+		"PROPER_NAME": "Neutral Stance"
+	},
 	"Wrath Stance":
 	{
 		"DESCRIPTION": "Deal and receive double damage.",

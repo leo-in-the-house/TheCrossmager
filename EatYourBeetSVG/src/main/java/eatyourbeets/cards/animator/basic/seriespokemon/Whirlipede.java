@@ -19,7 +19,7 @@ public class Whirlipede extends PokemonCard {
     public Whirlipede() {
         super(DATA);
 
-        Initialize(12, 5, 0);
+        Initialize(12, 12, 0);
         SetUpgrade(3, 0, 0);
 
         SetAffinity_Green(1);

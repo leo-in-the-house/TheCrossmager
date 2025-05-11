@@ -146,7 +146,12 @@
 		"NAMES": ["[Divinity Stance] Stance", "[divinity stance] stance", "divinity stance"],
 		"PROPER_NAME": "Divinity Stance"
 	},
-	
+	"Neutral Stance":
+	{
+		"DESCRIPTION": "The default stance that can be entered via exiting your current stance.  No effects.",
+		"NAMES": [",neutral stance"],
+		"PROPER_NAME": "Neutral Stance"
+	},
 	"Green Scaling":
 	{
 		"DESCRIPTION": "",
