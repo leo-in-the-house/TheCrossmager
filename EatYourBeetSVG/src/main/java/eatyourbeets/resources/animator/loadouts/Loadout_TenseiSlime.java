@@ -1,7 +1,7 @@
 package eatyourbeets.resources.animator.loadouts;
 
+import eatyourbeets.cards.animator.basic.seriespokemon.Trapinch;
 import eatyourbeets.cards.animator.series.TenseiSlime.*;
-import eatyourbeets.cards.animator.status.Status_Burn;
 import eatyourbeets.cards.animator.ultrarare.Veldora;
 import eatyourbeets.cards.base.CardSeries;
 import eatyourbeets.cards.base.EYBCardData;
@@ -12,6 +12,7 @@ public class Loadout_TenseiSlime extends AnimatorLoadout
     public Loadout_TenseiSlime()
     {
         super(CardSeries.TenseiSlime);
+        this.EmblemicPokemon = new Trapinch();
     }
 
     @Override

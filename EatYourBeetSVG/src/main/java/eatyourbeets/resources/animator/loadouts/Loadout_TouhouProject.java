@@ -1,5 +1,6 @@
 package eatyourbeets.resources.animator.loadouts;
 
+import eatyourbeets.cards.animator.basic.seriespokemon.Pikipek;
 import eatyourbeets.cards.animator.series.TouhouProject.*;
 import eatyourbeets.cards.animator.ultrarare.YuyukoSaigyouji;
 import eatyourbeets.cards.base.CardSeries;
@@ -11,6 +12,7 @@ public class Loadout_TouhouProject extends AnimatorLoadout
     public Loadout_TouhouProject()
     {
         super(CardSeries.TouhouProject);
+        this.EmblemicPokemon = new Pikipek();
     }
 
     @Override

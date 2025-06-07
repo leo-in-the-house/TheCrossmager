@@ -1,5 +1,6 @@
 package eatyourbeets.resources.animator.loadouts;
 
+import eatyourbeets.cards.animator.basic.seriespokemon.Gothita;
 import eatyourbeets.cards.animator.series.RozenMaiden.*;
 import eatyourbeets.cards.animator.ultrarare.Kirakishou;
 import eatyourbeets.cards.base.CardSeries;
@@ -11,6 +12,7 @@ public class Loadout_RozenMaiden extends AnimatorLoadout
     public Loadout_RozenMaiden()
     {
         super(CardSeries.RozenMaiden);
+        this.EmblemicPokemon = new Gothita();
     }
 
     @Override

@@ -1,5 +1,6 @@
 package eatyourbeets.resources.animator.loadouts;
 
+import eatyourbeets.cards.animator.basic.seriespokemon.Chikorita;
 import eatyourbeets.cards.animator.series.Rewrite.*;
 import eatyourbeets.cards.animator.ultrarare.SakuraKashima;
 import eatyourbeets.cards.base.CardSeries;
@@ -11,6 +12,7 @@ public class Loadout_Rewrite extends AnimatorLoadout
     public Loadout_Rewrite()
     {
         super(CardSeries.Rewrite);
+        this.EmblemicPokemon = new Chikorita();
     }
 
     @Override

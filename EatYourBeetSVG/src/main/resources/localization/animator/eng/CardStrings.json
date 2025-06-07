@@ -347,6 +347,78 @@
 
 	"BASIC:SERIESPOKEMON":
 	{
+		"animator:Pikipek":
+		{
+			"FLAVOR_TEXT": "'This Pokémon feeds on berries, whose leftover seeds become the ammunition for the attacks it fires off from its mouth.' -Alola Pokédex.",
+			"DESCRIPTION": "Evolves into {Trumbeak}.",
+			"NAME": "Pikipek"
+		},
+		"animator:Trumbeak":
+		{
+			"FLAVOR_TEXT": "'It eats berries and stores their seeds in its beak. When it encounters enemies or prey, it fires off all the seeds in a burst.' -Alola Pokédex.",
+			"DESCRIPTION": "Evolves into {Toucannon}.",
+			"NAME": "Trumbeak"
+		},
+		"animator:Toucannon":
+		{
+			"FLAVOR_TEXT": "'They smack beaks with others of their kind to communicate. The strength and number of hits tell each other how they feel.' -Alola Pokédex.",
+			"DESCRIPTION": "Gain !S! [Flame Barrier].",
+			"NAME": "Toucannon"
+		},
+		"animator:Trapinch":
+		{
+			"FLAVOR_TEXT": "'Trapinch's nest is a sloped, bowl-like pit dug in sand. This Pokémon patiently waits for prey to tumble down the pit. Its giant jaws have enough strength to crush even boulders.' -Hoenn Pokédex.",
+			"DESCRIPTION": "Increase the cost of this card by 1. || Evolves into {Vibrava}.",
+			"NAME": "Trapinch"
+		},
+		"animator:Vibrava":
+		{
+			"FLAVOR_TEXT": "'Vibrava's wings have not yet completed the process of growing. Rather than flying long distances, they are more useful for generating ultrasonic waves by vibrating.' -Hoenn Pokédex.",
+			"DESCRIPTION": "Increase the cost of this card by 1 and double its number of attacks. || Evolves into {Flygon}.",
+			"NAME": "Vibrava"
+		},
+		"animator:Flygon":
+		{
+			"FLAVOR_TEXT": "'The flapping of its wings sounds like singing. To prevent detection by enemies, it hides itself by flapping up a cloud of desert sand.' -Hoenn Pokédex.",
+			"DESCRIPTION": "Increase the cost of this card by 1 and triple its number of attacks.",
+			"NAME": "Flygon"
+		},
+		"animator:Gothita":
+		{
+			"FLAVOR_TEXT": "'They intently observe both Trainers and Pokémon. Apparently, they are looking at something that only Gothita can see.' -Unova Pokédex.",
+			"DESCRIPTION": "Evolves into {Gothorita}.",
+			"NAME": "Gothita"
+		},
+		"animator:Gothorita":
+		{
+			"FLAVOR_TEXT": "'They use hypnosis to control people and Pokémon. Tales of Gothorita leading people astray are told in every corner.' -Unova Pokédex.",
+			"DESCRIPTION": "Evolves into {Gothitelle}.",
+			"NAME": "Gothorita"
+		},
+		"animator:Gothitelle":
+		{
+			"FLAVOR_TEXT": "'It can see the future from the movement of the stars. When it learns its Trainer's life span, it cries in sadness.' -Unova Pokédex.",
+			"DESCRIPTION": "Retain a card in your hand.",
+			"NAME": "Gothitelle"
+		},
+		"animator:Chikorita":
+		{
+			"FLAVOR_TEXT": "'A sweet aroma gently wafts from the leaf on its head. It is docile and loves to soak up sunrays.' -Johto Pokédex.",
+			"DESCRIPTION": "Enter <TS>. || Evolves into {Bayleef}.",
+			"NAME": "Chikorita"
+		},
+		"animator:Bayleef":
+		{
+			"FLAVOR_TEXT": "'A spicy aroma emanates from around its neck. The aroma acts as a stimulant to restore health.' -Johto Pokédex.",
+			"DESCRIPTION": "Enter <TS>. || Evolves into {Meganium}.",
+			"NAME": "Bayleef"
+		},
+		"animator:Meganium":
+		{
+			"FLAVOR_TEXT": "'Anyone who stands beside it becomes refreshed, just as if they were relaxing in a sunny forest.' -Johto Pokédex.",
+			"DESCRIPTION": "Enter <CS>, then enter <TS>.",
+			"NAME": "Meganium"
+		},
 		"animator:Charcadet":
 		{
 			"FLAVOR_TEXT": "'Its firepower increases when it fights, reaching over 1,800 degrees Fahrenheit. It likes berries that are rich in fat.' -Paldea Pokédex.",
