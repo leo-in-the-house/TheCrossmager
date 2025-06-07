@@ -1,5 +1,6 @@
 package eatyourbeets.resources.animator.loadouts;
 
+import eatyourbeets.cards.animator.basic.seriespokemon.Cleffa;
 import eatyourbeets.cards.animator.series.Konosuba.*;
 import eatyourbeets.cards.animator.ultrarare.Chomusuke;
 import eatyourbeets.cards.base.CardSeries;
@@ -14,6 +15,7 @@ public class Loadout_Konosuba extends AnimatorLoadout
     public Loadout_Konosuba()
     {
         super(CardSeries.Konosuba);
+        this.EmblemicPokemon = new Cleffa();
     }
 
     @Override

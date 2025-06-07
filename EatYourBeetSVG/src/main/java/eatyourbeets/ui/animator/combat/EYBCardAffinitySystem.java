@@ -349,12 +349,12 @@ public class EYBCardAffinitySystem extends GUIElement implements OnStartOfTurnSu
 
     public float ModifyBlock(float block, EYBCard card)
     {
-        return card.type != AbstractCard.CardType.ATTACK ? ApplyScaling(Affinity.Star, card, block) : block;
+        return (card.type != AbstractCard.CardType.ATTACK || card.scalesBothAttackAndBlock) ? ApplyScaling(Affinity.Star, card, block) : block;
     }
 
     public float ModifyDamage(float damage, EYBCard card)
     {
-        return card.type == AbstractCard.CardType.ATTACK ? ApplyScaling(Affinity.Star, card, damage) : damage;
+        return (card.type == AbstractCard.CardType.ATTACK || card.scalesBothAttackAndBlock) ? ApplyScaling(Affinity.Star, card, damage) : damage;
     }
 
     public float ApplyScaling(Affinity affinity, EYBCard card, float base)

@@ -32,8 +32,8 @@ public class Kirlia extends PokemonCard {
 
     @Override
     public void Evolve() {
-        int numAttacks = (int)player.exhaustPile.group.stream().filter(card -> card.baseDamage > 0).count();
-        int numBlocks = (int)player.exhaustPile.group.stream().filter(card -> card.baseBlock > 0).count();
+        int numAttacks = (int)player.masterDeck.group.stream().filter(card -> card.baseDamage > 0).count();
+        int numBlocks = (int)player.masterDeck.group.stream().filter(card -> card.baseBlock > 0).count();
 
         if (numAttacks > numBlocks) {
             EvolveInto(new Gallade());

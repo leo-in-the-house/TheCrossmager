@@ -1,5 +1,6 @@
 package eatyourbeets.resources.animator.loadouts;
 
+import eatyourbeets.cards.animator.basic.seriespokemon.Charcadet;
 import eatyourbeets.cards.animator.series.OwariNoSeraph.*;
 import eatyourbeets.cards.animator.ultrarare.HiiragiTenri;
 import eatyourbeets.cards.base.CardSeries;
@@ -11,6 +12,7 @@ public class Loadout_OwariNoSeraph extends AnimatorLoadout
     public Loadout_OwariNoSeraph()
     {
         super(CardSeries.OwariNoSeraph);
+        this.EmblemicPokemon = new Charcadet();
     }
 
     @Override

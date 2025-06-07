@@ -30,6 +30,12 @@
 		"NAMES": ["burst"],
 		"PROPER_NAME": "Burst"
 	},
+	"Buffer":
+	{
+		"DESCRIPTION": "Prevents the next amount of times you would lose HP.",
+		"NAMES": ["buffer"],
+		"PROPER_NAME": "Buffer"
+	},
 	"Chaika Clone":
 	{
 		"DESCRIPTION": "Chaika Trabant, Chaika Kamaz, Chaika Bogdan, Viivi Holopainen, Layla",

@@ -1,5 +1,6 @@
 package eatyourbeets.resources.animator.loadouts;
 
+import eatyourbeets.cards.animator.basic.seriespokemon.Tyrogue;
 import eatyourbeets.cards.animator.series.OnePunchMan.*;
 import eatyourbeets.cards.animator.ultrarare.SeriousSaitama;
 import eatyourbeets.cards.base.CardSeries;
@@ -11,6 +12,7 @@ public class Loadout_OnePunchMan extends AnimatorLoadout
     public Loadout_OnePunchMan()
     {
         super(CardSeries.OnePunchMan);
+        this.EmblemicPokemon = new Tyrogue();
     }
 
     @Override

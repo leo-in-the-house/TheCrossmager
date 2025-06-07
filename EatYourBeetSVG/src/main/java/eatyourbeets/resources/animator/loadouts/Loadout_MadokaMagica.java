@@ -1,5 +1,6 @@
 package eatyourbeets.resources.animator.loadouts;
 
+import eatyourbeets.cards.animator.basic.seriespokemon.Mimikyu;
 import eatyourbeets.cards.animator.series.MadokaMagica.*;
 import eatyourbeets.cards.animator.ultrarare.Walpurgisnacht;
 import eatyourbeets.cards.base.CardSeries;
@@ -14,6 +15,7 @@ public class Loadout_MadokaMagica extends AnimatorLoadout
     public Loadout_MadokaMagica()
     {
         super(CardSeries.MadokaMagica);
+        this.EmblemicPokemon = new Mimikyu();
     }
 
     @Override

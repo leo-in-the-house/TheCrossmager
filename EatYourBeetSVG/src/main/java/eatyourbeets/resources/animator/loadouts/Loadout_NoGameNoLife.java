@@ -1,5 +1,6 @@
 package eatyourbeets.resources.animator.loadouts;
 
+import eatyourbeets.cards.animator.basic.seriespokemon.Kricketot;
 import eatyourbeets.cards.animator.series.NoGameNoLife.*;
 import eatyourbeets.cards.animator.ultrarare.Azriel;
 import eatyourbeets.cards.base.CardSeries;
@@ -11,6 +12,7 @@ public class Loadout_NoGameNoLife extends AnimatorLoadout
     public Loadout_NoGameNoLife()
     {
         super(CardSeries.NoGameNoLife);
+        this.EmblemicPokemon = new Kricketot();
     }
 
     @Override

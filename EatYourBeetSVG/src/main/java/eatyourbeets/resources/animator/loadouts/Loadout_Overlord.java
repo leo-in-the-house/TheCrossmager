@@ -1,5 +1,6 @@
 package eatyourbeets.resources.animator.loadouts;
 
+import eatyourbeets.cards.animator.basic.seriespokemon.Pawniard;
 import eatyourbeets.cards.animator.series.Overlord.*;
 import eatyourbeets.cards.animator.ultrarare.SirTouchMe;
 import eatyourbeets.cards.base.CardSeries;
@@ -11,6 +12,7 @@ public class Loadout_Overlord extends AnimatorLoadout
     public Loadout_Overlord()
     {
         super(CardSeries.Overlord);
+        this.EmblemicPokemon = new Pawniard();
     }
 
     @Override

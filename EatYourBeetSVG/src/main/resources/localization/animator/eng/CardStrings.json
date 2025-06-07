@@ -347,6 +347,108 @@
 
 	"BASIC:SERIESPOKEMON":
 	{
+		"animator:Charcadet":
+		{
+			"FLAVOR_TEXT": "'Its firepower increases when it fights, reaching over 1,800 degrees Fahrenheit. It likes berries that are rich in fat.' -Paldea Pokédex.",
+			"DESCRIPTION": "Evolves into {Ceruledge} or {Armarouge} randomly.",
+			"NAME": "Charcadet"
+		},
+		"animator:Ceruledge":
+		{
+			"FLAVOR_TEXT": "'An old set of armor steeped in grudges caused this Pokémon's evolution. Ceruledge cuts its enemies to pieces without mercy.' -Paldea Pokédex.",
+			"DESCRIPTION": "To play this card: Exhaust a card in your hand.",
+			"NAME": "Ceruledge"
+		},
+		"animator:Armarouge":
+		{
+			"FLAVOR_TEXT": "'Armarouge evolved through the use of a set of armor that belonged to a distinguished warrior. This Pokémon is incredibly loyal.' -Paldea Pokédex.",
+			"DESCRIPTION": "To play this card: Exhaust a card in your hand.",
+			"NAME": "Armarouge"
+		},
+		"animator:Pawniard":
+		{
+			"FLAVOR_TEXT": "'Blades comprise this Pokémon's entire body. If battling dulls the blades, it sharpens them on stones by the river.' -Unova Pokédex.",
+			"DESCRIPTION": "Apply !M! [Vulnerable]. || Evolves into {Bisharp}.",
+			"NAME": "Pawniard"
+		},
+		"animator:Bisharp":
+		{
+			"FLAVOR_TEXT": "'Bisharp pursues prey in the company of a large group of Pawniard. Then Bisharp finishes off the prey.' -Unova Pokédex.",
+			"DESCRIPTION": "Apply !M! [Weak][Vulnerable]. || Evolves into {Kingambit}.",
+			"NAME": "Bisharp"
+		},
+		"animator:Kingambit":
+		{
+			"FLAVOR_TEXT": "'Though it commands a massive army in battle, it's not skilled at devising complex strategies. It just uses brute strength to keep pushing.' -Paldea Pokédex.",
+			"DESCRIPTION": "Apply !M! [Weak][Vulnerable][~Lock-On] to ALL enemies.",
+			"NAME": "Kingambit"
+		},
+		"animator:Tyrogue":
+		{
+			"FLAVOR_TEXT": "'It is always bursting with energy. To make itself stronger, it keeps on fighting even if it loses.' -Johto Pokédex.",
+			"DESCRIPTION": "Evolves into {Hitmonlee} if you have more Attacks than Skills.  Evolves into {Hitmonchan} if you have more Skills than Attacks.  Evolves into {Hitmontop} if the two are equal.",
+			"NAME": "Tyrogue"
+		},
+		"animator:Hitmonlee":
+		{
+			"FLAVOR_TEXT": "'When in a hurry, its legs lengthen progressively. It runs smoothly with extra-long, loping strides.' -Kanto Pokédex.",
+			"DESCRIPTION": "",
+			"NAME": "Hitmonlee"
+		},
+		"animator:Hitmonchan":
+		{
+			"FLAVOR_TEXT": "'The spirit of a pro boxer has infused this Pokémon. It throws punches that are faster than a bullet train.' -Kanto Pokédex.",
+			"DESCRIPTION": "",
+			"NAME": "Hitmonchan"
+		},
+		"animator:Hitmontop":
+		{
+			"FLAVOR_TEXT": "'It launches kicks while spinning. If it spins at high speed, it may bore its way into the ground.' -Johto Pokédex.",
+			"DESCRIPTION": "Both this card’s Attack and [Block] benefit from scaling.",
+			"NAME": "Hitmontop"
+		},
+		"animator:Kricketot":
+		{
+			"FLAVOR_TEXT": "'It shakes its head back to front, causing its antennae to hit each other and sound like a xylophone.' -Sinnoh Pokédex.",
+			"DESCRIPTION": "Evolves into {Kricketune}.",
+			"NAME": "Kricketot"
+		},
+		"animator:Kricketune":
+		{
+			"FLAVOR_TEXT": "'It signals its emotions with its melodies. Scientists are studying these melodic patterns.' -Sinnoh Pokédex.",
+			"DESCRIPTION": "This card costs less equal to the number of other 0-Cost Cards in your hand.",
+			"NAME": "Kricketune"
+		},
+		"animator:Mimikyu":
+		{
+			"FLAVOR_TEXT": "'A gust of wind revealed what hides under this Pokémon's rag to a passing Trainer, who went home and died painfully that very night.' -Alola Pokédex.",
+			"DESCRIPTION": "Gain {Buffer} equal to the amount of {Curses} in your hand.",
+			"NAME": "Mimikyu"
+		},
+		"animator:Sableye":
+		{
+			"FLAVOR_TEXT": "'It digs branching holes in caves using its sharp claws in search of food--raw gems. A Sableye lurks in darkness and is seen only rarely.' -Hoenn Pokédex.",
+			"DESCRIPTION": "",
+			"NAME": "Sableye"
+		},
+		"animator:Cleffa":
+		{
+			"FLAVOR_TEXT": "'Because of its unusual, starlike silhouette, people believe that it came here on a meteor.' -Johto Pokédex.",
+			"DESCRIPTION": "Draw a {Konosuba} card. || Evolves into {Clefairy}.",
+			"NAME": "Cleffa"
+		},
+		"animator:Clefairy":
+		{
+			"FLAVOR_TEXT": "'Adored for their cute looks and playfulness. They are thought to be rare, as they do not appear often.' -Kanto Pokédex.",
+			"DESCRIPTION": "Draw !M! {Konosuba} card(s). || Evolves into {Clefable}.",
+			"NAME": "Clefairy"
+		},
+		"animator:Clefable":
+		{
+			"FLAVOR_TEXT": "'A timid fairy Pokémon that is rarely seen, it will run and hide the moment it senses people.' -Kanto Pokédex.",
+			"DESCRIPTION": "Draw !M! {Konosuba} card(s)",
+			"NAME": "Clefable"
+		},
 		"animator:Honedge":
 		{
 			"FLAVOR_TEXT": "'Apparently this Pokémon is born when a departed spirit inhabits a sword. It attaches itself to people and drinks their life force.' -Kalos Pokédex.",
@@ -726,7 +828,7 @@
 		"animator:MotokoKusanagi":
 		{
 			"FLAVOR_TEXT": "'What if a cyber brain could possibly generate its own ghost, and create a soul all by itself.  And if it did, just what would be the importance of being human then?'",
-			"DESCRIPTION": "When Exhausted: Prevent the next time you would lose [HP]. || {Ricochet} !M!.",
+			"DESCRIPTION": "When Exhausted: Gain {Buffer}. || {Ricochet} !M!.",
 			"NAME": "Motoko Kusanagi"
 		},
 		"animator:Mythra":
@@ -3109,7 +3211,7 @@
 		{
 			"FLAVOR_TEXT": "'I'm a hero for fun- ...uh, I mean, a real professional hero.  And my name is Saitama.'",
 			"DESCRIPTION": "Whenever this card is played, increase its cost and change its effect for this combat.",
-			"EXTENDED_DESCRIPTION": ["<DRW-M>. Gain !S! [G].", "Prevent the next time you would lose HP.", "Gain !M! [R].", "Enter <WS>.", "Remove Intangible. Stun the enemy."],
+			"EXTENDED_DESCRIPTION": ["<DRW-M>. Gain !S! [G].", "Gain {Buffer}.", "Gain !M! [R].", "Enter <WS>.", "Remove Intangible. Stun the enemy."],
 			"NAME": "Saitama",
 			"UPGRADE_DESCRIPTION": "Whenever this card is played, increase its cost (except the first time) and change its effect for this combat."
 		},

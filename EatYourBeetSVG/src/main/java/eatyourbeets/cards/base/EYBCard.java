@@ -88,6 +88,8 @@ public abstract class EYBCard extends EYBCardBase implements OnStartOfTurnPostDr
     public int upgrade_block;
     public int upgrade_cost;
 
+    public boolean scalesBothAttackAndBlock = false;
+
     public abstract AbstractPlayer.PlayerClass GetPlayerClass();
 
     public static AbstractCard GetCurrentClassCard(String cardID, boolean upgraded)
