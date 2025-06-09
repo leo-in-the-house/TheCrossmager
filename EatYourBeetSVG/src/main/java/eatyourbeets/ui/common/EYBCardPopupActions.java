@@ -5,9 +5,11 @@ import com.megacrit.cardcrawl.cards.CardGroup;
 import eatyourbeets.actions.pileSelection.SelectFromPile;
 import eatyourbeets.cards.animator.basic.*;
 import eatyourbeets.cards.animator.basic.seriespokemon.Rotom;
+import eatyourbeets.cards.animator.colorless.rare.Ib;
 import eatyourbeets.cards.animator.curse.common.Curse_Depression;
 import eatyourbeets.cards.animator.curse.special.Curse_GriefSeed;
 import eatyourbeets.cards.animator.special.Illya_Miyu;
+import eatyourbeets.cards.base.Affinity;
 import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.EYBCard;
 import eatyourbeets.cards.base.EYBCardData;
@@ -531,6 +533,115 @@ public class EYBCardPopupActions
             {
                 LoseHP(HP_LOSS);
                 SFX.Play(SFX.ANIMATOR_ORB_WATER_EVOKE, 0.4f);
+                Complete();
+            }
+        }
+    }
+
+    public static class Ib_Garry extends EYBCardPopupAction
+    {
+        protected final EYBCardData GARRY;
+        protected final EYBCardData MARY;
+
+        public Ib_Garry(EYBCardData garry, EYBCardData mary)
+        {
+            GARRY = garry;
+            MARY = mary;
+
+            SetText(specialActions.T_TransformBlueCard(), terms.Transform, specialActions.T_TransformBlueCard_D(GARRY.Strings.NAME));
+        }
+
+        @Override
+        public boolean CanExecute(AbstractCard card)
+        {
+            return IsRestRoom() && HasCard(card) && !HasCard(GARRY) && !HasCard(MARY) && HasCardOfAffinity(Affinity.Blue);
+        }
+
+        @Override
+        public void Execute()
+        {
+            if (RemoveRandom(Affinity.Blue)) {
+                final EYBCard card = GARRY.MakeCopy(false);
+
+                Obtain(card);
+                if (this.card instanceof Ib) {
+                    RefreshIbArt((Ib)this.card);
+                }
+                Complete();
+            }
+        }
+    }
+
+
+    public static class Ib_Mary extends EYBCardPopupAction
+    {
+        protected final EYBCardData GARRY;
+        protected final EYBCardData MARY;
+
+        public Ib_Mary(EYBCardData garry, EYBCardData mary)
+        {
+            GARRY = garry;
+            MARY = mary;
+
+            SetText(specialActions.T_TransformYellowCard(), terms.Transform, specialActions.T_TransformYellowCard_D(MARY.Strings.NAME));
+        }
+
+        @Override
+        public boolean CanExecute(AbstractCard card)
+        {
+            return IsRestRoom() && HasCard(card) && !HasCard(GARRY) && !HasCard(MARY) && HasCardOfAffinity(Affinity.Yellow);
+        }
+
+        @Override
+        public void Execute()
+        {
+            if (RemoveRandom(Affinity.Yellow)) {
+                final EYBCard card = MARY.MakeCopy(false);
+
+                Obtain(card);
+                if (this.card instanceof Ib) {
+                    RefreshIbArt((Ib)this.card);
+                }
+                Complete();
+            }
+        }
+    }
+
+
+    public static class Ib_Guertena extends EYBCardPopupAction
+    {
+        protected final EYBCardData GARRY;
+        protected final EYBCardData MARY;
+
+        protected final int NUMCURSESMINIMUM;
+
+        public Ib_Guertena(EYBCardData garry, EYBCardData mary, int numCursesMinimum)
+        {
+            GARRY = garry;
+            MARY = mary;
+            NUMCURSESMINIMUM = numCursesMinimum;
+
+            SetText(specialActions.T_ObtainGarryMaryCurses(), terms.Transform, specialActions.T_ObtainGarryMaryCurses_D(GARRY.Strings.NAME, MARY.Strings.NAME, NUMCURSESMINIMUM));
+        }
+
+        @Override
+        public boolean CanExecute(AbstractCard card)
+        {
+            return IsRestRoom() && HasCard(card) && !HasCard(GARRY) && !HasCard(MARY) && HasCardOfType(AbstractCard.CardType.CURSE, NUMCURSESMINIMUM);
+        }
+
+        @Override
+        public void Execute()
+        {
+            if (CopyAllCurses()) {
+                final EYBCard card = GARRY.MakeCopy(false);
+                final EYBCard card2 = MARY.MakeCopy(false);
+
+                Obtain(card);
+                Obtain(card2);
+                if (this.card instanceof Ib) {
+                    RefreshIbArt((Ib)this.card);
+                }
                 Complete();
             }
         }

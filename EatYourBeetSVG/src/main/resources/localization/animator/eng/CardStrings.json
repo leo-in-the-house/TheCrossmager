@@ -768,6 +768,12 @@
 			"EXTENDED_DESCRIPTION": ["If you would gain #yBlock this turn, instead apply that much #yFreezing to ALL enemies."],
 			"NAME": "Ayaka Kamisato"
 		},
+		"animator:BlackCat":
+		{
+			"FLAVOR_TEXT": "'By the way, this is a witch's house, but you already knew that, right?'",
+			"DESCRIPTION": "Remove this card and 3 {Rare} cards from your master deck to add {Viola} and {Ellen} to it.",
+			"NAME": "Black Cat"
+		},
 		"animator:DeepPrincess":
 		{
 			"FLAVOR_TEXT": "'How dare you kill Kujura!'",
@@ -793,6 +799,18 @@
 			"DESCRIPTION": "Discard all cards. Add !M! random card(s) to your hand.",
 			"NAME": "Aru",
 			"UPGRADE_DESCRIPTION": "Discard all cards. Add !M! random Upgraded card(s) to your hand."
+		},
+		"animator:Ellen":
+		{
+			"FLAVOR_TEXT": "'How many springs came and went?  How many autumns?  Winters?  I spent most of my days... sleeping in bed.  Like a carnivorous plant I sat, mouth agape.  Waiting for prey to just fall in...'",
+			"DESCRIPTION": "<SLM>. Purge 3 {Non-Hindrance} cards in your Exhaust pile to upgrade this card.   If you do, choose 1 of 3 <Y> cards{+} to add to your master deck.",
+			"NAME": "Ellen"
+		},
+		"animator:Ellen_Viola":
+		{
+			"FLAVOR_TEXT": "'Hm?  'Give it back?'  No way!  This body hurts much less.  You gave it to me in the first place, why should I have to give it back?   You felt so sorry for me, I couldn't even move from my bed.  That's why I used my magic to trade bodies with you.  Just for a day?  ...Heehee, I guess I did say that.  After all, it's my house, yes?  It won't be killing me anytime soon.'",
+			"DESCRIPTION": "Exhaust all {Common} and {Basic} cards in your hand and discard pile.   If this ability exhausted 3 or more cards, Stun ALL enemies and gain an additional [E] each turn until the end of battle.",
+			"NAME": "Ellen"
 		},
 		"animator:Elysia":
 		{
@@ -839,6 +857,25 @@
 			"FLAVOR_TEXT": "'It is those who possess wisdom who are the greatest fools.  History has shown us this.  You could say that this is the final warning from god to those who resist.'",
 			"DESCRIPTION": "Choose 1 card you played this combat: Add a copy to the bottom of your draw pile.",
 			"NAME": "Rintaro Okabe"
+		},
+		"animator:Ib":
+		{
+			"FLAVOR_TEXT": "'I'm here.'",
+			"DESCRIPTION": "Gain [THP] and [R] for each <R> card or {Curse} in your master deck.",
+			"UPGRADE_DESCRIPTION": "Gain [THP] and [R] for each <R> card or {Curse} in your master deck. || You may choose an Ending at a Rest Site, if you don’t have {Garry} nor {Mary}.",
+			"NAME": "Ib"
+		},
+		"animator:Ib_Garry":
+		{
+			"FLAVOR_TEXT": "'I can't very well leave a girl to wander into danger, no, no. ...So I'll go with you! Okay?'",
+			"DESCRIPTION": "Gain [THP] and [B] for each <B> card or {Curse} in your master deck.",
+			"NAME": "Garry"
+		},
+		"animator:Ib_Mary":
+		{
+			"FLAVOR_TEXT": "'I... I was looking to see if there was anyone else too... I wanted to get out... So I...'",
+			"DESCRIPTION": "Gain [THP] and [Y] for each <Y> card or {Curse} in your master deck.",
+			"NAME": "Mary"
 		},
 		"animator:Kira":
 		{
@@ -962,6 +999,18 @@
 			"DESCRIPTION": "Give a card in your hand that can scale [R] scaling equal to your current [R] (to a max of 9).",
 			"NAME": "Type 95"
 		},
+		"animator:Viola":
+		{
+			"FLAVOR_TEXT": "'Oh, Lord, take this child's pain, and allow me to shoulder a portion of it.  I would be happy to share half of her burden if it meant walking alongside her.'",
+			"DESCRIPTION": "Choose 1 of 3 <V> cards{+} to add to your master deck.",
+			"NAME": "Viola"
+		},
+		"animator:Viola_Ellen":
+		{
+			"FLAVOR_TEXT": "'Ghg... ...gha ..hh... ...hh...'",
+			"DESCRIPTION": "Remove ALL buffs from ALL enemies and ALL debuffs from yourself.   Gain {Intangible} equal to the number of buffs and debuffs removed this way.  Activate this BEFORE this card attacks.",
+			"NAME": "Viola"
+		},
 		"animator:Yoimiya":
 		{
 			"FLAVOR_TEXT": "'Now's the best time to test our fireworks out, though I'm sure they'll look good whether they explode in the sky or on the ground... Hehe, just kidding. I'll pay attention to safety.'",
@@ -984,6 +1033,18 @@
 			"FLAVOR_TEXT": "'Listen uuuuuuuuuuup!!!  Right now, I'm mad!  It never ends...  It's on every single video... 'Did they change the person behind Kizuna Ai?'  'Aren't there four Kizuna Ais?'  'Her voice did change!'  'She sounds so different now, lol!' 'Meh, I preferred the original Kizuna Ai!'  These comments JUST KEEP COMING!!!  WAAAAAAAAAA!!!  You don't even do your research before you hit your keyboard!'",
 			"DESCRIPTION": "Unplayable. || When Sealed: Obtain 1 out of !M! random Upgraded cards.",
 			"NAME": "Kizuna Ai"
+		},
+		"animator:AyaDrevis":
+		{
+			"FLAVOR_TEXT": "'We promised, so I can't ever forget...'",
+			"DESCRIPTION": "",
+			"NAME": "Aya Drevis"
+		},
+		"animator:AyaDrevis_Doll":
+		{
+			"FLAVOR_TEXT": "'Aya, your new dress looks wonderful on you!' -Alfred Drevis",
+			"DESCRIPTION": "",
+			"NAME": "Doll Aya Drevis"
 		},
 		"animator:Bennett":
 		{
@@ -1066,6 +1127,12 @@
 			"DESCRIPTION": "Scry !M!. || Channel [Lightning] whenever you Scry an {Uncommon} or {Rare}.",
 			"NAME": "Lisa Minci"
 		},
+		"animator:Madotsuki":
+		{
+			"FLAVOR_TEXT": "'What a scary dream.'",
+			"DESCRIPTION": "",
+			"NAME": "Madotsuki"
+		},
 		"animator:Magilou":
 		{
 			"FLAVOR_TEXT": "'I suppose you'll never understand. People can be so miserable. Not that it matters, really.'",
@@ -1096,11 +1163,23 @@
 			"DESCRIPTION": "<DRW>. Motivate !M!.",
 			"NAME": "Yusa Nishimori"
 		},
+		"animator:MirucaCrotze":
+		{
+			"FLAVOR_TEXT": "'Sand Dragon?  You could make stronger weapons and armor using alchemy... But I doubt it would be enough.  Raoul, my sister... everyone's being reckless.  It isn't a decision to be taken lightly.'",
+			"DESCRIPTION": "{Starter}: Increase the attack of all Attack cards in your hand by !M!.",
+			"NAME": "Miruca Crotze"
+		},
 		"animator:MisakiNakahara":
 		{
 			"FLAVOR_TEXT": "'People who neglect to make efforts or who don't take any actions at all are always the ones who dream that someday they will suddenly become wildly successful.'",
 			"DESCRIPTION": "Choose and add 1 of !M! Colorless cards to your draw pile. || The first time you draw it: Motivate 1.",
 			"NAME": "Misaki Nakahara"
+		},
+		"animator:Mogeko":
+		{
+			"FLAVOR_TEXT": "'Oh hey! The other day I stepped on a snail! That was super fun! Crunch! Smoosh! ...Hah! Hee!'",
+			"DESCRIPTION": "",
+			"NAME": "Moge-ko"
 		},
 		"animator:NononJakuzure":
 		{

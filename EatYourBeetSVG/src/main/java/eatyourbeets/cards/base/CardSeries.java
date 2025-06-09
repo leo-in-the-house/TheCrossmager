@@ -87,6 +87,11 @@ public class CardSeries
     public final static CardSeries LycorisRecoil = Add(70, "LycorisRecoil");
     public final static CardSeries GodEater = Add(71, "GodEater");
 
+    public final static CardSeries Ib = Add(72, "Ib");
+    public final static CardSeries TheWitchsHouse = Add(73, "TheWitchsHouse");
+    public final static CardSeries MadFather = Add(74, "MadFather");
+    public final static CardSeries YumeNikki = Add(75, "YumeNikki");
+    public final static CardSeries MogekoCastle = Add(76, "MogekoCastle");
 
     private static AbstractCard currentSynergy = null;
     private static EYBCard lastCardPlayed = null;

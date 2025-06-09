@@ -8,6 +8,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.RestRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
+import eatyourbeets.cards.animator.colorless.rare.Ib;
+import eatyourbeets.cards.base.Affinity;
 import eatyourbeets.cards.base.EYBCard;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTooltip;
@@ -19,6 +21,8 @@ import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.JUtils;
 import eatyourbeets.utilities.RandomizedList;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Predicate;
 
 public abstract class EYBCardPopupAction
@@ -100,6 +104,23 @@ public abstract class EYBCardPopupAction
         return AbstractDungeon.player.masterDeck.getCardsOfType(cardType).size() > 0;
     }
 
+    protected static boolean HasCardOfType(AbstractCard.CardType cardType, int amount)
+    {
+        return AbstractDungeon.player.masterDeck.getCardsOfType(cardType).size() >= amount;
+    }
+
+
+    protected static boolean HasCardOfAffinity(Affinity affinity)
+    {
+        for (AbstractCard card : AbstractDungeon.player.masterDeck.group) {
+            if (card instanceof EYBCard && GameUtilities.HasAffinity(card, affinity)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     protected static boolean HasMaxHp(int requiredHP)
     {
         return AbstractDungeon.player.maxHealth > requiredHP;
@@ -119,6 +140,23 @@ public abstract class EYBCardPopupAction
     {
         return AbstractDungeon.player.masterDeck.group.remove(card);
     }
+
+    protected static boolean CopyAllCurses()
+    {
+        List<AbstractCard> cardsToCopy = new ArrayList<>();
+        for (AbstractCard card : AbstractDungeon.player.masterDeck.group) {
+            if (card.type == AbstractCard.CardType.CURSE) {
+                cardsToCopy.add(card);
+            }
+        }
+
+        for (AbstractCard card : cardsToCopy) {
+            GameEffects.TopLevelList.ShowAndObtain(card);
+        }
+
+        return true;
+    }
+
 
     protected static boolean RemoveRandom(AbstractCard.CardRarity rarity)
     {
@@ -153,9 +191,39 @@ public abstract class EYBCardPopupAction
         return AbstractDungeon.player.masterDeck.group.remove(cardsToRemove.Retrieve(EYBCard.rng));
     }
 
+    protected static boolean RemoveRandom(Affinity affinity)
+    {
+        boolean removableCardFound = false;
+
+        RandomizedList<AbstractCard> cardsToRemove = new RandomizedList<>();
+        for (AbstractCard card : AbstractDungeon.player.masterDeck.group) {
+            if (GameUtilities.HasAffinity(card, affinity)) {
+                cardsToRemove.Add(card);
+                removableCardFound = true;
+            }
+        }
+
+        if (!removableCardFound) {
+            return false;
+        }
+
+        return AbstractDungeon.player.masterDeck.group.remove(cardsToRemove.Retrieve(EYBCard.rng));
+    }
+
     protected static void Obtain(AbstractCard card)
     {
         GameEffects.TopLevelList.ShowAndObtain(card);
+    }
+
+    protected static void RefreshIbArt(Ib card)
+    {
+        card.onLoad(false);
+
+        AbstractCard inDeck = GameUtilities.GetMasterDeckInstance(card.uuid);
+        if (inDeck != null)
+        {
+            ((Ib) inDeck).onLoad(false);
+        }
     }
 
     protected static EYBCard Find(EYBCardData data, boolean prioritizeUnupgraded)

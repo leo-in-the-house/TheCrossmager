@@ -637,6 +637,59 @@ public class AnimatorStrings
             return JUtils.Format(D_Obtain_GainVulnerable_F2, JUtils.ModifyString(cardName, w -> "#y" + w), vulnerable);
         }
 
+        public final String T_TransformBlueCard_F1 = Strings.TEXT[INDEX++];
+        public final String T_TransformBlueCard_F2 = Strings.TEXT[INDEX++];
+
+
+        public final String T_TransformBlueCard()
+        {
+            return JUtils.Format(T_TransformBlueCard_F1);
+        }
+
+        public final String T_TransformBlueCard_D(String cardName)
+        {
+            return JUtils.Format(T_TransformBlueCard_F2, JUtils.ModifyString(cardName, w -> "#y" + w));
+        }
+
+        public final String T_TransformYellowCard_F1 = Strings.TEXT[INDEX++];
+        public final String T_TransformYellowCard_F2 = Strings.TEXT[INDEX++];
+
+        public final String T_TransformYellowCard()
+        {
+            return JUtils.Format(T_TransformYellowCard_F1);
+        }
+
+        public final String T_TransformYellowCard_D(String cardName)
+        {
+            return JUtils.Format(T_TransformYellowCard_F2, JUtils.ModifyString(cardName, w -> "#y" + w));
+        }
+
+        public final String T_ObtainGarryMaryCurses_F1 = Strings.TEXT[INDEX++];
+        public final String T_ObtainGarryMaryCurses_F2 = Strings.TEXT[INDEX++];
+
+        public final String T_ObtainGarryMaryCurses()
+        {
+            return JUtils.Format(T_ObtainGarryMaryCurses_F1);
+        }
+
+        public final String T_ObtainGarryMaryCurses_D(String cardName1, String cardName2, int numCursesMinimum)
+        {
+            return JUtils.Format(T_ObtainGarryMaryCurses_F2, JUtils.ModifyString(cardName1, w -> "#y" + w), JUtils.ModifyString(cardName2, w -> "#y" + w), numCursesMinimum);
+        }
+
+        public final String T_DemonCatRitual_F1 = Strings.TEXT[INDEX++];
+        public final String T_DemonCatRitual_F2 = Strings.TEXT[INDEX++];
+
+        public final String T_DemonCatRitual()
+        {
+            return JUtils.Format(T_DemonCatRitual_F1);
+        }
+
+        public final String T_DemonCatRitual_D(String cardName1, String cardName2, String curseName)
+        {
+            return JUtils.Format(T_DemonCatRitual_F2, JUtils.ModifyString(cardName1, w -> "#y" + w), JUtils.ModifyString(cardName2, w -> "#y" + w), JUtils.ModifyString(curseName, w -> "#y" + w));
+        }
+
         public final String T_ObtainCurse_Heal_F1 = Strings.TEXT[INDEX++];
         public final String D_ObtainCurse_RequireAmount_F2 = Strings.TEXT[INDEX++];
 

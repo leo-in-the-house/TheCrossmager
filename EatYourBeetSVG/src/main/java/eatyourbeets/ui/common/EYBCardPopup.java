@@ -16,6 +16,7 @@ import com.megacrit.cardcrawl.helpers.controller.CInputAction;
 import com.megacrit.cardcrawl.helpers.controller.CInputActionSet;
 import com.megacrit.cardcrawl.helpers.input.InputActionSet;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
+import com.megacrit.cardcrawl.rooms.RestRoom;
 import com.megacrit.cardcrawl.screens.SingleCardViewPopup;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import eatyourbeets.cards.base.EYBCard;
@@ -24,8 +25,11 @@ import eatyourbeets.effects.SFX;
 import eatyourbeets.resources.GR;
 import eatyourbeets.ui.GUIElement;
 import eatyourbeets.ui.controls.GUI_Button;
+import eatyourbeets.ui.controls.GUI_TextBox;
 import eatyourbeets.ui.controls.GUI_Toggle;
+import eatyourbeets.ui.hitboxes.RelativeHitbox;
 import eatyourbeets.utilities.Colors;
+import eatyourbeets.utilities.EYBFontHelper;
 import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.RenderHelpers;
 
@@ -40,20 +44,22 @@ public class EYBCardPopup extends GUIElement
 
     private final GUI_Toggle upgrade_toggle;
     private final GUI_Toggle betaArt_toggle;
-    private final GUI_Button downgradeCard_button;
-    private final GUI_Button specialAction_button;
+    //private final GUI_Button downgradeCard_button;
+
+    private final GUI_TextBox availableActions_message;
+    private final ArrayList<GUIElement> availableActions = new ArrayList<>();
 
     private final Hitbox nextHb;
     private final Hitbox prevHb;
     private final Hitbox cardHb;
     private final Hitbox upgradeHb;
     private final Hitbox betaArtHb;
-    private final Hitbox downgradeHB;
-    private final Hitbox specialHB;
+    //private final Hitbox downgradeHB;
+    private final Hitbox specialHb;
 
     private EYBCard card;
     private EYBCard upgradedCard;
-    private int downgradeValue;
+    //private int downgradeValue;
     private CardGroup group;
     private AbstractCard prevCard;
     private AbstractCard nextCard;
@@ -100,8 +106,12 @@ public class EYBCardPopup extends GUIElement
         this.prevHb = new Hitbox(160f * Settings.scale, 160f * Settings.scale);
         this.nextHb = new Hitbox(160f * Settings.scale, 160f * Settings.scale);
         this.cardHb = new Hitbox(550f * Settings.scale, 770f * Settings.scale);
-        this.downgradeHB = new Hitbox(EYBCardTooltip.BOX_W, EYBCardTooltip.BOX_BODY_H);
-        this.specialHB = new Hitbox(EYBCardTooltip.BOX_W, EYBCardTooltip.BOX_BODY_H);
+        this.specialHb = new Hitbox(EYBCardTooltip.BOX_W, EYBCardTooltip.BOX_BODY_H);
+        //this.downgradeHB = new Hitbox(EYBCardTooltip.BOX_W, EYBCardTooltip.BOX_BODY_H);
+        this.availableActions_message = new GUI_TextBox(GR.Common.Images.Panel_Rounded_Half_H.Texture(), specialHb).SetColors(new Color(0.1f, 0.1f, 0.1f, 0.5f), Colors.Gold(1))
+                .SetText("Available Actions:")
+                .SetAlignment(0.5f, 0.5f)
+                .SetFont(EYBFontHelper.CardDescriptionFont_Normal, 1);
         this.viewBetaArt = false;
         this.isActive = false;
 
@@ -120,7 +130,7 @@ public class EYBCardPopup extends GUIElement
         .SetControllerAction(CInputActionSet.proceed)
         .SetFont(FontHelper.cardTitleFont, 1)
         .SetOnToggle(this::ToggleBetaArt);
-
+        /*
         this.downgradeCard_button = new GUI_Button(GR.Common.Images.Panel_Rounded_Half_H.Texture(), downgradeHB)
         .SetForeground(GR.Common.Images.Panel_Rounded_Half_H_Border.Texture(), Colors.Gold(1))
         .SetColor(new Color(0.15f, 0.15f, 0.15f, 1f), Colors.White(0.15f))
@@ -132,37 +142,43 @@ public class EYBCardPopup extends GUIElement
         .SetTooltip(GR.Common.Strings.Terms.Downgrade, GR.Animator.Strings.SpecialActions.D_Downgrade_F0, true)
         .SetOnClick(this::DowngradeCard);
 
-        this.specialAction_button = new GUI_Button(GR.Common.Images.Panel_Rounded_Half_H.Texture(), specialHB)
-        .SetForeground(GR.Common.Images.Panel_Rounded_Half_H_Border.Texture(), Colors.Gold(1))
-        .SetColor(new Color(0.15f, 0.15f, 0.15f, 1f), Colors.White(0.15f))
-        .SetClickDelay(0.3f)
-        .SetPosition((Settings.WIDTH * 0.025f) + (specialHB.width * 0.5f), downgradeHB.cY - downgradeHB.height)
-        .SetText("", true)
-        .SetFont(FontHelper.buttonLabelFont, 0.95f)
-        .SetTextColor(Colors.Cream(1f));
+
+
+         */
+
     }
 
     public void Open(EYBCard card, CardGroup group)
     {
         CardCrawlGame.isPopupOpen = true;
 
-        this.specialAction_button.onLeftClick = null;
         this.card = card.MakePopupCopy(this);
+        this.specialHb.move((Settings.WIDTH * 0.025f) + (specialHb.width * 0.5f), Settings.HEIGHT * 0.725f);
 
         for (EYBCardPopupAction action : card.cardData.popupActions)
         {
             action.Initialize(card);
-            specialAction_button
-            .SetText(action.name)
-            .SetTooltip(action.tooltip, true)
-            .SetInteractable(action.CanExecute())
-            .SetOnClick(action::Execute);
-            break; // TODO: support for multiple actions
+            float cY = -0.65f * (0.5f + this.availableActions.size());
+            Hitbox hb = new RelativeHitbox(this.availableActions_message.hb, 0.9f, 0.6f, 0.5f, cY);
+            GUI_Button specialAction_button = new GUI_Button(GR.Common.Images.Panel_Rounded_Half_H.Texture(), hb)
+                    .SetForeground(GR.Common.Images.Panel_Rounded_Half_H_Border.Texture(), Colors.Gold(1))
+                    .SetColor(new Color(0.15f, 0.15f, 0.15f, 1f), Colors.White(0.15f))
+                    .SetClickDelay(0.3f)
+                    .SetText("", true)
+                    .SetFont(FontHelper.buttonLabelFont, 0.95f)
+                    .SetTextColor(Colors.Cream(1f))
+                    .SetText(action.name)
+                    .SetTooltip(action.tooltip, true)
+                    .SetInteractable(action.CanExecute())
+                    .SetOnClick(action::Execute);
+            this.availableActions.add(specialAction_button);
+
+            //break;
         }
 
-        this.downgradeValue = GetDowngradeValue(card);
+       // this.downgradeValue = GetDowngradeValue(card);
         //this.downgradeCard_button.SetText(GR.Animator.Strings.SpecialActions.Downgrade_T(downgradeValue)).SetActive(downgradeValue > 0);
-        this.downgradeCard_button.SetText(GR.Animator.Strings.SpecialActions.Downgrade_T(downgradeValue));
+       // this.downgradeCard_button.SetText(GR.Animator.Strings.SpecialActions.Downgrade_T(downgradeValue));
         this.upgradedCard = null;
         this.isActive = true;
         this.prevCard = null;
@@ -248,7 +264,8 @@ public class EYBCardPopup extends GUIElement
 
         InputHelper.justReleasedClickLeft = false;
         CardCrawlGame.isPopupOpen = false;
-        this.specialAction_button.onLeftClick = null;
+        this.availableActions_message.SetActive(false);
+        this.availableActions.clear();
         this.upgradedCard = null;
         this.isActive = false;
         this.card = null;
@@ -266,8 +283,13 @@ public class EYBCardPopup extends GUIElement
 
         this.upgrade_toggle.SetToggle(SingleCardViewPopup.isViewingUpgrade).TryUpdate();
         this.betaArt_toggle.SetToggle(viewBetaArt).TryUpdate();
-        this.specialAction_button.SetActive(specialAction_button.onLeftClick != null).TryUpdate();
-        this.downgradeCard_button.SetActive(false).TryUpdate();
+        if (this.availableActions_message.SetActive(!AbstractDungeon.isScreenUp && CardCrawlGame.isPopupOpen && this.availableActions.size() > 0).TryUpdate()) {
+            for (int i=0; i<this.availableActions.size(); i++) {
+                GUIElement t = this.availableActions.get(i);
+                t.Update();
+            }
+        }
+        //this.downgradeCard_button.SetActive(false).TryUpdate();
         //this.downgradeCard_button.SetActive(downgradeValue > 0).TryUpdate();
     }
 
@@ -315,8 +337,12 @@ public class EYBCardPopup extends GUIElement
             }
         }
 
-        this.downgradeCard_button.TryRender(sb);
-        this.specialAction_button.TryRender(sb);
+        //this.downgradeCard_button.TryRender(sb);
+        if (this.availableActions_message.TryRender(sb)) {
+            for (GUIElement t : this.availableActions) {
+                t.Render(sb);
+            }
+        }
     }
 
     private void ToggleBetaArt(boolean value)
@@ -366,6 +392,30 @@ public class EYBCardPopup extends GUIElement
         }
     }
 
+    private boolean SpecialActionButtonActive() {
+
+        if (!GameUtilities.InGame() || !(GameUtilities.GetCurrentRoom() instanceof RestRoom)) {
+            return false;
+        }
+
+        if (!this.availableActions_message.isActive) {
+            return false;
+        }
+
+        for (GUIElement element : this.availableActions) {
+            if (element.isActive) {
+                return true;
+            }
+            if (element instanceof GUI_Button) {
+                if (((GUI_Button)element).hb.hovered) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
     private void UpdateInput()
     {
         if (InputHelper.justClickedLeft)
@@ -385,8 +435,8 @@ public class EYBCardPopup extends GUIElement
             }
 
             if (!this.cardHb.hovered && !this.upgradeHb.hovered
-            && (!this.downgradeCard_button.isActive || !this.downgradeHB.hovered)
-            && (!this.specialAction_button.isActive || !this.specialHB.hovered)
+            //&& (!this.downgradeCard_button.isActive || !this.downgradeHB.hovered)
+            && (!SpecialActionButtonActive())
             && (this.betaArtHb == null || !this.betaArtHb.hovered))
             {
                 Close();

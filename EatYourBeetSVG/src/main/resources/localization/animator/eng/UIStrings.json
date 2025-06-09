@@ -75,7 +75,12 @@
 			"Pokémon Reminiscencia",
 			"Honkai Impact 3rd",
 			"Lycoris Recoil",
-			"God Eater"
+			"God Eater",
+			"Ib",
+			"The Witch's House",
+			"Mad Father",
+			"Yume Nikki",
+			"Mogeko Castle"
 		],
 		"EXTRA_TEXT":
 		[
@@ -349,9 +354,21 @@
 			"Druid's Familiar.",
 			"Lose #b{0} Max [HP] to remove a random #yBasic card and obtain #yChibimoth.  NL You may only perform this action at #yRest #ySites.",
 
-			"Scarlet Sister",
+			"Scarlet Sister.",
 			"Obtain {0} and start your next combat with #b{1} [Vulnerable]. NL You can only perform this action at #yRest #ySites if you do not have #yFlandre #yScarlet.",
-			
+
+			"Promise of Reunion.",
+			"Transform a random blue card in your deck into {0}. NL You can only perform this action at #yRest #ySites if #Ib is upgraded.",
+
+			"Together, Forever.",
+			"Transform a random yellow card in your deck into {0}. NL You can only perform this action at #yRest #ySites if #Ib is upgraded.",
+
+			"Welcome to Guertena.",
+			"Obtain {0} and {1}, but copy each Curse in your deck. NL You can only perform this action at #yRest #ySites if you have at least #b{2} Curses and if #Ib is upgraded.",
+
+			"Demon Cat's Ritual.",
+			"If you control a colorless {0} and a colorless {1}, you may have them #rSWITCH #rBODIES at a Rest Site.  If you do, add {2} to your deck. NL You can only perform this action at #yRest #ySites.",
+
 			"Obtain Curse. Heal #b{0} [HP].",
 			"If you have at least #b{0} Curses, Obtain {1}. NL You can only perform this action at #yRest #ySites."
 		]
