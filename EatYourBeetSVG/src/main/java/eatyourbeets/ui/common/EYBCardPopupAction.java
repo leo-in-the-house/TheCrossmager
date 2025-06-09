@@ -217,12 +217,10 @@ public abstract class EYBCardPopupAction
 
     protected static void RefreshIbArt(Ib card)
     {
-        card.onLoad(false);
-
         AbstractCard inDeck = GameUtilities.GetMasterDeckInstance(card.uuid);
         if (inDeck != null)
         {
-            ((Ib) inDeck).onLoad(false);
+            ((Ib) inDeck).LoadImage("_Upgraded");
         }
     }
 
