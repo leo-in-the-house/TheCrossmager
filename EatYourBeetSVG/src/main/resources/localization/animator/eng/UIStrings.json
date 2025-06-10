@@ -80,7 +80,8 @@
 			"The Witch's House",
 			"Mad Father",
 			"Yume Nikki",
-			"Mogeko Castle"
+			"Mogeko Castle",
+			"Pocket Mirror"
 		],
 		"EXTRA_TEXT":
 		[
@@ -366,7 +367,7 @@
 			"Welcome to Guertena.",
 			"Obtain {0} and {1}, but copy each Curse in your deck. NL You can only perform this action at #yRest #ySites if you have at least #b{2} Curses and if #Ib is upgraded.",
 
-			"Demon Cat's Ritual.",
+			"Body Switch Ritual.",
 			"If you control a colorless {0} and a colorless {1}, you may have them #rSWITCH #rBODIES at a Rest Site.  If you do, add {2} to your deck. NL You can only perform this action at #yRest #ySites.",
 
 			"Obtain Curse. Heal #b{0} [HP].",

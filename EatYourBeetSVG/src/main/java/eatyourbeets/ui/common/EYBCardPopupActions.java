@@ -2,11 +2,13 @@ package eatyourbeets.ui.common;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import eatyourbeets.actions.pileSelection.SelectFromPile;
 import eatyourbeets.cards.animator.basic.*;
 import eatyourbeets.cards.animator.basic.seriespokemon.Rotom;
 import eatyourbeets.cards.animator.colorless.rare.Ib;
 import eatyourbeets.cards.animator.curse.common.Curse_Depression;
+import eatyourbeets.cards.animator.curse.common.Curse_Regret;
 import eatyourbeets.cards.animator.curse.special.Curse_GriefSeed;
 import eatyourbeets.cards.animator.special.Illya_Miyu;
 import eatyourbeets.cards.base.Affinity;
@@ -642,6 +644,57 @@ public class EYBCardPopupActions
                 if (this.card instanceof Ib) {
                     RefreshIbArt((Ib)this.card);
                 }
+                Complete();
+            }
+        }
+    }
+
+    //Body switch occurs from Ellen's perspective
+    public static class WitchsHouse_Ellen_BodySwitchRitual extends EYBCardPopupAction
+    {
+        protected final EYBCardData VIOLA_ORIGINAL;
+        protected final EYBCardData ELLEN_ORIGINAL;
+        protected final EYBCardData VIOLA_SWITCHED;
+        protected final EYBCardData ELLEN_SWITCHED;
+        protected final EYBCardData REGRET;
+
+        public WitchsHouse_Ellen_BodySwitchRitual(EYBCardData viola, EYBCardData ellen, EYBCardData viola2, EYBCardData ellen2, EYBCardData regret)
+        {
+            VIOLA_ORIGINAL = viola;
+            ELLEN_ORIGINAL = ellen;
+            VIOLA_SWITCHED = viola2;
+            ELLEN_SWITCHED = ellen2;
+            REGRET = regret;
+
+            SetText(specialActions.T_DemonCatRitual(), terms.Obtain, specialActions.T_DemonCatRitual_D(VIOLA_ORIGINAL.Strings.NAME, ELLEN_ORIGINAL.Strings.NAME, REGRET.Strings.NAME));
+        }
+
+        @Override
+        public boolean CanExecute(AbstractCard card)
+        {
+            return IsRestRoom() && HasCard(card) && HasCard(VIOLA_ORIGINAL);
+        }
+
+        @Override
+        public void Execute()
+        {
+            AbstractCard viola = null;
+
+            for (AbstractCard c : AbstractDungeon.player.masterDeck.group)
+            {
+                if (c.cardID.equals(VIOLA_ORIGINAL.ID))
+                {
+                    viola = c;
+                    break;
+                }
+            }
+
+            if (viola != null && Remove(viola)) {
+                Obtain(ELLEN_SWITCHED.MakeCopy(false));
+                if (Replace(card, VIOLA_SWITCHED.MakeCopy(card.upgraded)) != null) {
+                    Obtain(new Curse_Regret().makeCopy());
+                    SFX.Play(SFX.ORB_DARK_EVOKE, 0.4f);
+                };
                 Complete();
             }
         }

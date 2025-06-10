@@ -13,7 +13,7 @@ import eatyourbeets.utilities.GameUtilities;
 
 public class Ib extends AnimatorCard implements CustomSavable<Boolean> {
     public static final EYBCardData DATA = Register(Ib.class)
-            .SetSkill(0, CardRarity.COMMON, EYBCardTarget.None)
+            .SetSkill(0, CardRarity.RARE, EYBCardTarget.None)
             .SetColor(CardColor.COLORLESS)
             .SetSeries(CardSeries.Ib)
             .PostInitialize(data ->

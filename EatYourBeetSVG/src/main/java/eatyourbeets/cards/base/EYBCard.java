@@ -1216,7 +1216,7 @@ public abstract class EYBCard extends EYBCardBase implements OnStartOfTurnPostDr
     }
 
     public EYBCardTooltip GetFlavorText() {
-        String flavorText = GR.TryGetFlavorText(name);
+        String flavorText = GR.TryGetFlavorText(name, rawDescription);
 
         if (flavorText == null) {
             return null;

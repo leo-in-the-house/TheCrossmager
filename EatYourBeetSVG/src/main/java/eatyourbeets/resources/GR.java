@@ -238,12 +238,14 @@ public class GR
         return texture;
     }
 
-    public static String TryGetFlavorText(String name) {
+    public static String TryGetFlavorText(String name, String description) {
         String parsedName = name;
 
         if (parsedName.contains("+")) {
             parsedName = name.split("\\+")[0];
         }
+
+        parsedName = parsedName + "," + description;
 
         return flavorTexts.get(parsedName);
     }
@@ -443,8 +445,8 @@ public class GR
                     cardStrings.put(key2, curString);
 
                     if (curAnimatorString.FLAVOR_TEXT != null) {
-                        flavorTexts.put(curString.NAME, curAnimatorString.FLAVOR_TEXT);
-                        flavorTexts.put(curString.NAME+"+", curAnimatorString.FLAVOR_TEXT);
+                        flavorTexts.put(curString.NAME+","+curString.DESCRIPTION, curAnimatorString.FLAVOR_TEXT);
+                        flavorTexts.put(curString.NAME+"+"+","+curString.DESCRIPTION, curAnimatorString.FLAVOR_TEXT);
                     }
 
                     //Add voices

@@ -173,7 +173,6 @@ public class EYBCardPopup extends GUIElement
                     .SetOnClick(action::Execute);
             this.availableActions.add(specialAction_button);
 
-            //break;
         }
 
        // this.downgradeValue = GetDowngradeValue(card);
@@ -281,9 +280,13 @@ public class EYBCardPopup extends GUIElement
         this.fadeTimer = Math.max(0, fadeTimer - Gdx.graphics.getDeltaTime());
         this.fadeColor.a = Interpolation.pow2In.apply(0.9f, 0f, this.fadeTimer * 4f);
 
+        if (this.availableActions.size() > 0) {
+            this.availableActions_message.SetActive(true);
+        }
+
         this.upgrade_toggle.SetToggle(SingleCardViewPopup.isViewingUpgrade).TryUpdate();
         this.betaArt_toggle.SetToggle(viewBetaArt).TryUpdate();
-        if (this.availableActions_message.SetActive(!AbstractDungeon.isScreenUp && CardCrawlGame.isPopupOpen && this.availableActions.size() > 0).TryUpdate()) {
+        if (this.availableActions_message.SetActive(this.availableActions.size() > 0).TryUpdate()) {
             for (int i=0; i<this.availableActions.size(); i++) {
                 GUIElement t = this.availableActions.get(i);
                 t.Update();
@@ -399,6 +402,10 @@ public class EYBCardPopup extends GUIElement
         }
 
         if (!this.availableActions_message.isActive) {
+            return false;
+        }
+
+        if (AbstractDungeon.isScreenUp) {
             return false;
         }
 

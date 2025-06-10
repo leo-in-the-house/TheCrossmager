@@ -92,6 +92,7 @@ public class CardSeries
     public final static CardSeries MadFather = Add(74, "MadFather");
     public final static CardSeries YumeNikki = Add(75, "YumeNikki");
     public final static CardSeries MogekoCastle = Add(76, "MogekoCastle");
+    public final static CardSeries PocketMirror = Add(77, "PocketMirror");
 
     private static AbstractCard currentSynergy = null;
     private static EYBCard lastCardPlayed = null;

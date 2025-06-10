@@ -10,7 +10,7 @@
 		},
 		"animator:Defend":
 		{
-			"FLAVOR_TEXT": "'If there is no Ukrainian strong army, there will be no Ukraine, and that will be the case when everyone will understand... it's not the war in Ukraine, it's the war in Europe. We are defending our country, our land.' -Volodymyr Zelensky",
+			"FLAVOR_TEXT": "'It's not the war in Ukraine, it's the war in Europe. We are defending our country, our land.' -Volodymyr Zelensky",
 			"DESCRIPTION": "",
 			"NAME": "Defend"
 		},
@@ -771,8 +771,8 @@
 		"animator:BlackCat":
 		{
 			"FLAVOR_TEXT": "'By the way, this is a witch's house, but you already knew that, right?'",
-			"DESCRIPTION": "Remove this card and 3 {Rare} cards from your master deck to add {Viola} and {Ellen} to it.",
-			"NAME": "Black Cat"
+			"DESCRIPTION": "Purge !M! random {Uncommon} cards from your exhaust pile.  If you do, remove this card from your master deck and add {Viola} and {Ellen} to it.",
+			"NAME": "Demon Cat"
 		},
 		"animator:DeepPrincess":
 		{
@@ -803,13 +803,14 @@
 		"animator:Ellen":
 		{
 			"FLAVOR_TEXT": "'How many springs came and went?  How many autumns?  Winters?  I spent most of my days... sleeping in bed.  Like a carnivorous plant I sat, mouth agape.  Waiting for prey to just fall in...'",
-			"DESCRIPTION": "<SLM>. Purge 3 {Non-Hindrance} cards in your Exhaust pile to upgrade this card.   If you do, choose 1 of 3 <Y> cards{+} to add to your master deck.",
+			"DESCRIPTION": "<LIM>. Purge a random {Non-Hindrance} card in your Exhaust pile to upgrade this card.   If you do, choose 1 of 3 <Y> cards{+} to add to your master deck.",
 			"NAME": "Ellen"
 		},
 		"animator:Ellen_Viola":
 		{
 			"FLAVOR_TEXT": "'Hm?  'Give it back?'  No way!  This body hurts much less.  You gave it to me in the first place, why should I have to give it back?   You felt so sorry for me, I couldn't even move from my bed.  That's why I used my magic to trade bodies with you.  Just for a day?  ...Heehee, I guess I did say that.  After all, it's my house, yes?  It won't be killing me anytime soon.'",
 			"DESCRIPTION": "Exhaust all {Common} and {Basic} cards in your hand and discard pile.   If this ability exhausted 3 or more cards, Stun ALL enemies and gain an additional [E] each turn until the end of battle.",
+			"EXTENDED_DESCRIPTION": ["At the start of your turn: gain #b{0} #yEnergy."],
 			"NAME": "Ellen"
 		},
 		"animator:Elysia":
@@ -831,6 +832,13 @@
 			"DESCRIPTION": "At the start of your turn: Draw !M! card(s). || Whenever you play a card without Exhaust or Purge, gain [E] and it gains Exhaust.",
 			"EXTENDED_DESCRIPTION": ["At the start of your turn: Draw #b{0} cards.  Whenever you play a card without #yExhaust or #yPurge, gain #yEnergy and it gains #yExhaust."],
 			"NAME": "Frieren"
+		},
+		"animator:GoldiaDieHeilige":
+		{
+			"FLAVOR_TEXT": "'These are all the memories I want to keep close to me.'",
+			"DESCRIPTION": "At the start of each turn, add !M! copies of 1 of 2 non-{Hindrance} <Y> cards from your master deck into your hand.",
+			"EXTENDED_DESCRIPTION": ["Start of turn: Add #b{0} copies of 1 of 2 non-#yHindrance #yYellow cards from your master deck into your hand."],
+			"NAME": "Goldia Die Heilige"
 		},
 		"animator:Gutrune":
 		{

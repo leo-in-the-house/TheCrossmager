@@ -45,7 +45,7 @@ public abstract class EYBCardPopupAction
 
     public boolean CanExecute()
     {
-        return card != null && CanExecute(card);
+        return card != null && !AbstractDungeon.isScreenUp && CanExecute(card);
     }
 
     public void Refresh()
