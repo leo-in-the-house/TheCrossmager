@@ -77,10 +77,6 @@ public class Ellen extends AnimatorCard {
                                     for (AbstractCard card : cardsToAdd) {
                                         AbstractCard cardToAdd = card.makeCopy();
 
-                                        if (upgraded) {
-                                            cardToAdd.upgrade();
-                                        }
-
                                         GameEffects.TopLevelQueue.ShowAndObtain(cardToAdd);
                                     }
                                 });

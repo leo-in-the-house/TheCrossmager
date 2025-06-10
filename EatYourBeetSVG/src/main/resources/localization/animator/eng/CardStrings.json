@@ -803,7 +803,7 @@
 		"animator:Ellen":
 		{
 			"FLAVOR_TEXT": "'How many springs came and went?  How many autumns?  Winters?  I spent most of my days... sleeping in bed.  Like a carnivorous plant I sat, mouth agape.  Waiting for prey to just fall in...'",
-			"DESCRIPTION": "<LIM>. Purge a random {Non-Hindrance} card in your Exhaust pile to upgrade this card.   If you do, choose 1 of 3 <Y> cards{+} to add to your master deck.",
+			"DESCRIPTION": "<LIM>. Purge a random {Non-Hindrance} card in your Exhaust pile to upgrade this card.   If you do, choose 1 of 3 <Y> cards to add to your master deck.",
 			"NAME": "Ellen"
 		},
 		"animator:Ellen_Viola":
@@ -1045,13 +1045,13 @@
 		"animator:AyaDrevis":
 		{
 			"FLAVOR_TEXT": "'We promised, so I can't ever forget...'",
-			"DESCRIPTION": "",
+			"DESCRIPTION": "Gain [O]. || On Exhaust: Add Doll Aya Drevis{+} to your hand.",
 			"NAME": "Aya Drevis"
 		},
 		"animator:AyaDrevis_Doll":
 		{
 			"FLAVOR_TEXT": "'Aya, your new dress looks wonderful on you!' -Alfred Drevis",
-			"DESCRIPTION": "",
+			"DESCRIPTION": "Gain !M! [O] [B].",
 			"NAME": "Doll Aya Drevis"
 		},
 		"animator:Bennett":
@@ -1138,7 +1138,7 @@
 		"animator:Madotsuki":
 		{
 			"FLAVOR_TEXT": "'What a scary dream.'",
-			"DESCRIPTION": "",
+			"DESCRIPTION": "Transform a third of all non-{Hindrance} cards in your draw pile into random {Common}, {Uncommon}, or {Rare} {Ethereal} cards.",
 			"NAME": "Madotsuki"
 		},
 		"animator:Magilou":
@@ -1174,7 +1174,7 @@
 		"animator:MirucaCrotze":
 		{
 			"FLAVOR_TEXT": "'Sand Dragon?  You could make stronger weapons and armor using alchemy... But I doubt it would be enough.  Raoul, my sister... everyone's being reckless.  It isn't a decision to be taken lightly.'",
-			"DESCRIPTION": "{Starter}: Increase the attack of all Attack cards in your hand by !M!.",
+			"DESCRIPTION": "<ST>: Increase the damage of all Attack cards in your hand by !M!.",
 			"NAME": "Miruca Crotze"
 		},
 		"animator:MisakiNakahara":
@@ -1186,7 +1186,8 @@
 		"animator:Mogeko":
 		{
 			"FLAVOR_TEXT": "'Oh hey! The other day I stepped on a snail! That was super fun! Crunch! Smoosh! ...Hah! Hee!'",
-			"DESCRIPTION": "",
+			"DESCRIPTION": "At the end of your turn, each opponent takes !M! Damage for each {Attack} in your hand.",
+			"EXTENDED_DESCRIPTION": ["At end of turn, each opponent takes #b{0} damage for each #yAttack in your hand."],
 			"NAME": "Moge-ko"
 		},
 		"animator:NononJakuzure":
@@ -1904,7 +1905,7 @@
 		"animator:YamaiSisters":
 		{
 			"FLAVOR_TEXT": "'I don’t want to die... I want to live... I want to be with Yuzuru more!' 'Yuzuru... too. I don’t want to disappear! I want to live with Kaguya!'",
-			"DESCRIPTION": "{Starter}: Add a copy of this card to your hand.",
+			"DESCRIPTION": "<ST>: Add a copy of this card to your hand.",
 			"NAME": "Yamai Sisters"
 		},
 		"animator:YoshinoHimekawa":

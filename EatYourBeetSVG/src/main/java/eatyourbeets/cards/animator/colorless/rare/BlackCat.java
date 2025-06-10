@@ -26,8 +26,8 @@ public class BlackCat extends AnimatorCard {
         SetUpgrade(0, 0, 0);
         SetCostUpgrade(-2);
 
-        SetAffinity_Violet(1);
-        SetAffinity_Black(1);
+        SetAffinity_Violet(2);
+        SetAffinity_Black(2);
 
         SetDelayed(true);
         SetPurge(true);
