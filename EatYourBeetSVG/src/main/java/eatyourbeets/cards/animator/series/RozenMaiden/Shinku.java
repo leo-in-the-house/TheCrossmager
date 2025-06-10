@@ -1,6 +1,7 @@
 package eatyourbeets.cards.animator.series.RozenMaiden;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.special.ThrowingKnife;
 import eatyourbeets.cards.base.AnimatorCard;
@@ -37,7 +38,8 @@ public class Shinku extends AnimatorCard {
         GameUtilities.PlayVoiceSFX(name);
 
         for (int i=0; i<magicNumber; i++) {
-            GameActions.Bottom.PlayCard(ThrowingKnife.GetRandomCardInBattle(), GameUtilities.GetRandomEnemy(true));
+            GameActions.Bottom.PlayCard(ThrowingKnife.GetRandomCardInBattle(), GameUtilities.GetRandomEnemy(true))
+                    .SetDuration(Settings.ACTION_DUR_XFAST, true);
         }
 
         magicNumber = baseMagicNumber;

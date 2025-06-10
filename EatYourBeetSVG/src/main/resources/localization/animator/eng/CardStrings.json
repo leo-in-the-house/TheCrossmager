@@ -1186,7 +1186,7 @@
 		"animator:Mogeko":
 		{
 			"FLAVOR_TEXT": "'Oh hey! The other day I stepped on a snail! That was super fun! Crunch! Smoosh! ...Hah! Hee!'",
-			"DESCRIPTION": "At the end of your turn, each opponent takes !M! Damage for each {Attack} in your hand.",
+			"DESCRIPTION": "At the end of your turn, each opponent takes !M! damage for each {Attack} in your hand.",
 			"EXTENDED_DESCRIPTION": ["At end of turn, each opponent takes #b{0} damage for each #yAttack in your hand."],
 			"NAME": "Moge-ko"
 		},
@@ -1595,7 +1595,7 @@
 		"animator:ShallotteElminus":
 		{
 			"FLAVOR_TEXT": "'Picking up the traaash!  For almost no caaash!'",
-			"DESCRIPTION": "<SLM>. On {Discard} or {Retain}: Gain [A_Seal], then add !M! copies of this card to your hand.",
+			"DESCRIPTION": "<SLM>. On {Discard} or {Retain}: Gain [A_Seal], then add !M! copies of this card to your hand.  Those copies lose Retain.",
 			"NAME": "Shallotte Elminus"
 		},
 		"animator:SophieNeuenmuller":
@@ -3761,7 +3761,7 @@
 		"animator:JunSakurada":
 		{
 			"FLAVOR_TEXT": "'Doll number 1 is Suigintou.  Doll number 2 is Kanaria.  Doll number 3 is Suiseiseki.  Doll number 4 is Souseiseki.  Doll number 5 is Shinku.  Doll number 6 Hinaichigo.  And the last doll, doll number 7, is Kirakishou.  She's the villain in all of this.'",
-			"DESCRIPTION": "!A! [P] [L]: Play the rightmost {Rozen Maiden Doll} in your hand twice.",
+			"DESCRIPTION": "!A! [P] [L]: Play the rightmost {Rozen Maiden Doll} in your hand three times.",
 			"NAME": "Jun Sakurada"
 		},
 		"animator:Kanaria":
@@ -3774,7 +3774,7 @@
 		"animator:MeguKakizaki":
 		{
 			"FLAVOR_TEXT": "'A while back, before we met, I thought that beautiful wings would sprout out of my back to take me away the very moment that I died.  I'm sure I could fly right out of this window with an angel at my side.'",
-			"DESCRIPTION": "Take !M! [DD] to Fetch a <D> card from anywhere and Retain it.  If you do, Gain !S! [D].",
+			"DESCRIPTION": "Take !M! [DD] to Fetch a <D> card from anywhere (including the exhaust pile) and Retain it.",
 			"NAME": "Megu Kakizaki"
 		},
 		"animator:MitsuKusabue":
@@ -4072,8 +4072,8 @@
 		"animator:TenshiHinanawi":
 		{
 			"FLAVOR_TEXT": "'I'm saying I was bored out of my mind!  So I came down to the surface and watched you playing with all kinds of different youkai.  Seeing that made me think, 'I want to play incident resolution too!'  So I caused my own incident.'",
-			"DESCRIPTION": "Channel [Earth]. || After every !M! additional times you gain [Block] this turn, Evoke your rightmost [Earth] !S! times, then Channel it again.",
-			"EXTENDED_DESCRIPTION": ["After every #b{1} additional times you gain #yBlock this turn, #yEvoke your rightmost #yEarth #b{0} times, then #yChannel it again."],
+			"DESCRIPTION": "Channel [Earth]. || After every !M! additional times you gain [Block] until your next turn, Evoke your rightmost [Earth] !S! times, then Channel it again.",
+			"EXTENDED_DESCRIPTION": ["After every #b{1} additional times you gain #yBlock until your next turn, #yEvoke your rightmost #yEarth #b{0} times, then #yChannel it again."],
 			"NAME": "Tenshi Hinanawi"
 		},
 		"animator:YuumaToutetsu":

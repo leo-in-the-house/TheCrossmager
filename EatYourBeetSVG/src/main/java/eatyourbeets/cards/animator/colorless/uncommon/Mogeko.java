@@ -30,7 +30,7 @@ public class Mogeko extends AnimatorCard {
         SetUpgrade(0, 0, 5);
 
         SetAffinity_Pink(1);
-        SetAffinity_Violet(1);
+        SetAffinity_Violet(2);
     }
 
     @Override

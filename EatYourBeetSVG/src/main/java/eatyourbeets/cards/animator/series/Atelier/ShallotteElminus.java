@@ -53,7 +53,10 @@ public class ShallotteElminus extends AnimatorCard {
             GameActions.Bottom.Flash(this);
             GameActions.Bottom.Callback(() -> CombatStats.Affinities.AddAffinitySealUses(1));
             GameActions.Bottom.MakeCardInHand(this.makeStatEquivalentCopy())
-                    .Repeat(magicNumber);
+                    .Repeat(magicNumber)
+                    .AddCallback(card -> {
+                        card.retain = false;
+                    });
         }
     }
 }

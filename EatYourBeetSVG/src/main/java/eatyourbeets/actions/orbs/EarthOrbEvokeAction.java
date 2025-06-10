@@ -23,7 +23,7 @@ public class EarthOrbEvokeAction extends EYBAction
     {
         super(ActionType.DAMAGE, 0.6f);
 
-        this.throwDuration = Settings.FAST_MODE ? 0.15f : 0.25f;
+        this.throwDuration = Settings.FAST_MODE ? 0.05f : 0.10f;
         this.isRealtime = true;
         this.projectiles.addAll(earth.projectiles);
         earth.projectiles.clear();

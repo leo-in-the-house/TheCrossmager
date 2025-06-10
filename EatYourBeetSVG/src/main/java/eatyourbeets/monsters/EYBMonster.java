@@ -4,7 +4,6 @@ import basemod.BaseMod;
 import basemod.abstracts.CustomMonster;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.dungeons.TheCity;
 import eatyourbeets.monsters.Bosses.KrulTepes;
 import eatyourbeets.monsters.Elites.HornedBat;
 import eatyourbeets.monsters.UnnamedReign.UnnamedEnemyGroup;
@@ -34,8 +33,8 @@ public abstract class EYBMonster extends CustomMonster
         BaseMod.addMonster(KrulTepes.ID, KrulTepes::new);
         BaseMod.addMonster(HornedBat.ID, HornedBat::CreateMonsterGroup);
 
-        Encounters.add(new EYBMonsterInfo(TheCity.ID, EnemyType.ELITE, HornedBat.ID, 0.8f));
-        Encounters.add(new EYBMonsterInfo(TheCity.ID, EnemyType.NORMAL, UnnamedEnemyGroup.TWO_NORMAL_SHAPES, 1.8f, 13));
+        //Encounters.add(new EYBMonsterInfo(TheCity.ID, EnemyType.ELITE, HornedBat.ID, 0.8f));
+        //Encounters.add(new EYBMonsterInfo(TheCity.ID, EnemyType.NORMAL, UnnamedEnemyGroup.TWO_NORMAL_SHAPES, 1.8f, 13));
     }
 
     public EYBMonster(EYBMonsterData data, EnemyType type)

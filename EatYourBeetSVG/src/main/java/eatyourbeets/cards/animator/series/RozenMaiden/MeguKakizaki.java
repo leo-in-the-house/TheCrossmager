@@ -19,13 +19,15 @@ public class MeguKakizaki extends AnimatorCard {
         SetCostUpgrade(-1);
 
         SetAffinity_Black(1);
+
+        SetHaste(true);
     }
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info) {
         GameUtilities.PlayVoiceSFX(name);
 
-        GameActions.Bottom.FetchFromPile(name, 1, player.discardPile, player.drawPile)
+        GameActions.Bottom.FetchFromPile(name, 1, player.discardPile, player.drawPile, player.exhaustPile)
             .SetFilter(card -> GameUtilities.HasAffinity(card, Affinity.Black))
             .SetOptions(false, true, false)
             .AddCallback(cards -> {
@@ -33,7 +35,6 @@ public class MeguKakizaki extends AnimatorCard {
                     for (AbstractCard card : cards) {
                         GameUtilities.Retain(card);
                     }
-                    GameActions.Top.GainBlack(secondaryValue);
                     GameActions.Top.TakeDamageAtEndOfTurn(magicNumber);
                 }
             });

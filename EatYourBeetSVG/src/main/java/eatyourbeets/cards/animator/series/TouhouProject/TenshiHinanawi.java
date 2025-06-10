@@ -87,9 +87,8 @@ public class TenshiHinanawi extends AnimatorCard
         }
 
         @Override
-        public void atEndOfTurn(boolean isPlayer)
-        {
-            super.atEndOfTurn(isPlayer);
+        public void atStartOfTurnPostDraw() {
+            super.atStartOfTurnPostDraw();
 
             SetEnabled(false);
             RemovePower();
@@ -114,7 +113,8 @@ public class TenshiHinanawi extends AnimatorCard
 
                 if (earth != null) {
                     for (int i = 0; i < amount; i++) {
-                        GameActions.Bottom.EvokeOrb(amount, earth);
+                        GameActions.Bottom.EvokeOrb(amount, earth)
+                                .SetDuration(Settings.ACTION_DUR_XFAST, true);
                         GameActions.Bottom.ChannelOrb(earth);
                     }
                 }

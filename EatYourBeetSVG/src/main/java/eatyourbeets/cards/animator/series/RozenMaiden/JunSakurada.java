@@ -69,6 +69,7 @@ public class JunSakurada extends AnimatorCard {
                 AbstractCard card = player.hand.getNCardFromTop(i);
                 if (card != null && isRozenMaidenDoll(card)) {
                     GameActions.Bottom.PlayCopy(card, m);
+                    GameActions.Bottom.PlayCopy(card, m);
                     GameActions.Bottom.PlayCard(card, m);
                     break;
                 }
