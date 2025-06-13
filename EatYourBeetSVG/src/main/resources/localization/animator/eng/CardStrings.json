@@ -3741,15 +3741,15 @@
 		"animator:Barasuishou":
 		{
 			"FLAVOR_TEXT": "'It's so sad.  You are so pitiful.  You cannot fight me, can you?  How pathetic and weak, and pitiful!  In that case, I shall take great pleasure in breaking you!'",
-			"DESCRIPTION": "Channel !M! [Frost]. || <SLM>. At the end of this turn: Trigger your [Frost] once for each card in your hand.",
-			"EXTENDED_DESCRIPTION": ["Add end of this turn: Trigger your #yFrost once for each card in your hand."],
+			"DESCRIPTION": "Channel !M! [Frost]. || At the end of this turn: Trigger your [Frost] twice for each retained card in your hand.",
+			"EXTENDED_DESCRIPTION": ["Add end of this turn: Trigger your #yFrost #b{0} times for each card in your hand."],
 			"NAME": "Barasuishou"
 		},
 		"animator:Enju":
 		{
 			"FLAVOR_TEXT": "'Rozen?  I am greater than Rozen ever was!  I am the best dollmaker!  No one's ever surpassed my master's talent before, but I have!'",
-			"DESCRIPTION": "Once per combat: Pay 4: Add {Barasuishou}{+} to your master deck.",
-			"EXTENDED_DESCRIPTION": ["Pay 4 #yEnergy, add #yBarasuishou to your master deck.","Pay 4 #yEnergy, add #yupgraded #yBarasuishou to your master deck."],
+			"DESCRIPTION": "Once per combat: Add {Barasuishou}{+} to your master deck.  This can only be activated if you have 10 or more cards in your hand.",
+			"EXTENDED_DESCRIPTION": ["Add #yBarasuishou to your master deck.  Can only be activated with 10 or more cards in hand.","Add #yupgraded #yBarasuishou to your master deck.  Can only be activated with 10 or more cards in hand."],
 			"NAME": "Enju"
 		},
 		"animator:Hinaichigo":
@@ -3805,8 +3805,8 @@
 		"animator:Shirosaki_Laplace":
 		{
 			"FLAVOR_TEXT": "'Fair is foul, and foul is fair.  And thinking won't get you anywhere, but the undeniable truth is right, over, there.'",
-			"DESCRIPTION": "Whenever you {Retain} a card, reduce its cost by !M!.",
-			"EXTENDED_DESCRIPTION": ["Whenever you #yRetain a card, reduce its cost by #b{0}."],
+			"DESCRIPTION": "Whenever you {Retain} a card, gain !M! [Block] and reduce that card's cost by 1.",
+			"EXTENDED_DESCRIPTION": ["Whenever you #yRetain a card, reduce its cost by 1 and gain #b{0} #yBlock."],
 			"NAME": "Laplace's Demon"
 		},
 		"animator:Souseiseki":

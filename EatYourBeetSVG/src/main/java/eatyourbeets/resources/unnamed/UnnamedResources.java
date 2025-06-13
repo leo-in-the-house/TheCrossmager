@@ -11,7 +11,6 @@ import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.*;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardMetadata;
-import eatyourbeets.characters.UnnamedCharacter;
 import eatyourbeets.resources.AbstractResources;
 import eatyourbeets.utilities.JUtils;
 
@@ -96,7 +95,7 @@ public class UnnamedResources extends AbstractResources
             return;
         }
 
-        BaseMod.addCharacter(new UnnamedCharacter(), Images.CHAR_BUTTON_PNG, Images.CHAR_PORTRAIT_JPG, PlayerClass);
+        //BaseMod.addCharacter(new UnnamedCharacter(), Images.CHAR_BUTTON_PNG, Images.CHAR_PORTRAIT_JPG, PlayerClass);
     }
 
     @Override

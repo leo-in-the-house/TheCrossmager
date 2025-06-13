@@ -23,8 +23,8 @@ public class Shirosaki_Laplace extends AnimatorCard {
     public Shirosaki_Laplace() {
         super(DATA);
 
-        Initialize(0, 8, 1);
-        SetUpgrade(0, 3, 1);
+        Initialize(0, 8, 5);
+        SetUpgrade(0, 3, 0);
 
         SetAffinity_Pink(1);
         SetAffinity_Black(1);
@@ -63,7 +63,8 @@ public class Shirosaki_Laplace extends AnimatorCard {
 
         @Override
         public void OnCardRetained(AbstractCard card) {
-            CostModifiers.For(card).Add(-amount);
+            GameActions.Bottom.GainBlock(amount);
+            CostModifiers.For(card).Add(-1);
         }
 
         @Override

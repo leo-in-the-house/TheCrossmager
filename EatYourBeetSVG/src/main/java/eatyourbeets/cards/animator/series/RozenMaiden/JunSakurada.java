@@ -33,8 +33,8 @@ public class JunSakurada extends AnimatorCard {
         Initialize(0, 8, 0);
         SetUpgrade(0, 2, 0);
 
-        SetAffinity_Pink(1, 0, 1);
-        SetAffinity_White(1, 0, 1);
+        SetAffinity_Pink(1, 1, 0);
+        SetAffinity_White(1, 1, 0);
 
         ROZEN_MAIDEN_DOLLS.add(Suigintou.DATA.ID);
         ROZEN_MAIDEN_DOLLS.add(Kanaria.DATA.ID);
@@ -46,15 +46,6 @@ public class JunSakurada extends AnimatorCard {
 
         SetAffinityRequirement(Affinity.Pink, 2);
         SetAffinityRequirement(Affinity.White, 2);
-    }
-
-    @Override
-    protected void OnUpgrade()
-    {
-        super.OnUpgrade();
-
-        AddScaling(Affinity.Pink, 1);
-        AddScaling(Affinity.White, 1);
     }
 
     @Override

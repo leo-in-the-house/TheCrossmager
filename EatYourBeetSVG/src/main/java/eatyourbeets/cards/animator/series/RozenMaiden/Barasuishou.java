@@ -2,6 +2,7 @@ package eatyourbeets.cards.animator.series.RozenMaiden;
 
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -15,7 +16,6 @@ import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.SFX;
 import eatyourbeets.effects.VFX;
 import eatyourbeets.powers.AnimatorPower;
-import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
 import eatyourbeets.utilities.GameUtilities;
@@ -52,9 +52,7 @@ public class Barasuishou extends AnimatorCard {
 
         GameActions.Bottom.ChannelOrbs(Frost::new, magicNumber);
 
-        if (CombatStats.TryActivateSemiLimited(cardID)) {
-            GameActions.Bottom.StackPower(new BarasuishouPower(player, 1));
-        }
+        GameActions.Bottom.StackPower(new BarasuishouPower(player, 2));
     }
 
     public static class BarasuishouPower extends AnimatorPower {
@@ -72,7 +70,13 @@ public class Barasuishou extends AnimatorCard {
         @Override
         public void atEndOfTurn(boolean isPlayer) {
 
-            int numTimesTrigger = player.hand.size() * amount;
+            int numTimesTrigger = 0;
+
+            for (AbstractCard card : player.hand.group) {
+                if (card.retain) {
+                    numTimesTrigger += amount;
+                }
+            }
 
             if (numTimesTrigger > 0) {
                 for (AbstractOrb orb : player.orbs) {

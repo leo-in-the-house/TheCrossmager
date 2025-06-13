@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.localization.*;
 import eatyourbeets.cards.base.CardSeries;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardMetadata;
-import eatyourbeets.characters.AnimatorClassicCharacter;
 import eatyourbeets.potions.FalseLifePotion;
 import eatyourbeets.potions.GrowthPotion;
 import eatyourbeets.powers.affinity.animatorClassic.*;
@@ -93,7 +92,7 @@ public class AnimatorClassicResources extends AbstractResources
             return;
         }
 
-        BaseMod.addCharacter(new AnimatorClassicCharacter(), Images.CHAR_BUTTON_CLASSIC_PNG, Images.CHAR_PORTRAIT_EMPTY_PNG, PlayerClass);
+        //BaseMod.addCharacter(new AnimatorClassicCharacter(), Images.CHAR_BUTTON_CLASSIC_PNG, Images.CHAR_PORTRAIT_EMPTY_PNG, PlayerClass);
     }
 
     @Override

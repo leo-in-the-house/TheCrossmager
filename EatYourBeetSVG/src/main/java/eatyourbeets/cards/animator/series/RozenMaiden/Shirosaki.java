@@ -25,8 +25,8 @@ public class Shirosaki extends AnimatorCard {
     public Shirosaki() {
         super(DATA);
 
-        Initialize(0, 0, 0);
-        SetUpgrade(0, 0, 0);
+        Initialize(0, 8, 0);
+        SetUpgrade(0, 3, 0);
 
         SetAffinity_Pink(1);
 
@@ -38,9 +38,12 @@ public class Shirosaki extends AnimatorCard {
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info) {
         GameUtilities.PlayVoiceSFX(name);
 
+        GameActions.Bottom.GainBlock(block);
+
         GameActions.Bottom.MakeCardInDrawPile(new Status_Dazed())
                 .SetDestination(CardSelection.Top);
         GameActions.Bottom.MakeCardInDrawPile(new Shirosaki_Laplace())
-                .SetDestination(CardSelection.Top);
+                .SetDestination(CardSelection.Top)
+                .SetUpgrade(upgraded, true);
     }
 }

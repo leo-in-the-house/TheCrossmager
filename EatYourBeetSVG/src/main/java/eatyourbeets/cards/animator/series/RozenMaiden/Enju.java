@@ -56,7 +56,7 @@ public class Enju extends AnimatorCard implements OnAddToDeckListener{
 
         private boolean upgraded;
         public EnjuPower(AbstractCreature owner, int amount, boolean upgraded) {
-            super(owner, Enju.DATA, PowerTriggerConditionType.Energy, 4);
+            super(owner, Enju.DATA, PowerTriggerConditionType.Special, 0, EnjuPower::CheckCondition, __ -> {});
 
             triggerCondition.SetUses(1, false, true);
 
@@ -64,6 +64,11 @@ public class Enju extends AnimatorCard implements OnAddToDeckListener{
 
             Initialize(amount);
             updateDescription();
+        }
+
+        private static boolean CheckCondition(int cost)
+        {
+            return player.hand.size() >= 10;
         }
 
         @Override

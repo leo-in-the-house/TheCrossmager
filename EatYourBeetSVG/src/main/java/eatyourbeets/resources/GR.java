@@ -446,7 +446,10 @@ public class GR
 
                     if (curAnimatorString.FLAVOR_TEXT != null) {
                         flavorTexts.put(curString.NAME+","+curString.DESCRIPTION, curAnimatorString.FLAVOR_TEXT);
-                        flavorTexts.put(curString.NAME+"+"+","+curString.DESCRIPTION, curAnimatorString.FLAVOR_TEXT);
+
+                        if (curAnimatorString.UPGRADE_DESCRIPTION != null && curAnimatorString.UPGRADE_DESCRIPTION.length() > 0) {
+                            flavorTexts.put(curString.NAME+","+curString.UPGRADE_DESCRIPTION, curAnimatorString.FLAVOR_TEXT);
+                        }
                     }
 
                     //Add voices
