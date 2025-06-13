@@ -45,6 +45,7 @@ public class GoldiaDieHeilige extends AnimatorCard {
     }
 
     public static class GoldiaDieHeiligePower extends AnimatorPower {
+
         public GoldiaDieHeiligePower(AbstractCreature owner, int amount) {
             super(owner, GoldiaDieHeilige.DATA);
             Initialize(amount);
@@ -60,7 +61,7 @@ public class GoldiaDieHeilige extends AnimatorCard {
                 RandomizedList<AbstractCard> possibleCards = new RandomizedList<>();
 
                 for (AbstractCard card : player.masterDeck.group) {
-                    if (GameUtilities.HasAffinity(card, Affinity.Yellow)) {
+                    if (GameUtilities.HasAffinity(card, Affinity.Yellow) && !card.cardID.equals(GoldiaDieHeilige.DATA.ID)) {
                         AbstractCard copy = card.makeCopy();
 
                         if (card.upgraded) {

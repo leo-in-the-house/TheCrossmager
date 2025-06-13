@@ -10,7 +10,7 @@ import eatyourbeets.utilities.GameUtilities;
 
 public class BlackCat extends AnimatorCard {
     public static final EYBCardData DATA = Register(BlackCat.class)
-            .SetSkill(4, CardRarity.RARE, EYBCardTarget.None)
+            .SetSkill(5, CardRarity.RARE, EYBCardTarget.None)
             .SetColor(CardColor.COLORLESS)
             .SetSeries(CardSeries.TheWitchsHouse)
             .PostInitialize(data ->
@@ -24,7 +24,7 @@ public class BlackCat extends AnimatorCard {
 
         Initialize(0, 0, 5);
         SetUpgrade(0, 0, 0);
-        SetCostUpgrade(-2);
+        SetCostUpgrade(-1);
 
         SetAffinity_Violet(2);
         SetAffinity_Black(2);

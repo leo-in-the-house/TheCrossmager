@@ -97,7 +97,7 @@ public class Albedo extends AnimatorCard
 
         int debuffAmount = CalculateCommonDebuffAmount();
 
-        if (debuffAmount > 4) {
+        if (debuffAmount >= 4) {
             GameActions.Bottom.StackPower(new EnchantedArmorPlayerPower(p, 1));
         }
     }

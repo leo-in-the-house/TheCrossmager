@@ -836,8 +836,8 @@
 		"animator:GoldiaDieHeilige":
 		{
 			"FLAVOR_TEXT": "'These are all the memories I want to keep close to me.'",
-			"DESCRIPTION": "At the start of each turn, add !M! copies of 1 of 2 non-{Hindrance} <Y> cards from your master deck into your hand.",
-			"EXTENDED_DESCRIPTION": ["Start of turn: Add #b{0} copies of 1 of 2 non-#yHindrance #yYellow cards from your master deck into your hand."],
+			"DESCRIPTION": "At the start of each turn, add !M! copies of 1 of 2 other non-{Hindrance} <Y> cards from your master deck into your hand.",
+			"EXTENDED_DESCRIPTION": ["Start of turn: Add #b{0} copies of 1 of 2 other non-#yHindrance #yYellow cards from your master deck into your hand."],
 			"NAME": "Goldia Die Heilige"
 		},
 		"animator:Gutrune":
@@ -1549,7 +1549,7 @@
 		"animator:LydieMalen":
 		{
 			"FLAVOR_TEXT": "'Huh?! Hello?! Wait, Sue!'",
-			"DESCRIPTION": "Apply !S! [Vulnerable] to ALL enemies. || Exhaust this card, then add {Suelle Malen} to the top of your draw pile.",
+			"DESCRIPTION": "Apply !S! [Vulnerable] to ALL enemies. || Exhaust this card, then add {Suelle Malen}{+} to the top of your draw pile.",
 			"NAME": "Lydie Malen"
 		},
 		"animator:Meruru":
@@ -1607,7 +1607,7 @@
 		"animator:SuelleMalen":
 		{
 			"FLAVOR_TEXT": "'Let's go, Lydie! It'll be fine as long as we're together!'",
-			"DESCRIPTION": "Add {Lydie Malen} to your draw pile, then exhaust this card.",
+			"DESCRIPTION": "Add {Lydie Malen}{+} to your draw pile, then exhaust this card.",
 			"NAME": "Suelle Malen"
 		},
 		"animator:Totori":
@@ -2864,7 +2864,7 @@
 		"animator:Sylvia":
 		{
 			"FLAVOR_TEXT": "'Are you sure you're the courageous Mitsurugi?  I thought Gram, the magic sword, would be bigger.'",
-			"DESCRIPTION": "{Seal} a card in your hand.  Apply [Constricted] to a random enemy equal to the total amount of all affinities sealed.",
+			"DESCRIPTION": "{Seal} a card in your hand.  Apply [Constricted] to a random enemy equal to the total amount of all non-[A_Star] affinities sealed.",
 			"NAME": "Sylvia"
 		},
 		"animator:Sylvia_Chimera":
@@ -3668,8 +3668,8 @@
 		"animator:KotarouTennouji":
 		{
 			"FLAVOR_TEXT": "'If I were to change something, would it be the world or myself?'",
-			"DESCRIPTION": "Enter <CS>. || <LIM>.  Permanently upgrade this card.",
-			"EXTENDED_DESCRIPTION": ["Enter <CS> or <WS>. || <LIM>.  Permanently upgrade this card.", "Enter <CS>, <WS>, or <MS>. || <LIM>.  Permanently upgrade this card.", "Enter <CS>, <WS>, <MS>, or <TS>. || <LIM>.  Permanently upgrade this card.", "Enter <CS>, <WS>, <MS>, <TS>, or <DS>. || <LIM>.  Permanently upgrade this card."],
+			"DESCRIPTION": "{Unique.} || Enter <CS>. || <LIM>.  Permanently upgrade this card.",
+			"EXTENDED_DESCRIPTION": ["{Unique.} || Enter <CS> or <WS>. || <LIM>.  Permanently upgrade this card.", "{Unique.} || Enter <CS>, <WS>, or <MS>. || <LIM>.  Permanently upgrade this card.", "{Unique.} || Enter <CS>, <WS>, <MS>, or <TS>. || <LIM>.  Permanently upgrade this card.", "{Unique.} || Enter <CS>, <WS>, <MS>, <TS>, or <DS>. || <LIM>.  Permanently upgrade this card."],
 			"NAME": "Kotarou Tennouji"
 		},
 		"animator:KotoriKanbe":

@@ -66,8 +66,8 @@ public class Sylvia extends AnimatorCard
 
                     if (totalAffinity > 0) {
                         GameActions.Top.ApplyConstricted(TargetHelper.RandomEnemy(), totalAffinity);
-                        GameActions.Top.SealAffinities(card);
                     }
+                    GameActions.Top.SealAffinities(card);
                 }
             });
     }
