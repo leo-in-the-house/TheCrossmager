@@ -17,7 +17,7 @@ public class Darkness extends AnimatorCard
     public static final EYBCardData DATA = Register(Darkness.class)
             .SetPower(1, CardRarity.UNCOMMON)
             .SetSeriesFromClassPackage()
-            .PostInitialize(data -> data.AddPreview(new Darkness_Adrenaline(), false));
+            .PostInitialize(data -> data.AddPreview(new Darkness_Adrenaline(), true));
 
     public Darkness()
     {

@@ -123,8 +123,13 @@ public class ThinkNirvalen extends AnimatorCard
                 }
             }*/
 
+            AbstractCard cardToCopy = cards.Retrieve(rng, false);
+            final AbstractCard toPlay = cardToCopy.makeCopy();
 
-            final AbstractCard toPlay = cards.Retrieve(rng, false).makeCopy();
+            if (cardToCopy.upgraded) {
+                toPlay.upgrade();
+            }
+
             toPlay.target_x = MoveCard.DEFAULT_CARD_X_LEFT;
             toPlay.target_y = MoveCard.DEFAULT_CARD_Y;
             GameActions.Top.PlayCopy(toPlay, GameUtilities.GetRandomEnemy(true))

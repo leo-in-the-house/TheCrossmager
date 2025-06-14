@@ -159,7 +159,7 @@ public class EYBCardPopup extends GUIElement
         {
             action.Initialize(card);
             float cY = -0.65f * (0.5f + this.availableActions.size());
-            Hitbox hb = new RelativeHitbox(this.availableActions_message.hb, 0.9f, 0.6f, 0.5f, cY);
+            Hitbox hb = new RelativeHitbox(this.availableActions_message.hb, 1.2f, 1.2f, 0.5f, cY);
             GUI_Button specialAction_button = new GUI_Button(GR.Common.Images.Panel_Rounded_Half_H.Texture(), hb)
                     .SetForeground(GR.Common.Images.Panel_Rounded_Half_H_Border.Texture(), Colors.Gold(1))
                     .SetColor(new Color(0.15f, 0.15f, 0.15f, 1f), Colors.White(0.15f))
