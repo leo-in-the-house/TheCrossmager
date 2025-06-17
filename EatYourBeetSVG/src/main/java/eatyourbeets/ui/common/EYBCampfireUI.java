@@ -3,12 +3,10 @@ package eatyourbeets.ui.common;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.Hitbox;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.EYBCard;
 import eatyourbeets.resources.GR;
 import eatyourbeets.ui.GUIElement;
@@ -136,8 +134,8 @@ public class EYBCampfireUI extends GUIElement
 
     private void AddAvailableAction(EYBCard card)
     {
-        final float cY = -0.65f * (0.5f + availableActions.size());
-        final Hitbox hb = new RelativeHitbox(availableActions_message.hb, 0.9f, 0.6f, 0.5f, cY);
+        final float cY = -0.9f * (0.5f + availableActions.size());
+        final Hitbox hb = new RelativeHitbox(availableActions_message.hb, 1.2f, 1.0f, 0.5f, cY);
         final GUI_Button textBox = new GUI_Button(GR.Common.Images.Panel_Rounded.Texture(), hb)
         .SetColor(new Color(0.1f, 0.1f, 0.1f, 0.5f))
         .SetTextColor(Colors.Cream(1))

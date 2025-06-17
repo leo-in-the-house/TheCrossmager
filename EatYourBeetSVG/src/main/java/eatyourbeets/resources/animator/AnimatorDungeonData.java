@@ -6,7 +6,6 @@ import basemod.abstracts.CustomSavable;
 import basemod.interfaces.StartActSubscriber;
 import basemod.interfaces.StartGameSubscriber;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
@@ -17,7 +16,6 @@ import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.relics.*;
 import com.megacrit.cardcrawl.vfx.UpgradeShineEffect;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.events.base.EYBEvent;
 import eatyourbeets.interfaces.listeners.OnAddToDeckListener;
 import eatyourbeets.interfaces.listeners.OnCardPoolChangedListener;
@@ -267,9 +265,12 @@ public class AnimatorDungeonData implements CustomSavable<AnimatorDungeonData>, 
             {
                 group.group.removeIf(card ->
                 {
-                    if (card.color == AbstractCard.CardColor.CURSE || card.color == AbstractCard.CardColor.COLORLESS)
+                    if (card.color == AbstractCard.CardColor.CURSE)
                     {
                         return !(card instanceof EYBCardBase) && !(card instanceof CustomCard);
+                    }
+                    else if (card.color == AbstractCard.CardColor.COLORLESS) {
+                        return !(card instanceof AnimatorCard);
                     }
                     else if (card.color != GR.Animator.CardColor)
                     {

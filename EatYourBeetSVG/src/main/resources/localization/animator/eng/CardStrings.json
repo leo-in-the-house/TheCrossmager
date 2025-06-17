@@ -518,7 +518,7 @@
 		"animator:Clefable":
 		{
 			"FLAVOR_TEXT": "'A timid fairy Pokémon that is rarely seen, it will run and hide the moment it senses people.' -Kanto Pokédex.",
-			"DESCRIPTION": "Draw !M! {Konosuba} card(s)",
+			"DESCRIPTION": "Draw !M! {Konosuba} card(s).",
 			"NAME": "Clefable"
 		},
 		"animator:Honedge":
