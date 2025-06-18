@@ -9,7 +9,7 @@ import eatyourbeets.utilities.GameUtilities;
 
 public class Paimon extends AnimatorCard {
     public static final EYBCardData DATA = Register(Paimon.class)
-            .SetSkill(2, CardRarity.COMMON, EYBCardTarget.None)
+            .SetSkill(2, CardRarity.UNCOMMON, EYBCardTarget.None)
             .SetColor(CardColor.COLORLESS)
             .SetSeries(CardSeries.GenshinImpact);
 

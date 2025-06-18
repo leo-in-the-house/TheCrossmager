@@ -271,7 +271,7 @@ public class AnimatorDungeonData implements CustomSavable<AnimatorDungeonData>, 
                     {
                         return false;
                     }
-                    else if (!BannedCards.contains(card.cardID) && !Loadouts.isEmpty())
+                    /*else if (!BannedCards.contains(card.cardID) && !Loadouts.isEmpty())
                     {
                         for (AnimatorRuntimeLoadout loadout : Loadouts)
                         {
@@ -280,7 +280,7 @@ public class AnimatorDungeonData implements CustomSavable<AnimatorDungeonData>, 
                                 return false;
                             }
                         }
-                    }
+                    }*/
 
                     return true;
                 });
