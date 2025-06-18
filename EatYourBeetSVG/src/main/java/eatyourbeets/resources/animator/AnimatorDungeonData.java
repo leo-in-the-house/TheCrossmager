@@ -253,11 +253,6 @@ public class AnimatorDungeonData implements CustomSavable<AnimatorDungeonData>, 
                 GR.Animator.Data.SaveTrophies(true);
             }
 
-            if (Loadouts.isEmpty())
-            {
-                return;
-            }
-
             final ArrayList<CardGroup> groups = new ArrayList<>();
             groups.addAll(GameUtilities.GetCardPools());
             groups.addAll(GameUtilities.GetSourceCardPools());
@@ -276,7 +271,7 @@ public class AnimatorDungeonData implements CustomSavable<AnimatorDungeonData>, 
                     {
                         return false;
                     }
-                    else if (!BannedCards.contains(card.cardID))
+                    else if (!BannedCards.contains(card.cardID) && !Loadouts.isEmpty())
                     {
                         for (AnimatorRuntimeLoadout loadout : Loadouts)
                         {
