@@ -269,7 +269,7 @@ public class AnimatorDungeonData implements CustomSavable<AnimatorDungeonData>, 
                     }
                     else if (card.color != GR.Animator.CardColor)
                     {
-                        return false;
+                        return true;
                     }
                     /*else if (!BannedCards.contains(card.cardID) && !Loadouts.isEmpty())
                     {
@@ -282,7 +282,7 @@ public class AnimatorDungeonData implements CustomSavable<AnimatorDungeonData>, 
                         }
                     }*/
 
-                    return true;
+                    return false;
                 });
             }
         }
