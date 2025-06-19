@@ -745,6 +745,18 @@
 			"FLAVOR_TEXT": "'It will never appear where there is strife. Its sightings have become rare recently.' -Sinnoh Pokédex.",
 			"DESCRIPTION": "",
 			"NAME": "Togekiss"
+		},
+		"animator:Wattrel":
+		{
+			"FLAVOR_TEXT": "'When its wings catch the wind, the bones within produce electricity. This Pokémon dives into the ocean, catching prey by electrocuting them.' -Paldea Pokédex.",
+			"DESCRIPTION": "Channel [Lightning] and Apply !M! [~Lock-On] to the target.",
+			"NAME": "Wattrel"
+		},
+		"animator:Kilowattrel":
+		{
+			"FLAVOR_TEXT": "'These Pokémon make their nests on coastal cliffs. The nests have a strange, crackling texture, and they're a popular delicacy.' -Paldea Pokédex.",
+			"DESCRIPTION": "Channel !M! [Lightning] and Apply !M! [~Lock-On] to the target.",
+			"NAME": "Kilowattrel"
 		}
 	},
 	"COLORLESS:RARE":
@@ -4682,4 +4694,4 @@
 			"NAME": "Yuyuko Saigyouji"
 		}
 	}
-},
+}
