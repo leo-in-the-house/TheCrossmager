@@ -1396,7 +1396,7 @@
 		"animator:EriShiina":
 		{
 			"FLAVOR_TEXT": "'Ever since that day, I keep running it over and over in that head, how I could have lost to that noobie!'",
-			"DESCRIPTION": "Add !M! [T-Knife] to your hand. || On Exhaust: Add !M! [T-Knife] to your hand.",
+			"DESCRIPTION": "Add !M! [T-Knife] to your hand. || On Exhaust: Apply !S! [~Lock-On] to ALL enemies.",
 			"NAME": "Eri Shiina"
 		},
 		"animator:GirlDeMo":
@@ -1773,6 +1773,70 @@
 		}
 	},
 
+	"SERIES:BLUEARCHIVE":
+	{
+		"animator:AliceTendou": {
+			"FLAVOR_TEXT": "'Games are fun because they reflect the beauty of the world- you taught me that.  Games, cats, friends...and even this moment- the world is full of beautiful things.'",
+			"DESCRIPTION": "As this deals damage, it gains !M! damage every time this hits an enemy with [~Lock-On].",
+			"NAME": "Alice Tendou"
+		},
+		"animator:AruRikuhachima": {
+			"FLAVOR_TEXT": "'Who are they!  How dare they rob the black market bank!  ...These are the real criminals...  They are really amazing...!'",
+			"DESCRIPTION": "Apply !M! [Vulnerable] [~Lock-On].",
+			"NAME": "Aru Rikuhachima"
+		},
+		"animator:AsunaIchinose": {
+			"FLAVOR_TEXT": "'My body! It feels so light! Anything is possible... Hmm... This feeling...?  Oh well, who cares! Ta-da! Asuna is back and ready for action!'",
+			"DESCRIPTION": "Apply !M! [~Lock-On] to ALL enemies.",
+			"NAME": "Asuna Ichinose"
+		},
+		"animator:AzusaShirasu": {
+			"FLAVOR_TEXT": "'But, Sensei. The world relies on structure. It would be nothing without planning. The same goes for operations and missions.  You can't just do whatever you want without being prepared. You'll never accomplish anything, even in your daily life...'",
+			"DESCRIPTION": "Apply !M! [~Lock-On] to all attacking enemies. || For the rest of your turn, deal double Attack damage to enemies with [~Lock-On].",
+			"NAME": "Azusa Shirasu"
+		},
+		"animator:AyaneOkusora": {
+			"FLAVOR_TEXT": "'If we fight... what difference will it make?  Even if we win somehow... what are we supposed to do next?  And even if we get the school back, it won't erase our debt...  The land that's been sold isn't coming back... and without Hoshino, or the Student Council...  What can an unofficial club like ours even hope to do?!'",
+			"DESCRIPTION": "Gain !M! [Dexterity]. || At the start of your turn: Apply [~Lock-On] to the enemy with the highest [~Lock-On].",
+			"NAME": "Ayane Okusora"
+		},
+		"animator:HifumiAjitani": {
+			"FLAVOR_TEXT": "'So what if I'm ordinary or there's nothing special about me?  I'm not ashamed of who I am or what I believe in!  Overcoming adversity through friendship... hard work paying off... friends picking each other up when they're down... and always putting on a smile no matter how hard things get!'",
+			"DESCRIPTION": "If there are at least !M! enemies, gain [E].",
+			"UPGRADE_DESCRIPTION": "If there are at least !M! enemies, gain [E] and draw a card.",
+			"NAME": "Hifumi Ajitani"
+		},
+		"animator:HikariTachibana": {
+			"FLAVOR_TEXT": "'This one could be useful for the train's armor... let's use it!'",
+			"DESCRIPTION": "On Exhaust: Add {Nozomi Tachibana}{+} to your draw pile.",
+			"NAME": "Hikari Tachibana"
+		},
+		"animator:HikariTachibana_Nozomi": {
+			"FLAVOR_TEXT": "'Wow, good find!  If we install this onto the train's circuit extension, its upgrade potential might skyrocket!'",
+			"DESCRIPTION": "Apply !M! times X [~Lock-On] to the target.",
+			"NAME": "Nozomi Tachibana"
+		},
+		"animator:NonomiIzayoi": {
+			"FLAVOR_TEXT": "'Here we go. One ear cleaning coming right up. You have to stay still. All right, Sensei?  Don't fidget... I'm putting it in now, okay?  Let me know if it tickles... There we go... That's good. Perfect...'",
+			"DESCRIPTION": "Enter <TS>. || Until you change {Stances}, deal !M! damage to each enemy with [~Lock-On] whenever you play an {Attack}.",
+			"NAME": "Nonomi Izayoi"
+		},
+		"animator:SerikaKuromi": {
+			"FLAVOR_TEXT": "'Don't thank me!  I would have escaped on my own without you!  And I could have handled the Helmet Gang by myself!  But still... you rescued me, so...  Thank you, Sensei!'",
+			"DESCRIPTION": "Only hits enemies with a {Common Debuff}. || If this hit an enemy with [~Lock-On]: Gain [E][E] next turn.",
+			"NAME": "Serika Kuromi"
+		},
+		"animator:ShirokoSunaookami": {
+			"FLAVOR_TEXT": "'Right, Ayane, I have an idea: ROB THE BANK.  It is an effective and simple method: I've researched the location of the vault, and take these masks.'",
+			"DESCRIPTION": "Whenever this hits an enemy with [~Lock-On]: play the top card of your discard pile for free, then exhaust this card.",
+			"NAME": "Shiroko Sunaookami"
+		},
+		"animator:Shiroko_Terror": {
+			"FLAVOR_TEXT": "'I didn't think the day would come where I'd see this again...  With Hoshino, Nonomi, Serika, and Ayane...  We robbed the Stygian Bank, the secret safe of the General Student Council...  What precious memories...'",
+			"DESCRIPTION": "Lose 2 [HP] to gain !M! [Strength] and !M! {Rage}.",
+			"NAME": "Shiroko Terror"
+		}
+	},
 
 	"SERIES:DATEALIVE":
 	{
@@ -2117,7 +2181,7 @@
 		"animator:Rider":
 		{
 			"FLAVOR_TEXT": "'I cannot abide by that command. I prioritize your life more than anything else.'",
-			"DESCRIPTION": "!A! [D]: Apply !M! [Shackles] to ALL enemies.",
+			"DESCRIPTION": "!A! [D]: Apply !M! [Shackles] and !S! [~Lock-On] to ALL enemies.",
 			"NAME": "Rider"
 		},
 		"animator:RinTohsaka":
@@ -2270,7 +2334,7 @@
 		"animator:Kuribayashi":
 		{
 			"FLAVOR_TEXT": "'Drop your weapons, or suffer the same fate as your friends!'",
-			"DESCRIPTION": "Apply !M! [Weak].",
+			"DESCRIPTION": "Apply !M! [Weak][~Lock-On].",
 			"NAME": "Shino Kuribayashi"
 		},
 		"animator:LeleiLaLalena":
@@ -2449,7 +2513,7 @@
 		"animator:Tartaglia":
 		{
 			"FLAVOR_TEXT": "'The skeletal-white snowscape devours life without leaving any trace. It is the invisible enemy we fight against each day.'",
-			"DESCRIPTION": "If you have at least !M! types of Orbs: Enter <MS>, then Exhaust this card.",
+			"DESCRIPTION": "If you have at least !M! types of Orbs: Enter <MS>, then Exhaust this card. || On Exhaust: Apply !S! [~Lock-On] to a random enemy.",
 			"NAME": "Tartaglia"
 		},
 		"animator:Venti":
@@ -3056,7 +3120,7 @@
 		"animator:KyokoSakura":
 		{
 			"FLAVOR_TEXT": "'Hey, God, if you're there.  My life sucked.  So, for once, please... let me have a happy dream...'",
-			"DESCRIPTION": "Apply !M! [Shackles] to ALL enemies.",
+			"DESCRIPTION": "Apply !M! [Shackles] to ALL enemies. || <ST>: Apply !S! [~Lock-On] to a random enemy.",
 			"NAME": "Kyoko Sakura"
 		},
 		"animator:KyokoSakura_Ophelia":
@@ -3596,7 +3660,7 @@
 		"animator:Shinoa":
 		{
 			"FLAVOR_TEXT": "'According to Lt. Colonel Guren, you avoid social interactions cause you lost your family.  You're too afraid to engage other people.  You fear making connections or let anyone get close to you because you're afraid you may lose them.  It sounds lonely...'",
-			"DESCRIPTION": "Apply [Vulnerable] to ALL enemies. || On Exhaust: Apply [Vulnerable] to ALL enemies.",
+			"DESCRIPTION": "Apply !M! [~Lock-On] to ALL enemies. || On Exhaust: Apply [Vulnerable] to ALL enemies.",
 			"NAME": "Shinoa Hiiragi"
 		},
 		"animator:Yoichi":
@@ -3761,7 +3825,7 @@
 		"animator:JunSakurada":
 		{
 			"FLAVOR_TEXT": "'Doll number 1 is Suigintou.  Doll number 2 is Kanaria.  Doll number 3 is Suiseiseki.  Doll number 4 is Souseiseki.  Doll number 5 is Shinku.  Doll number 6 Hinaichigo.  And the last doll, doll number 7, is Kirakishou.  She's the villain in all of this.'",
-			"DESCRIPTION": "!A! [P] [L]: Play the rightmost {Rozen Maiden Doll} in your hand three times.",
+			"DESCRIPTION": "Apply !M! [~Lock-On].  || !A! [P] [L]: Play the rightmost {Rozen Maiden Doll} in your hand three times.",
 			"NAME": "Jun Sakurada"
 		},
 		"animator:Kanaria":
@@ -4618,4 +4682,4 @@
 			"NAME": "Yuyuko Saigyouji"
 		}
 	}
-}
+},

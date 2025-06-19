@@ -868,6 +868,7 @@ public class GameUtilities
                     commonDebuffsLV1.add(PowerHelper.Poison);
                     commonDebuffsLV1.add(PowerHelper.Burning);
                     commonDebuffsLV1.add(PowerHelper.Shackles);
+                    commonDebuffsLV1.add(PowerHelper.LockOn);
                 }
 
                 return commonDebuffsLV1;

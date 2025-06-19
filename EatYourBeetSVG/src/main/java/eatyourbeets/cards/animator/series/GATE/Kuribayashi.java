@@ -20,7 +20,7 @@ public class Kuribayashi extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(9, 0, 3);
+        Initialize(8, 0, 3);
         SetUpgrade(0, 0, 0);
         SetCostUpgrade(-1);
 
@@ -33,5 +33,6 @@ public class Kuribayashi extends AnimatorCard
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.DealDamage(this, m, AttackEffects.GUNSHOT).SetSoundPitch(0.6f, 0.8f);
         GameActions.Bottom.ApplyWeak(p, m, magicNumber);
+        GameActions.Bottom.ApplyLockOn(p, m, magicNumber);
     }
 }

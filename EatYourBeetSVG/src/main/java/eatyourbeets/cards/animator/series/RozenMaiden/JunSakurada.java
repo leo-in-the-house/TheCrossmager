@@ -30,7 +30,7 @@ public class JunSakurada extends AnimatorCard {
     public JunSakurada() {
         super(DATA);
 
-        Initialize(0, 8, 0);
+        Initialize(0, 7, 2);
         SetUpgrade(0, 2, 0);
 
         SetAffinity_Pink(1, 1, 0);
@@ -53,6 +53,7 @@ public class JunSakurada extends AnimatorCard {
         GameUtilities.PlayVoiceSFX(name);
 
         GameActions.Bottom.GainBlock(block);
+        GameActions.Bottom.ApplyLockOn(p, m, magicNumber);
 
 
         if (CheckSpecialCondition(false)) {

@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
+import eatyourbeets.utilities.TargetHelper;
 
 public class Rider extends AnimatorCard
 {
@@ -16,7 +17,7 @@ public class Rider extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 7, 7);
+        Initialize(0, 6, 7, 2);
         SetUpgrade(0, 4, 2);
 
         SetAffinity_Green(1);
@@ -46,6 +47,8 @@ public class Rider extends AnimatorCard
             for (AbstractMonster target : GameUtilities.GetEnemies(true)) {
                 GameActions.Bottom.ReduceStrength(target, magicNumber, true);
             }
+
+            GameActions.Bottom.ApplyLockOn(TargetHelper.Enemies(), secondaryValue);
         }
     }
 }

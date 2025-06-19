@@ -17,7 +17,7 @@ public class Shinoa extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(0, 5, 0);
+        Initialize(0, 5, 2);
         SetUpgrade(0, 4, 0);
 
         SetAffinity_Pink(1);
@@ -36,6 +36,6 @@ public class Shinoa extends AnimatorCard
         GameUtilities.PlayVoiceSFX(name);
         GameActions.Bottom.GainBlock(block);
 
-        GameActions.Bottom.ApplyVulnerable(TargetHelper.Enemies(), 1);
+        GameActions.Bottom.ApplyLockOn(TargetHelper.Enemies(), magicNumber);
     }
 }

@@ -9,6 +9,7 @@ import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.stances.MagicStance;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
+import eatyourbeets.utilities.TargetHelper;
 
 public class Tartaglia extends AnimatorCard {
     public static final EYBCardData DATA = Register(Tartaglia.class)
@@ -18,7 +19,7 @@ public class Tartaglia extends AnimatorCard {
     public Tartaglia() {
         super(DATA);
 
-        Initialize(0, 6, 3);
+        Initialize(0, 6, 3, 4);
         SetUpgrade(0, 3, -1);
 
         SetAffinity_Blue(1, 0, 1);
@@ -36,5 +37,14 @@ public class Tartaglia extends AnimatorCard {
             GameActions.Bottom.ChangeStance(MagicStance.STANCE_ID);
             GameActions.Last.Exhaust(this);
         }
+    }
+
+
+    @Override
+    public void triggerOnExhaust()
+    {
+        super.triggerOnExhaust();
+
+        GameActions.Bottom.ApplyLockOn(TargetHelper.RandomEnemy(), secondaryValue);
     }
 }

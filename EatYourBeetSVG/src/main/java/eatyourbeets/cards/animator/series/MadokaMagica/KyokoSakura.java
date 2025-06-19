@@ -10,6 +10,7 @@ import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.ui.common.EYBCardPopupActions;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
+import eatyourbeets.utilities.TargetHelper;
 
 public class KyokoSakura extends AnimatorCard
 {
@@ -27,7 +28,7 @@ public class KyokoSakura extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(6, 0, 4);
+        Initialize(6, 0, 3, 2);
         SetUpgrade(2, 0, 2);
 
         SetAffinity_Red(1, 0, 1);
@@ -42,6 +43,10 @@ public class KyokoSakura extends AnimatorCard
 
         for (AbstractMonster enemy : GameUtilities.GetEnemies(true)) {
             GameActions.Bottom.ReduceStrength(enemy, magicNumber, true);
+        }
+
+        if (info.TryActivateStarter()) {
+            GameActions.Bottom.ApplyLockOn(TargetHelper.RandomEnemy(), secondaryValue);
         }
     }
 }

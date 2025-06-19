@@ -56,7 +56,7 @@
 	},
 	"Common Debuff":
 	{
-		"DESCRIPTION": "[Poison], [Weak], [Vulnerable], [Burning], [Freezing], [Shackles].",
+		"DESCRIPTION": "[Poison], [Weak], [Vulnerable], [Burning], [Freezing], [Shackles]. [~Lock-On].",
 		"NAMES": ["common debuff", "common debuffs"],
 		"PROPER_NAME": "Common Debuff"
 	},

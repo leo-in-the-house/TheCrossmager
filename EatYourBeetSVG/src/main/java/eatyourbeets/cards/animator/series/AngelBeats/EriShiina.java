@@ -11,6 +11,7 @@ import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
+import eatyourbeets.utilities.TargetHelper;
 
 public class EriShiina extends AnimatorCard
 {
@@ -29,7 +30,7 @@ public class EriShiina extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(4, 0, 2, 0);
+        Initialize(4, 0, 2, 2);
         SetUpgrade(2, 0, 1, 0);
 
         SetAffinity_Green(1, 0, 1);
@@ -61,7 +62,7 @@ public class EriShiina extends AnimatorCard
     {
         super.triggerOnExhaust();
 
-        GameActions.Bottom.CreateThrowingKnives(magicNumber);
+        GameActions.Bottom.ApplyLockOn(TargetHelper.Enemies(), secondaryValue);
     }
 
 }

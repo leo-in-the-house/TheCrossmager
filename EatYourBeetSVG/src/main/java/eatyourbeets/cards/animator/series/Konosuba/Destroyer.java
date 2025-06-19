@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.orbs.Dark;
 import com.megacrit.cardcrawl.orbs.Frost;
 import com.megacrit.cardcrawl.orbs.Lightning;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -112,7 +111,7 @@ public class Destroyer extends AnimatorCard
         }
 
         private void TriggerRandomDestroyerEffects() {
-            int times = rng.random(1, 2);
+            int times = rng.random(2, 4);
 
             for (int i=0; i<times; i++) {
                 TriggerRandomDestroyerEffect();
@@ -158,7 +157,7 @@ public class Destroyer extends AnimatorCard
                     GameActions.Top.ChannelOrbs(Frost::new,2);
                     break;
                 case 11:
-                    GameActions.Top.ChannelOrbs(Dark::new,2);
+                    GameActions.Top.ApplyLockOn(TargetHelper.Enemies(), 6);
                     break;
                 case 12:
                     GameActions.Top.GainPlatedArmor(3);
