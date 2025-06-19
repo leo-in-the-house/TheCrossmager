@@ -21,7 +21,7 @@ public class Sableye extends PokemonCard {
         super(DATA);
 
         Initialize(8, 0, 8);
-        SetUpgrade(0, 0, 0);
+        SetUpgrade(3, 0, 0);
 
         SetAffinity_Black(1);
         SetAffinity_Violet(1);

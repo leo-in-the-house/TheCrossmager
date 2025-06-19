@@ -366,6 +366,12 @@
 		"NAMES": ["purge", "purged", "purges"],
 		"PROPER_NAME": "Purge"
 	},
+	"Rage":
+	{
+		"DESCRIPTION": "Gain [Block] whenever you play an #yAttack.",
+		"NAMES": ["rage"],
+		"PROPER_NAME": "Rage"
+	},
 	"Rebound":
 	{
 		"DESCRIPTION": "Put the next card you play this turn on top of your draw pile.",

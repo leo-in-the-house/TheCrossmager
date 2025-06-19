@@ -20,7 +20,7 @@ public class UryuuIshida extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(7, 0, 0, 0);
+        Initialize(6, 0, 3, 0);
         SetUpgrade(2, 0, 0);
 
         SetAffinity_Blue(1, 0, 2);
@@ -52,18 +52,26 @@ public class UryuuIshida extends AnimatorCard
         int weakToTransfer = GameUtilities.GetPowerAmount(player, WeakPower.POWER_ID);
         int vulToTransfer = GameUtilities.GetPowerAmount(player, VulnerablePower.POWER_ID);
 
+        boolean transferred = false;
+
         for (AbstractPower power : player.powers)
         {
             if (WeakPower.POWER_ID.equals(power.ID) && weakToTransfer > 0)
             {
                 GameActions.Bottom.ReducePower(power, weakToTransfer);
                 GameActions.Bottom.ApplyWeak(player, m, weakToTransfer);
+                transferred = true;
             }
             else if (VulnerablePower.POWER_ID.equals(power.ID) && vulToTransfer > 0)
             {
                 GameActions.Bottom.ReducePower(power, vulToTransfer);
                 GameActions.Bottom.ApplyVulnerable(player, m, vulToTransfer);
+                transferred = true;
             }
+        }
+
+        if (!transferred) {
+            GameActions.Bottom.ApplyLockOn(player, m, magicNumber);
         }
     }
 }

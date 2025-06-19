@@ -1756,7 +1756,7 @@
 		"animator:UryuuIshida":
 		{
 			"FLAVOR_TEXT": "'You're asking if this is a bow? Of course it is. You think I would use anything else?'",
-			"DESCRIPTION": "Transfer all [Weak] and [Vulnerable] from you to the enemy.",
+			"DESCRIPTION": "Transfer all [Weak] and [Vulnerable] from you to the enemy. || If this did not transfer any debuffs, apply !M! [~Lock-On] to the enemy instead.",
 			"NAME": "Uryuu Ishida"
 		},
 		"animator:YasutoraSado":
@@ -1799,17 +1799,19 @@
 		},
 		"animator:AsunaIchinose": {
 			"FLAVOR_TEXT": "'My body! It feels so light! Anything is possible... Hmm... This feeling...?  Oh well, who cares! Ta-da! Asuna is back and ready for action!'",
-			"DESCRIPTION": "Apply !M! [~Lock-On] to ALL enemies.",
+			"DESCRIPTION": "Apply [~Lock-On] to ALL enemies.",
 			"NAME": "Asuna Ichinose"
 		},
 		"animator:AzusaShirasu": {
 			"FLAVOR_TEXT": "'But, Sensei. The world relies on structure. It would be nothing without planning. The same goes for operations and missions.  You can't just do whatever you want without being prepared. You'll never accomplish anything, even in your daily life...'",
 			"DESCRIPTION": "Apply !M! [~Lock-On] to all attacking enemies. || For the rest of your turn, deal double Attack damage to enemies with [~Lock-On].",
+			"EXTENDED_DESCRIPTION": ["Deal +#b{0} percent attack damage to enemies with #yLock-On."],
 			"NAME": "Azusa Shirasu"
 		},
 		"animator:AyaneOkusora": {
 			"FLAVOR_TEXT": "'If we fight... what difference will it make?  Even if we win somehow... what are we supposed to do next?  And even if we get the school back, it won't erase our debt...  The land that's been sold isn't coming back... and without Hoshino, or the Student Council...  What can an unofficial club like ours even hope to do?!'",
-			"DESCRIPTION": "Gain !M! [Dexterity]. || At the start of your turn: Apply [~Lock-On] to the enemy with the highest [~Lock-On].",
+			"DESCRIPTION": "Gain !M! [Dexterity]. || Once per turn: Pay [E] to apply !M! [~Lock-On] to an enemy.",
+			"EXTENDED_DESCRIPTION": ["Once per turn: Pay #yEnergy to apply #b{0} #yLock-On to an enemy."],
 			"NAME": "Ayane Okusora"
 		},
 		"animator:HifumiAjitani": {
@@ -1820,7 +1822,8 @@
 		},
 		"animator:HikariTachibana": {
 			"FLAVOR_TEXT": "'This one could be useful for the train's armor... let's use it!'",
-			"DESCRIPTION": "On Exhaust: Add {Nozomi Tachibana}{+} to your draw pile.",
+			"DESCRIPTION": "On Exhaust: Add {Nozomi Tachibana}{+} to your discard pile.",
+			"UPGRADE_DESCRIPTION": "On Exhaust: Add {Nozomi Tachibana}{+} to your draw pile.",
 			"NAME": "Hikari Tachibana"
 		},
 		"animator:HikariTachibana_Nozomi": {
@@ -1828,10 +1831,33 @@
 			"DESCRIPTION": "Apply !M! times X [~Lock-On] to the target.",
 			"NAME": "Nozomi Tachibana"
 		},
+		"animator:HinaSorasaki": {
+			"FLAVOR_TEXT": "'I'm not strong, not like she is...  She was the one who found the body of Abydos' Student Council President- I'm sure that must have been hard for her.  But even after suffering through so much, she's still at Abydos, fighting...  I could never do something like that.'",
+			"DESCRIPTION": "Apply [~Lock-On] to ALL enemies. || [~Lock-On] never decays. || At the end of each turn, deal !M! damage to each enemy for each point of [~Lock-On] they have.",
+			"EXTENDED_DESCRIPTION": ["#yLock-On never decays.  At the end of each turn, deal #b{0} damage to each enemy per point of #yLock-On they have."],
+			"NAME": "Hina Sorasaki"
+		},
+		"animator:HoshinoTakanashi": {
+			"FLAVOR_TEXT": "'Yume, I've been so foolish...  I had to be put in this situation to finally understand...  I'll never make this mistake again.  I don't want to make this mistake ever again.  Because to me, the real miracle is... my Foreclosure Task Force juniors!''",
+			"DESCRIPTION": "<SLM>.  If this hits an enemy with [~Lock-On], {Recover} all [HP] up to your recovery point. || Cooldown !S!: All {Abydos Students} EVERYWHERE cost 0 and gain Haste.",
+			"NAME": "Hoshino Takanashi"
+		},
+		"animator:MikaMisono": {
+			"FLAVOR_TEXT": "'Hey... I didn't mean to upset you...  ...I don't like it when you're mad at me, Sensei...  It was harmless fun. Just for a moment...  I just wanted to spend one more moment with you, Sensei...'",
+			"DESCRIPTION": "Copy every other card you play each turn against a random enemy with [~Lock-On].",
+			"EXTENDED_DESCRIPTION": ["Copy every other card you play each turn against a random enemy with #yLock-On."],
+			"NAME": "Mika Misono"
+		},
 		"animator:NonomiIzayoi": {
 			"FLAVOR_TEXT": "'Here we go. One ear cleaning coming right up. You have to stay still. All right, Sensei?  Don't fidget... I'm putting it in now, okay?  Let me know if it tickles... There we go... That's good. Perfect...'",
 			"DESCRIPTION": "Enter <TS>. || Until you change {Stances}, deal !M! damage to each enemy with [~Lock-On] whenever you play an {Attack}.",
+			"EXTENDED_DESCRIPTION": ["Until you change #yStances, deal #b{0} damage to each enemy with #yLock-On whenever you play an #yAttack."],
 			"NAME": "Nonomi Izayoi"
+		},
+		"animator:Sensei": {
+			"FLAVOR_TEXT": "'You want a reason?  It's because those kids asked for my help, and that's enough!  That when kids laugh, you laugh with them!  That when they're sad, you stay by their side!  That when they're in trouble, you help!  That's just what adults do!'",
+			"DESCRIPTION": "<LIM>.  Add a random {Abydos Student} that you do not have in your master deck to your hand and master deck.  Then, draw an {Abydos Student} from anywhere including your exhaust pile for each enemy with [~Lock-On].",
+			"NAME": "Sensei"
 		},
 		"animator:SerikaKuromi": {
 			"FLAVOR_TEXT": "'Don't thank me!  I would have escaped on my own without you!  And I could have handled the Helmet Gang by myself!  But still... you rescued me, so...  Thank you, Sensei!'",
@@ -1839,14 +1865,25 @@
 			"NAME": "Serika Kuromi"
 		},
 		"animator:ShirokoSunaookami": {
-			"FLAVOR_TEXT": "'Right, Ayane, I have an idea: ROB THE BANK.  It is an effective and simple method: I've researched the location of the vault, and take these masks.'",
-			"DESCRIPTION": "Whenever this hits an enemy with [~Lock-On]: play the top card of your discard pile for free, then exhaust this card.",
+			"FLAVOR_TEXT": "'Right, Ayane, I have an idea: ROB THE BANK.  It is an effective and simple method: I've researched the location of the vault... and also got these masks!'",
+			"DESCRIPTION": "Whenever this hits an enemy with [~Lock-On]: play the top card of your discard pile for free against the target.",
 			"NAME": "Shiroko Sunaookami"
 		},
 		"animator:Shiroko_Terror": {
 			"FLAVOR_TEXT": "'I didn't think the day would come where I'd see this again...  With Hoshino, Nonomi, Serika, and Ayane...  We robbed the Stygian Bank, the secret safe of the General Student Council...  What precious memories...'",
-			"DESCRIPTION": "Lose 2 [HP] to gain !M! [Strength] and !M! {Rage}.",
+			"DESCRIPTION": "Lose 3 [HP] to gain !S! [Strength] and !S! {Rage}.",
 			"NAME": "Shiroko Terror"
+		},
+		"animator:YumeKuchinashi": {
+			"FLAVOR_TEXT": "'Yes!  Back then, the oasis was as big as a lake!  Isn't it amazing?  It would take a miracle, but it would be great if people gathered here like old times...'",
+			"DESCRIPTION": "Gain [THP] !M! additional times if an enemy has [~Lock-On]. || For the rest of the game, you may surpass your [THP] limit.",
+			"EXTENDED_DESCRIPTION": ["You may surpass your #yTemp. #YHP limit."],
+			"NAME": "Yume Kuchinashi"
+		},
+		"animator:YuukaHayase": {
+			"FLAVOR_TEXT": "'Seriously... If you're an adult, you should know better than to make impulsive purchases.  You're not like those kids who spend all their pocket money as soon as they get it, are you?  On top of that, I'm the only one who helps you sort your receipts like this...  If you keep this up, I'm not going to help anymore!'",
+			"DESCRIPTION": "Obtain a random 0-cost card that references [~Lock-On] in its description. || !A! [Y] [P]: <LIM>.  Obtain !M! [Gold] for each [~Lock-On] among enemies.",
+			"NAME": "Yuuka Hayase"
 		}
 	},
 
