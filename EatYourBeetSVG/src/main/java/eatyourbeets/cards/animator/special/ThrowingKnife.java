@@ -24,6 +24,7 @@ public class ThrowingKnife extends AnimatorCard
     public static final int INDEX_WEAK = 1;
     public static final int INDEX_VULNERABLE = 2;
     public static final int INDEX_POISON = 3;
+    public static final int INDEX_LOCKON = 4;
 
     protected Color color;
 
@@ -33,6 +34,7 @@ public class ThrowingKnife extends AnimatorCard
         result.add(new ThrowingKnife(INDEX_WEAK));
         result.add(new ThrowingKnife(INDEX_VULNERABLE));
         result.add(new ThrowingKnife(INDEX_POISON));
+        result.add(new ThrowingKnife(INDEX_LOCKON));
         return result;
     }
 
@@ -84,7 +86,7 @@ public class ThrowingKnife extends AnimatorCard
 
         if (misc == 0)
         {
-            ChangeIndex(rng.random(INDEX_WEAK, INDEX_POISON));
+            ChangeIndex(rng.random(INDEX_WEAK, INDEX_LOCKON));
         }
     }
 
@@ -157,6 +159,10 @@ public class ThrowingKnife extends AnimatorCard
         else if (INDEX_POISON == misc)
         {
             GameActions.Top.ApplyPoison(player, m, secondaryValue);
+        }
+        else if (INDEX_LOCKON == misc)
+        {
+            GameActions.Top.ApplyLockOn(player, m, secondaryValue);
         }
         else
         {

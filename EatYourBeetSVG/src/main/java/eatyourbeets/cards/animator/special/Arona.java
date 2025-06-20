@@ -11,7 +11,7 @@ import java.util.HashMap;
 
 public class Arona extends AnimatorCard {
     public static final EYBCardData DATA = Register(Arona.class)
-            .SetSkill(1, CardRarity.SPECIAL, EYBCardTarget.None)
+            .SetSkill(0, CardRarity.SPECIAL, EYBCardTarget.None)
             .SetSeries(CardSeries.BlueArchive);
 
     public Arona() {

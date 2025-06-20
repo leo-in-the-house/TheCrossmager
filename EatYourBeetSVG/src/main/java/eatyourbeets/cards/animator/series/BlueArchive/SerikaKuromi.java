@@ -23,6 +23,21 @@ public class SerikaKuromi extends AnimatorCard {
         SetAffinity_Red(1, 0, 1);
     }
 
+
+    @Override
+    public boolean cardPlayable(AbstractMonster m) {
+        if (super.cardPlayable(m)) {
+
+            for (AbstractMonster enemy : GameUtilities.GetEnemies(true)) {
+                if (GameUtilities.GetCommonDebuffs(TargetHelper.Normal(enemy)).size() > 0) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info) {
         GameUtilities.PlayVoiceSFX(name);

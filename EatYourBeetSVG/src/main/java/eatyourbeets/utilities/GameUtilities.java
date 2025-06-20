@@ -45,6 +45,7 @@ import eatyourbeets.actions.EYBAction;
 import eatyourbeets.cards.animator.series.BlueArchive.*;
 import eatyourbeets.cards.animator.special.Arona;
 import eatyourbeets.cards.animator.special.Shiroko_Terror;
+import eatyourbeets.cards.animator.ultrarare.YumeKuchinashi;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.effects.SFX;
 import eatyourbeets.interfaces.delegates.ActionT1;
@@ -2266,7 +2267,7 @@ public class GameUtilities
     //Tries to play the voice SFX if it exists.
     //Removes the "+" tied to suffixes
     public static void PlayVoiceSFX(String cardName) {
-            GameActions.Delayed.SFX(SFX.GetVoiceString(cardName.replace("+", "")));
+            GameActions.Instant.SFX(SFX.GetVoiceString(cardName.replace("+", "")), 1, 1, 2);
     }
 
     public static boolean HasAttackOrBlockMultiplier(AbstractCard card) {
@@ -2383,6 +2384,7 @@ public class GameUtilities
         group.put(HoshinoTakanashi.DATA.ID, new HoshinoTakanashi());
         group.put(Arona.DATA.ID, new Arona());
         group.put(Shiroko_Terror.DATA.ID, new Shiroko_Terror());
+        group.put(YumeKuchinashi.DATA.ID, new YumeKuchinashi());
 
         return group;
     }

@@ -12,7 +12,7 @@ import eatyourbeets.utilities.GameUtilities;
 
 public class Kilowattrel extends PokemonCard {
     public static final EYBCardData DATA = Register(Kilowattrel.class)
-            .SetSkill(1, CardRarity.BASIC, EYBCardTarget.Normal);
+            .SetSkill(2, CardRarity.BASIC, EYBCardTarget.Normal);
 
     public Kilowattrel() {
         super(DATA);

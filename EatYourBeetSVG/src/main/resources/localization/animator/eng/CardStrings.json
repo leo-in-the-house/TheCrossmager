@@ -1839,7 +1839,7 @@
 		},
 		"animator:HinaSorasaki": {
 			"FLAVOR_TEXT": "'I'm not strong, not like she is...  She was the one who found the body of Abydos' Student Council President- I'm sure that must have been hard for her.  But even after suffering through so much, she's still at Abydos, fighting...  I could never do something like that.'",
-			"DESCRIPTION": "Apply [~Lock-On] to ALL enemies. || At the end of each turn, apply [~Lock-On] to each enemies with [~Lock-On], then deal !M! damage to each enemy per [~Lock-On].",
+			"DESCRIPTION": "Apply [~Lock-On] to ALL enemies. || At the end of each turn, apply [~Lock-On] to ALL enemies, then deal !M! damage to each enemy per [~Lock-On].",
 			"EXTENDED_DESCRIPTION": ["At the end of each turn, apply #yLock-On to each enemy with #yLock-On, then deal #b{0} damage to each enemy per #yLock-On."],
 			"NAME": "Hina Sorasaki"
 		},
@@ -1862,7 +1862,7 @@
 		},
 		"animator:Sensei": {
 			"FLAVOR_TEXT": "'You want a reason?  It's because those kids asked for my help, and that's enough!  That when kids laugh, you laugh with them!  That when they're sad, you stay by their side!  That when they're in trouble, you help!  That's just what adults do!'",
-			"DESCRIPTION": "Add a random {Abydos Student} you don't own to your hand and master deck.  Then, draw two {Abydos Students} from ANYWHERE for each enemy with [~Lock-On].",
+			"DESCRIPTION": "Add a random {Abydos Student} you don't own to your hand and master deck.  Then, draw two {Abydos Students} from ANYWHERE and {Motivate} them for each enemy.",
 			"NAME": "Sensei"
 		},
 		"animator:SerikaKuromi": {
@@ -1872,7 +1872,7 @@
 		},
 		"animator:ShirokoSunaookami": {
 			"FLAVOR_TEXT": "'Right, Ayane, I have an idea: ROB THE BANK.  It is an effective and simple method: I've researched the location of the vault... and also got these masks!'",
-			"DESCRIPTION": "Whenever this hits an enemy with [~Lock-On]: play the top card of your discard pile for free against the target.",
+			"DESCRIPTION": "Whenever this hits an enemy with [~Lock-On]: play the top card of your discard pile for free against the target.  Otherwise, apply !M! [~Lock-On].",
 			"NAME": "Shiroko Sunaookami"
 		},
 		"animator:Shiroko_Terror": {
@@ -2434,7 +2434,7 @@
 		"animator:ShunyaKengun":
 		{
 			"FLAVOR_TEXT": "'What is the hold-up?!  Jade Palace is going to be taken before we can do anything to help!'",
-			"DESCRIPTION": "Gain !M! [Vigor].",
+			"DESCRIPTION": "Gain !M! [Vigor].  Apply !S! [~Lock-On].",
 			"NAME": "Shunya Kengun"
 		},
 		"animator:TukaLunaMarceau":
@@ -4459,7 +4459,7 @@
 		"animator:ThrowingKnife":
 		{
 			"DESCRIPTION": "{0} || When this enters your discard pile: Play it on a random enemy.",
-			"EXTENDED_DESCRIPTION": ["Apply a Debuff.", "Apply !M! [Weak].", "Apply !M! [Vulnerable].", "Apply !S! [Poison]."],
+			"EXTENDED_DESCRIPTION": ["Apply a Debuff.", "Apply !M! [Weak].", "Apply !M! [Vulnerable].", "Apply !S! [Poison].", "Apply !S! [~Lock-On]."],
 			"NAME": "Throwing-Knife"
 		},
 

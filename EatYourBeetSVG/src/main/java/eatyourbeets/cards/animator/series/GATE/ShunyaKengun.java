@@ -9,6 +9,7 @@ import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
+import eatyourbeets.utilities.TargetHelper;
 
 public class ShunyaKengun extends AnimatorCard
 {
@@ -20,7 +21,7 @@ public class ShunyaKengun extends AnimatorCard
     {
         super(DATA);
 
-        Initialize(9, 0, 7);
+        Initialize(9, 0, 5, 2);
         SetUpgrade(2, 0, 2);
 
         SetAffinity_Pink(1);
@@ -33,6 +34,7 @@ public class ShunyaKengun extends AnimatorCard
         GameActions.Bottom.DealDamage(this, m, AttackEffects.GUNSHOT).SetSoundPitch(0.9f, 1f);
 
         GameActions.Bottom.GainVigor(magicNumber);
+        GameActions.Bottom.ApplyLockOn(TargetHelper.Normal(m), secondaryValue);
     }
 
 }

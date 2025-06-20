@@ -23,14 +23,14 @@ import eatyourbeets.utilities.GameUtilities;
 
 public class NonomiIzayoi extends AnimatorCard {
     public static final EYBCardData DATA = Register(NonomiIzayoi.class)
-            .SetSkill(3, CardRarity.UNCOMMON, EYBCardTarget.None)
+            .SetSkill(2, CardRarity.UNCOMMON, EYBCardTarget.None)
             .SetSeriesFromClassPackage();
 
     public NonomiIzayoi() {
         super(DATA);
 
         Initialize(0, 0, 10);
-        SetUpgrade(0, 12, 0);
+        SetUpgrade(0, 8, 0);
 
         SetAffinity_Yellow(2);
         SetAffinity_Pink(1);

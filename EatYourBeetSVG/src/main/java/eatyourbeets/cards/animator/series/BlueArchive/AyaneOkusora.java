@@ -20,7 +20,7 @@ public class AyaneOkusora extends AnimatorCard {
     public AyaneOkusora() {
         super(DATA);
 
-        Initialize(0, 0, 2);
+        Initialize(0, 8, 2);
         SetUpgrade(0, 0, 2);
 
         SetAffinity_Pink(1);
@@ -33,6 +33,7 @@ public class AyaneOkusora extends AnimatorCard {
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info) {
         GameUtilities.PlayVoiceSFX(name);
 
+        GameActions.Bottom.GainBlock(block);
         GameActions.Bottom.GainDexterity(magicNumber);
         GameActions.Bottom.StackPower(new AyaneOkusoraPower(p, magicNumber));
     }
