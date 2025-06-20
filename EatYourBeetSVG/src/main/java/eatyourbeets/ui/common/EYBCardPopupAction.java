@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.RestRoom;
@@ -88,6 +89,11 @@ public abstract class EYBCardPopupAction
     protected static boolean HasCard(EYBCardData data)
     {
         return data.IsInGroup(AbstractDungeon.player.masterDeck);
+    }
+
+    protected static boolean HasRelic(AbstractRelic relic)
+    {
+        return AbstractDungeon.player.hasRelic(relic.relicId);
     }
     protected static boolean HasCardOfRarity(AbstractCard.CardRarity rarity)
     {
@@ -270,6 +276,16 @@ public abstract class EYBCardPopupAction
         }
 
         return null;
+    }
+
+    protected static boolean LoseRelic(AbstractRelic relic)
+    {
+        return AbstractDungeon.player.loseRelic(relic.relicId);
+    }
+
+    protected static void GainRelic(AbstractRelic relic)
+    {
+        GameUtilities.ObtainRelic(Settings.WIDTH * 0.5f, Settings.HEIGHT * 0.5f, relic);
     }
 
     protected static void Heal(int amount)

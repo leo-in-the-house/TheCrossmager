@@ -147,6 +147,12 @@
 		"FLAVOR": "Infinite Power! At a price...",
 		"NAME": "InfinitePower"
 	},
+	"animator:IronHorus":
+	{
+		"DESCRIPTIONS": ["Whenever you gain [Block], apply #yLock-On to a random enemy."],
+		"FLAVOR": "A shield once owned by the Abydos Student Council President.",
+		"NAME": "Iron Horus"
+	},
 	"animator:LivingPicture":
 	{
 		"DESCRIPTIONS": ["The first time each combat you #ySeal a card in hand, #yDraw #b{0} #yCards."],

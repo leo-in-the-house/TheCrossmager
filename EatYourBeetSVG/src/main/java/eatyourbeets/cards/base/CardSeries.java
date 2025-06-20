@@ -96,6 +96,7 @@ public class CardSeries
     public final static CardSeries TheLegendOfHeroesTrails = Add(78, "TheLegendOfHeroesTrails");
     public final static CardSeries BlueArchive = Add(79, "BlueArchive");
     public final static CardSeries HigurashiNoNakuKoroNi = Add(80, "HigurashiNoNakuKoroNi");
+    public final static CardSeries BravelyDefault = Add(81, "BravelyDefault");
 
     private static AbstractCard currentSynergy = null;
     private static EYBCard lastCardPlayed = null;

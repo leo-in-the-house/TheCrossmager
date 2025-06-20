@@ -19,6 +19,10 @@ public class Wattrel extends PokemonCard {
 
         Initialize(0, 0, 2);
         SetUpgrade(0, 0, 0);
+        SetEvolution(new Kilowattrel());
+
+        SetAffinity_Yellow(1);
+        SetAffinity_Blue(1);
     }
 
     @Override

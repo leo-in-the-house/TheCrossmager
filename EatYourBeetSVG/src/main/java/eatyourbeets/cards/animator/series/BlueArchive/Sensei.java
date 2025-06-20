@@ -32,6 +32,8 @@ public class Sensei extends AnimatorCard {
 
         SetExhaust(true);
         SetRetain(true);
+
+        SetHealing(true);
     }
 
     @Override

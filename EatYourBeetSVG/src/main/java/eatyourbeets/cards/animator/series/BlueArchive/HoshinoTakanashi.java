@@ -61,12 +61,15 @@ public class HoshinoTakanashi extends AnimatorCard {
 
     protected void OnCooldownCompleted(AbstractMonster m)
     {
-        HashMap<String, AnimatorCard> abydosStudents = GameUtilities.GetAbydosStudents();
+        GameActions.Bottom.Callback(() -> {
+            HashMap<String, AnimatorCard> abydosStudents = GameUtilities.GetAbydosStudents();
 
-        GiveAbydosZeroCostHaste(abydosStudents, player.hand);
-        GiveAbydosZeroCostHaste(abydosStudents, player.drawPile);
-        GiveAbydosZeroCostHaste(abydosStudents, player.discardPile);
-        GiveAbydosZeroCostHaste(abydosStudents, player.exhaustPile);
+            GiveAbydosZeroCostHaste(abydosStudents, player.hand);
+            GiveAbydosZeroCostHaste(abydosStudents, player.drawPile);
+            GiveAbydosZeroCostHaste(abydosStudents, player.discardPile);
+            GiveAbydosZeroCostHaste(abydosStudents, player.exhaustPile);
+            CostModifiers.For(this).Add(-99);
+        });
     }
 
     private void GiveAbydosZeroCostHaste(HashMap<String, AnimatorCard> abydosStudents, CardGroup group) {

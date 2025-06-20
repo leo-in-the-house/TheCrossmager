@@ -18,6 +18,7 @@ import eatyourbeets.cards.base.EYBCard;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.SFX;
 import eatyourbeets.resources.GR;
+import eatyourbeets.resources.animator.loadouts.Loadout_BlueArchive;
 import eatyourbeets.resources.animator.loadouts.Loadout_Konosuba;
 import eatyourbeets.utilities.GameEffects;
 import eatyourbeets.utilities.JUtils;
@@ -703,11 +704,13 @@ public class EYBCardPopupActions
 
     public static class ShirokoSunaookami_Terror extends EYBCardPopupAction
     {
+        protected final EYBCardData SOURCE;
         protected final EYBCardData TARGET1;
         protected final int HP_LOSS_AMOUNT;
 
-        public ShirokoSunaookami_Terror(EYBCardData targetCard, int hpLossAmount)
+        public ShirokoSunaookami_Terror(EYBCardData sourceCard, EYBCardData targetCard, int hpLossAmount)
         {
+            SOURCE = sourceCard;
             TARGET1 = targetCard;
             HP_LOSS_AMOUNT = hpLossAmount;
 
@@ -723,45 +726,54 @@ public class EYBCardPopupActions
         @Override
         public void Execute()
         {
-            final EYBCard card = TARGET1.MakeCopy(false);
-            LoseHP(HP_LOSS_AMOUNT);
-            Obtain(card);
-            SFX.Play(SFX.STANCE_ENTER_WRATH, 0.4f);
-            Complete();
+            if (Replace(card, TARGET1, card.upgraded) != null) {
+                LoseHP(HP_LOSS_AMOUNT);
+                SFX.Play(SFX.STANCE_ENTER_WRATH, 0.4f);
+                Complete();
+            }
         }
     }
 
     public static class YumeKuchinashi_Death extends EYBCardPopupAction
     {
-        protected final EYBCardData REQUIRED1;
+        protected final EYBCardData HOSHINO;
         protected final AbstractRelic CURSED_GLYPH;
         protected final int HP_GAIN_AMOUNT;
         protected final AbstractRelic IRON_HORUS;
 
-        public YumeKuchinashi_Death(EYBCardData required1, AbstractRelic cursedGlyph, int hpGainAmount, AbstractRelic ironHorus)
+        public YumeKuchinashi_Death(EYBCardData hoshino, AbstractRelic cursedGlyph, int hpGainAmount, AbstractRelic ironHorus)
         {
-            REQUIRED1 = required1;
+            HOSHINO = hoshino;
             CURSED_GLYPH = cursedGlyph;
             HP_GAIN_AMOUNT = hpGainAmount;
             IRON_HORUS = ironHorus;
 
-            SetText(specialActions.YumeKuchinashiDeath(), terms.Obtain, specialActions.YumeKuchinashiDeath(REQUIRED1.Strings.NAME, CURSED_GLYPH.name, HP_GAIN_AMOUNT, IRON_HORUS.name));
+            SetText(specialActions.YumeKuchinashiDeath(), terms.Obtain, specialActions.YumeKuchinashiDeath(HOSHINO.Strings.NAME, CURSED_GLYPH.name, HP_GAIN_AMOUNT, IRON_HORUS.name));
         }
 
         @Override
         public boolean CanExecute(AbstractCard card)
         {
-            return IsRestRoom() && HasCard(card) && HasCard(REQUIRED1);
+            return IsRestRoom() && HasCard(card) && HasCard(HOSHINO) && HasRelic(CURSED_GLYPH);
         }
 
         @Override
         public void Execute()
         {
-            //TODO: Add a way to remove a relic
-            GainMaxHP(HP_GAIN_AMOUNT);
-            //TODO: Add a way to add a relic
-            SFX.Play(SFX.BELL, 0.2f);
-            Complete();
+            final EYBCard r1 = Find(HOSHINO, true);
+
+            if (card == null && r1 == null) {
+                JUtils.LogError(Loadout_BlueArchive.class, "Couldn't find required cards in masterdeck.");
+                return;
+            }
+
+            if (Remove(card)) {
+                LoseRelic(CURSED_GLYPH);
+                GainMaxHP(HP_GAIN_AMOUNT);
+                GainRelic(IRON_HORUS);
+                SFX.Play(SFX.BELL, 0.2f);
+                Complete();
+            }
         }
     }
 

@@ -144,6 +144,8 @@ public class CombatStats extends EYBPower implements InvisiblePower
     private static int stanceChangesThisTurn = 0;
     private static int cardsDrawnThisTurn = 0;
     private static int turnCount = 0;
+
+    private static int currentMaxTempHP = EYBPlayerCharacter.MAX_TEMP_HP;
     private static HashMap<String, Integer> amountIncreasedOnOrbs = new HashMap<>();
 
     //@Formatter: Off
@@ -228,6 +230,7 @@ public class CombatStats extends EYBPower implements InvisiblePower
         turnCount = 0;
         cardsDrawnThisTurn = 0;
         stanceChangesThisTurn = 0;
+        currentMaxTempHP = EYBPlayerCharacter.MAX_TEMP_HP;
         canActivateStarter = true;
         enableConsumingStatsWithScalingCard = true;
         orbTypesChanneledThisCombat.clear();
@@ -709,9 +712,9 @@ public class CombatStats extends EYBPower implements InvisiblePower
         if (creature instanceof EYBPlayerCharacter)
         {
             final int tempHP = TempHPField.tempHp.get(creature);
-            if (tempHP > EYBPlayerCharacter.MAX_TEMP_HP)
+            if (tempHP > currentMaxTempHP)
             {
-                TempHPField.tempHp.set(creature, EYBPlayerCharacter.MAX_TEMP_HP);
+                TempHPField.tempHp.set(creature, currentMaxTempHP);
             }
         }
 
@@ -902,6 +905,14 @@ public class CombatStats extends EYBPower implements InvisiblePower
     public static int TurnCount(boolean fromZero)
     {
         return fromZero ? turnCount : (turnCount + 1);
+    }
+
+    public static void IncreaseMaxHPThreshold(int amount) {
+        currentMaxTempHP += amount;
+    }
+
+    public static void SetMaxHPThreshold(int amount) {
+        currentMaxTempHP = amount;
     }
 
     public static void OnApplyPower(AbstractCreature source, AbstractCreature target, AbstractPower power)

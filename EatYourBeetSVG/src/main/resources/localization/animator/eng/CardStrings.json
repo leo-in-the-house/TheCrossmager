@@ -1882,7 +1882,7 @@
 		},
 		"animator:YumeKuchinashi": {
 			"FLAVOR_TEXT": "'Yes!  Back then, the oasis was as big as a lake!  Isn't it amazing?  It would take a miracle, but it would be great if people gathered here like old times...'",
-			"DESCRIPTION": "Gain [THP] !M! additional times if an enemy has [~Lock-On]. || For the rest of the game, you may surpass your [THP] limit.",
+			"DESCRIPTION": "For the rest of the game, you may surpass your [THP] limit. || Gain [THP] !S! additional times if an enemy has [~Lock-On].",
 			"EXTENDED_DESCRIPTION": ["You may surpass your #yTemp. #YHP limit."],
 			"NAME": "Yume Kuchinashi"
 		},

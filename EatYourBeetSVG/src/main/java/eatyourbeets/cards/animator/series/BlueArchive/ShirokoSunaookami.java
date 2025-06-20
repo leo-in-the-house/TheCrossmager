@@ -17,7 +17,7 @@ public class ShirokoSunaookami extends AnimatorCard {
             .SetSeriesFromClassPackage()
             .PostInitialize(data ->
             {
-                data.AddPopupAction(new EYBCardPopupActions.ShirokoSunaookami_Terror(Shiroko_Terror.DATA, 5));
+                data.AddPopupAction(new EYBCardPopupActions.ShirokoSunaookami_Terror(ShirokoSunaookami.DATA, Shiroko_Terror.DATA, 5));
                 data.AddPreview(new Shiroko_Terror(), true);
             });
 
