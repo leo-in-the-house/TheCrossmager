@@ -29,14 +29,20 @@ public class HifumiAjitani extends AnimatorCard {
 
         GameActions.Bottom.GainBlock(block);
 
-        int numEnemies = GameUtilities.GetEnemies(true).size();
-
-        if (numEnemies >= magicNumber) {
+        if (CheckSpecialCondition(false)) {
             GameActions.Bottom.GainEnergy(1);
 
             if (upgraded) {
                 GameActions.Bottom.Draw(1);
             }
         }
+    }
+
+    @Override
+    public boolean CheckSpecialCondition(boolean tryUse)
+    {
+        int numEnemies = GameUtilities.GetEnemies(true).size();
+
+        return numEnemies >= magicNumber;
     }
 }

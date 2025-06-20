@@ -89,7 +89,7 @@ public class HatsuneMiku extends AnimatorCard {
         @Override
         public void onCardDraw(AbstractCard c)
         {
-            c.setCostForTurn(-9);
+            c.setCostForTurn(-99);
         }
     }
 }

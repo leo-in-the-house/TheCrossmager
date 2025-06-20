@@ -3,6 +3,7 @@ package eatyourbeets.ui.common;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import eatyourbeets.actions.pileSelection.SelectFromPile;
 import eatyourbeets.cards.animator.basic.*;
 import eatyourbeets.cards.animator.basic.seriespokemon.Rotom;
@@ -697,6 +698,70 @@ public class EYBCardPopupActions
                 };
                 Complete();
             }
+        }
+    }
+
+    public static class ShirokoSunaookami_Terror extends EYBCardPopupAction
+    {
+        protected final EYBCardData TARGET1;
+        protected final int HP_LOSS_AMOUNT;
+
+        public ShirokoSunaookami_Terror(EYBCardData targetCard, int hpLossAmount)
+        {
+            TARGET1 = targetCard;
+            HP_LOSS_AMOUNT = hpLossAmount;
+
+            SetText(specialActions.PayHPShirokoTerror(), terms.Obtain, specialActions.PayHPShirokoTerror(HP_LOSS_AMOUNT, TARGET1.Strings.NAME));
+        }
+
+        @Override
+        public boolean CanExecute(AbstractCard card)
+        {
+            return IsRestRoom() && HasCard(card);
+        }
+
+        @Override
+        public void Execute()
+        {
+            final EYBCard card = TARGET1.MakeCopy(false);
+            LoseHP(HP_LOSS_AMOUNT);
+            Obtain(card);
+            SFX.Play(SFX.STANCE_ENTER_WRATH, 0.4f);
+            Complete();
+        }
+    }
+
+    public static class YumeKuchinashi_Death extends EYBCardPopupAction
+    {
+        protected final EYBCardData REQUIRED1;
+        protected final AbstractRelic CURSED_GLYPH;
+        protected final int HP_GAIN_AMOUNT;
+        protected final AbstractRelic IRON_HORUS;
+
+        public YumeKuchinashi_Death(EYBCardData required1, AbstractRelic cursedGlyph, int hpGainAmount, AbstractRelic ironHorus)
+        {
+            REQUIRED1 = required1;
+            CURSED_GLYPH = cursedGlyph;
+            HP_GAIN_AMOUNT = hpGainAmount;
+            IRON_HORUS = ironHorus;
+
+            SetText(specialActions.YumeKuchinashiDeath(), terms.Obtain, specialActions.YumeKuchinashiDeath(REQUIRED1.Strings.NAME, CURSED_GLYPH.name, HP_GAIN_AMOUNT, IRON_HORUS.name));
+        }
+
+        @Override
+        public boolean CanExecute(AbstractCard card)
+        {
+            return IsRestRoom() && HasCard(card) && HasCard(REQUIRED1);
+        }
+
+        @Override
+        public void Execute()
+        {
+            //TODO: Add a way to remove a relic
+            GainMaxHP(HP_GAIN_AMOUNT);
+            //TODO: Add a way to add a relic
+            SFX.Play(SFX.BELL, 0.2f);
+            Complete();
         }
     }
 

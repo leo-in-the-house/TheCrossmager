@@ -320,7 +320,7 @@
 			"Improve. Lose #b{0} [Gold].",
 			"Transform this card into an #yImproved #yBasic card of your choice. You can only perform this action at #yRest #ySites.",
 			
-			"Become Witch.",
+			"Become Witch",
 			"Transform. Lose #b{0} [HP].",
 			"Transform into #b{0}. Lose #b{1} [HP].",
 			"Transform. Lose #b{0} Max [HP].",
@@ -328,50 +328,56 @@
 			"If you have {0}, transform this card into {1}. NL You can only perform this action at #yRest #ySites.",
 			"Remove {0} and {1} to transform this card into {2}. NL You can only perform this action at #yRest #ySites.",
 
-			"Inverse Transformation.",
+			"Inverse Transformation",
 			"Transform this card into {0} and a #yDepression. NL You can only perform this action at #yRest #ySites.",
 
-			"Rotom Transformation.",
+			"Rotom Transformation",
 			"Transform this card into a different #yRotom #yForm. NL You can only perform this action at #yRest #ySites.",
 
-			"Kaleid Transformation.",
+			"Kaleid Transformation",
 			"Transform this card into {0} and obtain #yMiyu #yEdelfelt. NL You can only perform this action at #yRest #ySites.",
 
-			"Scion of Arland.",
+			"Scion of Arland",
 			"Gain #b{0} Max [HP] and obtain #yLulua. NL You can only perform this action at #yRest #ySites if you do not have #yLulua.",
 
-			"Create Chim.",
+			"Create Chim",
 			"If you have {0}, pay {1} gold to obtain #yChim. NL You can only perform this action at #yRest #ySites.",
 
-			"Qixing's Secretary.",
+			"Qixing's Secretary",
 			"Heal #b{0} [HP] and obtain #yGanyu. NL You can only perform this action at #yRest #ySites if you do not have #yGanyu.",
 
-			"Goddess Transformation.",
+			"Goddess Transformation",
 			"Pay #b{0} #yGold and transform this card into #yEris.",
 
-			"The Fifth Trumpet.",
+			"The Fifth Trumpet",
 			"Lose #b{0} [HP] and obtain #yMirai #yKimizuki.  NL You can only perform this action at #yRest #ySites if you also have #yKureto #yHiiragi, and do not have #yMirai #yKimizuki.",
 
-			"Sakuya's Contract.",
+			"Sakuya's Contract",
 			"Remove a random #yCurse from your deck to obtain #ySakuya #yOhtori.  NL You can only perform this action at #yRest #ySites if you do not have #ySakuya #yOhtori.",
 
-			"Druid's Familiar.",
+			"Druid's Familiar",
 			"Lose #b{0} Max [HP] to remove a random #yBasic card and obtain #yChibimoth.  NL You may only perform this action at #yRest #ySites.",
 
-			"Scarlet Sister.",
+			"Scarlet Sister",
 			"Obtain {0} and start your next combat with #b{1} [Vulnerable]. NL You can only perform this action at #yRest #ySites if you do not have #yFlandre #yScarlet.",
 
-			"Promise of Reunion.",
+			"Promise of Reunion",
 			"Transform a random blue card in your deck into {0}. NL You can only perform this action at #yRest #ySites if #yIb is upgraded.",
 
-			"Together, Forever.",
+			"Together, Forever",
 			"Transform a random yellow card in your deck into {0}. NL You can only perform this action at #yRest #ySites if #yIb is upgraded.",
 
-			"Welcome to Guertena.",
+			"Welcome to Guertena",
 			"Obtain {0} and {1}, but copy each Curse in your deck. NL You can only perform this action at #yRest #ySites if you have at least #b{2} Curses and if #yIb is upgraded.",
 
-			"Body Switch Ritual.",
+			"Body Switch Ritual",
 			"If you control a colorless {0} and a colorless {1}, you may have them #rSWITCH #rBODIES at a Rest Site.  If you do, add {2} to your deck. NL You can only perform this action at #yRest #ySites.",
+
+			"Contact the Chroma",
+			"Lose #b{0} [HP] to transform this card into {1}. NL You can only perform this action at #yRest #ySites.",
+
+			"'Abydos Oasis Festival'",
+			"If you have {0}, you may permanently remove this card from your master deck.  If you do, remove {1}, gain #b{2} Max [HP], and obtain {3}. NL You can only perform this action at #yRest #ySites.",
 
 			"Obtain Curse. Heal #b{0} [HP].",
 			"If you have at least #b{0} Curses, Obtain {1}. NL You can only perform this action at #yRest #ySites."

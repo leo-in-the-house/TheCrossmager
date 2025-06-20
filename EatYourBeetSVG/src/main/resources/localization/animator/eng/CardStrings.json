@@ -1792,6 +1792,12 @@
 			"DESCRIPTION": "As this deals damage, it gains !M! damage every time this hits an enemy with [~Lock-On].",
 			"NAME": "Alice Tendou"
 		},
+		"animator:Arona": {
+			"FLAVOR_TEXT": "'Ah, right!  My name is Arona!  I'm the system manager in the Shittim Chest and I serve as its main operating system!  Think of me as your trusty secretary!'",
+			"DESCRIPTION": "Gain !M! [T], then give all other {Abydos Students} in your hand <T> scaling.",
+			"UPGRADE_DESCRIPTION": "Gain !M! [T], then give all other {Blue Archive} cards in your hand [T] scaling.",
+			"NAME": "Arona"
+		},
 		"animator:AruRikuhachima": {
 			"FLAVOR_TEXT": "'Who are they!  How dare they rob the black market bank!  ...These are the real criminals...  They are really amazing...!'",
 			"DESCRIPTION": "Apply !M! [Vulnerable] [~Lock-On].",
@@ -1802,17 +1808,17 @@
 			"DESCRIPTION": "Apply [~Lock-On] to ALL enemies.",
 			"NAME": "Asuna Ichinose"
 		},
-		"animator:AzusaShirasu": {
-			"FLAVOR_TEXT": "'But, Sensei. The world relies on structure. It would be nothing without planning. The same goes for operations and missions.  You can't just do whatever you want without being prepared. You'll never accomplish anything, even in your daily life...'",
-			"DESCRIPTION": "Apply !M! [~Lock-On] to all attacking enemies. || For the rest of your turn, deal double Attack damage to enemies with [~Lock-On].",
-			"EXTENDED_DESCRIPTION": ["Deal +#b{0} percent attack damage to enemies with #yLock-On."],
-			"NAME": "Azusa Shirasu"
-		},
 		"animator:AyaneOkusora": {
 			"FLAVOR_TEXT": "'If we fight... what difference will it make?  Even if we win somehow... what are we supposed to do next?  And even if we get the school back, it won't erase our debt...  The land that's been sold isn't coming back... and without Hoshino, or the Student Council...  What can an unofficial club like ours even hope to do?!'",
-			"DESCRIPTION": "Gain !M! [Dexterity]. || Once per turn: Pay [E] to apply !M! [~Lock-On] to an enemy.",
-			"EXTENDED_DESCRIPTION": ["Once per turn: Pay #yEnergy to apply #b{0} #yLock-On to an enemy."],
+			"DESCRIPTION": "Gain !M! [Dexterity]. || Once per turn: Pay [E] to apply !M! [~Lock-On] to the enemy with the highest [HP].",
+			"EXTENDED_DESCRIPTION": ["Once per turn: Pay #yEnergy to apply #b{0} #yLock-On to the enemy with the highest #yHP."],
 			"NAME": "Ayane Okusora"
+		},
+		"animator:AzusaShirasu": {
+			"FLAVOR_TEXT": "'But, Sensei. The world relies on structure. It would be nothing without planning. The same goes for operations and missions.  You can't just do whatever you want without being prepared. You'll never accomplish anything, even in your daily life...'",
+			"DESCRIPTION": "Apply !M! [~Lock-On] to all attacking enemies. || This turn, deal double Attack damage to enemies with [~Lock-On].",
+			"EXTENDED_DESCRIPTION": ["Deal +#b{0} percent attack damage to enemies with #yLock-On."],
+			"NAME": "Azusa Shirasu"
 		},
 		"animator:HifumiAjitani": {
 			"FLAVOR_TEXT": "'So what if I'm ordinary or there's nothing special about me?  I'm not ashamed of who I am or what I believe in!  Overcoming adversity through friendship... hard work paying off... friends picking each other up when they're down... and always putting on a smile no matter how hard things get!'",
@@ -1833,19 +1839,19 @@
 		},
 		"animator:HinaSorasaki": {
 			"FLAVOR_TEXT": "'I'm not strong, not like she is...  She was the one who found the body of Abydos' Student Council President- I'm sure that must have been hard for her.  But even after suffering through so much, she's still at Abydos, fighting...  I could never do something like that.'",
-			"DESCRIPTION": "Apply [~Lock-On] to ALL enemies. || [~Lock-On] never decays. || At the end of each turn, deal !M! damage to each enemy for each point of [~Lock-On] they have.",
-			"EXTENDED_DESCRIPTION": ["#yLock-On never decays.  At the end of each turn, deal #b{0} damage to each enemy per point of #yLock-On they have."],
+			"DESCRIPTION": "Apply [~Lock-On] to ALL enemies. || At the end of each turn, apply [~Lock-On] to each enemies with [~Lock-On], then deal !M! damage to each enemy per [~Lock-On].",
+			"EXTENDED_DESCRIPTION": ["At the end of each turn, apply #yLock-On to each enemy with #yLock-On, then deal #b{0} damage to each enemy per #yLock-On."],
 			"NAME": "Hina Sorasaki"
 		},
 		"animator:HoshinoTakanashi": {
 			"FLAVOR_TEXT": "'Yume, I've been so foolish...  I had to be put in this situation to finally understand...  I'll never make this mistake again.  I don't want to make this mistake ever again.  Because to me, the real miracle is... my Foreclosure Task Force juniors!''",
-			"DESCRIPTION": "<SLM>.  If this hits an enemy with [~Lock-On], {Recover} all [HP] up to your recovery point. || Cooldown !S!: All {Abydos Students} EVERYWHERE cost 0 and gain Haste.",
+			"DESCRIPTION": "<SLM>.  If this hits an enemy with [~Lock-On], {Recover} as much [HP] as possible. || Cooldown !S!: All {Abydos Students} EVERYWHERE cost 0 and gain Haste.",
 			"NAME": "Hoshino Takanashi"
 		},
 		"animator:MikaMisono": {
 			"FLAVOR_TEXT": "'Hey... I didn't mean to upset you...  ...I don't like it when you're mad at me, Sensei...  It was harmless fun. Just for a moment...  I just wanted to spend one more moment with you, Sensei...'",
 			"DESCRIPTION": "Copy every other card you play each turn against a random enemy with [~Lock-On].",
-			"EXTENDED_DESCRIPTION": ["Copy every other card you play each turn against a random enemy with #yLock-On."],
+			"EXTENDED_DESCRIPTION": ["Copy every other card you play each turn #b{0} times against a random enemy with #yLock-On."],
 			"NAME": "Mika Misono"
 		},
 		"animator:NonomiIzayoi": {
@@ -1856,7 +1862,7 @@
 		},
 		"animator:Sensei": {
 			"FLAVOR_TEXT": "'You want a reason?  It's because those kids asked for my help, and that's enough!  That when kids laugh, you laugh with them!  That when they're sad, you stay by their side!  That when they're in trouble, you help!  That's just what adults do!'",
-			"DESCRIPTION": "<LIM>.  Add a random {Abydos Student} that you do not have in your master deck to your hand and master deck.  Then, draw an {Abydos Student} from anywhere including your exhaust pile for each enemy with [~Lock-On].",
+			"DESCRIPTION": "<LIM>.  Add a random {Abydos Student} that you do not have in your master deck to your hand and master deck.  Then, draw two {Abydos Student}s from anywhere including your exhaust pile for each enemy with [~Lock-On].",
 			"NAME": "Sensei"
 		},
 		"animator:SerikaKuromi": {
@@ -1882,7 +1888,7 @@
 		},
 		"animator:YuukaHayase": {
 			"FLAVOR_TEXT": "'Seriously... If you're an adult, you should know better than to make impulsive purchases.  You're not like those kids who spend all their pocket money as soon as they get it, are you?  On top of that, I'm the only one who helps you sort your receipts like this...  If you keep this up, I'm not going to help anymore!'",
-			"DESCRIPTION": "Obtain a random 0-cost card that references [~Lock-On] in its description. || !A! [Y] [P]: <LIM>.  Obtain !M! [Gold] for each [~Lock-On] among enemies.",
+			"DESCRIPTION": "Obtain a random card that references [~Lock-On] in its description and set its cost to 0. || !A! [Y] [P]: <LIM>.  Obtain 5 [Gold] for each [~Lock-On] among enemies.",
 			"NAME": "Yuuka Hayase"
 		}
 	},
@@ -2933,7 +2939,7 @@
 		"animator:Eris":
 		{
 			"FLAVOR_TEXT": "'OK, OK!  You win!  I'll make an exception this time!  I'll open the gate for him right away!'",
-			"DESCRIPTION": "Take no damage this turn. || If the last card you played was a {Konosuba} card: gain !M! [E] and draw a card.",
+			"DESCRIPTION": "Take no attack damage this turn. || If the last card you played was a {Konosuba} card: gain !M! [E] and draw a card.",
 			"EXTENDED_DESCRIPTION": ["Take no damage this turn."],
 			"NAME": "Eris"
 		},

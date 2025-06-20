@@ -690,6 +690,34 @@ public class AnimatorStrings
             return JUtils.Format(T_DemonCatRitual_F2, JUtils.ModifyString(cardName1, w -> "#y" + w), JUtils.ModifyString(cardName2, w -> "#y" + w), JUtils.ModifyString(curseName, w -> "#y" + w));
         }
 
+        public final String T_PayHP_ShirokoTerror_F1 = Strings.TEXT[INDEX++];
+
+        public final String T_PayHP_ShirokoTerror_F2 = Strings.TEXT[INDEX++];
+
+        public final String PayHPShirokoTerror()
+        {
+            return JUtils.Format(T_PayHP_ShirokoTerror_F1);
+        }
+
+        public final String PayHPShirokoTerror(int hpLossAmount, String cardName)
+        {
+            return JUtils.Format(T_PayHP_ShirokoTerror_F2, hpLossAmount, cardName);
+        }
+
+        public final String T_YumeKuchinashi_Death_F1 = Strings.TEXT[INDEX++];
+
+        public final String T_YumeKuchinashi_Death_F2 = Strings.TEXT[INDEX++];
+
+        public final String YumeKuchinashiDeath()
+        {
+            return JUtils.Format(T_YumeKuchinashi_Death_F1);
+        }
+
+        public final String YumeKuchinashiDeath(String hoshino, String cursedGlyph, int maxHPGain, String ironHorus)
+        {
+            return JUtils.Format(T_YumeKuchinashi_Death_F2, hoshino, cursedGlyph, maxHPGain, ironHorus);
+        }
+
         public final String T_ObtainCurse_Heal_F1 = Strings.TEXT[INDEX++];
         public final String D_ObtainCurse_RequireAmount_F2 = Strings.TEXT[INDEX++];
 

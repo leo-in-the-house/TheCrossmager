@@ -42,6 +42,9 @@ import com.megacrit.cardcrawl.ui.FtueTip;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import eatyourbeets.actions.EYBAction;
+import eatyourbeets.cards.animator.series.BlueArchive.*;
+import eatyourbeets.cards.animator.special.Arona;
+import eatyourbeets.cards.animator.special.Shiroko_Terror;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.effects.SFX;
 import eatyourbeets.interfaces.delegates.ActionT1;
@@ -2367,6 +2370,21 @@ public class GameUtilities
         RefreshHandLayout();
 
         return amount;
+    }
+
+    //For certain Blue Archive cards.
+    public static HashMap GetAbydosStudents() {
+        HashMap<String, AnimatorCard> group = new HashMap();
+
+        group.put(ShirokoSunaookami.DATA.ID, new ShirokoSunaookami());
+        group.put(AyaneOkusora.DATA.ID, new AyaneOkusora());
+        group.put(SerikaKuromi.DATA.ID, new SerikaKuromi());
+        group.put(NonomiIzayoi.DATA.ID, new NonomiIzayoi());
+        group.put(HoshinoTakanashi.DATA.ID, new HoshinoTakanashi());
+        group.put(Arona.DATA.ID, new Arona());
+        group.put(Shiroko_Terror.DATA.ID, new Shiroko_Terror());
+
+        return group;
     }
 
     private static class CardPlayedListener implements OnAfterCardPlayedSubscriber

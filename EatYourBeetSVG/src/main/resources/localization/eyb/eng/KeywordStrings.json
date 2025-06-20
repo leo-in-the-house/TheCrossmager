@@ -1,5 +1,11 @@
 
 {
+	"Abydos Student":
+	{
+		"DESCRIPTION": "Shiroko Sunaookami, Ayane Okusora, Serika Kuromi, Nonomi Izayoi, Hoshino Tanakashi, Arona, Shiroko Terror, Yume Kuchinashi.  The latter two cannot be obtained by Sensei.",
+		"NAMES": ["abydos student"],
+		"PROPER_NAME": "Abydos Student"
+	},
 	"Aether":
 	{
 		"DESCRIPTION": "Orb: Deal #yPiercing damage to ALL enemies.",
