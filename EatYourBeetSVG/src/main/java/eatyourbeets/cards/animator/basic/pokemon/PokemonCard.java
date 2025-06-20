@@ -14,6 +14,7 @@ import eatyourbeets.utilities.AdvancedTexture;
 import eatyourbeets.utilities.GameEffects;
 
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 /**
  * Pokemon Cards are basic cards that evolve when you enter a new act if there is a valid evolution.
@@ -76,6 +77,18 @@ public class PokemonCard extends AnimatorCard {
         MarkAllStarterPokemonAsSeen(cards);
 
         return cards;
+    }
+
+    public static ArrayList<EYBCardData> GetStarterAttacks() {
+        ArrayList<EYBCardData> cards = GetStarterCards();
+
+        return cards.stream().filter(card -> card.CardType.equals(CardType.ATTACK)).collect(Collectors.toCollection(ArrayList::new));
+    }
+
+    public static ArrayList<EYBCardData> GetStarterSkills() {
+        ArrayList<EYBCardData> cards = GetStarterCards();
+
+        return cards.stream().filter(card -> card.CardType.equals(CardType.SKILL)).collect(Collectors.toCollection(ArrayList::new));
     }
 
     private static void MarkAllStarterPokemonAsSeen(ArrayList<EYBCardData> pokemonCards) {

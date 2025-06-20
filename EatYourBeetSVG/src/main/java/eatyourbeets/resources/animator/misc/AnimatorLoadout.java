@@ -207,9 +207,11 @@ public abstract class AnimatorLoadout
         final AnimatorCardSlot pokemon_slot1 = data.AddCardSlot(0, 2);
         final AnimatorCardSlot pokemon_slot2 = data.AddCardSlot(0, 2);
 
-        pokemon_slot1.AddItems(PokemonCard.GetStarterCards(), 1);
+        pokemon_slot1.AddItems(PokemonCard.GetStarterAttacks(), 3);
+        pokemon_slot1.AddItems(PokemonCard.GetStarterSkills(), 1);
         pokemon_slot1.AddItem(Curse_AscendersBane.DATA, -2);
-        pokemon_slot2.AddItems(PokemonCard.GetStarterCards(), 1);
+        pokemon_slot2.AddItems(PokemonCard.GetStarterAttacks(), 3);
+        pokemon_slot2.AddItems(PokemonCard.GetStarterSkills(), 1);
         pokemon_slot2.AddItem(Curse_AscendersBane.DATA, -2);
 
         final AnimatorCardSlot s1 = data.AddCardSlot(0, 1);
@@ -221,8 +223,14 @@ public abstract class AnimatorLoadout
         }
 
         if (this.EmblemicPokemon != null) {
-            s1.AddItem(this.EmblemicPokemon.cardData, 4);
-            s2.AddItem(this.EmblemicPokemon.cardData, 4);
+            int cost = 4;
+
+            if (this.EmblemicPokemon.cardData.CardType.equals(AbstractCard.CardType.ATTACK)) {
+                cost = 6;
+            }
+
+            s1.AddItem(this.EmblemicPokemon.cardData, cost);
+            s2.AddItem(this.EmblemicPokemon.cardData, cost);
         }
 
         for (TupleT2<EYBCardData, Integer> pair : starterCards)
