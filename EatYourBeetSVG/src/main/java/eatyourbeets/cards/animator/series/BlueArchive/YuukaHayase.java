@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.LockOnPower;
 import com.megacrit.cardcrawl.vfx.RainingGoldEffect;
 import eatyourbeets.cards.base.*;
+import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.cards.base.modifiers.CostModifiers;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
@@ -22,8 +23,8 @@ public class YuukaHayase extends AnimatorCard {
     public YuukaHayase() {
         super(DATA);
 
-        Initialize(2, 0, 3);
-        SetUpgrade(2, 0, 0);
+        Initialize(0, 2, 3);
+        SetUpgrade(0, 2, 0);
 
         SetAffinity_Yellow(2, 0, 1);
         SetAffinity_Pink(2, 0, 1);
@@ -32,6 +33,11 @@ public class YuukaHayase extends AnimatorCard {
 
         SetAffinityRequirement(Affinity.Yellow, 4);
         SetAffinityRequirement(Affinity.Pink, 4);
+    }
+    @Override
+    public AbstractAttribute GetBlockInfo()
+    {
+        return super.GetBlockInfo().AddMultiplier(magicNumber);
     }
 
     @Override
@@ -72,7 +78,7 @@ public class YuukaHayase extends AnimatorCard {
     {
 
         //Change this if you change Lock-On's shorthand
-        String lockOnString = "[~Lock-On]";
+        String lockOnString = "~Lock-On";
 
         WeightedList<AbstractCard> possibleCards = GameUtilities.GetCardsInCombatWeighted(GenericCondition.FromT1(c -> GameUtilities.DescriptionContainsIcon(c, lockOnString)));
 

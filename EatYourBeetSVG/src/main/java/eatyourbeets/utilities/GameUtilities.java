@@ -1626,7 +1626,7 @@ public class GameUtilities
     {
         return WeakPower.POWER_ID.equals(power.ID) || VulnerablePower.POWER_ID.equals(power.ID)
             || PoisonPower.POWER_ID.equals(power.ID) || BurningPower.POWER_ID.equals(power.ID) || FreezingPower.POWER_ID.equals(power.ID)
-            || ShacklesPower.POWER_ID.equals(power.ID) || GainStrengthPower.POWER_ID.equals(power.ID);
+            || ShacklesPower.POWER_ID.equals(power.ID) || GainStrengthPower.POWER_ID.equals(power.ID) || LockOnPower.POWER_ID.equals(power.ID);
     }
 
     public static boolean IsPlayerMinion(AbstractMonster monster)

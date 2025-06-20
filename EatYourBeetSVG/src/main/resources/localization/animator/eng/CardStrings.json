@@ -1862,7 +1862,7 @@
 		},
 		"animator:Sensei": {
 			"FLAVOR_TEXT": "'You want a reason?  It's because those kids asked for my help, and that's enough!  That when kids laugh, you laugh with them!  That when they're sad, you stay by their side!  That when they're in trouble, you help!  That's just what adults do!'",
-			"DESCRIPTION": "<LIM>.  Add a random {Abydos Student} that you do not have in your master deck to your hand and master deck.  Then, draw two {Abydos Student}s from anywhere including your exhaust pile for each enemy with [~Lock-On].",
+			"DESCRIPTION": "Add a random {Abydos Student} you don't own to your hand and master deck.  Then, draw two {Abydos Students} from ANYWHERE for each enemy with [~Lock-On].",
 			"NAME": "Sensei"
 		},
 		"animator:SerikaKuromi": {

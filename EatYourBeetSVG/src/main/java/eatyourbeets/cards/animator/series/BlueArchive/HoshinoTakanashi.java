@@ -77,8 +77,6 @@ public class HoshinoTakanashi extends AnimatorCard {
                 if (card instanceof EYBCard) {
                     ((EYBCard) card).SetHaste(true);
                 }
-
-                break;
             }
         }
     }

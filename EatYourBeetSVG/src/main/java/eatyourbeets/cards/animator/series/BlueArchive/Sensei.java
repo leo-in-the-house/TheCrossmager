@@ -1,6 +1,5 @@
 package eatyourbeets.cards.animator.series.BlueArchive;
 
-import basemod.BaseMod;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -10,7 +9,6 @@ import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
-import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
 import eatyourbeets.utilities.GameUtilities;
@@ -40,10 +38,8 @@ public class Sensei extends AnimatorCard {
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info) {
         GameUtilities.PlayVoiceSFX(name);
 
-        if (CombatStats.TryActivateLimited(cardID)) {
-            TryAddStudentToMasterDeck();
-            DrawAbydosStudents();
-        }
+        TryAddStudentToMasterDeck();
+        DrawAbydosStudents();
     }
 
     private void TryAddStudentToMasterDeck() {
@@ -57,8 +53,10 @@ public class Sensei extends AnimatorCard {
             }
         }
 
-        for (AbstractCard card : obtainedStudents.values()) {
-            possibleStudents.Add(card);
+        for (AbstractCard card : abydosStudents.values()) {
+            if (obtainedStudents.get(card.cardID) == null) {
+                possibleStudents.Add(card);
+            }
         }
 
         if (possibleStudents.Size() > 0) {
@@ -77,43 +75,12 @@ public class Sensei extends AnimatorCard {
 
         int numStudentsMax = 2 * numEnemiesLockOn;
 
-        boolean searchedExhaustPile = false;
-        boolean searchedDiscardPile = false;
-
         HashMap<String, AnimatorCard> abydosStudents = GameUtilities.GetAbydosStudents();
 
-        for (int i=0; i<numStudentsMax; i++) {
-            if (player.hand.size() >= BaseMod.MAX_HAND_SIZE) {
-                break;
-            }
-
-            //Sensei draws from the exhaust pile > discard pile > draw pile
-            AbstractCard student = null;
-
-            if (!searchedExhaustPile) {
-                student = FindStudent(player.exhaustPile, abydosStudents);
-
-                if (student == null) {
-                    searchedExhaustPile = true;
-                }
-            }
-
-            if (!searchedDiscardPile) {
-                student = FindStudent(player.discardPile, abydosStudents);
-
-                if (student == null) {
-                    searchedDiscardPile = true;
-                }
-            }
-
-            student = FindStudent(player.drawPile, abydosStudents);
-
-            if (student == null) {
-                break;
-            }
-
-            GameActions.Bottom.Draw(student);
-        }
+        GameActions.Bottom.FetchFromPile(name, numStudentsMax, player.exhaustPile, player.discardPile, player.drawPile)
+                .ShowEffect(true, true)
+                .SetFilter(card -> abydosStudents.get(card.cardID) != null)
+                .SetOptions(true, true);
     }
 
     private AbstractCard FindStudent(CardGroup group, HashMap<String, AnimatorCard> abydosStudents) {

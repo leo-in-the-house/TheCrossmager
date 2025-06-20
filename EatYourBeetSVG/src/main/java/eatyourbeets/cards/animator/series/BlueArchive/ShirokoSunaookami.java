@@ -4,15 +4,22 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.LockOnPower;
+import eatyourbeets.cards.animator.special.Shiroko_Terror;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.effects.AttackEffects;
+import eatyourbeets.ui.common.EYBCardPopupActions;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
 public class ShirokoSunaookami extends AnimatorCard {
     public static final EYBCardData DATA = Register(ShirokoSunaookami.class)
             .SetAttack(2, CardRarity.UNCOMMON, EYBAttackType.Ranged, EYBCardTarget.Random)
-            .SetSeriesFromClassPackage();
+            .SetSeriesFromClassPackage()
+            .PostInitialize(data ->
+            {
+                data.AddPopupAction(new EYBCardPopupActions.ShirokoSunaookami_Terror(Shiroko_Terror.DATA, 5));
+                data.AddPreview(new Shiroko_Terror(), true);
+            });
 
     public ShirokoSunaookami() {
         super(DATA);

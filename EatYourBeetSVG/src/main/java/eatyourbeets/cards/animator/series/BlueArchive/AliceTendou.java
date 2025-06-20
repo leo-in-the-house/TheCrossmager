@@ -39,7 +39,7 @@ public class AliceTendou extends AnimatorCard {
                 hasLockOn = true;
             }
 
-            GameActions.Top.DealDamage(this, enemy, AttackEffects.FIRE);
+            GameActions.Bottom.DealDamage(this, enemy, AttackEffects.FIRE);
 
             if (hasLockOn) {
                 DamageModifiers.For(this).Add(magicNumber);

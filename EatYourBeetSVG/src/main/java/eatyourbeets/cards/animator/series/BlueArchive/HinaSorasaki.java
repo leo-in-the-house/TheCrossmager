@@ -29,6 +29,10 @@ public class HinaSorasaki extends AnimatorCard {
 
         Initialize(0, 0, 2);
         SetUpgrade(0, 0, 4);
+
+        SetAffinity_Pink(2);
+        SetAffinity_White(1);
+        SetAffinity_Black(1);
     }
 
     @Override
@@ -57,25 +61,25 @@ public class HinaSorasaki extends AnimatorCard {
 
             for (AbstractMonster enemy : GameUtilities.GetEnemies(true)) {
                 if (enemy.hasPower(LockOnPower.POWER_ID)) {
-                    GameActions.Bottom.ApplyLockOn(TargetHelper.Normal(enemy), 1);
+                    GameActions.Bottom.ApplyLockOn(TargetHelper.Normal(enemy), 1)
+                            .AddCallback(power -> {
+                                int lockOnAmount = GameUtilities.GetPowerAmount(enemy, LockOnPower.POWER_ID);
 
-                    int lockOnAmount = GameUtilities.GetPowerAmount(enemy, LockOnPower.POWER_ID);
+                                int damageAmount = lockOnAmount * amount;
 
-                    int damageAmount = lockOnAmount * amount;
+                                if (damageAmount > 0) {
+                                    if (lockOnAmount > 10) {
+                                        GameActions.Bottom.VFX(new LaserBeamEffect(player.hb.cX, player.hb.cY), 0.1f);
+                                        GameActions.Bottom.VFX(new ExplosionSmallEffect(enemy.hb.cX + MathUtils.random(-0.05f, 0.05f), enemy.hb.cY + MathUtils.random(-0.05f, 0.05f)), 0.1f);
+                                        GameActions.Bottom.VFX(new ExplosionSmallEffect(enemy.hb.cX + MathUtils.random(-0.05f, 0.05f), enemy.hb.cY + MathUtils.random(-0.05f, 0.05f)), 0.1f);
+                                    } else {
+                                        GameActions.Bottom.VFX(new SmallLaserEffect2(player.hb.cX, player.hb.cY, VFX.RandomX(enemy.hb, 0.2f), VFX.RandomY(enemy.hb, 0.2f)), 0.1f);
+                                        GameActions.Bottom.VFX(new ExplosionSmallEffect(enemy.hb.cX + MathUtils.random(-0.05f, 0.05f), enemy.hb.cY + MathUtils.random(-0.05f, 0.05f)), 0.1f);
+                                    }
 
-                    if (damageAmount > 0) {
-                        if (lockOnAmount > 10) {
-                            GameActions.Bottom.VFX(new LaserBeamEffect(player.hb.cX, player.hb.cY), 0.1f);
-                            GameActions.Bottom.VFX(new ExplosionSmallEffect(enemy.hb.cX + MathUtils.random(-0.05f, 0.05f), enemy.hb.cY + MathUtils.random(-0.05f, 0.05f)), 0.1f);
-                            GameActions.Bottom.VFX(new ExplosionSmallEffect(enemy.hb.cX + MathUtils.random(-0.05f, 0.05f), enemy.hb.cY + MathUtils.random(-0.05f, 0.05f)), 0.1f);
-                        }
-                        else {
-                            GameActions.Bottom.VFX(new SmallLaserEffect2(player.hb.cX, player.hb.cY, VFX.RandomX(enemy.hb, 0.2f), VFX.RandomY(enemy.hb, 0.2f)), 0.1f);
-                            GameActions.Bottom.VFX(new ExplosionSmallEffect(enemy.hb.cX + MathUtils.random(-0.05f, 0.05f), enemy.hb.cY + MathUtils.random(-0.05f, 0.05f)), 0.1f);
-                        }
-
-                        GameActions.Bottom.DealDamage(player, enemy, damageAmount, DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.NONE);
-                    }
+                                    GameActions.Bottom.DealDamage(player, enemy, damageAmount, DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.NONE);
+                                }
+                            });
                 }
             }
         }

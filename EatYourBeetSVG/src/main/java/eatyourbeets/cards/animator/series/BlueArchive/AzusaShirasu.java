@@ -11,6 +11,7 @@ import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.interfaces.subscribers.OnModifyDamageFirstSubscriber;
 import eatyourbeets.powers.AnimatorPower;
+import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.TargetHelper;
@@ -24,7 +25,7 @@ public class AzusaShirasu extends AnimatorCard {
         super(DATA);
 
         Initialize(0, 9, 2);
-        SetUpgrade(0, 8, 0);
+        SetUpgrade(0, 6, 2);
 
         SetAffinity_Blue(2, 0, 2);
     }
@@ -49,6 +50,20 @@ public class AzusaShirasu extends AnimatorCard {
             super(owner, AzusaShirasu.DATA);
 
             Initialize(amount);
+        }
+
+        @Override
+        public void onInitialApplication() {
+            super.onInitialApplication();
+
+            CombatStats.onModifyDamageFirst.Subscribe(this);
+        }
+
+        @Override
+        public void onRemove() {
+            super.onRemove();
+
+            CombatStats.onModifyDamageFirst.Unsubscribe(this);
         }
 
         @Override
