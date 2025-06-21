@@ -1074,17 +1074,20 @@ public final class GameActions
 
     public PlayCard PlayCard(CardGroup sourcePile, AbstractMonster target, FuncT1<AbstractCard, CardGroup> findCard)
     {
-        return Add(new PlayCard(findCard, sourcePile, target));
+        return Add(new PlayCard(findCard, sourcePile, target))
+                .SpendEnergy(false, false);
     }
 
     public PlayCard PlayCard(AbstractCard card, CardGroup sourcePile, AbstractMonster target)
     {
-        return Add(new PlayCard(card, target, false, actionOrder != ActionOrder.Top)).SetSourcePile(sourcePile);
+        return Add(new PlayCard(card, target, false, actionOrder != ActionOrder.Top)).SetSourcePile(sourcePile)
+                .SpendEnergy(false, false);
     }
 
     public PlayCard PlayCard(AbstractCard card, AbstractMonster target)
     {
-        return Add(new PlayCard(card, target, false, actionOrder != ActionOrder.Top));
+        return Add(new PlayCard(card, target, false, actionOrder != ActionOrder.Top))
+                .SpendEnergy(false, false);
     }
 
     public PlayCard PlayCopy(AbstractCard card, AbstractMonster target)

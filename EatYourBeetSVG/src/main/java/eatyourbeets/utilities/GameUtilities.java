@@ -2267,7 +2267,7 @@ public class GameUtilities
     //Tries to play the voice SFX if it exists.
     //Removes the "+" tied to suffixes
     public static void PlayVoiceSFX(String cardName) {
-            GameActions.Instant.SFX(SFX.GetVoiceString(cardName.replace("+", "")), 1, 1, 2);
+            GameActions.Instant.SFX(SFX.GetVoiceString(cardName.replace("+", "")), 1, 1, 3);
     }
 
     public static boolean HasAttackOrBlockMultiplier(AbstractCard card) {

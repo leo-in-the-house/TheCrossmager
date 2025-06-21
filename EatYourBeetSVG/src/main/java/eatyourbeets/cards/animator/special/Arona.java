@@ -19,6 +19,8 @@ public class Arona extends AnimatorCard {
 
         Initialize(0, 0, 2);
         SetUpgrade(0, 0, 1);
+
+        SetAffinity_Teal(1);
     }
 
     @Override

@@ -1840,7 +1840,7 @@
 		"animator:HinaSorasaki": {
 			"FLAVOR_TEXT": "'I'm not strong, not like she is...  She was the one who found the body of Abydos' Student Council President- I'm sure that must have been hard for her.  But even after suffering through so much, she's still at Abydos, fighting...  I could never do something like that.'",
 			"DESCRIPTION": "Apply [~Lock-On] to ALL enemies. || At the end of each turn, apply [~Lock-On] to ALL enemies, then deal !M! damage to each enemy per [~Lock-On].",
-			"EXTENDED_DESCRIPTION": ["At the end of each turn, apply #yLock-On to each enemy with #yLock-On, then deal #b{0} damage to each enemy per #yLock-On."],
+			"EXTENDED_DESCRIPTION": ["At the end of each turn, apply #yLock-On to ALL enemies, then deal #b{0} damage to each enemy per #yLock-On."],
 			"NAME": "Hina Sorasaki"
 		},
 		"animator:HoshinoTakanashi": {
@@ -1872,7 +1872,7 @@
 		},
 		"animator:ShirokoSunaookami": {
 			"FLAVOR_TEXT": "'Right, Ayane, I have an idea: ROB THE BANK.  It is an effective and simple method: I've researched the location of the vault... and also got these masks!'",
-			"DESCRIPTION": "Whenever this hits an enemy with [~Lock-On]: play the top card of your discard pile for free against the target.  Otherwise, apply !M! [~Lock-On].",
+			"DESCRIPTION": "<SLM>.  Whenever this hits an enemy with [~Lock-On]: play the top card of your discard pile for free against the target.  Otherwise, apply !M! [~Lock-On].",
 			"NAME": "Shiroko Sunaookami"
 		},
 		"animator:Shiroko_Terror": {

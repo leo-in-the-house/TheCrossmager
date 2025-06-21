@@ -11,14 +11,14 @@ import eatyourbeets.utilities.TargetHelper;
 
 public class SerikaKuromi extends AnimatorCard {
     public static final EYBCardData DATA = Register(SerikaKuromi.class)
-            .SetAttack(1, CardRarity.UNCOMMON, EYBAttackType.Ranged, EYBCardTarget.ALL)
+            .SetAttack(0, CardRarity.UNCOMMON, EYBAttackType.Ranged, EYBCardTarget.ALL)
             .SetSeriesFromClassPackage();
 
     public SerikaKuromi() {
         super(DATA);
 
-        Initialize(8, 0, 2);
-        SetUpgrade(2, 0, 0);
+        Initialize(7, 0, 2);
+        SetUpgrade(3, 0, 0);
 
         SetAffinity_Red(1, 0, 1);
     }

@@ -233,6 +233,10 @@ public class EYBCardPopup extends GUIElement
         {
             this.upgradeHb.move((float) Settings.WIDTH / 2f, 70f * Settings.scale);
         }
+
+        if (!GameUtilities.InGame()) {
+            SFX.Play(SFX.GetVoiceString(this.card.name.replace("+", "")), 1, 1, 3);
+        }
     }
 
     public EYBCard GetCard(boolean canUpgrade)

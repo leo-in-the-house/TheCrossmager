@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.powers.LockOnPower;
 import eatyourbeets.cards.animator.special.Shiroko_Terror;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.effects.AttackEffects;
+import eatyourbeets.powers.CombatStats;
 import eatyourbeets.ui.common.EYBCardPopupActions;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
@@ -40,17 +41,19 @@ public class ShirokoSunaookami extends AnimatorCard {
 
         GameActions.Bottom.DealDamageToRandomEnemy(this, AttackEffects.GUNSHOT)
             .AddCallback(enemy -> {
-                if (enemy.hasPower(LockOnPower.POWER_ID)) {
-                    if (player.discardPile.size() > 0 && enemy instanceof AbstractMonster && !enemy.isDeadOrEscaped()) {
-                        AbstractCard card = player.discardPile.getTopCard();
+                if (CombatStats.TryActivateSemiLimited(cardID)) {
+                    if (enemy.hasPower(LockOnPower.POWER_ID)) {
+                        if (player.discardPile.size() > 0 && enemy instanceof AbstractMonster && !enemy.isDeadOrEscaped()) {
+                            AbstractCard card = player.discardPile.getTopCard();
 
-                        if (card != null) {
-                            GameActions.Top.PlayCard(card, player.discardPile, (AbstractMonster) enemy);
+                            if (card != null) {
+                                GameActions.Top.PlayCard(card, player.discardPile, (AbstractMonster) enemy);
+                            }
                         }
                     }
-                }
-                else {
-                    GameActions.Top.ApplyLockOn(TargetHelper.Normal(enemy), magicNumber);
+                    else {
+                        GameActions.Top.ApplyLockOn(TargetHelper.Normal(enemy), magicNumber);
+                    }
                 }
             });
     }
