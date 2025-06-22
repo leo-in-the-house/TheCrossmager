@@ -21,18 +21,28 @@ import eatyourbeets.utilities.TargetHelper;
 
 public class HinaSorasaki extends AnimatorCard {
     public static final EYBCardData DATA = Register(HinaSorasaki.class)
-            .SetPower(4, CardRarity.RARE)
+            .SetPower(3, CardRarity.RARE)
             .SetSeriesFromClassPackage();
 
     public HinaSorasaki() {
         super(DATA);
 
-        Initialize(0, 0, 10);
-        SetUpgrade(0, 0, 10);
+        Initialize(0, 0, 8);
+        SetUpgrade(0, 0, 4);
 
         SetAffinity_Pink(2);
         SetAffinity_White(1);
         SetAffinity_Black(1);
+
+        SetRetain(true);
+    }
+
+    @Override
+    protected void OnUpgrade()
+    {
+        super.OnUpgrade();
+
+        SetInnate(true);
     }
 
     @Override

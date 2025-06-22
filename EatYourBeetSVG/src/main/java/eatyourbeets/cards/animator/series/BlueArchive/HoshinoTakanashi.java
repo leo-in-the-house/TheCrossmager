@@ -18,7 +18,7 @@ import java.util.HashMap;
 
 public class HoshinoTakanashi extends AnimatorCard {
     public static final EYBCardData DATA = Register(HoshinoTakanashi.class)
-            .SetAttack(3, CardRarity.RARE, EYBAttackType.Piercing, EYBCardTarget.Random)
+            .SetAttack(4, CardRarity.RARE, EYBAttackType.Piercing, EYBCardTarget.Random)
             .SetSeriesFromClassPackage();
 
     public HoshinoTakanashi() {

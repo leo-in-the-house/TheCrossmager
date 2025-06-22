@@ -3,6 +3,7 @@ package eatyourbeets.cards.animator.special;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
+import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
@@ -26,10 +27,16 @@ public class HikariTachibana_Nozomi extends AnimatorCard {
     }
 
     @Override
+    public AbstractAttribute GetDamageInfo()
+    {
+        return super.GetDamageInfo().AddMultiplier(GameUtilities.GetPotentialXCostEnergy(this));
+    }
+
+    @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info) {
         GameUtilities.PlayVoiceSFX(name);
 
-        int xCostEnergy = GameUtilities.GetXCostEnergy(this);
+        int xCostEnergy = GameUtilities.UseXCostEnergy(this);
 
         if (xCostEnergy > 0) {
             for (int i=0; i<xCostEnergy; i++) {
