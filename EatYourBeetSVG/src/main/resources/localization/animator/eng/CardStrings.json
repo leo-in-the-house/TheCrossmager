@@ -1794,7 +1794,7 @@
 		},
 		"animator:Arona": {
 			"FLAVOR_TEXT": "'Ah, right!  My name is Arona!  I'm the system manager in the Shittim Chest and I serve as its main operating system!  Think of me as your trusty secretary!'",
-			"DESCRIPTION": "Gain !M! [T], then give all other {Abydos Students} in your hand <T> scaling.",
+			"DESCRIPTION": "Gain !M! [T].  Apply !S! [~Lock-On].",
 			"UPGRADE_DESCRIPTION": "Gain !M! [T], then give all other {Blue Archive} cards in your hand [T] scaling.",
 			"NAME": "Arona"
 		},
