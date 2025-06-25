@@ -11,7 +11,7 @@ public class OldCoffin extends AnimatorRelic
 
     public OldCoffin()
     {
-        super(ID, RelicTier.UNCOMMON, LandingSound.HEAVY);
+        super(ID, RelicTier.RARE, LandingSound.HEAVY);
     }
 
     @Override
