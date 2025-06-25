@@ -282,7 +282,7 @@
 	"animator:WitchsInvitation":
 	{
 		"DESCRIPTIONS": ["Combat rewards now always contain a #yColorless card."],
-		"FLAVOR": "The envelope is featureless, it's inside empty.  It's only content is a little line of text on the front, 'Let's play together! -Viola and Ellen'",
+		"FLAVOR": "The envelope is featureless, its inside empty.  It's only content is a little line of text on the front, 'Let's play together! -Viola and Ellen'",
 		"NAME": "Witch's Invitation"
 	},
 	"animator:WizardHat":
