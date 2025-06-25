@@ -3,21 +3,19 @@ package eatyourbeets.ui.animator.cardReward;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.rewards.RewardItem;
 import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.AnimatorCard_UltraRare;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.EYBCard;
 import eatyourbeets.effects.SFX;
 import eatyourbeets.effects.card.PermanentUpgradeEffect;
 import eatyourbeets.interfaces.listeners.OnAddingToCardRewardListener;
-import eatyourbeets.relics.deprecated.AbstractMissingPiece;
 import eatyourbeets.relics.animator.CursedGlyph;
+import eatyourbeets.relics.animator.WitchsInvitation;
+import eatyourbeets.relics.deprecated.AbstractMissingPiece;
 import eatyourbeets.resources.GR;
 import eatyourbeets.resources.animator.AnimatorStrings;
 import eatyourbeets.resources.animator.misc.AnimatorRuntimeLoadout;
@@ -67,8 +65,32 @@ public class AnimatorCardRewardBonus extends GUIElement
         for (AbstractCard card : toRemove)
         {
             final AbstractCard replacement = GR.Common.Dungeon.GetRandomRewardCard(cards, true, false);
+
             if (replacement != null)
             {
+                GameUtilities.CopyVisualProperties(replacement, card);
+                cards.remove(card);
+                cards.add(replacement);
+                if (rewardItem.cards != cards)
+                {
+                    rewardItem.cards.remove(card);
+                    rewardItem.cards.add(replacement);
+                }
+
+                Add(replacement);
+            }
+        }
+
+        //Witch's Invitation
+        if (AbstractDungeon.player.hasRelic(WitchsInvitation.ID) && cards.size() > 0 && cards.stream().noneMatch(c -> c.color.equals(AbstractCard.CardColor.COLORLESS))) {
+            AbstractCard card = cards.get(0);
+            final AbstractCard replacement = GR.Common.Dungeon.GetRandomColorlessRewardCard();
+
+            if (replacement != null)
+            {
+                if (card.upgraded && replacement.canUpgrade()) {
+                        replacement.upgrade();
+                }
                 GameUtilities.CopyVisualProperties(replacement, card);
                 cards.remove(card);
                 cards.add(replacement);

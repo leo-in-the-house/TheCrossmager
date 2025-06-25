@@ -2,7 +2,6 @@ package eatyourbeets.ui.animator.cardReward;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rewards.RewardItem;
 import eatyourbeets.resources.GR;
@@ -28,6 +27,7 @@ public class AnimatorCardRewardScreen extends GUIElement
         }
 
         GR.UI.CardAffinities.Open(AbstractDungeon.player.masterDeck.group);
+
         rewardBundle.Open(rItem, cards);
         purgingStoneUI.Open(rItem, cards);
         cardBadgeLegend.Open();

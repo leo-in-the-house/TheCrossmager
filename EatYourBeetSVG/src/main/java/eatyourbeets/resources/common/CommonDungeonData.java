@@ -381,4 +381,18 @@ public class CommonDungeonData implements CustomSavable<CommonDungeonData>
 
         return null;
     }
+
+    public AbstractCard GetRandomColorlessRewardCard()
+    {
+        ArrayList<AbstractCard> list = AbstractDungeon.srcColorlessCardPool.group;
+
+        int roll = AbstractDungeon.cardRng.random(100);
+
+        if (list != null && list.size() > 0)
+        {
+            return list.get(AbstractDungeon.cardRng.random(list.size() - 1));
+        }
+
+        return null;
+    }
 }
