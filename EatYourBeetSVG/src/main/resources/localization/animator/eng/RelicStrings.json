@@ -191,7 +191,7 @@
 	},
 	"animator:OldCoffin":
 	{
-		"DESCRIPTIONS": ["Starting from your #b4th turn, apply a random #yDebuff to a random enemy at the start of each turn."],
+		"DESCRIPTIONS": ["On your first turn, you may #yCycle any number of cards."],
 		"FLAVOR": "Shocking Truth!",
 		"NAME": "Old Coffin"
 	},

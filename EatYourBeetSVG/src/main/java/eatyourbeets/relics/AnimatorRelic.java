@@ -42,6 +42,7 @@ public abstract class AnimatorRelic extends EYBRelic
             {
                 data.RemoveRelic(PrismaticShard.ID);
             }*/
+            data.RemoveRelic(GamblingChip.ID);
 
             data.AddRelic(MarkOfPain.ID, AbstractRelic.RelicTier.BOSS);
             data.AddRelic(HoveringKite.ID, AbstractRelic.RelicTier.BOSS);
