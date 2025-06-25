@@ -815,7 +815,7 @@
 		"animator:Ellen":
 		{
 			"FLAVOR_TEXT": "'How many springs came and went?  How many autumns?  Winters?  I spent most of my days... sleeping in bed.  Like a carnivorous plant I sat, mouth agape.  Waiting for prey to just fall in...'",
-			"DESCRIPTION": "<LIM>. Purge a random {Non-Hindrance} card in your Exhaust pile to upgrade this card.   If you do, choose 1 of 3 <Y> cards to add to your master deck.",
+			"DESCRIPTION": "{~Unique}. || <LIM>. Purge a random {Non-Hindrance} card in your Exhaust pile to upgrade this card.   If you do, choose 1 of 3 <Y> cards to add to your master deck.",
 			"NAME": "Ellen"
 		},
 		"animator:Ellen_Viola":

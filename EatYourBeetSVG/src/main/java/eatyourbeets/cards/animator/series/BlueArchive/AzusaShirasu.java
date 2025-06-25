@@ -18,16 +18,16 @@ import eatyourbeets.utilities.TargetHelper;
 
 public class AzusaShirasu extends AnimatorCard {
     public static final EYBCardData DATA = Register(AzusaShirasu.class)
-            .SetSkill(2, CardRarity.UNCOMMON, EYBCardTarget.None)
+            .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None)
             .SetSeriesFromClassPackage();
 
     public AzusaShirasu() {
         super(DATA);
 
-        Initialize(0, 9, 2);
-        SetUpgrade(0, 6, 2);
+        Initialize(0, 4, 2);
+        SetUpgrade(0, 2, 2);
 
-        SetAffinity_Blue(2, 0, 2);
+        SetAffinity_Blue(2, 0, 1);
     }
 
     @Override

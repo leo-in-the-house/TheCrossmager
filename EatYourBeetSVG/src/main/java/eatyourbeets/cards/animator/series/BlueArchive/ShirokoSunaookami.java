@@ -15,7 +15,7 @@ import eatyourbeets.utilities.TargetHelper;
 
 public class ShirokoSunaookami extends AnimatorCard {
     public static final EYBCardData DATA = Register(ShirokoSunaookami.class)
-            .SetAttack(2, CardRarity.UNCOMMON, EYBAttackType.Ranged, EYBCardTarget.Random)
+            .SetAttack(2, CardRarity.UNCOMMON, EYBAttackType.Ranged, EYBCardTarget.Normal)
             .SetSeriesFromClassPackage()
             .PostInitialize(data ->
             {
@@ -39,7 +39,7 @@ public class ShirokoSunaookami extends AnimatorCard {
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info) {
         GameUtilities.PlayVoiceSFX(name);
 
-        GameActions.Bottom.DealDamageToRandomEnemy(this, AttackEffects.GUNSHOT)
+        GameActions.Bottom.DealDamage(this, m, AttackEffects.GUNSHOT)
             .AddCallback(enemy -> {
                 if (CombatStats.TryActivateSemiLimited(cardID)) {
                     if (enemy.hasPower(LockOnPower.POWER_ID)) {
