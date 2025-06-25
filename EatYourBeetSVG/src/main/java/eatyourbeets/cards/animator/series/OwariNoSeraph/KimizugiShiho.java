@@ -10,6 +10,7 @@ import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.effects.AttackEffects;
+import eatyourbeets.resources.GR;
 import eatyourbeets.ui.common.EYBCardPopupActions;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
@@ -23,6 +24,13 @@ public class KimizugiShiho extends AnimatorCard
             {
                 data.AddPopupAction(new EYBCardPopupActions.OwariNoSeraph_Mirai(MiraiKimizuki.DATA, HiiragiKureto.DATA, 6));
                 data.AddPreview(new MiraiKimizuki(), false);
+            })
+            .ModifyRewards((data, rewards) ->
+            {
+                if (HiiragiKureto.DATA.GetTotalCopies(player.masterDeck) <= 0)
+                {
+                    GR.Common.Dungeon.TryReplaceFirstCardReward(rewards, 0.05f, false, HiiragiKureto.DATA);
+                }
             });
 
     public KimizugiShiho()

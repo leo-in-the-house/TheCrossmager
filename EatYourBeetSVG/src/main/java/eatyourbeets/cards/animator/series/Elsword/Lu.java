@@ -27,9 +27,9 @@ public class Lu extends AnimatorCard
             .SetSeriesFromClassPackage()
             .ModifyRewards((data, rewards) ->
             {
-                if (Ciel.DATA.GetTotalCopies(player.masterDeck) > 0)
+                if (Ciel.DATA.GetTotalCopies(player.masterDeck) <= 0)
                 {
-                    GR.Common.Dungeon.TryReplaceFirstCardReward(rewards, 0.075f, true, data);
+                    GR.Common.Dungeon.TryReplaceFirstCardReward(rewards, 0.1f, false, Ciel.DATA);
                 }
             });
 

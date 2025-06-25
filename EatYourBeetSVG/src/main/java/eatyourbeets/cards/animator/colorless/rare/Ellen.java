@@ -12,6 +12,7 @@ import eatyourbeets.cards.base.*;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.effects.VFX;
 import eatyourbeets.powers.CombatStats;
+import eatyourbeets.resources.GR;
 import eatyourbeets.ui.common.EYBCardPopupActions;
 import eatyourbeets.utilities.*;
 
@@ -26,6 +27,13 @@ public class Ellen extends AnimatorCard {
                 data.AddPreview(new Viola_Ellen(), false);
                 data.AddPreview(new Ellen_Viola(), false);
                 data.AddPreview(new Curse_Regret(), false);
+            })
+            .ModifyRewards((data, rewards) ->
+            {
+                if (Viola.DATA.GetTotalCopies(player.masterDeck) <= 0)
+                {
+                    GR.Common.Dungeon.TryReplaceFirstCardReward(rewards, 0.05f, false, Viola.DATA);
+                }
             });
 
     public Ellen() {

@@ -19,9 +19,9 @@ public class Ciel extends AnimatorCard
             .PostInitialize(data -> data.AddPreview(new Lu(), false))
             .ModifyRewards((data, rewards) ->
             {
-                if (data.GetTotalCopies(player.masterDeck) < data.MaxCopies && Lu.DATA.GetTotalCopies(player.masterDeck) > 0)
+                if (Lu.DATA.GetTotalCopies(player.masterDeck) <= 0)
                 {
-                    GR.Common.Dungeon.TryReplaceFirstCardReward(rewards, 0.075f, true, data);
+                    GR.Common.Dungeon.TryReplaceFirstCardReward(rewards, 0.01f, false, Lu.DATA);
                 }
             });
 

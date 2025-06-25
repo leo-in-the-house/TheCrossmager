@@ -431,6 +431,7 @@ public class AnimatorStrings
         }
 
         public final String T_Transform_GriefSeed_F0 = Strings.TEXT[INDEX++];
+        public final String T_Transform_Dragoon_F0 = Strings.TEXT[INDEX++];
         public final String T_Transform_LoseHP_F1 = Strings.TEXT[INDEX++];
         public final String T_Transform_LoseHPWithName_F1 = Strings.TEXT[INDEX++];
         public final String T_Transform_LoseMaxHP_F1 = Strings.TEXT[INDEX++];
@@ -443,6 +444,10 @@ public class AnimatorStrings
             return T_Transform_GriefSeed_F0;
         }
 
+        public final String Tooru_DragoonTransform()
+        {
+            return T_Transform_Dragoon_F0;
+        }
         public final String TransformAndLoseHP_T(int amount)
         {
             return JUtils.Format(T_Transform_LoseHP_F1, amount);

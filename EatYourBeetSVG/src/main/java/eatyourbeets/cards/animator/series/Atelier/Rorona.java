@@ -11,6 +11,7 @@ import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.powers.AnimatorClickablePower;
 import eatyourbeets.powers.PowerTriggerConditionType;
+import eatyourbeets.resources.GR;
 import eatyourbeets.ui.common.EYBCardPopupActions;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
@@ -24,6 +25,13 @@ public class Rorona extends AnimatorCard
             {
                 data.AddPopupAction(new EYBCardPopupActions.Atelier_Rorona(2, Lulua.DATA));
                 data.AddPreview(new Lulua(), true);
+            })
+            .ModifyRewards((data, rewards) ->
+            {
+                if (Totori.DATA.GetTotalCopies(player.masterDeck) <= 0)
+                {
+                    GR.Common.Dungeon.TryReplaceFirstCardReward(rewards, 0.1f, false, Totori.DATA);
+                }
             });
 
     public Rorona()

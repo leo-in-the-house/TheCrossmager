@@ -10,6 +10,7 @@ import eatyourbeets.cards.base.attributes.TempHPAttribute;
 import eatyourbeets.powers.CombatStats;
 import eatyourbeets.relics.animator.CursedGlyph;
 import eatyourbeets.relics.animator.IronHorus;
+import eatyourbeets.resources.GR;
 import eatyourbeets.ui.common.EYBCardPopupActions;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
@@ -23,6 +24,13 @@ public class YumeKuchinashi extends AnimatorCard_UltraRare {
             {
                 data.AddPopupAction(new EYBCardPopupActions.YumeKuchinashi_Death(HoshinoTakanashi.DATA, new CursedGlyph(), 50, new IronHorus()));
                 data.AddPreview(new HoshinoTakanashi(), true);
+            })
+            .ModifyRewards((data, rewards) ->
+            {
+                if (HoshinoTakanashi.DATA.GetTotalCopies(player.masterDeck) <= 0)
+                {
+                    GR.Common.Dungeon.TryReplaceFirstCardReward(rewards, 0.15f, false, HoshinoTakanashi.DATA);
+                }
             });
 
     public YumeKuchinashi() {

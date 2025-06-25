@@ -13,6 +13,7 @@ import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.cards.base.modifiers.CostModifiers;
+import eatyourbeets.resources.GR;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.JUtils;
@@ -27,6 +28,13 @@ public class Sora extends AnimatorCard
                 data.AddPreview(new Sora_BattlePlan1(), true);
                 data.AddPreview(new Sora_BattlePlan2(), true);
                 data.AddPreview(new Sora_BattlePlan3(), true);
+            })
+            .ModifyRewards((data, rewards) ->
+            {
+                if (Shiro.DATA.GetTotalCopies(player.masterDeck) <= 0)
+                {
+                    GR.Common.Dungeon.TryReplaceFirstCardReward(rewards, 0.1f, false, Shiro.DATA);
+                }
             });
 
     public Sora()

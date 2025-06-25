@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.EYBCardTarget;
+import eatyourbeets.resources.GR;
 import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
@@ -14,7 +15,14 @@ public class Verdia extends AnimatorCard
     public static final EYBCardData DATA = Register(Verdia.class)
             .SetSkill(3, CardRarity.COMMON, EYBCardTarget.None)
             
-            .SetSeriesFromClassPackage();
+            .SetSeriesFromClassPackage()
+            .ModifyRewards((data, rewards) ->
+            {
+                if (Sylvia.DATA.GetTotalCopies(player.masterDeck) <= 0)
+                {
+                    GR.Common.Dungeon.TryReplaceFirstCardReward(rewards, 0.05f, false, Sylvia.DATA);
+                }
+            });
 
     public Verdia()
     {

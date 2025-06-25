@@ -11,6 +11,7 @@ import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.effects.SFX;
 import eatyourbeets.effects.VFX;
+import eatyourbeets.resources.GR;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameEffects;
 import eatyourbeets.utilities.GameUtilities;
@@ -19,7 +20,14 @@ public class DolaSchwi extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(DolaSchwi.class)
             .SetAttack(1, CardRarity.COMMON, EYBAttackType.Ranged)
-            .SetSeriesFromClassPackage();
+            .SetSeriesFromClassPackage()
+            .ModifyRewards((data, rewards) ->
+            {
+                if (DolaRiku.DATA.GetTotalCopies(player.masterDeck) <= 0)
+                {
+                    GR.Common.Dungeon.TryReplaceFirstCardReward(rewards, 0.1f, false, DolaRiku.DATA);
+                }
+            });
 
     public DolaSchwi()
     {

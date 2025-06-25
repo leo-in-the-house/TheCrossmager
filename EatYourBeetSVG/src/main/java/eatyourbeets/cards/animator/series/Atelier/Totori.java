@@ -11,6 +11,7 @@ import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.cards.base.modifiers.CostModifiers;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.effects.VFX;
+import eatyourbeets.resources.GR;
 import eatyourbeets.ui.common.EYBCardPopupActions;
 import eatyourbeets.utilities.*;
 
@@ -22,6 +23,13 @@ public class Totori extends AnimatorCard {
             {
                 data.AddPopupAction(new EYBCardPopupActions.Atelier_Totori(Rorona.DATA, 50, Chim.DATA));
                 data.AddPreview(new Chim(), true);
+            })
+            .ModifyRewards((data, rewards) ->
+            {
+                if (Meruru.DATA.GetTotalCopies(player.masterDeck) <= 0 && Rorona.DATA.GetTotalCopies(player.masterDeck) > 0)
+                {
+                    GR.Common.Dungeon.TryReplaceFirstCardReward(rewards, 0.1f, false, Meruru.DATA);
+                }
             });
 
     public Totori() {

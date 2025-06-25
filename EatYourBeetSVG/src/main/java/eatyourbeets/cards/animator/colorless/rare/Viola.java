@@ -6,13 +6,21 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.RainbowCardEffect;
 import eatyourbeets.cards.base.*;
+import eatyourbeets.resources.GR;
 import eatyourbeets.utilities.*;
 
 public class Viola extends AnimatorCard {
     public static final EYBCardData DATA = Register(Viola.class)
             .SetSkill(1, CardRarity.RARE, EYBCardTarget.None)
             .SetColor(CardColor.COLORLESS)
-            .SetSeries(CardSeries.TheWitchsHouse);
+            .SetSeries(CardSeries.TheWitchsHouse)
+            .ModifyRewards((data, rewards) ->
+            {
+                if (Ellen.DATA.GetTotalCopies(player.masterDeck) <= 0)
+                {
+                    GR.Common.Dungeon.TryReplaceFirstCardReward(rewards, 0.05f, false, Ellen.DATA);
+                }
+            });;
 
     public Viola() {
         super(DATA);

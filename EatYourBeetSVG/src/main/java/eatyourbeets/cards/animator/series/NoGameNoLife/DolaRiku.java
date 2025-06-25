@@ -7,6 +7,7 @@ import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
+import eatyourbeets.resources.GR;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
@@ -14,7 +15,14 @@ public class DolaRiku extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(DolaRiku.class)
             .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None)
-            .SetSeriesFromClassPackage();
+            .SetSeriesFromClassPackage()
+            .ModifyRewards((data, rewards) ->
+            {
+                if (DolaSchwi.DATA.GetTotalCopies(player.masterDeck) <= 0)
+                {
+                    GR.Common.Dungeon.TryReplaceFirstCardReward(rewards, 0.1f, false, DolaSchwi.DATA);
+                }
+            });
 
     public DolaRiku()
     {

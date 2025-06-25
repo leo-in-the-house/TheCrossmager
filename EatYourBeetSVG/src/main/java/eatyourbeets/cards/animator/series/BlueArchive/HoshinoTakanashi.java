@@ -5,12 +5,14 @@ import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.LockOnPower;
+import eatyourbeets.cards.animator.ultrarare.YumeKuchinashi;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.cards.base.modifiers.CostModifiers;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.effects.vfx.megacritCopy.SmokeBombEffect2;
 import eatyourbeets.powers.CombatStats;
+import eatyourbeets.resources.GR;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
@@ -19,7 +21,14 @@ import java.util.HashMap;
 public class HoshinoTakanashi extends AnimatorCard {
     public static final EYBCardData DATA = Register(HoshinoTakanashi.class)
             .SetAttack(4, CardRarity.RARE, EYBAttackType.Piercing, EYBCardTarget.Random)
-            .SetSeriesFromClassPackage();
+            .SetSeriesFromClassPackage()
+            .ModifyRewards((data, rewards) ->
+            {
+                if (YumeKuchinashi.DATA.GetTotalCopies(player.masterDeck) <= 0)
+                {
+                    GR.Common.Dungeon.TryReplaceFirstCardReward(rewards, 0.03f, false, YumeKuchinashi.DATA);
+                }
+            });
 
     public HoshinoTakanashi() {
         super(DATA);

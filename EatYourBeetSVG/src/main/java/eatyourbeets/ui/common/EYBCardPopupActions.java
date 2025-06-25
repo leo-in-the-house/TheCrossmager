@@ -198,7 +198,7 @@ public class EYBCardPopupActions
             REQUIRED1 = requiredCard;
             TARGET1 = targetCard;
 
-            SetText(specialActions.TransformAndLoseHP_T(HP_LOSS), terms.Transform, specialActions.RequireCardAndTransform_D(requiredCard.Strings.NAME, TARGET1.Strings.NAME));
+            SetText(specialActions.Tooru_DragoonTransform(), terms.Transform, specialActions.RequireCardAndTransform_D(requiredCard.Strings.NAME, TARGET1.Strings.NAME));
         }
 
         @Override

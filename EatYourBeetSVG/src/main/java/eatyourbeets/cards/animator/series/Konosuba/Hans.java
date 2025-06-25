@@ -9,6 +9,7 @@ import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.powers.AnimatorPower;
+import eatyourbeets.resources.GR;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.TargetHelper;
@@ -18,7 +19,14 @@ public class Hans extends AnimatorCard
     public static final EYBCardData DATA = Register(Hans.class)
             .SetPower(1, CardRarity.UNCOMMON)
             .SetSeriesFromClassPackage()
-            .PostInitialize(data -> data.AddPreview(GetClassCard(Slimed.ID), true));
+            .PostInitialize(data -> data.AddPreview(GetClassCard(Slimed.ID), true))
+            .ModifyRewards((data, rewards) ->
+            {
+                if (Sylvia.DATA.GetTotalCopies(player.masterDeck) <= 0)
+                {
+                    GR.Common.Dungeon.TryReplaceFirstCardReward(rewards, 0.1f, false, Sylvia.DATA);
+                }
+            });
     public static final int SLIMED_AMOUNT = 3;
 
     public Hans()

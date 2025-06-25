@@ -22,6 +22,17 @@ public class Sylvia extends AnimatorCard
             {
                 data.AddPopupAction(new EYBCardPopupActions.Konosuba_Sylvia(8, Hans.DATA, Verdia.DATA, Sylvia_Chimera.DATA));
                 data.AddPreview(new Sylvia_Chimera(), true);
+            })
+            .ModifyRewards((data, rewards) ->
+            {
+                if (Verdia.DATA.GetTotalCopies(player.masterDeck) <= 0)
+                {
+                    GR.Common.Dungeon.TryReplaceFirstCardReward(rewards, 0.1f, false, Verdia.DATA);
+                }
+                else if (Hans.DATA.GetTotalCopies(player.masterDeck) <= 0)
+                {
+                    GR.Common.Dungeon.TryReplaceFirstCardReward(rewards, 0.1f, false, Hans.DATA);
+                }
             });
 
     public Sylvia()

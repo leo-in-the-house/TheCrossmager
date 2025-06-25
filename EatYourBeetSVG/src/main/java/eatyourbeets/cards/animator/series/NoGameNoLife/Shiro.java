@@ -9,6 +9,7 @@ import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.modifiers.CostModifiers;
 import eatyourbeets.powers.AnimatorPower;
+import eatyourbeets.resources.GR;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.JUtils;
@@ -18,7 +19,14 @@ public class Shiro extends AnimatorCard
     public static final EYBCardData DATA = Register(Shiro.class)
             .SetPower(4, CardRarity.RARE)
 
-            .SetSeriesFromClassPackage();
+            .SetSeriesFromClassPackage()
+            .ModifyRewards((data, rewards) ->
+            {
+                if (Sora.DATA.GetTotalCopies(player.masterDeck) <= 0)
+                {
+                    GR.Common.Dungeon.TryReplaceFirstCardReward(rewards, 0.1f, false, Sora.DATA);
+                }
+            });
 
     public Shiro()
     {
