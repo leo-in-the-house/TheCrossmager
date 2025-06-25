@@ -24,9 +24,9 @@ public class HoshinoTakanashi extends AnimatorCard {
             .SetSeriesFromClassPackage()
             .ModifyRewards((data, rewards) ->
             {
-                if (YumeKuchinashi.DATA.GetTotalCopies(player.masterDeck) <= 0)
+                if (GR.Animator.Data.SelectedLoadout.Series.ID == HoshinoTakanashi.DATA.Series.ID && YumeKuchinashi.DATA.GetTotalCopies(player.masterDeck) <= 0)
                 {
-                    GR.Common.Dungeon.TryReplaceFirstCardReward(rewards, 0.03f, false, YumeKuchinashi.DATA);
+                    GR.Common.Dungeon.TryReplaceFirstCardReward(rewards, 0.04f, false, YumeKuchinashi.DATA);
                 }
             });
 
