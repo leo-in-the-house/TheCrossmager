@@ -850,7 +850,7 @@
 			"FLAVOR_TEXT": "'These are all the memories I want to keep close to me.'",
 			"DESCRIPTION": "At the start of each turn, add !M! copies of 1 of 2 other non-{Hindrance} <Y> cards from your master deck into your hand.",
 			"EXTENDED_DESCRIPTION": ["Start of turn: Add #b{0} copies of 1 of 2 other non-#yHindrance #yYellow cards from your master deck into your hand."],
-			"NAME": "Goldia Die Heilige"
+			"NAME": "Goldia die Heilige"
 		},
 		"animator:Gutrune":
 		{
@@ -921,7 +921,7 @@
 		{
 			"FLAVOR_TEXT": "'I must spill yet more blood, so the blood already spilt will not be in vain.'",
 			"DESCRIPTION": "Exhaust !M! random cards to make ALL enemies attack themselves this turn, the enemies who are not attacking are Stunned.",
-			"NAME": "Lelouch"
+			"NAME": "Lelouch Vi Britannia"
 		},
 		"animator:MedicineMelancholy":
 		{
