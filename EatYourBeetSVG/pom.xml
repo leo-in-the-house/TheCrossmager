@@ -6,8 +6,8 @@
     <version>v1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>EatYourBeetS-VG STS MOD</name>
-    <description>Mod including a new custom character: The Animator</description>
+    <name>EatYourBeetS-VG/Touhou STS MOD</name>
+    <description>Mod including a new custom character: The Crossmager, based on EatYourBeetS-VG's The Animator character.</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -45,7 +45,7 @@
     </dependencies>
 
     <build>
-        <finalName>TheAnimator</finalName>
+        <finalName>TheCrossmager</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -65,7 +65,7 @@
                         <phase>package</phase>
                         <configuration>
                             <target>
-                                <copy file="target/TheAnimator.jar" tofile="H:\Games\Slay the Spire 2021\mods\TheAnimator.jar"/>
+                                <copy file="target/TheCrossmager.jar" tofile="H:\Games\Slay the Spire 2021\mods\TheCrossmager.jar"/>
                             </target>
                         </configuration>
                         <goals>
