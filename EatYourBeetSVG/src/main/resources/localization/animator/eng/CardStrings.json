@@ -4,13 +4,13 @@
 	{
 		"animator:Strike":
 		{
-			"FLAVOR_TEXT": "'You can do a lot more with weapons and politeness than just politeness.' -Vladimir Putin",
+			"FLAVOR_TEXT": "'If you feel yourself hitting up against your limit, remember for what cause you clench your fists!' -All Might, My Hero Academia",
 			"DESCRIPTION": "",
 			"NAME": "Strike"
 		},
 		"animator:Defend":
 		{
-			"FLAVOR_TEXT": "'It's not the war in Ukraine, it's the war in Europe. We are defending our country, our land.' -Volodymyr Zelensky",
+			"FLAVOR_TEXT": "'The world is cruel, but also very beautiful.' -Mikasa Ackermann, Attack on Titan",
 			"DESCRIPTION": "",
 			"NAME": "Defend"
 		},
@@ -1277,7 +1277,7 @@
 		"animator:Curse_AscendersBane":
 		{
 			"DESCRIPTION": "Unplayable.",
-			"FLAVOR_TEXT": "'All the adversity I've had in my life, all my troubles and obstacles, have strengthened me... You may not realize it when it happens, but a kick in the teeth may be the best thing in the world for you.' -Walt Disney",
+			"FLAVOR_TEXT": "'When you give up, that's when the game ends.' -Mitsuyoshi Anzai, Slam Dunk",
 			"EXTENDED_DESCRIPTION":
 			[
 				"Take !M! damage. || At the end of turn: Purge the top card of your draw pile.",
@@ -1293,7 +1293,7 @@
 		},
 		"animator:Curse_Greed":
 		{
-			"FLAVOR_TEXT": "'Greed is a bottomless pit which exhausts the person in an endless effort to satisfy the need without ever reaching satisfaction.' -Erich Fromm",
+			"FLAVOR_TEXT": "'Religion, ideology, resources, land, spite, love, or just because... No matter how pathetic the reason, it’s enough to start a war.' -Goku, Dragon-Ball Z",
 			"DESCRIPTION": "Unplayable. When drawn: Raise the cost of a random card in your hand by 1 this turn.",
 			"NAME": "Greed"
 		},
@@ -1311,68 +1311,68 @@
 		},
 		"animator:Curse_Clumsy":
 		{
-			"FLAVOR_TEXT": "'I am terribly clumsy, so there is a plethora of walking into lamp-posts, falling over, dropping things, and ruining sofas.' -Matt Smith",
+			"FLAVOR_TEXT": "'I'm clumsier than others and a bit of a crybaby, that's about it.' -Usagi, Sailor Moon",
 			"DESCRIPTION": "Unplayable.",
 			"NAME": "Clumsy"
 		},
 		"animator:Curse_Decay":
 		{
-			"FLAVOR_TEXT": "'As the blessings of health and fortune have a beginning, so they must also find an end. Everything rises but to fall, and increases but to decay.' -Sallust",
+			"FLAVOR_TEXT": "'If my own happiness will lead to the misfortune of others then being unhappy is probably the wisest choice.' -Rea Sanka, Sankarea",
 			"DESCRIPTION": "Unplayable. At the end of turn: Take !M! damage.",
 			"NAME": "Decay"
 		},
 		"animator:Curse_Doubt":
 		{
-			"FLAVOR_TEXT": "'The fundamental cause of the trouble is that in the modern world the stupid are cocksure while the intelligent are full of doubt.' -Bertrand Russell",
+			"FLAVOR_TEXT": "'I've gained freedom... and yet... it's so lonesome...' -Sohma Momiji, Fruits Basket",
 			"DESCRIPTION": "Unplayable. At the end of turn: Gain !M! [Weak].",
 			"NAME": "Doubt"
 		},
 		"animator:Curse_Injury":
 		{
-			"FLAVOR_TEXT": "'Injury in general teaches you to appreciate every moment. I've had my share of injuries throughout my career. It's humbling. It gives you perspective. No matter how many times I've been hurt, I've learned from that injury and come back even more humble.' -Troy Polamalu",
+			"FLAVOR_TEXT": "'Forgetting is like a wound. The wound may heal, but it has already left a scar.' -Monkey D. Luffy, One Piece",
 			"DESCRIPTION": "Unplayable.",
 			"NAME": "Injury"
 		},
 		"animator:Curse_Normality":
 		{
-			"FLAVOR_TEXT": "'I am a very simple man. I love normality, and I love normal people. I love to eat normal food. It's how I grew up.' -Granit Xhaka",
+			"FLAVOR_TEXT": "'The important thing is not how long you live. It's what you accomplish with your life.' -Grovyle, Pokémon Mystery Dungeon",
 			"DESCRIPTION": "Unplayable. When drawn: While in hand, you cannot draw additional cards this turn.",
 			"EXTENDED_DESCRIPTION": [""],
 			"NAME": "Normality"
 		},
 		"animator:Curse_Pain":
 		{
-			"FLAVOR_TEXT": "'It is easier to find men who will volunteer to die, than to find those who are willing to endure pain with patience.' -Julius Caesar",
+			"FLAVOR_TEXT": "'Living is anxiety and pain. It's continuing to think, continuing to choose.' -Alcor, Devil Survivor",
 			"DESCRIPTION": "Unplayable. While in hand, whenever you play a card: Lose !M! [MHP].",
 			"NAME": "Pain"
 		},
 		"animator:Curse_Parasite":
 		{
-			"FLAVOR_TEXT": "'When a parasite moves to a new habitat, it can find new hosts through a process called the trans-species jump. Often, the new host has no resistance; it and the parasite haven't had time to adjust to each other through natural selection (it is frequently not in the best interest of a parasite to kill its host quickly).' -Richard Preston",
+			"FLAVOR_TEXT": "'Shinichi, upon researching the concept of demons, I believe that, among all life, humans are the closest thing to it. Although humans kill and eat a wide variety of life forms, my kind eat merely one or two kinds at most. We are quite frugal in comparison.' -Migi, Parasyte: the Maxim",
 			"DESCRIPTION": "Remove this card from your deck, then lose !M! Max [HP].",
 			"NAME": "Parasite"
 		},
 		"animator:Curse_Regret":
 		{
-			"FLAVOR_TEXT": "'Regret for the things we did can be tempered by time; it is regret for the things we did not do that is inconsolable.' -Sydney J. Harris",
+			"FLAVOR_TEXT": "'How can you move forward if you keep regretting the past?' -Edward Elric, Fullmetal Alchemist",
 			"DESCRIPTION": "Unplayable. At the end of turn: Lose 1 [MHP] for each other card in hand.",
 			"NAME": "Regret"
 		},
 		"animator:Curse_Shame":
 		{
-			"FLAVOR_TEXT": "'Shame is the most powerful, master emotion. It's the fear that we're not good enough.' -Brene Brown",
+			"FLAVOR_TEXT": "'Being weak is nothing to be ashamed of... Staying weak is!' -Fuegoleon Vermillion, Black Clover",
 			"DESCRIPTION": "Unplayable. At the end of turn: Gain !M! [Frail].",
 			"NAME": "Shame"
 		},
 		"animator:Curse_Writhe":
 		{
-			"FLAVOR_TEXT": "'If man makes himself a worm he must not complain when he is trodden on.' -Immanuel Kant",
+			"FLAVOR_TEXT": "'Life is suffering. It is hard. The world is cursed. But still you find reasons to keep living.' -Lady Eboshi, Princess Mononoke",
 			"DESCRIPTION": "Unplayable.",
 			"NAME": "Writhe"
 		},
 		"animator:Curse_Dread":
 		{
-			"FLAVOR_TEXT": "'I have a new philosophy. I'm only going to dread one day at a time.' -Charles M. Schulz",
+			"FLAVOR_TEXT": "'To know sorrow is not terrifying. What is terrifying is to know you can't go back to happiness you could have.' -Matsumoto Rangiku, Bleach",
 			"DESCRIPTION": "While in your draw pile: Lose !M! [MHP] at the start of each turn. || <LIM>. On Exhaust: Gain [D] and 1 Max [HP].",
 			"NAME": "Dread"
 		}
