@@ -52,14 +52,16 @@ public class JeanGunnhildr extends AnimatorCard
         group.addToBottom(new LisaMinci());
         group.addToBottom(new BarbaraPegg());
 
+        if (upgraded) {
+            for (AbstractCard card : group.group) {
+                card.upgrade();
+            }
+        }
+
         GameActions.Bottom.SelectFromPile(name, 1, group)
             .SetOptions(false, false)
             .AddCallback(cards -> {
                 for (AbstractCard card : cards) {
-                    if (upgraded) {
-                        card.upgrade();
-                    }
-
                     GameActions.Top.MakeCardInHand(card);
                 }
             });

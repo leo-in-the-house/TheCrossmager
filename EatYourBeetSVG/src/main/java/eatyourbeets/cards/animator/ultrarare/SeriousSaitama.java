@@ -34,6 +34,14 @@ public class SeriousSaitama extends AnimatorCard_UltraRare
     }
 
     @Override
+    protected void OnUpgrade() {
+        super.OnUpgrade();
+
+        SetDelayed(false);
+        SetInnate(true);
+    }
+
+    @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);

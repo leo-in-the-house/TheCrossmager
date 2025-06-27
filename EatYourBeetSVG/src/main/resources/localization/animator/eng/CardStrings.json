@@ -1567,7 +1567,7 @@
 		"animator:Meruru":
 		{
 			"FLAVOR_TEXT": "'I’m the princess around here!  But... well, not that I’m complaining, but my life does lack a certain excitement.'",
-			"DESCRIPTION": "Add !M! random {Power}(s) to your discard pile, they cost 0. || Whenever you create a card, that card costs 0 to play.",
+			"DESCRIPTION": "Add !M! random {Power(s)} to your discard pile, they cost 0. || Whenever you create a card, that card costs 0 to play.",
 			"EXTENDED_DESCRIPTION": ["Whenever you create a card, that card costs 0 to play."],
 			"NAME": "Merurulince Rede Arls"
 		},

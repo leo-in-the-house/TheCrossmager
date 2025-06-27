@@ -52,7 +52,7 @@ public class Fredrika extends AnimatorCard implements OnEndOfTurnLastSubscriber
         super(DATA);
 
         Initialize(8, 9, 2, 4);
-        SetUpgrade(4, 4, 0, 4);
+        SetUpgrade(4, 4, 2, 4);
 
         SetAffinity_Pink(1);
 
