@@ -234,7 +234,7 @@ public class EYBCardPopup extends GUIElement
             this.upgradeHb.move((float) Settings.WIDTH / 2f, 70f * Settings.scale);
         }
 
-        if (!GameUtilities.InGame()) {
+        if (!GameUtilities.InGame() && GR.UI.TryPlayVoice()) {
             SFX.Play(SFX.GetVoiceString(this.card.name.replace("+", "")), 1, 1, 3);
         }
     }

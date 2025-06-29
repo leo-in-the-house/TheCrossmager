@@ -27,8 +27,12 @@ public class UIManager
 {
     protected final ArrayList<ActionT1<SpriteBatch>> preRenderList = new ArrayList<>();
     protected final ArrayList<ActionT1<SpriteBatch>> postRenderList = new ArrayList<>();
+
+    protected final int voiceFrameDelay = 45;
     protected float delta = 0;
     protected float timer = 0;
+
+    protected int voiceTimer = 0;
     protected boolean isDragging;
     protected Hitbox lastHovered;
     protected Hitbox lastHoveredTemp;
@@ -71,6 +75,8 @@ public class UIManager
         timer += delta;
         isDragging = false;
         lastHoveredTemp = null;
+
+        UpdateVoiceTimer();
 
         if (Elapsed(0.4f))
         {
@@ -234,5 +240,20 @@ public class UIManager
     public void AddPostRender(ActionT1<SpriteBatch> toRender)
     {
         postRenderList.add(toRender);
+    }
+
+    public boolean TryPlayVoice() {
+        if (voiceTimer <= 0) {
+            voiceTimer = voiceFrameDelay;
+            return true;
+        }
+
+        return false;
+    }
+
+    private void UpdateVoiceTimer() {
+        if (voiceTimer > 0) {
+            voiceTimer--;
+        }
     }
 }
