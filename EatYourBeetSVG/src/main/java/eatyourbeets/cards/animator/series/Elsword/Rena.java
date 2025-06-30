@@ -20,7 +20,7 @@ public class Rena extends AnimatorCard
         Initialize(0, 4, 0);
         SetUpgrade(0, 6, 0);
 
-        SetAffinity_Green(1, 1, 1);
+        SetAffinity_Green(1, 1, 0);
 
         SetEthereal(true);
     }

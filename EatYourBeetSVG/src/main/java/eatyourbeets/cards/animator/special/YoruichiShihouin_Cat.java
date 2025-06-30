@@ -22,6 +22,8 @@ public class YoruichiShihouin_Cat extends AnimatorCard {
 
         Initialize(0, 0, 6);
         SetUpgrade(0, 0, 4);
+
+        SetAffinity_Green(1, 0, 1);
     }
 
     @Override

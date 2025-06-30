@@ -77,7 +77,9 @@ public class Sensei extends AnimatorCard {
         }
 
         if (possibleStudents.Size() > 0) {
-            GameEffects.TopLevelQueue.ShowAndObtain(possibleStudents.Retrieve(rng).makeCopy());
+            AbstractCard student = possibleStudents.Retrieve(rng);
+            GameEffects.TopLevelQueue.ShowAndObtain(student.makeCopy());
+            GameActions.Bottom.MakeCardInHand(student.makeCopy());
         }
     }
 
