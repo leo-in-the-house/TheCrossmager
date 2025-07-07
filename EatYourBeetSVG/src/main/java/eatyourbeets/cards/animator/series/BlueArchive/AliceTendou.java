@@ -19,7 +19,7 @@ public class AliceTendou extends AnimatorCard {
     public AliceTendou() {
         super(DATA);
 
-        Initialize(10, 0, 5);
+        Initialize(10, 0, 6);
         SetUpgrade(4, 0, 4);
 
         SetAffinity_Teal(2);

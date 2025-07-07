@@ -67,7 +67,9 @@ public class MariaArusu extends AnimatorCard {
 
             if (cardPossibilities.Size() > 0) {
                 for (int i=0; i<amount; i++) {
-                    GameActions.Bottom.MakeCardInHand(cardPossibilities.Retrieve(rng, false).makeCopy())
+                    AbstractCard target = cardPossibilities.Retrieve(rng, false);
+                    GameActions.Bottom.MakeCardInHand(target.makeCopy())
+                            .SetUpgrade(target.upgraded, false)
                             .AddCallback(GameUtilities::Retain);
                 }
             }

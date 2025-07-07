@@ -40,7 +40,8 @@ public class Emonzaemon extends AnimatorCard
     {
         super.triggerOnAffinitySeal(reshuffle);
 
-        GameActions.Last.ReplaceCard(uuid, new Emonzaemon_EntouJyuu());
+        GameActions.Last.ReplaceCard(uuid, new Emonzaemon_EntouJyuu())
+                .SetUpgrade(upgraded);
     }
 
     @Override

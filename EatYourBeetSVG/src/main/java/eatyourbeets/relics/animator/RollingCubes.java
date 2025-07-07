@@ -70,7 +70,7 @@ public class RollingCubes extends AnimatorRelic
     public boolean CanActivate(RewardItem rewardItem)
     {
         return CanReroll() && !GameUtilities.InBattle() && rewardItem != null && rewardItem.type == RewardItem.RewardType.CARD
-                && !_isBoss.Get(rewardItem) && !JUtils.Any(rewardItem.cards, c -> c.color == AbstractCard.CardColor.COLORLESS);
+                && !_isBoss.Get(rewardItem);
     }
 
     public boolean CanReroll()

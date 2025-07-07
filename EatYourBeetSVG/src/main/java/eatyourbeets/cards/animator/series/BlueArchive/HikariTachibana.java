@@ -23,7 +23,7 @@ public class HikariTachibana extends AnimatorCard {
         super(DATA);
 
         Initialize(0, 0, 3);
-        SetUpgrade(0, 0, 1);
+        SetUpgrade(0, 0, 3);
 
         SetExhaust(true);
 
@@ -41,12 +41,7 @@ public class HikariTachibana extends AnimatorCard {
     public void triggerOnExhaust() {
         super.triggerOnExhaust();
 
-        if (upgraded) {
-            GameActions.Bottom.MakeCardInDrawPile(new HikariTachibana_Nozomi());
-        }
-        else {
-            GameActions.Bottom.MakeCardInDiscardPile(new HikariTachibana_Nozomi());
-        }
+        GameActions.Bottom.MakeCardInDrawPile(new HikariTachibana_Nozomi());
     }
 
     @Override

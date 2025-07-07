@@ -4,14 +4,11 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.LockOnPower;
 import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
-import eatyourbeets.interfaces.subscribers.OnModifyDamageFirstSubscriber;
 import eatyourbeets.powers.AnimatorPower;
-import eatyourbeets.powers.CombatStats;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.TargetHelper;
@@ -24,7 +21,7 @@ public class AzusaShirasu extends AnimatorCard {
     public AzusaShirasu() {
         super(DATA);
 
-        Initialize(0, 4, 2);
+        Initialize(0, 2, 2);
         SetUpgrade(0, 2, 2);
 
         SetAffinity_Blue(2, 0, 1);
@@ -39,31 +36,17 @@ public class AzusaShirasu extends AnimatorCard {
         for (AbstractMonster enemy : GameUtilities.GetEnemies(true)) {
             if (GameUtilities.IsAttacking(enemy.intent)) {
                 GameActions.Bottom.ApplyLockOn(TargetHelper.Normal(enemy), magicNumber);
+                GameActions.Bottom.StackPower(new AzusaShirasuPower(enemy, 100));
             }
         }
 
-        GameActions.Bottom.StackPower(new AzusaShirasuPower(p, 100));
     }
 
-    public static class AzusaShirasuPower extends AnimatorPower implements OnModifyDamageFirstSubscriber {
-        public AzusaShirasuPower(AbstractPlayer owner, int amount) {
+    public static class AzusaShirasuPower extends AnimatorPower {
+        public AzusaShirasuPower(AbstractCreature owner, int amount) {
             super(owner, AzusaShirasu.DATA);
 
-            Initialize(amount);
-        }
-
-        @Override
-        public void onInitialApplication() {
-            super.onInitialApplication();
-
-            CombatStats.onModifyDamageFirst.Subscribe(this);
-        }
-
-        @Override
-        public void onRemove() {
-            super.onRemove();
-
-            CombatStats.onModifyDamageFirst.Unsubscribe(this);
+            Initialize(amount, PowerType.DEBUFF, false);
         }
 
         @Override
@@ -78,16 +61,16 @@ public class AzusaShirasu extends AnimatorCard {
             RemovePower();
         }
 
+
         @Override
-        public int OnModifyDamageFirst(AbstractCreature target, DamageInfo info, int damage)
+        public float atDamageReceive(float damage, DamageInfo.DamageType type)
         {
-            if (target != player && (info.type == DamageInfo.DamageType.NORMAL && info.owner != null && info.owner.isPlayer) && target.hasPower(LockOnPower.POWER_ID))
+            if (type == DamageInfo.DamageType.NORMAL)
             {
-                flash();
-                return damage + (damage * (amount / 100));
+                damage += (damage * (amount / 100));
             }
 
-            return damage;
+            return super.atDamageReceive(damage, type);
         }
     }
 

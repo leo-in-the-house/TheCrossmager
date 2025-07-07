@@ -1815,9 +1815,9 @@
 			"NAME": "Ayane Okusora"
 		},
 		"animator:AzusaShirasu": {
-			"FLAVOR_TEXT": "'But, Sensei. The world relies on structure. It would be nothing without planning. The same goes for operations and missions.  You can't just do whatever you want without being prepared. You'll never accomplish anything, even in your daily life...'",
-			"DESCRIPTION": "Apply !M! [~Lock-On] to all attacking enemies. || This turn, deal double Attack damage to enemies with [~Lock-On].",
-			"EXTENDED_DESCRIPTION": ["Deal +#b{0} percent attack damage to enemies with #yLock-On."],
+			"FLAVOR_TEXT": "'I'm a killer.  That was what I was trained to be.  I was taught to kill as though it were as natural as breathing.  This is the real me.  I don't belong in the world you're from, Hifumi.'",
+			"DESCRIPTION": "Apply !M! [~Lock-On] to all attacking enemies. || Enemies with [~Lock-On] take double attack damage until end of turn.",
+			"EXTENDED_DESCRIPTION": ["Takes +#b{0} percent attack damage this turn."],
 			"NAME": "Azusa Shirasu"
 		},
 		"animator:HifumiAjitani": {
@@ -1828,8 +1828,7 @@
 		},
 		"animator:HikariTachibana": {
 			"FLAVOR_TEXT": "'This one could be useful for the train's armor... let's use it!'",
-			"DESCRIPTION": "On Exhaust: Add {Nozomi Tachibana}{+} to your discard pile.",
-			"UPGRADE_DESCRIPTION": "On Exhaust: Add {Nozomi Tachibana}{+} to your draw pile.",
+			"DESCRIPTION": "On Exhaust: Add {Nozomi Tachibana}{+} to your draw pile.",
 			"NAME": "Hikari Tachibana"
 		},
 		"animator:HikariTachibana_Nozomi": {
@@ -1849,9 +1848,9 @@
 			"NAME": "Hoshino Takanashi"
 		},
 		"animator:MikaMisono": {
-			"FLAVOR_TEXT": "'Hey... I didn't mean to upset you...  ...I don't like it when you're mad at me, Sensei...  It was harmless fun. Just for a moment...  I just wanted to spend one more moment with you, Sensei...'",
-			"DESCRIPTION": "Copy every other card you play each turn against a random enemy with [~Lock-On].",
-			"EXTENDED_DESCRIPTION": ["Copy every other card you play each turn #b{0} times against a random enemy with #yLock-On."],
+			"FLAVOR_TEXT": "'Why did I do that?  Why did I order an attack on Seia?  Why did I want her out of the way?  ...Oh right, I wanted to be the host.  Of course, because I hate Gehenna so much , and Nagi is trying to force that treaty down our throats.  Why would she do that?  It's so stupid!  A peace treaty with Gehenna?  As if that'll ever happen.  I won't let it.'",
+			"DESCRIPTION": "At the end of each turn: play a copy of ALL {Attacks} in your hand against a random enemy with [~Lock-On].",
+			"EXTENDED_DESCRIPTION": ["At the end of each turn: play a copy of ALL #yAttacks in your hand turn #b{0} times against a random enemy with #yLock-On."],
 			"NAME": "Mika Misono"
 		},
 		"animator:NonomiIzayoi": {
@@ -2804,7 +2803,7 @@
 		"animator:Emonzaemon":
 		{
 			"FLAVOR_TEXT": "'I died once- not physically, but mentally died.  But one person denied me that death.'",
-			"DESCRIPTION": "When Sealed: Transform this card into {Entou Jyuu}.",
+			"DESCRIPTION": "When Sealed: Transform this card into {Entou Jyuu}{+}.",
 			"NAME": "Emonzaemon"
 		},
 		"animator:Emonzaemon_EntouJyuu":
