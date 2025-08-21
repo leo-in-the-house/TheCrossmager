@@ -27,12 +27,6 @@ public class Hibiki extends AnimatorCard
     }
 
     @Override
-    protected void OnUpgrade()
-    {
-        upgradedDamage = true;
-    }
-
-    @Override
     public AbstractAttribute GetDamageInfo()
     {
         return super.GetDamageInfo().AddMultiplier(magicNumber);

@@ -21,8 +21,10 @@ public class AzusaShirasu extends AnimatorCard {
     public AzusaShirasu() {
         super(DATA);
 
-        Initialize(0, 2, 2);
+        Initialize(0, 4, 2);
         SetUpgrade(0, 2, 2);
+
+        SetExhaust(true);
 
         SetAffinity_Blue(2, 0, 1);
     }

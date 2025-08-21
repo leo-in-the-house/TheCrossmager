@@ -125,7 +125,7 @@
 	},
 	"animator:HeavyHalberd":
 	{
-		"DESCRIPTIONS": ["When you gain [Agility], draw #b{1} cards. NL When you gain [Force], apply #b{0} [Vulnerable] to ALL enemies."],
+		"DESCRIPTIONS": ["When you gain [G], draw #b{1} cards. NL When you gain [R], apply #b{0} [Vulnerable] to ALL enemies."],
 		"FLAVOR": "Ruling over death means ruling over life. Death is the climax of life. To have the best death, you must honor life.",
 		"NAME": "Heavy Halberd"
 	},

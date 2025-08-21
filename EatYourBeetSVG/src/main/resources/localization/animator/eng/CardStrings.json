@@ -1795,7 +1795,6 @@
 		"animator:Arona": {
 			"FLAVOR_TEXT": "'Ah, right!  My name is Arona!  I'm the system manager in the Shittim Chest and I serve as its main operating system!  Think of me as your trusty secretary!'",
 			"DESCRIPTION": "Gain !M! [T].  Apply !S! [~Lock-On].",
-			"UPGRADE_DESCRIPTION": "Gain !M! [T], then give all other {Blue Archive} cards in your hand [T] scaling.",
 			"NAME": "Arona"
 		},
 		"animator:AruRikuhachima": {
@@ -1816,7 +1815,7 @@
 		},
 		"animator:AzusaShirasu": {
 			"FLAVOR_TEXT": "'I'm a killer.  That was what I was trained to be.  I was taught to kill as though it were as natural as breathing.  This is the real me.  I don't belong in the world you're from, Hifumi.'",
-			"DESCRIPTION": "Apply !M! [~Lock-On] to all attacking enemies. || Enemies with [~Lock-On] take double attack damage until end of turn.",
+			"DESCRIPTION": "Apply !M! [~Lock-On] to all attacking enemies. || Those enemies take double {Attack} damage until end of turn.",
 			"EXTENDED_DESCRIPTION": ["Takes +#b{0} percent attack damage this turn."],
 			"NAME": "Azusa Shirasu"
 		},

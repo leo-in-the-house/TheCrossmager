@@ -52,7 +52,7 @@ public class Kricketune extends PokemonCard {
 
         GameActions.Bottom.VFX(VFX.ShockWave(p.hb, Color.GREEN, ShockWaveEffect.ShockWaveType.NORMAL));
         GameActions.Bottom.Wait(0.5f);
-        GameActions.Bottom.DealDamageToAll(this, AttackEffects.NONE);
+        GameActions.Bottom.DealDamageToAll(this, AttackEffects.BLUNT_HEAVY);
     }
 
     public void RefreshCost()

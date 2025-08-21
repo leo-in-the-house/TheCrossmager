@@ -34,6 +34,6 @@ public class Kricketot extends PokemonCard {
 
         GameActions.Bottom.VFX(VFX.ShockWave(p.hb, Color.GREEN, ShockWaveEffect.ShockWaveType.NORMAL));
         GameActions.Bottom.Wait(0.5f);
-        GameActions.Bottom.DealDamageToRandomEnemy(this, AttackEffects.NONE);
+        GameActions.Bottom.DealDamageToRandomEnemy(this, AttackEffects.BLUNT_LIGHT);
     }
 }
