@@ -26,7 +26,8 @@ public class AzusaShirasu extends AnimatorCard {
 
         SetExhaust(true);
 
-        SetAffinity_Blue(2, 0, 1);
+        SetAffinity_Blue(1, 0, 1);
+        SetAffinity_Green(1, 0, 0);
     }
 
     @Override
