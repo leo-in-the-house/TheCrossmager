@@ -30,7 +30,7 @@ public class HinaSorasaki extends AnimatorCard {
         Initialize(0, 0, 7);
         SetUpgrade(0, 0, 7);
 
-        SetAffinity_Pink(2);
+        SetAffinity_Pink(1);
         SetAffinity_White(1);
         SetAffinity_Black(1);
 

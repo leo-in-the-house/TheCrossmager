@@ -12,6 +12,12 @@
 		"NAMES": ["aether", "aether+"],
 		"PROPER_NAME": "Aether"
 	},
+	"Arius Squad":
+	{
+		"DESCRIPTION": "Saori Joumae, Atsuko Hakari, Misaki Imashino, Hiyori Tsuchinaga, Azusa Shirasu",
+		"NAMES": ["arius squad"],
+		"PROPER_NAME": "Arius Squad"
+	},
 	"Autoplay":
 	{
 		"DESCRIPTION": "Automatically played, using your [E].",

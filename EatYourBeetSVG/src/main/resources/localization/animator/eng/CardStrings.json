@@ -1233,6 +1233,30 @@
 			"DESCRIPTION": "Motivate a random card in your hand for every 10 unblocked damage this card dealt.",
 			"NAME": "Sakuya Tachibana"
 		},
+		"animator:SaoriJoumae":
+		{
+			"FLAVOR_TEXT": "'The scriptures say the first murder was carried out with but a single stone.  Now do you get it?  It doesn’t matter what tool you use, so long as you have the intent to kill.  That is what matters.'",
+			"DESCRIPTION": "Add a copy of all other {Arius Squad}{+} cards to the top of your draw pile.",
+			"NAME": "Saori Joumae"
+		},
+		"animator:SaoriJoumae_Atsuko":
+		{
+			"FLAVOR_TEXT": "'Azusa taught me something.  The hatred we’ve carried for so long… is not our own.  It was never ours from the beginning.  It was instilled into us, and we falsely accepted it as ours.  Azusa realized that before us.'",
+			"DESCRIPTION": "Heal !M! [HP].",
+			"NAME": "Atsuko Hakari"
+		},
+		"animator:SaoriJoumae_Hiyori":
+		{
+			"FLAVOR_TEXT": "'I-Is it time for my suffering and punishment?  My miserable time on this planet is coming to an end!  I see… You saved me so you could capture and torture me yourself!  That’s why you arrived when you did!  You’re gonna throw us into that underground prison!  I was told that place is full of the screams of students who rebelled against Schale...'",
+			"DESCRIPTION": "Apply !M! [~Lock-On] to the enemy.",
+			"NAME": "Hiyori Tsuchinaga"
+		},
+		"animator:SaoriJoumae_Misaki":
+		{
+			"FLAVOR_TEXT": "'This rescue mission is a lost cause.  Infiltrate the Arius district, fight all their troops, and reach the basilica where Hime is being held?  Not only is that impossible, she is in possession of tech I’m sure we couldn’t even dream of.  Even with Sensei’s help, the three of us stand no chance.'",
+			"DESCRIPTION": "Lose !M! [HP].",
+			"NAME": "Misaki Imashino"
+		},
 		"animator:Shimakaze":
 		{
 			"FLAVOR_TEXT": "'I am Shimakaze, the Shimakaze-class ship that was developed as the pinnacle of destroyers, fast and armed with heavy torpedos.  After all, I can go faster than 40 knots.  However, I wasn't suited for mass production so I was the only one built.'",
