@@ -1,13 +1,10 @@
 package eatyourbeets.rewards;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import eatyourbeets.utilities.GameUtilities;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.random.Random;
 import eatyourbeets.cards.base.AnimatorCard_UltraRare;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.CardSeries;
-import eatyourbeets.relics.deprecated.Destiny;
 import eatyourbeets.resources.GR;
 import eatyourbeets.resources.animator.loadouts._FakeLoadout;
 import eatyourbeets.resources.animator.misc.AnimatorLoadout;
@@ -23,7 +20,7 @@ import java.util.Map;
 
 public class AnimatorUltrarareGenerator
 {
-    public static final float BASE_CHANCE = 1.5f;
+    public static final float BASE_CHANCE = 0.05f;
     public static final AnimatorLoadout COLORLESS_LOADOUT = new _FakeLoadout();
 
     protected final Random rng;
@@ -44,19 +41,7 @@ public class AnimatorUltrarareGenerator
             return rate;
         }
 
-        float bonus = 1;
-        int level = GR.Animator.Data.SpecialTrophies.Trophy1;
-        if (level > 0)
-        {
-            bonus += level / (level + 100f);
-        }
-
-        if (GameUtilities.HasRelic(Destiny.ID))
-        {
-            bonus *= 1.5f;
-        }
-
-        return bonus * BASE_CHANCE;
+        return BASE_CHANCE;
     }
 
     public static boolean TryAdd(ArrayList<AbstractCard> cards, CardSeries specificSeries)
