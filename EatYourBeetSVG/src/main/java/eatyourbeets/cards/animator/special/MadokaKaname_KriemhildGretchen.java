@@ -48,6 +48,9 @@ public class MadokaKaname_KriemhildGretchen extends AnimatorCard
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
         GameUtilities.PlayVoiceSFX(name);
+
+        GameActions.Bottom.GainBlock(block);
+
         GameActions.Bottom.StackPower(new MadokaKaname_KriemhildGretchenPower(p, 1, upgraded));
     }
 

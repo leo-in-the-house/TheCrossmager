@@ -723,6 +723,20 @@ public class AnimatorStrings
             return JUtils.Format(T_YumeKuchinashi_Death_F2, hoshino, cursedGlyph, maxHPGain, ironHorus);
         }
 
+        public final String T_RemoveCurse_AgateCrosner_F1 = Strings.TEXT[INDEX++];
+
+        public final String T_RemoveCurse_AgateCrosner_F2 = Strings.TEXT[INDEX++];
+
+        public final String RemoveCurseAgateCrosner()
+        {
+            return JUtils.Format(T_RemoveCurse_AgateCrosner_F1);
+        }
+
+        public final String RemoveCurseAgateCrosner(String cardName)
+        {
+            return JUtils.Format(T_RemoveCurse_AgateCrosner_F2, cardName);
+        }
+
         public final String T_ObtainCurse_Heal_F1 = Strings.TEXT[INDEX++];
         public final String D_ObtainCurse_RequireAmount_F2 = Strings.TEXT[INDEX++];
 

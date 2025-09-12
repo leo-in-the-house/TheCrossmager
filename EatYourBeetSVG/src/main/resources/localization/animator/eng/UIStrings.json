@@ -383,6 +383,9 @@
 			"'Abydos Oasis Festival'",
 			"If you have {0}, you may permanently remove this card from your master deck.  If you do, remove {1}, gain #b{2} Max [HP], and obtain {3}. NL You can only perform this action at #yRest #ySites.",
 
+			"Crimson Heavy Blade",
+			"Remove a random #yCurse from your deck to obtain {0}. NL You can only perform this action at #yRest #ySites if you do not have {0}.",
+
 			"Obtain Curse. Heal #b{0} [HP].",
 			"If you have at least #b{0} Curses, Obtain {1}. NL You can only perform this action at #yRest #ySites."
 		]

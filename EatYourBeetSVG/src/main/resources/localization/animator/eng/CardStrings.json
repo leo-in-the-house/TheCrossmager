@@ -1838,7 +1838,7 @@
 		"animator:AliceTendou": {
 			"FLAVOR_TEXT": "'Games are fun because they reflect the beauty of the world- you taught me that.  Games, cats, friends...and even this moment- the world is full of beautiful things.'",
 			"DESCRIPTION": "As this deals damage, it gains !M! damage every time this hits an enemy with [~Lock-On].",
-			"NAME": "Alice Tendou"
+			"NAME": "Aris Tendou"
 		},
 		"animator:Arona": {
 			"FLAVOR_TEXT": "'Ah, right!  My name is Arona!  I'm the system manager in the Shittim Chest and I serve as its main operating system!  Think of me as your trusty secretary!'",
@@ -3077,7 +3077,7 @@
 		"animator:AltinaOrion":
 		{
 			"FLAVOR_TEXT": "'Targets apprehended successfully.  Targets identified as Objective 1 and Objective 2.  Mission complete. Lady Clotilde, please give the order to retreat.  There is no need to remain here any longer.'",
-			"DESCRIPTION": "Can only be played if you have two Orbs of the same type.",
+			"DESCRIPTION": "Can only be played if you have two adjacent Orbs of the same type.",
 			"NAME": "Altina Orion"
 		},
 		"animator:Campanella":
@@ -3125,7 +3125,7 @@
 		"animator:NadiaRayne":
 		{
 			"FLAVOR_TEXT": "'S... We'll do it together, okay?'",
-			"DESCRIPTION": "If an enemy has a {Common Debuff}, channel !M! [Lightning].",
+			"DESCRIPTION": "If an enemy has a {Common Debuff}, channel !S! [Lightning].",
 			"NAME": "Nadia Rayne"
 		},
 		"animator:ReanSchwarzer":
@@ -3155,7 +3155,7 @@
 		"animator:TitaRussell":
 		{
 			"FLAVOR_TEXT": "'Um... Agate... I... I change my mind!  I won’t give up!  I don’t have time to stand around crying!  Not when I have things I need to do!  I’ll think about what I can do, and I’m going to do it!  Because just like you’re a bracer, I’m now a researcher!'",
-			"DESCRIPTION": "If you do not have [Lightning], channel [Lightning].  Otherwise, evoke your rightmost [Lightning] and channel it again.",
+			"DESCRIPTION": "If you have [Lightning], evoke your rightmost [Lightning] and channel it again.  Otherwise, channel [Lightning].",
 			"NAME": "Tita Russell"
 		},
 		"animator:TitaRussell_Agate":

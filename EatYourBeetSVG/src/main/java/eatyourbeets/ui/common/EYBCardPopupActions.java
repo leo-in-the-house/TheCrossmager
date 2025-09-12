@@ -777,6 +777,36 @@ public class EYBCardPopupActions
         }
     }
 
+    public static class LegendOfHeroesTrails_Agate extends EYBCardPopupAction
+    {
+        protected final EYBCardData TARGET1;
+
+        public LegendOfHeroesTrails_Agate(EYBCardData targetCard)
+        {
+            TARGET1 = targetCard;
+
+            SetText(specialActions.RemoveCurseAgateCrosner(), terms.Obtain, specialActions.RemoveCurseAgateCrosner(TARGET1.Strings.NAME));
+        }
+
+        @Override
+        public boolean CanExecute(AbstractCard card)
+        {
+            return IsRestRoom() && HasCard(card) && !HasCard(TARGET1) && HasCardOfType(AbstractCard.CardType.CURSE);
+        }
+
+        @Override
+        public void Execute()
+        {
+            if (RemoveRandom(AbstractCard.CardType.CURSE)) {
+                final EYBCard card = TARGET1.MakeCopy(false);
+
+                Obtain(card);
+                SFX.Play(SFX.STANCE_ENTER_CALM, 0.4f);
+            }
+            Complete();
+        }
+    }
+
     public static class ImproveBasicCard extends EYBCardPopupAction
     {
         private static final String LAST_IMPROVEMENT_PRICE = ImproveBasicCard.class.getSimpleName() + ".LastImprovementPrice";
