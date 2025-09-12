@@ -757,6 +757,24 @@
 			"FLAVOR_TEXT": "'These Pokémon make their nests on coastal cliffs. The nests have a strange, crackling texture, and they're a popular delicacy.' -Paldea Pokédex.",
 			"DESCRIPTION": "Channel !M! [Lightning] and Apply !M! [~Lock-On] to the target.",
 			"NAME": "Kilowattrel"
+		},
+		"animator:Rolycoly":
+		{
+			"FLAVOR_TEXT": "'Most of its body has the same composition as coal. Fittingly, this Pokémon was first discovered in coal mines about 400 years ago.' -Galar Pokédex.",
+			"DESCRIPTION": "Deals !M! additional damage for each [Lightning].",
+			"NAME": "Rolycoly"
+		},
+		"animator:Carkol":
+		{
+			"FLAVOR_TEXT": "'By rapidly rolling its legs, it can travel at over 18 mph. The temperature of the flames it breathes exceeds 1,800 degrees Fahrenheit.' -Galar Pokédex.",
+			"DESCRIPTION": "Deals !M! additional damage for each [Lightning].",
+			"NAME": "Carkol"
+		},
+		"animator:Coalossal":
+		{
+			"FLAVOR_TEXT": "'It's usually peaceful, but the vandalism of mines enrages it. Offenders will be incinerated with flames that reach 2,700 degrees Fahrenheit.' -Galar Pokédex.",
+			"DESCRIPTION": "Deals !M! additional damage for each [Lightning].",
+			"NAME": "Coalossal"
 		}
 	},
 	"COLORLESS:RARE":
@@ -896,6 +914,12 @@
 			"FLAVOR_TEXT": "'I... I was looking to see if there was anyone else too... I wanted to get out... So I...'",
 			"DESCRIPTION": "Gain [THP] and [Y] for each <Y> card or {Curse} in your master deck.",
 			"NAME": "Mary"
+		},
+		"animator:JunaCrawford":
+		{
+			"FLAVOR_TEXT": "'Why... Why are you all trying to take away our pride?!  You’ve occupied us, dragged us with your war with Calvard, brought those horrible cannons into our country, and now our light... our one blessed hope... GIVE IT BACK!  GIVE US OUR CROSSBELL BACK!  The free city where anyone could dream!  GIVE!  IT!  BAAAAAAAAACK!!!'",
+			"DESCRIPTION": "When this card is Retained, obtain a random {SSS Member}{+} that this card hasn’t created yet.  If you do, increase this card’s scaling by 1.",
+			"NAME": "Juna Crawford"
 		},
 		"animator:Kira":
 		{
@@ -2399,7 +2423,7 @@
 		"animator:CatoElAltestan":
 		{
 			"FLAVOR_TEXT": "'Why is there a dragon here anyways?  Most peculiar, fifty years sooner than I expected...'",
-			"DESCRIPTION": "Fetch an {Attack} from your draw pile and {Retain} it.  It gains [B], its damage type becomes {Elemental}, and it gains +!M! [Intellect] scaling.",
+			"DESCRIPTION": "Fetch an {Attack} from your draw pile and {Retain} it.  It gains [B], its damage type becomes {Elemental}, and it gains +!M! [B] scaling.",
 			"NAME": "Cato El Altestan"
 		},
 		"animator:ItamiYouji":
@@ -3041,6 +3065,126 @@
 		}
 	},
 
+
+	"SERIES:LEGENDOFHEROESTRAILS":
+	{
+		"animator:AgnesClaudel":
+		{
+			"FLAVOR_TEXT": "'Thank you...  I’m sorry, Feri, Quatre, Nadia, Swin, and Lapis.  I’m so sorry, Van, Renne, Aaron, Risette, and Judith.  And to Elaine, Bergard, and Shizuna, who I wasn’t able to speak to.   Even when I still worry about you...  Van, I’m unfit to be an assistant at Arkride Solutions, so... please fire me.'",
+			"DESCRIPTION": "Take an extra turn after this one.  {Die} at the end of that turn.",
+			"NAME": "Agnès Claudel"
+		},
+		"animator:AltinaOrion":
+		{
+			"FLAVOR_TEXT": "'Targets apprehended successfully.  Targets identified as Objective 1 and Objective 2.  Mission complete. Lady Clotilde, please give the order to retreat.  There is no need to remain here any longer.'",
+			"DESCRIPTION": "Can only be played if you have two Orbs of the same type.",
+			"NAME": "Altina Orion"
+		},
+		"animator:Campanella":
+		{
+			"FLAVOR_TEXT": "'Perish the thought!  Where would the fun be in coming up here without a challenge?  And a Fool has to have their fun, you know.  It’s all part of the job!'",
+			"DESCRIPTION": "All {Powers} are played twice.",
+			"NAME": "Campanella"
+		},
+		"animator:EstelleBright":
+		{
+			"FLAVOR_TEXT": "'Now that I know all about your past, too, I’m the biggest authority in Joshua Astray in the world!  I know more than Weissman and Loewe, even!  Joshua scared and Joshua brave...  Joshua lying and Joshua honest...  My... beloved Joshua.  I finally found you.'",
+			"DESCRIPTION": "Channel !M! [Lightning].  Then, add a {Joshua Bright}{+} to your draw pile for each time you channeled [Lightning] this combat.",
+			"NAME": "Estelle Bright"
+		},
+		"animator:EstelleBright_Joshua":
+		{
+			"FLAVOR_TEXT": "'Why... how...?  I haven’t been able to cry since... since Karin died...  I could never even shed tears as an act... but now...'",
+			"DESCRIPTION": "Apply !M! [Shackles][~Lock-On]. || If you have no other {Joshua Bright} in your hand, draw, nor discard pile, fetch an {Estelle Bright} from your exhaust pile and {Motivate} it.",
+			"NAME": "Joshua Bright"
+		},
+		"animator:KevinGraham":
+		{
+			"FLAVOR_TEXT": "'If I’d been able to control my Stigma’s power instead of letting it consume me with bloodlust, it wouldn’t have happened!  If I wasn’t so weak, she’d still be alive today!'",
+			"DESCRIPTION": "If this kills an enemy or breaks through the enemy’s block: Gain !M! [Orb_S] and fill your [Orb_S] with [Lightning].",
+			"NAME": "Kevin Graham"
+		},
+		"animator:LapisRosenberg":
+		{
+			"FLAVOR_TEXT": "'I never knew there were so many copies of me...  What does that make me, then?  If they’re also Lapis, then... does that mean that even being Lapis doesn’t belong to me?  I... I’m...'",
+			"DESCRIPTION": "<SLM>.  If you have two Orbs of the same type, put two copies of this into your draw pile, then upgrade all {Lapis Rosenberg} everywhere.  Then, if there are at least six copies of this everywhere, obtain {Rufus Albarea}.",
+			"NAME": "Lapis Rosenberg"
+		},
+		"animator:LapisRosenberg_Rufus":
+		{
+			"FLAVOR_TEXT": "'When I learned the truth, I finally understood that House Albarea wanted me not as a human being, but as a product of noble blood.  ...Was that all?  Was that the only reason I existed?  I refused to accept it, I couldn’t take it.  As I turned my eyes from this terrible truth, a new, more terrible thought dawned upon me: If that was not the reason I existed, then what was?'",
+			"DESCRIPTION": "Evoke your rightmost {Orb} once for each {Lapis Rosenberg} everywhere.",
+			"NAME": "Rufus Albarea"
+		},
+		"animator:LloydBannings":
+		{
+			"FLAVOR_TEXT": "'I'm just an ordinary detective. Maybe a little more stubborn than the average one. My strength comes from my friends...and with them here, I'm unstoppable!'",
+			"DESCRIPTION": "When this deals unblocked damage, obtain a random {SSS Member}{+} that this card hasn’t created yet.  If you do, increase this card’s damage and [Block] by !M!.",
+			"NAME": "Lloyd Bannings"
+		},
+		"animator:NadiaRayne":
+		{
+			"FLAVOR_TEXT": "'S... We'll do it together, okay?'",
+			"DESCRIPTION": "If an enemy has a {Common Debuff}, channel !M! [Lightning].",
+			"NAME": "Nadia Rayne"
+		},
+		"animator:ReanSchwarzer":
+		{
+			"FLAVOR_TEXT": "'As a catalyst of the Great Twilight, I didn’t believe I had a right to be happy.  But approaching it as a right or wrong perspective misses the point: I have an obligation to be happy.  Because our happiness is not made alone- nor is our unhappiness made alone.  If I want the people I love to be happy, then I need to be happy too.'",
+			"DESCRIPTION": "{Unique.} || If Fatal: permanently upgrade this card.  Upgrade it an additional time if it killed a {Boss} or {Elite}.  Upgrade it an additional time if you have at least three [Lightning].",
+			"NAME": "Rean Schwarzer"
+		},
+		"animator:Renne":
+		{
+			"FLAVOR_TEXT": "'No... it’s not me!  It’s not me!  Cross... where are you?  Don’t hide!  Come back!  ...Cross... help me, Cross...  ...thank you so much i’m so happy it was very fun please come again soon it would be my pleasure.  ...Where are you... Papa... Mama...'",
+			"DESCRIPTION": "Instantly kill a random minion or non-Boss, non-Elite enemy for every !M! [Lightning].",
+			"NAME": "Renne"
+		},
+		"animator:ShizunaRemMitsurugi":
+		{
+			"FLAVOR_TEXT": "'Oh, you know him?  He’s started aiming to perfect his own potential, I believe.  This is just my best attempt at replicating his technique.  Still, I do find it pretty comfortable to use…  Now, will it be enough to get you to start going for broke?'",
+			"DESCRIPTION": "Gain !M! {Temp.} [Strength] for each [Lightning].",
+			"NAME": "Shizuna Rem Mitsurugi"
+		},
+		"animator:SwinAbel":
+		{
+			"FLAVOR_TEXT": "'Enough! We're not your tools any longer!'",
+			"DESCRIPTION": "Apply !M! [~Lock-On].",
+			"NAME": "Swin Abel"
+		},
+		"animator:TitaRussell":
+		{
+			"FLAVOR_TEXT": "'Um... Agate... I... I change my mind!  I won’t give up!  I don’t have time to stand around crying!  Not when I have things I need to do!  I’ll think about what I can do, and I’m going to do it!  Because just like you’re a bracer, I’m now a researcher!'",
+			"DESCRIPTION": "If you do not have [Lightning], channel [Lightning].  Otherwise, evoke your rightmost [Lightning] and channel it again.",
+			"NAME": "Tita Russell"
+		},
+		"animator:TitaRussell_Agate":
+		{
+			"FLAVOR_TEXT": "'We were in a pretty rough spot... but she chewed me out and sent me ahead.  Asked me what the hell I’m good for if I’m not by your side at a time like this...'",
+			"DESCRIPTION": "Gain !M! [Vigor] for each [Lightning].",
+			"NAME": "Agate Crosner"
+		},
+		"animator:TowaHerschel":
+		{
+			"FLAVOR_TEXT": "'Sigh... I’ve been a nervous wreck all day.  But I can’t let this opportunity go to waste.  Especially after all that Prince Olivert has done for the academy.  Most importantly, I’m here as a representative of Thors!  I’ve got to pull myself together and chip in!'",
+			"DESCRIPTION": "The next time you channel [Lightning] this turn: double your energy.",
+			"UPGRADE_DESCRIPTION": "The next time you channel [Lightning] this turn: triple your energy.",
+			"NAME": "Towa Herschel"
+		},
+		"animator:VanArkride":
+		{
+			"FLAVOR_TEXT": "'You know full well I’m not like the cops or bracers.  I do things my own way.  And that way isn’t black, but it isn’t white either.  Mine’s like... the color of a dark blue sky just before dawn.'",
+			"DESCRIPTION": "On Start of Turn: Gain !M! [Inspiration], plus an additional !M! [Inspiration] for each [Lightning]. || Pay 6 [Inspiration] to remove this power and obtain {Grendel}, and an additional 3 [Inspiration] to upgrade it.",
+			"NAME": "Van Arkride"
+		},
+		"animator:VanArkride_Grendel":
+		{
+			"FLAVOR_TEXT": "'These fragile chains guide me to this realm, where I am now made manifest!  I am both the nightmare, and the beast that devours it!'",
+			"DESCRIPTION": "The last hit deals quadruple damage.",
+			"NAME": "Grendel"
+		}
+	},
+
 	"SERIES:LOGHORIZON":
 	{
 		"animator:Akatsuki":
@@ -3166,8 +3310,8 @@
 		"animator:AlinaGray":
 		{
 			"FLAVOR_TEXT": "'That's all you can say?  No grazzi?  Oh well... I'm leaving this hobble and going back to my atelier!  I committed to Touka and Nemu's grandiose plans because I thought they had SOUL!  Ultimate, my goal as an artiste wasn't having tea parties in castles with girls who have the intelligence of sheep!'",
-			"DESCRIPTION": "The next !M! times you Exhaust or Purge a {Curse}: Gain [Noxious Fumes].",
-			"EXTENDED_DESCRIPTION": ["The next #b{0} times you #yExhaust or #yPurge a #yCurse, gain [Noxious Fumes]."],
+			"DESCRIPTION": "The next !M! times you Exhaust or Purge a {Curse}: Gain 2 [Noxious Fumes].",
+			"EXTENDED_DESCRIPTION": ["The next #b{0} times you #yExhaust or #yPurge a #yCurse, gain 2 [Noxious Fumes]."],
 			"NAME": "Alina Gray"
 		},
 		"animator:FeliciaMitsuki":
@@ -4511,6 +4655,49 @@
 			"EXTENDED_DESCRIPTION": ["Pay #b{0} [MHP]: Gain #b1 [E]. || Whenever you play an #yAttack, #yRecover #b{1} [HP] (Does not stack)."],
 			"NAME": "Vampire Blood"
 		},
+		"animator:SSS_Elie":
+		{
+			"FLAVOR_TEXT": "'That night on the roof when I thought of leaving the SSS--even when I decided to become Grandfather’s secretary during the occupation...  Sometimes I wonder if the only reason I’ve been able to keep going these last few years is because I knew you were with me.'",
+			"DESCRIPTION": "Consume all your [Lightning].  Gain [E] for each [Lightning] consumed this way.",
+			"UPGRADE_DESCRIPTION": "Consume all your [Lightning].  Gain [E] and !M! [THP] for each [Lightning] consumed this way.",
+			"NAME": "Elie MacDowell"
+		},
+		"animator:SSS_KeA":
+		{
+			"FLAVOR_TEXT": "'Of course!  I... I don’t think I could’ve been any happier!  But... what if that’s only because I tricked you all, Lloyd?  What if it was my powers that made you feel that way?  What if I’m just manipulating the people I care about most into loving me?!'",
+			"DESCRIPTION": "Whenever you {Retain} a card, add a copy of it to your draw pile.",
+			"NAME": "KeA"
+		},
+		"animator:SSS_Noel":
+		{
+			"FLAVOR_TEXT": "'I don’t believe that acceptance is what defines us as Crossbellans.  What does is our resilience.  The way we stand back up and dust ourselves off no matter how often life kicks us down.'",
+			"DESCRIPTION": "Gain !M! {Rebound}.",
+			"NAME": "Noel Seeker"
+		},
+		"animator:SSS_Randy":
+		{
+			"FLAVOR_TEXT": "'Someone like me had no business getting close to you guys in the first place.  My hands are drenched in blood…  The lives I’ve taken, they weren’t all soldiers.  I didn’t think twice about using an innocent village to bait our enemies.  The guy whose life I took away… even though he did nothing to deserve it!  This is the man you see standing in front of you, an irredeemable piece of shit!'",
+			"DESCRIPTION": "If you have [Lightning]: Enter <WS>.",
+			"NAME": "Randy Orlando"
+		},
+		"animator:SSS_Rixia":
+		{
+			"FLAVOR_TEXT": "'We inspired them with this power, and they in turn have wielded it to inspire us.  This power you gave me--that I nurtured with our closest friends--matters more to me than you could ever know.  So now it’s my turn to wield it to surpass you, if only to bring you back to me!'",
+			"DESCRIPTION": "Can only damage enemies that are not attacking.",
+			"NAME": "Rixia Mao"
+		},
+		"animator:SSS_Tio":
+		{
+			"FLAVOR_TEXT": "'None of the children could withstand the procedures, except for me.  One by one, they began to disappear.  And it was at the moment when I became the last child remaining that I gained this power.  My hearing became keen enough that even though a massive rock wall separated us, I could hear the others’ final cries as if I was right there in the room with them...'",
+			"DESCRIPTION": "Set the enemy [Block] to 1, then apply !M! [-Lock-On] to them.",
+			"NAME": "Tio Plato"
+		},
+		"animator:SSS_Wazy":
+		{
+			"FLAVOR_TEXT": "'I’m no Randy when it comes to playing things close to my chest, but I knew that was a cheap shot.  Still... I didn’t hold anything back this time.  That’s... my final act of good faith to you.'",
+			"DESCRIPTION": "Enter or exit <CS>.",
+			"NAME": "Wazy Hemisphere"
+		},
 		"animator:Protect_1":
 		{
 			"DESCRIPTION": "",
@@ -4618,6 +4805,36 @@
 			"FLAVOR_TEXT": "'You're supposed to be the wife of a god!  Yet you so casually interact with these filthy... humans!  How dare you sully our family line!'",
 			"DESCRIPTION": "Discard all cards in your hand that are not {Attack}.  Double [Burning] on ALL enemies, then gain !M! [E]. || At the start of each combat: Channel !S! [Fire].",
 			"NAME": "Giselle"
+		},
+		"animator:Grandmaster":
+		{
+			"FLAVOR_TEXT": "'No, I am but a shadow.  I exist only to announce the appointed time to the world.'",
+			"DESCRIPTION": "At the start of your turn: remove this power and obtain {Gospel Plan}{+}.",
+			"NAME": "The Grandmaster"
+		},
+		"animator:Grandmaster_Phase1":
+		{
+			"FLAVOR_TEXT": "'There will inevitably be a reaction to what has happened in time... but I imagine the church will act regarding that.  Let us leave the matter to them.'",
+			"DESCRIPTION": "At the start of your turn, draw a card from your exhaust pile.  Then, consume 3 [Lightning] to remove this power and obtain {Phantasmal Blaze Plan}{+}.",
+			"NAME": "Gospel Plan"
+		},
+		"animator:Grandmaster_Phase2":
+		{
+			"FLAVOR_TEXT": "'I hereby proclaim the completion of the first phase of the Orpheus Final Plan, the Gospel Plan... and the initiation of its second phase: the Phantasmal Blaze Plan.'",
+			"DESCRIPTION": "At the start of your turn, gain [Strength] [Dexterity] [Focus].  Then, consume 3 [Lightning] and remove 3 {Common Debuffs} from a random enemy to remove this power and obtain {Eternal Recurrence Plan}{+}.",
+			"NAME": "Phantasmal Blaze Plan"
+		},
+		"animator:Grandmaster_Phase3":
+		{
+			"FLAVOR_TEXT": "'The world has escaped the Great Twilight, extending its lifespan ever so slightly.  Three years yet remain until all return to primordial nothingness.  The third stage of the Orpheus Final Plan: the Eternal Recurrence Plan-- begins now.'",
+			"DESCRIPTION": "At the start of every other turn, take an extra turn after this one.  Then,  if this is an Elite or Boss battle, consume 3 [Lightning] and exhaust a card with {Unique} from your discard pile to remove this power and obtain {Orpheus Final Plan}{+}.",
+			"NAME": "Eternal Recurrence Plan"
+		},
+		"animator:Grandmaster_Phase4":
+		{
+			"FLAVOR_TEXT": "'For now, simply bear witness to the fate that approaches.  Stand against it, and make your choice.'",
+			"DESCRIPTION": "Instantly kill all enemies.  Obtain a Boss Relic after this battle.",
+			"NAME": "Orpheus Final Plan"
 		},
 		"animator:Hero":
 		{

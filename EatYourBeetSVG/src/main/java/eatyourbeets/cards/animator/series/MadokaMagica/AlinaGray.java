@@ -93,7 +93,7 @@ public class AlinaGray extends AnimatorCard
             }
 
             if (amount > 0 && card.type == CardType.CURSE) {
-                GameActions.Bottom.StackPower(owner, new NoxiousFumesPower(owner, 1));
+                GameActions.Bottom.StackPower(owner, new NoxiousFumesPower(owner, 2));
                 flashWithoutSound();
                 reducePower(1);
 
@@ -116,7 +116,7 @@ public class AlinaGray extends AnimatorCard
             }
 
             if (amount > 0 && card.type == CardType.CURSE) {
-                GameActions.Bottom.StackPower(owner, new NoxiousFumesPower(owner, 1));
+                GameActions.Bottom.StackPower(owner, new NoxiousFumesPower(owner, 2));
                 flashWithoutSound();
                 reducePower(1);
 

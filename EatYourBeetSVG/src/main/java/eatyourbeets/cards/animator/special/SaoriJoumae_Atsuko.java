@@ -2,6 +2,7 @@ package eatyourbeets.cards.animator.special;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.RainbowCardEffect;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
@@ -28,6 +29,7 @@ public class SaoriJoumae_Atsuko extends AnimatorCard {
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info) {
         GameUtilities.PlayVoiceSFX(name);
 
+        GameActions.Bottom.VFX(new RainbowCardEffect());
         GameActions.Bottom.Heal(magicNumber);
     }
 }

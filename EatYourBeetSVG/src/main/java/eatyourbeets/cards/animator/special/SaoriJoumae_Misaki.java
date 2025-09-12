@@ -32,6 +32,10 @@ public class SaoriJoumae_Misaki extends AnimatorCard {
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info) {
         GameUtilities.PlayVoiceSFX(name);
 
+        GameActions.Bottom.LoseHP(null, player, magicNumber, AttackEffects.DAGGER)
+                .IgnoreTempHP(false)
+                .CanKill(true);
+
         GameActions.Bottom.Callback(() ->
         {
             for (AbstractCreature m1 : GameUtilities.GetEnemies(true))
@@ -46,9 +50,5 @@ public class SaoriJoumae_Misaki extends AnimatorCard {
         });
         GameActions.Bottom.WaitRealtime(0.35f);
         GameActions.Bottom.DealDamageToAll(this, AttackEffects.NONE).SetVFX(true, true);
-
-        GameActions.Bottom.LoseHP(null, player, magicNumber, AttackEffects.DAGGER)
-                .IgnoreTempHP(false)
-                .CanKill(true);
     }
 }
