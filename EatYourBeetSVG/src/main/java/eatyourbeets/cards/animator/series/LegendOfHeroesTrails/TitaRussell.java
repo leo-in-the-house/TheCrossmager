@@ -31,9 +31,16 @@ public class TitaRussell extends AnimatorCard {
         SetUpgrade(0, 0, 0);
 
         SetAffinity_Yellow(1);
+    }
+
+    @Override
+    protected void OnUpgrade()
+    {
+        super.OnUpgrade();
 
         SetLoyal(true);
     }
+
 
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info) {

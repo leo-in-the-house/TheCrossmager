@@ -19,7 +19,7 @@ import eatyourbeets.utilities.GameUtilities;
 
 public class TowaHerschel extends AnimatorCard {
     public static final EYBCardData DATA = Register(TowaHerschel.class)
-            .SetSkill(1, CardRarity.UNCOMMON, EYBCardTarget.None)
+            .SetSkill(0, CardRarity.UNCOMMON, EYBCardTarget.None)
             .SetSeriesFromClassPackage();
 
     public TowaHerschel() {

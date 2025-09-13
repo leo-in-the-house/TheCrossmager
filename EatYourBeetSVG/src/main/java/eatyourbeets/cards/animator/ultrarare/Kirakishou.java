@@ -103,7 +103,13 @@ public class Kirakishou extends AnimatorCard_UltraRare {
                 CardGroup group = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
 
                 for (AbstractCard card : purgedCards) {
-                    group.addToBottom(card.makeCopy());
+                    AbstractCard curCard = card.makeCopy();
+
+                    if (card.upgraded) {
+                        curCard.upgrade();
+                    }
+
+                    group.addToBottom(curCard);
                 }
 
                 GameActions.Bottom.SelectFromPile(name, 1, group)
@@ -113,7 +119,8 @@ public class Kirakishou extends AnimatorCard_UltraRare {
                         for (AbstractCard card : cards) {
                             GameUtilities.Retain(card);
                             CostModifiers.For(card).Add(-1);
-                            GameActions.Top.MakeCardInHand(card);
+                            GameActions.Top.MakeCardInHand(card)
+                                    .SetUpgrade(card.upgraded, true);
                         }
                     });
             }

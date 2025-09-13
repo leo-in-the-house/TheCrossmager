@@ -29,7 +29,6 @@ public class AltinaOrion extends AnimatorCard {
     {
         if (super.cardPlayable(m))
         {
-            int maxMode = 0;
             int curMode = 0;
             AbstractOrb previousOrb = null;
 
@@ -40,10 +39,7 @@ public class AltinaOrion extends AnimatorCard {
                 }
 
                 curMode++;
-                if (curMode > maxMode) {
-                    maxMode = curMode;
-                }
-                if (maxMode >= 2) {
+                if (curMode >= 2) {
                     return true;
                 }
             }

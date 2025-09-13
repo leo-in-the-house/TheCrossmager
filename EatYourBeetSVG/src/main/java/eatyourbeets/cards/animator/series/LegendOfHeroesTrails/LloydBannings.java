@@ -1,6 +1,7 @@
 package eatyourbeets.cards.animator.series.LegendOfHeroesTrails;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.animator.special.*;
@@ -9,11 +10,10 @@ import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.utilities.RandomizedList;
 
 public class LloydBannings extends AnimatorCard {
     public static final EYBCardData DATA = Register(LloydBannings.class)
-            .SetAttack(1, CardRarity.UNCOMMON, EYBAttackType.Normal, EYBCardTarget.Normal)
+            .SetAttack(2, CardRarity.UNCOMMON, EYBAttackType.Normal, EYBCardTarget.Normal)
             .SetSeriesFromClassPackage()
             .PostInitialize(data ->
             {
@@ -60,31 +60,34 @@ public class LloydBannings extends AnimatorCard {
             GameActions.Bottom.Wait(0.3f);
         }
 
-        RandomizedList<AbstractCard> SSSMembers = GetSSSMembers();
-        AbstractCard member = SSSMembers.Retrieve(rng);
+        CardGroup group = GetSSSMembers();
+        GameActions.Bottom.SelectFromPile(name, 1, group)
+        .SetOptions(false, false)
+        .AddCallback(cards -> {
+            for (AbstractCard member : cards) {
+                GameActions.Bottom.MakeCardInHand(member)
+                        .SetUpgrade(upgraded, true);
+            }
+        });
 
-        if (member != null) {
-            GameActions.Bottom.MakeCardInHand(member)
-                    .SetUpgrade(upgraded, true);
-            GameActions.Bottom.ModifyAllCopies(cardID)
-                    .AddCallback(c ->
-                    {
-                        GameUtilities.ModifyDamage(this, secondaryValue, false);
-                        GameUtilities.ModifyBlock(this, secondaryValue, false);
-                    });
-        }
+        GameActions.Bottom.ModifyAllCopies(cardID)
+                .AddCallback(c ->
+                {
+                    GameUtilities.ModifyDamage(this, secondaryValue, false);
+                    GameUtilities.ModifyBlock(this, secondaryValue, false);
+                });
     }
 
-    private RandomizedList<AbstractCard> GetSSSMembers() {
-        RandomizedList list = new RandomizedList();
+    private CardGroup GetSSSMembers() {
+        CardGroup list = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
 
-        list.Add(new SSS_Elie());
-        list.Add(new SSS_Tio());
-        list.Add(new SSS_Randy());
-        list.Add(new SSS_Noel());
-        list.Add(new SSS_Wazy());
-        list.Add(new SSS_Rixia());
-        list.Add(new SSS_KeA());
+        list.addToTop(new SSS_Elie());
+        list.addToTop(new SSS_Tio());
+        list.addToTop(new SSS_Randy());
+        list.addToTop(new SSS_Noel());
+        list.addToTop(new SSS_Wazy());
+        list.addToTop(new SSS_Rixia());
+        list.addToTop(new SSS_KeA());
 
         return list;
     }
