@@ -84,10 +84,10 @@ public class Albedo extends AnimatorCard
         GameUtilities.PlayVoiceSFX(name);
 
         for (int i=0; i<magicNumber; i++) {
-            if (i%2 == 0) {
+            if (i%3 == 0) {
                 GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_VERTICAL);
             }
-            else if (i%2 == 1) {
+            else if (i%3 == 1) {
                 GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_HORIZONTAL);
             }
             else {

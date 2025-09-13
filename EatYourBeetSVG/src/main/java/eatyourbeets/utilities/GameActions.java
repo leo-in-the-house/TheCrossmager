@@ -1155,6 +1155,11 @@ public final class GameActions
         return StackPower(power);
     }
 
+    public ReduceStrength ApplyShackles(AbstractCreature target, int amount)
+    {
+        return ReduceStrength(player, target, amount, true);
+    }
+
     public ReduceStrength ReduceStrength(AbstractCreature target, int amount, boolean temporary)
     {
         return ReduceStrength(player, target, amount, temporary);

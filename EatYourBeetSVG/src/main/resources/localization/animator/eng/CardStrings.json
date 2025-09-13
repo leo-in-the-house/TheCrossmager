@@ -3072,6 +3072,7 @@
 		{
 			"FLAVOR_TEXT": "'Thank you...  I’m sorry, Feri, Quatre, Nadia, Swin, and Lapis.  I’m so sorry, Van, Renne, Aaron, Risette, and Judith.  And to Elaine, Bergard, and Shizuna, who I wasn’t able to speak to.   Even when I still worry about you...  Van, I’m unfit to be an assistant at Arkride Solutions, so... please fire me.'",
 			"DESCRIPTION": "Take an extra turn after this one.  {Die} at the end of that turn.",
+			"EXTENDED_DESCRIPTION": ["#rDIE after #b{0} turns."],
 			"NAME": "Agnès Claudel"
 		},
 		"animator:AltinaOrion":
@@ -3090,7 +3091,7 @@
 		"animator:EstelleBright":
 		{
 			"FLAVOR_TEXT": "'Now that I know all about your past, too, I’m the biggest authority in Joshua Astray in the world!  I know more than Weissman and Loewe, even!  Joshua scared and Joshua brave...  Joshua lying and Joshua honest...  My... beloved Joshua.  I finally found you.'",
-			"DESCRIPTION": "Channel !M! [Lightning].  Then, add a {Joshua Bright}{+} to your draw pile for each time you channeled [Lightning] this combat.",
+			"DESCRIPTION": "Channel !S! [Lightning].  Then, add a {Joshua Bright}{+} to your draw pile for each time you channeled [Lightning] this combat.",
 			"NAME": "Estelle Bright"
 		},
 		"animator:EstelleBright_Joshua":
@@ -3132,13 +3133,13 @@
 		"animator:ReanSchwarzer":
 		{
 			"FLAVOR_TEXT": "'As a catalyst of the Great Twilight, I didn’t believe I had a right to be happy.  But approaching it as a right or wrong perspective misses the point: I have an obligation to be happy.  Because our happiness is not made alone- nor is our unhappiness made alone.  If I want the people I love to be happy, then I need to be happy too.'",
-			"DESCRIPTION": "{Unique.} || If Fatal: permanently upgrade this card.  Upgrade it an additional time if it killed a {Boss} or {Elite}.  Upgrade it an additional time if you have at least three [Lightning].",
+			"DESCRIPTION": "{Unique.} || <LIM>. If at least one hit was Fatal: permanently upgrade this card.  Upgrade it an additional time if it killed a {Boss} or {Elite}.  Upgrade it an additional time if you have at least three [Lightning].",
 			"NAME": "Rean Schwarzer"
 		},
 		"animator:Renne":
 		{
 			"FLAVOR_TEXT": "'No... it’s not me!  It’s not me!  Cross... where are you?  Don’t hide!  Come back!  ...Cross... help me, Cross...  ...thank you so much i’m so happy it was very fun please come again soon it would be my pleasure.  ...Where are you... Papa... Mama...'",
-			"DESCRIPTION": "Instantly kill a random minion or non-Boss, non-Elite enemy for every !M! [Lightning].",
+			"DESCRIPTION": "Instantly kill a random non-Boss, non-Elite enemy for every !M! [Lightning].",
 			"NAME": "Renne"
 		},
 		"animator:ShizunaRemMitsurugi":
@@ -3177,6 +3178,7 @@
 		{
 			"FLAVOR_TEXT": "'You know full well I’m not like the cops or bracers.  I do things my own way.  And that way isn’t black, but it isn’t white either.  Mine’s like... the color of a dark blue sky just before dawn.'",
 			"DESCRIPTION": "On Start of Turn: Gain !M! [Inspiration], plus an additional !M! [Inspiration] for each [Lightning]. || Pay 6 [Inspiration] to remove this power and obtain {Grendel}, and an additional 3 [Inspiration] to upgrade it.",
+			"EXTENDED_DESCRIPTION": ["Start of turn: gain #b{0} #yInspiration and an additional #b{0} #yInspiration for each #yLightning.  Pay #b6 #yInspiration to remove this power and obtain #yGrendel, and an additional #b6 #yInspiration to upgrade it."],
 			"NAME": "Van Arkride"
 		},
 		"animator:VanArkride_Grendel":
@@ -4824,13 +4826,13 @@
 		"animator:Grandmaster_Phase2":
 		{
 			"FLAVOR_TEXT": "'I hereby proclaim the completion of the first phase of the Orpheus Final Plan, the Gospel Plan... and the initiation of its second phase: the Phantasmal Blaze Plan.'",
-			"DESCRIPTION": "At the start of your turn, gain [Strength] [Dexterity] [Focus].  Then, Remove 3 [Lightning] and remove 3 {Common Debuffs} from a random enemy to remove this power and obtain {Eternal Recurrence Plan}{+}.",
+			"DESCRIPTION": "At the start of your turn, gain [Strength] [Dexterity] [Focus].  Then, Remove 4 [Lightning] and remove 3 {Common Debuffs} from a random enemy to remove this power and obtain {Eternal Recurrence Plan}{+}.",
 			"NAME": "Phantasmal Blaze Plan"
 		},
 		"animator:Grandmaster_Phase3":
 		{
 			"FLAVOR_TEXT": "'The world has escaped the Great Twilight, extending its lifespan ever so slightly.  Three years yet remain until all return to primordial nothingness.  The third stage of the Orpheus Final Plan: the Eternal Recurrence Plan-- begins now.'",
-			"DESCRIPTION": "At the start of every other turn, take an extra turn after this one.  Then,  if this is an Elite or Boss battle, Remove 3 [Lightning] and exhaust a card with {Unique} from your discard pile to remove this power and obtain {Orpheus Final Plan}{+}.",
+			"DESCRIPTION": "At the start of every other turn, take an extra turn after this one.  Then,  if this is an Elite or Boss battle, Remove 5 [Lightning] and exhaust a card with {Unique} from your discard pile to remove this power and obtain {Orpheus Final Plan}{+}.",
 			"NAME": "Eternal Recurrence Plan"
 		},
 		"animator:Grandmaster_Phase4":

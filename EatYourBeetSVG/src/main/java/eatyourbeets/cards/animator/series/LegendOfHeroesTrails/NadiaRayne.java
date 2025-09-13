@@ -7,6 +7,7 @@ import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
+import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.utilities.TargetHelper;
@@ -26,10 +27,18 @@ public class NadiaRayne extends AnimatorCard {
     }
 
     @Override
+    public AbstractAttribute GetBlockInfo()
+    {
+        return super.GetBlockInfo().AddMultiplier(magicNumber);
+    }
+
+    @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info) {
         GameUtilities.PlayVoiceSFX(name);
 
-        GameActions.Bottom.GainBlock(block);
+        for (int i=0; i<magicNumber; i++) {
+            GameActions.Bottom.GainBlock(block);
+        }
 
         for (AbstractMonster enemy : GameUtilities.GetEnemies(true)) {
             if (GameUtilities.GetCommonDebuffs(TargetHelper.Normal(enemy)).size() > 0) {
