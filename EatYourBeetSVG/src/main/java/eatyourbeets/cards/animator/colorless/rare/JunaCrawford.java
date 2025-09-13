@@ -30,7 +30,7 @@ public class JunaCrawford extends AnimatorCard {
         super(DATA);
 
         Initialize(3, 3, 0);
-        SetUpgrade(0, 0, 0);
+        SetUpgrade(1, 1, 0);
 
         SetRetain(true);
 

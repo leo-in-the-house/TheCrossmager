@@ -3108,7 +3108,7 @@
 		"animator:LapisRosenberg":
 		{
 			"FLAVOR_TEXT": "'I never knew there were so many copies of me...  What does that make me, then?  If they’re also Lapis, then... does that mean that even being Lapis doesn’t belong to me?  I... I’m...'",
-			"DESCRIPTION": "<SLM>.  If you have two adjacent Orbs of the same type, put two copies of this into your draw pile, then upgrade all {Lapis Rosenberg} everywhere. || <LIM>. Then, if there are at least six {Lapis Rosenberg} EVERYWHERE, obtain {Rufus Albarea}{+}.",
+			"DESCRIPTION": "<SLM>.  If you have two adjacent Orbs of the same type, put two copies of this into your draw pile. || <LIM>. Then, if there are 6+ {Lapis Rosenberg} EVERYWHERE, obtain {Rufus Albarea}{+}.",
 			"NAME": "Lapis Rosenberg"
 		},
 		"animator:LapisRosenberg_Rufus":
