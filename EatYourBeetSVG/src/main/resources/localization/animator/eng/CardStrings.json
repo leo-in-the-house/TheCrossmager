@@ -918,7 +918,7 @@
 		"animator:JunaCrawford":
 		{
 			"FLAVOR_TEXT": "'Why... Why are you all trying to take away our pride?!  You’ve occupied us, dragged us with your war with Calvard, brought those horrible cannons into our country, and now our light... our one blessed hope... GIVE IT BACK!  GIVE US OUR CROSSBELL BACK!  The free city where anyone could dream!  GIVE!  IT!  BAAAAAAAAACK!!!'",
-			"DESCRIPTION": "When this card is Retained, obtain a random {SSS Member}{+}.  If you do, increase this card’s scaling by 1.",
+			"DESCRIPTION": "When this card is {Retained}, obtain a random {SSS Member}{+} and increase this card’s scaling by 1.",
 			"NAME": "Juna Crawford"
 		},
 		"animator:Kira":
