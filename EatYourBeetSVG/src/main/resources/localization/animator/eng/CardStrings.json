@@ -918,7 +918,7 @@
 		"animator:JunaCrawford":
 		{
 			"FLAVOR_TEXT": "'Why... Why are you all trying to take away our pride?!  You’ve occupied us, dragged us with your war with Calvard, brought those horrible cannons into our country, and now our light... our one blessed hope... GIVE IT BACK!  GIVE US OUR CROSSBELL BACK!  The free city where anyone could dream!  GIVE!  IT!  BAAAAAAAAACK!!!'",
-			"DESCRIPTION": "When this card is Retained, obtain a random {SSS Member}{+} that this card hasn’t created yet.  If you do, increase this card’s scaling by 1.",
+			"DESCRIPTION": "When this card is Retained, obtain a random {SSS Member}{+}.  If you do, increase this card’s scaling by 1.",
 			"NAME": "Juna Crawford"
 		},
 		"animator:Kira":
@@ -3084,6 +3084,7 @@
 		{
 			"FLAVOR_TEXT": "'Perish the thought!  Where would the fun be in coming up here without a challenge?  And a Fool has to have their fun, you know.  It’s all part of the job!'",
 			"DESCRIPTION": "All {Powers} are played twice.",
+			"EXTENDED_DESCRIPTION": ["All #yPowers are played an additional #b{0} times."],
 			"NAME": "Campanella"
 		},
 		"animator:EstelleBright":
@@ -3101,7 +3102,7 @@
 		"animator:KevinGraham":
 		{
 			"FLAVOR_TEXT": "'If I’d been able to control my Stigma’s power instead of letting it consume me with bloodlust, it wouldn’t have happened!  If I wasn’t so weak, she’d still be alive today!'",
-			"DESCRIPTION": "If this kills an enemy or breaks through the enemy’s block: Gain !M! [Orb_S] and fill your [Orb_S] with [Lightning].",
+			"DESCRIPTION": "If this killed an enemy or broke through the enemy’s [Block]: Gain !M! [Orb_S] and fill your [Orb_S] with [Lightning].",
 			"NAME": "Kevin Graham"
 		},
 		"animator:LapisRosenberg":
@@ -3119,7 +3120,7 @@
 		"animator:LloydBannings":
 		{
 			"FLAVOR_TEXT": "'I'm just an ordinary detective. Maybe a little more stubborn than the average one. My strength comes from my friends...and with them here, I'm unstoppable!'",
-			"DESCRIPTION": "When this deals unblocked damage, obtain a random {SSS Member}{+} that this card hasn’t created yet.  If you do, increase this card’s damage and [Block] by !M!.",
+			"DESCRIPTION": "Obtain a random {SSS Member}{+}.  Increase this card’s damage and [Block] by !S!.",
 			"NAME": "Lloyd Bannings"
 		},
 		"animator:NadiaRayne":
@@ -3167,8 +3168,9 @@
 		"animator:TowaHerschel":
 		{
 			"FLAVOR_TEXT": "'Sigh... I’ve been a nervous wreck all day.  But I can’t let this opportunity go to waste.  Especially after all that Prince Olivert has done for the academy.  Most importantly, I’m here as a representative of Thors!  I’ve got to pull myself together and chip in!'",
-			"DESCRIPTION": "The next time you channel [Lightning] this turn: double your energy.",
-			"UPGRADE_DESCRIPTION": "The next time you channel [Lightning] this turn: triple your energy.",
+			"DESCRIPTION": "The next time you channel [Lightning] this turn: double your [E].",
+			"UPGRADE_DESCRIPTION": "The next time you channel [Lightning] this turn: triple your [E].",
+			"EXTENDED_DESCRIPTION": ["Next time you channel #yLightning this turn: increase your #yEnergy by #b{0}%."],
 			"NAME": "Towa Herschel"
 		},
 		"animator:VanArkride":
@@ -4658,14 +4660,15 @@
 		"animator:SSS_Elie":
 		{
 			"FLAVOR_TEXT": "'That night on the roof when I thought of leaving the SSS--even when I decided to become Grandfather’s secretary during the occupation...  Sometimes I wonder if the only reason I’ve been able to keep going these last few years is because I knew you were with me.'",
-			"DESCRIPTION": "Consume all your [Lightning].  Gain [E] for each [Lightning] consumed this way.",
-			"UPGRADE_DESCRIPTION": "Consume all your [Lightning].  Gain [E] and !M! [THP] for each [Lightning] consumed this way.",
+			"DESCRIPTION": "Remove all your [Lightning].  Gain [E] for each [Lightning] removed this way.",
+			"UPGRADE_DESCRIPTION": "Remove all your [Lightning].  Gain [E] and !M! [THP] for each [Lightning] removed this way.",
 			"NAME": "Elie MacDowell"
 		},
 		"animator:SSS_KeA":
 		{
 			"FLAVOR_TEXT": "'Of course!  I... I don’t think I could’ve been any happier!  But... what if that’s only because I tricked you all, Lloyd?  What if it was my powers that made you feel that way?  What if I’m just manipulating the people I care about most into loving me?!'",
 			"DESCRIPTION": "Whenever you {Retain} a card, add a copy of it to your draw pile.",
+			"EXTENDED_DESCRIPTION": ["Whenever you #yRetain a card, add #b{0} copies of it to your draw pile."],
 			"NAME": "KeA"
 		},
 		"animator:SSS_Noel":
@@ -4689,7 +4692,7 @@
 		"animator:SSS_Tio":
 		{
 			"FLAVOR_TEXT": "'None of the children could withstand the procedures, except for me.  One by one, they began to disappear.  And it was at the moment when I became the last child remaining that I gained this power.  My hearing became keen enough that even though a massive rock wall separated us, I could hear the others’ final cries as if I was right there in the room with them...'",
-			"DESCRIPTION": "Set the enemy [Block] to 1, then apply !M! [-Lock-On] to them.",
+			"DESCRIPTION": "Apply !M! [-Lock-On] and gain !M! [Plated Armor].",
 			"NAME": "Tio Plato"
 		},
 		"animator:SSS_Wazy":
@@ -4815,19 +4818,19 @@
 		"animator:Grandmaster_Phase1":
 		{
 			"FLAVOR_TEXT": "'There will inevitably be a reaction to what has happened in time... but I imagine the church will act regarding that.  Let us leave the matter to them.'",
-			"DESCRIPTION": "At the start of your turn, draw a card from your exhaust pile.  Then, consume 3 [Lightning] to remove this power and obtain {Phantasmal Blaze Plan}{+}.",
+			"DESCRIPTION": "At the start of your turn, draw a card from your exhaust pile.  Then, Remove 3 [Lightning] to remove this power and obtain {Phantasmal Blaze Plan}{+}.",
 			"NAME": "Gospel Plan"
 		},
 		"animator:Grandmaster_Phase2":
 		{
 			"FLAVOR_TEXT": "'I hereby proclaim the completion of the first phase of the Orpheus Final Plan, the Gospel Plan... and the initiation of its second phase: the Phantasmal Blaze Plan.'",
-			"DESCRIPTION": "At the start of your turn, gain [Strength] [Dexterity] [Focus].  Then, consume 3 [Lightning] and remove 3 {Common Debuffs} from a random enemy to remove this power and obtain {Eternal Recurrence Plan}{+}.",
+			"DESCRIPTION": "At the start of your turn, gain [Strength] [Dexterity] [Focus].  Then, Remove 3 [Lightning] and remove 3 {Common Debuffs} from a random enemy to remove this power and obtain {Eternal Recurrence Plan}{+}.",
 			"NAME": "Phantasmal Blaze Plan"
 		},
 		"animator:Grandmaster_Phase3":
 		{
 			"FLAVOR_TEXT": "'The world has escaped the Great Twilight, extending its lifespan ever so slightly.  Three years yet remain until all return to primordial nothingness.  The third stage of the Orpheus Final Plan: the Eternal Recurrence Plan-- begins now.'",
-			"DESCRIPTION": "At the start of every other turn, take an extra turn after this one.  Then,  if this is an Elite or Boss battle, consume 3 [Lightning] and exhaust a card with {Unique} from your discard pile to remove this power and obtain {Orpheus Final Plan}{+}.",
+			"DESCRIPTION": "At the start of every other turn, take an extra turn after this one.  Then,  if this is an Elite or Boss battle, Remove 3 [Lightning] and exhaust a card with {Unique} from your discard pile to remove this power and obtain {Orpheus Final Plan}{+}.",
 			"NAME": "Eternal Recurrence Plan"
 		},
 		"animator:Grandmaster_Phase4":

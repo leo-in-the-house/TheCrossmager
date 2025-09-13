@@ -93,7 +93,7 @@ public class CardSeries
     public final static CardSeries YumeNikki = Add(75, "YumeNikki");
     public final static CardSeries MogekoCastle = Add(76, "MogekoCastle");
     public final static CardSeries PocketMirror = Add(77, "PocketMirror");
-    public final static CardSeries TheLegendOfHeroesTrails = Add(78, "TheLegendOfHeroesTrails");
+    public final static CardSeries LegendOfHeroesTrails = Add(78, "TheLegendOfHeroesTrails");
     public final static CardSeries BlueArchive = Add(79, "BlueArchive");
     public final static CardSeries HigurashiNoNakuKoroNi = Add(80, "HigurashiNoNakuKoroNi");
     public final static CardSeries BravelyDefault = Add(81, "BravelyDefault");

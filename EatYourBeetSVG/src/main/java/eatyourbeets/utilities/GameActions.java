@@ -38,6 +38,7 @@ import eatyourbeets.actions.handSelection.*;
 import eatyourbeets.actions.monsters.TalkAction;
 import eatyourbeets.actions.orbs.ChannelOrb;
 import eatyourbeets.actions.orbs.EvokeOrb;
+import eatyourbeets.actions.orbs.RemoveOrb;
 import eatyourbeets.actions.orbs.TriggerOrbPassiveAbility;
 import eatyourbeets.actions.pileSelection.*;
 import eatyourbeets.actions.player.ChangeStance;
@@ -75,7 +76,6 @@ import eatyourbeets.powers.animator.EarthenThornsPower;
 import eatyourbeets.powers.animator.EnchantedArmorPlayerPower;
 import eatyourbeets.powers.animator.SupportDamagePower;
 import eatyourbeets.powers.common.EnergizedPower;
-import eatyourbeets.powers.common.VigorPower;
 import eatyourbeets.powers.common.*;
 import eatyourbeets.powers.replacement.*;
 import eatyourbeets.powers.unnamed.AmplificationPower;
@@ -1185,6 +1185,12 @@ public final class GameActions
         .SetFilter(GameUtilities::IsDebuff)
         .SetSelection(selection, count)
         .IsDebuffInteraction(true);
+    }
+
+
+    public RemoveOrb RemoveOrb(AbstractOrb orb)
+    {
+        return Add(new RemoveOrb(orb));
     }
 
     public ModifyPowers ModifyDebuffs(AbstractCreature target, FuncT1<Integer, AbstractPower> calculateNewAmount, ListSelection<AbstractPower> selection, int count)

@@ -462,6 +462,12 @@
 		"NAMES": ["special action"],
 		"PROPER_NAME": "Special Action"
 	},
+	"SSS Member":
+	{
+		"DESCRIPTION": "Elie MacDowell, Tio Plato, Randy Orlando, Noel Seeker, Wazy Hemisphere, Rixia Mao, KeA",
+		"NAMES": ["sss member", "sss members"],
+		"PROPER_NAME": "SSS Member"
+	},
 	"Starter":
 	{
 		"DESCRIPTION": "Activates if played at the start of turn (Can also activate if the first card was autoplayed).",

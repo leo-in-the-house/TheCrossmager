@@ -1,18 +1,20 @@
 package eatyourbeets.cards.animator.special;
 
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.orbs.Lightning;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.effects.AttackEffects;
+import eatyourbeets.effects.VFX;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
 public class TitaRussell_Agate extends AnimatorCard {
     public static final EYBCardData DATA = Register(TitaRussell_Agate.class)
             .SetAttack(2, CardRarity.SPECIAL, EYBAttackType.Normal, EYBCardTarget.Normal)
-            .SetSeries(CardSeries.TheLegendOfHeroesTrails);
+            .SetSeries(CardSeries.LegendOfHeroesTrails);
 
     public TitaRussell_Agate() {
         super(DATA);
@@ -28,7 +30,10 @@ public class TitaRussell_Agate extends AnimatorCard {
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info) {
         GameUtilities.PlayVoiceSFX(name);
 
-        GameActions.Bottom.DealDamage(this, m, AttackEffects.BLUNT_HEAVY);
+
+        GameActions.Bottom.VFX(VFX.VerticalImpact(m.hb).SetColor(Color.RED));
+        GameActions.Bottom.DealDamage(this, m, AttackEffects.BLUNT_HEAVY)
+                .SetVFXColor(Color.RED);
 
         int numLightning = 0;
 
