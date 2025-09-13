@@ -4692,7 +4692,7 @@
 		"animator:SSS_Tio":
 		{
 			"FLAVOR_TEXT": "'None of the children could withstand the procedures, except for me.  One by one, they began to disappear.  And it was at the moment when I became the last child remaining that I gained this power.  My hearing became keen enough that even though a massive rock wall separated us, I could hear the others’ final cries as if I was right there in the room with them...'",
-			"DESCRIPTION": "Apply !M! [-Lock-On] and gain !M! [Plated Armor].",
+			"DESCRIPTION": "Apply !M! [~Lock-On] and gain !M! [Plated Armor].",
 			"NAME": "Tio Plato"
 		},
 		"animator:SSS_Wazy":

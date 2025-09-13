@@ -17,7 +17,7 @@ public class ShizunaRemMitsurugi extends AnimatorCard {
     public ShizunaRemMitsurugi() {
         super(DATA);
 
-        Initialize(11, 0, 0);
+        Initialize(11, 0, 2);
         SetUpgrade(0, 0, 0);
         SetCostUpgrade(-1);
 
