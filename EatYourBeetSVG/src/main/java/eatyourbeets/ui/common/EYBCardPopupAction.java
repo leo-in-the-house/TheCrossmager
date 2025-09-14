@@ -3,6 +3,7 @@ package eatyourbeets.ui.common;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.cards.SoulGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -17,10 +18,7 @@ import eatyourbeets.cards.base.EYBCardTooltip;
 import eatyourbeets.resources.GR;
 import eatyourbeets.resources.animator.AnimatorStrings;
 import eatyourbeets.resources.common.CommonStrings;
-import eatyourbeets.utilities.GameEffects;
-import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.utilities.JUtils;
-import eatyourbeets.utilities.RandomizedList;
+import eatyourbeets.utilities.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -78,7 +76,10 @@ public abstract class EYBCardPopupAction
 
     protected static boolean IsRestRoom()
     {
-        return GameUtilities.GetCurrentRoom() instanceof RestRoom;
+        return (GameUtilities.GetCurrentRoom() instanceof RestRoom) &&
+                (AbstractDungeon.effectsQueue.isEmpty()) &&
+                (GameEffects.TopLevelList.GetList().isEmpty()) &&
+                (!SoulGroup.isActive());
     }
 
     protected static boolean HasCard(AbstractCard card)

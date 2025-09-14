@@ -59,7 +59,7 @@ public class LloydBannings extends AnimatorCard {
         .SetOptions(false, false)
         .AddCallback(cards -> {
             for (AbstractCard member : cards) {
-                GameActions.Bottom.MakeCardInHand(member)
+                GameActions.Bottom.MakeCardInDrawPile(member)
                         .SetUpgrade(upgraded, true);
             }
         });
