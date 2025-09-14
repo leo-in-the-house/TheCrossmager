@@ -473,7 +473,6 @@ public class CombatStats extends EYBPower implements InvisiblePower
     {
         Affinities.RestoreAffinitiesForAllCards(player.drawPile);
         Affinities.RestoreAffinitiesForAllCards(player.discardPile);
-        Affinities.RestoreAffinitiesForAllCards(player.hand);
 
         for (OnShuffleSubscriber s : onShuffle.GetSubscribers())
         {

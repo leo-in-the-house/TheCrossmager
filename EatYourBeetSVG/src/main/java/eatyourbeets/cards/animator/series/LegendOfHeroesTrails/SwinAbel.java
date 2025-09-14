@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.Lightning;
 import eatyourbeets.cards.base.*;
+import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
@@ -17,17 +18,25 @@ public class SwinAbel extends AnimatorCard {
     public SwinAbel() {
         super(DATA);
 
-        Initialize(6, 0, 3);
+        Initialize(3, 0, 2, 3);
         SetUpgrade(4, 0, 0);
 
         SetAffinity_Green(1);
     }
 
     @Override
+    public AbstractAttribute GetDamageInfo()
+    {
+        return super.GetDamageInfo().AddMultiplier(magicNumber);
+    }
+
+    @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info) {
         GameUtilities.PlayVoiceSFX(name);
 
-        GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_DIAGONAL);
+        GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_VERTICAL);
+        GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_HORIZONTAL);
+
         GameActions.Bottom.ChannelOrb(new Lightning());
         GameActions.Bottom.ApplyLockOn(TargetHelper.Normal(m), magicNumber);
     }
