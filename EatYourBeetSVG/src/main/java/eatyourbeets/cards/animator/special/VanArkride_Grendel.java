@@ -20,7 +20,7 @@ public class VanArkride_Grendel extends AnimatorCard {
     public VanArkride_Grendel() {
         super(DATA);
 
-        Initialize(20, 0, 2);
+        Initialize(35, 0, 2);
         SetUpgrade(0, 0, 1);
 
         SetAffinity_Blue(2, 0, 2);
