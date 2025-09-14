@@ -19,7 +19,7 @@ public class SwinAbel extends AnimatorCard {
         super(DATA);
 
         Initialize(3, 0, 2, 3);
-        SetUpgrade(4, 0, 0);
+        SetUpgrade(2, 0, 0);
 
         SetAffinity_Green(1);
     }

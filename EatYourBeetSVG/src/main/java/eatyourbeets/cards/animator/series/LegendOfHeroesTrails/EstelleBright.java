@@ -20,7 +20,7 @@ public class EstelleBright extends AnimatorCard {
             .SetSeriesFromClassPackage()
             .PostInitialize(data ->
             {
-                data.AddPreview(new EstelleBright_Joshua(), false);
+                data.AddPreview(new EstelleBright_Joshua(), true);
             });
 
     public EstelleBright() {

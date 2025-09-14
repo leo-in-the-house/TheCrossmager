@@ -9,6 +9,7 @@ import eatyourbeets.cards.animator.special.*;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.effects.AttackEffects;
+import eatyourbeets.utilities.CardSelection;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
@@ -60,6 +61,7 @@ public class LloydBannings extends AnimatorCard {
         .AddCallback(cards -> {
             for (AbstractCard member : cards) {
                 GameActions.Bottom.MakeCardInDrawPile(member)
+                        .SetDestination(CardSelection.Top)
                         .SetUpgrade(upgraded, true);
             }
         });

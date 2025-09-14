@@ -3122,7 +3122,7 @@
 		"animator:LloydBannings":
 		{
 			"FLAVOR_TEXT": "'I'm just an ordinary detective. Maybe a little more stubborn than the average one. My strength comes from my friends...and with them here, I'm unstoppable!'",
-			"DESCRIPTION": "Channel [Lightning].  Put a {SSS Member}{+} into your draw pile.",
+			"DESCRIPTION": "Channel [Lightning].  Put a {SSS Member}{+} on top of your draw pile.",
 			"NAME": "Lloyd Bannings"
 		},
 		"animator:NadiaRayne":

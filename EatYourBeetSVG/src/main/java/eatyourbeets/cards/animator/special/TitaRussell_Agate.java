@@ -40,7 +40,6 @@ public class TitaRussell_Agate extends AnimatorCard {
         for (AbstractOrb orb : player.orbs) {
             if (Lightning.ORB_ID.equals(orb.ID)) {
                 numLightning++;
-                break;
             }
         }
 
