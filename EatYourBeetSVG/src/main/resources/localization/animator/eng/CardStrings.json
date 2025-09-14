@@ -3152,7 +3152,7 @@
 		"animator:SwinAbel":
 		{
 			"FLAVOR_TEXT": "'Enough! We're not your tools any longer!'",
-			"DESCRIPTION": "Apply !M! [~Lock-On].",
+			"DESCRIPTION": "Channel [Lightning].  Apply !M! [~Lock-On].",
 			"NAME": "Swin Abel"
 		},
 		"animator:TitaRussell":

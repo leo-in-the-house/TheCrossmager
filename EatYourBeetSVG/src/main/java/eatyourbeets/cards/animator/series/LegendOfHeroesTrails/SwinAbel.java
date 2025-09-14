@@ -2,6 +2,7 @@ package eatyourbeets.cards.animator.series.LegendOfHeroesTrails;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.orbs.Lightning;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
@@ -16,7 +17,7 @@ public class SwinAbel extends AnimatorCard {
     public SwinAbel() {
         super(DATA);
 
-        Initialize(10, 0, 3);
+        Initialize(6, 0, 3);
         SetUpgrade(4, 0, 0);
 
         SetAffinity_Green(1);
@@ -27,6 +28,7 @@ public class SwinAbel extends AnimatorCard {
         GameUtilities.PlayVoiceSFX(name);
 
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_DIAGONAL);
+        GameActions.Bottom.ChannelOrb(new Lightning());
         GameActions.Bottom.ApplyLockOn(TargetHelper.Normal(m), magicNumber);
     }
 }
