@@ -3085,6 +3085,7 @@
 		{
 			"FLAVOR_TEXT": "'Perish the thought!  Where would the fun be in coming up here without a challenge?  And a Fool has to have their fun, you know.  It’s all part of the job!'",
 			"DESCRIPTION": "All {Powers} are played twice.",
+			"UPGRADE_DESCRIPTION": "All {Powers} are played twice. || On {Discard} or {Exhaust}: Channel [Lightning].",
 			"EXTENDED_DESCRIPTION": ["All #yPowers are played an additional #b{0} times."],
 			"NAME": "Campanella"
 		},
@@ -3121,7 +3122,7 @@
 		"animator:LloydBannings":
 		{
 			"FLAVOR_TEXT": "'I'm just an ordinary detective. Maybe a little more stubborn than the average one. My strength comes from my friends...and with them here, I'm unstoppable!'",
-			"DESCRIPTION": "Obtain a {SSS Member}{+}.  Increase this card’s damage and [Block] by !S!.",
+			"DESCRIPTION": "Obtain a {SSS Member}{+}.  Channel [Lightning].",
 			"NAME": "Lloyd Bannings"
 		},
 		"animator:NadiaRayne":
@@ -4815,28 +4816,28 @@
 		{
 			"FLAVOR_TEXT": "'No, I am but a shadow.  I exist only to announce the appointed time to the world.'",
 			"DESCRIPTION": "At the start of your turn: remove this power and obtain {Gospel Plan}.",
-			"EXTENDED_DESCRIPTION": ["At start of turn: remove this power and obtain #b{0} #yGospel #yPlan"],
+			"EXTENDED_DESCRIPTION": ["At start of turn: remove this power and obtain #b{0} #yGospel #yPlan."],
 			"NAME": "The Grandmaster"
 		},
 		"animator:Grandmaster_Phase1":
 		{
 			"FLAVOR_TEXT": "'There will inevitably be a reaction to what has happened in time... but I imagine the church will act regarding that.  Let us leave the matter to them.'",
 			"DESCRIPTION": "At the start of your turn, draw a card from your exhaust pile.  Then, Remove 3 [Lightning] to remove this power and obtain {Phantasmal Blaze Plan}.",
-			"EXTENDED_DESCRIPTION": ["At start of turn: draw #b{0} cards from your exhaust pile.  Then, Remove 3 #yLightning to remove this power and obtain #yPhantasmal #yBlaze #yPlan"],
+			"EXTENDED_DESCRIPTION": ["At start of turn: draw #b{0} cards from your exhaust pile.  Then, Remove 3 #yLightning to remove this power and obtain #yPhantasmal #yBlaze #yPlan."],
 			"NAME": "Gospel Plan"
 		},
 		"animator:Grandmaster_Phase2":
 		{
 			"FLAVOR_TEXT": "'I hereby proclaim the completion of the first phase of the Orpheus Final Plan, the Gospel Plan... and the initiation of its second phase: the Phantasmal Blaze Plan.'",
 			"DESCRIPTION": "At the start of your turn, gain [Strength] [Dexterity] [Focus].  Then, Remove 5 [Lightning] to remove this power and obtain {Eternal Recurrence Plan}.",
-			"EXTENDED_DESCRIPTION": ["At start of turn: gain #b{0} #yStrength #yDexterity #yFocus.  Then, Remove 5 #yLightning to remove this power and obtain #yEternal #yRecurrence #yPlan"],
+			"EXTENDED_DESCRIPTION": ["At start of turn: gain #b{0} #yStrength #yDexterity #yFocus.  Then, Remove 5 #yLightning to remove this power and obtain #yEternal #yRecurrence #yPlan."],
 			"NAME": "Phantasmal Blaze Plan"
 		},
 		"animator:Grandmaster_Phase3":
 		{
 			"FLAVOR_TEXT": "'The world has escaped the Great Twilight, extending its lifespan ever so slightly.  Three years yet remain until all return to primordial nothingness.  The third stage of the Orpheus Final Plan: the Eternal Recurrence Plan-- begins now.'",
 			"DESCRIPTION": "At the start of every other turn, take an extra turn after this one.  Then,  if this is an Elite or Boss battle, Remove 5 [Lightning] and exhaust a random card with {Unique} from your discard pile to remove this power and obtain {Orpheus Final Plan}.",
-			"EXTENDED_DESCRIPTION": ["At start of every other turn, take an extra turn after this one.  Then, Remove 5 #yLightning to remove this power and obtain #yOrpheus #yFinal #yPlan"],
+			"EXTENDED_DESCRIPTION": ["At start of every other turn, take an extra turn after this one.  Then, if this is an #yElite or #yBoss fight, Remove 5 #yLightning to remove this power and exhaust a random card with #yUnique in your discard pile to obtain #yOrpheus #yFinal #yPlan."],
 			"NAME": "Eternal Recurrence Plan"
 		},
 		"animator:Grandmaster_Phase4":

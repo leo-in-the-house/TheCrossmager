@@ -44,7 +44,8 @@ public class LapisRosenberg extends AnimatorCard {
                 .Repeat(2)
                 .AddCallback(cards -> {
                     if (GetNumLapisCopiesEverywhere() >= 6 && CombatStats.TryActivateLimited(cardID)) {
-                        GameActions.Bottom.MakeCardInHand(new LapisRosenberg_Rufus());
+                        GameActions.Bottom.MakeCardInHand(new LapisRosenberg_Rufus())
+                                .SetUpgrade(upgraded, true);
                     }
                 });
         }

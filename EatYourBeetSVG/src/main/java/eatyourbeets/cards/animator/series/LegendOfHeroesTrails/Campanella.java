@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.orbs.Lightning;
 import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
@@ -22,12 +23,32 @@ public class Campanella extends AnimatorCard {
 
         Initialize(0, 0, 0);
         SetUpgrade(0, 0, 0);
-        SetCostUpgrade(-1);
 
         SetDelayed(true);
 
         SetAffinity_Blue(1);
         SetAffinity_Pink(1);
+    }
+
+    @Override
+    public void triggerOnExhaust()
+    {
+        super.triggerOnExhaust();
+
+        if (upgraded) {
+            GameActions.Bottom.ChannelOrb(new Lightning());
+        }
+    }
+
+
+    @Override
+    public void triggerOnManualDiscard()
+    {
+        super.triggerOnManualDiscard();
+
+        if (upgraded) {
+            GameActions.Bottom.ChannelOrb(new Lightning());
+        }
     }
 
     @Override

@@ -1,10 +1,12 @@
 package eatyourbeets.cards.animator.series.LegendOfHeroesTrails;
 
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.Lightning;
+import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.effects.AttackEffects;
@@ -65,6 +67,9 @@ public class ReanSchwarzer extends AnimatorCard {
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info) {
         GameUtilities.PlayVoiceSFX(name);
+
+        GameActions.Bottom.VFX(new BorderFlashEffect(Color.RED));
+        GameActions.Bottom.Wait(0.2f);
 
         for (int i=0; i<magicNumber; i++) {
             if (timesUpgraded >= 8) {

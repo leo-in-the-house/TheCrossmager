@@ -2267,8 +2267,10 @@ public class GameUtilities
     //Tries to play the voice SFX if it exists.
     //Removes the "+" tied to suffixes
     public static void PlayVoiceSFX(String cardName) {
+        String voiceName = SFX.GetVoiceString(cardName.split("\\+")[0]);
+
         if (GR.UI.TryPlayVoice()) {
-            GameActions.Instant.SFX(SFX.GetVoiceString(cardName.replace("+", "")), 1, 1, 3);
+            GameActions.Instant.SFX(voiceName, 1, 1, 3);
         }
     }
 

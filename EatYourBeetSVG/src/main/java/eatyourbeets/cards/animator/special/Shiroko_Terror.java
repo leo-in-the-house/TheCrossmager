@@ -17,7 +17,7 @@ public class Shiroko_Terror extends AnimatorCard {
     public Shiroko_Terror() {
         super(DATA);
 
-        Initialize(0, 8, 3, 6);
+        Initialize(0, 6, 3, 6);
         SetUpgrade(0, 2, 0, 6);
 
         SetAffinity_Black(1, 0,1);

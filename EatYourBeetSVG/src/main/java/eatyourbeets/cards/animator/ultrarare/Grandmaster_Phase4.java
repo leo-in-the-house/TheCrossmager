@@ -13,7 +13,7 @@ import eatyourbeets.utilities.GameUtilities;
 
 public class Grandmaster_Phase4 extends AnimatorCard_UltraRare {
     public static final EYBCardData DATA = Register(Grandmaster_Phase4.class)
-            .SetSkill(0, CardRarity.SPECIAL, EYBCardTarget.None)
+            .SetSkill(9, CardRarity.SPECIAL, EYBCardTarget.None)
             .SetColor(CardColor.COLORLESS)
             .SetSeries(CardSeries.LegendOfHeroesTrails);
 

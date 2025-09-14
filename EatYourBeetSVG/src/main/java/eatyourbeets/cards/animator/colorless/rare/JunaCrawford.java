@@ -59,6 +59,7 @@ public class JunaCrawford extends AnimatorCard {
         GameUtilities.PlayVoiceSFX(name);
 
         GameActions.Bottom.DealDamage(this, m, AttackEffects.GUNSHOT);
+        GameActions.Bottom.GainBlock(block);
     }
 
     private RandomizedList<AbstractCard> GetSSSMembers() {

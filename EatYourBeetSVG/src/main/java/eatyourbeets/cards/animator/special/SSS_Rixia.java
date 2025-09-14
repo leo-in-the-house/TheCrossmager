@@ -16,7 +16,7 @@ public class SSS_Rixia extends AnimatorCard {
     public SSS_Rixia() {
         super(DATA);
 
-        Initialize(12, 0, 0);
+        Initialize(15, 0, 0);
         SetUpgrade(4, 0, 0);
 
         SetAffinity_Black(1, 0, 1);
@@ -29,7 +29,7 @@ public class SSS_Rixia extends AnimatorCard {
         GameUtilities.PlayVoiceSFX(name);
 
         for (AbstractMonster enemy : GameUtilities.GetEnemies(true)) {
-            if (GameUtilities.IsAttacking(enemy.intent)) {
+            if (!GameUtilities.IsAttacking(enemy.intent)) {
                 GameActions.Bottom.DealDamage(this, enemy, AttackEffects.SLASH_HEAVY)
                         .SetVFXColor(Color.PURPLE);
             }

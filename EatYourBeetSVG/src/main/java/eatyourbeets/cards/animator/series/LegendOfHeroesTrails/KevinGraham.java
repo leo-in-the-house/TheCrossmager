@@ -13,7 +13,7 @@ import eatyourbeets.utilities.GameUtilities;
 
 public class KevinGraham extends AnimatorCard {
     public static final EYBCardData DATA = Register(KevinGraham.class)
-            .SetAttack(2, CardRarity.UNCOMMON, EYBAttackType.Piercing, EYBCardTarget.Normal)
+            .SetAttack(2, CardRarity.UNCOMMON, EYBAttackType.Ranged, EYBCardTarget.Normal)
             .SetSeriesFromClassPackage();
 
     public KevinGraham() {
@@ -36,8 +36,8 @@ public class KevinGraham extends AnimatorCard {
                     if (GameUtilities.IsDeadOrEscaped(target) || (initialBlock > 0 && target.currentBlock <= 0))
                     {
                         GameActions.Bottom.GainOrbSlots(magicNumber);
-                        GameActions.Bottom.Callback(() -> {
-                            GameActions.Bottom.ChannelOrbs(Lightning::new, GameUtilities.GetEmptyOrbCount());
+                        GameActions.Last.Callback(() -> {
+                            GameActions.Top.ChannelOrbs(Lightning::new, GameUtilities.GetEmptyOrbCount());
                         });
                     }
                 });

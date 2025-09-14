@@ -29,6 +29,8 @@ public class TowaHerschel extends AnimatorCard {
         SetUpgrade(0, 0, 100);
 
         SetAffinity_White(1);
+
+        SetExhaust(true);
     }
 
     @Override

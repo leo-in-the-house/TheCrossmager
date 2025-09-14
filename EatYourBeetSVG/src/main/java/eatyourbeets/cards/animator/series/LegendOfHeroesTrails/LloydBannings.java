@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.orbs.Lightning;
 import eatyourbeets.cards.animator.special.*;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
@@ -35,15 +36,7 @@ public class LloydBannings extends AnimatorCard {
 
         SetAffinity_Brown(1, 0, 1);
 
-        SetRetain(true);
-        SetExhaust(true);
-    }
-
-    @Override
-    protected void OnUpgrade() {
-        super.OnUpgrade();
-
-        SetExhaust(false);
+        SetEthereal(true);
     }
 
     @Override
@@ -71,12 +64,7 @@ public class LloydBannings extends AnimatorCard {
             }
         });
 
-        GameActions.Bottom.ModifyAllCopies(cardID)
-                .AddCallback(c ->
-                {
-                    GameUtilities.ModifyDamage(this, secondaryValue, false);
-                    GameUtilities.ModifyBlock(this, secondaryValue, false);
-                });
+        GameActions.Bottom.ChannelOrb(new Lightning());
     }
 
     private CardGroup GetSSSMembers() {

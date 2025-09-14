@@ -7,12 +7,12 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
+import com.megacrit.cardcrawl.vfx.CollectorCurseEffect;
 import com.megacrit.cardcrawl.vfx.combat.TimeWarpTurnEndEffect;
 import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.cards.base.EYBCardTarget;
-import eatyourbeets.effects.VFX;
 import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
@@ -65,8 +65,7 @@ public class AgnesClaudel extends AnimatorCard {
 
             if (amount <= 0) {
                 GameActions.Bottom.BorderLongFlash(Color.WHITE);
-                GameActions.Bottom.VFX(VFX.Cataclysm());
-                GameActions.Bottom.Wait(1f);
+                GameActions.Bottom.VFX(new CollectorCurseEffect(player.hb.cX, player.hb.cY), 2f);
                 GameActions.Bottom.LoseHP(99999999, AbstractGameAction.AttackEffect.NONE);
                 RemovePower();
             }

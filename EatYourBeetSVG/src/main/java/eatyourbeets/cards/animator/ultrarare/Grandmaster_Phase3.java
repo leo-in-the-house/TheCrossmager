@@ -11,7 +11,10 @@ import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.orbs.Lightning;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.TimeWarpTurnEndEffect;
-import eatyourbeets.cards.base.*;
+import eatyourbeets.cards.base.AnimatorCard_UltraRare;
+import eatyourbeets.cards.base.CardSeries;
+import eatyourbeets.cards.base.CardUseInfo;
+import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.resources.GR;
 import eatyourbeets.utilities.ColoredString;
@@ -72,29 +75,31 @@ public class Grandmaster_Phase3 extends AnimatorCard_UltraRare {
                 GameActions.Bottom.VFX(new BorderFlashEffect(Color.WHITE, true));
                 GameActions.Bottom.Add(new SkipEnemiesTurnAction());
 
-                int numOrbsToRemove = 5;
-                int totalLightning = GameUtilities.GetOrbCount(Lightning.ORB_ID);
+                if (GameUtilities.InEliteOrBossRoom()) {
+                    int numOrbsToRemove = 5;
+                    int totalLightning = GameUtilities.GetOrbCount(Lightning.ORB_ID);
 
-                AbstractCard unique = FindUniqueCardInDiscard();
+                    AbstractCard unique = FindUniqueCardInDiscard();
 
-                if (totalLightning >= numOrbsToRemove && unique != null) {
-                    for (AbstractOrb orb : player.orbs) {
-                        if (Lightning.ORB_ID.equals(orb.ID)) {
-                            numOrbsToRemove--;
-                            GameActions.Bottom.RemoveOrb(orb);
+                    if (totalLightning >= numOrbsToRemove && unique != null) {
+                        for (AbstractOrb orb : player.orbs) {
+                            if (Lightning.ORB_ID.equals(orb.ID)) {
+                                numOrbsToRemove--;
+                                GameActions.Bottom.RemoveOrb(orb);
 
-                            if (numOrbsToRemove <= 0) {
-                                break;
+                                if (numOrbsToRemove <= 0) {
+                                    break;
+                                }
                             }
                         }
-                    }
 
-                    if (numOrbsToRemove <= 0) {
-                        GameActions.Bottom.Exhaust(unique)
-                            .AddCallback(() -> {
-                                GameActions.Top.MakeCardInHand(new Grandmaster_Phase4());
-                            });
-                        RemovePower();
+                        if (numOrbsToRemove <= 0) {
+                            GameActions.Bottom.Exhaust(unique)
+                                    .AddCallback(() -> {
+                                        GameActions.Top.MakeCardInHand(new Grandmaster_Phase4());
+                                    });
+                            RemovePower();
+                        }
                     }
                 }
             }
