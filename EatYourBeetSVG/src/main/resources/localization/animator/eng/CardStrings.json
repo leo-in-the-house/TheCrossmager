@@ -3179,7 +3179,7 @@
 		{
 			"FLAVOR_TEXT": "'You know full well I’m not like the cops or bracers.  I do things my own way.  And that way isn’t black, but it isn’t white either.  Mine’s like... the color of a dark blue sky just before dawn.'",
 			"DESCRIPTION": "On Start of Turn: Gain !M! [Inspiration], plus an additional !M! [Inspiration] for each [Lightning]. || Pay 6 [Inspiration] to remove this power and obtain {Grendel}, and an additional 6 [Inspiration] to upgrade it.",
-			"EXTENDED_DESCRIPTION": ["Start of turn: gain #b{0} #yInspiration and an additional #b{0} #yInspiration for each #yLightning.  Pay #b6 #yInspiration to remove this power and obtain #yGrendel, and an additional #b6 #yInspiration to upgrade it."],
+			"EXTENDED_DESCRIPTION": ["Start of turn: gain #yInspiration - this triggers an additional time for each #yLightning.  Pay #b6 #yInspiration to remove this power and obtain #yGrendel, and an additional #b6 #yInspiration to upgrade it."],
 			"NAME": "Van Arkride"
 		},
 		"animator:VanArkride_Grendel":

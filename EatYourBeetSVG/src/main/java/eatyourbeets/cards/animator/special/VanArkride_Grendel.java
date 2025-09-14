@@ -1,6 +1,7 @@
 package eatyourbeets.cards.animator.special;
 
 import com.badlogic.gdx.graphics.Color;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -46,8 +47,8 @@ public class VanArkride_Grendel extends AnimatorCard {
             }
             else {
                 GameActions.Bottom.Wait(0.7f);
-                GameActions.Bottom.VFX(VFX.VerticalImpact(m.hb));
-                GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_HEAVY)
+                GameActions.Bottom.VFX(VFX.Whirlwind());
+                GameActions.Bottom.DealDamageToRandomEnemy(damage * 4, DamageInfo.DamageType.NORMAL, AttackEffects.BLUNT_HEAVY)
                         .SetVFXColor(Color.NAVY);
                 GameActions.Bottom.ShakeScreen(0.5f, ScreenShake.ShakeDur.MED, ScreenShake.ShakeIntensity.MED);
             }

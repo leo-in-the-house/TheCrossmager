@@ -17,7 +17,7 @@ import eatyourbeets.utilities.JUtils;
 
 public class VanArkride extends AnimatorCard {
     public static final EYBCardData DATA = Register(VanArkride.class)
-            .SetPower(2, CardRarity.RARE)
+            .SetPower(1, CardRarity.RARE)
             .SetSeriesFromClassPackage()
             .PostInitialize(data ->
             {
