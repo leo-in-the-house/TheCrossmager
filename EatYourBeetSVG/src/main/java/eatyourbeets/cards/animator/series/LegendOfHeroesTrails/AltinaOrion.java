@@ -33,6 +33,11 @@ public class AltinaOrion extends AnimatorCard {
             AbstractOrb previousOrb = null;
 
             for (AbstractOrb orb : player.orbs) {
+                if (orb.ID == null) {
+                    curMode = 0;
+                    continue;
+                }
+
                 if (previousOrb == null || !orb.ID.equals(previousOrb.ID)) {
                     previousOrb = orb;
                     curMode = 0;

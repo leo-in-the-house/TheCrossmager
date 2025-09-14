@@ -22,6 +22,7 @@ public class Rolycoly extends PokemonCard {
 
         Initialize(5, 0, 3);
         SetUpgrade(3, 0, 0);
+        SetEvolution(new Carkol());
 
         SetAffinity_Red(1);
         SetAffinity_Brown(1);

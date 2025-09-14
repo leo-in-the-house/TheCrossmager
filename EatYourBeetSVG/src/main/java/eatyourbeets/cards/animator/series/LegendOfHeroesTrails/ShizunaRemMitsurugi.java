@@ -7,7 +7,6 @@ import eatyourbeets.cards.base.*;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
-import eatyourbeets.utilities.JUtils;
 
 public class ShizunaRemMitsurugi extends AnimatorCard {
     public static final EYBCardData DATA = Register(ShizunaRemMitsurugi.class)
@@ -34,7 +33,7 @@ public class ShizunaRemMitsurugi extends AnimatorCard {
         int lightnings = GameUtilities.GetOrbCount(Lightning.ORB_ID);
 
         if (lightnings > 0) {
-            GameActions.Bottom.GainTemporaryStats(lightnings, 0, 0);
+            GameActions.Bottom.GainTemporaryStats(magicNumber * lightnings, 0, 0);
         }
     }
 }

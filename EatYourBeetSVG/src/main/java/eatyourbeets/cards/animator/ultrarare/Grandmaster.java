@@ -1,21 +1,19 @@
 package eatyourbeets.cards.animator.ultrarare;
 
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import eatyourbeets.cards.base.AnimatorCard;
+import eatyourbeets.cards.base.AnimatorCard_UltraRare;
 import eatyourbeets.cards.base.CardSeries;
 import eatyourbeets.cards.base.CardUseInfo;
 import eatyourbeets.cards.base.EYBCardData;
 import eatyourbeets.powers.AnimatorPower;
-import eatyourbeets.resources.GR;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
-public class Grandmaster extends AnimatorCard {
+public class Grandmaster extends AnimatorCard_UltraRare {
     public static final EYBCardData DATA = Register(Grandmaster.class)
-            .SetPower(0, CardRarity.SPECIAL)
+            .SetPower(3, CardRarity.SPECIAL)
             .SetColor(CardColor.COLORLESS)
             .SetSeries(CardSeries.LegendOfHeroesTrails)
             .PostInitialize(data ->

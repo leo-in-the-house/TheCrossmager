@@ -3133,7 +3133,7 @@
 		"animator:ReanSchwarzer":
 		{
 			"FLAVOR_TEXT": "'As a catalyst of the Great Twilight, I didn’t believe I had a right to be happy.  But approaching it as a right or wrong perspective misses the point: I have an obligation to be happy.  Because our happiness is not made alone- nor is our unhappiness made alone.  If I want the people I love to be happy, then I need to be happy too.'",
-			"DESCRIPTION": "{Unique.} || <LIM>. If at least one hit was Fatal: permanently upgrade this card.  Upgrade it an additional time if it killed a {Boss} or {Elite}.  Upgrade it an additional time if you have at least three [Lightning].",
+			"DESCRIPTION": "{Unique.} || <LIM>. If at least one hit was Fatal: permanently upgrade this card.  Upgrade it again if it killed a {Boss} or {Elite}.  Upgrade it again if you have at least three [Lightning].",
 			"NAME": "Rean Schwarzer"
 		},
 		"animator:Renne":
@@ -3177,7 +3177,7 @@
 		"animator:VanArkride":
 		{
 			"FLAVOR_TEXT": "'You know full well I’m not like the cops or bracers.  I do things my own way.  And that way isn’t black, but it isn’t white either.  Mine’s like... the color of a dark blue sky just before dawn.'",
-			"DESCRIPTION": "On Start of Turn: Gain !M! [Inspiration], plus an additional !M! [Inspiration] for each [Lightning]. || Pay 6 [Inspiration] to remove this power and obtain {Grendel}, and an additional 3 [Inspiration] to upgrade it.",
+			"DESCRIPTION": "On Start of Turn: Gain !M! [Inspiration], plus an additional !M! [Inspiration] for each [Lightning]. || Pay 6 [Inspiration] to remove this power and obtain {Grendel}, and an additional 6 [Inspiration] to upgrade it.",
 			"EXTENDED_DESCRIPTION": ["Start of turn: gain #b{0} #yInspiration and an additional #b{0} #yInspiration for each #yLightning.  Pay #b6 #yInspiration to remove this power and obtain #yGrendel, and an additional #b6 #yInspiration to upgrade it."],
 			"NAME": "Van Arkride"
 		},

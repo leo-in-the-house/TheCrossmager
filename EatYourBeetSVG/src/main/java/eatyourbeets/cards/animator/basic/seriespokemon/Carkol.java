@@ -22,6 +22,7 @@ public class Carkol extends PokemonCard {
 
         Initialize(5, 7, 3);
         SetUpgrade(3, 0, 0);
+        SetEvolution(new Coalossal());
 
         SetAffinity_Red(1);
         SetAffinity_Brown(1);

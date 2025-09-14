@@ -16,7 +16,7 @@ import eatyourbeets.utilities.GameUtilities;
 
 public class EstelleBright extends AnimatorCard {
     public static final EYBCardData DATA = Register(EstelleBright.class)
-            .SetSkill(2, CardRarity.RARE, EYBCardTarget.None)
+            .SetSkill(3, CardRarity.RARE, EYBCardTarget.None)
             .SetSeriesFromClassPackage()
             .PostInitialize(data ->
             {

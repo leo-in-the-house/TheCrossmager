@@ -11,10 +11,7 @@ import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.orbs.Lightning;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.TimeWarpTurnEndEffect;
-import eatyourbeets.cards.base.AnimatorCard;
-import eatyourbeets.cards.base.CardSeries;
-import eatyourbeets.cards.base.CardUseInfo;
-import eatyourbeets.cards.base.EYBCardData;
+import eatyourbeets.cards.base.*;
 import eatyourbeets.powers.AnimatorPower;
 import eatyourbeets.resources.GR;
 import eatyourbeets.utilities.ColoredString;
@@ -22,7 +19,7 @@ import eatyourbeets.utilities.Colors;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
-public class Grandmaster_Phase3 extends AnimatorCard {
+public class Grandmaster_Phase3 extends AnimatorCard_UltraRare {
     public static final EYBCardData DATA = Register(Grandmaster_Phase3.class)
             .SetPower(0, CardRarity.SPECIAL)
             .SetColor(CardColor.COLORLESS)
