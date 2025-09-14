@@ -12,7 +12,7 @@ import eatyourbeets.utilities.RandomizedList;
 
 public class JunaCrawford extends AnimatorCard {
     public static final EYBCardData DATA = Register(JunaCrawford.class)
-            .SetAttack(2, CardRarity.RARE, EYBAttackType.Normal, EYBCardTarget.Normal)
+            .SetAttack(2, CardRarity.RARE, EYBAttackType.Ranged, EYBCardTarget.Normal)
             .SetColor(CardColor.COLORLESS)
             .SetSeries(CardSeries.LegendOfHeroesTrails)
             .PostInitialize(data ->
