@@ -10,7 +10,7 @@ import eatyourbeets.utilities.GameUtilities;
 
 public class SSS_Elie extends AnimatorCard {
     public static final EYBCardData DATA = Register(SSS_Elie.class)
-            .SetSkill(1, CardRarity.SPECIAL, EYBCardTarget.None)
+            .SetSkill(0, CardRarity.SPECIAL, EYBCardTarget.None)
             .SetSeries(CardSeries.LegendOfHeroesTrails);
 
     public SSS_Elie() {
