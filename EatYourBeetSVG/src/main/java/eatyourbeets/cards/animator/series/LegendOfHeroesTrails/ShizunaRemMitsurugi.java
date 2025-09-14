@@ -31,7 +31,7 @@ public class ShizunaRemMitsurugi extends AnimatorCard {
 
         GameActions.Bottom.DealDamage(this, m, AttackEffects.SLASH_HEAVY);
 
-        int lightnings = JUtils.Count(player.orbs, o -> Lightning.ORB_ID.equals(o.ID));
+        int lightnings = GameUtilities.GetOrbCount(Lightning.ORB_ID);
 
         if (lightnings > 0) {
             GameActions.Bottom.GainTemporaryStats(lightnings, 0, 0);

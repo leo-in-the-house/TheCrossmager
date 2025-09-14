@@ -36,13 +36,14 @@ public class LloydBannings extends AnimatorCard {
         SetAffinity_Brown(1, 0, 1);
 
         SetRetain(true);
+        SetExhaust(true);
     }
 
     @Override
     protected void OnUpgrade() {
         super.OnUpgrade();
 
-        SetLoyal(true);
+        SetExhaust(false);
     }
 
     @Override

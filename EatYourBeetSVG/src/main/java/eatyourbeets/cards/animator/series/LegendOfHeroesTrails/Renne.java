@@ -12,19 +12,21 @@ import eatyourbeets.utilities.*;
 
 public class Renne extends AnimatorCard {
     public static final EYBCardData DATA = Register(Renne.class)
-            .SetAttack(2, CardRarity.RARE, EYBAttackType.Normal, EYBCardTarget.ALL)
+            .SetAttack(3, CardRarity.RARE, EYBAttackType.Normal, EYBCardTarget.ALL)
             .SetSeriesFromClassPackage();
 
     public Renne() {
         super(DATA);
 
         Initialize(6, 0, 4);
-        SetUpgrade(0, 0, -2);
+        SetUpgrade(6, 0, -1);
 
         SetAffinity_Black(2, 0, 3);
         SetAffinity_Teal(2, 0, 3);
 
         SetDelayed(true);
+        SetEthereal(true);
+        SetExhaust(true);
     }
 
     @Override
@@ -34,7 +36,7 @@ public class Renne extends AnimatorCard {
         GameActions.Bottom.DealDamageToAll(this, AttackEffects.SLASH_DIAGONAL)
                 .SetDamageEffect((enemy, __) -> GameEffects.List.Add(VFX.Hemokinesis(player.hb, enemy.hb)));
 
-        int lightningCount = JUtils.Count(player.orbs, o -> Lightning.ORB_ID.equals(o.ID));
+        int lightningCount = GameUtilities.GetOrbCount(Lightning.ORB_ID);
 
         if (!GameUtilities.InEliteOrBossRoom() && lightningCount >= magicNumber) {
             GameActions.Bottom.BorderLongFlash(Color.SCARLET);

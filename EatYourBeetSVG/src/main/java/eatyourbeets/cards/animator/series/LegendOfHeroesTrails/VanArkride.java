@@ -81,7 +81,7 @@ public class VanArkride extends AnimatorCard {
         public void atStartOfTurnPostDraw() {
             super.atStartOfTurnPostDraw();
 
-            int lightningCount = JUtils.Count(player.orbs, o -> Lightning.ORB_ID.equals(o.ID));
+            int lightningCount = GameUtilities.GetOrbCount(Lightning.ORB_ID);
             int inspirationGain = amount + (lightningCount * amount);
 
             if (inspirationGain > 0) {

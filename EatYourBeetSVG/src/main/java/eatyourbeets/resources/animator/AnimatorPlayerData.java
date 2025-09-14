@@ -289,6 +289,7 @@ public class AnimatorPlayerData
         add.Invoke(new Loadout_Rewrite(), 0);
         add.Invoke(new Loadout_RozenMaiden(), 0);
         add.Invoke(new Loadout_BlueArchive(), 0);
+        add.Invoke(new Loadout_LegendOfHeroesTrails(), 0);
 
 
         for (AnimatorLoadout loadout : BaseLoadouts)
