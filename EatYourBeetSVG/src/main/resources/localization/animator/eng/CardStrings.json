@@ -4181,8 +4181,8 @@
 		"animator:Ramiris":
 		{
 			"FLAVOR_TEXT": "'As if that's even possible, what a moron!  He looked like was gonna cry!  No, he did cry!  It's not a stretch to say he cried!  A demanding crybaby... I'd take him out with one punch, I tell ya!'",
-			"DESCRIPTION": "This card can only be played if you have not {Attacked} this turn. || Imitate up to X {High-Cost} {Attacks} or {Skills} in your draw pile.  Put the copies on top of your draw pile, and give them {Haste}.",
-			"UPGRADE_DESCRIPTION": "This card can only be played if you have not {Attacked} this turn. || Imitate up to X {High-Cost} {Attacks} or {Skills} in your draw or discard pile.  Put the copies on top of your draw pile, and give them {Haste}.",
+			"DESCRIPTION": "This card can only be played if you have not {Attacked} this turn. || Imitate up to X {High-Cost} cards in your draw pile.",
+			"UPGRADE_DESCRIPTION": "Imitate up to X {High-Cost} cards in your draw or discard pile.",
 			"NAME": "Ramiris"
 		},
 		"animator:Ranga":

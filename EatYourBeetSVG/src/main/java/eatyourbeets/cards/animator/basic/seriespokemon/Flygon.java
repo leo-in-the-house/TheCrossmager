@@ -43,7 +43,9 @@ public class Flygon extends PokemonCard {
             GameActions.Bottom.DealDamage(this, m, AttackEffects.FIRE);
         }
 
-        CostModifiers.For(this).Add(1);
-        GameUtilities.IncreaseMagicNumber(this, this.magicNumber * 2, false);
+        GameActions.Bottom.Callback(() -> {
+            CostModifiers.For(this).Add(1);
+            GameUtilities.IncreaseMagicNumber(this, this.magicNumber * 2, false);
+        });
     }
 }

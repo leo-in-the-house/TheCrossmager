@@ -41,6 +41,8 @@ public class Trapinch extends PokemonCard {
             GameActions.Bottom.DealDamage(this, m, AttackEffects.BITE);
         }
 
-        CostModifiers.For(this).Add(1);
+        GameActions.Bottom.Callback(() -> {
+            CostModifiers.For(this).Add(1);
+        });
     }
 }

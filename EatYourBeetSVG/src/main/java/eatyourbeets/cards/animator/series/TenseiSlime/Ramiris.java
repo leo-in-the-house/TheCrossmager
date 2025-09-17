@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.effects.SFX;
-import eatyourbeets.utilities.CardSelection;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
 
@@ -25,13 +24,17 @@ public class Ramiris extends AnimatorCard
 
         SetAffinity_Pink(2);
 
-        SetExhaust(true);
+        SetHaste(true);
     }
 
     @Override
     public boolean cardPlayable(AbstractMonster m)
     {
         if (super.cardPlayable(m)) {
+            if (upgraded) {
+                return true;
+            }
+
             for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisTurn)
             {
                 if (c.type == CardType.ATTACK)
@@ -64,8 +67,7 @@ public class Ramiris extends AnimatorCard
 
                     for (AbstractCard c : cards)
                     {
-                        GameActions.Top.MakeCardInDrawPile(GameUtilities.Imitate(c))
-                            .SetDestination(CardSelection.Top)
+                        GameActions.Top.MakeCardInHand(GameUtilities.Imitate(c))
                             .AddCallback(card -> {
                                 if (card instanceof EYBCard) {
                                     ((EYBCard) card).SetHaste(true);

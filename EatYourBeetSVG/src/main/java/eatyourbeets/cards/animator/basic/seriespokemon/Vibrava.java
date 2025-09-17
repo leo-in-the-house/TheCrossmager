@@ -44,7 +44,10 @@ public class Vibrava extends PokemonCard {
             GameActions.Bottom.DealDamage(this, m, AttackEffects.FIRE);
         }
 
-        CostModifiers.For(this).Add(1);
-        GameUtilities.IncreaseMagicNumber(this, this.magicNumber, false);
+        GameActions.Bottom.Callback(() -> {
+            CostModifiers.For(this).Add(1);
+            GameUtilities.IncreaseMagicNumber(this, this.magicNumber, false);
+        });
+
     }
 }
