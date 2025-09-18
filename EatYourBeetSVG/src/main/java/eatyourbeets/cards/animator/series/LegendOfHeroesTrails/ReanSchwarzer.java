@@ -37,12 +37,13 @@ public class ReanSchwarzer extends AnimatorCard {
     {
         super.OnUpgrade();
 
-        if (timesUpgraded >= 8) {
+        if (timesUpgraded >= 6) {
             LoadImage("_Upgraded3");
             SetInnate(true);
+            SetAutoplayed(false);
             SetAttackTarget(EYBCardTarget.ALL);
-            AddScaling(Affinity.Red, 4);
-            AddScaling(Affinity.Black, 4);
+            AddScaling(Affinity.Red, 6);
+            AddScaling(Affinity.Black, 6);
         }
         else if (timesUpgraded >= 3) {
             LoadImage("_Upgraded2");

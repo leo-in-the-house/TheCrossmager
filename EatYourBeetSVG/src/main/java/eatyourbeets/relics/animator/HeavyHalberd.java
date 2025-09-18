@@ -1,14 +1,13 @@
 package eatyourbeets.relics.animator;
 
 import eatyourbeets.cards.base.Affinity;
-import eatyourbeets.interfaces.subscribers.OnAffinityThresholdReachedSubscriber;
+import eatyourbeets.interfaces.subscribers.OnAffinityGainedSubscriber;
 import eatyourbeets.powers.CombatStats;
-import eatyourbeets.powers.affinity.AbstractAffinityPower;
 import eatyourbeets.relics.AnimatorRelic;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.TargetHelper;
 
-public class HeavyHalberd extends AnimatorRelic implements OnAffinityThresholdReachedSubscriber
+public class HeavyHalberd extends AnimatorRelic implements OnAffinityGainedSubscriber
 {
     public static final String ID = CreateFullID(HeavyHalberd.class);
     public static final int VULNERABLE_AMOUNT = 2;
@@ -30,21 +29,23 @@ public class HeavyHalberd extends AnimatorRelic implements OnAffinityThresholdRe
     {
         super.RefreshBattleEffect(enabled);
 
-        CombatStats.onAffinityThresholdReached.ToggleSubscription(this, enabled);
+        CombatStats.onAffinityGained.ToggleSubscription(this, enabled);
     }
 
     @Override
-    public void OnAffinityThresholdReached(AbstractAffinityPower power, int thresholdLevel)
+    public int OnAffinityGained(Affinity affinity, int amount)
     {
-        if (power.affinity == Affinity.Red)
+        if (affinity == Affinity.Red)
         {
             GameActions.Bottom.ApplyVulnerable(TargetHelper.Enemies(player), VULNERABLE_AMOUNT);
             flash();
         }
-        else if (power.affinity == Affinity.Green)
+        else if (affinity == Affinity.Green)
         {
             GameActions.Bottom.Draw(DRAW_AMOUNT);
             flash();
         }
+
+        return amount;
     }
 }
