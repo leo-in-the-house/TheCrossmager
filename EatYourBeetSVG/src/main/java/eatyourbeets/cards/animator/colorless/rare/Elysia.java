@@ -59,7 +59,7 @@ public class Elysia extends AnimatorCard {
             GameActions.Bottom.Scry(amount)
                 .AddCallback(c -> {
                     if (player.drawPile.size() == 12) {
-                        GameActions.Top.MakeCardInDrawPile(new Elysia_Herrscher());
+                        GameActions.Top.MakeCardInHand(new Elysia_Herrscher());
                         RemovePower();
                     }
                 });

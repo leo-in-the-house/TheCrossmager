@@ -1,11 +1,15 @@
 package eatyourbeets.cards.animator.special;
 
+import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.InvisiblePower;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import eatyourbeets.cards.base.*;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.utilities.GameActions;
 import eatyourbeets.utilities.GameUtilities;
+
+import java.util.ArrayList;
 
 public class Elysia_Herrscher extends AnimatorCard {
     public static final EYBCardData DATA = Register(Elysia_Herrscher.class)
@@ -40,6 +44,19 @@ public class Elysia_Herrscher extends AnimatorCard {
 
         for (int i=0; i<stacks; i++) {
             GameActions.Bottom.GainBlock(block);
+        }
+
+        final ArrayList<AbstractPower> debuffs = new ArrayList<>();
+        for (AbstractPower power : player.powers)
+        {
+            if (power.type == AbstractPower.PowerType.DEBUFF && !(power instanceof InvisiblePower))
+            {
+                debuffs.add(power);
+            }
+        }
+
+        if (debuffs.size() > 0) {
+            player.powers.removeAll(debuffs);
         }
 
         GameActions.Bottom.GainArtifact(99);

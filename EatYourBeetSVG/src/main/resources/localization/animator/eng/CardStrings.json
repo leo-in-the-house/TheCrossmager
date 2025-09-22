@@ -846,14 +846,14 @@
 		"animator:Elysia":
 		{
 			"FLAVOR_TEXT": "'How do you do?  You know, every new day starts with a beautiful encounter.'",
-			"DESCRIPTION": "Start of turn: Scry !M!.  Then, if you have exactly 12 cards in your draw pile: Remove this power and obtain {Herrscher of Human Ego}{+}.",
-			"EXTENDED_DESCRIPTION": ["Start of turn: #yScry #b{0}.  Then, if you have exactly #b12 cards in your draw pile, remove this power and obtain #yHerrscher #yof #yHuman."],
+			"DESCRIPTION": "Start of turn: Scry !M!.  Then, if you have exactly 12 cards in your draw pile: Remove this power and obtain {Herrscher of Human Ego}.",
+			"EXTENDED_DESCRIPTION": ["Start of turn: #yScry #b{0}.  Then, if you have exactly #b12 cards in your draw pile, remove this power and obtain #yHerrscher #yof #yHuman #yEgo."],
 			"NAME": "Elysia"
 		},
 		"animator:Elysia_Herrscher":
 		{
 			"FLAVOR_TEXT": "'Tragedy isn't the end. It's the beginning of hope. You'll have faith, right?'",
-			"DESCRIPTION": "Gain 99 [Artifact].",
+			"DESCRIPTION": "Remove ALL your debuffs.  Gain 99 [Artifact].",
 			"NAME": "Herrscher of Human Ego"
 		},
 		"animator:Frieren":
