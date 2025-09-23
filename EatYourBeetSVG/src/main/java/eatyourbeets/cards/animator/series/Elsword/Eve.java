@@ -84,20 +84,22 @@ public class Eve extends AnimatorCard
         public void OnAffinitySealed(EYBCard card, boolean manual)
         {
             if (GameUtilities.HasBlueAffinity(card) || GameUtilities.HasGreenAffinity(card) || GameUtilities.HasRedAffinity(card))
-            GameEffects.Queue.BorderFlash(Color.SKY);
-            GameActions.Bottom.DealDamageToRandomEnemy(amount, DamageInfo.DamageType.THORNS, AttackEffects.NONE)
-            .SetOptions(true, false)
-            .SetDamageEffect(enemy ->
             {
-                SFX.Play(SFX.ATTACK_MAGIC_BEAM_SHORT, 0.9f, 1.1f);
-                GameEffects.List.Add(VFX.SmallLaser(owner.hb, enemy.hb, Color.CYAN));
-                return 0f;
-            })
-            .AddCallback(enemy -> {
-                amount += amountToIncrease;
-            });
+                GameEffects.Queue.BorderFlash(Color.SKY);
+                GameActions.Bottom.DealDamageToRandomEnemy(amount, DamageInfo.DamageType.THORNS, AttackEffects.NONE)
+                        .SetOptions(true, false)
+                        .SetDamageEffect(enemy ->
+                        {
+                            SFX.Play(SFX.ATTACK_MAGIC_BEAM_SHORT, 0.9f, 1.1f);
+                            GameEffects.List.Add(VFX.SmallLaser(owner.hb, enemy.hb, Color.CYAN));
+                            return 0f;
+                        })
+                        .AddCallback(enemy -> {
+                            amount += amountToIncrease;
+                        });
 
-            this.flash();
+                this.flash();
+            }
         }
     }
 }
