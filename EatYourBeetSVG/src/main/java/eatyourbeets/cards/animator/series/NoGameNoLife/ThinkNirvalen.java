@@ -19,18 +19,26 @@ import java.util.ArrayList;
 public class ThinkNirvalen extends AnimatorCard
 {
     public static final EYBCardData DATA = Register(ThinkNirvalen.class)
-            .SetPower(1, CardRarity.UNCOMMON)
+            .SetPower(0, CardRarity.UNCOMMON)
             .SetSeriesFromClassPackage();
     public ThinkNirvalen()
     {
         super(DATA);
 
         Initialize(0, 0, 3, 0);
-        SetCostUpgrade(-1);
+        SetDelayed(true);
+        SetEthereal(true);
 
         SetAffinity_Blue(1);
-        SetAffinity_Pink(1);
     }
+
+    @Override
+    protected void OnUpgrade()
+    {
+        SetEthereal(false);
+        SetHaste(true);
+    }
+
 
     @Override
     public boolean cardPlayable(AbstractMonster m) {
