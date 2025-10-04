@@ -4,10 +4,10 @@ import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import eatyourbeets.cards.base.*;
-import eatyourbeets.utilities.GameUtilities;
 import eatyourbeets.cards.base.attributes.AbstractAttribute;
 import eatyourbeets.effects.AttackEffects;
 import eatyourbeets.utilities.GameActions;
+import eatyourbeets.utilities.GameUtilities;
 
 public class Hibiki extends AnimatorCard
 {
@@ -32,6 +32,7 @@ public class Hibiki extends AnimatorCard
         return super.GetDamageInfo().AddMultiplier(magicNumber);
     }
 
+
     @Override
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info)
     {
@@ -45,6 +46,6 @@ public class Hibiki extends AnimatorCard
             .SetDuration(0.025f, false);
         }
 
-        GameActions.Bottom.ModifyAllInstances(uuid, c -> GameUtilities.IncreaseMagicNumber(c, secondaryValue, false));
+        GameUtilities.IncreaseMagicNumber(this, secondaryValue, false);
     }
 }
