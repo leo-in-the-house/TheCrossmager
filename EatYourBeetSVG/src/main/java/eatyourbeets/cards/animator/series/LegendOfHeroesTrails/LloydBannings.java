@@ -32,7 +32,7 @@ public class LloydBannings extends AnimatorCard {
     public LloydBannings() {
         super(DATA);
 
-        Initialize(2, 0, 2, 2);
+        Initialize(5, 0, 2, 2);
         SetUpgrade(0, 0, 0);
 
         SetAffinity_Brown(1, 0, 1);
