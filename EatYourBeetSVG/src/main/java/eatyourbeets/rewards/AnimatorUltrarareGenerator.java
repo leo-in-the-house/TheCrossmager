@@ -20,7 +20,7 @@ import java.util.Map;
 
 public class AnimatorUltrarareGenerator
 {
-    public static final float BASE_CHANCE = 0.05f;
+    public static final float BASE_CHANCE = 5f;
     public static final AnimatorLoadout COLORLESS_LOADOUT = new _FakeLoadout();
 
     protected final Random rng;

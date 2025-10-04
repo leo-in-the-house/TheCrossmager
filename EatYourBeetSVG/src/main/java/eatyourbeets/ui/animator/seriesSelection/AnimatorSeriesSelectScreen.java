@@ -8,11 +8,14 @@ import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.screens.SingleCardViewPopup;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
+import eatyourbeets.cards.base.AnimatorCard;
 import eatyourbeets.cards.base.CardAffinityComparator;
 import eatyourbeets.cards.base.CardSeriesComparator;
 import eatyourbeets.effects.card.ShowCardPileEffect;
@@ -400,6 +403,25 @@ public class AnimatorSeriesSelectScreen extends AbstractScreen
         {
             GameEffects.TopLevelQueue.SpawnRelic(plotArmor.makeCopy(), bonusRelicImage.hb.cX, bonusRelicImage.hb.cY);
         }*/
+
+        //Unlock all cards on starting a game
+        for (AbstractCard c : CardLibrary.getAllCards())
+        {
+            if (c instanceof AnimatorCard) {
+
+                String key = c.cardID;
+                //UnlockTracker.unlockCard(), without flushing after every card.
+                UnlockTracker.seenPref.putInteger(key, 1);
+                UnlockTracker.unlockPref.putInteger(key, 2);
+                UnlockTracker.lockedCards.remove(key);
+                AbstractCard card = CardLibrary.getCard(key);
+                if (card != null)
+                {
+                    card.isSeen = true;
+                    card.unlock();
+                }
+            }
+        }
 
         SingleCardViewPopup.isViewingUpgrade = false;
         cardGrid.Clear();
