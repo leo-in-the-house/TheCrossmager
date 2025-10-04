@@ -58,7 +58,7 @@ public class Ramiris extends AnimatorCard
         {
             GameActions.Bottom.SelectFromPile(name, charge, p.drawPile)
             .SetOptions(false, true)
-            .SetFilter(c -> (c.type == CardType.ATTACK || c.type == CardType.SKILL) && GameUtilities.IsHighCost(c))
+            .SetFilter(c -> GameUtilities.IsHighCost(c))
             .AddCallback(cards ->
             {
                 if (cards.size() > 0)
