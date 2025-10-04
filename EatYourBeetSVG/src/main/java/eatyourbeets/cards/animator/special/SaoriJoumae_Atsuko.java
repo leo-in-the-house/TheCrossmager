@@ -15,11 +15,11 @@ public class SaoriJoumae_Atsuko extends AnimatorCard {
     public SaoriJoumae_Atsuko() {
         super(DATA);
 
-        Initialize(0, 0, 6);
-        SetUpgrade(0, 0, 4);
+        Initialize(0, 0, 2);
+        SetUpgrade(0, 0, 3);
 
         SetAffinity_Green(1, 0, 0);
-        SetAffinity_White(1);
+        SetAffinity_White(1, 1, 0);
 
         SetExhaust(true);
         SetEthereal(true);
