@@ -32,7 +32,7 @@ public class LloydBannings extends AnimatorCard {
     public LloydBannings() {
         super(DATA);
 
-        Initialize(5, 0, 2, 2);
+        Initialize(3, 4, 2, 2);
         SetUpgrade(0, 0, 0);
 
         SetAffinity_Brown(1, 0, 1);
@@ -54,6 +54,8 @@ public class LloydBannings extends AnimatorCard {
             GameActions.Bottom.DealDamage(this, m, AttackEffects.BLUNT_LIGHT);
             GameActions.Bottom.Wait(0.3f);
         }
+
+        GameActions.Bottom.GainBlock(block);
 
         CardGroup group = GetSSSMembers();
         GameActions.Bottom.SelectFromPile(name, 1, group)

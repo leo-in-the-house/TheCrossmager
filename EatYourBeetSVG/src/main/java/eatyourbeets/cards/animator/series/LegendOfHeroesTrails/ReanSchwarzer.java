@@ -25,7 +25,7 @@ public class ReanSchwarzer extends AnimatorCard {
         super(DATA);
 
         Initialize(4, 0, 8);
-        SetUpgrade(1, 0, 0);
+        SetUpgrade(1, 3, 0);
         SetUnique(true, true);
 
         SetAffinity_Red(2);
@@ -44,6 +44,7 @@ public class ReanSchwarzer extends AnimatorCard {
             SetAttackTarget(EYBCardTarget.ALL);
             AddScaling(Affinity.Red, 6);
             AddScaling(Affinity.Black, 6);
+            SetMultiDamage(true);
         }
         else if (timesUpgraded >= 3) {
             LoadImage("_Upgraded2");
@@ -69,11 +70,13 @@ public class ReanSchwarzer extends AnimatorCard {
     public void OnUse(AbstractPlayer p, AbstractMonster m, CardUseInfo info) {
         GameUtilities.PlayVoiceSFX(name);
 
+        GameActions.Bottom.GainBlock(block);
+
         GameActions.Bottom.VFX(new BorderFlashEffect(Color.RED));
         GameActions.Bottom.Wait(0.2f);
 
         for (int i=0; i<magicNumber; i++) {
-            if (timesUpgraded >= 8) {
+            if (timesUpgraded >= 6) {
                 if (i%3 == 0) {
                     GameActions.Bottom.DealDamageToAll(this, AttackEffects.SLASH_VERTICAL)
                         .AddCallback(info, (info2, enemies) ->
