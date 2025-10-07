@@ -32,7 +32,7 @@ public class Espeon extends PokemonCard {
 
         GameActions.Bottom.VFX(VFX.ShockWave(p.hb, Color.PINK, ShockWaveEffect.ShockWaveType.NORMAL));
         GameActions.Bottom.Wait(3f);
-        GameActions.Bottom.VFX(VFX.Mindblast(m.animX, m.animY));
+        GameActions.Bottom.VFX(VFX.Mindblast(p.dialogX, p.dialogY));
         GameActions.Bottom.DealDamage(this, m, AttackEffects.NONE);
 
         GameActions.Bottom.DrawNextTurn(magicNumber);
