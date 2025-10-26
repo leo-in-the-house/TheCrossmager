@@ -30,17 +30,6 @@ public class AnimatorUltrarareGenerator
 
     public static float GetBaseChance()
     {
-        final Float rate = GR.Common.Dungeon.GetFloat("UR_RATE", null);
-        if (rate != null)
-        {
-            if (rate > 0 && GameUtilities.InGame())
-            {
-                GR.Common.Dungeon.SetCheating();
-            }
-
-            return rate;
-        }
-
         return BASE_CHANCE;
     }
 
